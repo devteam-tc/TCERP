@@ -3,14 +3,14 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import CustomNavDropdown from './CustomNavDropdown';
 import styled from 'styled-components';
-import { NAV_ITEMS , releavant } from '../../utils/constants';
+import { NAV_ITEMS, releavant } from '../../utils/constants';
 import { Link } from 'react-router-dom';
 
 const StyledNavLink = styled(Nav.Link)`
-  text-decoration: none; /* Remove underline */
-  color: black; /* Default text color */
+  text-decoration: none !important; /* Ensure no underline */
+  color: black !important; /* Default text color */
   &:hover {
-    color: #e93906 !important;
+    color: #e93906 !important; /* Color on hover */
   }   
 `;
 
@@ -56,7 +56,9 @@ const MainNavbar = () => {
             className={item.className || ''}
             onClick={() => handleNavLinkClick(item)}
           >
-            <Link to={item.link}>{item.title}</Link>
+            <Link to={item.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+              {item.title}
+            </Link>
           </StyledNavLink>
         );
       } else if (item.type === 'dropdown') {
@@ -68,7 +70,9 @@ const MainNavbar = () => {
                   <CustomNavDropdown key={subIndex} title={subItem.title} direction={subItem.direction}>
                     {subItem.items.map((nestedItem, nestedIndex) => (
                       <StyledNavLink key={nestedIndex} target="_blank">
-                        <Link to={nestedItem.link}>{nestedItem.title}</Link>
+                        <Link to={nestedItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                          {nestedItem.title}
+                        </Link>
                       </StyledNavLink>
                     ))}
                   </CustomNavDropdown>
@@ -76,7 +80,9 @@ const MainNavbar = () => {
               } else {
                 return (
                   <StyledNavLink key={subIndex} target="_blank">
-                    <Link to={subItem.link}>{subItem.title}</Link>
+                    <Link to={subItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                      {subItem.title}
+                    </Link>
                   </StyledNavLink>
                 );
               }
@@ -91,8 +97,8 @@ const MainNavbar = () => {
   return (
     <Navbar expand="md" bg="light" variant="light" className="main-navbar fw-semibold">
       <Container fluid>
-        <Navbar.Brand href="index.html">
-          <Link to="/"><img src={releavant.logo} style={{ width: '200px', padding: '2%' }} alt="logo" /></Link>
+        <Navbar.Brand as={Link} to="/">
+          <img src={releavant.logo} style={{ width: '200px', padding: '2%' }} alt="logo" />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarSupportedContent" />
@@ -116,7 +122,7 @@ const MainNavbar = () => {
           </a>
 
           <a
-            href="tel:+8919439603"
+            href="tel:+9198929439603"
             className="btn cta-01 m-2"
             style={{ border: '2px solid #04a8ce', borderRadius: '8px' }}
           >

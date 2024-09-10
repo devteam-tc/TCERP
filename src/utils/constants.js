@@ -110,7 +110,7 @@ export const NAV_ITEMS = [
     },
     {
         title: 'BI',
-        link: '#',
+        link: '/',
         type: 'link',
     },
     {
