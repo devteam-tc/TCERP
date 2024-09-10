@@ -12,7 +12,7 @@ export const releavant = {
 export const NAV_ITEMS = [
     {
       title: 'Home',
-      link: 'index.html',
+      link: '/',
       type: 'link',
     },
     {

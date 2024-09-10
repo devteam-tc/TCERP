@@ -4,7 +4,10 @@ import OurMissionSection from './OurMissionSection'
 
 const Home = () => {
   return (
-   <><HomeVideoLanding /><OurMissionSection /></>
+   <>
+   <HomeVideoLanding />
+   <OurMissionSection />
+   </>
   )
 }
 
