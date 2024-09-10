@@ -4,7 +4,8 @@ export const releavant = {
     ourmission_img_1:require("../assets/Home/ourmission_img_1.png"),
     ourmission_img_2:require("../assets/Home/ourmission_img_2.png"),
     us_flag_img:require("../assets/us-flag.jpg"),
-    indian_flag_img:require("../assets/us-flag.jpg")
+    indian_flag_img:require("../assets/us-flag.jpg"),
+    
 }
 
 // utils/constants.js
