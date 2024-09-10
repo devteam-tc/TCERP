@@ -119,11 +119,6 @@ const ExperienceContent = styled.div`
     position: relative;
     padding-left: 50px;
 
-    .icon img {
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
 
     h3 {
       font-size: 20px;
@@ -168,7 +163,7 @@ const OurMissionSection = () => {
             <ExperienceImage>
               <img src={releavant.ourmission_img_1} alt="Experience" className='img-fluid'/>
               <div className="text">
-                <img src={releavant.ourmission_img_2} alt="Experience icon" />
+                <img src={releavant.ourmission_img_2} alt="Experience icon" className='img-fluid'/>
                 <p><span>25+</span> Years of Experience</p>
               </div>
             </ExperienceImage>
