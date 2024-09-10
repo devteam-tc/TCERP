@@ -13,7 +13,7 @@ const CustomDropdown = styled(Dropdown)`
   }
 
   .dropdown-toggle {
-    padding: 8px 16px;
+    padding: 8px;
     border-radius: 4px;
     transition: color 0.3s;
 

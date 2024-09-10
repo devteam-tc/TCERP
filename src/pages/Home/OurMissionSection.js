@@ -183,10 +183,10 @@ const OurMissionSection = () => {
                 India's leading ERP software developer with a focus on reducing operational costs, especially for
                 manufacturing companies.
               </p>
-              <p>
+              {/* <p>
                 Praised for affordability and ease of implementation, Tech Cloud ERP provides advanced
                 features and customization options. Its user-friendly design enhances efficiency and productivity, making it a valuable investment for businesses aiming to improve their operations.
-              </p>
+              </p> */}
               <div className="experience-text">
                 <div>
                   <h3>Our Mission</h3>

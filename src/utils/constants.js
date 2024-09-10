@@ -11,11 +11,11 @@ export const releavant = {
 // utils/constants.js
 
 export const NAV_ITEMS = [
-    {
-      title: 'Home',
-      link: '/',
-      type: 'link',
-    },
+    // {
+    //   title: 'Home',
+    //   link: '/',
+    //   type: 'link',
+    // },
     {
       title: 'About',
       type: 'dropdown',
@@ -124,12 +124,23 @@ export const NAV_ITEMS = [
  
           // Other Services items...
         ],
-      },
+    },
+    {
+        title: 'Pricing',
+        link: '#',
+        type: 'link',
+    },
+    {
+      title: 'Contact Us',
+      link: '#',
+      type: 'link',
+  },
     {
       title: 'Demo',
       link: '#',
       type: 'link',
       isDemo: true, // Custom flag to open Calendly widget
     },
+    
   ];
   
