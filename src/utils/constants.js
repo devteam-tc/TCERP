@@ -4,7 +4,8 @@ export const releavant = {
     ourmission_img_1:require("../assets/Home/ourmission_img_1.png"),
     ourmission_img_2:require("../assets/Home/ourmission_img_2.png"),
     us_flag_img:require("../assets/us-flag.jpg"),
-    indian_flag_img:require("../assets/us-flag.jpg")
+    indian_flag_img:require("../assets/us-flag.jpg"),
+    
 }
 
 // utils/constants.js
@@ -12,7 +13,7 @@ export const releavant = {
 export const NAV_ITEMS = [
     {
       title: 'Home',
-      link: 'index.html',
+      link: '/',
       type: 'link',
     },
     {
@@ -109,7 +110,7 @@ export const NAV_ITEMS = [
     },
     {
         title: 'BI',
-        link: '#',
+        link: '/',
         type: 'link',
     },
     {
