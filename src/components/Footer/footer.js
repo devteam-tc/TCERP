@@ -150,7 +150,7 @@ const Footer = () => {
           </Col>
           {/* Softwares */}
           <Col md={2} sm={6}>
-            <FooterHeading>Softwares / Industries</FooterHeading>
+            <FooterHeading>Industries</FooterHeading>
             <FooterLinkList>
               <li><Link to="#">Retail jewellery</Link></li>
               <li><Link to="#">Wholesale</Link></li>
@@ -173,7 +173,7 @@ const Footer = () => {
             <FooterHeading>Get In Touch
             </FooterHeading>
             <ContactDetails>
-              <FaClock />
+              <div><FaClock /></div>
               9:30 AM - 9 PM, Monday – Saturday
             </ContactDetails>
             <ContactDetails>
@@ -181,7 +181,7 @@ const Footer = () => {
               <a href="mailto:info@techclouderp.com">info@techclouderp.com</a>
             </ContactDetails>
             <ContactDetails>
-              <FaMapMarkerAlt />
+              <div><FaMapMarkerAlt /></div>
               Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens Road, VIP Hills, Madhapur, Hyderabad–500081.
             </ContactDetails>
           </Col>

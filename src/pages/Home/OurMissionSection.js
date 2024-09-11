@@ -161,7 +161,7 @@ const OurMissionSection = () => {
         <Row className="align-items-center" data-aos="fade-up" data-aos-delay="100">
           <Col lg={5} className="mt-4" data-aos="fade-up" data-aos-delay="100">
             <ExperienceImage>
-              <img src={releavant.ourmission_img_1} alt="Experience" className='img-fluid'/>
+              <img src={releavant.ourmission_img_1} alt="Experience" className='img-fluid w-100'/>
               <div className="text">
                 <img src={releavant.ourmission_img_2} alt="Experience icon" className='img-fluid'/>
                 <p><span>25+</span> Years of Experience</p>
@@ -178,10 +178,6 @@ const OurMissionSection = () => {
                 India's leading ERP software developer with a focus on reducing operational costs, especially for
                 manufacturing companies.
               </p>
-              {/* <p>
-                Praised for affordability and ease of implementation, Tech Cloud ERP provides advanced
-                features and customization options. Its user-friendly design enhances efficiency and productivity, making it a valuable investment for businesses aiming to improve their operations.
-              </p> */}
               <div className="experience-text">
                 <div>
                   <h3>Our Mission</h3>
