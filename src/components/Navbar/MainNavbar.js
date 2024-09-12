@@ -1,143 +1,157 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CustomNavDropdown from './CustomNavDropdown';
-import styled from 'styled-components';
-import { NAV_ITEMS, releavant } from '../../utils/constants';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { FiPhone } from 'react-icons/fi';
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaTwitter } from 'react-icons/fa';
 
-const StyledNavLink = styled(Nav.Link)`
-  text-decoration: none !important; /* Ensure no underline */
-  color: black !important; /* Default text color */
-  &:hover {
-    color: #e93906 !important; /* Color on hover */
-  }   
+// Styled Components
+const NavbarContainer = styled(Navbar)`
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 `;
 
-const MainNavbar = () => {
-  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
+const NavLinkStyled = styled(Link)`
+  color: #000;
+  text-decoration: none;
+  margin-right: 20px;
+  &:hover {
+    color: #f05340;
+  }
+`;
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.type = 'text/javascript';
-    script.async = true;
+const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
 
-    script.onload = () => setCalendlyLoaded(true);
+const Icon = styled.a`
+  color: #f05340;
+  margin-left: 10px;
+  font-size: 20px;
+  &:hover {
+    color: #ff5733;
+  }
+`;
 
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+const CallUsDropdown = styled.div`
+  position: relative;
+  display: inline-block;
+`;
 
-  const openCalendlyWidget = () => {
-    if (calendlyLoaded && window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/dvignesh-techclouderp/demo',
-      });
-    } else {
-      console.error('Calendly script not loaded.');
-    }
-  };
+const DropdownButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #f05340;
+`;
 
-  const handleNavLinkClick = (item) => {
-    if (item.isDemo) {
-      openCalendlyWidget();
-    }
-  };
+const DropdownContent = styled.div`
+  display: ${({ show }) => (show ? 'block' : 'none')};
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px;
+`;
 
-  const renderNavItems = () => {
-    return NAV_ITEMS.map((item, index) => {
-      if (item.type === 'link') {
-        return (
-          <StyledNavLink
-            key={index}
-            className={item.className || ''}
-            onClick={() => handleNavLinkClick(item)}
-          >
-            <Link to={item.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-              {item.title}
-            </Link>
-          </StyledNavLink>
-        );
-      } else if (item.type === 'dropdown') {
-        return (
-          <CustomNavDropdown key={index} title={item.title} id={item.id}>
-            {item.items.map((subItem, subIndex) => {
-              if (subItem.type === 'dropdown') {
-                return (
-                  <CustomNavDropdown key={subIndex} title={subItem.title} direction={subItem.direction}>
-                    {subItem.items.map((nestedItem, nestedIndex) => (
-                      <StyledNavLink key={nestedIndex} target="_blank">
-                        <Link to={nestedItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                          {nestedItem.title}
-                        </Link>
-                      </StyledNavLink>
-                    ))}
-                  </CustomNavDropdown>
-                );
-              } else {
-                return (
-                  <StyledNavLink key={subIndex} target="_blank">
-                    <Link to={subItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                      {subItem.title}
-                    </Link>
-                  </StyledNavLink>
-                );
-              }
-            })}
-          </CustomNavDropdown>
-        );
-      }
-      return null;
-    });
+const DropdownItem = styled.div`
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+`;
+
+// React Component
+const CustomNavbar = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  // Toggle dropdown on click
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
   };
 
   return (
-    <Navbar expand="md" bg="light" variant="light" className="main-navbar fw-semibold">
-      <Container fluid>
-        <Navbar.Brand as={Link} to="/">
-          <img src={releavant.logo} style={{ width: '200px', padding: '2%' }} alt="logo" />
+    <NavbarContainer expand="lg">
+      <Container>
+        <Navbar.Brand>
+          <NavLinkStyled to="/">
+            <img
+              src="/path-to-logo.png"
+              alt="TechCloud ERP"
+              style={{ width: '150px' }} // Adjust width as needed
+            />
+          </NavLinkStyled>
         </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <NavLinkStyled to="/">Home</NavLinkStyled>
+            <NavLinkStyled to="/about">About</NavLinkStyled>
+            <NavLinkStyled to="/industries">Industries</NavLinkStyled>
+            <NavLinkStyled to="/products">Products</NavLinkStyled>
+            <NavLinkStyled to="/services">Services</NavLinkStyled>
+            <NavLinkStyled to="/bi">BI</NavLinkStyled>
+            <NavLinkStyled to="/pricing">Pricing</NavLinkStyled>
+            <NavLinkStyled to="/demo">Demo</NavLinkStyled>
+            <NavLinkStyled to="/contact">Contact Us</NavLinkStyled>
+          </Nav>
 
-        <Navbar.Toggle aria-controls="navbarSupportedContent" />
-        <Navbar.Collapse id="navbarSupportedContent">
-          <Nav className="mx-auto">{renderNavItems()}</Nav>
+          {/* Icons and Dropdown Section */}
+          <IconContainer>
+            {/* Call Us Dropdown */}
+            <CallUsDropdown>
+              <DropdownButton onClick={toggleDropdown}>
+                <FiPhone />
+              </DropdownButton>
+              <DropdownContent show={showDropdown}>
+                <DropdownItem>
+                  <img
+                    src="/path-to-usa-flag.png"
+                    alt="USA"
+                    style={{ width: '20px', marginRight: '10px' }}
+                  />
+                  +1 (312) 766-3390
+                </DropdownItem>
+                <DropdownItem>
+                  <img
+                    src="/path-to-india-flag.png"
+                    alt="India"
+                    style={{ width: '20px', marginRight: '10px' }}
+                  />
+                  +91 891-943-9603
+                </DropdownItem>
+              </DropdownContent>
+            </CallUsDropdown>
+
+            {/* Social Media Icons */}
+            <Icon href="https://www.facebook.com" target="_blank">
+              <FaFacebookF />
+            </Icon>
+            <Icon href="https://www.linkedin.com" target="_blank">
+              <FaLinkedinIn />
+            </Icon>
+            <Icon href="https://www.instagram.com" target="_blank">
+              <FaInstagram />
+            </Icon>
+            <Icon href="https://www.youtube.com" target="_blank">
+              <FaYoutube />
+            </Icon>
+            <Icon href="https://www.twitter.com" target="_blank">
+              <FaTwitter />
+            </Icon>
+          </IconContainer>
         </Navbar.Collapse>
-
-        <div className="d-none d-md-block">
-          <a
-            href="tel:+8919439603"
-            className="btn cta-02 m-2"
-            style={{ border: '2px solid #04a8ce', borderRadius: '8px' }}
-          >
-            <img
-              src={releavant.us_flag_img}
-              id="imagep"
-              style={{ width: '25px', height: '25px', marginRight: '10px', borderRadius: '50%' }}
-              alt=""
-            />
-            +1 (312) 766-3390
-          </a>
-
-          <a
-            href="tel:+9198929439603"
-            className="btn cta-01 m-2"
-            style={{ border: '2px solid #04a8ce', borderRadius: '8px' }}
-          >
-            <img
-              src={releavant.indian_flag_img}
-              id="imagep"
-              style={{ width: '25px', height: '25px', marginRight: '10px', borderRadius: '50%' }}
-              alt=""
-            />
-            +91 8919439603
-          </a>
-        </div>
       </Container>
-    </Navbar>
+    </NavbarContainer>
   );
 };
 
-export default MainNavbar;
+export default CustomNavbar;
