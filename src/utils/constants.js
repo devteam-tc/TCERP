@@ -142,8 +142,7 @@ export const NAV_ITEMS = [
       link: '#',
       type: 'link',
       isDemo: true, // Custom flag to open Calendly widget
-    },
-    
+    } 
   ];
   
 

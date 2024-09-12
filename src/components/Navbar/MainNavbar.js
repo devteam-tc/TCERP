@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Navbar, Nav, Container, Dropdown } from 'react-bootstrap';
-import { BsTelephone } from 'react-icons/bs'; // Phone icon
+import { Navbar, Nav, Container, Dropdown, NavDropdown } from 'react-bootstrap';
+import { IoCall } from "react-icons/io5";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube, FaTwitter } from 'react-icons/fa'; // Social media icons
 import styled from 'styled-components';
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { NAV_ITEMS, releavant } from '../../utils/constants';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { DropdownSubmenu, NavDropdownMenu } from 'react-bootstrap-submenu';
 
 // Styled Components for Navbar
 const StyledNavLink = styled(Nav.Link)`
@@ -20,13 +21,26 @@ const StyledNavLink = styled(Nav.Link)`
 const SocialIcon = styled.a`
   color: #000;
   margin: 0 8px;
-  font-size: 20px;
+  font-size: 22px;
   &:hover {
-    color: #e93906;
+    ${({ href }) => {
+      if (href.includes('instagram')) return 'color: #E1306C;';
+      if (href.includes('facebook')) return 'color: #1877F2;';
+      if (href.includes('linkedin')) return 'color: #0077B5;';
+      if (href.includes('pinterest')) return 'color: #E60023;';
+      if (href.includes('youtube')) return 'color: #FF0000;';
+      if (href.includes('twitter')) return 'color: #1DA1F2;';
+      return 'color: #000;';
+    }}
   }
   @media (max-width: 1200px) {
     display: none;
   }
+`;
+
+const DropdownIcon = styled.div`
+  display: inline-block;
+  margin-left: 5px;
 `;
 
 // Styled Custom Dropdown Component
@@ -43,6 +57,7 @@ const CustomDropdown = styled(Dropdown)`
     padding: 8px;
     border-radius: 4px;
     transition: color 0.3s;
+    background-color: transparent; /* Remove background color */
 
     &:hover {
       color: #e93906;
@@ -76,18 +91,20 @@ const CustomDropdown = styled(Dropdown)`
   }
 `;
 
-const DropdownIcon = styled.div`
-  display: inline-block;
-  margin-left: 5px;
+const StyledDropdownItem = styled(Dropdown.Item)`
+  position: relative;
 `;
 
-const DropdownItem = styled(Dropdown.Item)`
-  padding: 8px 16px;
-  &:hover {
-    background-color: #f8f9fa;
+const PhoneDropdownToggle = styled(Dropdown.Toggle)`
+  border: none !important;
+  background-color: transparent !important; /* Remove background */
+  color: #05a7cc;
+  padding: 8px !important;
+
+  &.show {
+    color: #05a7cc !important;
   }
 `;
-
 // Custom Dropdown for Navbar with arrow icons
 const CustomNavDropdown = ({ title, children }) => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -104,19 +121,14 @@ const CustomNavDropdown = ({ title, children }) => {
           {showDropdown ? <IoIosArrowUp /> : <IoIosArrowDown />}
         </DropdownIcon>
       </Dropdown.Toggle>
-      <Dropdown.Menu>
-        {children}
-      </Dropdown.Menu>
+      <Dropdown.Menu>{children}</Dropdown.Menu>
     </CustomDropdown>
   );
 };
 
-CustomNavDropdown.Item = DropdownItem; // Allows usage of CustomNavDropdown.Item
-
 // MainNavbar Component
 const MainNavbar = () => {
   const [calendlyLoaded, setCalendlyLoaded] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -148,10 +160,6 @@ const MainNavbar = () => {
     }
   };
 
-  const togglePhoneDropdown = () => {
-    setShowDropdown(!showDropdown);
-  };
-
   const renderNavItems = () => {
     return NAV_ITEMS.map((item, index) => {
       if (item.type === 'link') {
@@ -168,31 +176,40 @@ const MainNavbar = () => {
         );
       } else if (item.type === 'dropdown') {
         return (
-          <CustomNavDropdown key={index} title={item.title}>
-            {item.items.map((subItem, subIndex) => {
-              if (subItem.type === 'dropdown') {
-                return (
-                  <CustomNavDropdown key={subIndex} title={subItem.title}>
-                    {subItem.items.map((nestedItem, nestedIndex) => (
-                      <StyledNavLink key={nestedIndex}>
-                        <Link to={nestedItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                          {nestedItem.title}
-                        </Link>
-                      </StyledNavLink>
-                    ))}
-                  </CustomNavDropdown>
-                );
-              } else {
-                return (
-                  <StyledNavLink key={subIndex}>
-                    <Link to={subItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                      {subItem.title}
-                    </Link>
-                  </StyledNavLink>
-                );
-              }
-            })}
-          </CustomNavDropdown>
+          // <CustomNavDropdown key={index} title={item.title}>
+          //   {item.items.map((subItem, subIndex) => {
+          //     if (subItem.type === 'dropdown') {
+          //       return (
+          //         <CustomNavDropdown key={subIndex} title={subItem.title} alignRight>
+          //           {subItem.items.map((subSubItem, subSubIndex) => (
+          //             <StyledDropdownItem key={subSubIndex}>
+          //               <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+          //                 {subSubItem.title}
+          //               </Link>
+          //             </StyledDropdownItem>
+          //           ))}
+          //         </CustomNavDropdown>
+          //       );
+          //     } else {
+          //       return (
+          //         <StyledDropdownItem key={subIndex}>
+          //           <Link to={subItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+          //             {subItem.title}
+          //           </Link>
+          //         </StyledDropdownItem>
+          //       );
+          //     }
+          //   })}
+          // </CustomNavDropdown>
+          <NavDropdownMenu title="Dropdown 1" id="collasible-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <DropdownSubmenu href="#action/3.7" title="Text to show">
+                <NavDropdown.Item href="#action/8.1">Sub 1</NavDropdown.Item>
+                <DropdownSubmenu href="#action/3.7" title="Text to show">
+                  <NavDropdown.Item href="#action/9.1">Sub 2</NavDropdown.Item>
+                </DropdownSubmenu>
+              </DropdownSubmenu>
+            </NavDropdownMenu>
         );
       }
       return null;
@@ -212,13 +229,10 @@ const MainNavbar = () => {
             {renderNavItems()}
 
             {/* Phone Dropdown Icon */}
-            <CustomDropdown show={showDropdown} onToggle={togglePhoneDropdown} className="contact-dropdown">
-              <Dropdown.Toggle
-                className="btn cta-02 ms-3"
-                style={{ border: '2px solid #04a8ce', borderRadius: '8px', backgroundColor: '#05A7CC' }}
-              >
-                <BsTelephone size={20}  />
-              </Dropdown.Toggle>
+            <CustomDropdown className="contact-dropdown">
+              <PhoneDropdownToggle className="btn cta-02 ms-3">
+                <IoCall size={28} />
+              </PhoneDropdownToggle>
 
               <Dropdown.Menu>
                 <Dropdown.Item href="tel:+13127663390">
@@ -243,12 +257,24 @@ const MainNavbar = () => {
 
           {/* Social Media Icons on the Right */}
           <div className="d-flex align-items-center ms-auto">
-            <SocialIcon href="https://www.instagram.com" target="_blank"><FaInstagram /></SocialIcon>
-            <SocialIcon href="https://www.facebook.com" target="_blank"><FaFacebookF /></SocialIcon>
-            <SocialIcon href="https://www.linkedin.com" target="_blank"><FaLinkedinIn /></SocialIcon>
-            <SocialIcon href="https://www.pinterest.com" target="_blank"><FaPinterest /></SocialIcon>
-            <SocialIcon href="https://www.youtube.com" target="_blank"><FaYoutube /></SocialIcon>
-            <SocialIcon href="https://twitter.com" target="_blank"><FaTwitter /></SocialIcon>
+            <SocialIcon href="https://www.instagram.com" target="_blank">
+              <FaInstagram />
+            </SocialIcon>
+            <SocialIcon href="https://www.facebook.com" target="_blank">
+              <FaFacebookF />
+            </SocialIcon>
+            <SocialIcon href="https://www.linkedin.com" target="_blank">
+              <FaLinkedinIn />
+            </SocialIcon>
+            <SocialIcon href="https://www.pinterest.com" target="_blank">
+              <FaPinterest />
+            </SocialIcon>
+            <SocialIcon href="https://www.youtube.com" target="_blank">
+              <FaYoutube />
+            </SocialIcon>
+            <SocialIcon href="https://twitter.com" target="_blank">
+              <FaTwitter />
+            </SocialIcon>
           </div>
         </Navbar.Collapse>
       </Container>
