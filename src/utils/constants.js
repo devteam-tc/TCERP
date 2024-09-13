@@ -5,8 +5,6 @@ export const releavant = {
     indian_flag_img:require("../assets/us-flag.jpg"),
     testimonials_bg: require('../assets/Testimonials/testimonials_bg.png'),
     Quotation_mark: require('../assets/Home/Quotation_mark.png'),
-    testimonials_bg: require('../assets/Testimonials/testimonials_bg.png'),
-    Quotation_mark: require('../assets/Home/Quotation_mark.png'),
     ourMission: {
       images: {
         mainImage: require("../assets/Home/ourmission_img_1.png"),  // Replace with the actual path or import
