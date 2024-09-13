@@ -14,6 +14,10 @@ const SliderWrapper = styled.div`
     display: flex;
     justify-content: center;
   }
+
+  .slick-dots {
+    bottom: -30px; // Adjust dots position if needed
+  }
 `;
 
 const Card = styled.div`
@@ -25,7 +29,8 @@ const Card = styled.div`
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  margin: 0 15px;  // Adding margin to create space between cards
+  margin: 0 15px; // Adding margin to create space between cards
+
   &:hover {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
   }
@@ -56,6 +61,8 @@ const ImportantModuleSection = () => {
     speed: 500,
     slidesToShow: 4, // Show 4 slides at a time
     slidesToScroll: 1,
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 3000, // Time in milliseconds between slides
     responsive: [
       {
         breakpoint: 1024, // Tablet view
@@ -71,6 +78,7 @@ const ImportantModuleSection = () => {
       },
     ],
   };
+  
 
   return (
     <Container>

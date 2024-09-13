@@ -167,4 +167,3 @@ const Testimonials = ({ testimonialsData}) => {
 };
 
 export default Testimonials;
-
