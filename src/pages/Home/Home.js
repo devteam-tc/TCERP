@@ -17,6 +17,7 @@ const Home = () => {
    <OurMissionSection />
    <CardSection />
    <ImportantModuleSection />
+   <Testimonials testimonialsData={testimonialsData.car_testimonials}/>
    <RecordSection />
    <PricingSection />
    <CallToActionSection />

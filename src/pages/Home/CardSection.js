@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
+import { cardData } from '../../utils/constants';
+
 export const CardContainer = styled.div`
   border: 1px solid #e1e1e1;
   border-radius: 10px;
@@ -31,53 +33,40 @@ export const HighlightedText = styled.p`
   margin-top: 20px;
   line-height: 1.5;
 `;
+
+const StyledButton = styled(Button)`
+  background-color: #ff4500;
+    border: none;
+    margin: 20px auto;
+    display: block;
+`;
+
 const CardSection = () => {
+  const [visiblePlans, setVisiblePlans] = useState(3);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const toggleCards = () => {
+    setVisiblePlans(isExpanded ? 3 : cardData.normal.length + cardData['Show More'].length);
+    setIsExpanded(!isExpanded);
+  };
+  const morecardsToShow = [...cardData.normal, ...cardData['Show More']].slice(0, visiblePlans);
+
+
   return (
     <Container>
       <Row>
-        <Col md={4}>
-          <CardContainer>
-            <CardTitle>Solutions For All</CardTitle>
-            <CardText>
-              Whether you have 2 or 2000 employees, Tech Cloud ERP has a comprehensive portfolio leading cloud-based ERP software solutions and tools to fit your needs. We also provide dedicated support teams that are at your disposal 24/7.
-            </CardText>
-            <HighlightedText>
-              Integrated CRM and ERP System <br />
-              E-Commerce Platform <br />
-              Workflow Automation
-            </HighlightedText>
-          </CardContainer>
-        </Col>
-
-        <Col md={4}>
-          <CardContainer>
-            <CardTitle>Flexibility</CardTitle>
-            <CardText>
-              Tech Cloud ERP is dedicated to creating easy-to-use, adaptable cloud ERP software applications. Whether you want customized ERP software processes, use the public or private cloud or pay only for what you need.
-            </CardText>
-            <HighlightedText>
-              Modular Architecture <br />
-              API-Based Integration <br />
-              Continuous Improvement
-            </HighlightedText>
-          </CardContainer>
-        </Col>
-
-        <Col md={4}>
-          <CardContainer>
-            <CardTitle>Security</CardTitle>
-            <CardText>
-              Tech Cloud ERP platform is built on the most advanced infrastructures in the world. We have teams of experts dedicated to protecting your data, warding off hackers and staying ahead of threats to keep your business and its data safe.
-            </CardText>
-            <HighlightedText>
-              Risk Assessment <br />
-              Data Breach <br />
-              Encryption
-            </HighlightedText>
-          </CardContainer>
-        </Col>
-      </Row>
-    </Container>
+        {morecardsToShow.map((card, index) => (
+          <Col md={4} key={index}>
+            <CardContainer>
+              <CardTitle>{card.title}</CardTitle>
+              <CardText>{card.text}</CardText>
+              <HighlightedText>
+                {card.highlights.map((highlight, i) => (
+                  <span key={i}>{highlight} <br /></span>
+                ))}
+              </HighlightedText>
+            </CardContainer>
+          </Col>
+        ))}
   );
 };
 
