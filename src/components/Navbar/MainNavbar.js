@@ -5,14 +5,12 @@ import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube, FaTwitt
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // Hamburger and Close icons
 import styled from 'styled-components';
 import { NAV_ITEMS, releavant } from '../../utils/constants';
-import { NAV_ITEMS, releavant } from '../../utils/constants';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-bootstrap-submenu/dist/index.css";
 import { DropdownSubmenu } from 'react-bootstrap-submenu';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-bootstrap-submenu/dist/index.css";
-import { DropdownSubmenu } from 'react-bootstrap-submenu';
 
 // Styled Components for Navbar
 // Styled Components for Navbar
@@ -185,14 +183,10 @@ const MainNavbar = () => {
             <Link to={item.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
               {item.title}
             </Link>
-            <Link to={item.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-              {item.title}
-            </Link>
           </StyledNavLink>
         );
       } else if (item.type === 'dropdown') {
         return (
-          <NavDropdown key={index} title={item.title}>
           <NavDropdown key={index} title={item.title}>
             {item.items.map((subItem, subIndex) => {
               if (subItem.type === 'dropdown') {
@@ -206,7 +200,6 @@ const MainNavbar = () => {
                       </StyledDropdownItem>
                     ))}
                   </DropdownSubmenu>
-                  </DropdownSubmenu>
                 );
               } else {
                 return (
@@ -218,7 +211,6 @@ const MainNavbar = () => {
                 );
               }
             })}
-          </NavDropdown>
           </NavDropdown>
         );
       }
@@ -265,10 +257,10 @@ const MainNavbar = () => {
                   +91 8929439603
                 </Dropdown.Item>
               </Dropdown.Menu>
-            </CustomDropdown>
-
-            {/* Social Media Icons */}
-            <div className="d-flex flex-row">
+            </CustomDropdown> 
+          </MobileNav>
+          {/* Social Media Icons at right side */}
+          <div className="d-flex align-items-center ms-auto">
               <SocialIcon href="https://www.instagram.com" target="_blank">
                 <FaInstagram />
               </SocialIcon>
@@ -288,12 +280,14 @@ const MainNavbar = () => {
                 <FaTwitter />
               </SocialIcon>
             </div>
-          </MobileNav>
         </MobileNavbarCollapse>
+
       </Container>
     </Navbar>
   );
 };
 
 export default MainNavbar;
+
+
 
