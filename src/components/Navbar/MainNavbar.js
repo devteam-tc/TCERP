@@ -1,157 +1,272 @@
-import React, { useState } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Navbar, Nav, Container, Dropdown, NavDropdown } from 'react-bootstrap';
+import { IoCall } from "react-icons/io5";
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube, FaTwitter } from 'react-icons/fa'; // Social media icons
 import styled from 'styled-components';
-import { FiPhone } from 'react-icons/fi';
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaYoutube, FaTwitter } from 'react-icons/fa';
+import { NAV_ITEMS, releavant } from '../../utils/constants';
+import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-bootstrap-submenu/dist/index.css";
+import { DropdownSubmenu } from 'react-bootstrap-submenu';
 
-// Styled Components
-const NavbarContainer = styled(Navbar)`
-  background-color: #fff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+// Styled Components for Navbar
+const StyledNavLink = styled(Nav.Link)`
+  text-decoration: none !important;
+  color: black !important;
+  &:hover {
+    color: #e93906 !important;
+  }
 `;
 
-const NavLinkStyled = styled(Link)`
+const SocialIcon = styled.a`
   color: #000;
-  text-decoration: none;
-  margin-right: 20px;
+  margin: 0 8px;
+  font-size: 22px;
   &:hover {
-    color: #f05340;
+    ${({ href }) => {
+      if (href.includes('instagram')) return 'color: #E1306C;';
+      if (href.includes('facebook')) return 'color: #1877F2;';
+      if (href.includes('linkedin')) return 'color: #0077B5;';
+      if (href.includes('pinterest')) return 'color: #E60023;';
+      if (href.includes('youtube')) return 'color: #FF0000;';
+      if (href.includes('twitter')) return 'color: #1DA1F2;';
+      return 'color: #000;';
+    }}
+  }
+  @media (max-width: 992px) {
+    font-size: 20px;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 
-const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-`;
-
-const Icon = styled.a`
-  color: #f05340;
-  margin-left: 10px;
-  font-size: 20px;
-  &:hover {
-    color: #ff5733;
-  }
-`;
-
-const CallUsDropdown = styled.div`
+const CustomDropdown = styled(Dropdown)`
   position: relative;
   display: inline-block;
-`;
-
-const DropdownButton = styled.button`
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: #f05340;
-`;
-
-const DropdownContent = styled.div`
-  display: ${({ show }) => (show ? 'block' : 'none')};
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  padding: 10px;
-`;
-
-const DropdownItem = styled.div`
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
   cursor: pointer;
 
-  &:hover {
-    background-color: #f1f1f1;
+  .dropdown-toggle::after {
+    display: none; /* Hide default dropdown icon */
+  }
+
+  .dropdown-toggle {
+    padding: 8px;
+    transition: color 0.3s;
+    background-color: transparent; /* Remove background color */
+
+    &:hover {
+      color: #e93906;
+    }
+  }
+
+  .dropdown-menu {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  &:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.contact-dropdown {
+    @media (max-width: 1200px) {
+      display: none;
+    }
   }
 `;
 
-// React Component
-const CustomNavbar = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+const StyledDropdownItem = styled(Dropdown.Item)`
+  position: relative;
+  width: -webkit-fill-available;
+  &:hover {
+    color: #e93906 !important;
+  }   
+`;
 
-  // Toggle dropdown on click
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+const PhoneDropdownToggle = styled(Dropdown.Toggle)`
+  border: none !important;
+  background-color: transparent !important; /* Remove background */
+  color: #05a7cc;
+  padding: 8px !important;
+
+  &.show {
+    color: #05a7cc !important;
+  }
+`;
+
+// Adjust Navbar Styling for Mobile View
+const MobileNav = styled(Nav)`
+  @media (max-width: 992px) {
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+    align-items: flex-start !important; /* Align nav links to the left */
+  }
+`;
+
+const MobileNavbarCollapse = styled(Navbar.Collapse)`
+  @media (max-width: 992px) {
+    max-height: 300px; /* Fixed height for mobile menu */
+    overflow-y: auto; /* Scrollable content */
+    margin: 5%;
+  }
+`;
+
+// Adjust Navbar to be responsive on different screen sizes
+const MainNavbar = () => {
+  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.type = 'text/javascript';
+    script.async = true;
+
+    script.onload = () => setCalendlyLoaded(true);
+
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  const openCalendlyWidget = () => {
+    if (calendlyLoaded && window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/dvignesh-techclouderp/demo',
+      });
+    } else {
+      console.error('Calendly script not loaded.');
+    }
+  };
+
+  const handleNavLinkClick = (item) => {
+    if (item.isDemo) {
+      openCalendlyWidget();
+    }
+  };
+
+  const renderNavItems = () => {
+    return NAV_ITEMS.map((item, index) => {
+      if (item.type === 'link') {
+        return (
+          <StyledNavLink
+            key={index}
+            className={item.className || ''}
+            onClick={() => handleNavLinkClick(item)}
+          >
+            <Link to={item.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+              {item.title}
+            </Link>
+          </StyledNavLink>
+        );
+      } else if (item.type === 'dropdown') {
+        return (
+          <NavDropdown key={index} title={item.title}>
+            {item.items.map((subItem, subIndex) => {
+              if (subItem.type === 'dropdown') {
+                return (
+                  <DropdownSubmenu key={subIndex} title={subItem.title} alignRight>
+                    {subItem.items.map((subSubItem, subSubIndex) => (
+                      <StyledDropdownItem key={subSubIndex}>
+                        <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                          {subSubItem.title}
+                        </Link>
+                      </StyledDropdownItem>
+                    ))}
+                  </DropdownSubmenu>
+                );
+              } else {
+                return (
+                  <StyledDropdownItem key={subIndex}>
+                    <Link to={subItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                      {subItem.title}
+                    </Link>
+                  </StyledDropdownItem>
+                );
+              }
+            })}
+          </NavDropdown>
+        );
+      }
+      return null;
+    });
   };
 
   return (
-    <NavbarContainer expand="lg">
+    <Navbar expand="lg" bg="light" variant="light" className="main-navbar fw-semibold">
       <Container>
-        <Navbar.Brand>
-          <NavLinkStyled to="/">
-            <img
-              src="/path-to-logo.png"
-              alt="TechCloud ERP"
-              style={{ width: '150px' }} // Adjust width as needed
-            />
-          </NavLinkStyled>
+        <Navbar.Brand as={Link} to="/">
+          <img src={releavant.logo} style={{ width: '200px' }} alt="logo" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <NavLinkStyled to="/">Home</NavLinkStyled>
-            <NavLinkStyled to="/about">About</NavLinkStyled>
-            <NavLinkStyled to="/industries">Industries</NavLinkStyled>
-            <NavLinkStyled to="/products">Products</NavLinkStyled>
-            <NavLinkStyled to="/services">Services</NavLinkStyled>
-            <NavLinkStyled to="/bi">BI</NavLinkStyled>
-            <NavLinkStyled to="/pricing">Pricing</NavLinkStyled>
-            <NavLinkStyled to="/demo">Demo</NavLinkStyled>
-            <NavLinkStyled to="/contact">Contact Us</NavLinkStyled>
-          </Nav>
 
-          {/* Icons and Dropdown Section */}
-          <IconContainer>
-            {/* Call Us Dropdown */}
-            <CallUsDropdown>
-              <DropdownButton onClick={toggleDropdown}>
-                <FiPhone />
-              </DropdownButton>
-              <DropdownContent show={showDropdown}>
-                <DropdownItem>
+        <Navbar.Toggle aria-controls="navbarSupportedContent" />
+        <MobileNavbarCollapse id="navbarSupportedContent">
+          <MobileNav className="mx-auto d-flex align-items-center">
+            {renderNavItems()}
+
+            {/* Phone Dropdown Icon */}
+            <CustomDropdown className="contact-dropdown">
+              <PhoneDropdownToggle className="btn cta-02">
+                <IoCall size={28} />
+              </PhoneDropdownToggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="tel:+13127663390">
                   <img
-                    src="/path-to-usa-flag.png"
-                    alt="USA"
-                    style={{ width: '20px', marginRight: '10px' }}
+                    src={releavant.us_flag_img}
+                    style={{ width: '25px', height: '25px', marginRight: '10px', borderRadius: '50%' }}
+                    alt="US flag"
                   />
                   +1 (312) 766-3390
-                </DropdownItem>
-                <DropdownItem>
+                </Dropdown.Item>
+                <Dropdown.Item href="tel:+9198929439603">
                   <img
-                    src="/path-to-india-flag.png"
-                    alt="India"
-                    style={{ width: '20px', marginRight: '10px' }}
+                    src={releavant.indian_flag_img}
+                    style={{ width: '25px', height: '25px', marginRight: '10px', borderRadius: '50%' }}
+                    alt="Indian flag"
                   />
-                  +91 891-943-9603
-                </DropdownItem>
-              </DropdownContent>
-            </CallUsDropdown>
+                  +91 8929439603
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </CustomDropdown>
 
             {/* Social Media Icons */}
-            <Icon href="https://www.facebook.com" target="_blank">
-              <FaFacebookF />
-            </Icon>
-            <Icon href="https://www.linkedin.com" target="_blank">
-              <FaLinkedinIn />
-            </Icon>
-            <Icon href="https://www.instagram.com" target="_blank">
-              <FaInstagram />
-            </Icon>
-            <Icon href="https://www.youtube.com" target="_blank">
-              <FaYoutube />
-            </Icon>
-            <Icon href="https://www.twitter.com" target="_blank">
-              <FaTwitter />
-            </Icon>
-          </IconContainer>
-        </Navbar.Collapse>
+            <div className="d-flex align-items-center ms-auto">
+              <SocialIcon href="https://www.instagram.com" target="_blank">
+                <FaInstagram />
+              </SocialIcon>
+              <SocialIcon href="https://www.facebook.com" target="_blank">
+                <FaFacebookF />
+              </SocialIcon>
+              <SocialIcon href="https://www.linkedin.com" target="_blank">
+                <FaLinkedinIn />
+              </SocialIcon>
+              <SocialIcon href="https://www.pinterest.com" target="_blank">
+                <FaPinterest />
+              </SocialIcon>
+              <SocialIcon href="https://www.youtube.com" target="_blank">
+                <FaYoutube />
+              </SocialIcon>
+              <SocialIcon href="https://www.twitter.com" target="_blank">
+                <FaTwitter />
+              </SocialIcon>
+            </div>
+          </MobileNav>
+        </MobileNavbarCollapse>
       </Container>
-    </NavbarContainer>
+    </Navbar>
   );
 };
 
-export default CustomNavbar;
+export default MainNavbar;

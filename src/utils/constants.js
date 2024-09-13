@@ -233,3 +233,33 @@ export const partnerData = [
   { link: '/point-of-sale', imgSrc: require("../assets/partner/POS.png"), alt: 'POS' },
   { link: '/customer-relationship-management', imgSrc: require("../assets/partner/CRMD.png"), alt: 'CRM' },
 ];
+export const cardsData = [
+  {
+    id: 1,
+    image: 'https://via.placeholder.com/300x180',
+    title: 'CRM',
+    description:
+      'CRM stands for Customer Relationship Management. It\'s a strategy businesses use to manage interactions with customers.',
+  },
+  {
+    id: 2,
+    image: 'https://via.placeholder.com/300x180',
+    title: 'Export and Import',
+    description:
+      'Streamline global trade with our Export and Import module. Manage logistics, documentation, and more.',
+  },
+  {
+    id: 3,
+    image: 'https://via.placeholder.com/300x180',
+    title: 'Sales and Marketing',
+    description:
+      'Sales & Marketing Module handles all the sales activities of domestic and international operations.',
+  },
+  {
+    id: 4,
+    image: 'https://via.placeholder.com/300x180',
+    title: 'Job Work',
+    description:
+      'Easily outsource specialized tasks with our Job Work module, optimizing production and reducing workload.',
+  },
+];
