@@ -3,11 +3,11 @@ import { Navbar, Nav, Container, Dropdown, NavDropdown } from 'react-bootstrap';
 import { IoCall } from "react-icons/io5";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube, FaTwitter } from 'react-icons/fa'; // Social media icons
 import styled from 'styled-components';
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { NAV_ITEMS, releavant } from '../../utils/constants';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { DropdownSubmenu, NavDropdownMenu } from 'react-bootstrap-submenu';
+import "react-bootstrap-submenu/dist/index.css";
+import { DropdownSubmenu } from 'react-bootstrap-submenu';
 
 // Styled Components for Navbar
 const StyledNavLink = styled(Nav.Link)`
@@ -38,12 +38,6 @@ const SocialIcon = styled.a`
   }
 `;
 
-const DropdownIcon = styled.div`
-  display: inline-block;
-  margin-left: 5px;
-`;
-
-// Styled Custom Dropdown Component
 const CustomDropdown = styled(Dropdown)`
   position: relative;
   display: inline-block;
@@ -55,7 +49,6 @@ const CustomDropdown = styled(Dropdown)`
 
   .dropdown-toggle {
     padding: 8px;
-    border-radius: 4px;
     transition: color 0.3s;
     background-color: transparent; /* Remove background color */
 
@@ -66,8 +59,6 @@ const CustomDropdown = styled(Dropdown)`
 
   .dropdown-menu {
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 4px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 0;
     position: absolute;
@@ -93,6 +84,10 @@ const CustomDropdown = styled(Dropdown)`
 
 const StyledDropdownItem = styled(Dropdown.Item)`
   position: relative;
+  width: -webkit-fill-available;
+  &:hover {
+    color: #e93906 !important;
+  }   
 `;
 
 const PhoneDropdownToggle = styled(Dropdown.Toggle)`
@@ -105,28 +100,27 @@ const PhoneDropdownToggle = styled(Dropdown.Toggle)`
     color: #05a7cc !important;
   }
 `;
-// Custom Dropdown for Navbar with arrow icons
-const CustomNavDropdown = ({ title, children }) => {
-  const [showDropdown, setShowDropdown] = useState(false);
 
-  return (
-    <CustomDropdown
-      show={showDropdown}
-      onMouseEnter={() => setShowDropdown(true)}
-      onMouseLeave={() => setShowDropdown(false)}
-    >
-      <Dropdown.Toggle as="div">
-        {title}
-        <DropdownIcon>
-          {showDropdown ? <IoIosArrowUp /> : <IoIosArrowDown />}
-        </DropdownIcon>
-      </Dropdown.Toggle>
-      <Dropdown.Menu>{children}</Dropdown.Menu>
-    </CustomDropdown>
-  );
-};
+// Adjust Navbar Styling for Mobile View
+const MobileNav = styled(Nav)`
+  @media (max-width: 992px) {
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+    align-items: flex-start !important; /* Align nav links to the left */
+  }
+    
+`;
 
-// MainNavbar Component
+const MobileNavbarCollapse = styled(Navbar.Collapse)`
+  @media (max-width: 992px) {
+    max-height: 300px; /* Fixed height for mobile menu */
+    overflow-y: auto; /* Scrollable content */
+    margin: 5%;
+  }
+`;
+
+
 const MainNavbar = () => {
   const [calendlyLoaded, setCalendlyLoaded] = useState(false);
 
@@ -176,40 +170,31 @@ const MainNavbar = () => {
         );
       } else if (item.type === 'dropdown') {
         return (
-          // <CustomNavDropdown key={index} title={item.title}>
-          //   {item.items.map((subItem, subIndex) => {
-          //     if (subItem.type === 'dropdown') {
-          //       return (
-          //         <CustomNavDropdown key={subIndex} title={subItem.title} alignRight>
-          //           {subItem.items.map((subSubItem, subSubIndex) => (
-          //             <StyledDropdownItem key={subSubIndex}>
-          //               <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-          //                 {subSubItem.title}
-          //               </Link>
-          //             </StyledDropdownItem>
-          //           ))}
-          //         </CustomNavDropdown>
-          //       );
-          //     } else {
-          //       return (
-          //         <StyledDropdownItem key={subIndex}>
-          //           <Link to={subItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-          //             {subItem.title}
-          //           </Link>
-          //         </StyledDropdownItem>
-          //       );
-          //     }
-          //   })}
-          // </CustomNavDropdown>
-          <NavDropdownMenu title="Dropdown 1" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <DropdownSubmenu href="#action/3.7" title="Text to show">
-                <NavDropdown.Item href="#action/8.1">Sub 1</NavDropdown.Item>
-                <DropdownSubmenu href="#action/3.7" title="Text to show">
-                  <NavDropdown.Item href="#action/9.1">Sub 2</NavDropdown.Item>
-                </DropdownSubmenu>
-              </DropdownSubmenu>
-            </NavDropdownMenu>
+          <NavDropdown key={index} title={item.title}>
+            {item.items.map((subItem, subIndex) => {
+              if (subItem.type === 'dropdown') {
+                return (
+                  <DropdownSubmenu key={subIndex} title={subItem.title} alignRight>
+                    {subItem.items.map((subSubItem, subSubIndex) => (
+                      <StyledDropdownItem key={subSubIndex}>
+                        <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                          {subSubItem.title}
+                        </Link>
+                      </StyledDropdownItem>
+                    ))}
+                  </DropdownSubmenu>
+                );
+              } else {
+                return (
+                  <StyledDropdownItem key={subIndex}>
+                    <Link to={subItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                      {subItem.title}
+                    </Link>
+                  </StyledDropdownItem>
+                );
+              }
+            })}
+          </NavDropdown>
         );
       }
       return null;
@@ -224,13 +209,13 @@ const MainNavbar = () => {
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="navbarSupportedContent" />
-        <Navbar.Collapse id="navbarSupportedContent">
-          <Nav className="mx-auto d-flex align-items-center">
+        <MobileNavbarCollapse id="navbarSupportedContent">
+          <MobileNav className="mx-auto d-flex align-items-center">
             {renderNavItems()}
 
             {/* Phone Dropdown Icon */}
             <CustomDropdown className="contact-dropdown">
-              <PhoneDropdownToggle className="btn cta-02 ms-3">
+              <PhoneDropdownToggle className="btn cta-02">
                 <IoCall size={28} />
               </PhoneDropdownToggle>
 
@@ -247,15 +232,13 @@ const MainNavbar = () => {
                   <img
                     src={releavant.indian_flag_img}
                     style={{ width: '25px', height: '25px', marginRight: '10px', borderRadius: '50%' }}
-                    alt="India flag"
+                    alt="Indian flag"
                   />
-                  +91 8919439603
+                  +91 8929439603
                 </Dropdown.Item>
               </Dropdown.Menu>
             </CustomDropdown>
-          </Nav>
-
-          {/* Social Media Icons on the Right */}
+            {/* Social Media Icons on the Right */}
           <div className="d-flex align-items-center ms-auto">
             <SocialIcon href="https://www.instagram.com" target="_blank">
               <FaInstagram />
@@ -272,14 +255,17 @@ const MainNavbar = () => {
             <SocialIcon href="https://www.youtube.com" target="_blank">
               <FaYoutube />
             </SocialIcon>
-            <SocialIcon href="https://twitter.com" target="_blank">
+            <SocialIcon href="https://www.twitter.com" target="_blank">
               <FaTwitter />
             </SocialIcon>
           </div>
-        </Navbar.Collapse>
+          </MobileNav>
+        </MobileNavbarCollapse>
       </Container>
     </Navbar>
   );
 };
 
 export default MainNavbar;
+
+
