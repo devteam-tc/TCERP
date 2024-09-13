@@ -134,22 +134,32 @@ const OurMissionSection = () => {
   const { images, content } = releavant.ourMission;
 
   return (
-    <ExperienceSection >
-      <Container >
-        <Row className="align-items-center">
-        <Col lg={5} className="mt-4">
-  <ExperienceImage>
-    <ExperienceImageStyled src={images.mainImage} alt="Experience" />
-    <div className="text">
-      <img src={images.experienceIcon} alt="Experience icon" />
-      <p><span>{content.experience.years}</span> {content.experience.text}</p>
-    </div>
-  </ExperienceImage>
-</Col>
-          <Col lg={7} className="mt-4">
+    <ExperienceSection data-aos="fade" data-aos-delay="100">
+      <Container data-aos="fade-up" data-aos-delay="100">
+        <Row className="align-items-center" data-aos="fade-up" data-aos-delay="100">
+          <Col lg={5} className="mt-4" data-aos="fade-up" data-aos-delay="100">
+            <ExperienceImage>
+              <img src={releavant.ourmission_img_1} alt="Experience" className='img-fluid'/>
+              <div className="text">
+                <img src={releavant.ourmission_img_2} alt="Experience icon" className='img-fluid'/>
+                <p><span>25+</span> Years of Experience</p>
+              </div>
+            </ExperienceImage>
+          </Col>
+          <Col lg={7} className="mt-4" data-aos="fade-up" data-aos-delay="100">
             <ExperienceContent>
-              <span>{content.companyName}</span>
-              <p>{content.description}</p>
+              <span>Tech Cloud ERP</span>
+              <p>
+                Tech Cloud ERP is a web-based solution for small and mid-sized businesses, acting as a
+                central hub for tracking and analyzing departmental activities. It offers real-time data and
+                integrated processes to accelerate decision-making and support growth, claiming to be
+                India's leading ERP software developer with a focus on reducing operational costs, especially for
+                manufacturing companies.
+              </p>
+              <p>
+                Praised for affordability and ease of implementation, Tech Cloud ERP provides advanced
+                features and customization options. Its user-friendly design enhances efficiency and productivity, making it a valuable investment for businesses aiming to improve their operations.
+              </p>
               <div className="experience-text">
                 <div>
                   <h3>{content.missionTitle}</h3>
