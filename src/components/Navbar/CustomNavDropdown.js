@@ -14,6 +14,7 @@ const CustomDropdown = styled(Dropdown)`
 
   .dropdown-toggle {
     padding: 8px;
+    padding: 8px;
     border-radius: 4px;
     transition: color 0.3s;
 
@@ -90,3 +91,7 @@ const CustomNavDropdown = ({ title, children, id }) => {
 CustomNavDropdown.Item = DropdownItem; // Allows usage of CustomNavDropdown.Item
 
 export default CustomNavDropdown;
+<<<<<<<<< Temporary merge branch 1
+=========
+
+>>>>>>>>> Temporary merge branch 2

@@ -9,7 +9,11 @@ export const CardContainer = styled.div`
   padding: 20px;
   background-color: #fdf6f4;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fdf6f4;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   text-align: left;
+  height: 100%;
+`;
   height: 100%;
 `;
 

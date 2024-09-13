@@ -9,7 +9,10 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-bootstrap-submenu/dist/index.css";
 import { DropdownSubmenu } from 'react-bootstrap-submenu';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-bootstrap-submenu/dist/index.css";
 
+// Styled Components for Navbar
 // Styled Components for Navbar
 const StyledNavLink = styled(Nav.Link)`
   text-decoration: none !important;
@@ -255,10 +258,10 @@ const MainNavbar = () => {
                   +91 8929439603
                 </Dropdown.Item>
               </Dropdown.Menu>
-            </CustomDropdown>
-
-            {/* Social Media Icons */}
-            <div className="d-flex flex-row">
+            </CustomDropdown> 
+          </MobileNav>
+          {/* Social Media Icons at right side */}
+          <div className="d-flex align-items-center ms-auto">
               <SocialIcon href="https://www.instagram.com" target="_blank">
                 <FaInstagram />
               </SocialIcon>
@@ -278,11 +281,14 @@ const MainNavbar = () => {
                 <FaTwitter />
               </SocialIcon>
             </div>
-          </MobileNav>
         </MobileNavbarCollapse>
+
       </Container>
     </Navbar>
   );
 };
 
 export default MainNavbar;
+
+
+
