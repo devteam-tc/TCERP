@@ -14,10 +14,12 @@ export const CardContainer = styled.div`
 `;
 
 export const CardTitle = styled.h3`
-  color: #ff4500; /* Orange color */
-  font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 20px;
+ color: #ff4500;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: left;
+    margin-bottom: 20px;
 `;
 
 export const CardText = styled.p`
@@ -40,6 +42,23 @@ const StyledButton = styled(Button)`
     margin: 20px auto;
     display: block;
 `;
+export const Title = styled.h2`
+font-size: 40px;
+font-weight: 600;
+color:#ef5226;
+line-height: 60px;
+  margin-bottom: 40px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+`;
 
 const CardSection = () => {
   const [visiblePlans, setVisiblePlans] = useState(3);
@@ -52,26 +71,30 @@ const CardSection = () => {
 
 
   return (
-    <Container>
-      <Row>
-        {morecardsToShow.map((card, index) => (
-          <Col md={4} key={index}>
-            <CardContainer>
-              <CardTitle>{card.title}</CardTitle>
-              <CardText>{card.text}</CardText>
-              <HighlightedText>
-                {card.highlights.map((highlight, i) => (
-                  <span key={i}>{highlight} <br /></span>
-                ))}
-              </HighlightedText>
-            </CardContainer>
-          </Col>
-        ))}
-      </Row>
-      <StyledButton onClick={toggleCards} className="fw-bold">
-        {isExpanded ? ' Show less' : 'Show more '}
-      </StyledButton>
-    </Container>
+   <div className='my-md-5'>
+     <Title className='text-center pt-4 pt-md-0'>Why Tech Cloud ERP ?</Title>
+
+<Container>
+  <Row>
+    {morecardsToShow.map((card, index) => (
+      <Col md={4} key={index} className='mb-3'>
+        <CardContainer>
+        <CardTitle>{card.title}</CardTitle>
+          <CardText>{card.text}</CardText>
+          <HighlightedText>
+            {card.highlights.map((highlight, i) => (
+              <span key={i}>{highlight} <br /></span>
+            ))}
+          </HighlightedText>
+        </CardContainer>
+      </Col>
+    ))}
+  </Row>
+  <StyledButton onClick={toggleCards} className="fw-bold">
+    {isExpanded ? ' Show less' : 'Show more '}
+  </StyledButton>
+</Container>
+   </div>
   );
 };
 
