@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, Container, Dropdown, NavDropdown } from 'react-bootstrap';
 import { IoCall } from "react-icons/io5";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube, FaTwitter } from 'react-icons/fa'; // Social media icons
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // Hamburger and Close icons
 import styled from 'styled-components';
 import { NAV_ITEMS, releavant } from '../../utils/constants';
 import { Link } from 'react-router-dom';
@@ -51,6 +52,8 @@ const CustomDropdown = styled(Dropdown)`
     padding: 8px;
     transition: color 0.3s;
     background-color: transparent; /* Remove background color */
+    border: none !important; /* No border */
+    box-shadow: none !important; /* No shadow on click */
 
     &:hover {
       color: #e93906;
@@ -109,7 +112,6 @@ const MobileNav = styled(Nav)`
     flex-direction: column;
     align-items: flex-start !important; /* Align nav links to the left */
   }
-    
 `;
 
 const MobileNavbarCollapse = styled(Navbar.Collapse)`
@@ -120,9 +122,16 @@ const MobileNavbarCollapse = styled(Navbar.Collapse)`
   }
 `;
 
+const NavbarToggle = styled(Navbar.Toggle)`
+  border: none !important; /* Remove the border when clicked */
+  &:focus {
+    box-shadow: none !important; /* Remove the focus box-shadow */
+  }
+`;
 
 const MainNavbar = () => {
   const [calendlyLoaded, setCalendlyLoaded] = useState(false);
+  const [expanded, setExpanded] = useState(false); // State for tracking the Navbar toggle
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -152,6 +161,11 @@ const MainNavbar = () => {
     if (item.isDemo) {
       openCalendlyWidget();
     }
+    setExpanded(false); // Close the navbar when a link is clicked
+  };
+
+  const handleDropdownItemClick = () => {
+    setExpanded(false); // Close the navbar when a dropdown item is clicked
   };
 
   const renderNavItems = () => {
@@ -176,7 +190,7 @@ const MainNavbar = () => {
                 return (
                   <DropdownSubmenu key={subIndex} title={subItem.title} alignRight>
                     {subItem.items.map((subSubItem, subSubIndex) => (
-                      <StyledDropdownItem key={subSubIndex}>
+                      <StyledDropdownItem key={subSubIndex} onClick={handleDropdownItemClick}>
                         <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
                           {subSubItem.title}
                         </Link>
@@ -186,7 +200,7 @@ const MainNavbar = () => {
                 );
               } else {
                 return (
-                  <StyledDropdownItem key={subIndex}>
+                  <StyledDropdownItem key={subIndex} onClick={handleDropdownItemClick}>
                     <Link to={subItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
                       {subItem.title}
                     </Link>
@@ -202,13 +216,16 @@ const MainNavbar = () => {
   };
 
   return (
-    <Navbar expand="lg" bg="light" variant="light" className="main-navbar fw-semibold">
+    <Navbar expand="lg" bg="light" variant="light" className="main-navbar fw-semibold" expanded={expanded}>
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img src={releavant.logo} style={{ width: '200px' }} alt="logo" />
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="navbarSupportedContent" />
+        <NavbarToggle aria-controls="navbarSupportedContent" onClick={() => setExpanded(!expanded)}>
+          {expanded ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
+        </NavbarToggle>
+
         <MobileNavbarCollapse id="navbarSupportedContent">
           <MobileNav className="mx-auto d-flex align-items-center">
             {renderNavItems()}
@@ -238,27 +255,28 @@ const MainNavbar = () => {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </CustomDropdown>
-            {/* Social Media Icons on the Right */}
-          <div className="d-flex align-items-center ms-auto">
-            <SocialIcon href="https://www.instagram.com" target="_blank">
-              <FaInstagram />
-            </SocialIcon>
-            <SocialIcon href="https://www.facebook.com" target="_blank">
-              <FaFacebookF />
-            </SocialIcon>
-            <SocialIcon href="https://www.linkedin.com" target="_blank">
-              <FaLinkedinIn />
-            </SocialIcon>
-            <SocialIcon href="https://www.pinterest.com" target="_blank">
-              <FaPinterest />
-            </SocialIcon>
-            <SocialIcon href="https://www.youtube.com" target="_blank">
-              <FaYoutube />
-            </SocialIcon>
-            <SocialIcon href="https://www.twitter.com" target="_blank">
-              <FaTwitter />
-            </SocialIcon>
-          </div>
+
+            {/* Social Media Icons */}
+            <div className="d-flex flex-row">
+              <SocialIcon href="https://www.instagram.com" target="_blank">
+                <FaInstagram />
+              </SocialIcon>
+              <SocialIcon href="https://www.facebook.com" target="_blank">
+                <FaFacebookF />
+              </SocialIcon>
+              <SocialIcon href="https://www.linkedin.com" target="_blank">
+                <FaLinkedinIn />
+              </SocialIcon>
+              <SocialIcon href="https://www.pinterest.com" target="_blank">
+                <FaPinterest />
+              </SocialIcon>
+              <SocialIcon href="https://www.youtube.com" target="_blank">
+                <FaYoutube />
+              </SocialIcon>
+              <SocialIcon href="https://www.twitter.com" target="_blank">
+                <FaTwitter />
+              </SocialIcon>
+            </div>
           </MobileNav>
         </MobileNavbarCollapse>
       </Container>
@@ -267,5 +285,3 @@ const MainNavbar = () => {
 };
 
 export default MainNavbar;
-
-
