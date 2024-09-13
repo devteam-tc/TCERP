@@ -3,23 +3,13 @@ import styled from "styled-components";
 import { pricingPlans } from '../../utils/constants';
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { GoCheckCircleFill } from "react-icons/go";
-
+import { Title } from "./CardSection";
 // Styled components
 
 const Section = styled.section`
   padding: 40px 0;
   background-color: #f9f9f9;
 `;
-
-const SectionSubtitle = styled.p`
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 20.4px;
-  letter-spacing: 0.15em;
-  text-align: center;
-  color: #ef5226;
-`;
-
 const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -117,7 +107,7 @@ const Button = styled.button`
 
 const PricingSection = () => (
   <Section>
-    <SectionSubtitle>Tech Cloud ERP Pricing</SectionSubtitle>
+         <Title className='text-center pt-4 pt-md-0'>Tech Cloud ERP Pricing</Title>
     <CardContainer>
       {pricingPlans.map((pkg, index) => (
         <Card

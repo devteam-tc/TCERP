@@ -7,9 +7,8 @@ import PricingSection from './PricingSection'
 import CallToActionSection from './CallToActionSection'
 import OurPartnerSection from './OurPartnerSection'
 import ImportantModuleSection from './ImportantModuleSection'
-import Testimonials from './Testimonials'
 import { testimonialsData } from '../../utils/constants'
-
+import Testimonials from './Testimonials'
 const Home = () => {
   return (
    <>

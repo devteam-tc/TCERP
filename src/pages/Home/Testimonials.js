@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, Carousel, Col, Container, Row, Image } from "react-bootstrap";
 import styled from "styled-components";
 import { releavant } from "../../utils/constants";
+import { Title } from "./CardSection";
 // Styled Components
 const GradientContainer = styled(Container)`
   background-image: url(${releavant.testimonials_bg});
@@ -87,7 +88,7 @@ const Testimonials = ({ testimonialsData}) => {
   return (
     <Container fluid className="text-center w-100 w-md-50 p-md-5">
       {/* <h1 className="fw-bold mb-3 mt-3">Testimonials</h1> */}
-      <h2 className="py-3">Testimonials</h2>
+      <Title className='text-center pt-4 pt-md-0'>Testimonials</Title>
       <GradientContainer>
           <StyledCard>
             <StyledCardBody className="px-4 py-md-5">
