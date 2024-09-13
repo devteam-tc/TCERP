@@ -12,7 +12,13 @@ const ExperienceSection = styled.section`
     padding-bottom: 60px;
   }
 `;
-
+const ExperienceImageStyled = styled.img`
+  height: auto; /* Maintain aspect ratio */
+  
+  @media (max-width: 992px) {
+    height: auto;
+  }
+`;
 const ExperienceImage = styled.div`
   position: relative;
   width:50vh;
@@ -26,7 +32,7 @@ const ExperienceImage = styled.div`
     width: 350px;
     height: 350px;
     border-radius: 50%;
-    text-align: center;
+    text-align: center; 
 
     p {
       color: #ffffff;
@@ -62,21 +68,16 @@ const ExperienceImage = styled.div`
     }
   }
 
-  .shape {
-    position: absolute;
-    top: -28px;
-    left: -25px;
-    z-index: -1;
-  }
 
   @media (max-width: 992px) {
     .text {
-      right: -30px;
-      top: 140%;
-      transform: translateY(-100%);
-      width: 250px;
-      height: 250px;
-
+     position: relative;
+        right: 0px;
+        bottom: 39px;
+        transform: translateY(0%);
+        height: 275px;
+        left: 22px;
+        top: 140%;
       p {
         font-size: 8px;
         width: 100px;
@@ -114,22 +115,7 @@ const ExperienceContent = styled.div`
     text-align: justify;
   }
 
-  .experience-text {
-    margin-top: 30px;
-    position: relative;
-    padding-left: 50px;
-
-
-    h3 {
-      font-size: 20px;
-      color: #000 !important;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    p {
-      margin-bottom: 0;
-    }
+  
   }
 
   @media (max-width: 992px) {
@@ -139,53 +125,35 @@ const ExperienceContent = styled.div`
       font-size: 18px;
     }
 
-    h2 {
-      font-size: 16px;
-    }
-
-    .experience-text {
-      padding-left: 20px;
-
-      h3 {
-        font-size: 18px;
-      }
     }
   }
 `;
 
 // React Component
 const OurMissionSection = () => {
+  const { images, content } = releavant.ourMission;
+
   return (
-    <ExperienceSection data-aos="fade" data-aos-delay="100">
-      <Container data-aos="fade-up" data-aos-delay="100">
-        <Row className="align-items-center" data-aos="fade-up" data-aos-delay="100">
-          <Col lg={5} className="mt-4" data-aos="fade-up" data-aos-delay="100">
-            <ExperienceImage>
-              <img src={releavant.ourmission_img_1} alt="Experience" className='img-fluid w-100'/>
-              <div className="text">
-                <img src={releavant.ourmission_img_2} alt="Experience icon" className='img-fluid'/>
-                <p><span>25+</span> Years of Experience</p>
-              </div>
-            </ExperienceImage>
-          </Col>
-          <Col lg={7} className="mt-4" data-aos="fade-up" data-aos-delay="100">
+    <ExperienceSection >
+      <Container >
+        <Row className="align-items-center">
+        <Col lg={5} className="mt-4">
+  <ExperienceImage>
+    <ExperienceImageStyled src={images.mainImage} alt="Experience" />
+    <div className="text">
+      <img src={images.experienceIcon} alt="Experience icon" />
+      <p><span>{content.experience.years}</span> {content.experience.text}</p>
+    </div>
+  </ExperienceImage>
+</Col>
+          <Col lg={7} className="mt-4">
             <ExperienceContent>
-              <span>Tech Cloud ERP</span>
-              <p>
-                Tech Cloud ERP is a web-based solution for small and mid-sized businesses, acting as a
-                central hub for tracking and analyzing departmental activities. It offers real-time data and
-                integrated processes to accelerate decision-making and support growth, claiming to be
-                India's leading ERP software developer with a focus on reducing operational costs, especially for
-                manufacturing companies.
-              </p>
+              <span>{content.companyName}</span>
+              <p>{content.description}</p>
               <div className="experience-text">
                 <div>
-                  <h3>Our Mission</h3>
-                  <p>
-                    Our mission is to help our clients respond faster and more efficiently to market
-                    dynamics. We strive to make them more agile in a competitive marketplace through high-tech
-                    strategies and action plans.
-                  </p>
+                  <h3>{content.missionTitle}</h3>
+                  <p>{content.missionText}</p>
                 </div>
               </div>
             </ExperienceContent>

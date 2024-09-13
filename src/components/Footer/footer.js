@@ -1,14 +1,21 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom'; 
-import { releavant } from '../../utils/constants';
-import { FaClock, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram, FaPinterest, FaYoutube } from 'react-icons/fa';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { releavant } from "../../utils/constants";
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+  FaPinterest,
+  FaYoutube,
+} from "react-icons/fa";
 
 // Styled Components
 const FooterSection = styled.footer`
-  background-color: #f6f8f9;
+background: #FFFBFA;
   padding: 40px 0;
   color: #333;
 `;
@@ -33,59 +40,28 @@ const FooterText = styled.p`
   text-align: left;
 `;
 
-const ContactDetails = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  font-size: 14px;
-
-  svg {
-    margin-right: 10px;
-    color: #ef5226;
-    font-size: 20px;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-`;
-
 const SocialIcons = styled.div`
   display: flex;
   gap: 8px;
-      margin-bottom: 20px;
+  margin-bottom: 20px;
   a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
-    background-color: #EF5226;
+    width: 25px;
+    height: 25px;
+    background-color: #ef5226;
     border-radius: 50%;
     color: white;
-    font-size: 18px;
+    font-size: 12px;
     transition: background-color 0.3s;
   }
 `;
-// const FooterBottom = styled.div`
-//   text-align: center;
-//   padding: 20px 0;
-//   border-top: 1px solid #ccc;
-//   margin-top: 30px;
-//   font-size: 14px;
-
-//   a {
-//     color: inherit;
-//     text-decoration: none;
-//     margin: 0 10px;
-//   }
-// `;
 
 const FooterLinkList = styled.ul`
   list-style: none;
   padding: 0;
-  
+
   li {
     margin-bottom: 10px;
     font-size: 16px;
@@ -106,6 +82,31 @@ const FooterLinkList = styled.ul`
   }
 `;
 
+const CopyrightText = styled.div`
+  font-size: 12px;
+  text-align: center;
+  padding: 20px 0;
+  color: #666;
+  border-top: 1px solid #eaeaea;
+`;
+
+const ContactInfo = styled.div`
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+
+  p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+
+    svg {
+      margin-right: 5px;
+    }
+  }
+`;
+
 const Footer = () => {
   return (
     <FooterSection>
@@ -114,8 +115,10 @@ const Footer = () => {
           {/* Logo and Description */}
           <Col md={3} sm={12}>
             <Logo src={releavant.logo} alt="Legacy Insurance Brokers" />
-            <FooterText className='pt-3'>
-              Tech Cloud ERP delivers top-notch solutions tailored for any businesses, combining advanced technology, intuitive design, and comprehensive features.
+            <FooterText className="pt-5">
+              Tech Cloud ERP delivers top-notch solutions tailored for any
+              businesses, combining advanced technology, intuitive design, and
+              comprehensive features.
             </FooterText>
             <SocialIcons>
               <Link to="/facebook">
@@ -142,55 +145,124 @@ const Footer = () => {
           <Col md={2} sm={6}>
             <FooterHeading>Useful Links</FooterHeading>
             <FooterLinkList>
-              <li><Link to="/home">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/ContactUs">Contact Us</Link></li>
+              <li>
+                <Link to="/home">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About Us</Link>
+              </li>
+              <li>
+                <Link to="/services">All Industries</Link>
+              </li>
+              <li>
+                <Link to="/ContactUs">Our features</Link>
+              </li>
+              <li>
+                <Link to="/">Terms of service</Link>
+              </li>
+              <li>
+                <Link to="/">Privacy policy</Link>
+              </li>
+              <li>
+                <Link to="/">Our blogs</Link>
+              </li>
             </FooterLinkList>
           </Col>
           {/* Softwares */}
           <Col md={2} sm={6}>
             <FooterHeading>Industries</FooterHeading>
             <FooterLinkList>
-              <li><Link to="#">Retail jewellery</Link></li>
-              <li><Link to="#">Wholesale</Link></li>
-              <li><Link to="#">Accounting</Link></li>
-              <li><Link to="#">Tech Cloud POS</Link></li>
+              <li>
+                <Link to="#">Jewellery</Link>
+              </li>
+              <li>
+                <Link to="#">Pharma</Link>
+              </li>
+              <li>
+                <Link to="#">Agriculture</Link>
+              </li>
+              <li>
+                <Link to="#">Beverage</Link>
+              </li>
+              <li>
+                <Link to="#">Leather</Link>
+              </li>
+              <li>
+                <Link to="#">Garmet & Textile</Link>
+              </li>
+              <li>
+                <Link to="#">Techcloud trading</Link>
+              </li>
             </FooterLinkList>
           </Col>
           {/* Services */}
           <Col md={2} sm={6}>
             <FooterHeading>Services</FooterHeading>
             <FooterLinkList>
-              <li><Link to="#">Web Development</Link></li>
-              <li><Link to="#">Mobile Application</Link></li>
-              <li><Link to="#">Digital Marketing</Link></li>
-              <li><Link to="#">Whatsapp Business</Link></li>
+              <li>
+                <Link to="#">Web Development</Link>
+              </li>
+              <li>
+                <Link to="#">E-Commerce website</Link>
+              </li>
+              <li>
+                <Link to="#">Mobile App development</Link>
+              </li>
+              <li>
+                <Link to="#">Digital marketing</Link>
+              </li>
+              <li>
+                <Link to="#">Whatsapp bussiness</Link>
+              </li>
+              <li>
+                <Link to="#">Business intelligence</Link>
+              </li>
+              <li>
+                <Link to="#">Web Hosting</Link>
+              </li>
             </FooterLinkList>
           </Col>
           {/* Get In Touch */}
-          <Col md={3} sm={6}>
-            <FooterHeading>Get In Touch
-            </FooterHeading>
-            <ContactDetails>
-              <div><FaClock /></div>
-              9:30 AM - 9 PM, Monday – Saturday
-            </ContactDetails>
-            <ContactDetails>
-              <FaEnvelope />
-              <a href="mailto:info@techclouderp.com">info@techclouderp.com</a>
-            </ContactDetails>
-            <ContactDetails>
-              <div><FaMapMarkerAlt /></div>
-              Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens Road, VIP Hills, Madhapur, Hyderabad–500081.
-            </ContactDetails>
+          <Col md={3}>
+            <FooterHeading>Get in Touch</FooterHeading>
+            <ContactInfo>
+              <strong>Corporate Office</strong>
+              <p>
+                <FaMapMarkerAlt />
+                Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens Road, VIP
+                Hills, Madhapur, Hyderabad, Telangana, India-500081.
+              </p>
+              <p>
+                <FaEnvelope />
+                Email:
+                <a href="mailto:info@techclouderp.com">info@techclouderp.com</a>
+              </p>
+              <p>
+                <FaPhoneAlt />
+                Phone: +91 8919439603
+              </p>
+            </ContactInfo>
+            <ContactInfo>
+              <strong>Headquarters</strong>
+              <p>
+                <FaMapMarkerAlt />
+                1101, E Bell Street, Suite-E, Bloomington, Indiana, USA - 61701.
+              </p>
+              <p>
+                <FaEnvelope />
+                Email:{" "}
+                <a href="mailto:info@techclouderp.com">info@techclouderp.com</a>
+              </p>
+              <p>
+                <FaPhoneAlt />
+                Phone: +91 8919439603
+              </p>
+            </ContactInfo>
           </Col>
         </Row>
-        {/* Footer Bottom */}
-        {/* <FooterBottom>
-          <span>Copyright © 2024 Tech Cloud ERP</span>
-          <Link to="/terms">Terms and Conditions</Link> | <Link to="/privacy">Privacy Policy</Link>
-        </FooterBottom> */}
+        <CopyrightText>
+          &copy; 2024 Tech Cloud ERP. Terms & Conditions | Privacy Policy
+        </CopyrightText>
       </Container>
     </FooterSection>
   );

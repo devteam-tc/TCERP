@@ -5,11 +5,16 @@ import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube, FaTwitt
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // Hamburger and Close icons
 import styled from 'styled-components';
 import { NAV_ITEMS, releavant } from '../../utils/constants';
+import { NAV_ITEMS, releavant } from '../../utils/constants';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-bootstrap-submenu/dist/index.css";
 import { DropdownSubmenu } from 'react-bootstrap-submenu';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-bootstrap-submenu/dist/index.css";
+import { DropdownSubmenu } from 'react-bootstrap-submenu';
 
+// Styled Components for Navbar
 // Styled Components for Navbar
 const StyledNavLink = styled(Nav.Link)`
   text-decoration: none !important;
@@ -180,10 +185,14 @@ const MainNavbar = () => {
             <Link to={item.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
               {item.title}
             </Link>
+            <Link to={item.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+              {item.title}
+            </Link>
           </StyledNavLink>
         );
       } else if (item.type === 'dropdown') {
         return (
+          <NavDropdown key={index} title={item.title}>
           <NavDropdown key={index} title={item.title}>
             {item.items.map((subItem, subIndex) => {
               if (subItem.type === 'dropdown') {
@@ -197,6 +206,7 @@ const MainNavbar = () => {
                       </StyledDropdownItem>
                     ))}
                   </DropdownSubmenu>
+                  </DropdownSubmenu>
                 );
               } else {
                 return (
@@ -208,6 +218,7 @@ const MainNavbar = () => {
                 );
               }
             })}
+          </NavDropdown>
           </NavDropdown>
         );
       }
@@ -285,3 +296,4 @@ const MainNavbar = () => {
 };
 
 export default MainNavbar;
+
