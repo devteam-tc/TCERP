@@ -239,6 +239,7 @@ export const ctaData = {
   buttonLink: "https://api.whatsapp.com/send?phone=8919439603&text=Hi..",
   calltoaction_bg_img:require("../assets/Home/cta-bg-image-one.png"),
 };
+
 export const partnerData = [
   { link: '/financial-management-systems', imgSrc: require("../assets/partner/finance.png"), alt: 'Finance' },
   { link: '/hr-management-software', imgSrc: require("../assets/partner/HRM.png"), alt: 'HRM' },
@@ -247,36 +248,46 @@ export const partnerData = [
   { link: '/point-of-sale', imgSrc: require("../assets/partner/POS.png"), alt: 'POS' },
   { link: '/customer-relationship-management', imgSrc: require("../assets/partner/CRMD.png"), alt: 'CRM' },
 ];
-export const cardsData = [
+
+
+export const cardData = {
+  "normal":[
+      {
+        title: 'Solutions For All',
+        text: 'Whether you have 2 or 2000 employees, Tech Cloud ERP has a comprehensive portfolio leading cloud-based ERP software solutions and tools to fit your needs. We also provide dedicated support teams that are at your disposal 24/7.',
+        highlights: ['Integrated CRM and ERP System', 'E-Commerce Platform', 'Workflow Automation'],
+      },
+    {
+      title: 'Flexibility',
+      text: 'Tech Cloud ERP is dedicated to creating easy-to-use, adaptable cloud ERP software applications. Whether you want customized ERP software processes, use the public or private cloud or pay only for what you need.',
+      highlights: ['Modular Architecture', 'API-Based Integration', 'Continuous Improvement'],
+    },
+    {
+      title: 'Security',
+      text: 'Tech Cloud ERP platform is built on the most advanced infrastructures in the world. We have teams of experts dedicated to protecting your data, warding off hackers and staying ahead of threats to keep your business and its data safe.',
+      highlights: ['Risk Assessment', 'Data Breach', 'Encryption'],
+    }
+  ],
+  "Show More":[
+    {
+      title: 'Solutions For All',
+      text: 'Whether you have 2 or 2000 employees, Tech Cloud ERP has a comprehensive portfolio leading cloud-based ERP software solutions and tools to fit your needs. We also provide dedicated support teams that are at your disposal 24/7.',
+      highlights: ['Integrated CRM and ERP System', 'E-Commerce Platform', 'Workflow Automation'],
+    },
   {
-    id: 1,
-    image: 'https://via.placeholder.com/300x180',
-    title: 'CRM',
-    description:
-      'CRM stands for Customer Relationship Management. It\'s a strategy businesses use to manage interactions with customers.',
+    title: 'Flexibility',
+    text: 'Tech Cloud ERP is dedicated to creating easy-to-use, adaptable cloud ERP software applications. Whether you want customized ERP software processes, use the public or private cloud or pay only for what you need.',
+    highlights: ['Modular Architecture', 'API-Based Integration', 'Continuous Improvement'],
   },
   {
-    id: 2,
-    image: 'https://via.placeholder.com/300x180',
-    title: 'Export and Import',
-    description:
-      'Streamline global trade with our Export and Import module. Manage logistics, documentation, and more.',
-  },
-  {
-    id: 3,
-    image: 'https://via.placeholder.com/300x180',
-    title: 'Sales and Marketing',
-    description:
-      'Sales & Marketing Module handles all the sales activities of domestic and international operations.',
-  },
-  {
-    id: 4,
-    image: 'https://via.placeholder.com/300x180',
-    title: 'Job Work',
-    description:
-      'Easily outsource specialized tasks with our Job Work module, optimizing production and reducing workload.',
-  },
-];
+    title: 'Security',
+    text: 'Tech Cloud ERP platform is built on the most advanced infrastructures in the world. We have teams of experts dedicated to protecting your data, warding off hackers and staying ahead of threats to keep your business and its data safe.',
+    highlights: ['Risk Assessment', 'Data Breach', 'Encryption'],
+  }
+
+
+  ]
+}
 
 export const testimonialsData = {
 
@@ -377,3 +388,34 @@ export const testimonialsData = {
     },
   ],
 };
+
+export const cardsData = [
+  {
+    id: 1,
+    image: 'https://via.placeholder.com/300x180',
+    title: 'CRM',
+    description:
+      'CRM stands for Customer Relationship Management. It\'s a strategy businesses use to manage interactions with customers.',
+  },
+  {
+    id: 2,
+    image: 'https://via.placeholder.com/300x180',
+    title: 'Export and Import',
+    description:
+      'Streamline global trade with our Export and Import module. Manage logistics, documentation, and more.',
+  },
+  {
+    id: 3,
+    image: 'https://via.placeholder.com/300x180',
+    title: 'Sales and Marketing',
+    description:
+      'Sales & Marketing Module handles all the sales activities of domestic and international operations.',
+  },
+  {
+    id: 4,
+    image: 'https://via.placeholder.com/300x180',
+    title: 'Job Work',
+    description:
+      'Easily outsource specialized tasks with our Job Work module, optimizing production and reducing workload.',
+  },
+];

@@ -55,7 +55,7 @@ const CardSection = () => {
     <Container>
       <Row>
         {morecardsToShow.map((card, index) => (
-          <Col md={4} key={index}>
+          <Col md={4} key={index} className="mb-4">
             <CardContainer>
               <CardTitle>{card.title}</CardTitle>
               <CardText>{card.text}</CardText>
@@ -67,6 +67,11 @@ const CardSection = () => {
             </CardContainer>
           </Col>
         ))}
+      </Row>
+      <StyledButton onClick={toggleCards} className="fw-bold">
+        {isExpanded ? ' Show less' : 'Show more '}
+      </StyledButton>
+    </Container>
   );
 };
 

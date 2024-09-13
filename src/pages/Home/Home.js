@@ -22,7 +22,6 @@ const Home = () => {
    <PricingSection />
    <CallToActionSection />
    <OurPartnerSection />
-   <Testimonials testimonialsData={testimonialsData.car_testimonials}/>
    </>
   )
 }
