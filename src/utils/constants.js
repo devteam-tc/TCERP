@@ -245,7 +245,7 @@ export const partnerData = [
   { link: '/point-of-sale', imgSrc: require("../assets/partner/POS.png"), alt: 'POS' },
   { link: '/customer-relationship-management', imgSrc: require("../assets/partner/CRMD.png"), alt: 'CRM' },
 ];
-export const cardsData = [
+export const ModulecardsData = [
   {
     id: 1,
     image: 'https://via.placeholder.com/300x180',

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import { releavant } from '../../utils/constants';
+import { TiArrowRight } from "react-icons/ti";
 
 // Styled Components
-
 const ExperienceSection = styled.section`
   padding-bottom: 90px;
 
@@ -12,81 +12,64 @@ const ExperienceSection = styled.section`
     padding-bottom: 60px;
   }
 `;
+
 const ExperienceImageStyled = styled.img`
-  height: auto; /* Maintain aspect ratio */
-  
+  width: 100%;
+  height: auto;
+
   @media (max-width: 992px) {
     height: auto;
   }
 `;
-const ExperienceImage = styled.div`
+
+const ExperienceImageWrapper = styled.div`
   position: relative;
-  width:50vh;
+  width: 100%;
+  max-width: 50vh;
+
+  .overlay-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    // border-radius: 50%;
+    border: 10px solid #fff; /* Optional border around the overlay image */
+    border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
+  }
 
   .text {
     position: absolute;
-    right: -55px;
-    top: 166%;
-    transform: translateY(-120%);
-    color: #ffffff;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    text-align: center; 
+    bottom: 10px;
+    right: 10px;
+    color: #fff;
+    background-color: #14c8f1;
+    padding: 10px;
+    border-radius: 10px;
 
     p {
-      color: #ffffff;
-      line-height: initial;
-      position: absolute;
-      right: 0;
-      left: 0;
-      margin: auto;
-      top: 45%;
-      transform: translateY(-80%);
-      font-size: 10px;
-      font-weight: 400;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background-color: #14c8f1;
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
 
       span {
-        display: block;
-        font-size: 40px;
-        line-height: 1.1;
+        font-size: 20px;
         font-weight: bold;
-        margin-top: 30px;
       }
-    }
-
-    img {
-      font-size: 24px;
-      border: 8px solid black;
-      min-height: 3em;
-      resize: both;
-      border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
     }
   }
 
-
   @media (max-width: 992px) {
-    .text {
-     position: relative;
-        right: 0px;
-        bottom: 39px;
-        transform: translateY(0%);
-        height: 275px;
-        left: 22px;
-        top: 140%;
-      p {
-        font-size: 8px;
-        width: 100px;
-        height: 100px;
+    .overlay-image {
+      width: 150px;
+      height: 150px;
+      bottom: 10px;
+      right: 10px;
+    }
 
-        span {
-          font-size: 30px;
-        }
-      }
+    .text {
+      font-size: 12px;
+      padding: 8px;
     }
   }
 `;
@@ -115,16 +98,11 @@ const ExperienceContent = styled.div`
     text-align: justify;
   }
 
-  
-  }
-
   @media (max-width: 992px) {
-    padding-left: 1px;
+    padding-left: 15px;
 
     span {
       font-size: 18px;
-    }
-
     }
   }
 `;
@@ -134,38 +112,38 @@ const OurMissionSection = () => {
   const { images, content } = releavant.ourMission;
 
   return (
-    <ExperienceSection data-aos="fade" data-aos-delay="100">
-      <Container data-aos="fade-up" data-aos-delay="100">
-        <Row className="align-items-center" data-aos="fade-up" data-aos-delay="100">
-          <Col lg={5} className="mt-4" data-aos="fade-up" data-aos-delay="100">
-            <ExperienceImage>
-              <img src={releavant.ourmission_img_1} alt="Experience" className='img-fluid'/>
-              <div className="text">
-                <img src={releavant.ourmission_img_2} alt="Experience icon" className='img-fluid'/>
-                <p><span>25+</span> Years of Experience</p>
-              </div>
-            </ExperienceImage>
+    <ExperienceSection>
+      <Container>
+        <Row className="align-items-center">
+          <Col lg={5} className="mt-4">
+            <ExperienceImageWrapper>
+              <ExperienceImageStyled src={images.mainImage} alt="Experience" />
+              <img
+                src={images.experienceIcon}
+                alt="Overlay Icon"
+                className="overlay-image"
+              />
+              {/* <div className="text">
+                <p>
+                  <span>{content.experience.years}</span> {content.experience.text}
+                </p>
+              </div> */}
+            </ExperienceImageWrapper>
           </Col>
-          <Col lg={7} className="mt-4" data-aos="fade-up" data-aos-delay="100">
+          <Col lg={7} className="mt-4">
             <ExperienceContent>
-              <span>Tech Cloud ERP</span>
-              <p>
-                Tech Cloud ERP is a web-based solution for small and mid-sized businesses, acting as a
-                central hub for tracking and analyzing departmental activities. It offers real-time data and
-                integrated processes to accelerate decision-making and support growth, claiming to be
-                India's leading ERP software developer with a focus on reducing operational costs, especially for
-                manufacturing companies.
-              </p>
-              <p>
-                Praised for affordability and ease of implementation, Tech Cloud ERP provides advanced
-                features and customization options. Its user-friendly design enhances efficiency and productivity, making it a valuable investment for businesses aiming to improve their operations.
-              </p>
+              <span>{content.companyName}</span>
+              <p>{content.description}</p>
               <div className="experience-text">
-                <div>
-                  <h3>{content.missionTitle}</h3>
+                <div className='mt-4'>
+                  <h3 style={{color: '#05A7CC'}}>{content.missionTitle}</h3>
                   <p>{content.missionText}</p>
                 </div>
               </div>
+              <Button variant="primary" style={{ backgroundColor: '#e93906', borderRadius: '0px', border: 'none', marginTop: '2vh' }}>
+                Read More 
+                <TiArrowRight size={25}/>
+              </Button>
             </ExperienceContent>
           </Col>
         </Row>

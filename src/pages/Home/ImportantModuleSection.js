@@ -3,13 +3,14 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { cardsData } from '../../utils/constants';
+import { ModulecardsData } from '../../utils/constants';
+import { Title } from './CardSection';
 import { Container } from 'react-bootstrap';
 
 // Styled Components for Slider
 const SliderWrapper = styled.div`
-  width: 100%;
-  padding: 40px 0;
+  
+  padding:  10px 0;
   .slick-slide {
     display: flex;
     justify-content: center;
@@ -21,7 +22,7 @@ const SliderWrapper = styled.div`
 `;
 
 const Card = styled.div`
-  width: 300px;
+  width: 300px !important;
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
@@ -56,7 +57,7 @@ const CardText = styled.p`
 
 const ImportantModuleSection = () => {
   const sliderSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 4, // Show 4 slides at a time
@@ -81,10 +82,12 @@ const ImportantModuleSection = () => {
   
 
   return (
-    <Container>
+    <div>
+            <Title className='text-center pt-4 pt-md-0'>Important Modules</Title>
+      <Container className='mb-3'>
       <SliderWrapper>
         <Slider {...sliderSettings}>
-          {cardsData.map((card) => (
+          {ModulecardsData.map((card) => (
             <Card key={card.id}>
               <CardImage src={card.image} alt={card.title} />
               <CardTitle>{card.title}</CardTitle>
@@ -94,6 +97,7 @@ const ImportantModuleSection = () => {
         </Slider>
       </SliderWrapper>
     </Container>
+    </div>
   );
 };
 

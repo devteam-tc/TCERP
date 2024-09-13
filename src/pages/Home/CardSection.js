@@ -43,11 +43,11 @@ const StyledButton = styled(Button)`
     display: block;
 `;
 export const Title = styled.h2`
-font-size: 40px;
+font-size: 30px;
 font-weight: 600;
 color:#ef5226;
 line-height: 60px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   @media screen and (max-width: 1024px) {
     font-size: 32px;
@@ -73,7 +73,6 @@ const CardSection = () => {
   return (
    <div className='my-md-5'>
      <Title className='text-center pt-4 pt-md-0'>Why Tech Cloud ERP ?</Title>
-
 <Container>
   <Row>
     {morecardsToShow.map((card, index) => (
