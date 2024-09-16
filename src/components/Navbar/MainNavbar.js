@@ -11,8 +11,6 @@ import "react-bootstrap-submenu/dist/index.css";
 import { DropdownSubmenu } from 'react-bootstrap-submenu';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-bootstrap-submenu/dist/index.css";
-
-// Styled Components for Navbar
 // Styled Components for Navbar
 const StyledNavLink = styled(Nav.Link)`
   text-decoration: none !important;
