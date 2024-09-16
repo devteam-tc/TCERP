@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navbar, Nav, Container, Dropdown, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, Container, Dropdown, NavDropdown, Row, Col } from 'react-bootstrap';
 import { IoCall } from "react-icons/io5";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube, FaTwitter } from 'react-icons/fa'; // Social media icons
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // Hamburger and Close icons
@@ -90,6 +90,7 @@ const CustomDropdown = styled(Dropdown)`
 const StyledDropdownItem = styled(Dropdown.Item)`
   position: relative;
   width: -webkit-fill-available;
+  color: black !important; // Default color set to black
   &:hover {
     color: #e93906 !important;
   }   
@@ -131,9 +132,22 @@ const NavbarToggle = styled(Navbar.Toggle)`
   }
 `;
 
+const StyledRow = styled(Row)`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+`;
+
+const StyledCol = styled(Col)`
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 5px;
+`;
+
 const MainNavbar = () => {
   const [calendlyLoaded, setCalendlyLoaded] = useState(false);
   const [expanded, setExpanded] = useState(false); // State for tracking the Navbar toggle
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 992);
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -141,11 +155,18 @@ const MainNavbar = () => {
     script.type = 'text/javascript';
     script.async = true;
 
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 992);
+    };
+
+    window.addEventListener('resize', handleResize);
+
     script.onload = () => setCalendlyLoaded(true);
 
     document.body.appendChild(script);
     return () => {
       document.body.removeChild(script);
+      window.removeEventListener('resize', handleResize); // Cleanup on unmount
     };
   }, []);
 
@@ -186,19 +207,40 @@ const MainNavbar = () => {
         );
       } else if (item.type === 'dropdown') {
         return (
-          <NavDropdown key={index} title={item.title}>
+          <NavDropdown key={index} title={item.title} className='w-100'>
             {item.items.map((subItem, subIndex) => {
               if (subItem.type === 'dropdown') {
                 return (
-                  <DropdownSubmenu key={subIndex} title={subItem.title} alignRight>
-                    {subItem.items.map((subSubItem, subSubIndex) => (
-                      <StyledDropdownItem key={subSubIndex} onClick={handleDropdownItemClick}>
-                        <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                  <>
+              {/* Show DropdownSubmenu on screens below 992px */}
+              {!isLargeScreen && (
+                <DropdownSubmenu key={subIndex} title={subItem.title} alignRight>
+                  {subItem.items.map((subSubItem, subSubIndex) => (
+                    <StyledDropdownItem key={subSubIndex} onClick={handleDropdownItemClick}>
+                      <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                        {subSubItem.title}
+                      </Link>
+                    </StyledDropdownItem>
+                  ))}
+                </DropdownSubmenu>
+              )}
+
+              {/* Show StyledRow on screens above or equal to 992px */}
+              {isLargeScreen && (
+                <StyledRow key={subIndex} title={subItem.title} alignRight>
+                  <h3 className='fs-4 '>{subItem.title}</h3>
+                  {subItem.items.map((subSubItem, subSubIndex) => (
+                    <StyledCol key={subSubIndex} onClick={handleDropdownItemClick}>
+                      <StyledDropdownItem>
+                        <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }} className='w-50'>
                           {subSubItem.title}
                         </Link>
                       </StyledDropdownItem>
-                    ))}
-                  </DropdownSubmenu>
+                    </StyledCol>
+                  ))}
+                </StyledRow>
+              )}
+            </>
                 );
               } else {
                 return (
