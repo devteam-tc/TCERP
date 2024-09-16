@@ -26,14 +26,14 @@ const BannerWrapper = styled.div`
 const BannerContent = styled.div`
 background: rgb(0,0,0);
 backdrop-filter: blur(3px);
-background: linear-gradient(150deg, rgba(0,0,0,0.6418942577030813) 0%, rgba(1,1,5,0.4458158263305322) 22%, rgba(5,167,204,0.35057773109243695) 52%, rgba(4,137,168,0.23012955182072825) 66%, rgba(1,1,5,0.6502976190476191) 100%);
+background: linear-gradient(150deg, rgba(0,0,36,0.8127626050420168) 0%, rgba(5,43,54,0.5102415966386555) 22%, rgba(0,84,103,0.4906337535014006) 52%, rgba(0,65,80,0.3981967787114846) 66%, rgba(1,1,5,0.8295693277310925) 100%);
   padding: 40px;
   border-radius: 10px; /* Optional: Adds rounded corners */
 `;
 
 const BannerTitle = styled.h1`
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 4rem;
+  font-weight: 900;
   color: #ef5226;
 
   @media (max-width: 992px) {
@@ -42,8 +42,8 @@ const BannerTitle = styled.h1`
 `;
 
 const BannerSubtitle = styled.h2`
-  font-weight: 700;
-  font-size: 48px;
+  font-weight: 900;
+  font-size: 5rem;
   color: #ef5226;
 
   @media (max-width: 992px) {

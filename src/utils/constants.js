@@ -252,7 +252,7 @@ export const ModulecardsData = [
     image: 'https://via.placeholder.com/300x180',
     title: 'CRM',
     description:
-      'CRM stands for Customer Relationship Management. It\'s a strategy businesses use to manage interactions with customers.',
+      'CRM stands for Customer Relationship Management. It\'s a strategy businesses use to manage interactions .',
   },
   {
     id: 2,
