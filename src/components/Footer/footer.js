@@ -104,6 +104,10 @@ const ContactInfo = styled.div`
     svg {
       margin-right: 5px;
     }
+      a {
+    color: inherit;
+    text-decoration: none;
+  }
   }
 `;
 
@@ -224,41 +228,42 @@ const Footer = () => {
           </Col>
           {/* Get In Touch */}
           <Col md={3}>
-            <FooterHeading>Get in Touch</FooterHeading>
-            <ContactInfo>
-              <strong>Corporate Office</strong>
-              <p>
-                <FaMapMarkerAlt />
-                Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens Road, VIP
-                Hills, Madhapur, Hyderabad, Telangana, India-500081.
-              </p>
-              <p>
-                <FaEnvelope />
-                Email:
-                <a href="mailto:info@techclouderp.com">info@techclouderp.com</a>
-              </p>
-              <p>
-                <FaPhoneAlt />
-                Phone: +91 8919439603
-              </p>
-            </ContactInfo>
-            <ContactInfo>
-              <strong>Headquarters</strong>
-              <p>
-                <FaMapMarkerAlt />
-                1101, E Bell Street, Suite-E, Bloomington, Indiana, USA - 61701.
-              </p>
-              <p>
-                <FaEnvelope />
-                Email:{" "}
-                <a href="mailto:info@techclouderp.com">info@techclouderp.com</a>
-              </p>
-              <p>
-                <FaPhoneAlt />
-                Phone: +91 8919439603
-              </p>
-            </ContactInfo>
-          </Col>
+  <FooterHeading>Get in Touch</FooterHeading>
+  <ContactInfo>
+    <strong>Corporate Office</strong>
+    <p>
+      <FaMapMarkerAlt />
+      Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens Road, VIP
+      Hills, Madhapur, Hyderabad, Telangana, India-500081.
+    </p>
+    <p>
+      <FaEnvelope />
+      Email:{" "}
+      <a href="mailto:info@techclouderp.com">info@techclouderp.com</a>
+    </p>
+    <p>
+      <FaPhoneAlt />
+      Phone: +91 8919439603
+    </p>
+  </ContactInfo>
+  {/* Headquarters */}
+  <ContactInfo>
+    <strong>Headquarters</strong>
+    <p>
+      <FaMapMarkerAlt />
+      1101, E Bell Street, Suite-E, Bloomington, Indiana, USA - 61701.
+    </p>
+    <p>
+      <FaEnvelope />
+      Email: <a href="mailto:info@techclouderp.com">info@techclouderp.com</a>
+    </p>
+    <p>
+      <FaPhoneAlt />
+      Phone: +91 8919439603
+    </p>
+  </ContactInfo>
+</Col>
+
         </Row>
         <CopyrightText>
           &copy; 2024 Tech Cloud ERP. Terms & Conditions | Privacy Policy

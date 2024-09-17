@@ -11,6 +11,8 @@ import "react-bootstrap-submenu/dist/index.css";
 import { DropdownSubmenu } from 'react-bootstrap-submenu';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-bootstrap-submenu/dist/index.css";
+
+// Styled Components for Navbar
 // Styled Components for Navbar
 const StyledNavLink = styled(Nav.Link)`
   text-decoration: none !important;
@@ -65,6 +67,7 @@ const CustomDropdown = styled(Dropdown)`
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 0;
+    display:flex !important;
     position: absolute;
     top: 100%;
     left: 0;
@@ -133,9 +136,9 @@ const NavbarToggle = styled(Navbar.Toggle)`
 `;
 
 const StyledRow = styled(Row)`
-  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  padding: 5px;
+  padding: 10px;
 `;
 
 const StyledCol = styled(Col)`
@@ -207,16 +210,16 @@ const MainNavbar = () => {
         );
       } else if (item.type === 'dropdown') {
         return (
-          <NavDropdown key={index} title={item.title} className='w-100'>
+          <NavDropdown key={index} title={item.title} className='w-100 d-flex'>
             {item.items.map((subItem, subIndex) => {
               if (subItem.type === 'dropdown') {
                 return (
                   <>
               {/* Show DropdownSubmenu on screens below 992px */}
               {!isLargeScreen && (
-                <DropdownSubmenu key={subIndex} title={subItem.title} alignRight>
+                <DropdownSubmenu key={subIndex} title={subItem.title} alignRight >
                   {subItem.items.map((subSubItem, subSubIndex) => (
-                    <StyledDropdownItem key={subSubIndex} onClick={handleDropdownItemClick}>
+                    <StyledDropdownItem key={subSubIndex} onClick={handleDropdownItemClick} >
                       <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
                         {subSubItem.title}
                       </Link>
@@ -227,8 +230,8 @@ const MainNavbar = () => {
 
               {/* Show StyledRow on screens above or equal to 992px */}
               {isLargeScreen && (
-                <StyledRow key={subIndex} title={subItem.title} alignRight>
-                  <h3 className='fs-4 '>{subItem.title}</h3>
+                <StyledRow key={subIndex} title={subItem.title} alignRight className='d-flex'>
+                  <h3 className='fs-6'>{subItem.title}</h3>
                   {subItem.items.map((subSubItem, subSubIndex) => (
                     <StyledCol key={subSubIndex} onClick={handleDropdownItemClick}>
                       <StyledDropdownItem>
@@ -329,6 +332,5 @@ const MainNavbar = () => {
 };
 
 export default MainNavbar;
-
 
 

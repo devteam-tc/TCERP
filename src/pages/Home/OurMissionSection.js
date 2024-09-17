@@ -25,7 +25,7 @@ const ExperienceImageStyled = styled.img`
 const ExperienceImageWrapper = styled.div`
   position: relative;
   width: 100%;
-  max-width: 50vh;
+  // max-width: 50vh;
 
   .overlay-image {
     position: absolute;

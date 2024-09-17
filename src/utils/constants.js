@@ -46,139 +46,7 @@ export const CardContent = [
     features: ['Risk Assessment', 'Data breach', 'Encryption']
   }
 ];
-//Navbar Section
-export const NAV_ITEMS = [
-    {
-      title: 'Home',
-      link: '/',
-      type: 'link',
-    },
-    {
-      title: 'About',
-      type: 'dropdown',
-      id: 'aboutDropdown',
-      items: [
-        { title: 'What & Why?', link: 'whatwhy.html' },
-        { title: 'What sets us Different?', link: 'what-sets-us-different.html' },
-        { title: 'Unique Tech Cloud ERP', link: 'unique-tech-cloud-erp.html' },
-        { title: "MD's Profile & Message", link: 'mds-profile-message.html' },
-      ],
-    },
-    {
-      title: 'Industries',
-      type: 'dropdown',
-      id: 'industriesDropdown',
-      items: [
-        {
-          title: 'Agriculture to Electronic Industries',
-          type: 'dropdown',
-          direction: 'left',
-          items: [
-            { title: 'Agriculture Industry', link: 'erp-for-agriculture.html' },
-            { title: 'Apparel Industry', link: 'erp-for-electronics.html' },
-            { title: 'Automative Industry ', link: '' },
-            { title: 'Bevarage Industry', link: '' },
-            { title: 'Chemical Industry', link: '' },
-            { title: 'Educational Institutes', link: '' },
-            { title: 'Electric Industry', link: '' },
-            { title: 'Electronics Industry', link: '' },
-          ],
-        },
-        {
-          title: 'FMCG to Metal Fabrication Industry',
-          type: 'dropdown',
-          direction: 'right',
-          items: [
-            { title: 'FMCG Industry', link: 'erp-for-metal-fabrication.html' },
-            { title: 'Food Industry', link: 'erp-for-metal-fabrication.html' },
-            { title: 'Furniture Industry', link: 'erp-for-metal-fabrication.html' },
-            { title: 'Hydrolic Cylinders Industry', link: 'erp-for-metal-fabrication.html' },
-            { title: 'Jewellery Industry', link: 'erp-for-metal-fabrication.html' },
-            { title: 'Leather Industry', link: 'erp-for-metal-fabrication.html' },
-            { title: 'Modical Equipment Manufacturing Industry', link: 'erp-for-metal-fabrication.html' },
-            { title: 'Wood Industry', link: 'erp-for-metal-fabrication.html' },
-            { title: 'Wholesalers Industry', link: 'erp-for-metal-fabrication.html' },
-            { title: 'Metal Fabrication Industry', link: 'erp-for-metal-fabrication.html' },
-            { title: 'Micro Finance Industry', link: 'erp-for-metal-fabrication.html' },
-            
 
-        ],
-        },
-        {
-          title: 'Oil & Gas Textile Industry',
-          type: 'dropdown',
-          direction: 'right',
-          items: [
-            { title: 'Oil & Gas Industry', link: 'erp-for-oil-and-gas.html' },
-            { title: 'Packaging Industry', link: 'erp-for-textile.html' },
-            { title: 'Paper Industry', link: 'erp-for-textile.html' },
-            { title: 'Plastic Industry', link: 'erp-for-textile.html' },
-            { title: 'Pharmaceutical Industry', link: 'erp-for-textile.html' },
-            { title: 'Publishing Industry', link: 'erp-for-textile.html' },
-            { title: 'Printing Industry', link: 'erp-for-textile.html' },
-            { title: 'Pre Engineering Industry', link: 'erp-for-textile.html' },
-            { title: 'Rubber Industry', link: 'erp-for-textile.html' },
-            { title: 'Restaurant Industry', link: 'erp-for-textile.html' },
-            { title: 'Retail Industry', link: 'erp-for-textile.html' },
-            { title: 'Steel Industry', link: 'erp-for-textile.html' },
-            { title: 'Telecom Industry', link: 'erp-for-textile.html' },
-            { title: 'Textile Industry', link: 'erp-for-textile.html' },
-          ],
-        },
-      ],
-    },
-    {
-      title: 'Products',
-      type: 'dropdown',
-      id: 'productsDropdown',
-      items: [
-        { title: 'Tech Cloud ERP', link: 'cloud-erp-software.html' },
-        { title: 'Tech Cloud CRM', link: 'customer-relationship-management.html' },
-        { title: 'Tech Cloud POS', link: 'erp-for-textile.html' },
-        { title: 'Tech Cloud Trading Software', link: 'erp-for-textile.html' },
-        { title: 'Tech Cloud Ecommerce', link: 'erp-for-textile.html' },
-        { title: 'Tech Cloud HRM', link: 'erp-for-textile.html' },
-        { title: 'Tech Cloud Finance', link: 'erp-for-textile.html' },
-        { title: 'Tech Cloud ERP Integrated-With-CRM-Ecommerce-POS', link: 'erp-for-textile.html' },
-        { title: 'Tech Cloud Restaurant ERP', link: 'erp-for-textile.html' },
-        { title: 'Accounting Software', link: 'erp-for-textile.html' },
-        // Other product items...
-      ],
-    },
-    {
-        title: 'BI',
-        link: '/',
-        type: 'link',
-    },
-    {
-        title: 'Services',
-        type: 'dropdown',
-        id: 'servicesDropdown',
-        items: [
-          { title: 'Web Development', link: 'erp-for-textile.html' },
-          { title: 'Mobile Application Development', link: 'customer-relationship-management.html' },                                                                                   
-          { title: 'Digital Marketing', link: 'cloud-erp-software.html' },
- 
-          // Other Services items...
-        ],
-    },
-    {
-        title: 'Pricing',
-        link: '/pricing',
-        type: 'link',
-    },
-    {
-      title: 'ContactUs',
-      link: '#',
-      type: 'link',
-  },
-    {
-      title: 'Demo',
-      link: '#',
-      type: 'link',
-      isDemo: true, // Custom flag to open Calendly widget
-    } 
-  ];
   //record section
   export const recordcount = [
     { number: '25+', text: 'Experience' },
@@ -413,6 +281,343 @@ export const cardData = {
 
   ]
 }
+//Navbar Section
+export const NAV_ITEMS = [
+  {
+    title: 'Home',
+    link: '/',
+    type: 'link',
+  },
+  {
+    title: 'About',
+    type: 'dropdown',
+    id: 'aboutDropdown',
+    items: [
+      { title: 'What & Why?', link: 'whatwhy.html' },
+      { title: 'What sets us Different?', link: 'what-sets-us-different.html' },
+      { title: 'Unique Tech Cloud ERP', link: 'unique-tech-cloud-erp.html' },
+      { title: "MD's Profile & Message", link: 'mds-profile-message.html' },
+    ],
+  },
+  {
+    title: 'Industries',
+    type: 'dropdown',
+    id: 'industriesDropdown',
+    items: [
+      {
+        title: 'Agriculture to Electronic Industries',
+        type: 'dropdown',
+        direction: 'left',
+        items: [
+          { title: 'Agriculture Industry', link: '/agriculture-industry' },
+          { title: 'Apparel Industry', link: '/apparel-industry' },
+          { title: 'Automative Industry ', link: '/automative-industry' },
+          { title: 'Bevarage Industry', link: '/beverage-industry' },
+          { title: 'Chemical Industry', link: '/chemical-industry' },
+          { title: 'Educational Institutes', link: '/educational-institutes' },
+          { title: 'Electric Industry', link: '/electrical-solar-industry' },
+          { title: 'Electronics Industry', link: '/electronics-industry' },
+        ],
+      },
+      {
+        title: 'FMCG to Metal Fabrication Industry',
+        type: 'dropdown',
+        direction: 'right',
+        items: [
+          { title: 'FMCG Industry', link: '/FMCG-industry' },
+          { title: 'Food Industry', link: '/food-industry' },
+          { title: 'Furniture Industry', link: '/furniture-industry' },
+          { title: 'Hydrolic Cylinders Industry', link: '/hydraulic-industry' },
+          { title: 'Jewellery Industry', link: '/jewellery-industry' },
+          { title: 'Leather Industry', link: '/leather-industry' },
+          { title: 'Modical Equipment Manufacturing Industry', link: '/medicalequipmentmanufacturing-industry' },
+          { title: 'Wood Industry', link: '/wood-industry' },
+          { title: 'Wholesalers Industry', link: '/wholesalers-industry' },
+          { title: 'Metal Fabrication Industry', link: '/metal-fabrication-industry' },
+          { title: 'Micro Finance Industry', link: '/microfinance-industry' },
+          
 
+      ],
+      },
+      {
+        title: 'Oil & Gas Textile Industry',
+        type: 'dropdown',
+        direction: 'right',
+        items: [
+          { title: 'Oil & Gas Industry', link: '/oilandgas-industry' },
+          { title: 'Packaging Industry', link: '/packaging-industry' },
+          { title: 'Paper Industry', link: '/paper-industry' },
+          { title: 'Plastic Industry', link: '/plastic-industry' },
+          { title: 'Pharmaceutical Industry', link: '/pharma-industry' },
+          { title: 'Publishing Industry', link: '/publishing-industry' },
+          { title: 'Printing Industry', link: '/printing-industry' },
+          { title: 'Pre Engineering Industry', link: '/preengineering-industry' },
+          { title: 'Rubber Industry', link: '/rubber-industry' },
+          { title: 'Restaurant Industry', link: '/restaurant-industry' },
+          { title: 'Retail Industry', link: '/retail-industry' },
+          { title: 'Steel Industry', link: '/steel-industry' },
+          { title: 'Telecom Industry', link: '/telecom-industry' },
+          { title: 'Textile Industry', link: '/textiles-industry' },
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Products',
+    type: 'dropdown',
+    id: 'productsDropdown',
+    items: [
+      { title: 'Tech Cloud ERP', link: 'cloud-erp-software.html' },
+      { title: 'Tech Cloud CRM', link: 'customer-relationship-management.html' },
+      { title: 'Tech Cloud POS', link: 'erp-for-textile.html' },
+      { title: 'Tech Cloud Trading Software', link: 'erp-for-textile.html' },
+      { title: 'Tech Cloud Ecommerce', link: 'erp-for-textile.html' },
+      { title: 'Tech Cloud HRM', link: 'erp-for-textile.html' },
+      { title: 'Tech Cloud Finance', link: 'erp-for-textile.html' },
+      { title: 'Tech Cloud ERP Integrated-With-CRM-Ecommerce-POS', link: 'erp-for-textile.html' },
+      { title: 'Tech Cloud Restaurant ERP', link: 'erp-for-textile.html' },
+      { title: 'Accounting Software', link: 'erp-for-textile.html' },
+      // Other product items...
+    ],
+  },
+  {
+      title: 'BI',
+      link: '/',
+      type: 'link',
+  },
+  {
+      title: 'Services',
+      type: 'dropdown',
+      id: 'servicesDropdown',
+      items: [
+        { title: 'Web Development', link: 'erp-for-textile.html' },
+        { title: 'Mobile Application Development', link: 'customer-relationship-management.html' },                                                                                   
+        { title: 'Digital Marketing', link: 'cloud-erp-software.html' },
+
+        // Other Services items...
+      ],
+  },
+  {
+      title: 'Pricing',
+      link: '/pricing',
+      type: 'link',
+  },
+  {
+    title: 'ContactUs',
+    link: '#',
+    type: 'link',
+},
+  {
+    title: 'Demo',
+    link: '#',
+    type: 'link',
+    isDemo: true, // Custom flag to open Calendly widget
+  } 
+];
+// industries data 
+export const sectionsData = {
+  agricultureIndustry: {
+    link: '/agriculture-industry',
+    heading: 'Agriculture Industry',
+    description: 'ERP software can help you build transparent, resilient, and sustainable supply chains across the agriculture sector.',
+  },
+  apparelIndustry: {
+    link: '/apparel-industry',
+    heading: 'Apparel Industry',
+    description: 'Elevate your apparel business with our ERP for growth.',
+  },
+  automativeIndustry: {
+    link: '/automative-industry',
+    heading: 'Automative Industry',
+    description: 'Drive your automotive business forward with our ERP solution tailored for growth.',
+  },
+  beverageIndustry: {
+    link: '/beverage-industry',
+    heading: 'Beverage Industry',
+    description: 'Pour growth into your beverage business with our ERP solution.',
+  },
+  chemicalIndustry: {
+    link: '/chemical-industry',
+    heading: 'Chemical Industry',
+    description: 'Our ERP boosts efficiency, compliance, and growth for the chemical industry.',
+  },
+
+  educationalInstitutes: {
+    link: '/educational-institutes',
+    heading: 'Educational Institutes',
+    description: 'Unlock growth potential with our custom ERP for education.',
+  },
+
+  electricalSolarIndustry: {
+    link: '/electrical-solar-industry',
+    heading: 'Electrical Solar Industry',
+    description: 'Power up your business growth with our specialized ERP for the electric solar industry.',
+  },
+  electronicsIndustry: {
+    link: '/electronics-industry',
+    heading: 'Electronics Industry',
+    description: 'Power up your business growth with our specialized ERP for the electric industry.',
+  },
+  FMCGIndustry: {
+    link: '/FMCG-industry',
+    heading: 'FMCG Industry',
+    description: 'Fueling FMCG growth with our specialized ERP solution.',
+  },
+
+  foodIndustry: {
+    link: '/food-industry',
+    heading: 'Food Industry',
+    description: 'Empowering food businesses to flourish with our customized ERP solutions.',
+  },
+
+  furnitureIndustry: {
+    link: '/furniture-industry',
+    heading: 'Furniture Industry',
+    description: 'Transforming furniture businesses with our bespoke ERP solutions for accelerated growth.',
+  },
+
+  garmentIndustry: {
+    link: '/garment-industry',
+    heading: 'Garment Industry',
+    description: 'Elevating garment businesses with our tailored ERP solutions for accelerated growth.',
+  },
+
+  hydraulicIndustry: {
+    link: '/hydraulic-industry',
+    heading: 'Hydraulic Industry',
+    description: 'Boosting hydraulic cylinder businesses with our ERP for rapid growth.',
+  },
+
+  jewelleryIndustry: {
+    link: '/jewellery-industry',
+    heading: 'Jewellery Industry',
+    description: 'Revolutionizing Jewellery businesses with our ERP solutions for exponential growth.',
+  },
+
+  leatherIndustry: {
+    link: '/leather-industry',
+    heading: 'Leather Industry',
+    description: 'Empowering leather businesses with our ERP solutions for exponential growth.',
+  },
+
+  logisticsIndustry: {
+    link: '/logistics-industry',
+    heading: 'Logistics Industry',
+    description: 'Driving growth in the logistics industry with our tailored ERP solutions.',
+  },
+
+  medicalequipmentmanufacturingIndustry: {
+    link: '/medicalequipmentmanufacturing-industry',
+    heading: 'Medical equipment manufacturing Industry',
+    description: 'Fueling growth in medical equipment manufacturing with our ERP solutions.',
+  },
+
+  woodIndustry: {
+    link: '/wood-industry',
+    heading: 'Wood Industry',
+    description: 'Empowering the wood industry with growth-focused ERP solutions.',
+  },
+
+  wholesalersIndustry: {
+    link: '/wholesalers-industry',
+    heading: 'Wholesalers Industry',
+    description: 'Empowering wholesalers with tailored ERP solutions for business growth.',
+  },
+  
+  metalFabricationIndustry: {
+    link: '/metal-fabrication-industry',
+    heading: 'Metal Fabrication Industry',
+    description: 'Empowering metal fabrication businesses to grow with our specialized ERP solutions.',
+  },
+
+  microfinanceIndustry: {
+    link: '/microfinance-industry',
+    heading: 'Microfinance Industry',
+    description: 'Empowering microfinance institutions to thrive with our ERP solutions for business growth.',
+  },
+
+  oilandGasIndustryy: {
+    link: '/oilandgas-industry',
+    heading: 'Oil and Gas Industry',
+    description: 'Optimize your operations with our ERP solutions for the oil and gas industry.',
+  },
+packagingIndustry: {
+    link: '/packaging-industry',
+    heading: 'Packaging Industry',
+    description: 'Enhance your packaging business with our tailored ERP solutions.',
+  },
+
+  paperIndustry: {
+    link: '/paper-industry',
+    heading: 'Paper Industry',
+    description: 'Revolutionize your paper industry operations with our tailored ERP solutions.',
+  },
+
+  plasticIndustry: {
+    link: '/plastic-industry',
+    heading: 'Plastic Industry',
+    description: 'Elevate your plastic industry business with our customized ERP solutions.',
+  },
+
+  pharmaceuticalIndustry: {
+    link: '/pharma-industry',
+    heading: 'Pharmaceutical Industry',
+    description: 'Unlock your pharmaceutical business potential with our advanced ERP solutions.',
+  },
+
+  publishingIndustry: {
+    link: '/publishing-industry',
+    heading: 'Publishing Industry',
+    description: 'Navigate the complexities of publishing with our streamlined ERP solutions.',
+  },
+
+  printingIndustry: {
+    link: '/printing-industry',
+    heading: 'Printing Industry',
+    description: 'Print success with our tailored ERP solutions for the printing industry.',
+  },
+
+  preEngineeringIndustry: {
+    link: '/preengineering-industry',
+    heading: 'Pre-Engineering Industry',
+    description: 'Engineer your success with our specialized ERP solutions for the pre-engineering industry.',
+  },
+
+  rubberIndustry: {
+    link: '/rubber-industry',
+    heading: 'Rubber Industry',
+    description: 'Rubber-stamp your success with our specialized ERP solutions for the rubber industry.',
+  },
+
+  restaurantIndustry: {
+    link: '/restaurant-industry',
+    heading: 'Restaurant Industry',
+    description: 'Sizzle up your restaurants success with our tailored ERP solutions.',
+  },
+
+  retailIndustry: {
+    link: '/retail-industry',
+    heading: 'Retail Industry',
+    description: 'Drive growth and efficiency in your retail business with our specialized ERP solutions.',
+  },
+
+  steelIndustry: {
+    link: '/steel-industry',
+    heading: 'Steel Industry',
+    description: 'Forge ahead in the steel industry with our specialized ERP solutions.',
+  },
+
+  telecomIndustry: {
+    link: '/telecom-industry',
+    heading: 'Telecom Industry',
+    description: 'Connect, streamline, and grow with our tailored ERP solutions for the telecom industry.',
+  },
+
+  textileIndustry: {
+    link: '/textiles-industry',
+    heading: 'Textile Industry',
+    description: 'Thread your success with our tailored ERP solutions for the textile industry.',
+  },
+};
 
  
