@@ -2,7 +2,7 @@ export const releavant = {
     logo: require("../assets/logo.png"),
     bgvideo:require("../assets/Home/videobanner.mp4"),
     us_flag_img:require("../assets/us-flag.jpg"),
-    indian_flag_img:require("../assets/us-flag.jpg"),
+    indian_flag_img:require("../assets/indian-flag.png"),
     testimonials_bg: require('../assets/Testimonials/testimonials_bg.png'),
     Quotation_mark: require('../assets/Home/Quotation_mark.png'),
     ourMission: {

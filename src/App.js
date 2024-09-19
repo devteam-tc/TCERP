@@ -4,11 +4,11 @@ import Home from './pages/Home/Home';
 import AboutUs from './pages/Aboutus/Aboutus';
 import Footer from './components/Footer/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from './components/Navbar/MainNavbar';
+import Navbar from './components/Navbar/Navbar';
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="App font-[Poppins] md:bg-top bg-center">
         <Navbar />
         {/* Define your Routes here */}
         <Routes>
