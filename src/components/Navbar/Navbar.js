@@ -225,18 +225,15 @@ const MainNavbar = () => {
               )}
               {/* Show StyledRow on screens above or equal to 992px */}
               {isLargeScreen && (
-                <StyledRow key={subIndex} title={subItem.title}  alignRight>
-                  <h3 className='fs-4 '>{subItem.title}</h3>
+                <DropdownSubmenu key={subIndex} title={subItem.title}  alignRight>
                   {subItem.items.map((subSubItem, subSubIndex) => (
-                    <StyledCol key={subSubIndex} onClick={handleDropdownItemClick}>
-                      <StyledDropdownItem>
+                      <StyledDropdownItem key={subSubIndex} onClick={handleDropdownItemClick}>
                         <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }} className='w-50'>
                           {subSubItem.title}
                         </Link>
                       </StyledDropdownItem>
-                    </StyledCol>
                   ))}
-                </StyledRow>
+                </DropdownSubmenu>
               )}
 
             </>
