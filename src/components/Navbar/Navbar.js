@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Navbar, Nav, Container, Dropdown, NavDropdown, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, Container, Dropdown, NavDropdown} from 'react-bootstrap';
 import { IoCall } from "react-icons/io5";
 import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube, FaTwitter } from 'react-icons/fa'; // Social media icons
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // Hamburger and Close icons
@@ -9,10 +9,7 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "react-bootstrap-submenu/dist/index.css";
 import { DropdownSubmenu } from 'react-bootstrap-submenu';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "react-bootstrap-submenu/dist/index.css";
-
-// Styled Components for Navbar
+import CalendlyWidget from './CalendlyWidget';
 // Styled Components for Navbar
 const StyledNavLink = styled(Nav.Link)`
   text-decoration: none !important;
@@ -92,7 +89,16 @@ const CustomDropdown = styled(Dropdown)`
 const StyledDropdownItem = styled(Dropdown.Item)`
   position: relative;
   width: -webkit-fill-available;
-  color: black !important; // Default color set to black
+  color: black !important;
+  
+  // Remove blue background and border on focus or active state
+  &:focus,
+  &:active {
+    background-color: transparent !important;
+    color: #e93906 !important; // Keep the hover color
+    box-shadow: none !important; // Remove focus box-shadow
+  }
+
   &:hover {
     color: #e93906 !important;
   }   
@@ -125,7 +131,7 @@ const MobileNavbarCollapse = styled(Navbar.Collapse)`
     overflow-y: auto; /* Scrollable content */
     margin: 5%;
   }
-`;
+`;        
 
 const NavbarToggle = styled(Navbar.Toggle)`
   border: none !important; /* Remove the border when clicked */
@@ -133,55 +139,25 @@ const NavbarToggle = styled(Navbar.Toggle)`
     box-shadow: none !important; /* Remove the focus box-shadow */
   }
 `;
-
-const StyledRow = styled(Row)`
-  display: grid;
-  padding: 5px;
-`;
-
-const StyledCol = styled(Col)`
-  padding: 5px;
-`;
-
 const MainNavbar = () => {
-  const [calendlyLoaded, setCalendlyLoaded] = useState(false);
   const [expanded, setExpanded] = useState(false); // State for tracking the Navbar toggle
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 992);
+  const { openCalendlyWidget } = CalendlyWidget(); // Use the Calendly widget
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.type = 'text/javascript';
-    script.async = true;
-
     const handleResize = () => {
       setIsLargeScreen(window.innerWidth >= 992);
     };
-
     window.addEventListener('resize', handleResize);
 
-    script.onload = () => setCalendlyLoaded(true);
-
-    document.body.appendChild(script);
     return () => {
-      document.body.removeChild(script);
       window.removeEventListener('resize', handleResize); // Cleanup on unmount
     };
   }, []);
 
-  const openCalendlyWidget = () => {
-    if (calendlyLoaded && window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/dvignesh-techclouderp/demo',
-      });
-    } else {
-      console.error('Calendly script not loaded.');
-    }
-  };
-
   const handleNavLinkClick = (item) => {
     if (item.isDemo) {
-      openCalendlyWidget();
+      openCalendlyWidget(); // Call the Calendly widget when demo link is clicked
     }
     setExpanded(false); // Close the navbar when a link is clicked
   };
@@ -206,48 +182,32 @@ const MainNavbar = () => {
         );
       } else if (item.type === 'dropdown') {
         return (
-          <NavDropdown key={index} title={item.title} className='w-100 d-grid'>
-            {item.items.map((subItem, subIndex) => {
-              if (subItem.type === 'dropdown') {
-                return (
-                  <>
-              {/* Show DropdownSubmenu on screens below 992px */}
-              {!isLargeScreen && (
-                <DropdownSubmenu key={subIndex} title={subItem.title} alignRight>
-                  {subItem.items.map((subSubItem, subSubIndex) => (
-                    <StyledDropdownItem key={subSubIndex} onClick={handleDropdownItemClick}>
-                      <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                        {subSubItem.title}
+          <NavDropdown key={index} title={item.title} className="w-100 d-grid">
+            <div style={{ padding: '15px 30px 30px 15px' }}>
+              {item.items.map((subItem, subIndex) => {
+                if (subItem.type === 'dropdown') {
+                  return (
+                    <DropdownSubmenu key={subIndex} title={subItem.title} alignRight>
+                      {subItem.items.map((subSubItem, subSubIndex) => (
+                        <StyledDropdownItem key={subSubIndex} onClick={handleDropdownItemClick}>
+                          <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                            {subSubItem.title}
+                          </Link>
+                        </StyledDropdownItem>
+                      ))}
+                    </DropdownSubmenu>
+                  );
+                } else {
+                  return (
+                    <StyledDropdownItem key={subIndex} onClick={handleDropdownItemClick}>
+                      <Link to={subItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
+                        {subItem.title}
                       </Link>
                     </StyledDropdownItem>
-                  ))}
-                </DropdownSubmenu>
-              )}
-              {/* Show StyledRow on screens above or equal to 992px */}
-              {isLargeScreen && (
-                <DropdownSubmenu key={subIndex} title={subItem.title}  alignRight>
-                  {subItem.items.map((subSubItem, subSubIndex) => (
-                      <StyledDropdownItem key={subSubIndex} onClick={handleDropdownItemClick}>
-                        <Link to={subSubItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }} className='w-50'>
-                          {subSubItem.title}
-                        </Link>
-                      </StyledDropdownItem>
-                  ))}
-                </DropdownSubmenu>
-              )}
-
-            </>
-                );
-              } else {
-                return (
-                  <StyledDropdownItem key={subIndex} onClick={handleDropdownItemClick}>
-                    <Link to={subItem.link} style={{ color: 'inherit', textDecoration: 'inherit' }}>
-                      {subItem.title}
-                    </Link>
-                  </StyledDropdownItem>
-                );
-              }
-            })}
+                  );
+                }
+              })}
+            </div>
           </NavDropdown>
         );
       }
@@ -256,7 +216,7 @@ const MainNavbar = () => {
   };
 
   return (
-    <Navbar expand="lg" bg="light" variant="light" className="main-navbar fw-semibold" expanded={expanded}>
+    <Navbar expand="lg" bg="light" variant="light" className="main-navbar fw-semibold" style={{ borderTop: '3px solid #ef5228' }} expanded={expanded}>
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img src={releavant.logo} style={{ width: '200px' }} alt="logo" />
@@ -269,7 +229,6 @@ const MainNavbar = () => {
         <MobileNavbarCollapse id="navbarSupportedContent">
           <MobileNav className="mx-auto d-flex align-items-center">
             {renderNavItems()}
-
             {/* Phone Dropdown Icon */}
             <CustomDropdown className="contact-dropdown">
               <PhoneDropdownToggle className="btn cta-02">
@@ -277,24 +236,27 @@ const MainNavbar = () => {
               </PhoneDropdownToggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="tel:+13127663390">
-                  <img
-                    src={releavant.us_flag_img}
-                    style={{ width: '25px', height: '25px', marginRight: '10px', borderRadius: '50%' }}
-                    alt="US flag"
-                  />
-                  +1 (312) 766-3390
-                </Dropdown.Item>
-                <Dropdown.Item href="tel:+9198929439603">
+              <div style={{padding: '15px 30px 30px 15px'}}>
+              <Dropdown.Item href="tel:+9198929439603" className='my-1'>
                   <img
                     src={releavant.indian_flag_img}
                     style={{ width: '25px', height: '25px', marginRight: '10px', borderRadius: '50%' }}
                     alt="Indian flag"
                   />
                   +91 8929439603
-                </Dropdown.Item>
+              </Dropdown.Item>
+              <Dropdown.Item href="tel:+13127663390" className='my-1'>
+                  <img
+                    src={releavant.us_flag_img}
+                    style={{ width: '25px', height: '25px', marginRight: '10px', borderRadius: '50%' }}
+                    alt="US flag"
+                  />
+                  +1 (312) 766-3390
+              </Dropdown.Item>
+              </div>
+                
               </Dropdown.Menu>
-            </CustomDropdown> 
+            </CustomDropdown>
           </MobileNav>
           {/* Social Media Icons at right side */}
           <div className="d-flex align-items-center ms-auto">
@@ -318,7 +280,6 @@ const MainNavbar = () => {
               </SocialIcon>
             </div>
         </MobileNavbarCollapse>
-
       </Container>
     </Navbar>
   );
