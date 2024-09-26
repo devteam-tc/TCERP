@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Accordion,  Col, Container, Row } from 'react-bootstrap';
 import { BodySection, ContentColumn, Description, Divider, Heading, Section } from '../IndustryPage';
@@ -14,14 +14,16 @@ import CTA from '../CTA'
 const CardContainer = styled.div`
   // border: 2px solid #00BFFF;
   // border-radius: 8px;
-  padding: 20px;
+  padding: 30px;
+  font-weight: 500;
   background-color: white;
   width: 25vw;
   height: 100%;  /* Ensures all cards have the same height */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 10px;
-  border: 3px solid var(--Foundation-techcloud-Secondary-techcloud-secondary-500, #05A7CC);
+  // border-radius: 10px;
+  // border: 3px solid var(--Foundation-techcloud-Secondary-techcloud-secondary-500, #05A7CC);
   background: #FFF;
+  color: #393939;
 
   /* M3/Elevation Light/2 */
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
@@ -29,11 +31,11 @@ const CardContainer = styled.div`
   &:hover {
     transform: translateY(-5px); /* Hover effect */
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Adds shadow on hover */
-    border-radius: 10px;
-    border-top: 3px solid var(--Foundation-techcloud-Secondary-techcloud-secondary-500, #05A7CC);
-    border-right: 10px solid var(--Foundation-techcloud-Secondary-techcloud-secondary-500, #05A7CC);
-    border-bottom: 7px solid var(--Foundation-techcloud-Secondary-techcloud-secondary-500, #05A7CC);
-    border-left: 3px solid var(--Foundation-techcloud-Secondary-techcloud-secondary-500, #05A7CC);
+    // border-radius: 10px;
+    // border-top: 3px solid var(--Foundation-techcloud-Secondary-techcloud-secondary-500, #05A7CC);
+    // border-right: 10px solid var(--Foundation-techcloud-Secondary-techcloud-secondary-500, #05A7CC);
+    // border-bottom: 7px solid var(--Foundation-techcloud-Secondary-techcloud-secondary-500, #05A7CC);
+    // border-left: 3px solid var(--Foundation-techcloud-Secondary-techcloud-secondary-500, #05A7CC);
     background: #FFF;
 
 /* M3/Elevation Light/2 */
@@ -52,7 +54,7 @@ const CardTitle = styled.h3`
 `;
 
 const CardText = styled.p`
-  font-size: 0.9rem;
+  font-size: 16px;
   color: #333;
   margin-bottom: 15px;
 `;
@@ -60,12 +62,14 @@ const CardText = styled.p`
 const CardList = styled.ul`
   list-style: none;
   padding: 0;
+  
 `;
 
 const CardItem = styled.li`
   display: flex;
   align-items: center;
   margin-bottom: 5px;
+  font-size: 14px;
 `;
 
 const Icon = styled(BsCheckCircle)`
@@ -156,11 +160,9 @@ const TitleContainer = styled.div`
     justify-content: start;
   }`
 
-
 const TabContent = ({ content, image, alt }) => {
-  // Check if content is an array; if not, default to an empty array
   const contentArray = Array.isArray(content) ? content : [];
-  
+
   return (
     <StyledTabContent>
       <div className="row">
@@ -177,8 +179,8 @@ const TabContent = ({ content, image, alt }) => {
         </div>
         <div className="col-12 col-lg-6 d-flex justify-content-center">
           <img
-            src={image}
-            alt={alt || "Default alt text"} // Dynamically set alt tag
+            src={image || '/default-image.png'} // Fallback to a default image
+            alt={alt || "Default alt text"}
             className="rounded-md img-fluid"
           />
         </div>
@@ -186,17 +188,32 @@ const TabContent = ({ content, image, alt }) => {
     </StyledTabContent>
   );
 };
+
 const ProductPage = () => {
   const { productId } = useParams();
-  const [activeTab, setActiveTab] = useState('requirement');
-
+  
   const product = productData[productId] || {
     heading: 'Product Not Found',
     description: 'The product you are looking for does not exist.',
+    tabsHeadings: {},
+    tabData: {}
   };
 
+  // Get the first tab key
+  const firstTab = Object.keys(product.tabsHeadings)[0];
+
+  // Initialize activeTab with the first tab if none is selected
+  const [activeTab, setActiveTab] = useState(firstTab);
+
+  // Ensure a valid tab is always selected
+  useEffect(() => {
+    if (!activeTab || !product.tabsHeadings[activeTab]) {
+      setActiveTab(firstTab); // Automatically select the first tab
+    }
+  }, [activeTab, product.tabsHeadings, firstTab]);
+
   // Safely access tab data with default values
-  const tabContent = product.tabData[activeTab] || { content: [], image: '' };
+  const tabContent = product.tabData[activeTab] || { content: [], image: '/default-image.png', alt: 'Default image description' };
 
   return (
     <>
@@ -216,7 +233,7 @@ const ProductPage = () => {
         <Container className="my-4">
           <Title className="text-center text-orange-600 mb-5">Our ERP Solutions Overview</Title>
           <Row>
-            {product.cards.map((card, index) => (
+            {product.cards?.map((card, index) => (
               <Col md={6} lg={4} key={index} className="mb-4 d-flex">
                 <CardContainer>
                   <CardTitle>{card.title}</CardTitle>
@@ -263,9 +280,7 @@ const ProductPage = () => {
                   </div>
                 </Col>
                 <Col md={9}>
-                  {/* Pass both content and image and alt text to TabContent */}
                   <TabContent content={tabContent.content} image={tabContent.image} alt={tabContent.alt} />
-
                 </Col>
               </Row>
             </div>
@@ -277,8 +292,7 @@ const ProductPage = () => {
                   <StyledAccordionItem eventKey={idx.toString()} key={key}>
                     <StyledAccordionHeader>{product.tabsHeadings[key]}</StyledAccordionHeader>
                     <StyledAccordionBody>
-                      {/* Pass both content and image */}
-                      <TabContent content={product.tabData[key]?.content || []} image={product.tabData[key]?.image || ''} />
+                      <TabContent content={product.tabData[key]?.content || []} image={product.tabData[key]?.image || '/default-image.png'} alt={product.tabData[key]?.alt || 'Default image description'} />
                     </StyledAccordionBody>
                   </StyledAccordionItem>
                 ))}
@@ -287,12 +301,9 @@ const ProductPage = () => {
           </div>
         </Container>
       </SectionWrapper>
-      <OurPartnerSection className='py-2'/>
+      <OurPartnerSection className='py-2' />
       <CTA />
     </>
   );
 };
-
-
-
 export default ProductPage;

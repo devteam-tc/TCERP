@@ -117,31 +117,54 @@ export const partnerData = [
 export const ModulecardsData = [
 {
   id: 1,
-  image: 'https://via.placeholder.com/300x180',
+  image: require('../assets/Home/crmim.jpg'),
   title: 'CRM',
   description:
     'CRM stands for Customer Relationship Management. It\'s a strategy businesses use to manage interactions .',
 },
 {
   id: 2,
-  image: 'https://via.placeholder.com/300x180',
+  image: require('../assets/Home/exportandimport.jpg'),
   title: 'Export and Import',
-  description:
-    'Streamline global trade with our Export and Import module. Manage logistics, documentation, and more.',
+  description: 'Streamline global trade with our Export and Import module. Manage logistics, documentation, and more.',
 },
 {
   id: 3,
-  image: 'https://via.placeholder.com/300x180',
+  image: require('../assets/Home/sales.png'),
   title: 'Sales and Marketing',
   description:
     'Sales & Marketing Module handles all the sales activities of domestic and international operations.',
 },
 {
   id: 4,
-  image: 'https://via.placeholder.com/300x180',
+  image: require('../assets/Home/jobwork.jpg'),
   title: 'Job Work',
   description:
     'Easily outsource specialized tasks with our Job Work module, optimizing production and reducing workload.',
+},
+{
+  id: 5,
+  image: require('../assets/Home/qualitycontrol.jpg'),
+  title: 'Quality Control',
+  description: 'A process through which a business seeks to ensure that product quality is maintained perfectly.',
+},
+{
+  id: 6,
+  image: require('../assets/Home/secure.jpg'),
+  title: 'Inventory',
+  description: 'facilitating seamless coordination among departments. Automated notifications maintain optimum levels, enhancing efficiency.',
+},
+{
+  id: 7,
+  image: require('../assets/Home/financee.jpg'),
+  title: 'Finance',
+  description: 'Facilitating cash and asset management, it ensures accurate financial reporting without data entry.',
+},
+{
+  id: 8,
+  image: require('../assets/Home/asset.png'),
+  title: 'Asset Managment',
+  description: 'Empower oversight of asset lifecycles from procurement to disposal. With centralized views and seamless integration.',
 },
 ];
 export const testimonialsData = [
@@ -1331,30 +1354,54 @@ export const expoDetails = {
   },
   chennai: {
     title: 'Chennai Food Pro Expo',
-    description: 'All you need to know about the Chennai Food Pro Expo 2024...',
+    venue: 'Chennai Trade Centre, Chennai, India',
+    date: '9, 10, 11 - Aug, 2024',
     images: [
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg1.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg2.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg3.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg4.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg5.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg6.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg7.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg8.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg9.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg10.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg11.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg12.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg13.webp'),
     ],
   },
   surat: {
     title: 'Surat Tech Cloud ERP',
     description: 'Discover the Tech Cloud ERP Software in Surat...',
     images: [
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
+      require('../assets/Gallery/SuratExpo/SuratExpoImg1.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg2.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg3.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg4.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg5.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg6.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg7.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg8.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg9.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg10.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg11.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg12.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg13.jpg'),
+    ],
+  },
+  GaneshChaturdhi: {
+    title: 'Ganesh Chaturdhi Celebrations - 2024',
+    venue: 'Office Unit No. 705, Jain Sadguru Capital Park, Madhapur, Hyderabad, Telangana, India-500081.',
+    date: '19,20,21,22 - Sep, 2024',
+    description: 'Discover the Tech Cloud ERP Software in Surat...',
+    images: [
+      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg1.webp'),
+      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg2.webp'),
+      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg3.webp'),
+      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg6.webp'),
+      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg7.webp'),
     ],
   },
 };
@@ -1371,7 +1418,7 @@ export const galleryData = {
       alt: 'World Food India 2024 in Delhi',
     },
     {
-      id: 'Chennai',
+      id: 'chennai',
       location: 'Chennai',
       venue: 'Chennai Trade Centre, Chennai, India',
       date: '9, 10, 11 - Aug, 2024',
@@ -1391,7 +1438,15 @@ export const galleryData = {
       location: 'Delhi',
       venue: 'Bharath Bhavan, Pragathi Maidan',
       date: '19, 20, 21, 22 - Sep, 2024',
-      img: require('../assets/Gallery/DelhiExpo/DelhiExpoThumbnail.png'),
+      img: require('../assets/Gallery/DelhiExpo/DelhiExpoThumbnail.webp'),
+      alt: 'World Food India 2024 in Delhi',
+    },
+    {
+      id: 'coimbatore',
+      location: 'Coimbatore',
+      venue: 'Bharath Bhavan, Pragathi Maidan',
+      date: '19, 20, 21, 22 - Sep, 2024',
+      img: require('../assets/Gallery/DelhiExpo/DelhiExpoThumbnail.webp'),
       alt: 'World Food India 2024 in Delhi',
     }
     
@@ -1400,7 +1455,7 @@ export const galleryData = {
   festival: [
     {
       id: 'IndependenceDay',
-      location: 'Hyderabad',
+      location: 'Independence Day',
       venue: '705, Jain Sadguru Capital Park, Madhapur,HYD',
       date: '15th - Aug, 2024',
       img: require('../assets/Gallery/Events/IndependenceDayThumbnail.png'),
@@ -1408,7 +1463,7 @@ export const galleryData = {
     },
     {
       id: 'GaneshChaturdhi',
-      location: 'Hyderabad',
+      location: 'Ganesh Chaturdhi',
       venue: '705, Jain Sadguru Capital Park, Madhapur,HYD',
       date: '7th - Sep, 2024',
       img: require('../assets/Gallery/Events/GaneshChaturdhiThumbnail.png'),
@@ -1426,23 +1481,6 @@ export const galleryData = {
     },
   ],
 };
-
-
-// export const productData = {
-//   'tech-cloud-erp': {
-//     heading: 'Tech Cloud ERP',
-//     description: 'Tech Cloud ERP is a comprehensive solution for managing your enterprise’s core business processes.'
-//   },
-//   'tech-cloud-crm': {
-//     heading: 'Tech Cloud CRM',
-//     description: 'Tech Cloud CRM offers a powerful set of features to help you manage customer relationships effectively.'
-//   },
-//   'tech-cloud-pos': {
-//     heading: 'Tech Cloud POS',
-//     description: 'Tech Cloud POS is a modern point-of-sale system designed for retail and hospitality businesses.'
-//   },
-//   // Add more products as needed...
-// };
 
 export const faqContent = {
   subTitle: "FAQs",
@@ -1477,9 +1515,9 @@ export const productData = {
         title: "Sales & Marketing",
         text: "Sales and marketing integration within ERP systems revolutionizes customer engagement, streamlining operations for unparalleled efficiency and driving dynamic business growth.",
         items: [
-          "Handles pre-sales and sales activities of the organization",
-          "Complete stock-to-dock tracking of sales order processing cycle",
-          "Detailed Customers/ Business Partners/ Dealers database"
+          "Handles pre-sales and sales activities of the organization.",
+          "Complete stock-to-dock tracking of sales order processing cycle.",
+          "Detailed Customers/ Business Partners/ Dealers database.",
         ]
       },
       {
@@ -1488,7 +1526,7 @@ export const productData = {
         items: [
           "Supplier invoices & payments to suppliers",
           "Enquiries to multiple vendors",
-          "Configurable terms & conditions."
+          "Configurable terms & conditions.",
         ]
       },
       {
@@ -1497,7 +1535,7 @@ export const productData = {
         items: [
           "Online status of item quantity.",
           "Multiple levels of classification of items.",
-          "Expiry control and warranty tracking."
+          "Expiry control and warranty tracking.",
         ]
       },
       {
@@ -1506,7 +1544,7 @@ export const productData = {
         items: [
           "Supports batch, discrete, made to order and made to stock types of production.",
           "Multi level bill of materials.",
-          "Material requirement planning based on sales order and production plan."
+          "Material requirement planning based on sales order and production plan.",
         ]
       },
       {
@@ -1515,7 +1553,7 @@ export const productData = {
         items: [
           "Define inspection plans and checklists",
           "Assign inventory with user-defined QC statuses",
-          "Generate customized Certificates of Analysis"
+          "Generate customized Certificates of Analysis",
         ]
       },
       {
@@ -1524,7 +1562,7 @@ export const productData = {
         items: [
           "Equipment Details",
           "Preventive Maintenance",
-          "Utility Details and maintenance"
+          "Utility Details and maintenance",
         ]
       },
       {
@@ -1533,7 +1571,7 @@ export const productData = {
         items: [
           "Total flow of money (Cash/Bank) and total expenditures.",
           "Bank account transfers.",
-          "General Ledger inquiries."
+          "General Ledger inquiries.",
         ]
       },
       {
@@ -1542,7 +1580,7 @@ export const productData = {
         items: [
           "Employee Database.",
           "Dynamic HR Letter templates.",
-          "Attendance Management."
+          "Attendance Management.",
         ]
       },
       {
@@ -1551,7 +1589,7 @@ export const productData = {
         items: [
           "Manage depreciable/non-depreciable assets and customize asset depreciation.",
           "Import/export asset records.",
-          "Assign Vision Units to an asset to track billing value."
+          "Assign Vision Units to an asset to track billing value.",
         ]
       }
     ],
@@ -1601,98 +1639,939 @@ export const productData = {
     description: "Our ERP solutions are designed to streamline and optimize operations.",
     cards: [
       {
-        title: "Sales & Marketing",
-        text: "Sales and marketing integration within ERP systems revolutionizes customer engagement, streamlining operations for unparalleled efficiency and driving dynamic business growth.",
+        title: "Contact Management",
+        text: "Organize contacts, create leads, and import them for client communication and marketing campaigns. Duplicate contact details to save time and improve efficiency.",
         items: [
-          "Handles pre-sales and sales activities of the organization",
-          "Complete stock-to-dock tracking of sales order processing cycle",
-          "Detailed Customers/ Business Partners/ Dealers database"
+          "Organize and import contacts for seamless client communication.",
+          "Create and manage leads to boost marketing efforts.",
+          "Duplicate contact details to save time and increase efficiency.",
         ]
       },
       {
-        title: "Purchase Management",
-        text: "Optimized purchasing for better operations.",
+        title: "Target Customers",
+        text: "Segment customers using contact database info to craft targeted marketing campaigns, enhancing product/service appeal to your ideal audience.",
         items: [
-          "Supplier invoices & payments to suppliers",
-          "Enquiries to multiple vendors",
-          "Configurable terms & conditions."
+          "Segment customers for personalized marketing campaigns.",
+          "Enhance product and service appeal to your target audience.",
+          "Leverage contact database insights to drive engagement.",
         ]
       },
-      // Add the rest of the cards...
+      {
+        title: "Organise Meetings",
+        text: "Segment customers using contact database info to craft targeted marketing campaigns, enhancing product/service appeal to your ideal audience.",
+        items: [
+          "Schedule meetings and send invites seamlessly.",
+          "Track meeting notes for efficient business activities.",
+          "Set meeting durations and reminders to stay organized.",
+        ]
+      },
+      {
+        title: "Manage Opportunities",
+        text: "Track prospective sales and improve your bottom line by managing opportunities, recording expected revenue, and close dates to generate accurate sales pipeline reports. Combine emails, calls, tasks, and documents to identify necessary actions.",
+        items: [
+          "Manage opportunities by tracking expected revenue and close dates.",
+          "Generate accurate sales pipeline reports for better forecasting.",
+          "Combine emails, calls, tasks, and documents to drive necessary actions.",
+        ]
+      },
+      {
+        title: "Streamline Workflow",
+        text: "Generate leads from word of mouth, email campaigns, and webinars. Assign to sales team with tasks, quotes, and calls for efficient follow-up and deal closure.",
+        items: [
+          "Generate leads from word of mouth, email campaigns, and webinars.",
+          "Assign tasks, quotes, and calls to sales teams for follow-up.",
+          "Streamline workflow for faster deal closures.",
+        ]
+      },
+      {
+        title: "Invoicing & Order Management",
+        text: "Quickly generate mass quotes from won opportunities with Tech Cloud CRM to save time and maintain competitive edge. Seamlessly convert quotes into orders upon client confirmation for streamlined sales processes.",
+        items: [
+          "Generate mass quotes from won opportunities to save time.",
+          "Seamlessly convert quotes into orders upon client confirmation.",
+          "Streamline sales processes to maintain a competitive edge.",
+        ]
+      },
+      {
+        title: "Case Management",
+        text: "Efficiently track and resolve customer issues with Tech Cloud CRM to enhance satisfaction and loyalty. Prioritize and delegate tasks promptly for timely resolution of critical issues.",
+        items: [
+          "Track and resolve customer issues to boost satisfaction and loyalty.",
+          "Prioritize and delegate tasks for timely issue resolution.",
+          "Enhance customer service efficiency with streamlined case management.",
+        ]
+      },
+      {
+        title: "Project Management",
+        text: "Effortlessly manage projects with Tech Cloud CRM by creating tasks and integrating project-related documents. Optimize project timelines by allocating hours and days effectively.",
+        items: [
+          "Create tasks and integrate project documents for seamless management.",
+          "Optimize timelines by efficiently allocating hours and days.",
+          "Streamline project workflows for better execution and results.",
+        ]
+      },
+      {
+        title: "Email Marketing",
+        text: "Use Tech Cloud CRM for targeted campaigns to inform customers about new products/services, engaging them with relevant content. Prioritize valuable customers from your target list to drive sales effectively.",
+        items: [
+          "Launch targeted campaigns to promote new products and services.",
+          "Engage customers with relevant and personalized content.",
+          "Prioritize high-value customers to drive effective sales.",
+        ]
+      }
     ],
     tabData: {
       requirement: {
-        image: "https://placehold.co/400x400?text=Requirement+Image", // Placeholder image URL for requirement tab
-        alt: "Alt text for image 1", // Add alt text for image
+        image: "https://placehold.co/400x400?text=CRM+Requirement+Image", // Placeholder image URL for requirement tab
         content: [
-          { title: 'Identify Client Needs:', description: "Deeply understand the client's business objectives, pain points, and opportunities." },
-          { title: 'Stakeholder Collaboration:', description: 'Engage with key decision-makers to ensure all requirements are well-documented.' },
-          { title: 'Customized Solutions:', description: 'Shape solutions tailored to the unique needs of the business.' },
+          { title: 'Identify CRM Needs:', description: "Understand the organization's goals for managing customer relationships." },
+          { title: 'Team Collaboration:', description: 'Work with sales, marketing, and support teams to define specific CRM requirements.' },
+          { title: 'Tailored CRM Approach:', description: 'Design a CRM solution tailored to your business processes and customer journey.' },
         ],
       },
       implementation: {
-        image: "https://placehold.co/400x400?text=Implementation+Image", // Placeholder image URL for implementation tab
-        alt: "Alt text for another image", // Alt text for another tab
+        image: "https://placehold.co/400x400?text=CRM+Implementation+Image", // Placeholder image URL for implementation tab
         content: [
-          { title: 'System Setup:', description: 'Install, configure, and customize the ERP system.' },
-          { title: 'Training:', description: 'Train the client’s team on how to use the system efficiently.' },
-          { title: 'Documentation:', description: 'Create and provide all necessary documentation for future reference.' },
+          { title: 'CRM System Setup:', description: 'Install, configure, and customize the CRM system to meet your business needs.' },
+          { title: 'Training & Enablement:', description: 'Train employees on how to efficiently use the CRM system for their roles.' },
+          { title: 'Data Import & Migration:', description: 'Seamlessly migrate customer and business data into the new CRM system.' },
         ],
       },
       goLive: {
-        image: "https://placehold.co/400x400?text=GoLive+Image", // Placeholder image URL for go live tab
+        image: "https://placehold.co/400x400?text=CRM+GoLive+Image", // Placeholder image URL for go live tab
         content: [
-          { title: 'Live System Activation:', description: 'Transition from the legacy system to the new ERP system.' },
-          { title: 'Monitoring:', description: 'Monitor the system for issues and ensure smooth operation.' },
-          { title: 'User Support:', description: 'Provide on-site and remote support during the go-live phase.' },
+          { title: 'Go Live Activation:', description: 'Make the CRM system live and accessible for all users.' },
+          { title: 'Real-time Monitoring:', description: 'Monitor system performance and address issues during the go-live phase.' },
+          { title: 'User Support:', description: 'Provide on-site and remote support to ensure smooth adoption.' },
         ],
       },
       postGoLive: {
-        image: "https://placehold.co/400x400?text=PostGoLive+Image", // Placeholder image URL for post go live tab
+        image: "https://placehold.co/400x400?text=CRM+PostGoLive+Image", // Placeholder image URL for post go live tab
         content: [
-          { title: 'Ongoing Support:', description: 'Provide continued support to resolve any post-go-live issues.' },
-          { title: 'System Optimization:', description: 'Fine-tune the system based on real-world usage.' },
-          { title: 'Upgrades & Maintenance:', description: 'Ensure the system stays updated with the latest features and security patches.' },
+          { title: 'Continuous Support:', description: 'Offer ongoing support to resolve any post-launch challenges.' },
+          { title: 'CRM Optimization:', description: 'Optimize the CRM system based on user feedback and business requirements.' },
+          { title: 'Regular Updates:', description: 'Ensure the CRM system stays up-to-date with new features and security patches.' },
         ],
       },
     },
     tabsHeadings: {
-      requirement: "Requirement Gathering",
-      implementation: "Implementation & Training",
-      goLive: "Go Live & Onboarding",
-      postGoLive: "Post-Go-Live Support",
+      requirement: "CRM Requirement Analysis",
+      implementation: "CRM Implementation",
+      goLive: "Go Live & User Adoption",
+      postGoLive: "Post-Go-Live CRM Optimization",
     }
   },
   'point-of-sale':{
-    heading: "ERP Solutions",
+      heading: "ERP Solutions",
+      description: "Our ERP solutions are designed to streamline and optimize operations.",
+      cards: [
+          {
+            title: "Web Based",
+            text: "Leverage Tech Cloud CRM’s web-based analytics for real-time insights into customer behavior and sales trends. Access data anytime to optimize business strategies.",
+            items: [
+              "Real-time insights into customer behavior.",
+              "Access data anytime, anywhere.",
+              "Optimize strategies with cloud analytics.",
+            ]
+          },
+          {
+            title: "Customer understanding",
+            text: "Deepen your understanding of customers by analyzing preferences and feedback to enhance engagement and satisfaction.",
+            items: [
+              "Analyze preferences and behaviors.",
+              "Leverage feedback for better engagement.",
+              "Tailor offerings to improve satisfaction.",
+            ]
+          },
+          {
+            title: "Discounts",
+            text: "Utilize discounts effectively to drive sales and enhance customer loyalty. Implement targeted promotions to attract new customers and retain existing ones.",
+            items: [
+              "Drive sales with targeted discount promotions.",
+              "Enhance customer loyalty through strategic offers.",
+              "Encourage repeat purchases with enticing deals.",
+            ]
+          },
+          {
+            title: "Inventory Optimization",
+            text: "Optimize your inventory management with Tech Cloud CRM. Track stock levels and forecast demand to enhance efficiency and reduce costs.",
+            items: [
+              "Monitor stock levels for better management.",
+              "Forecast demand to reduce excess inventory.",
+              "Streamline operations to cut costs.",
+            ]
+          },
+          {
+            title: "Cash Management",
+            text: "Effective cash management is essential for maintaining financial stability and ensuring smooth operations. By monitoring cash flow, forecasting expenses.",
+            items: [
+              "Monitor cash flow for better financial control.",
+              "Forecast expenses to avoid shortfalls.",
+              "Manage receivables and payables efficiently.",
+            ]
+          },
+          {
+            title: "Custom Receipts",
+            text: "Tailored receipts improve the customer experience by providing personalized details and relevant information. With Tech Cloud CRM, you can create customized receipts.",
+            items: [
+              "Personalize receipts for a better customer experience.",
+              "Include relevant details to enhance engagement.",
+              "Strengthen brand identity with custom designs.",
+            ]
+          },
+          {
+            title: "Fast Staff Training",
+            text: "Rapid staff training is essential for maintaining operational efficiency. With Tech Cloud CRM, new team members can quickly learn to navigate the system and utilize its features effectively.",
+            items: [
+              "Quick onboarding for new staff.",
+              "Minimize downtime during training.",
+              "Boost productivity with efficient learning.",
+            ]
+          },
+          {
+            title: "User Accounts",
+            text: "Manage user accounts securely with Tech Cloud CRM to ensure personalized experiences and tailored access. Control permissions and enhance security to protect sensitive information.",
+            items: [
+              "Securely manage user accounts for tailored access.",
+              "Control permissions for enhanced security.",
+              "Personalize experiences for each user.",
+            ]
+          },
+          {
+            title: "Data Analysis",
+            text: "Utilize Tech Cloud CRM to analyze data and uncover valuable insights and trends that drive informed decision-making. Transform raw data into actionable strategies to enhance performance and growth.",
+            items: [
+              "Uncover insights to guide business decisions.",
+              "Identify trends for strategic planning.",
+              "Transform data into actionable strategies.",
+            ]
+          }
+        ],
+        tabData: {
+          requirement: {
+            image: "https://placehold.co/400x400?text=POS+Requirement+Image", // Placeholder image URL for requirement tab
+            content: [
+              { title: 'Understand Retail Needs:', description: "Identify the specific POS requirements based on store size, transaction volume, and customer experience goals." },
+              { title: 'Stakeholder Collaboration:', description: 'Engage with store managers and decision-makers to gather comprehensive requirements.' },
+              { title: 'Tailored POS Solutions:', description: 'Design a POS system that meets the unique needs of your retail operations.' },
+            ],
+          },
+          implementation: {
+            image: "https://placehold.co/400x400?text=POS+Implementation+Image", // Placeholder image URL for implementation tab
+            content: [
+              { title: 'POS System Setup:', description: 'Install, configure, and customize the POS system to match store operations.' },
+              { title: 'Staff Training:', description: 'Train staff to use the POS system efficiently, covering transactions, inventory, and reporting.' },
+              { title: 'Documentation & Support:', description: 'Provide user guides and ongoing support for staff during the implementation phase.' },
+            ],
+          },
+          goLive: {
+            image: "https://placehold.co/400x400?text=POS+GoLive+Image", // Placeholder image URL for go live tab
+            content: [
+              { title: 'POS Go-Live:', description: 'Launch the POS system in your store and ensure all staff are comfortable with its usage.' },
+              { title: 'Monitoring Performance:', description: 'Monitor system performance, address any issues, and ensure smooth operations post-launch.' },
+              { title: 'Live Support:', description: 'Provide real-time support for any operational challenges during the go-live phase.' },
+            ],
+          },
+          postGoLive: {
+            image: "https://placehold.co/400x400?text=POS+PostGoLive+Image", // Placeholder image URL for post go live tab
+            content: [
+              { title: 'Ongoing Support & Maintenance:', description: 'Offer continued support to resolve any post-launch challenges and ensure system stability.' },
+              { title: 'POS Optimization:', description: 'Optimize the POS system based on feedback and real-time performance data.' },
+              { title: 'System Updates:', description: 'Keep the system up-to-date with new features and security improvements.' },
+            ],
+          },
+        },
+        tabsHeadings: {
+          requirement: "POS Requirement Gathering",
+          implementation: "POS Implementation & Training",
+          goLive: "Go Live & Monitoring",
+          postGoLive: "Post-Go-Live Support & Optimization",
+        }
     
   },
   'trading-software': {
+      heading: "ERP Solutions",
+      description: "Our ERP solutions are designed to streamline and optimize operations.",
+        cards: [
+          {
+            title: "New Customers",
+            text: "Generate quality leads by creating engaging, valuable content that attracts potential customers and encourages them to share their contact information.",
+            items: [
+              "Capture new leads through word of mouth, email campaigns, and webinars.",
+              "Delegate these leads to your sales team equipped with tasks, quotes, and calls modules to close deals or reassign leads.",
+              "Schedule calls or send out emails to those leads.",
+            ]
+          },
+          {
+            title: "Customer Management",
+            text: "Streamline customer management by efficiently tracking interactions, resolving issues promptly, and maintaining strong relationships to enhance satisfaction and loyalty.",
+            items: [
+              "A Customer Management System is essential for collecting and collating customer data in large companies.",
+              "Even the smallest organizations require a customer management system.",
+              "Customer Management Systems capture, research, and analyze customer behavior, buying preferences, and demographics, even in small organizations.",
+            ]
+          },
+          {
+            title: "Purchase Management",
+            text: "Optimize purchase management by efficiently sourcing, acquiring, and tracking inventory to ensure timely and cost-effective procurement.",
+            items: [
+              "Purchase Management is considered to be very important function of Materials Management in a company.",
+              "Nowadays, increasing competition and market demands, along with resource scarcity, have prompted organizations to reassess their purchasing activities.",
+              "The purchasing department's functions have expanded to include verifying supplier credentials, ensuring timely material delivery, and inspecting material quality.",
+            ]
+          },
+          {
+            title: "Streamline Warehouse Management",
+            text: "Enhance efficiency and accuracy in warehouse management through optimized inventory control, streamlined workflows, and advanced technology integration.",
+            items: [
+              "The Streamline Warehouse Management System is a subscription-based inventory management system that is hosted, ensuring no technical issues for users.",
+              "There are no upfront costs, allowing for convenient month-to-month payments, ensuring your version is always up to date every time you log in.",
+              "The software has been specifically designed with a user-centered approach that prioritizes customer experience.",
+            ]
+          },
+          {
+            title: "Reduced Shipping Costs",
+            text: "Lower shipping costs through strategic optimization of logistics routes, carrier negotiations, and efficient packaging solutions.",
+            items: [
+              "Get acquainted with your representative.",
+              "Leverage flat rate shipping.",
+              "Negotiate shipping rates.",
+            ]
+          },
+          {
+            title: "Accounts Maintenance",
+            text: "Ensure seamless account maintenance by promptly updating information, monitoring transactions, and addressing customer inquiries to uphold satisfaction and trust.",
+            items: [
+              "A trading account can be any investment account containing securities, cash or other holdings.",
+              "These investors frequently trade assets within the same session, subjecting their accounts to special regulations.",
+              "A trading account can hold securities, cash, and other investment vehicles, similar to any other brokerage account.",
+            ]
+          }
+        ],
+        tabData: {
+          discovery: {
+            image: "https://placehold.co/400x400?text=Discovery+Image", // Placeholder image URL for discovery tab
+            alt: "Alt text for discovery image", // Alt text for discovery tab
+            content: [
+              { title: 'Understand Business Goals:', description: "Gain insights into the business's trading objectives, pain points, and market opportunities." },
+              { title: 'Stakeholder Engagement:', description: 'Collaborate with key team members to understand expectations and priorities for the software.' },
+              { title: 'Identify Key Challenges:', description: 'Focus on understanding trading cycles, bottlenecks, and competitive pressures.' },
+            ],
+          },
+          implementation: {
+            image: "https://placehold.co/400x400?text=Implementation+Image", // Placeholder image URL for implementation tab
+            alt: "Alt text for implementation image", // Alt text for implementation tab
+            content: [
+              { title: 'System Configuration:', description: 'Install and configure ERP software to meet trading-specific needs.' },
+              { title: 'Team Training:', description: 'Ensure that all users are trained to handle trading workflows, inventory, and customer management effectively.' },
+              { title: 'Documentation Creation:', description: 'Create comprehensive user guides and process documentation for reference.' },
+            ],
+          },
+          goLive: {
+            image: "https://placehold.co/400x400?text=GoLive+Image", // Placeholder image URL for go live tab
+            alt: "Alt text for go live image", // Alt text for go live tab
+            content: [
+              { title: 'System Launch:', description: 'Officially activate the trading ERP system, transitioning from legacy solutions.' },
+              { title: 'Monitoring & Adjustment:', description: 'Track system performance and make any necessary real-time adjustments.' },
+              { title: 'Support & Guidance:', description: 'Provide ongoing support during the initial go-live phase to resolve any user issues.' },
+            ],
+          },
+          optimization: {
+            image: "https://placehold.co/400x400?text=Optimization+Image", // Placeholder image URL for optimization tab
+            alt: "Alt text for optimization image", // Alt text for optimization tab
+            content: [
+              { title: 'System Enhancements:', description: 'Identify areas for improvement based on user feedback and operational performance.' },
+              { title: 'Continuous Support:', description: 'Provide continuous support to resolve emerging issues and optimize trading operations.' },
+              { title: 'Upgrades & Features:', description: 'Ensure the system is equipped with the latest trading tools and capabilities.' },
+            ],
+          },
+        },
+        tabsHeadings: {
+          discovery: "Discovery & Planning",
+          implementation: "Implementation & Training",
+          goLive: "Go Live & Support",
+          optimization: "Post-Go-Live Optimization",
+        }
 
   },
   'Ecommerce-software': {
-
+      heading: "ERP Solutions",
+      description: "Our ERP solutions are designed to streamline and optimize operations.",
+        cards: [
+          {
+            title: "Automation",
+            text: "Experience the ease of transparent pricing with our cutting-edge automation, providing instant clarity on costs from taxes to shipping, ensuring a seamless shopping journey for our valued customers.",
+            items: [
+              "Enjoy transparent pricing for clarity on all costs.",
+              "Streamline the shopping journey with automated calculations.",
+              "Enhance customer satisfaction with seamless transactions.",
+            ]
+          },
+          {
+            title: "Website Builder",
+            text: "Craft your dream website effortlessly with our intuitive website builder, designed to empower you with creative freedom and seamless functionality.",
+            items: [
+              "Effortlessly create your dream website with user-friendly tools.",
+              "Enjoy creative freedom with customizable templates and features.",
+              "Experience seamless functionality for a smooth website-building process.",
+            ]
+          },
+          {
+            title: "Central Database",
+            text: "Streamline your operations with our centralized database solution, providing a secure and efficient hub for all your valuable data, accessible anytime, anywhere.",
+            items: [
+              "Streamline operations with a secure, centralized database.",
+              "Access valuable data anytime, anywhere.",
+              "Enhance efficiency with a reliable data hub.",
+            ]
+          },
+          {
+            title: "Search Function",
+            text: "Navigate through vast information effortlessly with our advanced search function, delivering rapid access to precisely what you need, exactly when you need it.",
+            items: [
+              "Effortlessly navigate vast information with advanced search.",
+              "Access exactly what you need in seconds.",
+              "Enhance productivity with quick and precise results.",
+            ]
+          },
+          {
+            title: "Integration",
+            text: "Seamlessly connect and synchronize your tools and processes with our integration solutions, empowering your business with enhanced efficiency and agility across every aspect of operations.",
+            items: [
+              "Seamlessly connect tools for improved operational efficiency.",
+              "Synchronize processes to enhance business agility.",
+              "Empower your organization with integrated solutions.",
+            ]
+          },
+          {
+            title: "Marketing data visualization",
+            text: "Elevate your marketing strategy with our suite of advanced tools and comprehensive analysis reports, empowering you to unlock valuable insights and drive impactful decision-making.",
+            items: [
+              "Utilize advanced tools for effective marketing data visualization.",
+              "Access comprehensive analysis reports for deeper insights.",
+              "Drive impactful decision-making to enhance marketing strategies.",
+            ]
+          }
+        ],
+        tabData: {
+          marketAnalysis: {
+              image: "https://placehold.co/400x400?text=MarketAnalysis+Image",
+              alt: "Ecommerce Market Analysis Image",
+              content: [
+                  { title: 'Market Trends:', description: "Identify current trends in the ecommerce landscape to stay competitive." },
+                  { title: 'Customer Insights:', description: 'Gather insights into customer behavior and preferences.' },
+                  { title: 'Competitor Analysis:', description: 'Analyze competitors to understand their strengths and weaknesses.' }
+              ]
+          },
+          productManagement: {
+              image: "https://placehold.co/400x400?text=ProductManagement+Image",
+              alt: "Ecommerce Product Management Image",
+              content: [
+                  { title: 'Catalog Creation:', description: 'Efficiently create and manage your product catalog.' },
+                  { title: 'Inventory Tracking:', description: 'Monitor stock levels in real-time to avoid shortages.' },
+                  { title: 'Product Variants:', description: 'Easily manage different product variations and options.' }
+              ]
+          },
+          orderFulfillment: {
+              image: "https://placehold.co/400x400?text=OrderFulfillment+Image",
+              alt: "Ecommerce Order Fulfillment Image",
+              content: [
+                  { title: 'Order Processing:', description: 'Streamline the order processing workflow for faster delivery.' },
+                  { title: 'Shipping Integration:', description: 'Integrate with shipping carriers for real-time tracking.' },
+                  { title: 'Returns Management:', description: 'Simplify returns processing to enhance customer satisfaction.' }
+              ]
+          },
+          customerEngagement: {
+              image: "https://placehold.co/400x400?text=CustomerEngagement+Image",
+              alt: "Ecommerce Customer Engagement Image",
+              content: [
+                  { title: 'Personalized Marketing:', description: 'Use customer data to create targeted marketing campaigns.' },
+                  { title: 'Customer Feedback:', description: 'Gather feedback to improve products and services.' },
+                  { title: 'Loyalty Programs:', description: 'Implement loyalty programs to increase customer retention.' }
+              ]
+          }
+      },
+      tabsHeadings: {
+          marketAnalysis: "Market Analysis",
+          productManagement: "Product Management",
+          orderFulfillment: "Order Fulfillment",
+          customerEngagement: "Customer Engagement"
+      }
   },
   'hr-managament-software': {
-
-  },
-  'payroll-software': {
-
+      heading: "ERP Solutions",
+      description: "Our ERP solutions are designed to streamline and optimize operations.",
+      cards: [
+          {
+            title: "Recruitment",
+            text: "Top talent drives our company's success. Our recruitment component excels in managing positions, screening applicants, and optimizing selection processes.",
+            items: [
+              "Efficiently manage positions and screen applicants.",
+              "Optimize the selection process for top talent acquisition.",
+              "Streamline recruitment to drive company success.",
+            ]
+          },
+          {
+            title: "On-boarding",
+            text: "Effective onboarding through Tech Cloud HRMS ensures engaged and high-performing employees, maximizing organizational success.",
+            items: [
+              "Ensure engaged and high-performing employees.",
+              "Maximize organizational success with effective onboarding.",
+              "Streamline the onboarding process for new hires.",
+            ]
+          },
+          {
+            title: "Welfare Management",
+            text: "ESS module, enables the employee to maintain his/ her own profile that can then checks business updates needed from and by the employee.",
+            items: [
+              "Enable employees to maintain their own profiles.",
+              "Keep updated with essential business information.",
+              "Enhance employee engagement through self-service.",
+            ]
+          },
+          {
+            title: "Training and Development",
+            text: "Training and development in HRM enhance employee performance by boosting skills and knowledge through education and skill-building.",
+            items: [
+              "Boost employee performance with targeted training.",
+              "Enhance skills and knowledge through continuous education.",
+              "Invest in skill-building for organizational growth.",
+            ]
+          },
+          {
+            title: "Leave and Time Management",
+            text: "The international payroll management system helps the end-to-end global payroll information management process, crafted to provide a best tool for all payrolls.",
+            items: [
+              "Simplify global payroll management for seamless operations.",
+              "Provide comprehensive tools for end-to-end payroll information.",
+              "Ensure accuracy in managing employee leave and time.",
+            ]
+          },
+          {
+            title: "Payroll Management",
+            text: "Payroll management involves overseeing the process of calculating and distributing employee salaries, wages, bonuses, and deductions within an organization.",
+            items: [
+              "Oversee accurate calculation and distribution of salaries.",
+              "Manage bonuses and deductions effectively.",
+              "Streamline payroll processes for efficiency.",
+            ]
+          },
+          {
+            title: "Dynamic Dashboard",
+            text: "Our ERP HRM Module dynamic dashboard provides real-time visualizations of key HR metrics and data, enabling quick insights for informed decision-making.",
+            items: [
+              "Access real-time visualizations of key HR metrics.",
+              "Enable quick insights for informed decision-making.",
+              "Simplify data analysis with intuitive dashboards.",
+            ]
+          },
+          {
+            title: "Versatile Calendar",
+            text: "Manage Events Easily create events and send invites to attendees. Cancel or modify at anytime. Public Holidays Plan for holidays throughout the year by simply selecting from a list of public holidays in your country.",
+            items: [
+              "Easily create events and manage invites.",
+              "Modify or cancel events as needed.",
+              "Plan public holidays efficiently from a preset list.",
+            ]
+          },
+          {
+            title: "Real-time Collaboration",
+            text: "Tech cloud Performance Management streamlines performance appraisals, replacing manual processes with an efficient evaluation cycle.",
+            items: [
+              "Streamline performance appraisals with automated evaluations.",
+              "Replace manual processes with efficient cycles.",
+              "Foster a culture of continuous feedback and improvement.",
+            ]
+          }
+        ],
+        tabData: {
+          employeeManagement: {
+              image: "https://placehold.co/400x400?text=EmployeeManagement+Image",
+              alt: "HR Employee Management Image",
+              content: [
+                  { title: 'Employee Profiles:', description: "Maintain detailed profiles for all employees, including personal information and performance history." },
+                  { title: 'Attendance Tracking:', description: 'Efficiently monitor employee attendance and punctuality.' },
+                  { title: 'Performance Reviews:', description: 'Conduct regular performance reviews to assess employee growth and areas for improvement.' }
+              ]
+          },
+          complianceManagement: {
+              image: "https://placehold.co/400x400?text=ComplianceManagement+Image",
+              alt: "HR Compliance Management Image",
+              content: [
+                  { title: 'Regulatory Compliance:', description: 'Ensure compliance with labor laws and regulations to avoid legal issues.' },
+                  { title: 'Policy Management:', description: 'Develop and maintain organizational policies that align with legal requirements.' },
+                  { title: 'Audit Readiness:', description: 'Prepare for audits with organized records and documentation.' }
+              ]
+          },
+          employeeEngagement: {
+              image: "https://placehold.co/400x400?text=EmployeeEngagement+Image",
+              alt: "HR Employee Engagement Image",
+              content: [
+                  { title: 'Feedback Mechanisms:', description: 'Implement systems for collecting employee feedback and suggestions.' },
+                  { title: 'Recognition Programs:', description: 'Establish programs to recognize and reward employee achievements.' },
+                  { title: 'Engagement Surveys:', description: 'Conduct surveys to gauge employee satisfaction and engagement levels.' }
+              ]
+          },
+          analyticsAndReporting: {
+              image: "https://placehold.co/400x400?text=AnalyticsAndReporting+Image",
+              alt: "HR Analytics and Reporting Image",
+              content: [
+                  { title: 'HR Metrics Analysis:', description: 'Analyze key HR metrics to assess organizational health.' },
+                  { title: 'Custom Reports:', description: 'Generate customized reports to meet specific business needs.' },
+                  { title: 'Predictive Analytics:', description: 'Use data analytics to predict workforce trends and challenges.' }
+              ]
+          }
+      },
+      tabsHeadings: {
+          employeeManagement: "Employee Management",
+          complianceManagement: "Compliance Management",
+          employeeEngagement: "Employee Engagement",
+          analyticsAndReporting: "Analytics & Reporting"
+      }
   },
   'financial-management-systems': {
-
+      heading: "ERP Solutions",
+    description: "Our ERP solutions are designed to streamline and optimize operations.",
+    cards: [
+      {
+        title: "Functionalities",
+        text: "Optimize finances with real-time reporting, automated billing, and seamless integration for better decision-making.",
+        items: [
+          "Optimize finances with real-time reporting.",
+          "Automate billing for increased efficiency.",
+          "Seamlessly integrate data for better decision-making.",
+        ]
+      },
+      {
+        title: "Inquiries & Reports",
+        text: "Gain insights with comprehensive inquiries and generate detailed reports for informed financial decisions.",
+        items: [
+          "Gain insights through comprehensive inquiries.",
+          "Generate detailed reports for informed decisions.",
+          "Enhance financial strategies with accurate data.",
+        ]
+      },
+      {
+        title: "Advanced Features",
+        text: "Elevate your financial management with cutting-edge features tailored to your business needs.",
+        items: [
+          "Elevate financial management with advanced tools.",
+          "Tailor features to meet specific business needs.",
+          "Optimize operations with cutting-edge technology."
+        ]
+      },
+      {
+        title: "Multi-currency",
+        text: "Manage global transactions effortlessly with our multi-currency capabilities, ensuring financial accuracy across diverse markets.",
+        items: [
+          "Effortlessly manage global transactions with multi-currency support.",
+          "Ensure financial accuracy across diverse markets.",
+          "Streamline international operations for seamless business.",
+        ]
+      }
+    ],
+    tabData: {
+      requirement: {
+          image: "https://placehold.co/400x400?text=Requirement+Image",
+          content: [
+              { title: 'Identify Financial Objectives:', description: "Understand the client's financial goals, challenges, and needs." },
+              { title: 'Compliance Review:', description: 'Engage with stakeholders to assess regulatory requirements and compliance needs.' },
+              { title: 'Tailored Solutions Design:', description: 'Develop solutions that cater to the specific financial management needs of the business.' }
+          ],
+      },
+      implementation: {
+          image: "https://placehold.co/400x400?text=Implementation+Image",
+          content: [
+              { title: 'System Configuration:', description: 'Install and set up the financial management system according to specifications.' },
+              { title: 'User Training:', description: 'Provide comprehensive training to ensure users are proficient in using the system.' },
+              { title: 'Documentation Development:', description: 'Create detailed documentation for system processes and user guidelines.' }
+          ],
+      },
+      goLive: {
+          image: "https://placehold.co/400x400?text=GoLive+Image",
+          content: [
+              { title: 'System Activation:', description: 'Activate the new financial management system for live operations.' },
+              { title: 'Performance Monitoring:', description: 'Monitor system performance to identify any issues during the initial phase.' },
+              { title: 'Support Availability:', description: 'Ensure on-site and remote support for users during the go-live period.' }
+          ],
+      },
+      postGoLive: {
+          image: "https://placehold.co/400x400?text=PostGoLive+Image",
+          content: [
+              { title: 'Continuous Support:', description: 'Provide ongoing support to address any post-implementation issues.' },
+              { title: 'System Optimization:', description: 'Fine-tune system features based on user feedback and performance metrics.' },
+              { title: 'Updates & Maintenance:', description: 'Regularly update the system to include new features and maintain security standards.' }
+          ],
+      }
+  },
+  tabsHeadings: {
+      requirement: "Requirement Gathering",
+      implementation: "Implementation & Training",
+      goLive: "Go Live & Onboarding",
+      postGoLive: "Post-Go-Live Support"
+  }
   },
   'integrated-erp-software': {
-
+      heading: "ERP Solutions",
+      description: "Our ERP solutions are designed to streamline and optimize operations.",
+      cards: [
+        {
+          title: "CRM",
+          text: "Enhance your customer relationships with Tech Cloud ERP's integrated CRM module. Manage customer interactions, track purchase history, and streamline communications to boost satisfaction and loyalty.",
+          items: [
+            "Unified customer data for better insights.",
+            "Automated customer notifications and follow-ups.",
+            "Comprehensive tracking of customer interactions and purchase history.",
+          ]
+        },
+        {
+          title: "Point of Sale (POS)",
+          text: "Streamline your sales processes with Tech Cloud ERP's robust POS system. Gain immediate access to customer data, manage transactions efficiently, and keep inventory levels accurate in real-time.",
+          items: [
+            "Real-time inventory management.",
+            "Quick and efficient transaction processing.",
+            "Detailed sales reports and analytics.",
+          ]
+        },
+        {
+          title: "E-Commerce Integration",
+          text: "Expand your online presence with Tech Cloud ERP's seamless eCommerce integration. Automate order management, update products in real-time, and provide customers with accurate information for a smooth shopping experience.",
+          items: [
+            "Automated order and inventory updates.",
+            "Real-time synchronization with eCommerce platforms.",
+            "Enhanced product management and customer notifications.",
+          ]
+        }
+      ],
+      tabData: {
+          requirement: {
+              image: "https://placehold.co/400x400?text=Requirement+Image",
+              content: [
+                  { title: 'Define Integrated Needs:', description: "Assess client requirements for integrating various systems into a unified ERP solution." },
+                  { title: 'Collaboration with Teams:', description: 'Work with different departments to gather input and ensure comprehensive requirements.' },
+                  { title: 'Scalable Solutions Design:', description: 'Develop flexible solutions that can scale with the business needs.' }
+              ],
+          },
+          implementation: {
+              image: "https://placehold.co/400x400?text=Implementation+Image",
+              content: [
+                  { title: 'ERP Customization:', description: 'Customize the ERP system to align with business processes and workflows.' },
+                  { title: 'Cross-Department Training:', description: 'Train all relevant teams on the integrated system for a smooth transition.' },
+                  { title: 'User Documentation:', description: 'Provide detailed manuals and guidelines for users to reference post-implementation.' }
+              ],
+          },
+          goLive: {
+              image: "https://placehold.co/400x400?text=GoLive+Image",
+              content: [
+                  { title: 'Integrated System Launch:', description: 'Execute the launch of the integrated ERP system across all departments.' },
+                  { title: 'System Performance Monitoring:', description: 'Continuously monitor the system for performance and user feedback during the initial phase.' },
+                  { title: 'Immediate User Assistance:', description: 'Offer on-the-spot support to resolve any issues that arise during go-live.' }
+              ],
+          },
+          postGoLive: {
+              image: "https://placehold.co/400x400?text=PostGoLive+Image",
+              content: [
+                  { title: 'Continuous Improvement:', description: 'Implement changes based on user feedback to enhance system performance.' },
+                  { title: 'System Audits:', description: 'Regularly audit the system to ensure compliance and effectiveness.' },
+                  { title: 'Future Upgrades Planning:', description: 'Plan and implement updates to maintain system relevance and security.' }
+              ],
+          }
+      },
+      tabsHeadings: {
+          requirement: "Integration Needs Analysis",
+          implementation: "System Integration Implementation",
+          goLive: "Integration Launch & Monitoring",
+          postGoLive: "Post-Integration Support"
+      }
   },
   'erp-for-restaraunt': {
-
+      heading: "ERP Solutions",
+      description: "Our ERP solutions are designed to streamline and optimize operations.",
+        cards: [
+          {
+            title: "POS",
+            text: "Efficiently process transactions and manage inventory with our intuitive point of sale system. Streamline your retail operations and enhance our customer experience today.",
+            items: [
+              "Table management with status (Reserved, Allocated, KOT status, Billing and Payment).",
+              "Table reservation and cancellation of reservation are managed.",
+              "Easily allocate the table and view guest current status.",
+            ]
+          },
+          {
+            title: "Purchase Management",
+            text: "Transform your procurement process with our comprehensive purchase management system. From vendor selection to inventory tracking, we simplify every aspect for enhanced efficiency and cost savings.",
+            items: [
+              "Approval system by authorized procurement dept.",
+              "Multiple time goods receiving against requisition.",
+              "Manage Purchase request generated by different dept.",
+            ]
+          },
+          {
+            title: "Inventory Management",
+            text: "Efficiently track and manage your inventory with our advanced inventory management solutions. From stock levels to supply chain optimization, we help you stay organized and in control.",
+            items: [
+              "All Inward and Outward flow of materials from the stores is monitored by this module.",
+              "Manages the records of items returned to the suppliers and items sent to scrap.",
+              "Requisition slip for each item is generated by this module.",
+            ]
+          },
+          {
+            title: "Recipe Preparation",
+            text: "Effortlessly create and manage recipes with our intuitive recipe preparation software. From ingredient quantities to cooking instructions, streamline your culinary processes for consistent and delicious results.",
+            items: [
+              "Once Recipe feeding on standard quantity & utilize in many ways.",
+              "Easily generates Request for item of several quantity.",
+              "Item conversion process 1 to many and many to 1.",
+            ]
+          },
+          {
+            title: "Reservation Management",
+            text: "Simplify your reservation process with our intuitive reservation management system. From booking to guest check-in, streamline operations and enhance customer satisfaction with ease.",
+            items: [
+              "Total control of guests and quick response of availability.",
+              "Online customers can only book tables that are available and eliminates overbooking.",
+              "Once a reservation is made the guest receives an email confirmation with a reservation number.",
+            ]
+          },
+          {
+            title: "HR & Payroll Management",
+            text: "Streamline your HR and payroll processes with our integrated solutions. From employee onboarding to payroll processing, we simplify HR tasks to save you time and resources.",
+            items: [
+              "Holidays Management, Shifting Management and Employee Roster Management.",
+              "Employee Detail information Management.",
+              "Over time and deduction Management.",
+            ]
+          }
+        ],
+        tabData: {
+          requirement: {
+              image: "https://placehold.co/400x400?text=Requirement+Image",
+              alt: "Requirement Gathering Image",
+              content: [
+                  { title: 'Understanding Restaurant Needs:', description: "Assess the unique operational challenges and goals specific to the restaurant." },
+                  { title: 'Collaborative Requirement Gathering:', description: 'Work closely with restaurant staff to document detailed requirements.' },
+                  { title: 'Customized ERP Solutions:', description: 'Tailor the ERP system to fit the specific workflow of the restaurant.' }
+              ],
+          },
+          implementation: {
+              image: "https://placehold.co/400x400?text=Implementation+Image",
+              alt: "Implementation Image",
+              content: [
+                  { title: 'ERP Setup and Configuration:', description: 'Install and configure the ERP system tailored for restaurant operations.' },
+                  { title: 'Hands-On Staff Training:', description: 'Conduct training sessions for staff to ensure effective system usage.' },
+                  { title: 'Comprehensive User Documentation:', description: 'Provide detailed documentation for reference during and after implementation.' }
+              ],
+          },
+          goLive: {
+              image: "https://placehold.co/400x400?text=GoLive+Image",
+              alt: "Go Live Image",
+              content: [
+                  { title: 'System Go Live Activation:', description: 'Officially transition to the new ERP system for restaurant management.' },
+                  { title: 'Real-Time Operational Monitoring:', description: 'Closely monitor system performance to address any immediate issues.' },
+                  { title: 'Dedicated User Support:', description: 'Offer support to restaurant staff during the transition period to ensure smooth operations.' }
+              ],
+          },
+          postGoLive: {
+              image: "https://placehold.co/400x400?text=PostGoLive+Image",
+              alt: "Post Go Live Image",
+              content: [
+                  { title: 'Continued Technical Support:', description: 'Provide ongoing assistance to resolve any post-launch challenges.' },
+                  { title: 'Feedback Collection and Adaptation:', description: 'Gather feedback from users for continuous improvement of the ERP system.' },
+                  { title: 'Regular System Updates:', description: 'Schedule updates to keep the ERP system aligned with the latest industry practices.' }
+              ],
+          },
+      },
+      tabsHeadings: {
+          requirement: "Restaurant Needs Assessment",
+          implementation: "Implementation Process",
+          goLive: "Go Live Transition",
+          postGoLive: "Post-Go-Live Support"
+      }
   },
   'erp-for-accounting-software':{
-    
-  }
-
-
-
-  // Add more products here...
+      heading: "ERP Solutions",
+      description: "Our ERP solutions are designed to streamline and optimize operations.",
+        cards: [
+          {
+            title: "Modules",
+            text: "Effective management of sales, purchase, inventory, and finance is crucial for the success of any business.",
+            items: [
+              "Manage sales, purchase, and inventory efficiently.",
+              "Optimize financial processes for business success.",
+              "Streamline operations with integrated management modules.",
+            ]
+          },
+          {
+            title: "Features",
+            text: "The web-based software offers cloud computing, mobile and tablet compatibility, auto backup, and flexible GST incorporation.",
+            items: [
+              "Access cloud computing with mobile and tablet compatibility.",
+              "Benefit from automatic backups for data security.",
+              "Incorporate flexible GST management seamlessly.",
+            ]
+          },
+          {
+            title: "Support",
+            text: "We provide training, 24/7 support, quick responses, and quick updates.",
+            items: [
+              "24/7 support with quick response times.",
+              "Comprehensive training for seamless onboarding.",
+              "Fast updates to keep your system running smoothly.",
+            ]
+          },
+          {
+            title: "Pricing",
+            text: "@ Rs.18,000 Only, our product offers very low pricing, abundant features, and is completely integrated.",
+            items: [
+              "Affordable pricing at just Rs. 18,000.",
+              "Packed with abundant features for optimal use.",
+              "Fully integrated for seamless business operations.",
+            ]
+          }
+        ],
+        tabData: {
+          requirement: {
+              image: "https://placehold.co/400x400?text=Accounting+Needs+Image",
+              alt: "Accounting Needs Image",
+              content: [
+                  { title: 'Understanding Client Objectives:', description: "Identify key financial goals and accounting practices." },
+                  { title: 'Compliance Requirements:', description: 'Document necessary compliance with financial regulations and standards.' },
+                  { title: 'Customization Expectations:', description: 'Gather requirements for any specific accounting features needed.' },
+              ],
+          },
+          implementation: {
+              image: "https://placehold.co/400x400?text=Implementation+Image",
+              alt: "Implementation Image",
+              content: [
+                  { title: 'Setup Chart of Accounts:', description: 'Define account structures tailored to the business model.' },
+                  { title: 'Training Sessions for Users:', description: 'Educate staff on new processes and software functionalities.' },
+                  { title: 'Prepare System Documentation:', description: 'Create user manuals for reference and future training.' },
+              ],
+          },
+          goLive: {
+              image: "https://placehold.co/400x400?text=GoLive+Image",
+              alt: "Go Live Image",
+              content: [
+                  { title: 'Launch the ERP System:', description: 'Transition all accounting functions to the new platform.' },
+                  { title: 'Data Verification Process:', description: 'Ensure accuracy of migrated financial data.' },
+                  { title: 'Immediate User Assistance:', description: 'Provide support for any initial issues encountered.' },
+              ],
+          },
+          postGoLive: {
+              image: "https://placehold.co/400x400?text=PostGoLive+Image",
+              alt: "Post Go Live Image",
+              content: [
+                  { title: 'Regular System Maintenance:', description: 'Conduct periodic reviews to ensure optimal performance.' },
+                  { title: 'Continuous User Support:', description: 'Offer ongoing assistance for accounting software use.' },
+                  { title: 'Updates for Compliance Changes:', description: 'Keep the system aligned with evolving financial regulations.' },
+              ],
+          },
+      },
+      tabsHeadings: {
+          requirement: "Accounting Needs Assessment",
+          implementation: "Implementation & User Training",
+          goLive: "ERP Go Live Process",
+          postGoLive: "Post Go Live Support & Maintenance",
+      }
+  },
 };

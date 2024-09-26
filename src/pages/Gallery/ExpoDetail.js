@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row} from 'react-bootstrap';
+import { Col, Container, Row} from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { ContentColumn, Section } from '../IndustryPage';
@@ -87,7 +87,7 @@ const ExpoDetail = () => {
                     lgShare,      // Add share plugin
                     lgRotate      // Add rotate plugin
               ]}>
-            {expo.images.map((img, index) => (
+            {expo.images.slice(0,2).map((img, index) => (
               <a href={img} key={index}>
               <img 
                 key={index} 
@@ -104,7 +104,7 @@ const ExpoDetail = () => {
             {/* Remaining images in a row with flip effect */}
             <Row>
               {expo.images.slice(2).map((img, index) => (
-                <ContentColumn md={4} key={index + 2} className='mb-3'>
+                <Col md={4} key={index + 2} className='mb-3'>
                   <LightGallery
                     onInit={onInit}
                     speed={500}
@@ -124,7 +124,7 @@ const ExpoDetail = () => {
                   />
                   </a>
                   </LightGallery>
-                </ContentColumn>
+                </Col>
               ))}
             </Row>
             
