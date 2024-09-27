@@ -15,7 +15,7 @@ import {
 
 // Styled Components
 const FooterSection = styled.footer`
-background: #FFFBFA;
+  background: #fffbfa;
   padding: 40px 0;
   color: #333;
 `;
@@ -89,11 +89,16 @@ const CopyrightText = styled.div`
   color: #666;
   border-top: 1px solid #eaeaea;
 `;
-
 const ContactInfo = styled.div`
   font-size: 14px;
   line-height: 1.8;
   margin-bottom: 10px;
+
+  strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
 
   p {
     display: flex;
@@ -102,14 +107,17 @@ const ContactInfo = styled.div`
     font-size: 14px;
 
     svg {
-      margin-right: 5px;
+      margin-right: 10px; /* Increase margin between icon and text */
+      font-size: 18px; /* Slightly increase the size of the icons */
     }
-      a {
-    color: inherit;
-    text-decoration: none;
-  }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 `;
+
 
 const Footer = () => {
   return (
@@ -172,7 +180,7 @@ const Footer = () => {
               </li>
             </FooterLinkList>
           </Col>
-          {/* Softwares */}
+          {/* Industries */}
           <Col md={2} sm={6}>
             <FooterHeading>Industries</FooterHeading>
             <FooterLinkList>
@@ -192,7 +200,7 @@ const Footer = () => {
                 <Link to="#">Leather</Link>
               </li>
               <li>
-                <Link to="#">Garmet & Textile</Link>
+                <Link to="#">Garment & Textile</Link>
               </li>
               <li>
                 <Link to="#">Techcloud trading</Link>
@@ -216,7 +224,7 @@ const Footer = () => {
                 <Link to="#">Digital marketing</Link>
               </li>
               <li>
-                <Link to="#">Whatsapp bussiness</Link>
+                <Link to="#">Whatsapp business</Link>
               </li>
               <li>
                 <Link to="#">Business intelligence</Link>
@@ -228,42 +236,45 @@ const Footer = () => {
           </Col>
           {/* Get In Touch */}
           <Col md={3}>
-  <FooterHeading>Get in Touch</FooterHeading>
-  <ContactInfo>
-    <strong>Corporate Office</strong>
-    <p>
-      <FaMapMarkerAlt />
-      Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens Road, VIP
-      Hills, Madhapur, Hyderabad, Telangana, India-500081.
-    </p>
-    <p>
-      <FaEnvelope />
-      Email:{" "}
-      <a href="mailto:info@techclouderp.com">info@techclouderp.com</a>
-    </p>
-    <p>
-      <FaPhoneAlt />
-      Phone: +91 8919439603
-    </p>
-  </ContactInfo>
-  {/* Headquarters */}
-  <ContactInfo>
-    <strong>Headquarters</strong>
-    <p>
-      <FaMapMarkerAlt />
-      1101, E Bell Street, Suite-E, Bloomington, Indiana, USA - 61701.
-    </p>
-    <p>
-      <FaEnvelope />
-      Email: <a href="mailto:info@techclouderp.com">info@techclouderp.com</a>
-    </p>
-    <p>
-      <FaPhoneAlt />
-      Phone: +91 8919439603
-    </p>
-  </ContactInfo>
-</Col>
-
+            <FooterHeading>Get in Touch</FooterHeading>
+            <ContactInfo>
+              <strong>Corporate Office</strong>
+              <p>
+                <FaMapMarkerAlt />
+                Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens
+                Road, VIP Hills, Madhapur, Hyderabad, Telangana, India-500081.
+              </p>
+              <p>
+                <FaEnvelope />
+                Email:{" "}
+                <a href="mailto:info@techclouderp.com">
+                  info@techclouderp.com
+                </a>
+              </p>
+              <p>
+                <FaPhoneAlt />
+                Phone: +91 8919439603
+              </p>
+            </ContactInfo>
+            <ContactInfo>
+              <strong>Headquarters</strong>
+              <p>
+                <FaMapMarkerAlt />
+                1101, E Bell Street, Suite-E, Bloomington, Indiana, USA - 61701.
+              </p>
+              <p>
+                <FaEnvelope />
+                Email:{" "}
+                <a href="mailto:info@techclouderp.com">
+                  info@techclouderp.com
+                </a>
+              </p>
+              <p>
+                <FaPhoneAlt />
+                Phone: +91 8919439603
+              </p>
+            </ContactInfo>
+          </Col>
         </Row>
         <CopyrightText>
           &copy; 2024 Tech Cloud ERP. Terms & Conditions | Privacy Policy
@@ -273,4 +284,5 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer ;
+

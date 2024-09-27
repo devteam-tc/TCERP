@@ -1,3 +1,11 @@
+import { FiEye } from "react-icons/fi";
+import { PiCertificate } from "react-icons/pi";
+import { FaGroupArrowsRotate } from "react-icons/fa6";
+import { HiBarsArrowDown } from "react-icons/hi2";
+import { TbTruckDelivery } from "react-icons/tb";
+import { MdOutlineSpeed } from "react-icons/md";
+
+
 export const releavant = {
     logo: require("../assets/logo.png"),
     bgvideo:require("../assets/Home/videobanner.mp4"),
@@ -25,6 +33,19 @@ export const releavant = {
           years: '25+',
           text: 'Years of Experience'
         }
+      },
+      about_content: {
+        companyName: 'Our Vision',
+        description: `To obtain a better understanding of ERP software
+         solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning,
+          combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. 
+          Cloud-based ERP software, such as ours in Hyderabad, 
+        India, improves efficiency by centralising and streamlining operations throughout the organisation.`,
+        missionTitle: 'Our Mission',
+        missionText: `Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business 
+        Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning,
+         ensuring a superior user experience through advanced technology and user-friendly design.`,
+       
       }
     }
 }
@@ -293,7 +314,7 @@ export const NAV_ITEMS = [
     type: 'dropdown',
     id: 'aboutDropdown',
     items: [
-      { title: 'What & Why?', link: 'whatwhy.html' },
+      { title: 'What & Why?', link: '/about-us' },
       { title: 'What sets us Different?', link: 'what-sets-us-different.html' },
       { title: 'Unique Tech Cloud ERP', link: 'unique-tech-cloud-erp.html' },
       { title: "MD's Profile & Message", link: 'mds-profile-message.html' },
@@ -618,6 +639,44 @@ packagingIndustry: {
     heading: 'Textile Industry',
     description: 'Thread your success with our tailored ERP solutions for the textile industry.',
   },
+  // about_page:{
+  //   link: '/about-us',
+  // heading: 'Tech Cloud ERP Software for Your Business',
+  // description: 'Our web/cloud-based products and solutions offer robust functionalities in Business Process Management, tailored for diverse business verticals',
+  // }
 };
 
  
+
+export const ExpertiseData = [
+  {
+    icon: FiEye ,
+    title: 'Improved Visibility',
+    description: 'Enhance your operational clarity and strategic foresight with improved visibility through advanced analytics tools.',
+  },
+  {
+    icon: MdOutlineSpeed ,
+    title: 'Increased Efficiency',
+    description: 'Streamlining processes, maximizing resources, and optimizing workflows - efficiency is the heartbeat of progress.',
+  },
+  {
+    icon: TbTruckDelivery ,
+    title: 'On-time Delivery',
+    description: 'Streamlining processes, maximizing resources, and optimizing workflows - efficiency is the heartbeat of progress.',
+  },
+  {
+    icon: PiCertificate ,
+    title: 'Improved Visibility',
+    description: 'Enhance your operational clarity and strategic foresight with improved visibility through advanced analytics tools.',
+  },
+  {
+    icon: HiBarsArrowDown ,
+    title: 'Improved Visibility',
+    description: 'Enhance your operational clarity and strategic foresight with improved visibility through advanced analytics tools.',
+  },
+  {
+    icon: FaGroupArrowsRotate ,
+    title: 'Improved Visibility',
+    description: 'Enhance your operational clarity and strategic foresight with improved visibility through advanced analytics tools.',
+  },
+];
