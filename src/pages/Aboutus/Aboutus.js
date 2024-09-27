@@ -4,6 +4,7 @@ import RecordSection from '../Home/RecordSection';
 import OurPartnerSection from '../Home/OurPartnerSection';
 import OurMissionSection from '../Home/OurMissionSection';
 import { releavant } from '../../utils/constants';
+import TransformingIndustriesSection from '../../components/TransformingIndustriesSection';
 
 const Aboutus = () => {
   return (
@@ -12,6 +13,7 @@ const Aboutus = () => {
       <OurMissionSection relevantData={releavant.ourMission.about_content} />
       <ExpertiseSection />
       <RecordSection />
+      <TransformingIndustriesSection />
       <OurPartnerSection />
     </>
   );

@@ -5,6 +5,7 @@ import { HiBarsArrowDown } from "react-icons/hi2";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineSpeed } from "react-icons/md";
 
+import { FaIndustry, FaUtensils, FaGraduationCap, FaFlask, FaBolt, FaAppleAlt, FaCouch, FaTshirt, FaGem, FaShieldAlt, FaTruck, FaTree, FaFileAlt } from 'react-icons/fa';
 
 export const releavant = {
     logo: require("../assets/logo.png"),
@@ -679,4 +680,20 @@ export const ExpertiseData = [
     title: 'Improved Visibility',
     description: 'Enhance your operational clarity and strategic foresight with improved visibility through advanced analytics tools.',
   },
+];
+// constants.js
+export const industries = [
+  { label: 'Agriculture', icon: <FaIndustry /> },
+  { label: 'Beverage', icon: <FaUtensils /> },
+  { label: 'Chemical', icon: <FaFlask /> },
+  { label: 'Educational', icon: <FaGraduationCap /> },
+  { label: 'Electric', icon: <FaBolt /> },
+  { label: 'Food', icon: <FaAppleAlt /> },
+  { label: 'Furniture', icon: <FaCouch /> },
+  { label: 'Garment', icon: <FaTshirt /> },
+  { label: 'Jewellery', icon: <FaGem /> },
+  { label: 'Leather', icon: <FaShieldAlt /> },
+  { label: 'Logistics', icon: <FaTruck /> },
+  { label: 'Wood', icon: <FaTree /> },
+  { label: 'Paper', icon: <FaFileAlt /> },
 ];

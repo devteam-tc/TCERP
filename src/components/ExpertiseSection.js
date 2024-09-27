@@ -5,7 +5,7 @@ import { ExpertiseData } from '../utils/constants';
 
 const SectionWrapper = styled.div`
   padding: 40px 0;
-  background: #FFF5F2;
+background: #F4FDFF;
 
 `;
 
