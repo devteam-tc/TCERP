@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import { industries } from '../utils/constants'; // Adjust the path as necessary
+import { industries } from '../utils/constants'; 
 
 const SectionContainer = styled(Container)`
   text-align: center;
