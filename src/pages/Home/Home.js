@@ -9,6 +9,7 @@ import OurPartnerSection from './OurPartnerSection'
 import ImportantModuleSection from './ImportantModuleSection'
 import { testimonialsData } from '../../utils/constants'
 import Testimonials from './Testimonials'
+import GalleryTabs from '../Gallery/GalleryTabs'
 const Home = () => {
   return (
    <>
@@ -16,8 +17,9 @@ const Home = () => {
    <OurMissionSection />
    <CardSection />
    <ImportantModuleSection />
-   <Testimonials testimonialsData={testimonialsData.car_testimonials}/>
+   <Testimonials testimonialsData={testimonialsData}/>
    <RecordSection />
+   <GalleryTabs/>
    <PricingSection />
    <CallToActionSection />
    <OurPartnerSection />

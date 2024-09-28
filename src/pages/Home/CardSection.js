@@ -42,12 +42,12 @@ const StyledButton = styled(Button)`
     margin: 20px auto;
     display: block;
 `;
-export const Title = styled.h2`
-font-size: 30px;
+export const Title = styled.h1`
+font-size: 40px;
 font-weight: 600;
 color:#ef5226;
 line-height: 60px;
-  margin-bottom: 20px;
+margin-bottom: 20px;
 
   @media screen and (max-width: 1024px) {
     font-size: 32px;

@@ -7,12 +7,16 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
+    "lg-thumbnail": "^1.2.1",
+    "lg-zoom": "^1.3.0",
+    "lightgallery": "^2.7.2",
     "owl.carousel": "^2.3.4",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-bootstrap-submenu": "^3.0.3",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
+    "react-image-lightbox": "^5.1.4",
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
@@ -44,5 +48,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "ngrok": "^5.0.0-beta.2",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.12"
   }
 }
