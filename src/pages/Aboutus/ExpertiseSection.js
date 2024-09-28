@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import { ExpertiseData } from '../utils/constants'; 
+import { ExpertiseData } from '../../utils/constants'; 
 
 const SectionWrapper = styled.div`
   padding: 40px 0;

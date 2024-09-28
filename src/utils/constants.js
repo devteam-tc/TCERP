@@ -6,8 +6,8 @@ import { FaGroupArrowsRotate } from "react-icons/fa6";
 import { HiBarsArrowDown } from "react-icons/hi2";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineSpeed } from "react-icons/md";
+import { FaLeaf, FaBeer, FaIndustry, FaGraduationCap, FaBolt, FaPizzaSlice, FaCouch, FaTshirt ,  FaGem, FaTruck, FaTree, FaBook} from 'react-icons/fa';
 
-import { FaIndustry, FaUtensils, FaGraduationCap, FaFlask, FaBolt, FaAppleAlt, FaCouch, FaTshirt, FaGem, FaShieldAlt, FaTruck, FaTree, FaFileAlt } from 'react-icons/fa';
 
 export const releavant = {
   logo: require("../assets/logo.png"),
@@ -20,8 +20,6 @@ export const releavant = {
     images: {
       mainImage: require("../assets/Home/ourmission_img_1.png"),  // Replace with the actual path or import
       experienceIcon: require("../assets/experience_img.png"),
-    },
-    content: {
       companyName: 'Tech Cloud ERP',
       description: `Tech Cloud ERP is a web-based solution for small and mid-sized businesses, acting as a
         central hub for tracking and analyzing departmental activities. It offers real-time data and
@@ -36,9 +34,26 @@ export const releavant = {
         years: '25+',
         text: 'Years of Experience'
       }
-    }
-  }
+    },
+    
+  },
+  about_content_text: {
+    companyName: 'Our Vision',
+    description: `To obtain a better understanding of ERP software
+     solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning,
+      combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. 
+      Cloud-based ERP software, such as ours in Hyderabad, 
+    India, improves efficiency by centralising and streamlining operations throughout the organisation.`,
+    missionTitle: 'Our Mission',
+    missionText: `Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business 
+    Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning,
+     ensuring a superior user experience through advanced technology and user-friendly design.`,
+     images: {
+      mainImage: require("../assets/About_us/our_miss_viss_img.png"),  // Replace with the actual path or import
+    },
+  },
 }
+
 //Card Section
 export const CardContent = [
 {
@@ -361,7 +376,7 @@ export const NAV_ITEMS = [
 },
 {
     title: 'BI',
-    link: '/',
+    link: '/business-intelligence-analytics-software',
     type: 'link',
 },
 {
@@ -2585,7 +2600,17 @@ export const productData = {
           postGoLive: "Post Go Live Support & Maintenance",
       }
   },
+ 
 };
+export const businessData = [
+ {
+  heading: "ERP insights drive business growth",
+  description: "Unlock the potential of your business with ERP insights. Gain valuable data-driven perspectives that empower informed decisions, streamline operations, and accelerate growth. Let ERP be the catalyst for your success",
+ }
+];
+
+
+
 export const ExpertiseData = [
   {
     icon: FiEye ,
@@ -2624,19 +2649,93 @@ export const aboutus_data = {
     description: "Our web/cloud-based products and solutions boast unassuming functionalities in Business Process Management, tailored for diverse business verticals.",
   }
 };
-// constants.js
-export const industries = [
-  { label: 'Agriculture', icon: <FaIndustry /> },
-  { label: 'Beverage', icon: <FaUtensils /> },
-  { label: 'Chemical', icon: <FaFlask /> },
-  { label: 'Educational', icon: <FaGraduationCap /> },
-  { label: 'Electric', icon: <FaBolt /> },
-  { label: 'Food', icon: <FaAppleAlt /> },
-  { label: 'Furniture', icon: <FaCouch /> },
-  { label: 'Garment', icon: <FaTshirt /> },
-  { label: 'Jewellery', icon: <FaGem /> },
-  { label: 'Leather', icon: <FaShieldAlt /> },
-  { label: 'Logistics', icon: <FaTruck /> },
-  { label: 'Wood', icon: <FaTree /> },
-  { label: 'Paper', icon: <FaFileAlt /> },
+
+
+export const industryData = [
+  { title: "Agriculture", icon: <FaLeaf /> },
+  { title: "Beverage", icon: <FaBeer /> },
+  { title: "Chemical", icon: <FaIndustry /> },
+  { title: "Educational", icon: <FaGraduationCap /> },
+  { title: "Electric", icon: <FaBolt /> },
+  { title: "Food", icon: <FaPizzaSlice /> },
+  { title: "Furniture", icon: <FaCouch /> },
+  { title: "Garment", icon: <FaTshirt /> },
+  { title: "Jewellery", icon: <FaGem /> },
+  { title: "Leather", icon: <FaBook /> },
+  { title: "Logistics", icon: <FaTruck /> },
+  { title: "Wood", icon: <FaTree /> },
+  { title: "Paper", icon: <FaBook /> },
+  { title: "Wood", icon: <FaTree /> },
+  { title: "Paper", icon: <FaBook /> },
+];
+
+export const whyTechCloudERPContent = {
+  imageSrc: require("../assets/About_us/why_tech_cloud_erp_img.png"),
+  title: "Why Tech Cloud ERP ?",
+  description: [
+    'TechCloud ERP provides a comprehensive solution that adapts to your business needs, streamlining processes and increasing efficiency. Our system is built with scalability in mind, allowing you to grow your business without the hassle of migrating to new platforms.',
+    'With real-time data access and robust reporting tools, TechCloud ERP gives you insights that drive informed decision-making. Our user-friendly interface ensures that your team can easily adopt the system and start benefiting from improved operational workflows right away.'
+  ],
+  BusinessIntelligenceContent: { // Fixed: added a comma before this property
+    imageSrc: require("../assets/About_us/why_tech_cloud_erp_img.png"),
+    title : "Business Intelligence",
+    description: [
+      "How do you organize people’s shared potential into a competitive advantage? Support them with data, solve their oddities in business, and encourage their creativity. Tech Cloud ERP’s business intelligence enables your teams to do work faster and smarter by providing a seamless experience. Users can feel easy collaboration, security, and governance by preparing analytics, building data fields and dashboards, and publishing & sharing the data with a single click.",
+      "Tech Cloud ERP’s BI Tool is a fully hosted solution, so users can run it in minutes and add users as your needs grow without configuring servers, managing software upgrades, etc."
+    ]
+  }
+};
+
+// constant.js
+export const ReportingSectionContent = {
+  heading: 'Upgrade your reporting.',
+  subText: 'End the days of emailing spreadsheets around and reviewing stale data in meetings.',
+  items: [
+    {
+      title: 'Empower business users',
+      description: 'To analyze data, making sure the right people get the right data.'
+    },
+    {
+      title: 'Send fresh, meaningful data',
+      description: 'To the people who need it, in formats they prefer.'
+    },
+    {
+      title: 'Create alerts',
+      description: 'That automatically notify teams when important data changes.'
+    }
+  ],
+  imageSrc: require("../assets/BI/report_img.png"),
+  imageAlt: 'Report Summary'
+};
+export const sliderData = [
+  {
+    title: 'ERP Software',
+    description: 'Make better business decisions with the world\'s leading ERP software, optimizing operations through data and analytics.',
+    linkText: 'Explore',
+    link: '/erp', 
+  },
+  {
+    title: 'CRM Software',
+    description: 'Enhance customer relationships with the world\'s leading CRM software, leveraging data and analytics for success.',
+    linkText: 'Explore',
+    link: '/crm',
+  },
+  {
+    title: 'POS Software',
+    description: 'Simplify transactions with the world\'s leading POS software, leveraging data and analytics.',
+    linkText: 'Explore',
+    link: '/pos', 
+  },
+  {
+    title: 'Trading Software',
+    description: 'Improve market strategies with the world\'s leading trading software, using data and analytics.',
+    linkText: 'Explore',
+    link: '/trading', 
+  },
+  {
+    title: 'eCommerce Software',
+    description: 'Scale your business with leading eCommerce software, utilizing data to optimize sales.',
+    linkText: 'Explore',
+    link: '/ecommerce', 
+  },
 ];

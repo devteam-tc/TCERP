@@ -10,6 +10,7 @@ import { sectionsData } from './utils/constants'; // Import industry data
 import ExpoDetail from './pages/Gallery/ExpoDetail';
 import MainNavbar from './components/Navbar/Navbar';
 import ProductPage from './pages/Products/ProductsPage';
+import BusinessIntelligence from './pages/Business/business-intelligence-analytics-software';
 
 function App() {
   return (
@@ -33,7 +34,7 @@ function App() {
           <Route path="/gallery/:id" element={<ExpoDetail/>} />
           {/* Dynamic product pages */}
           <Route path="/products/:productId" element={<ProductPage />} />
-
+<Route path="/business-intelligence-analytics-software" element ={<BusinessIntelligence />} />
         </Routes>
         {/* Footer should be displayed across all pages */}
         <Footer />

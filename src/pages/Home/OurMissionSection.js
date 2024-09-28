@@ -108,8 +108,9 @@ const ExperienceContent = styled.div`
 `;
 
 // React Component
-const OurMissionSection = () => {
-  const { images, content } = releavant.ourMission;
+const OurMissionSection = ({ data, isAboutUs }) => {
+  const { images, companyName, description, missionTitle, missionText } = data;
+
 
   return (
     <ExperienceSection>
@@ -118,32 +119,29 @@ const OurMissionSection = () => {
           <Col lg={5} className="mt-4">
             <ExperienceImageWrapper>
               <ExperienceImageStyled src={images.mainImage} alt="Experience" />
-              <img
-                src={images.experienceIcon}
-                alt="Overlay Icon"
-                className="overlay-image"
-              />
-              {/* <div className="text">
-                <p>
-                  <span>{content.experience.years}</span> {content.experience.text}
-                </p>
-              </div> */}
+              {!isAboutUs && (
+                <img
+                  src={images.experienceIcon}
+                  alt="Overlay Icon"
+                  className="overlay-image"
+                />
+              )}
             </ExperienceImageWrapper>
           </Col>
           <Col lg={7} className="mt-4">
             <ExperienceContent>
-              <span>{content.companyName}</span>
-              <p>{content.description}</p>
+              <span>{companyName}</span>
+              <p>{description}</p>
               <div className="experience-text">
-                <div className='mt-4'>
-                  <h3 style={{color: '#05A7CC'}}>{content.missionTitle}</h3>
-                  <p>{content.missionText}</p>
-                </div>
+                <h3 style={{ color: '#05A7CC' }}>{missionTitle}</h3>
+                <p>{missionText}</p>
               </div>
-              <Button variant="primary" style={{ backgroundColor: '#e93906', borderRadius: '0px', border: 'none', marginTop: '2vh' }}>
-                Read More 
-                <TiArrowRight size={25}/>
-              </Button>
+              {!isAboutUs && (
+                <Button variant="primary" style={{ backgroundColor: '#e93906', borderRadius: '0px', border: 'none', marginTop: '2vh' }}>
+                  Read More 
+                  <TiArrowRight size={25} />
+                </Button>
+              )}
             </ExperienceContent>
           </Col>
         </Row>
