@@ -89,6 +89,7 @@ const CopyrightText = styled.div`
   color: #666;
   border-top: 1px solid #eaeaea;
 `;
+
 const ContactInfo = styled.div`
   font-size: 14px;
   line-height: 1.8;
@@ -118,8 +119,11 @@ const ContactInfo = styled.div`
   }
 `;
 
-
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <FooterSection>
       <Container>
@@ -133,22 +137,22 @@ const Footer = () => {
               comprehensive features.
             </FooterText>
             <SocialIcons>
-              <Link to="/facebook">
+              <Link to="/facebook" onClick={scrollToTop}>
                 <FaFacebookF />
               </Link>
-              <Link to="/twitter">
+              <Link to="/twitter" onClick={scrollToTop}>
                 <FaTwitter />
               </Link>
-              <Link to="/linkedin">
+              <Link to="/linkedin" onClick={scrollToTop}>
                 <FaLinkedinIn />
               </Link>
-              <Link to="/instagram">
+              <Link to="/instagram" onClick={scrollToTop}>
                 <FaInstagram />
               </Link>
-              <Link to="/pinterest">
+              <Link to="/pinterest" onClick={scrollToTop}>
                 <FaPinterest />
               </Link>
-              <Link to="/youtube">
+              <Link to="/youtube" onClick={scrollToTop}>
                 <FaYoutube />
               </Link>
             </SocialIcons>
@@ -158,25 +162,25 @@ const Footer = () => {
             <FooterHeading>Useful Links</FooterHeading>
             <FooterLinkList>
               <li>
-                <Link to="/home">Home</Link>
+                <Link to="/" onClick={scrollToTop}>Home</Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/about-us" onClick={scrollToTop}>About Us</Link>
               </li>
               <li>
-                <Link to="/services">All Industries</Link>
+                <Link to="/services" onClick={scrollToTop}>All Industries</Link>
               </li>
               <li>
-                <Link to="/ContactUs">Our features</Link>
+                <Link to="/ContactUs" onClick={scrollToTop}>Our features</Link>
               </li>
               <li>
-                <Link to="/">Terms of service</Link>
+                <Link to="/terms-and-conditions" onClick={scrollToTop}>Terms of service</Link>
               </li>
               <li>
-                <Link to="/">Privacy policy</Link>
+                <Link to="/privacypolicy" onClick={scrollToTop}>Privacy policy</Link>
               </li>
               <li>
-                <Link to="/">Our blogs</Link>
+                <Link to="/" onClick={scrollToTop}>Our blogs</Link>
               </li>
             </FooterLinkList>
           </Col>
@@ -185,25 +189,25 @@ const Footer = () => {
             <FooterHeading>Industries</FooterHeading>
             <FooterLinkList>
               <li>
-                <Link to="#">Jewellery</Link>
+                <Link to="/jewellery-industry" onClick={scrollToTop}>Jewellery</Link>
               </li>
               <li>
-                <Link to="#">Pharma</Link>
+                <Link to="/pharma-industry" onClick={scrollToTop}>Pharma</Link>
               </li>
               <li>
-                <Link to="#">Agriculture</Link>
+                <Link to="/agriculture-industry" onClick={scrollToTop}>Agriculture</Link>
               </li>
               <li>
-                <Link to="#">Beverage</Link>
+                <Link to="/beverage-industry" onClick={scrollToTop}>Beverage</Link>
               </li>
               <li>
-                <Link to="#">Leather</Link>
+                <Link to="/leather-industry" onClick={scrollToTop}>Leather</Link>
               </li>
               <li>
-                <Link to="#">Garment & Textile</Link>
+                <Link to="/textiles-industry" onClick={scrollToTop}>Garment & Textile</Link>
               </li>
               <li>
-                <Link to="#">Techcloud trading</Link>
+                <Link to="/products/trading-software" onClick={scrollToTop}>Techcloud trading</Link>
               </li>
             </FooterLinkList>
           </Col>
@@ -212,25 +216,25 @@ const Footer = () => {
             <FooterHeading>Services</FooterHeading>
             <FooterLinkList>
               <li>
-                <Link to="#">Web Development</Link>
+                <Link to="#" onClick={scrollToTop}>Web Development</Link>
               </li>
               <li>
-                <Link to="#">E-Commerce website</Link>
+                <Link to="#" onClick={scrollToTop}>E-Commerce website</Link>
               </li>
               <li>
-                <Link to="#">Mobile App development</Link>
+                <Link to="#" onClick={scrollToTop}>Mobile App development</Link>
               </li>
               <li>
-                <Link to="#">Digital marketing</Link>
+                <Link to="#" onClick={scrollToTop}>Digital marketing</Link>
               </li>
               <li>
-                <Link to="#">Whatsapp business</Link>
+                <Link to="#" onClick={scrollToTop}>Whatsapp business</Link>
               </li>
               <li>
-                <Link to="#">Business intelligence</Link>
+                <Link to="#" onClick={scrollToTop}>Business intelligence</Link>
               </li>
               <li>
-                <Link to="#">Web Hosting</Link>
+                <Link to="#" onClick={scrollToTop}>Web Hosting</Link>
               </li>
             </FooterLinkList>
           </Col>
@@ -277,12 +281,18 @@ const Footer = () => {
           </Col>
         </Row>
         <CopyrightText>
-          &copy; 2024 Tech Cloud ERP. Terms & Conditions | Privacy Policy
+          &copy; 2024 Tech Cloud ERP.{" "}
+          <Link to="/terms-and-conditions" style={{ color: "#ef5226", textDecoration: "none" }} onClick={scrollToTop}>
+            Terms & Conditions
+          </Link>{" "}
+          |{" "}
+          <Link to="/privacypolicy" style={{ color: "#ef5226", textDecoration: "none" }} onClick={scrollToTop}>
+            Privacy Policy
+          </Link>
         </CopyrightText>
       </Container>
     </FooterSection>
   );
 };
 
-export default Footer ;
-
+export default Footer;

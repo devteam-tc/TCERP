@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import styled from 'styled-components';
-import { releavant } from '../../utils/constants';
 import { TiArrowRight } from "react-icons/ti";
 
 // Styled Components

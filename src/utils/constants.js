@@ -8,7 +8,6 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineSpeed } from "react-icons/md";
 import { FaLeaf, FaBeer, FaIndustry, FaGraduationCap, FaBolt, FaPizzaSlice, FaCouch, FaTshirt ,  FaGem, FaTruck, FaTree, FaBook} from 'react-icons/fa';
 
-
 export const releavant = {
   logo: require("../assets/logo.png"),
   bgvideo:require("../assets/Home/videobanner.mp4"),
@@ -321,16 +320,16 @@ export const NAV_ITEMS = [
         { title: 'FMCG Industry', link: '/FMCG-industry' },
         { title: 'Food Industry', link: '/food-industry' },
         { title: 'Furniture Industry', link: '/furniture-industry' },
+        { title: 'Garment Industry', link: '/garment-industry' },
         { title: 'Hydrolic Cylinders Industry', link: '/hydraulic-industry' },
         { title: 'Jewellery Industry', link: '/jewellery-industry' },
         { title: 'Leather Industry', link: '/leather-industry' },
-        { title: 'Modical Equipment Manufacturing Industry', link: '/medicalequipmentmanufacturing-industry' },
+        { title: 'Logistics Industry ', link: '/logistics-industry' },
+        { title: 'Medical Equipment Manufacturing Industry', link: '/medicalequipmentmanufacturing-industry' },
         { title: 'Wood Industry', link: '/wood-industry' },
         { title: 'Wholesalers Industry', link: '/wholesalers-industry' },
         { title: 'Metal Fabrication Industry', link: '/metal-fabrication-industry' },
         { title: 'Micro Finance Industry', link: '/microfinance-industry' },
-        
-
     ],
     },
     {
@@ -398,7 +397,7 @@ export const NAV_ITEMS = [
 },
 {
   title: 'ContactUs',
-  link: '#',
+  link: '/ContactUs',
   type: 'link',
 },
 {
@@ -2647,9 +2646,20 @@ export const aboutus_data = {
   'about_content': {
     heading: "Tech Cloud ERP Software for Your Business",
     description: "Our web/cloud-based products and solutions boast unassuming functionalities in Business Process Management, tailored for diverse business verticals.",
+  },
+  'termsAndConditionscontent' :{
+    heading: "Terms & Conditions",
+    description: "Our web/cloud-based products and solutions boast unassuming functionalities in Business Process Management, tailored for diverse business verticals.",
+  },
+  'privacypolicycontent':{
+    heading: "Privacy Policy",
+    description: "We respect your privacy and are committed to safeguarding your personal information in accordance with our Privacy Policy",
   }
 };
-
+export const ContactUs_content = {
+  heading : "Contact us ",
+  description: "Connect with our team today to discover how our expert ERP guidance can streamline your business operations and drive growth. Get in touch now to unlock your business potential.", 
+}
 
 export const industryData = [
   { title: "Agriculture", icon: <FaLeaf /> },
@@ -2676,7 +2686,7 @@ export const whyTechCloudERPContent = {
     'TechCloud ERP provides a comprehensive solution that adapts to your business needs, streamlining processes and increasing efficiency. Our system is built with scalability in mind, allowing you to grow your business without the hassle of migrating to new platforms.',
     'With real-time data access and robust reporting tools, TechCloud ERP gives you insights that drive informed decision-making. Our user-friendly interface ensures that your team can easily adopt the system and start benefiting from improved operational workflows right away.'
   ],
-  BusinessIntelligenceContent: { // Fixed: added a comma before this property
+  BusinessIntelligenceContent: { 
     imageSrc: require("../assets/About_us/why_tech_cloud_erp_img.png"),
     title : "Business Intelligence",
     description: [
@@ -2684,9 +2694,9 @@ export const whyTechCloudERPContent = {
       "Tech Cloud ERP’s BI Tool is a fully hosted solution, so users can run it in minutes and add users as your needs grow without configuring servers, managing software upgrades, etc."
     ]
   }
+  
 };
 
-// constant.js
 export const ReportingSectionContent = {
   heading: 'Upgrade your reporting.',
   subText: 'End the days of emailing spreadsheets around and reviewing stale data in meetings.',
@@ -2712,30 +2722,93 @@ export const sliderData = [
     title: 'ERP Software',
     description: 'Make better business decisions with the world\'s leading ERP software, optimizing operations through data and analytics.',
     linkText: 'Explore',
-    link: '/erp', 
+    link: '/products/tech-cloud-erp', 
   },
   {
     title: 'CRM Software',
     description: 'Enhance customer relationships with the world\'s leading CRM software, leveraging data and analytics for success.',
     linkText: 'Explore',
-    link: '/crm',
+    link: '/products/customer-relationship-management',
   },
   {
     title: 'POS Software',
     description: 'Simplify transactions with the world\'s leading POS software, leveraging data and analytics.',
     linkText: 'Explore',
-    link: '/pos', 
+    link: '/products/point-of-sale', 
   },
   {
     title: 'Trading Software',
     description: 'Improve market strategies with the world\'s leading trading software, using data and analytics.',
     linkText: 'Explore',
-    link: '/trading', 
+    link: '/products/trading-software', 
   },
   {
-    title: 'eCommerce Software',
+    title: 'E-Commerce Software',
     description: 'Scale your business with leading eCommerce software, utilizing data to optimize sales.',
     linkText: 'Explore',
-    link: '/ecommerce', 
+    link: '/products/Ecommerce-software', 
   },
 ];
+export const contactData = {
+  corporateOffice: {
+    address: "Office Unit No. 705, Jain Sadguru Capital Park Madhapur, Hyderabad-500081",
+    phoneNumber: "+91 8919439603",
+    email: "info@techclouderp.com",
+  },
+  headquarters: {
+    phoneNumber: "+1 (312) 766-3390",
+    address: "1101, E Bell Street, Suite-E, Bloomington, IL - 61701",
+    email: "contact@techclouderp.com",
+  },
+};
+export const termsAndConditionsData = {
+  title: "Terms & Conditions",
+  introduction: `
+    Tech Cloud ERP terms and conditions administrate your use of this website; by using this website, you
+    accept these terms and conditions. In case you want to disagree with these terms and conditions, you
+    must not use this website. If you endure browsing this website, you approve to obey with the following
+    terms and conditions of use, which together with our privacy policy govern Tech Cloud ERP association with
+    you in relation to this website. The term “Tech Cloud ERP” or “us” or “we” refer to the owner of the
+    website. The term “you” refers to the user of our website.
+  `,
+  points: [
+    "The content of the pages of this website is for your general information and use only. It is subject to change without notice.",
+    "Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials found or offered on this website for any purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors fully permitted by law. Your use of any information or materials on this website is entirely at your risk, for which we shall not be liable.",
+    "This website contains material which is owned by or licensed to us. This material is not limited to the design, layout, look, appearance, and graphics. Reproduction or tampering of information is prohibited other than in accordance with the copyright notice.",
+    "This website may also include links to other websites belonging to our business. These links are provided for your convenience to provide further information. They do not signify that we endorse the website(s).",
+    "You may not create a link to this website from another website or document without our consent.",
+    "Your use of this website and any dispute arising out of use of the website is subject to the Cyber Law of India."
+  ],
+};
+// constants.js
+
+export const privacyPolicyData = {
+  title: "Privacy Policy",
+  introduction: "As the Top ERP Software Development Company in India, Tech Cloud ERP treats its clients and visitors' privacy with high importance...",
+  dataCollection: {
+    title: "Data Collection",
+    description: "Tech Cloud ERP collects the following types of data:",
+    points: [
+      "We have your consent. We require opt-in consent for the sharing of any sensitive personal information.",
+      "We provide such information to our other trusted businesses or persons for the purpose of processing the information on our behalf.",
+      "We have a good faith belief that access, use, preservation or disclosure of such information is reasonably necessary to...",
+    ],
+  },
+  dataSecurity: {
+    title: "Data Security",
+    content: "Tech Cloud ERP provides a Customized ERP Software in India, so we take appropriate security measures to protect against unauthorized access...",
+  },
+  changesPolicy: {
+    title: "Changes in Privacy Policy",
+    content: "It shall be noted that this Privacy Policy may change later or from time to time...",
+  },
+  contactDetails: {
+    title: "Contact Details",
+    content: "Should you have any concerns regarding our cloud ERP software privacy policy, you can contact us through phone or email.",
+  },
+  termsConditions: {
+    title: "Terms and Conditions",
+    content: "Tech Cloud ERP terms and conditions govern your use of this website...",
+  },
+  note: "NOTE: IF YOU DO NOT AGREE WITH THE TERMS OF THIS PRIVACY POLICY, PLEASE DO NOT ACCESS THE WEBSITE.",
+};

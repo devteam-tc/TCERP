@@ -38,7 +38,7 @@ export const Heading = styled.h2`
 
   @media (max-width: 992px) {
     font-size: 28px;
-    margin-bottom: 15px;
+    // margin-bottom: 15px;
   }
 `;
 
@@ -74,7 +74,7 @@ export const Divider = styled.div`
   background-color: #00e8ff;
 
   @media (max-width: 992px) {
-    margin-top: 8px;
+    margin-top: 2px;
   }
 `;
 

@@ -11,6 +11,9 @@ import ExpoDetail from './pages/Gallery/ExpoDetail';
 import MainNavbar from './components/Navbar/Navbar';
 import ProductPage from './pages/Products/ProductsPage';
 import BusinessIntelligence from './pages/Business/business-intelligence-analytics-software';
+import ContactUs from './pages/Contact/ContactUs';
+import TermsAndConditions from './pages/terms-conditions';
+import PrivacyPolicy from './pages/privacy-policy';
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
           {/* Dynamic product pages */}
           <Route path="/products/:productId" element={<ProductPage />} />
 <Route path="/business-intelligence-analytics-software" element ={<BusinessIntelligence />} />
+<Route path='/ContactUs' element={<ContactUs />} />
+<Route path='/terms-and-conditions' element ={<TermsAndConditions />} />
+<Route path='/privacypolicy' element ={<PrivacyPolicy />} />
         </Routes>
         {/* Footer should be displayed across all pages */}
         <Footer />

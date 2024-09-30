@@ -41,7 +41,7 @@ const ReportingSection = () => {
 
   return (
     <Container >
-      <Row>
+      <Row className='mt-3 mb-3'>
         {/* Left side: Text */}
         <StyledCol md={6}>
           <Heading>{heading}</Heading>
