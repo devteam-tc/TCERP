@@ -10,6 +10,7 @@ import { sectionsData } from './utils/constants'; // Import industry data
 import ExpoDetail from './pages/Gallery/ExpoDetail';
 import MainNavbar from './components/Navbar/Navbar';
 import ProductPage from './pages/Products/ProductsPage';
+import BusinessIntelligence from './pages/Business/business-intelligence-analytics-software';
 import NotFound from './pages/NotFound';
 import ServicesSection from './pages/Services/ServicesSection';
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/gallery/:id" element={<ExpoDetail/>} />
           {/* Dynamic product pages */}
           <Route path="/products/:productId" element={<ProductPage />} />
+<Route path="/business-intelligence-analytics-software" element ={<BusinessIntelligence />} />
           {/* 404 error for unmatched subroutes within dynamic routes */}
           <Route path="/products/*" element={<NotFound />} />
           <Route path="/gallery/*" element={<NotFound />} />
@@ -54,4 +56,3 @@ function App() {
 }
 
 export default App;
-
