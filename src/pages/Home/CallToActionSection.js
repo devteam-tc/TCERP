@@ -142,9 +142,7 @@ const BackgroundImage = styled.div`
         -o-transform: rotate(360deg);
         transform: rotate(360deg);
     }
-}
-
-`;
+}`;
 
 
 const Heading = styled.h2`

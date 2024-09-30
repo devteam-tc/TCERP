@@ -2804,3 +2804,51 @@ export const servicesData = {
   },
   // Add more services dynamically here
 };
+
+export const essentialServicesData = [
+  {
+    id: 1,
+    icon: "🔍",
+    title: "Search Engine Optimization",
+    description:
+      "SEO is a process of enhancing the visibility of a website or a web page in a search engine's unpaid results—often referred to as 'organic' or 'natural' results.",
+  },
+  {
+    id: 2,
+    icon: "📈",
+    title: "Search Engine Marketing",
+    description:
+      "SEM is a digital marketing strategy focused on promoting websites by increasing their visibility in search engine results pages (SERPs) through paid advertising.",
+  },
+  {
+    id: 3,
+    icon: "📱",
+    title: "Social Media Optimization",
+    description:
+      "SMO can be an effective way to quickly increase website traffic, generate leads, and drive conversions, especially for businesses looking to achieve immediate results.",
+  },
+  {
+    id: 4,
+    icon: "📣",
+    title: "Facebook Ads",
+    description:
+      "Facebook Ads helps businesses to create targeted campaigns to reach specific audiences on Facebook and Instagram, driving brand awareness.",
+  },
+  {
+    id: 5,
+    icon: "✏️",
+    title: "Content Marketing",
+    description:
+      "Content marketing is a strategic marketing approach focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
+  },
+  {
+    id: 6,
+    icon: "✉️",
+    title: "Email Marketing",
+    description:
+      "Email marketing is a strategy focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
+  },
+];
+
+
+

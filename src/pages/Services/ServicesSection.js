@@ -7,6 +7,7 @@ import { servicesData } from '../../utils/constants'; // Import services data
 import { Title } from '../Home/CardSection';
 import styled from 'styled-components';
 import { FaPlus, FaMinus } from 'react-icons/fa';
+import EssentialServices from './EssentialServices';
 
 const DescriptionContainer = styled.div``;
 
@@ -121,6 +122,7 @@ const ServicesSection = () => {
           </Row>
         </Container>
       </DescriptionContainer>
+      <EssentialServices/>
       <FAQContainer>
         <Container>
           <Title>FAQ</Title>
