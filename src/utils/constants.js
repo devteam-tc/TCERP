@@ -33,8 +33,25 @@ export const releavant = {
       experience: {
         years: '25+',
         text: 'Years of Experience'
-      }
+      },
+      
     },
+    content: {
+      companyName: 'Tech Cloud ERP',
+      description: `Tech Cloud ERP is a web-based solution for small and mid-sized businesses, acting as a
+        central hub for tracking and analyzing departmental activities. It offers real-time data and
+        integrated processes to accelerate decision-making and support growth, claiming to be
+        India's leading ERP software developer with a focus on reducing operational costs, especially for
+        manufacturing companies.`,
+      missionTitle: 'Our Mission',
+      missionText: `Our mission is to help our clients respond faster and more efficiently to market
+        dynamics. We strive to make them more agile in a competitive marketplace through high-tech
+        strategies and action plans.`,
+      experience: {
+        years: '25+',
+        text: 'Years of Experience'
+      }
+    }
     
   },
   about_content_text: {
@@ -2747,7 +2764,7 @@ export const sliderData = [
   },
 ];
 
-};
+
 
 // constants.js
 export const servicesData = {

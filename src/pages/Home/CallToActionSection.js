@@ -13,13 +13,6 @@ const Section = styled.section`
   text-align: center;
 `;
 
-const Title = styled.div`
-  font-size: 40px;
-  line-height: 48px;
-  margin-bottom: 20px;
-  color: #fff;
-`;
-
 const BackgroundImage = styled.div`
   position: absolute;
   top: -50px;

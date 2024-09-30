@@ -11,7 +11,6 @@ import OurPartnerSection from '../Home/OurPartnerSection';
 import CTA from '../CTA';
 import { Helmet } from 'react-helmet-async';
 import Typewriter from "typewriter-effect";
-import NotFound from '../NotFound';
 
 // Styled Components
 const CardContainer = styled.div`
