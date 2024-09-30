@@ -27,7 +27,8 @@ const SubHeading = styled.p`
 const RoleCard = styled.div`
   display: flex;
   align-items: center;
-  border: 1px dashed #f04e23;
+//   border: 1px dashed #f04e23;
+    box-shadow: 0px 0px 4px 0px #00000040;
   padding: 15px;
   margin-bottom: 20px;
   border-radius: 8px;

@@ -12,7 +12,6 @@ const StyledCard = styled(Card)`
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   margin: 20px auto;
-  font-family: 'Arial', sans-serif;
 `;
 
 const Name = styled.span`
