@@ -1,7 +1,7 @@
 import React from 'react';
 import ExpertiseSection from '../../pages/Aboutus/ExpertiseSection';
 import RecordSection from '../Home/RecordSection';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import OurPartnerSection from '../Home/OurPartnerSection';
 import { ContentColumn, Description, Divider, Heading, Section } from '../IndustryPage';
 import OurMissionSection from '../Home/OurMissionSection';

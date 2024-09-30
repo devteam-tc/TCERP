@@ -1,20 +1,13 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
-import styled from 'styled-components';
-import { industryData } from '../utils/constants'; // Import industry data
+import React from "react";
+import { Container } from "react-bootstrap";
+import styled from "styled-components";
+import { Title } from "../pages/Home/CardSection";
+import { industryData } from "../utils/constants";
 
 // Styled Components
 const Section = styled.div`
   background-color: #f4faff;
   padding: 60px 0;
-`;
-
-const Title = styled.h2`
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 20px;
 `;
 
 const Subtitle = styled.p`
@@ -69,13 +62,20 @@ const Line = styled.div`
   margin: 20px 0;
 `;
 
-const IndustriesGrid = () => {
+const TransformingIndustriesSection = () => {
   return (
     <Section>
       <Container>
-        <Title>Transforming Data into Actionable Insights for Industries Worldwide</Title>
+        <Title
+          className="text-center pt-4 pt-md-0"
+          style={{ fontSize: "30px" }}
+        >
+          Transforming Data into Actionable Insights for Industries Worldwide
+        </Title>{" "}
         <Subtitle>
-          Our business intelligence services are tailored to a wide range of industries, delivering critical features needed to achieve maximum impact.
+          Our business intelligence services are tailored to a wide range of
+          industries, delivering critical features needed to achieve maximum
+          impact.
         </Subtitle>
         <GridContainer>
           {industryData.map((industry, index) => (
@@ -91,4 +91,4 @@ const IndustriesGrid = () => {
   );
 };
 
-export default IndustriesGrid;
+export default TransformingIndustriesSection;

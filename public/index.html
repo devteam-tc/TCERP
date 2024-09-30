@@ -28,6 +28,12 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script>
+      // Prevent snap loading for non-bots
+      if (navigator.userAgent !== 'ReactSnap') {
+        document.querySelector('#root').innerHTML = '';
+      }
+    </script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.

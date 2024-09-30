@@ -6,10 +6,11 @@ import WhyTechCloudERP from '../Aboutus/WhyTechCloudERP';
 import CTA from '../CTA'
 import TransformingIndustriesSection from '../../components/TransformingIndustriesSection';
 import ReportingSection from './ReportingSection';
+import OurPartnerSection from '../Home/OurPartnerSection';
 import BusinessSlider from './BusinessSlider';
 const BusinessIntelligence = () => {
-    const { heading, description } = businessData[0] || { heading: '', description: '' }; // Fallback to empty strings
-    const businessIntelligenceContent = whyTechCloudERPContent.BusinessIntelligenceContent; // Extract BusinessIntelligenceContent
+    const { heading, description } = businessData[0] || { heading: '', description: '' }; 
+    const businessIntelligenceContent = whyTechCloudERPContent.BusinessIntelligenceContent; 
 
     return (
         <>
@@ -27,13 +28,13 @@ const BusinessIntelligence = () => {
 
             {/* Pass the businessIntelligenceContent to WhyTechCloudERP */}
             <WhyTechCloudERP 
-                content={businessIntelligenceContent}    title={whyTechCloudERPContent.BusinessIntelligenceContent.title}
-
+                content={businessIntelligenceContent}  title={whyTechCloudERPContent.BusinessIntelligenceContent.title}
             />     
-            <CTA />   
-            <TransformingIndustriesSection />
-            <ReportingSection />
             <BusinessSlider />
+            <ReportingSection />
+            <TransformingIndustriesSection />
+            <OurPartnerSection />
+            <CTA />   
         </>
     );
 };

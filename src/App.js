@@ -11,12 +11,16 @@ import ExpoDetail from './pages/Gallery/ExpoDetail';
 import MainNavbar from './components/Navbar/Navbar';
 import ProductPage from './pages/Products/ProductsPage';
 import BusinessIntelligence from './pages/Business/business-intelligence-analytics-software';
+import ContactUs from './pages/Contact/ContactUs';
+import TermsAndConditions from './pages/terms-conditions';
+import PrivacyPolicy from './pages/privacy-policy';
+import MdsProfile from './pages/profile/mds-profile';
 import NotFound from './pages/NotFound';
 import ServicesSection from './pages/Services/ServicesSection';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/TCERP">
       <div className="App font-[Poppins] md:bg-top bg-center">
         <MainNavbar/>
         {/* Define your Routes here */}
@@ -36,7 +40,11 @@ function App() {
           <Route path="/gallery/:id" element={<ExpoDetail/>} />
           {/* Dynamic product pages */}
           <Route path="/products/:productId" element={<ProductPage />} />
-<Route path="/business-intelligence-analytics-software" element ={<BusinessIntelligence />} />
+          <Route path="/business-intelligence-analytics-software" element ={<BusinessIntelligence />} />
+          <Route path='/ContactUs' element={<ContactUs />} />
+          <Route path='/terms-and-conditions' element ={<TermsAndConditions />} />
+          <Route path='/privacypolicy' element ={<PrivacyPolicy />} />
+          <Route path ='/mds-profile' element ={<MdsProfile />} />
           {/* 404 error for unmatched subroutes within dynamic routes */}
           <Route path="/products/*" element={<NotFound />} />
           <Route path="/gallery/*" element={<NotFound />} />
