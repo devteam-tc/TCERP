@@ -289,7 +289,7 @@ export const NAV_ITEMS = [
     { title: 'What & Why?', link: '/about-us' },
     { title: 'What sets us Different?', link: 'what-sets-us-different.html' },
     { title: 'Unique Tech Cloud ERP', link: 'unique-tech-cloud-erp.html' },
-    { title: "MD's Profile & Message", link: 'mds-profile-message.html' },
+    { title: "MD's Profile & Message", link: '/mds-profile' },
   ],
 },
 {
@@ -2645,15 +2645,19 @@ export const ExpertiseData = [
 export const aboutus_data = {
   'about_content': {
     heading: "Tech Cloud ERP Software for Your Business",
-    description: "Our web/cloud-based products and solutions boast unassuming functionalities in Business Process Management, tailored for diverse business verticals.",
+    description: "Our web/cloud-based products and solutions boast unassuming functionalities in Business Process Management, tailored for diverse business verticals",
   },
   'termsAndConditionscontent' :{
     heading: "Terms & Conditions",
-    description: "Our web/cloud-based products and solutions boast unassuming functionalities in Business Process Management, tailored for diverse business verticals.",
+    description: "By accessing our website or using our services, you agree to abide by our terms and conditions",
   },
   'privacypolicycontent':{
     heading: "Privacy Policy",
     description: "We respect your privacy and are committed to safeguarding your personal information in accordance with our Privacy Policy",
+  },
+  'mdsprofilecontent' :{
+    heading: "MR. RAJ - FOUNDER & CEO",
+    description: "Certified SAP expertise, and 27 years of extensive experience, shapes our vision and strategic path",
   }
 };
 export const ContactUs_content = {
@@ -2812,3 +2816,68 @@ export const privacyPolicyData = {
   },
   note: "NOTE: IF YOU DO NOT AGREE WITH THE TERMS OF THIS PRIVACY POLICY, PLEASE DO NOT ACCESS THE WEBSITE.",
 };
+export const profileData = {
+  name: "Mr. Raj",
+  description: ` is a Mechanical Engineer and a certified SAP Production Planning Consultant. 
+                Known for his dynamic personality, Mr. Raj thrives on engaging with individuals at 
+                all levels to enhance his knowledge base. He is a meticulous observer of processes, 
+                consistently providing precise solutions swiftly. His profound expertise and 
+                leadership abilities have significantly advanced the careers of numerous professionals 
+                and have been instrumental in the growth of various businesses.`,
+};
+// constant.js
+export const essentialServicesData = [
+  {
+    id: 1,
+    icon: "🔍",
+    title: "Search Engine Optimization",
+    description:
+      "SEO is a process of enhancing the visibility of a website or a web page in a search engine's unpaid results—often referred to as 'organic' or 'natural' results.",
+  },
+  {
+    id: 2,
+    icon: "📈",
+    title: "Search Engine Marketing",
+    description:
+      "SEM is a digital marketing strategy focused on promoting websites by increasing their visibility in search engine results pages (SERPs) through paid advertising.",
+  },
+  {
+    id: 3,
+    icon: "📱",
+    title: "Social Media Optimization",
+    description:
+      "SMO can be an effective way to quickly increase website traffic, generate leads, and drive conversions, especially for businesses looking to achieve immediate results.",
+  },
+  {
+    id: 4,
+    icon: "📣",
+    title: "Facebook Ads",
+    description:
+      "Facebook Ads helps businesses to create targeted campaigns to reach specific audiences on Facebook and Instagram, driving brand awareness.",
+  },
+  {
+    id: 5,
+    icon: "✏️",
+    title: "Content Marketing",
+    description:
+      "Content marketing is a strategic marketing approach focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
+  },
+  {
+    id: 6,
+    icon: "✉️",
+    title: "Email Marketing",
+    description:
+      "Email marketing is a strategy focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
+  },
+];
+export const roles = [
+  { company: 'Mitsubishi Chemical Factory', role: 'Manager (Production & Maintenance)' },
+  { company: 'United Breweries Limited', role: 'Senior Officer (Production)' },
+  { company: 'Usha International', role: 'Senior Manager (Production)' },
+  { company: 'Rigel Soft', role: 'Founder & Managing Partner' },
+  { company: 'Tech Integra Solutions', role: 'Founder & Managing Partner' },
+  { company: 'Softpro Systems LLC', role: 'Senior Business Analyst' },
+  { company: 'Criterion', role: 'Managing Director' },
+  { company: 'OM IT Solutions', role: 'Regional Head' },
+  { company: 'Xseed Tech Integra Solutions Pvt. Ltd.', role: 'Founder & Managing Director' },
+];

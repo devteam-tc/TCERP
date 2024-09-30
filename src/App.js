@@ -14,6 +14,7 @@ import BusinessIntelligence from './pages/Business/business-intelligence-analyti
 import ContactUs from './pages/Contact/ContactUs';
 import TermsAndConditions from './pages/terms-conditions';
 import PrivacyPolicy from './pages/privacy-policy';
+import MdsProfile from './pages/profile/mds-profile';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
 <Route path='/ContactUs' element={<ContactUs />} />
 <Route path='/terms-and-conditions' element ={<TermsAndConditions />} />
 <Route path='/privacypolicy' element ={<PrivacyPolicy />} />
+<Route path ='/mds-profile' element ={<MdsProfile />} />
         </Routes>
         {/* Footer should be displayed across all pages */}
         <Footer />

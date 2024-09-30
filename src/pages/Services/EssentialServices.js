@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
+import { essentialServicesData } from "../../utils/constants";
 
 const SectionWrapper = styled.div`
   padding: 50px 0;
@@ -62,60 +63,15 @@ const EssentialServices = () => {
           Essential digital marketing services include SEO, social media, PPC, content creation, email campaigns, and analytics for growth optimization.
         </SectionSubtitle>
         <Row>
-          <Col md={4}>
-            <CardWrapper>
-              <CardIcon>🔍</CardIcon>
-              <CardTitle>Search Engine Optimization</CardTitle>
-              <CardText>
-                SEO is a process of enhancing the visibility of a website or a web page in a search engine's unpaid results—often referred to as "organic" or "natural" results.
-              </CardText>
-            </CardWrapper>
-          </Col>
-          <Col md={4}>
-            <CardWrapper>
-              <CardIcon>📈</CardIcon>
-              <CardTitle>Search Engine Marketing</CardTitle>
-              <CardText>
-                SEM is a digital marketing strategy focused on promoting websites by increasing their visibility in search engine results pages (SERPs) through paid advertising.
-              </CardText>
-            </CardWrapper>
-          </Col>
-          <Col md={4}>
-            <CardWrapper>
-              <CardIcon>📱</CardIcon>
-              <CardTitle>Social Media Optimization</CardTitle>
-              <CardText>
-                SMO can be an effective way to quickly increase website traffic, generate leads, and drive conversions, especially for businesses looking to achieve immediate results.
-              </CardText>
-            </CardWrapper>
-          </Col>
-          <Col md={4}>
-            <CardWrapper>
-              <CardIcon>📣</CardIcon>
-              <CardTitle>Facebook Ads</CardTitle>
-              <CardText>
-                Facebook Ads helps businesses to create targeted campaigns to reach specific audiences on Facebook and Instagram, driving brand awareness.
-              </CardText>
-            </CardWrapper>
-          </Col>
-          <Col md={4}>
-            <CardWrapper>
-              <CardIcon>✏️</CardIcon>
-              <CardTitle>Content Marketing</CardTitle>
-              <CardText>
-                Content marketing is a strategic marketing approach focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.
-              </CardText>
-            </CardWrapper>
-          </Col>
-          <Col md={4}>
-            <CardWrapper>
-              <CardIcon>✉️</CardIcon>
-              <CardTitle>Email Marketing</CardTitle>
-              <CardText>
-                Email marketing is a strategy focused on creating and distributing valuable relevant, and consistent content to attract and retain a clearly defined audience.
-              </CardText>
-            </CardWrapper>
-          </Col>
+          {essentialServicesData.map((service) => (
+            <Col md={4} key={service.id}>
+              <CardWrapper>
+                <CardIcon>{service.icon}</CardIcon>
+                <CardTitle>{service.title}</CardTitle>
+                <CardText>{service.description}</CardText>
+              </CardWrapper>
+            </Col>
+          ))}
         </Row>
       </Container>
     </SectionWrapper>
