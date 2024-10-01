@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import CTA from './CTA';
 import OurPartnerSection from './Home/OurPartnerSection';
 
+
 export const Section = styled.section`
   opacity: var(--sds-size-stroke-border);
   background: linear-gradient(90deg, #C62B00 1%, #AA3A1B 42.97%, #44170B 100%);

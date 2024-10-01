@@ -2825,6 +2825,43 @@ export const profileData = {
                 leadership abilities have significantly advanced the careers of numerous professionals 
                 and have been instrumental in the growth of various businesses.`,
 };
+export const servicesData = {
+  'web-development': {
+    title: 'Web Development',
+    description: [
+      "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
+      "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
+    ],
+    faq: [
+      {
+        question: 'What is digital marketing?',
+        answer:
+          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
+      },
+      {
+        question: 'Why is digital marketing important for my business?',
+        answer:
+          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
+      },
+      {
+        question: 'How much should I budget for digital marketing?',
+        answer:
+          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
+      },
+    ],
+    image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
+    altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
+  },
+  'mobile-application-development': {
+    title: 'Mobile Application Development',
+    description: 'We develop responsive and feature-rich mobile applications for various platforms.',
+  },
+  'digital-marketing': {
+    title: 'Digital Marketing',
+    description: 'Boost your business with our tailored digital marketing strategies.',
+  },
+  // Add more services dynamically here
+};
 // constant.js
 export const essentialServicesData = [
   {

@@ -15,10 +15,12 @@ import ContactUs from './pages/Contact/ContactUs';
 import TermsAndConditions from './pages/terms-conditions';
 import PrivacyPolicy from './pages/privacy-policy';
 import MdsProfile from './pages/profile/mds-profile';
+import NotFound from './pages/NotFound';
+import ServicesSection from './pages/Services/ServicesSection';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/">
       <div className="App font-[Poppins] md:bg-top bg-center">
         <MainNavbar/>
         {/* Define your Routes here */}
@@ -38,11 +40,21 @@ function App() {
           <Route path="/gallery/:id" element={<ExpoDetail/>} />
           {/* Dynamic product pages */}
           <Route path="/products/:productId" element={<ProductPage />} />
-<Route path="/business-intelligence-analytics-software" element ={<BusinessIntelligence />} />
-<Route path='/ContactUs' element={<ContactUs />} />
-<Route path='/terms-and-conditions' element ={<TermsAndConditions />} />
-<Route path='/privacypolicy' element ={<PrivacyPolicy />} />
-<Route path ='/mds-profile' element ={<MdsProfile />} />
+          <Route path="/business-intelligence-analytics-software" element ={<BusinessIntelligence />} />
+          <Route path='/ContactUs' element={<ContactUs />} />
+          <Route path='/terms-and-conditions' element ={<TermsAndConditions />} />
+          <Route path='/privacypolicy' element ={<PrivacyPolicy />} />
+          <Route path ='/mds-profile' element ={<MdsProfile />} />
+          {/* 404 error for unmatched subroutes within dynamic routes */}
+          <Route path="/products/*" element={<NotFound />} />
+          <Route path="/gallery/*" element={<NotFound />} />
+          {/* Other routes */}
+          <Route path="/services/:serviceId" element={<ServicesSection />} />
+          <Route path="/services/*" element={<NotFound />} />
+          {/* Other routes */}
+
+          {/* Route for 404 Not Found */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Footer should be displayed across all pages */}
         <Footer />

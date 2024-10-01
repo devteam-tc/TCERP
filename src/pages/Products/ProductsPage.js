@@ -9,7 +9,7 @@ import { Title } from '../Home/CardSection';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import OurPartnerSection from '../Home/OurPartnerSection';
 import CTA from '../CTA';
-import { Helmet } from 'react-helmet-async'; // Import Helmet for dynamic head management
+import { Helmet } from 'react-helmet-async';
 import Typewriter from "typewriter-effect";
 
 // Styled Components
@@ -183,52 +183,66 @@ const TabContent = ({ content, image, alt }) => {
 
 const ProductPage = () => {
   const { productId } = useParams();
-
+  
   const product = productData[productId] || {
     heading: 'Product Not Found',
     description: 'The product you are looking for does not exist.',
-    tabsHeadings: {},
+    tabsHeadings: {},  // Ensure tabsHeadings and tabData are at least empty objects
     tabData: {}
   };
 
+  
+  // Get the first tab key
   const firstTab = Object.keys(product.tabsHeadings)[0];
+
+  // Initialize activeTab with the first tab if none is selected
   const [activeTab, setActiveTab] = useState(firstTab);
 
+  // Ensure a valid tab is always selected
   useEffect(() => {
     if (!activeTab || !product.tabsHeadings[activeTab]) {
-      setActiveTab(firstTab);
+      setActiveTab(firstTab); // Automatically select the first tab
     }
   }, [activeTab, product.tabsHeadings, firstTab]);
 
+  // Safely access tab data with default values
   const tabContent = product.tabData[activeTab] || { content: [], image: '/default-image.png', alt: 'Default image description' };
 
-  // Dynamic meta data generation
-  const metaTitle = product.heading || "Tech Cloud ERP - Product Details";
-  const metaDescription = product.description || "Learn more about our products and solutions.";
-  const metaKeywords = product.cards ? product.cards.map(card => card.title).join(", ") : "ERP, Solutions, Tech Cloud";
+    // Dynamic meta data generation
+    const metaTitle = product.heading || "Tech Cloud ERP - Product Details";
+    const metaDescription = product.description || "Learn more about our products and solutions.";
+    const metaKeywords = product.cards ? product.cards.map(card => card.title).join(", ") : "ERP, Solutions, Tech Cloud";
 
   return (
     <>
-      {/* Dynamic meta tags */}
-      <Helmet>
+    {/* Dynamic meta tags */}
+    <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
         <meta name="keywords" content={metaKeywords} />
-      </Helmet>
+    </Helmet>
       <Section>
         <Container>
           <Row>
             <ContentColumn md={6}>
-              <Heading>
-                <Typewriter
-                  options={{
-                    strings: product.heading,
-                    autoStart: true,
-                    loop: true,
-                    deleteSpeed: 100,
-                  }}
-                />
-              </Heading>
+              {/* <Typewriter strings: [
+          "Software Developer",
+          "FrontEnd Developer",
+          "MERN Stack Developer",
+          "UI Developer",
+        ],
+        autoStart: true,
+        loop: true,
+        deleteSpeed: 50,
+      }}>{product.heading}</Typewriter> */}
+      <Heading><Typewriter
+      options={{
+        strings: product.heading,
+        autoStart: true,
+        loop: true,
+        deleteSpeed: 100,
+      }}
+    /></Heading>
               <Divider />
               <Description>{product.description}</Description>
             </ContentColumn>
@@ -260,13 +274,65 @@ const ProductPage = () => {
         </Container>
       </BodySection>
 
-      {/* Tabs and Accordion as you previously implemented... */}
-      {/* Make sure to keep your component structure as it is. */}
+      <SectionWrapper>
+        <Container>
+          
 
+          {/* Tabs for Desktop View */}
+          <div className='my-3'>
+            <div className="d-none d-md-block">
+            <TitleContainer>
+            <StyledProductsHeading className='m-0' style={{ color: '#000000' }}>
+              {product.productTitle}
+            </StyledProductsHeading>
+            <Divider style={{ backgroundColor: '#EF5226', marginTop: '10px' }} />
+          </TitleContainer>
+              <Row>
+                <Col md={3} className='m-auto'>
+                  <div>
+                    {Object.keys(product.tabsHeadings).map((key) => (
+                      <StyledTabItem 
+                        key={key}
+                        onClick={() => setActiveTab(key)} 
+                        isActive={activeTab === key}
+                      >
+                        {product.tabsHeadings[key]} {/* Dynamic tab headings */}
+                      </StyledTabItem>
+                    ))}
+                  </div>
+                </Col>
+                <Col md={9}>
+                  <TabContent content={tabContent.content} image={tabContent.image} alt={tabContent.alt} />
+                </Col>
+              </Row>
+            </div>
+
+            {/* Accordion for Mobile View */}
+            <div className="d-md-none">
+            <TitleContainer>
+            <StyledProductsHeading className='m-0' style={{ color: '#000000' }}>
+              Tech Cloud Enterprise Resource Planning
+            </StyledProductsHeading>
+            <Divider style={{ backgroundColor: '#EF5226', marginTop: '10px' }} />
+          </TitleContainer>
+              <Accordion defaultActiveKey="0">
+                {Object.keys(product.tabsHeadings).map((key, idx) => (
+                  
+                  <StyledAccordionItem eventKey={idx.toString()} key={key}>
+                    <StyledAccordionHeader>{product.tabsHeadings[key]}</StyledAccordionHeader>
+                    <StyledAccordionBody>
+                      <TabContent content={product.tabData[key]?.content || []} image={product.tabData[key]?.image || '/default-image.png'} alt={product.tabData[key]?.alt || 'Default image description'} />
+                    </StyledAccordionBody>
+                  </StyledAccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </Container>
+      </SectionWrapper>
       <OurPartnerSection className='py-2' />
       <CTA />
     </>
   );
 };
-
 export default ProductPage;
