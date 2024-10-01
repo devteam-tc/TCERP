@@ -24,9 +24,9 @@ const BannerWrapper = styled.div`
 `;
 
 const BannerContent = styled.div`
-background: rgb(0,0,0);
-backdrop-filter: blur(3px);
-background: linear-gradient(150deg, rgba(0,0,36,0.8127626050420168) 0%, rgba(5,43,54,0.5102415966386555) 22%, rgba(0,84,103,0.4906337535014006) 52%, rgba(0,65,80,0.3981967787114846) 66%, rgba(1,1,5,0.8295693277310925) 100%);
+  background: rgb(0,0,0);
+  backdrop-filter: blur(3px);
+  background: linear-gradient(150deg, rgba(0,0,36,0.8127626050420168) 0%, rgba(5,43,54,0.5102415966386555) 22%, rgba(0,84,103,0.4906337535014006) 52%, rgba(0,65,80,0.3981967787114846) 66%, rgba(1,1,5,0.8295693277310925) 100%);
   padding: 40px;
   border-radius: 10px; /* Optional: Adds rounded corners */
 `;
@@ -34,7 +34,7 @@ background: linear-gradient(150deg, rgba(0,0,36,0.8127626050420168) 0%, rgba(5,4
 const BannerTitle = styled.h1`
   font-size: 4rem;
   font-weight: 900;
-  color: #ef5226;
+  color: #E9C182;
 
   @media (max-width: 992px) {
     font-size: 1.9rem;
@@ -44,7 +44,8 @@ const BannerTitle = styled.h1`
 const BannerSubtitle = styled.h2`
   font-weight: 900;
   font-size: 5rem;
-  color: #ef5226;
+  // color: #ef5226;
+  color: #E9C182;
 
   @media (max-width: 992px) {
     font-size: 1.9rem;

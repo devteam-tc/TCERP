@@ -12,6 +12,7 @@ const Section = styled.section`
   clip-path: ellipse(75% 100% at center top);
   text-align: center;
 `;
+
 const BackgroundImage = styled.div`
   position: absolute;
   top: -50px;
@@ -141,9 +142,7 @@ const BackgroundImage = styled.div`
         -o-transform: rotate(360deg);
         transform: rotate(360deg);
     }
-}
-
-`;
+}`;
 
 
 const Heading = styled.h2`

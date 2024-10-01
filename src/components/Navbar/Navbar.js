@@ -154,7 +154,6 @@ const MainNavbar = () => {
       window.removeEventListener('resize', handleResize); // Cleanup on unmount
     };
   }, []);
-
   const handleNavLinkClick = (item) => {
     if (item.isDemo) {
       openCalendlyWidget(); // Call the Calendly widget when demo link is clicked
@@ -241,8 +240,7 @@ const MainNavbar = () => {
                   <img
                     src={releavant.indian_flag_img}
                     style={{ width: '25px', height: '25px', marginRight: '10px', borderRadius: '50%' }}
-                    alt="Indian flag"
-                  />
+                    alt="Indian flag"/>
                   +91 8929439603
               </Dropdown.Item>
               <Dropdown.Item href="tel:+13127663390" className='my-1'>
@@ -253,8 +251,7 @@ const MainNavbar = () => {
                   />
                   +1 (312) 766-3390
               </Dropdown.Item>
-              </div>
-                
+              </div> 
               </Dropdown.Menu>
             </CustomDropdown>
           </MobileNav>
@@ -278,7 +275,7 @@ const MainNavbar = () => {
               <SocialIcon href="https://www.twitter.com" target="_blank">
                 <FaTwitter />
               </SocialIcon>
-            </div>
+          </div>
         </MobileNavbarCollapse>
       </Container>
     </Navbar>

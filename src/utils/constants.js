@@ -32,8 +32,25 @@ export const releavant = {
       experience: {
         years: '25+',
         text: 'Years of Experience'
-      }
+      },
+      
     },
+    content: {
+      companyName: 'Tech Cloud ERP',
+      description: `Tech Cloud ERP is a web-based solution for small and mid-sized businesses, acting as a
+        central hub for tracking and analyzing departmental activities. It offers real-time data and
+        integrated processes to accelerate decision-making and support growth, claiming to be
+        India's leading ERP software developer with a focus on reducing operational costs, especially for
+        manufacturing companies.`,
+      missionTitle: 'Our Mission',
+      missionText: `Our mission is to help our clients respond faster and more efficiently to market
+        dynamics. We strive to make them more agile in a competitive marketplace through high-tech
+        strategies and action plans.`,
+      experience: {
+        years: '25+',
+        text: 'Years of Experience'
+      }
+    }
     
   },
   about_content_text: {
@@ -1470,11 +1487,9 @@ export const galleryData = {
       location: 'Coimbatore',
       venue: 'Bharath Bhavan, Pragathi Maidan',
       date: '19, 20, 21, 22 - Sep, 2024',
-      img: require('../assets/Gallery/DelhiExpo/DelhiExpoThumbnail.webp'),
+      img: require('../assets/Gallery/Coimbature pics/CoimbatoreExpoThumbnail.png'),
       alt: 'World Food India 2024 in Delhi',
     }
-    
-    
   ],
   festival: [
     {
@@ -1532,6 +1547,7 @@ export const faqContent = {
 
 export const productData = {
   'tech-cloud-erp': {
+    productTitle: 'Tech Cloud Enterprise Resource Planning',
     heading: "ERP Solutions",
     description: "Our ERP solutions are designed to streamline and optimize operations.",
     cards: [
@@ -1659,7 +1675,8 @@ export const productData = {
     }
   },
   'customer-relationship-management': {
-    heading: "ERP Solutions",
+    productTitle: 'Tech Cloud Customer Relationship Management',
+    heading: "CRM Solutions",
     description: "Our ERP solutions are designed to streamline and optimize operations.",
     cards: [
       {
@@ -1786,7 +1803,8 @@ export const productData = {
     }
   },
   'point-of-sale':{
-      heading: "ERP Solutions",
+      productTitle: 'Tech Cloud Point of Sale',
+      heading: "Point of Sale",
       description: "Our ERP solutions are designed to streamline and optimize operations.",
       cards: [
           {
@@ -1914,6 +1932,7 @@ export const productData = {
     
   },
   'trading-software': {
+    productTitle: 'Tech Cloud Trading Software',
       heading: "ERP Solutions",
       description: "Our ERP solutions are designed to streamline and optimize operations.",
         cards: [
@@ -2019,6 +2038,7 @@ export const productData = {
 
   },
   'Ecommerce-software': {
+    productTitle: 'Tech Cloud E-Commerce Software',
       heading: "ERP Solutions",
       description: "Our ERP solutions are designed to streamline and optimize operations.",
         cards: [
@@ -2123,6 +2143,7 @@ export const productData = {
       }
   },
   'hr-managament-software': {
+    productTitle: 'Tech Cloud HR Management Software',
       heading: "ERP Solutions",
       description: "Our ERP solutions are designed to streamline and optimize operations.",
       cards: [
@@ -2254,7 +2275,8 @@ export const productData = {
       }
   },
   'financial-management-systems': {
-      heading: "ERP Solutions",
+    productTitle: 'Tech Cloud Financial Management Systems',
+    heading: "ERP Solutions",
     description: "Our ERP solutions are designed to streamline and optimize operations.",
     cards: [
       {
@@ -2336,6 +2358,7 @@ export const productData = {
   }
   },
   'integrated-erp-software': {
+      productTitle: 'Tech Cloud Integrated ERP Software',
       heading: "ERP Solutions",
       description: "Our ERP solutions are designed to streamline and optimize operations.",
       cards: [
@@ -2409,6 +2432,7 @@ export const productData = {
       }
   },
   'erp-for-restaraunt': {
+      productTitle: 'Tech Cloud ERP For Restaraunt Business',
       heading: "ERP Solutions",
       description: "Our ERP solutions are designed to streamline and optimize operations.",
         cards: [
@@ -2513,7 +2537,8 @@ export const productData = {
       }
   },
   'erp-for-accounting-software':{
-      heading: "ERP Solutions",
+      productTitle: 'Tech Cloud ERP for Accounting Software',
+      heading: "ERP for Accounting Software",
       description: "Our ERP solutions are designed to streamline and optimize operations.",
         cards: [
           {
@@ -2824,44 +2849,7 @@ export const profileData = {
                 leadership abilities have significantly advanced the careers of numerous professionals 
                 and have been instrumental in the growth of various businesses.`,
 };
-export const servicesData = {
-  'web-development': {
-    title: 'Web Development',
-    description: [
-      "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
-      "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
-    ],
-    faq: [
-      {
-        question: 'What is digital marketing?',
-        answer:
-          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
-      },
-      {
-        question: 'Why is digital marketing important for my business?',
-        answer:
-          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
-      },
-      {
-        question: 'How much should I budget for digital marketing?',
-        answer:
-          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
-      },
-    ],
-    image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
-    altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
-  },
-  'mobile-application-development': {
-    title: 'Mobile Application Development',
-    description: 'We develop responsive and feature-rich mobile applications for various platforms.',
-  },
-  'digital-marketing': {
-    title: 'Digital Marketing',
-    description: 'Boost your business with our tailored digital marketing strategies.',
-  },
-  // Add more services dynamically here
-};
-// constant.js
+
 export const essentialServicesData = [
   {
     id: 1,
@@ -2906,6 +2894,48 @@ export const essentialServicesData = [
       "Email marketing is a strategy focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
   },
 ];
+
+
+
+// constants.js
+export const servicesData = {
+  'web-development': {
+    title: 'Web Development',
+    description: [
+      "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
+      "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
+    ],
+    faq: [
+      {
+        question: 'What is digital marketing?',
+        answer:
+          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
+      },
+      {
+        question: 'Why is digital marketing important for my business?',
+        answer:
+          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
+      },
+      {
+        question: 'How much should I budget for digital marketing?',
+        answer:
+          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
+      },
+    ],
+    image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
+    altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
+  },
+  'mobile-application-development': {
+    title: 'Mobile Application Development',
+    description: 'We develop responsive and feature-rich mobile applications for various platforms.',
+  },
+  'digital-marketing': {
+    title: 'Digital Marketing',
+    description: 'Boost your business with our tailored digital marketing strategies.',
+  },
+  // Add more services dynamically here
+};
+
 export const roles = [
   { company: 'Mitsubishi Chemical Factory', role: 'Manager (Production & Maintenance)' },
   { company: 'United Breweries Limited', role: 'Senior Officer (Production)' },
