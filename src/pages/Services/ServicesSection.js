@@ -3,7 +3,7 @@ import { ContentColumn, Description, Divider, Heading, Section } from '../Indust
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import NotFound from '../NotFound'; // Import the NotFound component
-import { servicesData } from '.././../utils/constants'; 
+import { servicesData } from '../../utils/constants'; // Import services data
 import { Title } from '../Home/CardSection';
 import styled from 'styled-components';
 import { FaPlus, FaMinus } from 'react-icons/fa';

@@ -379,16 +379,15 @@ export const NAV_ITEMS = [
     type: 'link',
 },
 {
-    title: 'Services',
-    type: 'dropdown',
-    id: 'servicesDropdown',
-    items: [
-      { title: 'Web Development', link: 'erp-for-textile.html' },
-      { title: 'Mobile Application Development', link: 'customer-relationship-management.html' },                                                                                   
-      { title: 'Digital Marketing', link: 'cloud-erp-software.html' },
-
-      // Other Services items...
-    ],
+  title: 'Services',
+  type: 'dropdown',
+  id: 'servicesDropdown',
+  items: [
+    { title: 'Web Development', link: '/services/web-development' },
+    { title: 'Mobile Application Development', link: '/services/mobile-application-development' },
+    { title: 'Digital Marketing', link: '/services/digital-marketing' },
+    // Add more services here...
+  ],
 },
 {
     title: 'Pricing',
