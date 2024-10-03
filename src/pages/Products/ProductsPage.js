@@ -209,17 +209,17 @@ const ProductPage = () => {
   const tabContent = product.tabData[activeTab] || { content: [], image: '/default-image.png', alt: 'Default image description' };
 
     // Dynamic meta data generation
-    const metaTitle = product.heading || "Tech Cloud ERP - Product Details";
-    const metaDescription = product.description || "Learn more about our products and solutions.";
-    const metaKeywords = product.cards ? product.cards.map(card => card.title).join(", ") : "ERP, Solutions, Tech Cloud";
+    // const metaTitle = product.heading || "Tech Cloud ERP - Product Details";
+    // const metaDescription = product.description || "Learn more about our products and solutions.";
+    // const metaKeywords = product.cards ? product.cards.map(card => card.title).join(", ") : "ERP, Solutions, Tech Cloud";
 
   return (
     <>
     {/* Dynamic meta tags */}
     <Helmet>
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <meta name="keywords" content={metaKeywords} />
+        <title>Products Page</title>
+        <meta name="description" content='jhgfasdhkfsbkjcbgiugcb' />
+        <meta name="keywords" content='jjjdgkadfjsdhgfuiegdfui' />
     </Helmet>
       <Section>
         <Container>
@@ -254,7 +254,7 @@ const ProductPage = () => {
         <Container className="my-4">
           <Title className="text-center text-orange-600 mb-5">Our ERP Solutions Overview</Title>
           <Row>
-            {product.cards?.map((card, index) => (
+            {product.cards.map((card, index) => (
               <Col md={6} lg={4} key={index} className="mb-4 d-flex">
                 <CardContainer>
                   <CardTitle>{card.title}</CardTitle>
@@ -321,7 +321,7 @@ const ProductPage = () => {
                   <StyledAccordionItem eventKey={idx.toString()} key={key}>
                     <StyledAccordionHeader>{product.tabsHeadings[key]}</StyledAccordionHeader>
                     <StyledAccordionBody>
-                      <TabContent content={product.tabData[key]?.content || []} image={product.tabData[key]?.image || '/default-image.png'} alt={product.tabData[key]?.alt || 'Default image description'} />
+                      <TabContent content={product.tabData[key].content || []} image={product.tabData[key].image || '/default-image.png'} alt={product.tabData[key].alt || 'Default image description'} />
                     </StyledAccordionBody>
                   </StyledAccordionItem>
                 ))}
