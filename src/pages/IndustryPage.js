@@ -9,7 +9,7 @@ import OurPartnerSection from './Home/OurPartnerSection';
 
 export const Section = styled.section`
   opacity: var(--sds-size-stroke-border);
-  background: linear-gradient(90deg, #C62B00 1%, #AA3A1B 42.97%, #44170B 100%);
+  background: linear-gradient(90deg, #C62B00 1%, #AA3A1B 42.97%, #7C2209 100%);
   padding: 90px 0;
   color: white;
   text-align: left;
@@ -95,6 +95,7 @@ export const BodySection = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
+  overflow:hidden;
   gap: var(--Spacing-ml, 15px);
 
   @media (max-width: 992px) {

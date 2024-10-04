@@ -1,10 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Container, Row } from 'react-bootstrap';
-import { ContentColumn, Description, Divider, Heading, Section } from '../IndustryPage';
-import { aboutus_data , profileData } from '../../utils/constants';
-import { Card } from 'react-bootstrap';
-import ProfessionalExperience from './ProfessionalExperience';
+import React from "react";
+import styled from "styled-components";
+import { Container, Row } from "react-bootstrap";
+import {
+  ContentColumn,
+  Description,
+  Divider,
+  Heading,
+  Section,
+} from "../IndustryPage";
+import { aboutus_data, profileData } from "../../utils/constants";
+import { Card } from "react-bootstrap";
+import ProfessionalExperience from "./ProfessionalExperience";
+import MessageFromChairman from "./MessageFromChairman";
 
 const StyledCard = styled(Card)`
   border-radius: 12px;
@@ -25,25 +32,32 @@ const profiledescription = styled.p`
 `;
 
 const MdsProfile = () => {
-    const { heading, description } = aboutus_data.mdsprofilecontent;
+  const { heading, description } = aboutus_data.mdsprofilecontent;
 
-    return (
-        <><><Section>
-            <Container>
-                <Row>
-                    <ContentColumn md={6}>
-                        <Heading>{heading}</Heading>
-                        <Divider />
-                        <Description>{description}</Description>
-                    </ContentColumn>
-                </Row>
-            </Container>
-        </Section><StyledCard>
-                <Card.Body>
-                    <Name>{profileData.name}</Name>
-                    <profiledescription>{profileData.description}</profiledescription>
-                </Card.Body>
-            </StyledCard></><ProfessionalExperience /></>
-    )
-}
+  return (
+    <>
+      <>
+        <Section>
+          <Container>
+            <Row>
+              <ContentColumn md={6}>
+                <Heading>{heading}</Heading>
+                <Divider />
+                <Description>{description}</Description>
+              </ContentColumn>
+            </Row>
+          </Container>
+        </Section>
+        <StyledCard>
+          <Card.Body>
+            <Name>{profileData.name}</Name>
+            <profiledescription>{profileData.description}</profiledescription>
+          </Card.Body>
+        </StyledCard>
+      </>
+      <ProfessionalExperience />
+      <MessageFromChairman />
+    </>
+  );
+};
 export default MdsProfile;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Accordion,  Col, Container, Row } from 'react-bootstrap';
 import { BodySection, ContentColumn, Description, Divider, Heading, Section } from '../IndustryPage';
-import { productData } from '../../utils/constants'; // Import product data from constants.js
+import { productData , whyTechCloudERPContent} from '../../utils/constants'; // Import product data from constants.js
 import styled from 'styled-components';
 import { BsCheckCircle } from 'react-icons/bs'; // Import tick mark icon from react-icons
 import { Title } from '../Home/CardSection';
@@ -11,6 +11,7 @@ import OurPartnerSection from '../Home/OurPartnerSection';
 import CTA from '../CTA';
 import { Helmet } from 'react-helmet-async';
 import Typewriter from "typewriter-effect";
+import WhyTechCloudERP from '../Aboutus/WhyTechCloudERP';
 
 // Styled Components
 const CardContainer = styled.div`
@@ -249,7 +250,10 @@ const ProductPage = () => {
           </Row>
         </Container>
       </Section>
-
+      <WhyTechCloudERP 
+  content={whyTechCloudERPContent.productspageContent} 
+  title={whyTechCloudERPContent.productspageContent.title} 
+/>
       <BodySection style={{ background: '#E6F6FA' }}>
         <Container className="my-4">
           <Title className="text-center text-orange-600 mb-5">Our ERP Solutions Overview</Title>

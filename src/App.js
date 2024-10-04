@@ -17,6 +17,8 @@ import PrivacyPolicy from './pages/privacy-policy';
 import MdsProfile from './pages/profile/mds-profile';
 import NotFound from './pages/NotFound';
 import ServicesSection from './pages/Services/ServicesSection';
+import PricingSection from './pages/Home/PricingSection';
+import PricingPage from './pages/Pricing/PricingPage';
 
 function App() {
   return (
@@ -40,7 +42,7 @@ function App() {
           <Route path="/gallery/:id" element={<ExpoDetail/>} />
           {/* Dynamic product pages */}
           <Route path="/products/:productId" element={<ProductPage />} />
-          <Route path="/business-intelligence-analytics-software" element ={<BusinessIntelligence />} />
+          <Route path="/business-intelligence" element ={<BusinessIntelligence />} />
           <Route path='/ContactUs' element={<ContactUs />} />
           <Route path='/terms-and-conditions' element ={<TermsAndConditions />} />
           <Route path='/privacypolicy' element ={<PrivacyPolicy />} />
@@ -51,6 +53,7 @@ function App() {
           {/* Other routes */}
           <Route path="/services/:serviceId" element={<ServicesSection />} />
           <Route path="/services/*" element={<NotFound />} />
+          <Route path='/pricing' element={<PricingPage />} />
           {/* Other routes */}
 
           {/* Route for 404 Not Found */}

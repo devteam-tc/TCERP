@@ -9,6 +9,7 @@ import { releavant , aboutus_data , whyTechCloudERPContent} from '../../utils/co
 // import TransformingIndustriesSection from '../../components/TransformingIndustriesSection';
 import CTA from '../CTA'
 import WhyTechCloudERP from './WhyTechCloudERP';
+import Services from './Services';
 const Aboutus = () => {
   return (
     <>
@@ -32,6 +33,7 @@ const Aboutus = () => {
       />
       <RecordSection />
       {/* <TransformingIndustriesSection /> */}
+      <Services />
       <CTA />
       <OurPartnerSection />
     </>

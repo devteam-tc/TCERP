@@ -392,7 +392,7 @@ export const NAV_ITEMS = [
 },
 {
     title: 'BI',
-    link: '/business-intelligence-analytics-software',
+    link: '/business-intelligence',
     type: 'link',
 },
 {
@@ -400,9 +400,9 @@ export const NAV_ITEMS = [
   type: 'dropdown',
   id: 'servicesDropdown',
   items: [
-    { title: 'Web Development', link: '/services/web-development' },
-    { title: 'Mobile Application Development', link: '/services/mobile-application-development' },
-    { title: 'Digital Marketing', link: '/services/digital-marketing' },
+    { title: 'Web Development', link: 'services/web-development' },
+    { title: 'Mobile Application Development', link: 'services/mobile-application-development' },
+    { title: 'Digital Marketing', link: 'services/digital-marketing' },
     // Add more services here...
   ],
 },
@@ -2682,6 +2682,10 @@ export const aboutus_data = {
   'mdsprofilecontent' :{
     heading: "MR. RAJ - FOUNDER & CEO",
     description: "Certified SAP expertise, and 27 years of extensive experience, shapes our vision and strategic path",
+  },
+  'pricingcontent':{
+    heading: "Pricing",
+    description: "Our Comprehensive solution for established businesses and enterprises.",
   }
 };
 export const ContactUs_content = {
@@ -2721,8 +2725,15 @@ export const whyTechCloudERPContent = {
       "How do you organize people’s shared potential into a competitive advantage? Support them with data, solve their oddities in business, and encourage their creativity. Tech Cloud ERP’s business intelligence enables your teams to do work faster and smarter by providing a seamless experience. Users can feel easy collaboration, security, and governance by preparing analytics, building data fields and dashboards, and publishing & sharing the data with a single click.",
       "Tech Cloud ERP’s BI Tool is a fully hosted solution, so users can run it in minutes and add users as your needs grow without configuring servers, managing software upgrades, etc."
     ]
+  },
+  productspageContent:{
+imageSrc : require("../assets/Products/products_main_img.png"),
+    title : "Cloud Based ERP Software",
+    description: [
+      "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+      "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+    ]
   }
-  
 };
 
 export const ReportingSectionContent = {
@@ -2849,7 +2860,7 @@ export const profileData = {
                 leadership abilities have significantly advanced the careers of numerous professionals 
                 and have been instrumental in the growth of various businesses.`,
 };
-
+// constant.js
 export const essentialServicesData = [
   {
     id: 1,
@@ -2927,11 +2938,55 @@ export const servicesData = {
   },
   'mobile-application-development': {
     title: 'Mobile Application Development',
-    description: 'We develop responsive and feature-rich mobile applications for various platforms.',
+    description: [
+      "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
+      "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
+    ],
+    faq: [
+      {
+        question: 'What is digital marketing?',
+        answer:
+          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
+      },
+      {
+        question: 'Why is digital marketing important for my business?',
+        answer:
+          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
+      },
+      {
+        question: 'How much should I budget for digital marketing?',
+        answer:
+          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
+      },
+    ],
+    image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
+    altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
   },
   'digital-marketing': {
     title: 'Digital Marketing',
-    description: 'Boost your business with our tailored digital marketing strategies.',
+    description: [
+      "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
+      "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
+    ],
+    faq: [
+      {
+        question: 'What is digital marketing?',
+        answer:
+          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
+      },
+      {
+        question: 'Why is digital marketing important for my business?',
+        answer:
+          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
+      },
+      {
+        question: 'How much should I budget for digital marketing?',
+        answer:
+          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
+      },
+    ],
+    image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
+    altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
   },
   // Add more services dynamically here
 };
@@ -2946,4 +3001,192 @@ export const roles = [
   { company: 'Criterion', role: 'Managing Director' },
   { company: 'OM IT Solutions', role: 'Regional Head' },
   { company: 'Xseed Tech Integra Solutions Pvt. Ltd.', role: 'Founder & Managing Director' },
+];
+// constant.js
+export const chairmanMessageContent = {
+  title: "Mr. Raj",
+  image: require("../assets/Profile/Raj.png"),
+  backgroundImage: require("../assets/Profile/bg_profile.png"), // Add background image path
+  message: [
+    "Thank you for choosing to continue your valuable partnership with us. Your ongoing support and trust in our products inspire us to deliver exceptional service and ensure that we provide outstanding value for your investment. Committed to propelling Tech Cloud ERP to new heights, we remain dedicated to addressing your needs with solutions that are not only simpler and more efficient but also reliable and cost-effective.",
+    
+    "We actively engage in continuous dialogue with you, our esteemed customers, to understand and anticipate your evolving requirements, ensuring we are prepared to meet them as they arise. Our commitment to total customer satisfaction drives us to tailor our products precisely to your specifications and to offer steadfast support after your purchase.",
+    
+    "Our mission to fulfill these promises is powered by our greatest asset—our employees. Their relentless dedication plays a crucial role in the realization of our company's goals Thus, we ask for the ongoing support of our valued customers and the cooperation of our dedicated employees. We also extend our heartfelt thanks to our supporters who have played a significant role in our company's journey and growth. Your partnership is vital to our continued success, and we look forward to achieving our shared objectives together",
+    
+  ]
+};
+export const cardservicesData = [
+  {
+    title: 'User Friendly',
+    imgSrc: require("../assets/About_us/user-friendly.png"),
+  },
+  {
+    title: 'Web Technologies',
+    imgSrc: require("../assets/About_us/web.png"),
+  },
+  {
+    title: 'Customization',
+    imgSrc: require("../assets/About_us/customization.png"),
+  },
+  {
+    title: 'Opensource',
+    imgSrc: require("../assets/About_us/opensource.png"),
+  },
+  {
+    title: 'Amazing Support',
+    imgSrc: require("../assets/About_us/Amazingsupport.png"),
+  },
+  {
+    title: 'Versatility',
+    imgSrc: require("../assets/About_us/versatility.png"),
+  },
+  {
+    title: 'Flexible Pricing',
+    imgSrc: require("../assets/About_us/flexiblepricing.png"),
+  },
+  {
+    title: 'Mobile Versions',
+    imgSrc: require("../assets/About_us/Mobileversions.png"),
+  },
+  {
+    title: 'Cloud Servers',
+    imgSrc: require("../assets/About_us/Cloudservers.png"),
+  },
+  {
+    title: 'Plugin Marketplace',
+    imgSrc: require("../assets/About_us/Pluginmarket.png"),
+  },
+  {
+    title: 'Secure & Reliable',
+    imgSrc: require("../assets/About_us/Secure & reliable.png"),
+  },
+  {
+    title: 'Language versatility',
+    imgSrc: require("../assets/About_us/translate.png"),
+  },
+];
+// constant.js
+
+export const pricingDataContent = {
+  modules: [
+    {
+      title: "Available Modules",
+      badge: "Modules",
+      items: [
+        "CRM",
+        "Sales Management",
+        "Design",
+        "Purchase Management",
+        "Project Management",
+        "Inventory Management",
+        "Services",
+        "Installation",
+        "Finance & Accounts",
+      ],
+    },
+    {
+      title: "Available Modules",
+      badge: "Modules",
+      items: [
+        "Production Management",
+        "Asset Management",
+        "Social Media Marketing",
+        "Quality Control",
+        "Quality Assurance",
+        "Human Resources Management",
+        "Exports & Imports",
+        "Job Work",
+      ],
+    },
+    {
+      title: "Domains / Industries",
+      badge: "Domains",
+      items: [
+        "Garment Manufacturing",
+        "Garment Printing",
+        "Medical Device Manufacturing",
+        "Elevator / Lifts Manufacturing",
+        "Fabrication Industries",
+        "Construction",
+        "Chemical Industries",
+        "Pharma Industries",
+        "Pump Manufacturing",
+        "Carton Box Manufacturing",
+        "Plastic Manufacturing",
+        "Smart Brix Manufacturing",
+        "Metal Drums Manufacturing",
+      ],
+    },
+    {
+      title: "Domains / Industries",
+      badge: "Domains",
+      items: [
+        "Paper Manufacturing",
+        "Asbestos Manufacturing",
+        "Trademark - Service Industry",
+        "Roadside Assistance - Service",
+        "Plywood Manufacturing",
+        "Fan Manufacturing",
+        "Hydraulic Cylinders Manufacturing",
+        "Jewellery Manufacturing",
+        "Aerospace System Manufacturing",
+        "Imports and Exports",
+        "ERP and POS",
+        "Restaurant POS",
+      ],
+    },
+  ],
+};
+// pricing 
+export const pricingTableData = [
+  {
+    tier: "1",
+    turnover: "0 - 10 Crores",
+    modules: "",
+    users: "5 - 10",
+    userCost: "Rs. 2000 / User / Month",
+  },
+  {
+    tier: "2",
+    turnover: "11 - 25 Crores",
+    modules: "Customer's Choose as per their Requirements",
+    users: "11 - 20",
+    userCost: "Rs. 2000 / User / Month",
+  },
+  {
+    tier: "3",
+    turnover: "26 - 50 Crores",
+    modules: "",
+    users: "20 - 50",
+    userCost: "Rs. 1500 / User / Month",
+  },
+  {
+    tier: "4",
+    turnover: "51 - 100 Crores",
+    modules: "",
+    users: "50 - 200",
+    userCost: "Rs. 1250 / User / Month",
+  },
+  {
+    tier: "5",
+    turnover: "101 - 500 Crores",
+    modules: "",
+    users: "200 & Above",
+    userCost: "Rs. 1000 / User / Month",
+  },
+];
+export const pricingShapes = [
+  {
+    id: 1,
+    src: require("../assets/Pricing/pricing-wave-1.png"),
+    alt: "Shape",
+    className: "dots"
+  },
+  {
+    id: 2,
+    src: require("../assets/Pricing/pricing-wave-2.png"),
+    alt: "Shape",
+    className: "wave"
+  },
 ];
