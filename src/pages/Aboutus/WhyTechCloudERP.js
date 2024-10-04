@@ -56,7 +56,7 @@ const WhyTechCloudERP = ({ content, title }) => {
 
   return (
     <WhyTechCloudERPContainer>
-      <Row>
+      <Row className='align-items-center'>
         <Col md={6}>
           <ImageContainer>
             <img src={imageSrc} alt="TechCloud ERP Dashboard" />

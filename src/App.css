@@ -1,3 +1,6 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 .App {
   text-align: center;
 }
@@ -47,4 +50,7 @@
 
 .custom-btn-toolbar > .btn {
   margin-right: 1rem;
+}
+body {
+  font-family: 'Poppins', sans-serif !important;
 }

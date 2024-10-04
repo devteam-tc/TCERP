@@ -9,7 +9,7 @@ const ErrorImg = styled.img`
     width: 100%;
     
     @media (min-width: 768px) {
-        width:50%;
+        width:30%;
     }`
 
 const NotFound = () => {

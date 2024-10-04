@@ -18,14 +18,18 @@ background: #05A7CC;
 const StatWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  border-right: 1px solid #e6f6fa;
   align-items: center;
   justify-content: center;
   padding: 0 15px;
+  @media (max-width: 576px) {
+    border:none !important;
+  }
 `;
 
 const StatNumber = styled.h2`
   font-size: 2.5rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
   white-space: nowrap;
 
@@ -38,7 +42,7 @@ const StatText = styled.p`
   font-size: 1rem;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 0;
+  // margin-bottom: 0;
   white-space: nowrap;
 
   @media (max-width: 576px) {

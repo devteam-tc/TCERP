@@ -17,13 +17,12 @@ import PrivacyPolicy from './pages/privacy-policy';
 import MdsProfile from './pages/profile/mds-profile';
 import NotFound from './pages/NotFound';
 import ServicesSection from './pages/Services/ServicesSection';
-import PricingSection from './pages/Home/PricingSection';
 import PricingPage from './pages/Pricing/PricingPage';
 
 function App() {
   return (
     <Router basename="/">
-      <div className="App font-[Poppins] md:bg-top bg-center">
+      <div className="App  md:bg-top bg-center">
         <MainNavbar/>
         {/* Define your Routes here */}
         <Routes>

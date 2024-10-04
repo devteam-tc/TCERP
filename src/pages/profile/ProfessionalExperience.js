@@ -3,18 +3,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { BsCheckCircle } from 'react-icons/bs'; 
 import { roles } from '../../utils/constants';
+import { Title } from "../Home/CardSection";
 
 const Section = styled.section`
   background-color: #fff;
   padding: 50px 0;
-`;
-
-const Heading = styled.h2`
-  text-align: center;
-  font-size: 32px;
-  font-weight: 700;
-  color: #f04e23;
-  margin-bottom: 10px;
 `;
 
 const SubHeading = styled.p`
@@ -55,7 +48,7 @@ const ProfessionalExperience = () => {
   return (
     <Section>
       <Container>
-        <Heading>Professional Experience and Leadership Roles</Heading>
+        <Title className="text-center pt-4 pt-md-0">Professional Experience and Leadership Roles</Title>
         <SubHeading>
           Mr. Raj has enriched various sectors, with a robust background spanning 27 years, including Design, Chemical Processing, Manufacturing, FMCG, and IT.
         </SubHeading>

@@ -26,11 +26,6 @@ const Name = styled.span`
   font-size: 18px;
 `;
 
-const profiledescription = styled.p`
-  font-size: 16px;
-  line-height: 1.6;
-`;
-
 const MdsProfile = () => {
   const { heading, description } = aboutus_data.mdsprofilecontent;
 

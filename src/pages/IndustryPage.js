@@ -105,7 +105,7 @@ export const BodySection = styled.div`
 
 const IndustryTitle = styled.h1`
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   text-align: left;
   color: #EF5226;
@@ -130,7 +130,7 @@ const IndustryText = styled.p`
 
 const SubTitle = styled.h1`
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.2;
   text-align: center;
 
@@ -194,7 +194,7 @@ const ContactForm = styled.div`
   }`
 
 const IndustryPage = ({ data }) => {
-  const { heading, description, top_description, bottom_description, similar_industries } = data;
+  const { heading, subheading , description, top_description, bottom_description, similar_industries } = data;
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -235,12 +235,12 @@ const IndustryPage = ({ data }) => {
           <Col md={8}>
             <div className='border border-1 rounded-3 bg-dark-50 p-3 my-3'>
             <Image src={data.top_img} alt={data.alt_text1}/>
-            <IndustryTitle className='pt-2 text-uppercase text'>{heading}</IndustryTitle>
+            <IndustryTitle className='pt-2 mt-2'>{heading}</IndustryTitle>
             <IndustryText>{top_description}</IndustryText>
             </div>
             <div className='border border-1 rounded-3 bg-dark-50 p-3'>
             <Image src={data.bottom_img} alt={data.alt_text1}/>
-            <IndustryTitle className='pt-2 text-uppercase text'>{heading}</IndustryTitle>
+            <IndustryTitle className='pt-2 mt-2'>{subheading}</IndustryTitle>
             <IndustryText>{bottom_description}</IndustryText>
             </div>
           </Col>

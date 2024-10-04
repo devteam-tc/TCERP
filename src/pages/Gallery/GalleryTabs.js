@@ -9,6 +9,10 @@ const GalleryContainer = styled.div`
   padding: 20px;
   text-align: center;
   background: #F5FDFF;
+  @media (max-width: 992px) {
+      padding: 40px;
+
+  }
 `;
 
 const Description = styled.p`
@@ -18,21 +22,24 @@ const Description = styled.p`
 `;
 
 const TabButton = styled(Nav.Link)`
-  color: #6c757d;
-  background-color: transparent;
+  color: #000;
+  background-color: #fff;
   font-weight: bold;
-  width: auto;
+  width: 36vh;
+  box-shadow: 0px 2px 10px 0px #00000040;
   border: none;
   text-align: center;
-
+@media (max-width: 992px) {
+  width:auto;
+}
   &:hover {
     color: white;
-    background-color: #EF5226;
+background: #ef5226 !important;
   }
 
   &.active {
     color: white !important;
-    background-color: #EF5226 !important;
+    background: #ef5226!important;
   }
 `;
 
@@ -65,13 +72,14 @@ const GalleryTabs = () => {
 
 
   return (
-    <GalleryContainer>
+    <GalleryContainer className='mt-3 '>
       <Title>Exhibition Gallery</Title>
       <Description>Explore our curated gallery of innovative designs and project solutions.</Description>
 
       <Container>
         <Tab.Container activeKey={activeTab}>
-          <Nav style={{ justifyContent: 'center', display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <Nav style={{ justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+          {/* , gap: '20px' */}
             <Nav.Item>
               <TabButton 
                 className={activeTab === 'expo' ? 'active' : ''} 

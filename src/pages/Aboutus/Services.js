@@ -1,11 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import styled from 'styled-components';
-import { cardservicesData} from '../../utils/constants'
+import { cardservicesData } from '../../utils/constants';
 import { Title } from "../Home/CardSection";
 
 const ServiceSection = styled.section`
   color: #8d97ad;
+  padding: 40px 0px;
   font-weight: 300;
 
   h1, h2, h3, h4, h5, h6 {
@@ -17,8 +18,13 @@ const ServiceCard = styled(Card)`
   width: 100% !important;
   box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px, rgba(173, 216, 230, 0.7) 0px 6px 6px;
   border-radius: 11px !important;
+  height: 120px; // Fixed height for the card
   transition: 0.3s ease-out;
-  
+
+  @media (max-width: 992px) {
+    height: 120px; // Maintain fixed height for smaller screens
+  }
+
   &:hover {
     transform: translateY(-10px);
   }
@@ -29,18 +35,16 @@ const CardHover = styled.div`
   text-align: center;
   cursor: pointer;
   padding: 1rem;
+  height: 100%; // Ensure this div takes full height of the card
   transition: background 0.3s ease;
 
   &:hover {
     background: #f9e2db;
-    // box-shadow: 0px 4px 4px 0px var(--Primary-Primary200, #FAC5B7);
     border-radius: 11px;
 
     .bg-success-grediant {
       color: #fff;
     }
-
-    
   }
 `;
 
@@ -51,20 +55,6 @@ const IconSpan = styled.span`
   -webkit-text-fill-color: transparent;
   font-size: 30px;
 `;
-
-const Button = styled.button`
-  color: #06db9a !important;
-  background-color: transparent;
-  border: 1px solid #06db9a;
-  padding: 15px 45px;
-  font-size: 16px;
-
-  &:hover {
-    background-color: #06db9a;
-    color: #fff;
-  }
-`;
-
 
 const Services = () => {
   return (
@@ -90,7 +80,5 @@ const Services = () => {
     </ServiceSection>
   );
 };
-
-
 
 export default Services;

@@ -58,17 +58,6 @@ const TitleHeading = styled.h4`
   }
 `;
 
-const Badge = styled.span`
-  display: inline-block;
-  background-color: #ef5226;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-`;
-
 const PricingList = styled.ul`
   list-style-type: none;
 //   padding: 0;

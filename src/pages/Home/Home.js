@@ -18,8 +18,8 @@ const Home = () => {
       <OurMissionSection data={releavant.ourMission} /> 
       <CardSection />
       <ImportantModuleSection />
-      <Testimonials testimonialsData={testimonialsData} />
       <RecordSection />
+      <Testimonials testimonialsData={testimonialsData} />
       <GalleryTabs />
       <PricingSection />
       <CallToActionSection />
