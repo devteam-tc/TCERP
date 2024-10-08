@@ -57,8 +57,8 @@ export const SectionTitle = styled.p`
 `;
 
 export const StyledContainer = styled(Container)`
-  padding: 40px;
-  h3 {
+    padding: 100px 116px 100px 117px;
+      h3 {
     color: #333;
     font-size: 28px;
     font-weight: bold;
@@ -72,7 +72,7 @@ export const StyledContainer = styled(Container)`
 
 const ContactFormContainer = styled.div`
   background: var(--Primary-Primary100, #FCE2DB);
-  padding: 40px;
+  padding: 10px;
   width: 420px;
   height: 837px;
   border-radius: 10px;

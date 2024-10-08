@@ -36,6 +36,7 @@ const Subtitle = styled.h2`
   color: #333;
   span {
     color: #05A7CC;
+    font-weight:500;
   }
 `;
 
@@ -65,6 +66,7 @@ const Answer = styled.p`
 
 const Icon = styled.span`
   color: #e55300;
+  
 `;
 
 const ServicesSection = () => {

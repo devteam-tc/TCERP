@@ -45,7 +45,7 @@ background: #ef5226 !important;
 
 const CardContainer = styled.div`
   margin: 20px 0;
-  width: min-content;
+  // width: min-content;
   &:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0.1, 0.3);
     cursor: pointer;
@@ -59,7 +59,17 @@ const CardItem = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
 `;
+
 
 const GalleryTabs = () => {
   const [activeTab, setActiveTab] = useState('expo');

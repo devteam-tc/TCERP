@@ -7,7 +7,6 @@ import { HiBarsArrowDown } from "react-icons/hi2";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineSpeed } from "react-icons/md";
 import { FaLeaf, FaBeer, FaIndustry, FaGraduationCap, FaBolt, FaPizzaSlice, FaCouch, FaTshirt ,  FaGem, FaTruck, FaTree, FaBook} from 'react-icons/fa';
-import { FaSearch, FaChartLine, FaMobileAlt, FaBullhorn, FaPencilAlt, FaEnvelope } from "react-icons/fa";
 
 export const releavant = {
   logo: require("../assets/logo.png"),
@@ -379,9 +378,9 @@ export const NAV_ITEMS = [
   type: 'dropdown',
   id: 'servicesDropdown',
   items: [
+    { title: 'Digital Marketing', link: 'services/digital-marketing' },
     { title: 'Web Development', link: 'services/web-development' },
     { title: 'Mobile Application Development', link: 'services/mobile-application-development' },
-    { title: 'Digital Marketing', link: 'services/digital-marketing' },
     // Add more services here...
   ],
 },
@@ -1369,7 +1368,7 @@ textileIndustry: {
 };
 
 
-// constants.js
+// expo details
 export const expoDetails = {
   hyderabad: {
     title: 'Hyderabad Expo',
@@ -1461,7 +1460,7 @@ export const expoDetails = {
   },
 };
 
-// constants.js
+// gallery data
 export const galleryData = {
   expo: [
     {
@@ -2874,52 +2873,199 @@ export const profileData = {
                 leadership abilities have significantly advanced the careers of numerous professionals 
                 and have been instrumental in the growth of various businesses.`,
 };
-// essential Services Data
+
+
+
+
+
 
 export const essentialServicesData = [
+  
   {
     id: 1,
-    icon: <FaSearch />, // React Icon for Search Engine Optimization
+    image: require("../assets/Services/digital/SEO.png"), 
     title: "Search Engine Optimization",
     description:
       "SEO is a process of enhancing the visibility of a website or a web page in a search engine's unpaid results—often referred to as 'organic' or 'natural' results.",
   },
   {
     id: 2,
-    icon: <FaChartLine />, // React Icon for Search Engine Marketing
+    image: require("../assets/Services/digital/SEM.png"),
     title: "Search Engine Marketing",
     description:
       "SEM is a digital marketing strategy focused on promoting websites by increasing their visibility in search engine results pages (SERPs) through paid advertising.",
   },
   {
     id: 3,
-    icon: <FaMobileAlt />, // React Icon for Social Media Optimization
+    image: require("../assets/Services/digital/SMO.png"),
     title: "Social Media Optimization",
     description:
       "SMO can be an effective way to quickly increase website traffic, generate leads, and drive conversions, especially for businesses looking to achieve immediate results.",
   },
   {
     id: 4,
-    icon: <FaBullhorn />, // React Icon for Facebook Ads
+    image: require("../assets/Services/digital/FBads.png"),
     title: "Facebook Ads",
     description:
       "Facebook Ads helps businesses to create targeted campaigns to reach specific audiences on Facebook and Instagram, driving brand awareness.",
   },
   {
     id: 5,
-    icon: <FaPencilAlt />, // React Icon for Content Marketing
+    image: require("../assets/Services/digital/CM.png"), 
     title: "Content Marketing",
     description:
       "Content marketing is a strategic marketing approach focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
   },
   {
     id: 6,
-    icon: <FaEnvelope />, // React Icon for Email Marketing
+    image: require("../assets/Services/digital/EM.png"),
     title: "Email Marketing",
     description:
       "Email marketing is a strategy focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
   },
 ];
+
+
+
+
+// Essential Services Data
+
+// export const essentialServicesData = {
+//   'digitalMarketing': [
+//     {
+//       id: 1,
+//       image: require("../assets/Services/digital/SEO.png"),
+//       title: "Search Engine Optimization",
+//       description:
+//         "SEO is a process of enhancing the visibility of a website or a web page in a search engine's unpaid results—often referred to as 'organic' or 'natural' results.",
+//     },
+//     {
+//       id: 2,
+//       image: require("../assets/Services/digital/SEM.png"), 
+//       title: "Search Engine Marketing",
+//       description:
+//         "SEM is a digital marketing strategy focused on promoting websites by increasing their visibility in search engine results pages (SERPs) through paid advertising.",
+//     },
+//     {
+//       id: 3,
+//       image: require("../assets/Services/digital/SMO.png"),
+//       title: "Social Media Optimization",
+//       description:
+//         "SMO can be an effective way to quickly increase website traffic, generate leads, and drive conversions, especially for businesses looking to achieve immediate results.",
+//     },
+//     {
+//       id: 4,
+//       image: require("../assets/Services/digital/FBads.png"),
+//       title: "Facebook Ads",
+//       description:
+//         "Facebook Ads helps businesses to create targeted campaigns to reach specific audiences on Facebook and Instagram, driving brand awareness.",
+//     },
+//     {
+//       id: 5,
+//       image: require("../assets/Services/digital/CM.png"), 
+//       title: "Content Marketing",
+//       description:
+//         "Content marketing is a strategic marketing approach focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
+//     },
+//     {
+//       id: 6,
+//       image: require("../assets/Services/digital/EM.png"),
+//       title: "Email Marketing",
+//       description:
+//         "Email marketing is a strategy focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
+//     },
+//   ],
+//   'webDevelopment': [
+//     {
+//       id: 1,
+//       icon: <FaSearch />,
+//       title: "Web Designing",
+//       description:
+//         "Where art meets functionality, crafting digital experiences that captivate, inspire, and resonate with users worldwide.",
+//     },
+//     {
+//       id: 2,
+//       icon: <FaChartLine />, 
+//       title: "Web Development",
+//       description:
+//         "The alchemy of code and creativity, sculpting digital landscapes that empower, engage, and connect.",
+//     },
+//     {
+//       id: 3,
+//       icon: <FaMobileAlt />,
+//       title: "Mobile App Development",
+//       description:
+//         "Mobile app development involves creating software for smartphones and tablets, focusing on functionality, usability, and user experience.",
+//     },
+//     {
+//       id: 4,
+//       icon: <FaBullhorn />,
+//       title: "WordPress Development",
+//       description:
+//         "WordPress development involves using the WordPress CMS to design, build, and maintain websites with flexibility and ease of use.",
+//     },
+//     {
+//       id: 5,
+//       icon: <FaPencilAlt />, 
+//       title: "eCommerce Development",
+//       description:
+//         "E-commerce development focuses on creating online platforms for buying and selling goods or services, streamlining transactions.",
+//     },
+//     {
+//       id: 6,
+//       icon: <FaEnvelope />,
+//       title: "Web Hosting Services",
+//       description:
+//         "Hosting services offer server space and infrastructure for storing and accessing website data, enabling online presence.",
+//     },
+//   ],
+//   'mobileApplication': [
+//     {
+//       id: 1,
+//       icon: <FaMobileAlt />,
+//       title: "Mobile Application Development",
+//       description:
+//         "Mobile application development is the process of creating software applications that run on mobile devices, delivering a seamless user experience.",
+//     },
+//     {
+//       id: 2,
+//       icon: <FaMobileAlt />, 
+//       title: "Cross-Platform Development",
+//       description:
+//         "Cross-platform development allows applications to be developed for multiple platforms using a single codebase, saving time and resources.",
+//     },
+//     {
+//       id: 3,
+//       icon: <FaMobileAlt />, 
+//       title: "App Store Optimization",
+//       description:
+//         "App Store Optimization (ASO) is the process of improving the visibility of a mobile app in an app store, increasing downloads and user engagement.",
+//     },
+//     {
+//       id: 4,
+//       icon: <FaMobileAlt />, 
+//       title: "User Experience Design",
+//       description:
+//         "User Experience (UX) design focuses on creating intuitive and user-friendly interfaces, enhancing the overall satisfaction of users.",
+//     },
+//     {
+//       id: 5,
+//       icon: <FaMobileAlt />, 
+//       title: "App Maintenance & Support",
+//       description:
+//         "Ongoing app maintenance and support ensure that applications remain functional, secure, and up-to-date with the latest technology.",
+//     },
+//     {
+//       id: 6,
+//       icon: <FaMobileAlt />, 
+//       title: "Analytics & Reporting",
+//       description:
+//         "Analytics and reporting help businesses track app performance, user engagement, and other metrics, driving data-driven decisions.",
+//     },
+//   ],
+// };
+
+
 
 
 
@@ -2934,19 +3080,24 @@ export const servicesData = {
     ],
     faq: [
       {
-        question: 'What is digital marketing?',
+        question: 'What is web development?',
         answer:
-          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
+          'Web development involves creating and maintaining websites or web applications. It includes aspects like web design, content development, client-side and server-side scripting, and security management.',
       },
       {
-        question: 'Why is digital marketing important for my business?',
+        question: 'What are web hosting and domain names?',
         answer:
-          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
+          'Web hosting is the server space where your website’s files are stored. A domain name is the web address that users type to access your website, like www.example.com.',
       },
       {
-        question: 'How much should I budget for digital marketing?',
+        question: 'How often should I update my website?',
         answer:
-          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
+          'It’s recommended to update content regularly and redesign every few years to ensure your site remains relevant, secure, and optimized for new technology.',
+      },
+      {
+        question: 'What is the importance of website maintenance?',
+        answer:
+          'Website maintenance involves regularly checking your website for issues, updating software, and ensuring security, which keeps your site functional and secure over time.',
       },
     ],
     image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
@@ -2960,19 +3111,24 @@ export const servicesData = {
     ],
     faq: [
       {
-        question: 'What is digital marketing?',
+        question: 'What is IOS Mobile App Development?',
         answer:
-          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
+          'Experts in developing cutting-edge iPhone and iPad apps using Swift, Objective C, and advanced tools like Xcode, Cocoapods, and CoreData. Specializing in M-Commerce solutions, testing, and seamless app integration with web services. Providing robust support for new versions, maintenance, and agile methodologies for high-quality delivery.',
       },
       {
-        question: 'Why is digital marketing important for my business?',
+        question: 'Why is Android App Development',
         answer:
-          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
+          'Experts in custom Android app design and development using Java, Android Studio, and advanced frameworks like MVC/MVP. Specializing in M-Commerce applications, new version support, and comprehensive testing and portability. Leveraging Agile methodologies and tools like Jenkins, SonarQube, and MQTT for high-quality, scalable solutions.',
       },
       {
-        question: 'How much should I budget for digital marketing?',
+        question: 'Hybrid App Development',
         answer:
-          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
+          'Proficient in HTML5, CSS, and JavaScript for robust web and hybrid apps with native feel and full device integration. Expertise in PhoneGap, Ionic, and Angular ensures seamless online/offline connectivity and enhanced user experience. Specializing in integrating with ERP, CMS, CRM, and payment systems.',
+      },
+      {
+        question: 'Multi-platform mobile app development',
+        answer:
+          'Creating powerful cross-platform mobile apps with Titanium, PhoneGap, and other frameworks. Designing and developing apps for various sectors using CSS, HTML5, JavaScript, Visual Studio, and .NET. Offering one app for Android, iPhone/iPad, and Windows Mobile. Prioritizing testing and portability.',
       },
     ],
     image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary

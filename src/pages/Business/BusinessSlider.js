@@ -6,7 +6,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom';
 import { sliderData } from '../../utils/constants';
-
+import { FaArrowRight } from 'react-icons/fa'; // Import the FaArrowRight icon
+import { Title } from '../Home/CardSection';
 // Styled Carousel Container
 const StyledCarousel = styled(Slider)`
   .slick-slide {
@@ -18,53 +19,95 @@ const StyledCarousel = styled(Slider)`
   }
 `;
 
-// Styled Card Component
+// Adjusted Styled Card Component
 const StyledCard = styled(Card)`
-  border: none;
+  border: 1px solid #e0e0e0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-top: 4px solid #ff5733;
   text-align: center;
-  height: 300px; // Set your desired height
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   .card-title {
-    font-weight: bold;
-    font-size: 1.5rem; // Increase title size
-    margin-top: 20px; // Add space above title
+    font-weight: 500;
+    margin-top: 20px;
+    overflow: hidden; // Prevent overflow
+    text-overflow: ellipsis; // Trim long text
+    white-space: nowrap; // No text wrapping
+    text-align: left; // Align title to the left
   }
 
   .card-text {
     color: #666;
     font-size: 1rem;
-    margin: 10px 20px; // Add side margins for text
+    margin: 10px 20px;
+    height: 20vh; // Set height for description
+    overflow: hidden; // Prevent overflow
+    text-overflow: ellipsis;
+    display: -webkit-box; // For multiline ellipsis
+    -webkit-line-clamp: 3; // Limit to 3 lines
+    -webkit-box-orient: vertical;
+    text-align: left; // Align text to the left
   }
 
   .explore-link {
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
     color: #ff5733;
+    float: right;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem; // Increase link size
-    margin-top: auto; // Push explore link to bottom
-    margin-bottom: 20px; // Add space below link
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-top: auto;
+    margin-bottom: 14px;
+    transition: transform 0.3s ease;
+  }
+
+  .explore-link:hover {
+    transform: translateX(5px);
   }
 
   .explore-arrow {
     font-size: 1.5rem;
-    margin-left: 5px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
   }
 
   // Media query for responsiveness
   @media (max-width: 992px) {
-    height: auto; // Adjust height as needed
-    padding: 10px; // Adjust padding
+    height: auto;
+    padding: 10px;
+
+    .card-title {
+      font-size: 1.25rem; // Adjust title size
+    }
+
+    .card-text {
+      font-size: 0.9rem; // Adjust text size
+      height: auto; // Allow for dynamic height
+    }
+
+    .explore-link {
+      font-size: 1rem; // Adjust link size
+    }
+  }
+
+  @media (max-width: 576px) {
+    // Additional adjustments for mobile devices
+    .card-title {
+      font-size: 1.1rem; // Further adjust title size
+    }
+
+    .explore-link {
+      font-size: 0.9rem; // Further adjust link size
+    }
   }
 `;
 
-// Styled custom dots
+// Custom Dots Styling (optional)
 const DotsContainer = styled.div`
   text-align: center;
   margin-top: 20px;
@@ -82,6 +125,14 @@ const DotsContainer = styled.div`
       background-color: #f1f1f1; // Inactive color
     }
   }
+`;
+
+// Styled Section Background
+const SectionBackground = styled.div`
+  background: #f8feff; // Set background color
+  width: 100%; // Full width
+  padding: 20px; // Add some padding if needed
+  box-sizing: border-box; // Ensure padding is included in the total width
 `;
 
 const BusinessSlider = () => {
@@ -108,39 +159,41 @@ const BusinessSlider = () => {
       {
         breakpoint: 992, // Tablet
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 2, // Show 2 cards for tablets
         },
       },
       {
         breakpoint: 576, // Mobile
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Show 1 card for mobile
         },
       },
     ],
   };
 
   return (
-    <div className="container mt-5">
-      <h2 className="text-center pt-4" style={{ fontSize: '24px' }}>
-        Complete your business intelligence solution with products from across the Customer 360°
-      </h2>
-      <StyledCarousel {...settings}>
-        {sliderData.map((item, index) => (
-          <div key={index}>
-            <StyledCard className="mb-3">
-              <Card.Body>
-                <Card.Title>{item.title}</Card.Title>
-                <Card.Text>{item.description}</Card.Text>
-                <Link to={item.link} className="explore-link">
-                  {item.linkText} <span className="explore-arrow">→</span>
-                </Link>
-              </Card.Body>
-            </StyledCard>
-          </div>
-        ))}
-      </StyledCarousel>
-    </div>
+    <SectionBackground>
+      <div className="container mt-5">
+        <Title className="text-center pt-4" style={{ fontSize: '24px' }}>
+          Complete your business intelligence solution with products from across the Customer 360°
+        </Title>
+        <StyledCarousel {...settings}>
+          {sliderData.map((item, index) => (
+            <div key={index}>
+              <StyledCard className="mb-3">
+                <Card.Body>
+                  <Card.Title style={{ alignItems: 'left' }}>{item.title}</Card.Title>
+                  <Card.Text>{item.description}</Card.Text>
+                  <Link to={item.link} className="explore-link">
+                    {item.linkText} <FaArrowRight className="explore-arrow" />
+                  </Link>
+                </Card.Body>
+              </StyledCard>
+            </div>
+          ))}
+        </StyledCarousel>
+      </div>
+    </SectionBackground>
   );
 };
 

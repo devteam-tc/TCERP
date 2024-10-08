@@ -63,7 +63,7 @@ const PlanTitle = styled.h2`
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   display: inline-block;
   margin-bottom: 10px;
 
@@ -113,7 +113,7 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
-  margin-top: 10px;
+  // margin-top: 10px;
   text-align: center;
 
   @media (max-width: 992px) {
@@ -125,56 +125,56 @@ const Button = styled.button`
 const PopularButton = styled(Button)`
   background-color: #fff;
     color: #000;
-    // padding: 5px 10px;
+    // padding: 4px 10px;
     border-radius: 5px;
-    width:50% !important;
-    font-size:18px;
+    width:35% !important;
+    // font-size:18px;
     padding: 5px 10px;
-    font-weight: 600;
+    font-weight: 500;
     display: inline-block;
     margin-bottom: 10px;
 `;
 
 const PricingSection = () => (
   <Section>
-  <Title className="text-center pt-4 pt-md-0">Tech Cloud ERP Pricing</Title>
-  <CardContainer>
-    {pricingPlans.map((pkg, index) => (
-      <Card
-        key={index}
-        style={{ background: pkg.background, color: pkg.color }}
-      >
-        {/* Conditionally render badge for the second card only */}
-        {index === 1 && <Badge>Popular</Badge>}
+    <Title className="text-center pt-4 pt-md-0">Tech Cloud ERP Pricing</Title>
+    <CardContainer>
+      {pricingPlans.map((pkg, index) => (
+        <Card
+          key={index}
+          style={{ background: pkg.background, color: pkg.color }}
+        >
+          {/* Conditionally render badge for the second card only */}
+          {index === 1 && <Badge>Popular</Badge>}
+          
+          {/* Conditionally render the PlanTitle only if index is not 1 */}
+          {index !== 1 && <PlanTitle>{pkg.title || ""}</PlanTitle>}
 
-        <PlanTitle>{pkg.title || ""}</PlanTitle>
+          {/* Conditionally render "Enterprise" button only on the second card */}
+          {index === 1 && (
+            <PopularButton>Enterprise</PopularButton>
+          )}
+          {pkg.note && <Description>{pkg.note}</Description>}
 
-        {/* Conditionally render "Enterprise" button only on the second card */}
-        {index === 1 && (
-          <PopularButton className="mt-2 mb-2">Enterprise</PopularButton>
-        )}
-
-        {pkg.note && <Description>{pkg.note}</Description>}
-
-        <Price>
-          <FaIndianRupeeSign style={{ marginRight: "0px" }} />
-          {pkg.price} <span></span>
-        </Price>
-        <Description>{pkg.description}</Description>
-        <CoverageList>
-          {pkg.coverages.map((coverage, i) => (
-            <CoverageItem key={i}>
-              <GoCheckCircleFill style={{ marginRight: "8px" }} />
-              {coverage}
-            </CoverageItem>
-          ))}
-        </CoverageList>
-        <Button>Buy Now</Button>
-        <p className="text-center pt-3">{pkg.creditCardRequired}</p>
-      </Card>
-    ))}
-  </CardContainer>
-</Section>
+          <Price>
+            <FaIndianRupeeSign style={{ marginRight: "0px" }} />
+            {pkg.price} <span></span>
+          </Price>
+          <Description>{pkg.description}</Description>
+          <CoverageList>
+            {pkg.coverages.map((coverage, i) => (
+              <CoverageItem key={i}>
+                <GoCheckCircleFill style={{ marginRight: "8px" }} />
+                {coverage}
+              </CoverageItem>
+            ))}
+          </CoverageList>
+          <Button>Buy Now</Button>
+          <p className="text-center pt-3">{pkg.creditCardRequired}</p>
+        </Card>
+      ))}
+    </CardContainer>
+  </Section>
 );
 
 export default PricingSection;
