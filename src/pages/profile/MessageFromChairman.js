@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
-import { chairmanMessageContent } from "../../utils/constants"; // Import the constant
+import { chairmanMessageContent } from "../../utils/constants";
 
 const MainTitle = styled.h1`
   text-align: center;
@@ -10,12 +10,8 @@ const MainTitle = styled.h1`
   font-weight: bold;
   margin-bottom: 20px;
 
-  @media (max-width: 1280px) {
-    font-size: 32px;
-  }
-
   @media (max-width: 992px) {
-    font-size: 28px;
+    font-size: 24px;
   }
 `;
 
@@ -26,27 +22,18 @@ const MessageContainer = styled.div`
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
 
-  @media (max-width: 1280px) {
-   height: 60vh;
-        width: 113vh;
-        padding: 40px;
-  }
-
   @media (max-width: 992px) {
     padding: 20px;
     margin-top: 20px;
+    width: 100%;
   }
 `;
 
 const ChairmanImage = styled.img`
   border-radius: 50%;
-  width: 35vh;
-  height: 35vh;
-
-  @media (max-width: 1280px) {
-    width: 30vh;
-    height: 30vh;
-  }
+  width: 270px;
+  height: 260px;
+  object-fit: cover;
 
   @media (max-width: 992px) {
     width: 25vh;
@@ -59,12 +46,8 @@ const Title = styled.h2`
   font-size: 24px;
   font-weight: bold;
 
-  @media (max-width: 1280px) {
-    font-size: 22px;
-  }
-
   @media (max-width: 992px) {
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 
@@ -72,10 +55,6 @@ const MessageText = styled.p`
   color: #333;
   font-size: 14px;
   line-height: 1.6;
-
-  @media (max-width: 1280px) {
-    font-size: 13px;
-  }
 
   @media (max-width: 992px) {
     font-size: 12px;
@@ -85,52 +64,41 @@ const MessageText = styled.p`
 
 const BackgroundContainer = styled(Container)`
   background: url(${(props) => props.backgroundImage}) no-repeat center center;
-  background-repeat: no-repeat;
   background-size: cover;
   padding: 60px;
   border-radius: 10px;
-  padding-bottom: 60px;
-
-  @media (max-width: 1280px) {
-    padding: 50px;
-    padding-bottom: 50px;
-  }
 
   @media (max-width: 992px) {
-    padding: 30px;
-    padding-bottom: 30px;
+    padding: 20px;
   }
 `;
 
 const ChairmanMessage = () => {
-  const { title, image, message, backgroundImage } = chairmanMessageContent; // Destructure backgroundImage
+  const { title, image, message, backgroundImage } = chairmanMessageContent;
 
   return (
-    <>
-      <BackgroundContainer fluid backgroundImage={backgroundImage}>
-        <Container fluid>
-          <MainTitle>A Message from the Chairman</MainTitle>
-
-          <Row className="justify-content-center">
-            <Col md={8}>
-              <MessageContainer>
-                <Row className="align-items-center">
-                  <Col md={4} className="text-center">
-                    <ChairmanImage src={image} alt={title} />
-                  </Col>
-                  <Col md={8}>
-                    <Title>{title}</Title>
-                    {message.map((paragraph, index) => (
-                      <MessageText key={index}>{paragraph}</MessageText>
-                    ))}
-                  </Col>
-                </Row>
-              </MessageContainer>
-            </Col>
-          </Row>
-        </Container>
-      </BackgroundContainer>
-    </>
+    <BackgroundContainer fluid backgroundImage={backgroundImage}>
+      <Container fluid>
+        <MainTitle>A Message from the Chairman</MainTitle>
+        <Row className="justify-content-center">
+          <Col md={8}>
+            <MessageContainer>
+              <Row className="align-items-center">
+                <Col md={4} xs={12} className="text-center mb-3 mb-md-0">
+                  <ChairmanImage src={image} alt={title} />
+                </Col>
+                <Col md={8} xs={12}>
+                  <Title>{title}</Title>
+                  {message.map((paragraph, index) => (
+                    <MessageText key={index}>{paragraph}</MessageText>
+                  ))}
+                </Col>
+              </Row>
+            </MessageContainer>
+          </Col>
+        </Row>
+      </Container>
+    </BackgroundContainer>
   );
 };
 

@@ -171,7 +171,7 @@ const Footer = () => {
                 <Link to="/services" onClick={scrollToTop}>All Industries</Link>
               </li>
               <li>
-                <Link to="/ContactUs" onClick={scrollToTop}>Our features</Link>
+                <Link to="/features" onClick={scrollToTop}>Our features</Link>
               </li>
               <li>
                 <Link to="/terms-and-conditions" onClick={scrollToTop}>Terms of service</Link>

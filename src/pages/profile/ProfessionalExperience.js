@@ -52,9 +52,9 @@ const ProfessionalExperience = () => {
         <SubHeading>
           Mr. Raj has enriched various sectors, with a robust background spanning 27 years, including Design, Chemical Processing, Manufacturing, FMCG, and IT.
         </SubHeading>
-        <Row>
+        <Row className='justify-content-center'>
           {roles.map((item, index) => (
-            <Col md={6} key={index}>
+            <Col md={5} key={index}>
               <RoleCard>
                 <BsCheckCircle color="#f04e23" size={24} />
                 <RoleText>

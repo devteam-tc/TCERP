@@ -1563,6 +1563,12 @@ export const productData = {
     productTitle: 'Tech Cloud Enterprise Resource Planning',
     heading: "ERP Solutions",
     description: "Our ERP solutions are designed to streamline and optimize operations.",
+    imageSrc : require("../assets/Products/products_main_img.png"),
+    title : "Cloud Based ERP Software",
+    productDescription: [
+      "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+      "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+    ],
     cards: [
       {
         title: "Sales & Marketing",
@@ -2699,6 +2705,10 @@ export const aboutus_data = {
   'pricingcontent':{
     heading: "Pricing",
     description: "Our Comprehensive solution for established businesses and enterprises.",
+  },
+  'featurescontent':{
+    heading: "Features",
+    description: "Our comprehensive solution for established businesses and enterprises.",
   }
 };
 export const ContactUs_content = {
@@ -2809,7 +2819,7 @@ export const contactData = {
   },
   headquarters: {
     phoneNumber: "+1 (312) 766-3390",
-    address: "1101, E Bell Street, Suite-E, Bloomington, IL - 61701",
+    address: "1101, E Bell Street, Suite-E, Bloomington, USA, IL - 61701",
     email: "contact@techclouderp.com",
   },
 };
@@ -3361,4 +3371,63 @@ export const pricingShapes = [
     alt: "Shape",
     className: "wave"
   },
+];
+
+
+export const featuresData = [
+  {
+      imgSrc: require("../assets/Features/webbased.jpg"),
+      title: "Web Based And Cloud Computing",
+      description: "Web-based and cloud computing provide scalable, flexible access to apps and data online.",
+  },
+  {
+      imgSrc: require("../assets/Features/dynamic.jpg"),
+      title: "Dynamic Dashboards",
+      description: "Dynamic dashboards offer real-time, interactive data visualization for better decision-making.",
+  },
+  {
+      imgSrc: require("../assets/Features/Whatsapp_email.png"),
+      title: "Email & Whatsapp Integration",
+      description: "Email and SMS integration enables seamless, efficient communication across both channels.",
+  },
+  {
+      imgSrc: require("../assets/Features/mobilenadtab.jpg"),
+      title: "Mobile & Tab Compatibility",
+      description: "Ensures a seamless user experience across devices, enhancing accessibility and usability.",
+  },
+  {
+      imgSrc: require("../assets/Features/autobackup.jpg"),
+      title: "Data Auto Backup",
+      description: "Automates secure data storage, ensuring continuity and protection against loss.",
+  },
+  {
+      imgSrc: require("../assets/Features/customisable.jpg"),
+      title: "Customizable Software",
+      description: "Allows users to tailor applications to specific needs, enhancing functionality and satisfaction.",
+  },
+  {
+      imgSrc: require("../assets/Features/payasgo.jpg"),
+      title: "Pay As You Go",
+      description: "Enables users to pay for services based on actual usage, promoting flexibility and cost-efficiency.",
+  },
+  {
+      imgSrc: require("../assets/Features/chatusers.jpg"),
+      title: "Chat between Users",
+      description: "Facilitates real-time communication and collaboration, enhancing interaction and connectivity.",
+  },
+  {
+      imgSrc: require("../assets/Features/infiniteusers.jpg"),
+      title: "Unlimited Users",
+      description: "Accommodates an unlimited number of users, ensuring scalability and accessibility.",
+  },
+  {
+      imgSrc: require("../assets/Features/Audit_trail.jpeg"),
+      title: "Audit Trail",
+      description: "Detailed log of system activities, supporting accountability, compliance, and security.",
+  },
+  {
+      imgSrc: require("../assets/Features/Inventory.png"),
+      title: "Multiple Inventory Location",
+      description: "Centralized inventory management across multiple locations, ensuring accuracy and seamless transfers.",
+  }
 ];

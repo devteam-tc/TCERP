@@ -43,7 +43,7 @@ box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 2px 6px 2px rgba(0, 0, 0, 0
 
 const CardTitle = styled.h3`
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 10px;
 `;
 
@@ -134,7 +134,7 @@ const StyledAccordionBody = styled(Accordion.Body)`
 
 const StyledProductsHeading = styled.h1`
   font-size: 2rem;
-  font-weight: bold;
+  // font-weight: bold;
   margin-bottom: 2rem;
   color: #ff6200;
 
@@ -158,12 +158,12 @@ const TabContent = ({ content, image, alt }) => {
 
   return (
     <StyledTabContent>
-      <div className="row">
+      <div className="row align-items-center">
         <div className="col-12 col-lg-6 mb-4">
           {contentArray.map((item, index) => (
             <div key={index} className="mb-4">
               <div className="w-100">
-                <p className="fw-semibold">
+                <p >
                   <span className="fw-bold">{item.title}</span> {item.description}
                 </p>
               </div>
@@ -321,7 +321,6 @@ const ProductPage = () => {
           </TitleContainer>
               <Accordion defaultActiveKey="0">
                 {Object.keys(product.tabsHeadings).map((key, idx) => (
-                  
                   <StyledAccordionItem eventKey={idx.toString()} key={key}>
                     <StyledAccordionHeader>{product.tabsHeadings[key]}</StyledAccordionHeader>
                     <StyledAccordionBody>

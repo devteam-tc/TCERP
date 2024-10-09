@@ -10,7 +10,8 @@ const PricingPage = () => {
     const { heading, description } = aboutus_data.pricingcontent;
 
     return (
-        <><Section>
+        <>
+        <Section>
             <Container>
                 <Row>
                     <ContentColumn md={6}>

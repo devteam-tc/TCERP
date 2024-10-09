@@ -33,8 +33,8 @@ const MapSection = () => {
           </StyledMap>
         </Col>
         <Col md={6} className='mt-3'>
-          <h3 className='mt-3 mb-3' style={{ textAlign: 'left', color: '#ef5226' }}>USA</h3>
           <StyledMap>
+          <h3 className='mt-3 mb-3' style={{ textAlign: 'left', color: '#ef5226' }}>USA</h3>
             <iframe
               title="Map of USA"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.133289688832!2d-88.98232162346754!3d40.47231615225344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880b702b59fe7f7b%3A0x70f9e298d95bd2d0!2s1101%20E%20Bell%20St%20e%2C%20Bloomington%2C%20IL%2061701!5e0!3m2!1sen!2sus!4v1715256878347!5m2!1sen!2sus"

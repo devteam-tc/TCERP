@@ -18,6 +18,7 @@ import MdsProfile from './pages/profile/mds-profile';
 import NotFound from './pages/NotFound';
 import ServicesSection from './pages/Services/ServicesSection';
 import PricingPage from './pages/Pricing/PricingPage';
+import FeatureCard from './pages/FeatureCard';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route path="/services/:serviceId" element={<ServicesSection />} />
           <Route path="/services/*" element={<NotFound />} />
           <Route path='/pricing' element={<PricingPage />} />
+          <Route path='/features' element={<FeatureCard />} />
           {/* Other routes */}
 
           {/* Route for 404 Not Found */}

@@ -43,12 +43,14 @@ const MdsProfile = () => {
             </Row>
           </Container>
         </Section>
-        <StyledCard>
+     <Container>
+     <StyledCard>
           <Card.Body>
             <Name>{profileData.name}</Name>
             <profiledescription>{profileData.description}</profiledescription>
           </Card.Body>
         </StyledCard>
+     </Container>
       </>
       <ProfessionalExperience />
       <MessageFromChairman />
