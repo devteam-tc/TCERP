@@ -1,3 +1,219 @@
+// import React, { useState } from 'react';
+// import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+// import { BsChevronDown, BsChevronUp } from 'react-icons/bs'; // Importing chevron icons
+// import styled from 'styled-components';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+// const StyledNavbar = styled(Navbar)`
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 4.25rem;
+//   background-color: #fff;
+//   box-shadow: var(--shadow-medium);
+//   z-index: 10;
+
+//   .navbar-brand {
+//     font-family: inherit;
+//     font-size: 1.6rem;
+//     font-weight: 700;
+//     text-transform: uppercase;
+//     color: var(--color-blue-300);
+//   }
+
+//   @media (max-width: 992px) {
+//     height: auto; // Adjust height for smaller screens
+//     padding: 1rem;
+
+//     .navbar-brand {
+//       font-size: 1.4rem; // Reduce brand size on mobile
+//     }
+//   }
+// `;
+
+// const StyledNavDropdown = styled(NavDropdown)`
+//   .dropdown-toggle::after {
+//     display: none; // Hide the default dropdown arrow
+//   }
+// .dropdown-item:focus, .dropdown-item:hover{
+//   background: none !important;
+
+//   }
+//   .dropdown-content {
+//     display: flex;
+//     flex-wrap: nowrap;
+//     padding: 1rem;
+
+//     @media (max-width: 992px) {
+//       flex-wrap: wrap; // Stack items vertically on small screens
+//       padding: 0.5rem;
+//     }
+//   }
+// `;
+
+// const DropdownGroup = styled.div`
+//   margin-right: 2rem;
+
+//   @media (max-width: 992px) {
+//     margin-right: 0; // Remove margin on mobile
+//     margin-bottom: 1rem;
+//   }
+// `;
+
+// const DropdownTitle = styled.div`
+//   font-weight: 600;
+//   margin-bottom: 0.5rem;
+// `;
+
+// const DropdownItems = styled(NavDropdown.Item)`
+//   display: block;
+//   padding: 0.5rem 0;
+
+//   @media (max-width: 992px) {
+//     padding: 0.3rem 0; // Adjust padding for smaller screens
+//   }
+// `;
+
+// const NavbarComponent = () => {
+//   const [expanded, setExpanded] = useState(false);
+//   const [showIndustriesDropdown, setShowIndustriesDropdown] = useState(false);
+//   const [showProductsDropdown, setShowProductsDropdown] = useState(false);
+//   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
+
+//   return (
+//     <StyledNavbar expanded={expanded} expand="lg" variant="light">
+//       <Container>
+//         <StyledNavbar.Brand href="/">Brand</StyledNavbar.Brand>
+//         <StyledNavbar.Toggle
+//           onClick={() => setExpanded(expanded ? false : 'expanded')}
+//         />
+//         <StyledNavbar.Collapse>
+//           <Nav className="me-auto">
+//             <Nav.Link href="#">Home</Nav.Link>
+//             <Nav.Link href="#">About Us</Nav.Link>
+//             {/* Industries Mega Menu */}
+//             <StyledNavDropdown
+//               title={
+//                 <>
+//                   Industries {showIndustriesDropdown ? <BsChevronUp /> : <BsChevronDown />}
+//                 </>
+//               }
+//               id="industries-dropdown"
+//               show={showIndustriesDropdown}
+//               onMouseEnter={() => setShowIndustriesDropdown(true)}
+//               onMouseLeave={() => setShowIndustriesDropdown(false)}
+//             >
+//               <div className="dropdown-content">
+//                 <DropdownGroup>
+//                   <DropdownTitle>Agriculture to Electronic Industries</DropdownTitle>
+//                   <DropdownItems href="#"> Agriculture Industry</DropdownItems>
+//                   <DropdownItems href="#">Apparel Industry</DropdownItems>
+//                   <DropdownItems href="#">Automative Industry</DropdownItems>
+//                   <DropdownItems href="#">Beverage Industry</DropdownItems>
+//                   <DropdownItems href="#">Chemical Industry</DropdownItems>
+//                   <DropdownItems href="#">Educational Institutes</DropdownItems>
+//                   <DropdownItems href="#">Electric Industry</DropdownItems>
+//                   <DropdownItems href="#">Electronic Industry</DropdownItems>
+//                 </DropdownGroup>
+//                 <DropdownGroup>
+//                   <DropdownTitle>FMCG to Metal Fabrication Industry</DropdownTitle>
+//                   <DropdownItems href="#">FMCG Industry</DropdownItems>
+//                   <DropdownItems href="#">Food Industry</DropdownItems>
+//                   <DropdownItems href="#">Furniture Industry</DropdownItems>
+//                   <DropdownItems href="#">Garment Industry</DropdownItems>
+//                   <DropdownItems href="#">Hydrolic Cylinders Industry</DropdownItems>
+//                   <DropdownItems href="#">Jewellery Industry</DropdownItems>
+//                   <DropdownItems href="#">Leather Industry</DropdownItems>
+//                   <DropdownItems href="#">Logistic Industry</DropdownItems>
+//                   <DropdownItems href="#">Medical Equipment Manufacturing Industry</DropdownItems>
+//                   <DropdownItems href="#">Wood Industry</DropdownItems>
+//                   <DropdownItems href="#">Wholesalers Industry</DropdownItems>
+//                   <DropdownItems href="#">Metal Fabrication Industry</DropdownItems>
+//                   <DropdownItems href="#">Micro Finance Industry</DropdownItems>
+//                 </DropdownGroup>
+//                 <DropdownGroup>
+//                   <DropdownTitle>Oil & Gas Textile Industry</DropdownTitle>
+//                   <DropdownItems href="#">Oil & Gas Industry</DropdownItems>
+//                   <DropdownItems href="#">Packaging Industry</DropdownItems>
+//                   <DropdownItems href="#">Paper Industry</DropdownItems>
+//                   <DropdownItems href="#">Plastic Industry</DropdownItems>
+//                   <DropdownItems href="#">Pharmaceutical Industry</DropdownItems>
+//                   <DropdownItems href="#">Publishing Industry</DropdownItems>
+//                   <DropdownItems href="#">Printing Industry</DropdownItems>
+//                   <DropdownItems href="#">Pre Engineering Industry</DropdownItems>
+//                   <DropdownItems href="#">Rubber Industry</DropdownItems>
+//                   <DropdownItems href="#">Restaurant Industry</DropdownItems>
+//                   <DropdownItems href="#"> Retail Industry</DropdownItems>
+//                   <DropdownItems href="#">Steel Industry</DropdownItems>
+//                   <DropdownItems href="#">Telecom Industry</DropdownItems>
+//                   <DropdownItems href="#">Textile Industry</DropdownItems>
+//                 </DropdownGroup>
+//               </div>
+//             </StyledNavDropdown>
+
+//             {/* Products Mega Menu */}
+//             <StyledNavDropdown
+//               title={
+//                 <>
+//                   Products {showProductsDropdown ? <BsChevronUp /> : <BsChevronDown />}
+//                 </>
+//               }
+//               id="products-dropdown"
+//               show={showProductsDropdown}
+//               onMouseEnter={() => setShowProductsDropdown(true)}
+//               onMouseLeave={() => setShowProductsDropdown(false)}
+//             >
+//               <div className="dropdown-content">
+//                 <DropdownGroup>
+//                   <DropdownItems href="#">Tech Cloud ERP</DropdownItems>
+//                   <DropdownItems href="#">Tech Cloud CRM</DropdownItems>
+//                   <DropdownItems href="#">Tech Cloud POS</DropdownItems>
+//                   <DropdownItems href="#">Tech Cloud Trading Software</DropdownItems>
+//                   <DropdownItems href="#">Tech Cloud E-Commerce</DropdownItems>
+//                   <DropdownItems href="#">Tech Cloud HRMS</DropdownItems>
+//                   <DropdownItems href="#">Tech Cloud Finance</DropdownItems>
+//                   <DropdownItems href="#">Tech Cloud ERP Integrated-With-CRM-E-Commerce-POS</DropdownItems>
+//                   <DropdownItems href="#">Tech Cloud Restaurant ERP</DropdownItems>
+//                   <DropdownItems href="#">Accounting Software</DropdownItems>
+//                 </DropdownGroup>
+//                 {/* Removed Hardware and Cloud Services sections */}
+//               </div>
+//             </StyledNavDropdown>
+//             <Nav.Link href="#">BI</Nav.Link>
+
+//             {/* Services Mega Menu */}
+//             <StyledNavDropdown
+//               title={
+//                 <>
+//                   Services {showServicesDropdown ? <BsChevronUp /> : <BsChevronDown />}
+//                 </>
+//               }
+//               id="services-dropdown"
+//               show={showServicesDropdown}
+//               onMouseEnter={() => setShowServicesDropdown(true)}
+//               onMouseLeave={() => setShowServicesDropdown(false)}
+//             >
+//               <div className="dropdown-content">
+//                 <DropdownGroup>
+//                   <DropdownItems href="#"> Digital Marketing</DropdownItems>
+//                   <DropdownItems href="#"> Web Development</DropdownItems>
+//                   <DropdownItems href="#">Mobile Application Development</DropdownItems>
+//                 </DropdownGroup>
+//                 {/* Removed Managed Services and Training sections */}
+//               </div>
+//             </StyledNavDropdown>
+//             <Nav.Link href="#">Pricing</Nav.Link>
+//             <Nav.Link href="#">Contact Us</Nav.Link>
+//             <Nav.Link href="#">Demo</Nav.Link>
+//           </Nav>
+//         </StyledNavbar.Collapse>
+//       </Container>
+//     </StyledNavbar>
+//   );
+// };
+
+// export default NavbarComponent;
 import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, Container, Dropdown, NavDropdown} from 'react-bootstrap';
 import { IoCall } from "react-icons/io5";
