@@ -5,7 +5,7 @@ import { recordcount } from '../../utils/constants';
 
 // Styled Components
 const StatsSection = styled.section`
-background: #05A7CC;
+  background: #05A7CC;
   padding: 40px 0;
   color: #fff;
   text-align: center;
@@ -17,20 +17,24 @@ background: #05A7CC;
 
 const StatWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  border-right: 1px solid #e6f6fa;
-  align-items: center;
+  align-items: center;  /* Align icon, number, and text in a row */
   justify-content: center;
   padding: 0 15px;
+  border-right: 1px solid #e6f6fa; /* Add border to the right */
+  
+  // &:last-child {
+  //   border-right: none; 
+  // }
+
   @media (max-width: 576px) {
-    border:none !important;
+    border: none !important;
   }
 `;
 
 const StatNumber = styled.h2`
-  font-size: 2.5rem;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-left: 10px;
+  text-align: left;
   white-space: nowrap;
 
   @media (max-width: 576px) {
@@ -41,12 +45,25 @@ const StatNumber = styled.h2`
 const StatText = styled.p`
   font-size: 1rem;
   letter-spacing: 1px;
+  text-align: left;
   text-transform: uppercase;
-  // margin-bottom: 0;
+  margin-left: 10px; /* Space between number and text */
   white-space: nowrap;
 
   @media (max-width: 576px) {
     font-size: 0.7rem;
+  }
+`;
+
+const IconWrapper = styled.div`
+    display: flex;
+    font-size: 4rem;
+    margin-top: -1rem;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    @media (max-width: 992px) {
+    font-size: 3rem;
   }
 `;
 
@@ -70,6 +87,10 @@ const StyledCol = styled(Col)`
     flex: 0 0 25%;
     max-width: 25%;
   }
+
+  &:nth-child(4n) ${StatWrapper} {
+    border-right: none; /* Remove border on the last column */
+  }
 `;
 
 const RecordSection = () => {
@@ -80,8 +101,11 @@ const RecordSection = () => {
           {recordcount.map((stat, index) => (
             <StyledCol key={index} xs={12} sm={6} md={3}>
               <StatWrapper>
-                <StatNumber>{stat.number}</StatNumber>
-                <StatText>{stat.text}</StatText>
+                <IconWrapper>{stat.icon}</IconWrapper> {/* Icon */}
+                <div>
+                  <StatNumber>{stat.number}</StatNumber> {/* Number */}
+                  <StatText>{stat.text}</StatText> {/* Text */}
+                </div>
               </StatWrapper>
             </StyledCol>
           ))}

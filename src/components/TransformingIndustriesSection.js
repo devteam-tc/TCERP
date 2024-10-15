@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import styled from "styled-components";
-import { Title } from "../pages/Home/CardSection";
+import { Title as BaseTitle } from "../pages/Home/CardSection"; // Assuming Title is imported from here
 import { industryData } from "../utils/constants";
 
 // Styled Components
@@ -22,7 +22,6 @@ const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 items per row by default */
   grid-gap: 0px; /* No gaps between items */
-  max-width: 1000px;
   margin: 0 auto;
   position: relative;
 
@@ -35,11 +34,14 @@ const GridContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row on small tablets */
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on mobile */
+    &:nth-child(3n + 1) {
+      margin-bottom: 20px; /* Add margin to the last item in each row for spacing */
+    }
   }
 
   @media (max-width: 576px) {
-    grid-template-columns: 1fr; /* 1 item per row on mobile */
+    grid-template-columns: 1fr; /* 1 item per row on small mobile */
   }
 `;
 
@@ -79,6 +81,10 @@ const VerticalLine = styled.div`
   width: 1px;
   height: 100%;
   background-color: #c3d9e7;
+
+  @media (max-width: 576px) {
+    display: none; /* Hide vertical lines on mobile */
+  }
 `;
 
 const HorizontalLine = styled.div`
@@ -88,6 +94,28 @@ const HorizontalLine = styled.div`
   width: 100%;
   height: 1px;
   background-color: #c3d9e7;
+
+  @media (max-width: 576px) {
+    display: none; /* Hide horizontal lines on mobile */
+  }
+`;
+
+const Title = styled(BaseTitle)`
+  font-size: 2.5rem; // Default size for larger screens
+  text-align: center;
+
+  @media (max-width: 992px) {
+    font-size: 2rem; 
+    line-height: 35px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; 
+  }
+
+  @media (max-width: 576px) {
+    font-size: 1.25rem; 
+  }
 `;
 
 const TransformingIndustriesSection = () => {
@@ -96,10 +124,7 @@ const TransformingIndustriesSection = () => {
   return (
     <Section>
       <Container>
-        <Title
-          className="text-center pt-4 pt-md-0"
-          style={{ fontSize: "30px" }}
-        >
+        <Title className="text-center pt-4 pt-md-0">
           Transforming Data into Actionable Insights for Industries Worldwide
         </Title>
         <Subtitle>

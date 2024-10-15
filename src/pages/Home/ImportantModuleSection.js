@@ -35,7 +35,7 @@ const Card = styled.div`
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   height: 400px; // Fixed height for consistency
-  min-height: 400px; // Ensure minimum height
+  min-height: 330px; // Ensure minimum height
   display: flex;
   flex-direction: column;
   justify-content: space-between; // Space between image and text
@@ -133,7 +133,8 @@ const ImportantModuleSection = () => {
     slidesToShow: 4, // Default to 4 slides at a time
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000, // Time in milliseconds between slides
+    autoplaySpeed: 1500, // Time in milliseconds between slides
+    pauseOnHover: false, // Prevent pause on hover
     responsive: [
       {
         breakpoint: 1200, // For screens below 1200px

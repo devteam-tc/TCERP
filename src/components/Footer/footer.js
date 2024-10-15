@@ -103,7 +103,8 @@ const ContactInfo = styled.div`
 
   p {
     display: flex;
-    align-items: center;
+    // align-items: center;
+    align-items: flex-start;
     margin-bottom: 10px;
     font-size: 14px;
 
@@ -118,7 +119,10 @@ const ContactInfo = styled.div`
     }
   }
 `;
-
+const Icon = styled.span`
+  font-size: 18px; /* Adjust this size as needed */
+margin-top: -3px;
+    margin-right: 2px;`;
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -131,7 +135,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <Col md={3} sm={12}>
             <Logo src={releavant.logo} alt="Legacy Insurance Brokers" />
-            <FooterText className="pt-5">
+            <FooterText className="pt-3">
               Tech Cloud ERP delivers top-notch solutions tailored for any
               businesses, combining advanced technology, intuitive design, and
               comprehensive features.
@@ -244,37 +248,37 @@ const Footer = () => {
             <ContactInfo>
               <strong>Corporate Office</strong>
               <p>
-                <FaMapMarkerAlt />
+                <Icon><FaMapMarkerAlt /></Icon>
                 Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens
                 Road, VIP Hills, Madhapur, Hyderabad, Telangana, India-500081.
               </p>
               <p>
-                <FaEnvelope />
+                <Icon><FaEnvelope /></Icon>
                 Email:{" "}
                 <a href="mailto:info@techclouderp.com">
                   info@techclouderp.com
                 </a>
               </p>
               <p>
-                <FaPhoneAlt />
+                <Icon><FaPhoneAlt /></Icon>
                 Phone: +91 8919439603
               </p>
             </ContactInfo>
             <ContactInfo>
               <strong>Headquarters</strong>
               <p>
-                <FaMapMarkerAlt />
+                <Icon><FaMapMarkerAlt /></Icon>
                 1101, E Bell Street, Suite-E, Bloomington, Indiana, USA - 61701.
               </p>
               <p>
-                <FaEnvelope />
+                <Icon><FaEnvelope /></Icon>
                 Email:{" "}
                 <a href="mailto:info@techclouderp.com">
                   info@techclouderp.com
                 </a>
               </p>
               <p>
-                <FaPhoneAlt />
+                <Icon><FaPhoneAlt /></Icon>
                 Phone: +91 8919439603
               </p>
             </ContactInfo>
@@ -294,5 +298,4 @@ const Footer = () => {
     </FooterSection>
   );
 };
-
 export default Footer;

@@ -5,7 +5,7 @@ import { featuresData, aboutus_data } from '../utils/constants';
 import { ContentColumn, Description, Divider, Heading, Section } from './IndustryPage';
 import { Title } from './Home/CardSection';
 
-const StyledCard = styled(Card)`
+export const StyledCard = styled(Card)`
     display: flex;
     flex-direction: column;
     width: clamp(20rem, calc(20rem + 2vw), 22rem);
@@ -37,7 +37,7 @@ const StyledCard = styled(Card)`
         }
 `;
 
-const SubTitle = styled.p`
+export const SubTitle = styled.p`
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 2rem;

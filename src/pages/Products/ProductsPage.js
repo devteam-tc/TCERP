@@ -18,23 +18,17 @@ const CardContainer = styled.div`
   padding: 30px;
   font-weight: 500;
   background-color: white;
-  width: 25vw;
+  border-radius:5px;
+  width: 100%;
   height: 100%;  /* Ensures all cards have the same height */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: #FFF;
   color: #393939;
 
-  /* M3/Elevation Light/2 */
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-
   &:hover {
-    transform: translateY(-5px); /* Hover effect */
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Adds shadow on hover */
-    background: #FFF;
+ box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px, rgba(173, 216, 230, 0.7) 0px 6px 6px;
+        cursor:pointer;    background: #FFF;
 
-/* M3/Elevation Light/2 */
-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
-  }
+
 
   @media (max-width: 992px) {
     width: 100%;
@@ -175,7 +169,8 @@ const TabContent = ({ content, image, alt }) => {
             src={image || '/default-image.png'} // Fallback to a default image
             alt={alt || "Default alt text"}
             className="rounded-md img-fluid"
-          />
+            style={{ width: '400px', height: '400px', objectFit: 'cover' }}
+            />
         </div>
       </div>
     </StyledTabContent>

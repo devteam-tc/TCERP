@@ -23,7 +23,7 @@ const OrangeBorder = styled.div`
   bottom: -20px;
   left: -20px;
   right: -20px;
-  border: 15px solid #ff5722; /* Adjusted the thickness to 15px */
+  // border: 15px solid #ff5722; 
   z-index: -1;
 `;
 

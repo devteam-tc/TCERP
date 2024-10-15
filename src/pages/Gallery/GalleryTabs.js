@@ -112,7 +112,7 @@ const GalleryTabs = () => {
             <Tab.Pane eventKey={activeTab}>
               <Row>
                 {galleryData[activeTab].map((item) => (
-                  <Col key={item.id} xs={12} md={6} lg={4}>
+                  <Col key={item.id} xs={12} md={6} lg={3}>
                     <CardContainer onClick={() => handleCardClick(item.id)}>
                       <CardItem className="text-start fw-semibold">
                         <div>

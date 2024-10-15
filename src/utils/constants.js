@@ -6,10 +6,15 @@ import { FaGroupArrowsRotate } from "react-icons/fa6";
 import { HiBarsArrowDown } from "react-icons/hi2";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineSpeed } from "react-icons/md";
-import { FaLeaf, FaBeer, FaIndustry, FaGraduationCap, FaBolt, FaPizzaSlice, FaCouch, FaTshirt ,  FaGem, FaTruck, FaTree, FaBook} from 'react-icons/fa';
+import { FaLeaf, FaBeer, FaIndustry, FaGraduationCap, FaBolt, FaPizzaSlice, FaCouch, FaTshirt ,  FaGem, FaTruck, FaTree, FaBook , FaRandom ,
+   FaShieldAlt , FaUserTie , FaThumbsUp , FaUsers, FaBriefcase  } from 'react-icons/fa';
+import { GoShieldLock } from "react-icons/go";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { IoSpeedometerOutline } from "react-icons/io5";
+import { TbLayoutGridAdd } from 'react-icons/tb';
 
 export const releavant = {
-  logo: require("../assets/logo.png"),
+  logo: require("../assets/tcerplogo.png"),
   bgvideo:require("../assets/Home/videobanner.mp4"),
   us_flag_img:require("../assets/us-flag.jpg"),
   indian_flag_img:require("../assets/indian-flag.png"),
@@ -70,10 +75,10 @@ export const visionMissionData = {
 };
 //record section
 export const recordcount = [
-  { number: '25+', text: 'Experience' },
-  { number: '2K+', text: 'Happy Clients' },
-  { number: '10K+', text: 'Users' },
-  { number: '38K+', text: 'Professionals' },
+  { number: '25+', text: 'Experience', icon: <FaBriefcase /> },
+  { number: '2K+', text: 'Happy Clients', icon: <FaThumbsUp  /> },
+  { number: '10K+', text: 'Users', icon: <FaUsers /> },
+  { number: '38K+', text: 'Professionals', icon: <FaUserTie  /> },
 ];
 //pricing plans
 export const pricingPlans = [
@@ -129,12 +134,12 @@ calltoaction_bg_img:require("../assets/Home/cta-bg-image-one.png"),
 };
 
 export const partnerData = [
-{ link: '/financial-management-systems', imgSrc: require("../assets/partner/finance.png"), alt: 'Finance' },
-{ link: '/hr-management-software', imgSrc: require("../assets/partner/HRM.png"), alt: 'HRM' },
-{ link: '/ecommerce-software', imgSrc: require("../assets/partner/ecomm.png"), alt: 'Ecommerce' },
-{ link: '/trading-software', imgSrc: require("../assets/partner/trading.png"), alt: 'Trading' },
-{ link: '/point-of-sale', imgSrc: require("../assets/partner/POS.png"), alt: 'POS' },
-{ link: '/customer-relationship-management', imgSrc: require("../assets/partner/CRMD.png"), alt: 'CRM' },
+{ link: '/products/financial-management-systems', imgSrc: require("../assets/partner/finance.png"), alt: 'Finance' },
+{ link: '/products/hr-managament-software', imgSrc: require("../assets/partner/HRM.png"), alt: 'HRM' },
+{ link: '/products/Ecommerce-software', imgSrc: require("../assets/partner/ecomm.png"), alt: 'Ecommerce' },
+{ link: '/products/trading-software', imgSrc: require("../assets/partner/trading.png"), alt: 'Trading' },
+{ link: '/products/point-of-sale', imgSrc: require("../assets/partner/POS.png"), alt: 'POS' },
+{ link: '/products/customer-relationship-management', imgSrc: require("../assets/partner/CRMD.png"), alt: 'CRM' },
 ];
 export const ModulecardsData = [
 {
@@ -191,84 +196,91 @@ export const ModulecardsData = [
 ];
 export const testimonialsData = [
   {
-    name: "Anusha",
-    testimonial: "A software designed to help small and mid-sized businesses manage their resources with a very effective enterprise resource planning platform.",
-    image: "anusha testimonials.jpg",
-    altText: "chandana_rathod_img"
+    name: "Nagender Sadanala",
+    testimonial: " Tech Cloud Solutions provide us a great ERP software. They have a fantastic ERP product which covers all the modules for manufacturers and trading companies and they provided 24*7 support.Thanks to team.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    altText: "nagender_rathod_img"
+},
+{
+    name: "Sunilkumar Padavala",
+    testimonial: "Tech Cloud ERP offers a wide range of out-of-the-box features with  customization functions to fit various needs. We can create unlimited it's a lifetime ERP with no renewals. Very good software at a lesser cost.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    altText: "sunil_img"
+},
+{
+    name: "Ferrero Rocher",
+    testimonial: " The Best Cloud ERP Software in India. Tech Cloud ERP has all moduleswith unlimited users, dynamic dashboards, GST integration, mobile andtab compatibility and many more unique features.A fantastic product at a very low cost.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    altText: "ferrero_img"
+},
+{
+    name: "Anusha O",
+    testimonial: " I am using Tech Cloud ERP software for my Medical Services business. I’m very happy with the software. I’m using seamlessly the last 3 years and their support is really good.A big thanks for the Tech Cloud ERP team.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    altText: "anusha_img"
 },
 {
     name: "Prerna Prasad",
+    testimonial: "Tech Cloud ERP, has provided me the best ERP software which i have beenusing past 4 years, quite reasonable showing really good results. It has simplified my work and made it pretty efficient.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    altText: "prerna_img"
+},
+{
+    name: "Alekhya Poloju",
     testimonial: "This software exactly suits for any kind of manufacturing/trading businesses. The price of the software is very less compared to other softwares in the market. The best cloud based software with GST incorporated.",
     image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "anand_tiwari_img"
+    altText: "alekhya_img"
 },
 {
-    name: "Durga Prasad",
-    testimonial: "Tech Cloud ERP offers a wide range of out-of-the-box features with customization functions to fit various needs. We can create unlimited users with user defines access rights. Moreover,it's a lifetime ERP with no renewals. Very good software at a lesser cost.",
+    name: "Manikanta Varma",
+    testimonial: " I enthusiastically recommended Tech Cloud ERP to several other businesses. It's great to work with Tech Cloud ERP team. Even, at the highest level (owners and executives) they take a personal interest in their clients and have a deep understanding of their product.",
     image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "durgaprasad_img"
-},
-{
-    name: "Indraja",
-    testimonial: "The Best Cloud ERP Software in India. Tech Cloud ERP has all modules with unlimited users, dynamic dashboards, GST integration, mobile and tab compatibility and many more unique features. A fantastic product at a very low cost.",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "indraja_img"
-},
-{
-    name: "Santosh",
-    testimonial: "Tech Cloud ERP, has provided me the best ERP software which i have been using past 4 years, quite reasonable showing really good results. It has simplified my work and made it pretty efficient.",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "jhondoe_img"
-},
-{
-    name: "Chandana",
-    testimonial: "I enthusiastically recommended Tech Cloud ERP to several other businesses. It's great to work with Tech Cloud ERP team. Even, at the highest level (owners and executives) they take a personal interest in their clients and have a deep understanding of their product.",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "michel_davis_img"
-},
-{
-    name: "Prasanna kumar",
-    testimonial: "The ease of communication and quick response times have made my experience with Legacy Insurance Brokers exceptional.",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "prasanna_kumari_img"
+    altText: "manikanta_img"
 },
 ];
 export const cardData = {
-"normal":[
+  normal: [
     {
+      icon: TbLayoutGridAdd , 
       title: 'Solutions For All',
       text: 'Whether you have 2 or 2000 employees, Tech Cloud ERP has a comprehensive portfolio leading cloud-based ERP software solutions and tools to fit your needs. We also provide dedicated support teams that are at your disposal 24/7.',
       highlights: ['Integrated CRM and ERP System', 'E-Commerce Platform', 'Workflow Automation'],
     },
-  {
-    title: 'Flexibility',
-    text: 'Tech Cloud ERP is dedicated to creating easy-to-use, adaptable cloud ERP software applications. Whether you want customized ERP software processes, use the public or private cloud or pay only for what you need.',
-    highlights: ['Modular Architecture', 'API-Based Integration', 'Continuous Improvement'],
-  },
-  {
-    title: 'Security',
-    text: 'Tech Cloud ERP platform is built on the most advanced infrastructures in the world. We have teams of experts dedicated to protecting your data, warding off hackers and staying ahead of threats to keep your business and its data safe.',
-    highlights: ['Risk Assessment', 'Data Breach', 'Encryption'],
-  }
-],
-"Show More":[
-  {
-    title: 'Smart And Adaptable',
-    text: 'Leverage intelligent ERP software system with built-in machine learning, predictive analytics and optimized processes. Keep the latest innovations at your fingertips with automatic updates.',
-    highlights: ['Al-Powered Analytics', 'Predictive Analytics', 'Dynamic Pricing Engines'],
-  },
-{
-  title: 'Fast And Affordable',
-  text: 'Tap into Tech Cloud ERP world class cloud infrastructure to run lean and flexible business processes. Get up and run quickly anywhere in this world at any time for a low monthly & yearly cost.',
-  highlights: ['Efficient Resource Utilization', 'Optimized Workflows', 'Containerization and Microservices'],
-},
-{
-  title: 'Secure And Reliable',
-  text: 'Our best cloud ERP software have covered from system security to compliance. Your data is hosted on world-class servers with global teams dedicated to its safety robust backup protocols to safeguard your information at every step.',
-  highlights: ['Data Encryption', 'Monitoring and Logging', 'Access Controls and Authentication'],
-}
-]
-}
+    {
+      icon: FaRandom  ,
+      title: 'Flexibility',
+      text: 'Tech Cloud ERP is dedicated to creating easy-to-use, adaptable cloud ERP software applications. Whether you want customized ERP software processes, use the public or private cloud or pay only for what you need.',
+      highlights: ['Modular Architecture', 'API-Based Integration', 'Continuous Improvement'],
+    },
+    {
+      icon: GoShieldLock  ,
+      title: 'Security',
+      text: 'Tech Cloud ERP platform is built on the most advanced infrastructures in the world. We have teams of experts dedicated to protecting your data, warding off hackers and staying ahead of threats to keep your business and its data safe.',
+      highlights: ['Risk Assessment', 'Data Breach', 'Encryption'],
+    },
+  ],
+  "Show More": [
+    {
+      icon: HiOutlineLightBulb  ,
+      title: 'Smart And Adaptable',
+      text: 'Leverage intelligent ERP software system with built-in machine learning, predictive analytics and optimized processes. Keep the latest innovations at your fingertips with automatic updates.',
+      highlights: ['AI-Powered Analytics', 'Predictive Analytics', 'Dynamic Pricing Engines'],
+    },
+    {
+      icon: IoSpeedometerOutline  ,
+      title: 'Fast And Affordable',
+      text: 'Tap into Tech Cloud ERP world class cloud infrastructure to run lean and flexible business processes. Get up and run quickly anywhere in this world at any time for a low monthly & yearly cost.',
+      highlights: ['Efficient Resource Utilization', 'Optimized Workflows', 'Containerization and Microservices'],
+    },
+    {
+      icon: FaShieldAlt ,
+      title: 'Secure And Reliable',
+      text: 'Our best cloud ERP software have covered from system security to compliance. Your data is hosted on world-class servers with global teams dedicated to its safety robust backup protocols to safeguard your information at every step.',
+      highlights: ['Data Encryption', 'Monitoring and Logging', 'Access Controls and Authentication'],
+    }
+  ]
+};
+
 //Navbar Section
 export const NAV_ITEMS = [
 {
@@ -282,8 +294,6 @@ export const NAV_ITEMS = [
   id: 'aboutDropdown',
   items: [
     { title: 'What & Why?', link: '/about-us' },
-    { title: 'What sets us Different?', link: 'what-sets-us-different.html' },
-    { title: 'Unique Tech Cloud ERP', link: 'unique-tech-cloud-erp.html' },
     { title: "MD's Profile & Message", link: '/mds-profile' },
   ],
 },
@@ -1654,7 +1664,7 @@ export const productData = {
     ],
     tabData: {
       requirement: {
-        image: "https://placehold.co/400x400?text=Requirement+Image", // Placeholder image URL for requirement tab
+        image: require("../assets/Products/tcerp/requiregath.png"), // Placeholder image URL for requirement tab
         content: [
           { title: 'Identify Client Needs:', description: "Deeply understand the client's business objectives, pain points, and opportunities." },
           { title: 'Stakeholder Collaboration:', description: 'Engage with key decision-makers to ensure all requirements are well-documented.' },
@@ -1662,7 +1672,7 @@ export const productData = {
         ],
       },
       implementation: {
-        image: "https://placehold.co/400x400?text=Implementation+Image", // Placeholder image URL for implementation tab
+        image: require("../assets/Products/tcerp/impletrain.jpg"), 
         content: [
           { title: 'System Setup:', description: 'Install, configure, and customize the ERP system.' },
           { title: 'Training:', description: 'Train the client’s team on how to use the system efficiently.' },
@@ -1670,7 +1680,7 @@ export const productData = {
         ],
       },
       goLive: {
-        image: "https://placehold.co/400x400?text=GoLive+Image", // Placeholder image URL for go live tab
+        image: require("../assets/Products/tcerp/golive.webp"), 
         content: [
           { title: 'Live System Activation:', description: 'Transition from the legacy system to the new ERP system.' },
           { title: 'Monitoring:', description: 'Monitor the system for issues and ensure smooth operation.' },
@@ -1678,7 +1688,7 @@ export const productData = {
         ],
       },
       postGoLive: {
-        image: "https://placehold.co/400x400?text=PostGoLive+Image", // Placeholder image URL for post go live tab
+        image: require("../assets/Products/tcerp/pogostlive.jpg") ,
         content: [
           { title: 'Ongoing Support:', description: 'Provide continued support to resolve any post-go-live issues.' },
           { title: 'System Optimization:', description: 'Fine-tune the system based on real-world usage.' },
@@ -1697,6 +1707,11 @@ export const productData = {
     productTitle: 'Tech Cloud Customer Relationship Management',
     heading: "CRM Solutions",
     description: "Elevate customer interactions with our CRM for personalized growth solutions.",
+    title : "Cloud Based ERP Software",
+    productDescription: [
+      "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+      "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+    ],
     cards: [
       {
         title: "Contact Management",
@@ -1825,6 +1840,11 @@ export const productData = {
       productTitle: 'Tech Cloud Point of Sale',
       heading: "Point of Sale",
       description: "Unlock growth and increase profits with our efficient, advanced POS system.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
       cards: [
           {
             title: "Web Based",
@@ -1954,6 +1974,11 @@ export const productData = {
     productTitle: 'Tech Cloud Trading Software',
       heading: "Trading software",
       description: "Enhance customer relationships and streamline operations with our trading software.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
         cards: [
           {
             title: "New Customers",
@@ -2060,6 +2085,11 @@ export const productData = {
     productTitle: 'Tech Cloud E-Commerce Software',
       heading: "Ecommerce Solutions",
       description: "Our services encompass implementation, training, and support for seamless e-commerce and ERP integration.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
         cards: [
           {
             title: "Automation",
@@ -2165,6 +2195,11 @@ export const productData = {
     productTitle: 'Tech Cloud HR Management Software',
       heading: "HR managament Solutions",
       description: "Our expert team delivers top support, empowering your HR department with confidence.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
       cards: [
           {
             title: "Recruitment",
@@ -2250,7 +2285,7 @@ export const productData = {
         ],
         tabData: {
           employeeManagement: {
-              image: "https://placehold.co/400x400?text=EmployeeManagement+Image",
+              image: require("../assets/Products/Hr/emplyeemange.jpg"),
               alt: "HR Employee Management Image",
               content: [
                   { title: 'Employee Profiles:', description: "Maintain detailed profiles for all employees, including personal information and performance history." },
@@ -2259,7 +2294,7 @@ export const productData = {
               ]
           },
           complianceManagement: {
-              image: "https://placehold.co/400x400?text=ComplianceManagement+Image",
+              image: require("../assets/Products/Hr/compliance.jpg"),
               alt: "HR Compliance Management Image",
               content: [
                   { title: 'Regulatory Compliance:', description: 'Ensure compliance with labor laws and regulations to avoid legal issues.' },
@@ -2268,7 +2303,7 @@ export const productData = {
               ]
           },
           employeeEngagement: {
-              image: "https://placehold.co/400x400?text=EmployeeEngagement+Image",
+              image: require("../assets/Products/Hr/emplayeenage.jpg"),
               alt: "HR Employee Engagement Image",
               content: [
                   { title: 'Feedback Mechanisms:', description: 'Implement systems for collecting employee feedback and suggestions.' },
@@ -2277,7 +2312,7 @@ export const productData = {
               ]
           },
           analyticsAndReporting: {
-              image: "https://placehold.co/400x400?text=AnalyticsAndReporting+Image",
+              image: require("../assets/Products/Hr/analytics.png"),
               alt: "HR Analytics and Reporting Image",
               content: [
                   { title: 'HR Metrics Analysis:', description: 'Analyze key HR metrics to assess organizational health.' },
@@ -2297,6 +2332,11 @@ export const productData = {
     productTitle: 'Tech Cloud Financial Management Systems',
     heading: "financial management Solutions",
     description: "Accelerate financial success with our ERP finance module—real-time insights and automation for growth.",
+    title : "Cloud Based ERP Software",
+    productDescription: [
+      "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+      "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+    ],
     cards: [
       {
         title: "Functionalities",
@@ -2337,7 +2377,7 @@ export const productData = {
     ],
     tabData: {
       requirement: {
-          image: "https://placehold.co/400x400?text=Requirement+Image",
+          image: require("../assets/Products/Finance/financerequire.jpg"),
           content: [
               { title: 'Identify Financial Objectives:', description: "Understand the client's financial goals, challenges, and needs." },
               { title: 'Compliance Review:', description: 'Engage with stakeholders to assess regulatory requirements and compliance needs.' },
@@ -2353,7 +2393,7 @@ export const productData = {
           ],
       },
       goLive: {
-          image: "https://placehold.co/400x400?text=GoLive+Image",
+          image: require("../assets/Products/Finance/onboarding.jpg"),
           content: [
               { title: 'System Activation:', description: 'Activate the new financial management system for live operations.' },
               { title: 'Performance Monitoring:', description: 'Monitor system performance to identify any issues during the initial phase.' },
@@ -2380,6 +2420,11 @@ export const productData = {
       productTitle: 'Tech Cloud Integrated ERP Software',
       heading: "Integrated ERP Solutions",
       description: "Enhance your business with integrated ERP, CRM, and E- Commerce solutions.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
       cards: [
         {
           title: "CRM",
@@ -2454,6 +2499,11 @@ export const productData = {
       productTitle: 'Tech Cloud ERP For Restaraunt Business',
       heading: "Restaraunt ERP Solutions",
       description: "Our expert team ensures seamless expansion with restaurant management software.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
         cards: [
           {
             title: "POS",
@@ -2559,6 +2609,11 @@ export const productData = {
       productTitle: 'Tech Cloud ERP for Accounting Software',
       heading: "ERP for Accounting Software",
       description: "Expert support for seamless integration and optimal performance in accounting software.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
         cards: [
           {
             title: "Modules",
@@ -2599,7 +2654,7 @@ export const productData = {
         ],
         tabData: {
           requirement: {
-              image: "https://placehold.co/400x400?text=Accounting+Needs+Image",
+              image: require("../assets/Products/Accouting/accounting.jpeg"),
               alt: "Accounting Needs Image",
               content: [
                   { title: 'Understanding Client Objectives:', description: "Identify key financial goals and accounting practices." },
@@ -2608,7 +2663,7 @@ export const productData = {
               ],
           },
           implementation: {
-              image: "https://placehold.co/400x400?text=Implementation+Image",
+              image: require("../assets/Products/Accouting/implemenuser.png"),
               alt: "Implementation Image",
               content: [
                   { title: 'Setup Chart of Accounts:', description: 'Define account structures tailored to the business model.' },
@@ -2617,7 +2672,7 @@ export const productData = {
               ],
           },
           goLive: {
-              image: "https://placehold.co/400x400?text=GoLive+Image",
+              image: require("../assets/Products/Accouting/erpgolive.jpg"),
               alt: "Go Live Image",
               content: [
                   { title: 'Launch the ERP System:', description: 'Transition all accounting functions to the new platform.' },
@@ -2709,7 +2764,12 @@ export const aboutus_data = {
   'featurescontent':{
     heading: "Features",
     description: "Our comprehensive solution for established businesses and enterprises.",
-  }
+  },
+  'productcomparison':{
+    heading: "Product Comparison",
+    description: "Our comprehensive solution for established businesses and enterprises.",
+  },
+  
 };
 export const ContactUs_content = {
   heading : "Contact us ",
@@ -2842,7 +2902,7 @@ export const termsAndConditionsData = {
     "Your use of this website and any dispute arising out of use of the website is subject to the Cyber Law of India."
   ],
 };
-// constants.js
+// privacy policy
 
 export const privacyPolicyData = {
   title: "Privacy Policy",
@@ -2884,294 +2944,208 @@ export const profileData = {
                 and have been instrumental in the growth of various businesses.`,
 };
 
+// services page data
 
-
-
-
-
-export const essentialServicesData = [
-  
-  {
-    id: 1,
-    image: require("../assets/Services/digital/SEO.png"), 
-    title: "Search Engine Optimization",
-    description:
-      "SEO is a process of enhancing the visibility of a website or a web page in a search engine's unpaid results—often referred to as 'organic' or 'natural' results.",
-  },
-  {
-    id: 2,
-    image: require("../assets/Services/digital/SEM.png"),
-    title: "Search Engine Marketing",
-    description:
-      "SEM is a digital marketing strategy focused on promoting websites by increasing their visibility in search engine results pages (SERPs) through paid advertising.",
-  },
-  {
-    id: 3,
-    image: require("../assets/Services/digital/SMO.png"),
-    title: "Social Media Optimization",
-    description:
-      "SMO can be an effective way to quickly increase website traffic, generate leads, and drive conversions, especially for businesses looking to achieve immediate results.",
-  },
-  {
-    id: 4,
-    image: require("../assets/Services/digital/FBads.png"),
-    title: "Facebook Ads",
-    description:
-      "Facebook Ads helps businesses to create targeted campaigns to reach specific audiences on Facebook and Instagram, driving brand awareness.",
-  },
-  {
-    id: 5,
-    image: require("../assets/Services/digital/CM.png"), 
-    title: "Content Marketing",
-    description:
-      "Content marketing is a strategic marketing approach focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
-  },
-  {
-    id: 6,
-    image: require("../assets/Services/digital/EM.png"),
-    title: "Email Marketing",
-    description:
-      "Email marketing is a strategy focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
-  },
-];
-
-
-
-
-// Essential Services Data
-
-// export const essentialServicesData = {
-//   'digitalMarketing': [
-//     {
-//       id: 1,
-//       image: require("../assets/Services/digital/SEO.png"),
-//       title: "Search Engine Optimization",
-//       description:
-//         "SEO is a process of enhancing the visibility of a website or a web page in a search engine's unpaid results—often referred to as 'organic' or 'natural' results.",
-//     },
-//     {
-//       id: 2,
-//       image: require("../assets/Services/digital/SEM.png"), 
-//       title: "Search Engine Marketing",
-//       description:
-//         "SEM is a digital marketing strategy focused on promoting websites by increasing their visibility in search engine results pages (SERPs) through paid advertising.",
-//     },
-//     {
-//       id: 3,
-//       image: require("../assets/Services/digital/SMO.png"),
-//       title: "Social Media Optimization",
-//       description:
-//         "SMO can be an effective way to quickly increase website traffic, generate leads, and drive conversions, especially for businesses looking to achieve immediate results.",
-//     },
-//     {
-//       id: 4,
-//       image: require("../assets/Services/digital/FBads.png"),
-//       title: "Facebook Ads",
-//       description:
-//         "Facebook Ads helps businesses to create targeted campaigns to reach specific audiences on Facebook and Instagram, driving brand awareness.",
-//     },
-//     {
-//       id: 5,
-//       image: require("../assets/Services/digital/CM.png"), 
-//       title: "Content Marketing",
-//       description:
-//         "Content marketing is a strategic marketing approach focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
-//     },
-//     {
-//       id: 6,
-//       image: require("../assets/Services/digital/EM.png"),
-//       title: "Email Marketing",
-//       description:
-//         "Email marketing is a strategy focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
-//     },
-//   ],
-//   'webDevelopment': [
-//     {
-//       id: 1,
-//       icon: <FaSearch />,
-//       title: "Web Designing",
-//       description:
-//         "Where art meets functionality, crafting digital experiences that captivate, inspire, and resonate with users worldwide.",
-//     },
-//     {
-//       id: 2,
-//       icon: <FaChartLine />, 
-//       title: "Web Development",
-//       description:
-//         "The alchemy of code and creativity, sculpting digital landscapes that empower, engage, and connect.",
-//     },
-//     {
-//       id: 3,
-//       icon: <FaMobileAlt />,
-//       title: "Mobile App Development",
-//       description:
-//         "Mobile app development involves creating software for smartphones and tablets, focusing on functionality, usability, and user experience.",
-//     },
-//     {
-//       id: 4,
-//       icon: <FaBullhorn />,
-//       title: "WordPress Development",
-//       description:
-//         "WordPress development involves using the WordPress CMS to design, build, and maintain websites with flexibility and ease of use.",
-//     },
-//     {
-//       id: 5,
-//       icon: <FaPencilAlt />, 
-//       title: "eCommerce Development",
-//       description:
-//         "E-commerce development focuses on creating online platforms for buying and selling goods or services, streamlining transactions.",
-//     },
-//     {
-//       id: 6,
-//       icon: <FaEnvelope />,
-//       title: "Web Hosting Services",
-//       description:
-//         "Hosting services offer server space and infrastructure for storing and accessing website data, enabling online presence.",
-//     },
-//   ],
-//   'mobileApplication': [
-//     {
-//       id: 1,
-//       icon: <FaMobileAlt />,
-//       title: "Mobile Application Development",
-//       description:
-//         "Mobile application development is the process of creating software applications that run on mobile devices, delivering a seamless user experience.",
-//     },
-//     {
-//       id: 2,
-//       icon: <FaMobileAlt />, 
-//       title: "Cross-Platform Development",
-//       description:
-//         "Cross-platform development allows applications to be developed for multiple platforms using a single codebase, saving time and resources.",
-//     },
-//     {
-//       id: 3,
-//       icon: <FaMobileAlt />, 
-//       title: "App Store Optimization",
-//       description:
-//         "App Store Optimization (ASO) is the process of improving the visibility of a mobile app in an app store, increasing downloads and user engagement.",
-//     },
-//     {
-//       id: 4,
-//       icon: <FaMobileAlt />, 
-//       title: "User Experience Design",
-//       description:
-//         "User Experience (UX) design focuses on creating intuitive and user-friendly interfaces, enhancing the overall satisfaction of users.",
-//     },
-//     {
-//       id: 5,
-//       icon: <FaMobileAlt />, 
-//       title: "App Maintenance & Support",
-//       description:
-//         "Ongoing app maintenance and support ensure that applications remain functional, secure, and up-to-date with the latest technology.",
-//     },
-//     {
-//       id: 6,
-//       icon: <FaMobileAlt />, 
-//       title: "Analytics & Reporting",
-//       description:
-//         "Analytics and reporting help businesses track app performance, user engagement, and other metrics, driving data-driven decisions.",
-//     },
-//   ],
-// };
-
-
-
-
-
-
-// constants.js
 export const servicesData = {
   'web-development': {
     title: 'Web Development',
+    mainTitle :'Essential Services for Modern web dev',
+    sectionSubtitle: 'Essential web development services include designing, developing, and maintaining websites for optimal performance and user experience.', 
     description: [
       "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
       "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
     ],
+    services: [
+      {
+        id: 1,
+        image: require("../assets/Services/webdevelopment/Webdesign.png"),
+        title: "Web Designing",
+        description: "Where art meets functionality, crafting digital experiences that captivate, inspire, and resonate with users worldwide.",
+      },
+      {
+        id: 2,
+        image: require("../assets/Services/webdevelopment/webdev.png"),
+        title: "Web Development",
+        description: "The alchemy of code and creativity, sculpting digital landscapes that empower, engage, and connect.",
+      },
+      {
+        id: 3,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "Mobile App Development",
+        description: "Mobile app development involves creating software for smartphones and tablets, focusing on functionality, usability, and user experience.",
+      },
+      {
+        id: 4,
+        image: require("../assets/Services/webdevelopment/Wordpress.png"),
+        title: "WordPress Development",
+        description: "WordPress development involves using the WordPress CMS to design, build, and maintain websites with flexibility and ease of use.",
+      },
+      {
+        id: 5,
+        image: require("../assets/Services/webdevelopment/ecommerce.png"),
+        title: "eCommerce Development",
+        description: "E-commerce development focuses on creating online platforms for buying and selling goods or services, streamlining transactions.",
+      },
+      {
+        id: 6,
+        image: require("../assets/Services/webdevelopment/webhosting.png"),
+        title: "Web Hosting Services",
+        description: "Hosting services offer server space and infrastructure for storing and accessing website data, enabling online presence.",
+      },
+    ],
     faq: [
       {
         question: 'What is web development?',
-        answer:
-          'Web development involves creating and maintaining websites or web applications. It includes aspects like web design, content development, client-side and server-side scripting, and security management.',
+        answer: 'Web development involves creating and maintaining websites or web applications. It includes aspects like web design, content development, client-side and server-side scripting, and security management.',
       },
       {
         question: 'What are web hosting and domain names?',
-        answer:
-          'Web hosting is the server space where your website’s files are stored. A domain name is the web address that users type to access your website, like www.example.com.',
+        answer: 'Web hosting is the server space where your website’s files are stored. A domain name is the web address that users type to access your website, like www.example.com.',
       },
       {
         question: 'How often should I update my website?',
-        answer:
-          'It’s recommended to update content regularly and redesign every few years to ensure your site remains relevant, secure, and optimized for new technology.',
+        answer: 'It’s recommended to update content regularly and redesign every few years to ensure your site remains relevant, secure, and optimized for new technology.',
       },
       {
         question: 'What is the importance of website maintenance?',
-        answer:
-          'Website maintenance involves regularly checking your website for issues, updating software, and ensuring security, which keeps your site functional and secure over time.',
+        answer: 'Website maintenance involves regularly checking your website for issues, updating software, and ensuring security, which keeps your site functional and secure over time.',
       },
     ],
     image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
     altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
   },
   'mobile-application-development': {
+    mainTitle :'Essential Services for Modern mobile app',
+    sectionSubtitle: 'Essential mobile development services include designing, developing, and maintaining websites for optimal performance and user experience.', // Added section subtitle
     title: 'Mobile Application Development',
     description: [
-      "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
-      "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
+      "Mobile application development is the process of creating software applications that run on mobile devices, delivering a seamless user experience.",
+      "Cross-platform development allows applications to be developed for multiple platforms using a single codebase, saving time and resources.",
+    ],
+    services: [
+      {
+        id: 1,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "Mobile Application Development",
+        description: "Mobile application development involves creating software applications that run on mobile devices, delivering a seamless user experience.",
+      },
+      {
+        id: 2,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "Cross-Platform Development",
+        description: "Cross-platform development allows applications to be developed for multiple platforms using a single codebase, saving time and resources.",
+      },
+      {
+        id: 3,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "App Store Optimization",
+        description: "App Store Optimization (ASO) is the process of improving the visibility of a mobile app in an app store, increasing downloads and user engagement.",
+      },
+      {
+        id: 4,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "User Experience Design",
+        description: "User Experience (UX) design focuses on creating intuitive and user-friendly interfaces, enhancing the overall satisfaction of users.",
+      },
+      {
+        id: 5,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "App Maintenance & Support",
+        description: "Ongoing app maintenance and support ensure that applications remain functional, secure, and up-to-date with the latest technology.",
+      },
+      {
+        id: 6,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "Analytics & Reporting",
+        description: "Analytics and reporting help businesses track app performance, user engagement, and other metrics, driving data-driven decisions.",
+      },
     ],
     faq: [
       {
         question: 'What is IOS Mobile App Development?',
-        answer:
-          'Experts in developing cutting-edge iPhone and iPad apps using Swift, Objective C, and advanced tools like Xcode, Cocoapods, and CoreData. Specializing in M-Commerce solutions, testing, and seamless app integration with web services. Providing robust support for new versions, maintenance, and agile methodologies for high-quality delivery.',
+        answer: 'Experts in developing cutting-edge iPhone and iPad apps using Swift, Objective C, and advanced tools like Xcode, Cocoapods, and CoreData.',
       },
       {
-        question: 'Why is Android App Development',
-        answer:
-          'Experts in custom Android app design and development using Java, Android Studio, and advanced frameworks like MVC/MVP. Specializing in M-Commerce applications, new version support, and comprehensive testing and portability. Leveraging Agile methodologies and tools like Jenkins, SonarQube, and MQTT for high-quality, scalable solutions.',
+        question: 'Why is Android App Development important?',
+        answer: 'Experts in custom Android app design and development using Java, Android Studio, and advanced frameworks like MVC/MVP.',
       },
       {
-        question: 'Hybrid App Development',
-        answer:
-          'Proficient in HTML5, CSS, and JavaScript for robust web and hybrid apps with native feel and full device integration. Expertise in PhoneGap, Ionic, and Angular ensures seamless online/offline connectivity and enhanced user experience. Specializing in integrating with ERP, CMS, CRM, and payment systems.',
+        question: 'What is Hybrid App Development?',
+        answer: 'Proficient in HTML5, CSS, and JavaScript for robust web and hybrid apps with native feel and full device integration.',
       },
       {
-        question: 'Multi-platform mobile app development',
-        answer:
-          'Creating powerful cross-platform mobile apps with Titanium, PhoneGap, and other frameworks. Designing and developing apps for various sectors using CSS, HTML5, JavaScript, Visual Studio, and .NET. Offering one app for Android, iPhone/iPad, and Windows Mobile. Prioritizing testing and portability.',
+        question: 'What is Multi-platform mobile app development?',
+        answer: 'Creating powerful cross-platform mobile apps with Titanium, PhoneGap, and other frameworks.',
       },
     ],
     image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
-    altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
+    altText: 'Mobile devices displaying various application interfaces.',
   },
   'digital-marketing': {
+    mainTitle :'Essential Services for Modern digital dev',
+    sectionSubtitle: 'Essential digital  services include designing, developing, and maintaining websites for optimal performance and user experience.', // Added section subtitle
     title: 'Digital Marketing',
     description: [
-      "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
-      "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
+      "Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.",
+      "Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.",
+    ],
+    services: [
+      {
+        id: 1,
+        image: require("../assets/Services/digital/SEO.png"),
+        title: "Search Engine Optimization",
+        description: "SEO enhances the visibility of a website or a web page in a search engine's unpaid results.",
+      },
+      {
+        id: 2,
+        image: require("../assets/Services/digital/SEM.png"),
+        title: "Search Engine Marketing",
+        description: "SEM promotes websites by increasing visibility in search engine results pages through paid advertising.",
+      },
+      {
+        id: 3,
+        image: require("../assets/Services/digital/SMO.png"),
+        title: "Social Media Optimization",
+        description: "SMO increases website traffic, generates leads, and drives conversions through social media.",
+      },
+      {
+        id: 4,
+        image: require("../assets/Services/digital/FBads.png"),
+        title: "Facebook Ads",
+        description: "Facebook Ads helps businesses create targeted campaigns on Facebook and Instagram.",
+      },
+      {
+        id: 5,
+        image: require("../assets/Services/digital/CM.png"),
+        title: "Content Marketing",
+        description: "Content marketing focuses on creating and distributing valuable content to attract and retain a clearly defined audience.",
+      },
+      {
+        id: 6,
+        image: require("../assets/Services/digital/EM.png"),
+        title: "Email Marketing",
+        description: "Email marketing is a strategy focused on creating valuable content to attract and retain a defined audience.",
+      },
     ],
     faq: [
       {
         question: 'What is digital marketing?',
-        answer:
-          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
+        answer: 'Digital marketing refers to the promotion of products or services through digital channels.',
       },
       {
         question: 'Why is digital marketing important for my business?',
-        answer:
-          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
+        answer: 'It helps businesses reach a larger audience and drive engagement through online channels.',
       },
       {
         question: 'How much should I budget for digital marketing?',
-        answer:
-          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
+        answer: 'Typically, businesses allocate around 10-20% of their revenue for marketing.',
       },
     ],
     image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
-    altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
+    altText: 'Digital marketing strategies for brand promotion.',
   },
-  // Add more services dynamically here
 };
+
 
 export const roles = [
   { company: 'Mitsubishi Chemical Factory', role: 'Manager (Production & Maintenance)' },
@@ -3431,3 +3405,130 @@ export const featuresData = [
       description: "Centralized inventory management across multiple locations, ensuring accuracy and seamless transfers.",
   }
 ];
+// product comparison
+
+export const comparisonData = {
+  features: [
+      {
+          id: 1,
+          name: "Users",
+          techCloudERP: "Unlimited Users",
+          sapBusinessOne: "User-based license costing",
+      },
+      {
+          id: 2,
+          name: "Accessing the ERP",
+          techCloudERP: "Web based",
+          sapBusinessOne: "Web based",
+      },
+      {
+          id: 3,
+          name: "Dashboard",
+          techCloudERP: "Dynamic Dashboard with a Graphical User Interface",
+          sapBusinessOne: "No Dynamic Dashboards",
+      },
+
+      {
+        id: 4,
+        name: "Email & SMS",
+        techCloudERP: "Inbuilt SMS & Email Integration",
+        sapBusinessOne: "Not Available",
+    },
+    {
+      id: 5,
+      name: "Language",
+      techCloudERP: "Multi-language",
+      sapBusinessOne: "No Multi-language",
+  },
+  {
+    id: 6,
+    name: "Data Import/Export",
+    techCloudERP: "Available",
+    sapBusinessOne: "Available",
+},
+{
+  id: 7,
+  name: "Reports",
+  techCloudERP: "User defined & Inbuilt reports",
+  sapBusinessOne: "Inbuilt reports",
+},
+{
+  id: 8,
+  name: "Server",
+  techCloudERP: "Web Server",
+  sapBusinessOne: "Web Server",
+},
+{
+  id: 9,
+  name: "Server Maintenance",
+  techCloudERP: "Auto Backup & Restore Facility",
+  sapBusinessOne: "Manual Triggering",
+},
+{
+  id: 10,
+  name: "Software",
+  techCloudERP: "PHP",
+  sapBusinessOne: "ABAP",
+},
+{
+  id: 11,
+  name: "Database",
+  techCloudERP: "MySQL",
+  sapBusinessOne: "Oracle",
+},
+{
+  id: 12,
+  name: "Source Code",
+  techCloudERP: "Complete Source code will be given to the Client",
+  sapBusinessOne: "Source Code will be with the Development Company",
+},
+
+{
+  id: 13,
+  name: "Renewal/License Cost",
+  techCloudERP: "Lifetime Solution & No Renewal",
+  sapBusinessOne: "Renewal / License Cost is present",
+},
+
+{
+  id: 14,
+  name: "AMC",
+  techCloudERP: "15% or Not Mandate",
+  sapBusinessOne: "30% and Mandate",
+},
+{
+  id: 15,
+  name: "Implementation Period",
+  techCloudERP: "Plug & Play, If customisation - 1 month deployment period",
+  sapBusinessOne: "Product will not match exactly and needs 50 % customisation Heavy customisation charge and takes more time.",
+},
+{
+  id: 16,
+  name: "Implementation Cost",
+  techCloudERP: "Low",
+  sapBusinessOne: "High",
+},
+      // Add more features as needed
+  ],
+  salesAndCRMFeatures: [
+      {
+          id: 1,
+          name: "Delivery Against Sales Orders",
+          techCloudERP: "Yes",
+          sapBusinessOne: "No",
+      },
+      {
+          id: 2,
+          name: "Invoice Against Sales Orders",
+          techCloudERP: "Yes",
+          sapBusinessOne: "No",
+      },
+      {
+          id: 3,
+          name: "Opportunities & Pipeline Management",
+          techCloudERP: "Yes",
+          sapBusinessOne: "Yes",
+      },
+      // Add more features as needed
+  ],
+};

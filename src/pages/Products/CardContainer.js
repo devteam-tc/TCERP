@@ -5,19 +5,20 @@ import { BsCheckCircle } from 'react-icons/bs';
 const CardContainer = styled.div`
   padding: 30px;
   font-weight: 500;
-  background-color: white;
-  width: 25vw;
+  width: 100%;
   height: 100%; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  // transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: #FFF;
   color: #393939;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    // transform: translateY(-5px);
+    box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px, rgba(173, 216, 230, 0.7) 0px 6px 6px;
     background: #FFF;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.30), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px, rgba(173, 216, 230, 0.7) 0px 6px 6px;
+        cursor:pointer;
+
   }
 
   @media (max-width: 992px) {

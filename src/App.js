@@ -19,6 +19,7 @@ import NotFound from './pages/NotFound';
 import ServicesSection from './pages/Services/ServicesSection';
 import PricingPage from './pages/Pricing/PricingPage';
 import FeatureCard from './pages/FeatureCard';
+import ComparisonTable from './pages/product-comparison';
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           <Route path="/services/*" element={<NotFound />} />
           <Route path='/pricing' element={<PricingPage />} />
           <Route path='/features' element={<FeatureCard />} />
+          <Route path="/product-comparison" element={<ComparisonTable />} />
           {/* Other routes */}
 
           {/* Route for 404 Not Found */}

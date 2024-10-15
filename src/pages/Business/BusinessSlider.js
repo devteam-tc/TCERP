@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { Link } from 'react-router-dom';
 import { sliderData } from '../../utils/constants';
 import { FaArrowRight } from 'react-icons/fa'; // Import the FaArrowRight icon
-import { Title } from '../Home/CardSection';
+import { Title  as BaseTitle  } from '../Home/CardSection';
 // Styled Carousel Container
 const StyledCarousel = styled(Slider)`
   .slick-slide {
@@ -18,37 +18,53 @@ const StyledCarousel = styled(Slider)`
     color: #ff5733;
   }
 `;
+const Title = styled(BaseTitle)`
+  font-size: 2.5rem; // Default size for larger screens
+  text-align: center;
 
+  @media (max-width: 992px) {
+    font-size: 2rem; 
+    line-height: 35px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem; 
+  }
+
+  @media (max-width: 576px) {
+    font-size: 1.25rem; 
+  }
+`;
 // Adjusted Styled Card Component
 const StyledCard = styled(Card)`
   border: 1px solid #e0e0e0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-top: 4px solid #ff5733;
   text-align: center;
-  height: 300px;
+  height: 280px; // Set a fixed height for the card
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; // Ensure full height is used
+  }
 
   .card-title {
     font-weight: 500;
     margin-top: 20px;
     overflow: hidden; // Prevent overflow
-    text-overflow: ellipsis; // Trim long text
-    white-space: nowrap; // No text wrapping
     text-align: left; // Align title to the left
   }
 
   .card-text {
     color: #666;
     font-size: 1rem;
-    margin: 10px 20px;
-    height: 20vh; // Set height for description
-    overflow: hidden; // Prevent overflow
-    text-overflow: ellipsis;
-    display: -webkit-box; // For multiline ellipsis
-    -webkit-line-clamp: 3; // Limit to 3 lines
-    -webkit-box-orient: vertical;
+    margin: 10px 0px;
+    flex-grow: 1; // Allow text area to grow and take up space
     text-align: left; // Align text to the left
   }
 
@@ -78,7 +94,7 @@ const StyledCard = styled(Card)`
 
   // Media query for responsiveness
   @media (max-width: 992px) {
-    height: auto;
+    height: auto; // Allow for dynamic height for smaller screens
     padding: 10px;
 
     .card-title {
@@ -106,6 +122,7 @@ const StyledCard = styled(Card)`
     }
   }
 `;
+
 
 // Custom Dots Styling (optional)
 const DotsContainer = styled.div`
@@ -143,7 +160,7 @@ const BusinessSlider = () => {
     slidesToShow: 4, // Show 4 cards at once
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1500,
     appendDots: (dots) => (
       <DotsContainer>
         {dots.map((dot, index) => (
@@ -174,7 +191,7 @@ const BusinessSlider = () => {
   return (
     <SectionBackground>
       <div className="container mt-5">
-        <Title className="text-center pt-4" style={{ fontSize: '24px' }}>
+        <Title className="text-center pt-4">
           Complete your business intelligence solution with products from across the Customer 360°
         </Title>
         <StyledCarousel {...settings}>
