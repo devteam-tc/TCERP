@@ -1,13 +1,14 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { ContentColumn, Description, Divider, Heading, Section } from '../IndustryPage';
+import { ContentColumn, Description, Divider, Heading, Section } from '../../pages/IndustryPage';
 import { businessData , whyTechCloudERPContent } from '../../utils/constants'; 
-import WhyTechCloudERP from '../Aboutus/WhyTechCloudERP';
-import CTA from '../CTA'
+import WhyTechCloudERP from '../../pages/Aboutus/WhyTechCloudERP';
+import CTA from '../../pages/CTA'
 import TransformingIndustriesSection from '../../components/TransformingIndustriesSection';
 import ReportingSection from './ReportingSection';
 import OurPartnerSection from '../Home/OurPartnerSection';
-import BusinessSlider from './BusinessSlider';
+// import BusinessSlider from './pages/Business/BusinessSlider';
+import BusinessSlider from './BusinessSlider'
 const BusinessIntelligence = () => {
     const { heading, description } = businessData[0] || { heading: '', description: '' }; 
     const businessIntelligenceContent = whyTechCloudERPContent.BusinessIntelligenceContent; 
@@ -25,7 +26,6 @@ const BusinessIntelligence = () => {
                     </Row>
                 </Container>
             </Section>
-
             {/* Pass the businessIntelligenceContent to WhyTechCloudERP */}
             <WhyTechCloudERP 
                 content={businessIntelligenceContent}  title={whyTechCloudERPContent.BusinessIntelligenceContent.title}

@@ -9,9 +9,9 @@ import { Title } from '../Home/CardSection';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import OurPartnerSection from '../Home/OurPartnerSection';
 import CTA from '../CTA';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 import Typewriter from "typewriter-effect";
-
+import MetaDecorator from '../../utils/MetaDecorator';
 // Styled Components
 const CardContainer = styled.div`
   padding: 30px;
@@ -156,6 +156,11 @@ const TabContent = ({ content, image, alt }) => {
   const contentArray = Array.isArray(content) ? content : [];
 
   return (
+    <>
+     <MetaDecorator
+        description= {"comprehensive, cloud-based solutions designed to streamline business processes, enhance productivity, and optimize resource management. Empower your organization with scalable ERP software for finance, HR, inventory, and more."}
+        title={"Products Page | Tech Cloud ERP"}
+      />
     <StyledTabContent>
       <div className="row">
         <div className="col-12 col-lg-6 mb-4">
@@ -177,7 +182,7 @@ const TabContent = ({ content, image, alt }) => {
           />
         </div>
       </div>
-    </StyledTabContent>
+    </StyledTabContent></>
   );
 };
 

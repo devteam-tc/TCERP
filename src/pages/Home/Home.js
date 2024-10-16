@@ -14,6 +14,7 @@ import { testimonialsData, releavant } from '../../utils/constants';
 const Home = () => {
   return (
     <>
+      
       <HomeVideoLanding />
       <OurMissionSection data={releavant.ourMission} /> 
       <CardSection />

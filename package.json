@@ -12,14 +12,15 @@
     "lg-zoom": "^1.3.0",
     "lightgallery": "^2.7.2",
     "owl.carousel": "^2.3.4",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-bootstrap-submenu": "^3.0.3",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "react-helmet-async": "^2.0.5",
     "react-icons": "^5.3.0",
     "react-image-lightbox": "^5.1.4",
+    "react-no-ssr": "^1.1.0",
     "react-owl-carousel": "^2.3.3",
     "react-router-dom": "^6.26.1",
     "react-scripts": "^5.0.1",
@@ -32,33 +33,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && react-snap",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
   },
-  "reactSnap": {
-  "include": [
-    "/",
-    "/about-us",
-    "/ContactUs",
-    "/business-intelligence-analytics-software",
-    "/products/tech-cloud-erp",
-    "/products/customer-relationship-management",
-    "/products/point-of-sale",
-    "/products/trading-software",
-    "/products/Ecommerce-software",
-    "/products/hr-managament-software",
-    "/products/financial-management-systems",
-    "/products/integrated-erp-software",
-    "/products/erp-for-restaraunt",
-    "/products/erp-for-accounting-software",
-    "/agriculture-industry",
-    "/apparel-industry", 
-    "/automative-industry",
-    "/beverage-industry"
-  ]
-},
   "eslintConfig": {
     "extends": [
       "react-app",
