@@ -8,7 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import IndustryPage from './pages/IndustryPage'; // Component to handle all industry pages
 import { sectionsData } from './utils/constants'; // Import industry data
 import ExpoDetail from './pages/Gallery/ExpoDetail';
-import MainNavbar from './components/Navbar/Navbar';
 import ProductPage from './pages/Products/ProductsPage';
 import BusinessIntelligence from './pages/Business/business-intelligence-analytics-software';
 import ContactUs from './pages/Contact/ContactUs';
@@ -17,12 +16,17 @@ import PrivacyPolicy from './pages/privacy-policy';
 import MdsProfile from './pages/profile/mds-profile';
 import NotFound from './pages/NotFound';
 import ServicesSection from './pages/Services/ServicesSection';
+import PricingPage from './pages/Pricing/PricingPage';
+import FeatureCard from './pages/FeatureCard';
+import ComparisonTable from './pages/product-comparison';
+import './routes/index.css'
+import Navigation from './components/Navbar/Navigation';
 
 function App() {
   return (
-    <Router>
-      <div className="App font-[Poppins] md:bg-top bg-center">
-        <MainNavbar/>
+    <Router basename="/">
+      <div className="App  md:bg-top bg-center">
+        <Navigation/>
         {/* Define your Routes here */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -39,8 +43,8 @@ function App() {
           {/* Define routes for festivals and others similarly */}
           <Route path="/gallery/:id" element={<ExpoDetail/>} />
           {/* Dynamic product pages */}
-          <Route path="/:productId" element={<ProductPage />} />
-          <Route path="/business-intelligence-analytics-software" element ={<BusinessIntelligence />} />
+          <Route path="/products/:productId" element={<ProductPage />} />
+          <Route path="/business-intelligence" element ={<BusinessIntelligence />} />
           <Route path='/ContactUs' element={<ContactUs />} />
           <Route path='/terms-and-conditions' element ={<TermsAndConditions />} />
           <Route path='/privacypolicy' element ={<PrivacyPolicy />} />
@@ -49,11 +53,16 @@ function App() {
           <Route path="/gallery/404" element={<NotFound />} />
           {/* Other routes */}
           <Route path="/services/:serviceId" element={<ServicesSection />} />
-          <Route path="/services/404" element={<NotFound />} />
+          <Route path="/services/*" element={<NotFound />} />
+          <Route path='/pricing' element={<PricingPage />} />
+          <Route path='/features' element={<FeatureCard />} />
+          <Route path="/product-comparison" element={<ComparisonTable />} />
           {/* Other routes */}
 
           {/* Route for 404 Not Found */}
-          <Route path="/404" element={<NotFound />} />
+          <Route path="/industries/*" element={<NotFound />} />
+          <Route path="/products/*" element={<NotFound />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Footer should be displayed across all pages */}
         <Footer />
@@ -63,3 +72,61 @@ function App() {
 }
 
 export default App;
+
+// import React from 'react';
+// import ReactDOM from 'react-dom/client';
+
+
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+// } from 'react-router-dom';
+
+// import Layout from './routes/layout';
+// import NotMatch from './routes/not-match';
+// import RentPage from './routes/rent';
+// import BuyPage from './routes/buy';
+// import SellPage from './routes/sell';
+// import HomePage from './routes/home';
+// import NewsPage from './routes/news';
+// import Mortgage from './routes/mortgage';
+
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <Layout />,
+//     errorElement: <NotMatch />,
+//     children: [
+//       {
+//         index: true,
+//         element: <HomePage />,
+//       },
+//       {
+//         path: 'rent',
+//         element: <RentPage />,
+//       },
+//       {
+//         path: 'buy',
+//         element: <BuyPage />,
+//       },
+//       {
+//         path: 'sell',
+//         element: <SellPage />,
+//       },
+//       {
+//         path: 'news',
+//         element: <NewsPage />,
+//       },
+//       {
+//         path: 'mortgage',
+//         element: <Mortgage />,
+//       },
+//     ],
+//   },
+// ]);
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <React.StrictMode>
+//     <RouterProvider router={router} />
+//   </React.StrictMode>
+// );

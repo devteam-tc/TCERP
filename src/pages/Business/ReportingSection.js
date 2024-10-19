@@ -1,14 +1,9 @@
 // ReportingSection.js
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import styled from 'styled-components';
-import { ReportingSectionContent } from '../../utils/constants';  // Importing content
-
-const Heading = styled.h1`
-  color: #FF4500;
-  font-size: 2.5rem;
-  font-weight: bold;
-`;
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import styled from "styled-components";
+import { ReportingSectionContent } from "../../utils/constants"; // Importing content
+import { Title } from "../Home/CardSection";
 
 const SubText = styled.p`
   color: #555555;
@@ -17,10 +12,9 @@ const SubText = styled.p`
 `;
 
 const HighlightText = styled.p`
-  color: #FF4500;
-//   font-weight: bold;
+  color: #ff4500;
+  font-weight: 500;
   font-size: 1.2rem;
-//   margin-top: 1.5rem;
 `;
 
 const StyledCol = styled(Col)`
@@ -31,20 +25,31 @@ const StyledCol = styled(Col)`
 
 const ImageCol = styled(Col)`
   img {
-    width: 100%;
+      width: 472.19px;
+    height: 344px;
+
     border-radius: 8px;
+  }
+
+  @media (max-width: 992px) {
+    display: flex;
+    justify-content: center; // Center image on smaller screens
+    img {
+      width: 100%; // Adjust image width for smaller screens
+    }
   }
 `;
 
+
 const ReportingSection = () => {
-  const { heading, subText, items, imageSrc, imageAlt } = ReportingSectionContent;
+  const { subText, items, imageSrc, imageAlt } = ReportingSectionContent;
 
   return (
-    <Container >
-      <Row className='mt-3 mb-3'>
+    <Container>
+      <Row className="mt-3 mb-3">
         {/* Left side: Text */}
         <StyledCol md={6}>
-          <Heading>{heading}</Heading>
+          <Title className="text-left">Upgrade your Reporting</Title>
           <SubText>{subText}</SubText>
 
           {items.map((item, index) => (

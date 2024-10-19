@@ -86,7 +86,7 @@ const Testimonials = ({ testimonialsData}) => {
 
 
   return (
-    <Container fluid className="text-center w-100 w-md-50 p-md-5">
+    <Container  className="text-center w-100 w-md-50 p-md-5">
       {/* <h1 className="fw-bold mb-3 mt-3">Testimonials</h1> */}
       <Title className='text-center pt-4 pt-md-0'>Testimonials</Title>
       <GradientContainer>

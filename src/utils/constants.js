@@ -6,10 +6,15 @@ import { FaGroupArrowsRotate } from "react-icons/fa6";
 import { HiBarsArrowDown } from "react-icons/hi2";
 import { TbTruckDelivery } from "react-icons/tb";
 import { MdOutlineSpeed } from "react-icons/md";
-import { FaLeaf, FaBeer, FaIndustry, FaGraduationCap, FaBolt, FaPizzaSlice, FaCouch, FaTshirt ,  FaGem, FaTruck, FaTree, FaBook} from 'react-icons/fa';
+import { FaLeaf, FaBeer, FaIndustry, FaGraduationCap, FaBolt, FaPizzaSlice, FaCouch, FaTshirt ,  FaGem, FaTruck, FaTree, FaBook , FaRandom ,
+   FaShieldAlt , FaUserTie , FaThumbsUp , FaUsers, FaBriefcase  } from 'react-icons/fa';
+import { GoShieldLock } from "react-icons/go";
+import { HiOutlineLightBulb } from "react-icons/hi";
+import { IoSpeedometerOutline } from "react-icons/io5";
+import { TbLayoutGridAdd } from 'react-icons/tb';
 
 export const releavant = {
-  logo: require("../assets/logo.png"),
+  logo: require("../assets/tcerplogo.png"),
   bgvideo:require("../assets/Home/videobanner.mp4"),
   us_flag_img:require("../assets/us-flag.jpg"),
   indian_flag_img:require("../assets/indian-flag.png"),
@@ -53,49 +58,29 @@ export const releavant = {
     }
     
   },
-  about_content_text: {
-    companyName: 'Our Vision',
-    description: `To obtain a better understanding of ERP software
-     solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning,
-      combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. 
-      Cloud-based ERP software, such as ours in Hyderabad, 
-    India, improves efficiency by centralising and streamlining operations throughout the organisation.`,
-    missionTitle: 'Our Mission',
-    missionText: `Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business 
-    Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning,
-     ensuring a superior user experience through advanced technology and user-friendly design.`,
-     images: {
-      mainImage: require("../assets/About_us/our_miss_viss_img.png"),  // Replace with the actual path or import
-    },
+}
+
+// about us ourmissionvision
+
+export const visionMissionData = {
+  vision: {
+    title: "Our Vision",
+    text: "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
   },
-}
-
-//Card Section
-export const CardContent = [
-{
-  title: 'Solutions For All',
-  description: 'Whether you have 2 or 2000 employees, Tech Cloud ERP has a comprehensive portfolio leading cloud based ERP software solutions and tools to fit your needs. We also provide dedicated support teams that are at your disposal 24/7.',
-  features: ['Integrated CRM and ERP System', 'E-Commerce Platform', 'Workflow Automation']
-},
-{
-  title: 'Flexibility',
-  description: 'Tech Cloud ERP is dedicated in creating easy to use, adaptable cloud ERP software applications. Whether you want customized ERP software processes, use the public or private cloud or pay only for what you need.',
-  features: ['Modular Architecture', 'API-Based Integration', 'Continuous Improvement']
-},
-{
-  title: 'Security',
-  description: 'Tech Cloud ERP platform is built on the most advanced infrastructures in the world. We have teams of experts dedicated to protecting your data, warding off hackers and staying ahead of threats to keep your business and its data safe.',
-  features: ['Risk Assessment', 'Data breach', 'Encryption']
-}
-];
-
+  mission: {
+    title: "Our Mission",
+    text: "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design."
+  },
+  image: require("../assets/About_us/our_miss_viss_img.png"), 
+};
 //record section
 export const recordcount = [
-  { number: '25+', text: 'Experience' },
-  { number: '2K+', text: 'Happy Clients' },
-  { number: '10K+', text: 'Users' },
-  { number: '38K+', text: 'Professionals' },
+  { number: '25+', text: 'Experience', icon: <FaBriefcase /> },
+  { number: '2K+', text: 'Happy Clients', icon: <FaThumbsUp  /> },
+  { number: '10K+', text: 'Users', icon: <FaUsers /> },
+  { number: '38K+', text: 'Professionals', icon: <FaUserTie  /> },
 ];
+//pricing plans
 export const pricingPlans = [
   {
     price: "2000*",
@@ -112,7 +97,7 @@ export const pricingPlans = [
   },
   {
     price: "1500*",
-    title: "Popular",
+    title: "",
     description: "Per member, per Month.",
     coverages: [
       "1-15 Modules",
@@ -137,7 +122,7 @@ export const pricingPlans = [
     color: '#000',
   }
 ];
-// constants.js
+// cta 
 
 export const ctaData = {
 heading: "Call To Action",
@@ -149,12 +134,12 @@ calltoaction_bg_img:require("../assets/Home/cta-bg-image-one.png"),
 };
 
 export const partnerData = [
-{ link: '/financial-management-systems', imgSrc: require("../assets/partner/finance.png"), alt: 'Finance' },
-{ link: '/hr-management-software', imgSrc: require("../assets/partner/HRM.png"), alt: 'HRM' },
-{ link: '/ecommerce-software', imgSrc: require("../assets/partner/ecomm.png"), alt: 'Ecommerce' },
-{ link: '/trading-software', imgSrc: require("../assets/partner/trading.png"), alt: 'Trading' },
-{ link: '/point-of-sale', imgSrc: require("../assets/partner/POS.png"), alt: 'POS' },
-{ link: '/customer-relationship-management', imgSrc: require("../assets/partner/CRMD.png"), alt: 'CRM' },
+{ link: '/products/financial-management-systems', imgSrc: require("../assets/partner/finance.png"), alt: 'Finance' },
+{ link: '/products/hr-managament-software', imgSrc: require("../assets/partner/HRM.png"), alt: 'HRM' },
+{ link: '/products/Ecommerce-software', imgSrc: require("../assets/partner/ecomm.png"), alt: 'Ecommerce' },
+{ link: '/products/trading-software', imgSrc: require("../assets/partner/trading.png"), alt: 'Trading' },
+{ link: '/products/point-of-sale', imgSrc: require("../assets/partner/POS.png"), alt: 'POS' },
+{ link: '/products/customer-relationship-management', imgSrc: require("../assets/partner/CRMD.png"), alt: 'CRM' },
 ];
 export const ModulecardsData = [
 {
@@ -206,91 +191,96 @@ export const ModulecardsData = [
   id: 8,
   image: require('../assets/Home/asset.png'),
   title: 'Asset Managment',
-  description: 'Empower oversight of asset lifecycles from procurement to disposal. With centralized views and seamless integration.',
+  description: 'Streamline asset management from procurement to disposal with centralized views and seamless integration.',
 },
 ];
 export const testimonialsData = [
   {
-    name: "Anusha",
-    testimonial: "A software designed to help small and mid-sized businesses manage their resources with a very effective enterprise resource planning platform.",
-    image: "anusha testimonials.jpg",
-    altText: "chandana_rathod_img"
+    name: "Nagender Sadanala",
+    testimonial: " Tech Cloud Solutions provide us a great ERP software. They have a fantastic ERP product which covers all the modules for manufacturers and trading companies and they provided 24*7 support.Thanks to team.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    altText: "nagender_rathod_img"
+},
+{
+    name: "Sunilkumar Padavala",
+    testimonial: "Tech Cloud ERP offers a wide range of out-of-the-box features with  customization functions to fit various needs. We can create unlimited it's a lifetime ERP with no renewals. Very good software at a lesser cost.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    altText: "sunil_img"
+},
+{
+    name: "Ferrero Rocher",
+    testimonial: " The Best Cloud ERP Software in India. Tech Cloud ERP has all moduleswith unlimited users, dynamic dashboards, GST integration, mobile andtab compatibility and many more unique features.A fantastic product at a very low cost.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    altText: "ferrero_img"
+},
+{
+    name: "Anusha O",
+    testimonial: " I am using Tech Cloud ERP software for my Medical Services business. I’m very happy with the software. I’m using seamlessly the last 3 years and their support is really good.A big thanks for the Tech Cloud ERP team.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    altText: "anusha_img"
 },
 {
     name: "Prerna Prasad",
+    testimonial: "Tech Cloud ERP, has provided me the best ERP software which i have beenusing past 4 years, quite reasonable showing really good results. It has simplified my work and made it pretty efficient.",
+    image: "https://randomuser.me/api/portraits/men/75.jpg",
+    altText: "prerna_img"
+},
+{
+    name: "Alekhya Poloju",
     testimonial: "This software exactly suits for any kind of manufacturing/trading businesses. The price of the software is very less compared to other softwares in the market. The best cloud based software with GST incorporated.",
     image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "anand_tiwari_img"
+    altText: "alekhya_img"
 },
 {
-    name: "Durga Prasad",
-    testimonial: "Tech Cloud ERP offers a wide range of out-of-the-box features with customization functions to fit various needs. We can create unlimited users with user defines access rights. Moreover,it's a lifetime ERP with no renewals. Very good software at a lesser cost.",
+    name: "Manikanta Varma",
+    testimonial: " I enthusiastically recommended Tech Cloud ERP to several other businesses. It's great to work with Tech Cloud ERP team. Even, at the highest level (owners and executives) they take a personal interest in their clients and have a deep understanding of their product.",
     image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "durgaprasad_img"
-},
-{
-    name: "Indraja",
-    testimonial: "The Best Cloud ERP Software in India. Tech Cloud ERP has all modules with unlimited users, dynamic dashboards, GST integration, mobile and tab compatibility and many more unique features. A fantastic product at a very low cost.",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "indraja_img"
-},
-{
-    name: "Santosh",
-    testimonial: "Tech Cloud ERP, has provided me the best ERP software which i have been using past 4 years, quite reasonable showing really good results. It has simplified my work and made it pretty efficient.",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "jhondoe_img"
-},
-{
-    name: "Chandana",
-    testimonial: "I enthusiastically recommended Tech Cloud ERP to several other businesses. It's great to work with Tech Cloud ERP team. Even, at the highest level (owners and executives) they take a personal interest in their clients and have a deep understanding of their product.",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "michel_davis_img"
-},
-{
-    name: "Prasanna kumar",
-    testimonial: "The ease of communication and quick response times have made my experience with Legacy Insurance Brokers exceptional.",
-    image: "https://randomuser.me/api/portraits/men/75.jpg",
-    altText: "prasanna_kumari_img"
+    altText: "manikanta_img"
 },
 ];
 export const cardData = {
-"normal":[
+  normal: [
     {
+      icon: TbLayoutGridAdd , 
       title: 'Solutions For All',
       text: 'Whether you have 2 or 2000 employees, Tech Cloud ERP has a comprehensive portfolio leading cloud-based ERP software solutions and tools to fit your needs. We also provide dedicated support teams that are at your disposal 24/7.',
       highlights: ['Integrated CRM and ERP System', 'E-Commerce Platform', 'Workflow Automation'],
     },
-  {
-    title: 'Flexibility',
-    text: 'Tech Cloud ERP is dedicated to creating easy-to-use, adaptable cloud ERP software applications. Whether you want customized ERP software processes, use the public or private cloud or pay only for what you need.',
-    highlights: ['Modular Architecture', 'API-Based Integration', 'Continuous Improvement'],
-  },
-  {
-    title: 'Security',
-    text: 'Tech Cloud ERP platform is built on the most advanced infrastructures in the world. We have teams of experts dedicated to protecting your data, warding off hackers and staying ahead of threats to keep your business and its data safe.',
-    highlights: ['Risk Assessment', 'Data Breach', 'Encryption'],
-  }
-],
-"Show More":[
-  {
-    title: 'Solutions For All',
-    text: 'Whether you have 2 or 2000 employees, Tech Cloud ERP has a comprehensive portfolio leading cloud-based ERP software solutions and tools to fit your needs. We also provide dedicated support teams that are at your disposal 24/7.',
-    highlights: ['Integrated CRM and ERP System', 'E-Commerce Platform', 'Workflow Automation'],
-  },
-{
-  title: 'Flexibility',
-  text: 'Tech Cloud ERP is dedicated to creating easy-to-use, adaptable cloud ERP software applications. Whether you want customized ERP software processes, use the public or private cloud or pay only for what you need.',
-  highlights: ['Modular Architecture', 'API-Based Integration', 'Continuous Improvement'],
-},
-{
-  title: 'Security',
-  text: 'Tech Cloud ERP platform is built on the most advanced infrastructures in the world. We have teams of experts dedicated to protecting your data, warding off hackers and staying ahead of threats to keep your business and its data safe.',
-  highlights: ['Risk Assessment', 'Data Breach', 'Encryption'],
-}
+    {
+      icon: FaRandom  ,
+      title: 'Flexibility',
+      text: 'Tech Cloud ERP is dedicated to creating easy-to-use, adaptable cloud ERP software applications. Whether you want customized ERP software processes, use the public or private cloud or pay only for what you need.',
+      highlights: ['Modular Architecture', 'API-Based Integration', 'Continuous Improvement'],
+    },
+    {
+      icon: GoShieldLock  ,
+      title: 'Security',
+      text: 'Tech Cloud ERP platform is built on the most advanced infrastructures in the world. We have teams of experts dedicated to protecting your data, warding off hackers and staying ahead of threats to keep your business and its data safe.',
+      highlights: ['Risk Assessment', 'Data Breach', 'Encryption'],
+    },
+  ],
+  "Show More": [
+    {
+      icon: HiOutlineLightBulb  ,
+      title: 'Smart And Adaptable',
+      text: 'Leverage intelligent ERP software system with built-in machine learning, predictive analytics and optimized processes. Keep the latest innovations at your fingertips with automatic updates.',
+      highlights: ['AI-Powered Analytics', 'Predictive Analytics', 'Dynamic Pricing Engines'],
+    },
+    {
+      icon: IoSpeedometerOutline  ,
+      title: 'Fast And Affordable',
+      text: 'Tap into Tech Cloud ERP world class cloud infrastructure to run lean and flexible business processes. Get up and run quickly anywhere in this world at any time for a low monthly & yearly cost.',
+      highlights: ['Efficient Resource Utilization', 'Optimized Workflows', 'Containerization and Microservices'],
+    },
+    {
+      icon: FaShieldAlt ,
+      title: 'Secure And Reliable',
+      text: 'Our best cloud ERP software have covered from system security to compliance. Your data is hosted on world-class servers with global teams dedicated to its safety robust backup protocols to safeguard your information at every step.',
+      highlights: ['Data Encryption', 'Monitoring and Logging', 'Access Controls and Authentication'],
+    }
+  ]
+};
 
-
-]
-}
 //Navbar Section
 export const NAV_ITEMS = [
 {
@@ -304,8 +294,6 @@ export const NAV_ITEMS = [
   id: 'aboutDropdown',
   items: [
     { title: 'What & Why?', link: '/about-us' },
-    { title: 'What sets us Different?', link: 'what-sets-us-different.html' },
-    { title: 'Unique Tech Cloud ERP', link: 'unique-tech-cloud-erp.html' },
     { title: "MD's Profile & Message", link: '/mds-profile' },
   ],
 },
@@ -392,7 +380,7 @@ export const NAV_ITEMS = [
 },
 {
     title: 'BI',
-    link: '/business-intelligence-analytics-software',
+    link: '/business-intelligence',
     type: 'link',
 },
 {
@@ -400,9 +388,9 @@ export const NAV_ITEMS = [
   type: 'dropdown',
   id: 'servicesDropdown',
   items: [
+    { title: 'Digital Marketing', link: 'services/digital-marketing' },
     { title: 'Web Development', link: 'services/web-development' },
     { title: 'Mobile Application Development', link: 'services/mobile-application-development' },
-    { title: 'Digital Marketing', link: 'services/digital-marketing' },
     // Add more services here...
   ],
 },
@@ -426,8 +414,9 @@ export const NAV_ITEMS = [
 // industries data 
 export const sectionsData = {
 agricultureIndustry: {
-  link: '/agriculture-industry',
+  link: '/industries/agriculture-industry',
   heading: 'Agriculture Industry',
+  subheading:'The Best ERP For Agriculture Industry',
   description: 'ERP software can help you build transparent, resilient, and sustainable supply chains across the agriculture sector.',
   top_img: require('../assets/Industries/agriculture_top_img.png'),
   bottom_img: require('../assets/Industries/agriculture_bottom_img.png'),
@@ -438,24 +427,25 @@ agricultureIndustry: {
   similar_industries: [
     {
     title: 'Chemical Industry',
-    link: '/chemical-industry',
+    link: '/industries/chemical-industry',
     },
 
     {
     title: 'Food Industry',
-    link: '/food-industry',
+    link: '/industries/food-industry',
     },
 
     {
     title: 'Textile Industry',
-    link: '/textiles-industry',
+    link: '/industries/textiles-industry',
     },
 
 ]
 },
 apparelIndustry: {
-  link: '/apparel-industry',
+  link: '/industries/apparel-industry',
   heading: 'Apparel Industry',
+  subheading:'The Best ERP For Apparel Industry',
   description: 'Elevate your apparel business with our ERP for growth.',
   top_img: require('../assets/Industries/apparel_top_img.png'),
   bottom_img: require('../assets/Industries/apparel_Bottom_img.png'),
@@ -466,24 +456,25 @@ apparelIndustry: {
   similar_industries: [
     {
     title: 'Food Industry',
-    link: '/food-industry',
+    link: '/industries/food-industry',
     },
 
     {
     title: 'Bevarages Industry',
-    link: '/bevarage-industry',
+    link: '/industries/beverage-industry',
     },
 
     {
     title: 'Automative Industry',
-    link: '/automative-industry',
+    link: '/industries/automative-industry',
     },
 
 ]
 },
 automativeIndustry: {
-  link: '/automative-industry',
+  link: '/industries/automative-industry',
   heading: 'Automative Industry',
+  subheading:'The Best ERP For Automative Industry',
   description: 'Drive your automotive business forward with our ERP solution tailored for growth.',
   top_img: require('../assets/Industries/automotive_top_img.png'),
   bottom_img: require('../assets/Industries/automotive_Bottom_img.png'),
@@ -494,24 +485,25 @@ automativeIndustry: {
   similar_industries: [
     {
     title: 'Electronic Industry',
-    link: '/electronics-industry',
+    link: '/industries/electronics-industry',
     },
 
     {
     title: 'Bevarages Industry',
-    link: '/bevarage-industry',
+    link: '/industries/beverage-industry',
     },
 
     {
     title: 'Educational Industry',
-    link: '/educational-institutes',
+    link: '/industries/educational-institutes',
     },
 
 ]
 },
 beverageIndustry: {
-  link: '/beverage-industry',
+  link: '/industries/beverage-industry',
   heading: 'Beverage Industry',
+  subheading:'The Best ERP For Beverage Industry',
   description: 'Pour growth into your beverage business with our ERP solution.',
   top_img: require('../assets/Industries/beverage_top_img.png'),
   bottom_img: require('../assets/Industries/beverage_bottom_img.png'),
@@ -522,24 +514,25 @@ beverageIndustry: {
   similar_industries: [
     {
     title: 'Electronic Industry',
-    link: '/electronics-industry',
+    link: '/industries/electronics-industry',
     },
 
     {
     title: 'Chemical Industry',
-    link: '/chemical-industry',
+    link: '/industries/chemical-industry',
     },
 
     {
     title: 'Educational Industry',
-    link: '/educational-institutes',
+    link: '/industries/educational-institutes',
     },
 
 ]
 },
 chemicalIndustry: {
-  link: '/chemical-industry',
+  link: '/industries/chemical-industry',
   heading: 'Chemical Industry',
+  subheading:'The Best ERP For Chemical Industry',
   description: 'Our ERP boosts efficiency, compliance, and growth for the chemical industry.',
   top_img: require('../assets/Industries/chemical_top_img.png'),
   bottom_img: require('../assets/Industries/chemical_bottom_img.png'),
@@ -550,25 +543,26 @@ chemicalIndustry: {
   similar_industries: [
     {
     title: 'Electronic Industry',
-    link: '/electronics-industry',
+    link: '/industries/electronics-industry',
     },
 
     {
-    title: 'Chemical Industry',
-    link: '/chemical-industry',
+    title: 'Agriculture Industry',
+    link: '/industries/agriculture-industry',
     },
 
     {
     title: 'Educational Industry',
-    link: '/educational-institutes',
+    link: '/industries/educational-institutes',
     },
 
 ]
 },
 
 educationalInstitutes: {
-  link: '/educational-institutes',
+  link: '/industries/educational-institutes',
   heading: 'Educational Institutes',
+  subheading:'The Best ERP For Educational Institutes',
   description: 'Unlock growth potential with our custom ERP for education.',
   top_img: require('../assets/Industries/educational_top_img.png'),
   bottom_img: require('../assets/Industries/eductional_bottom_img.png'),
@@ -579,24 +573,25 @@ educationalInstitutes: {
   similar_industries: [
     {
     title: 'Bevarage Industry',
-    link: '/beverage-industry',
+    link: '/industries/beverage-industry',
     },
 
     {
     title: 'Chemical Industry',
-    link: '/chemical-industry',
+    link: '/industries/chemical-industry',
     },
 
     {
     title: 'Apparel Industry',
-    link: '/apparel-industry',
+    link: '/industries/apparel-industry',
     },
 ]
 },
 
 electricalSolarIndustry: {
-  link: '/electrical-solar-industry',
+  link: '/industries/electrical-solar-industry',
   heading: 'Electrical Solar Industry',
+  subheading:'The Best ERP For Electrical Solar Industry',
   description: 'Power up your business growth with our specialized ERP for the electric solar industry.',
   top_img: require('../assets/Industries/eletrical_top_img.png'),
   bottom_img: require('../assets/Industries/eletrical_Bottom_img.png'),
@@ -607,23 +602,24 @@ electricalSolarIndustry: {
   similar_industries: [
     {
     title: 'Bevarage Industry',
-    link: '/beverage-industry',
+    link: '/industries/beverage-industry',
     },
 
     {
     title: 'Chemical Industry',
-    link: '/chemical-industry',
+    link: '/industries/chemical-industry',
     },
 
     {
     title: 'Apparel Industry',
-    link: '/apparel-industry',
+    link: '/industries/apparel-industry',
     },
 ]
 },
 electronicsIndustry: {
-  link: '/electronics-industry',
+  link: '/industries/electronics-industry',
   heading: 'Electronics Industry',
+  subheading:'The Best ERP For Electronics Industry',
   description: 'Power up your business growth with our specialized ERP for the electric industry.',
   top_img: require('../assets/Industries/eletronic_top_image.png'),
   bottom_img: require('../assets/Industries/eletronic_bottom_image.png'),
@@ -634,21 +630,22 @@ electronicsIndustry: {
   similar_industries: [
     {
     title: 'Bevarage Industry',
-    link: '/beverage-industry',
+    link: '/industries/beverage-industry',
     },
     {
     title: 'Chemical Industry',
-    link: '/chemical-industry',
+    link: '/industries/chemical-industry',
     },
     {
     title: 'Apparel Industry',
-    link: '/apparel-industry',
+    link: '/industries/apparel-industry',
     },
 ]
 },
 FMCGIndustry: {
-  link: '/FMCG-industry',
+  link: '/industries/FMCG-industry',
   heading: 'FMCG Industry',
+  subheading:'The Best ERP For FMCG Industry',
   description: 'Fueling FMCG growth with our specialized ERP solution.',
   top_img: require('../assets/Industries/Fmcg_top_img.png'),
   bottom_img: require('../assets/Industries/Fmcg_Bottom_img.png'),
@@ -659,22 +656,23 @@ FMCGIndustry: {
   similar_industries: [
     {
     title: 'Furniture Industry',
-    link: '/furniture-industry',
+    link: '/industries/furniture-industry',
     },
     {
     title: 'Jewellery Industry',
-    link: '/jewellery-industry',
+    link: '/industries/jewellery-industry',
     },
     {
     title: 'Wood Industry',
-    link: '/wood-industry',
+    link: '/industries/wood-industry',
     },
 ]
 },
 
 foodIndustry: {
-  link: '/food-industry',
+  link: '/industries/food-industry',
   heading: 'Food Industry',
+  subheading:'The Best ERP For Food Industry',
   description: 'Empowering food businesses to flourish with our customized ERP solutions.',
   top_img: require('../assets/Industries/Food_top_img.png'),
   bottom_img: require('../assets/Industries/food_bottom_img.png'),
@@ -685,22 +683,23 @@ foodIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 furnitureIndustry: {
-  link: '/furniture-industry',
+  link: '/industries/furniture-industry',
   heading: 'Furniture Industry',
+  subheading:'The Best ERP For Furniture Industry',
   description: 'Transforming furniture businesses with our bespoke ERP solutions for accelerated growth.',
   top_img: require('../assets/Industries/Furniture_top_img.png'),
   bottom_img: require('../assets/Industries/Furniture_bottom_img.png'),
@@ -711,22 +710,23 @@ furnitureIndustry: {
   similar_industries: [
     {
     title: 'Wood Industry',
-    link: '/wood-industry',
+    link: '/industries/wood-industry',
     },
     {
     title: 'Jewellery Industry',
-    link: '/jewellery-industry',
+    link: '/industries/jewellery-industry',
     },
     {
     title: 'Metal Fabrication Industry',
-    link: '/metal-fabrication-industry',
+    link: '/industries/metal-fabrication-industry',
     },
 ]
 },
 
 garmentIndustry: {
-  link: '/garment-industry',
+  link: '/industries/garment-industry',
   heading: 'Garment Industry',
+  subheading:'The Best ERP For Garment Industry',
   description: 'Elevating garment businesses with our tailored ERP solutions for accelerated growth.',
   top_img: require('../assets/Industries/Garment_top_img.png'),
   bottom_img: require('../assets/Industries/Garment_Bottom_img.png'),
@@ -737,23 +737,24 @@ garmentIndustry: {
   similar_industries: [
     {
       title: 'Jewellery Industry',
-      link: '/jewellery-industry',
+      link: '/industries/jewellery-industry',
     
     },
     {
       title: 'Wood Industry',
-      link: '/wood-industry',
+      link: '/industries/wood-industry',
     },
     {
       title: 'Metal Fabrication Industry',
-      link: '/metal-fabrication-industry',
+      link: '/industries/metal-fabrication-industry',
     },
 ]
 },
 
 hydraulicIndustry: {
-  link: '/hydraulic-industry',
+  link: '/industries/hydraulic-industry',
   heading: 'Hydraulic Industry',
+  subheading:'The Best ERP For Hydraulic Industry',
   description: 'Boosting hydraulic cylinder businesses with our ERP for rapid growth.',
   top_img: require('../assets/Industries/Hydralic_top_img.png'),
   bottom_img: require('../assets/Industries/Hydralic_bottom_img.png'),
@@ -764,23 +765,24 @@ hydraulicIndustry: {
   similar_industries: [
     {
       title: 'Jewellery Industry',
-      link: '/jewellery-industry',
+      link: '/industries/jewellery-industry',
     
     },
     {
       title: 'Wood Industry',
-      link: '/wood-industry',
+      link: '/industries/wood-industry',
     },
     {
       title: 'Metal Fabrication Industry',
-      link: '/metal-fabrication-industry',
+      link: '/industries/metal-fabrication-industry',
     },
 ]
 },
 
 jewelleryIndustry: {
-  link: '/jewellery-industry',
+  link: '/industries/jewellery-industry',
   heading: 'Jewellery Industry',
+  subheading:'The Best ERP For Jewellery Industry',
   description: 'Revolutionizing Jewellery businesses with our ERP solutions for exponential growth.',
   top_img: require('../assets/Industries/jewellery_top_img.png'),
   bottom_img: require('../assets/Industries/jewellery_Bottom_img.png'),
@@ -791,23 +793,24 @@ jewelleryIndustry: {
   similar_industries: [
     {
       title: 'FMCG Industry',
-      link: '/fmcg-industry',
+      link: '/industries/fmcg-industry',
     
     },
     {
       title: 'Wood Industry',
-      link: '/wood-industry',
+      link: '/industries/wood-industry',
     },
     {
       title: 'Metal Fabrication Industry',
-      link: '/metal-fabrication-industry',
+      link: '/industries/metal-fabrication-industry',
     },
 ]
 },
 
 leatherIndustry: {
-  link: '/leather-industry',
+  link: '/industries/leather-industry',
   heading: 'Leather Industry',
+  subheading:'The Best ERP For Leather Industry',
   description: 'Empowering leather businesses with our ERP solutions for exponential growth.',
   top_img: require('../assets/Industries/leather_top_img.png'),
   bottom_img: require('../assets/Industries/leather_bottom_img.png'),
@@ -818,23 +821,24 @@ leatherIndustry: {
   similar_industries: [
     {
       title: 'FMCG Industry',
-      link: '/fmcg-industry',
+      link: '/industries/fmcg-industry',
     
     },
     {
       title: 'Wood Industry',
-      link: '/wood-industry',
+      link: '/industries/wood-industry',
     },
     {
       title: 'Logistics Industry',
-      link: '/logistics-industry',
+      link: '/industries/logistics-industry',
     },
 ]
 },
 
 logisticsIndustry: {
-  link: '/logistics-industry',
+  link: '/industries/logistics-industry',
   heading: 'Logistics Industry',
+  subheading:'The Best ERP For Logistics Industry',
   description: 'Driving growth in the logistics industry with our tailored ERP solutions.',
   top_img: require('../assets/Industries/Logistics_top_img.png'),
   bottom_img: require('../assets/Industries/Logistics_Bottom_img.png'),
@@ -845,23 +849,24 @@ logisticsIndustry: {
   similar_industries: [
     {
       title: 'FMCG Industry',
-      link: '/fmcg-industry',
+      link: '/industries/fmcg-industry',
     
     },
     {
       title: 'Wood Industry',
-      link: '/wood-industry',
+      link: '/industries/wood-industry',
     },
     {
       title: 'Medical equipment manufacturing Industry',
-      link: '/medicalequipmentmanufacturing-industry',
+      link: '/industries/medicalequipmentmanufacturing-industry',
     },
 ]
 },
 
 medicalequipmentmanufacturingIndustry: {
-  link: '/medicalequipmentmanufacturing-industry',
+  link: '/industries/medicalequipmentmanufacturing-industry',
   heading: 'Medical equipment manufacturing Industry',
+  subheading:'The Best ERP For Medical equipment manufacturing Industry',
   description: 'Fueling growth in medical equipment manufacturing with our ERP solutions.',
   top_img: require('../assets/Industries/Medical_ top_imhg.png'),
   bottom_img: require('../assets/Industries/medical_bottom_img.png'),
@@ -872,22 +877,23 @@ medicalequipmentmanufacturingIndustry: {
   similar_industries: [
     {
       title: 'FMCG Industry',
-      link: '/fmcg-industry',
+      link: '/industries/fmcg-industry',
     },
     {
       title: 'Wood Industry',
-      link: '/wood-industry',
+      link: '/industries/wood-industry',
     },
     {
       title: 'Logistics Industry',
-      link: '/logistics-industry',
+      link: '/industries/logistics-industry',
     },
 ]
 },
 
 woodIndustry: {
-  link: '/wood-industry',
+  link: '/industries/wood-industry',
   heading: 'Wood Industry',
+  subheading:'The Best ERP For Wood Industry',
   description: 'Empowering the wood industry with growth-focused ERP solutions.',
   top_img: require('../assets/Industries/wood_top_img.png'),
   bottom_img: require('../assets/Industries/wood_bottom_img.png'),
@@ -898,22 +904,23 @@ woodIndustry: {
   similar_industries: [
     {
       title: 'FMCG Industry',
-      link: '/fmcg-industry',
+      link: '/industries/fmcg-industry',
     },
     {
       title: 'Jewellery Industry',
-      link: '/jewellery-industry',
+      link: '/industries/jewellery-industry',
     },
     {
       title: 'Logistics Industry',
-      link: '/logistics-industry',
+      link: '/industries/logistics-industry',
     },
 ]
 },
 
 wholesalersIndustry: {
-  link: '/wholesalers-industry',
+  link: '/industries/wholesalers-industry',
   heading: 'Wholesalers Industry',
+  subheading:'The Best ERP For Wholesalers Industry',
   description: 'Empowering wholesalers with tailored ERP solutions for business growth.',
   top_img: require('../assets/Industries/wholesalers_top_img.png'),
   bottom_img: require('../assets/Industries/wholesalers_bottom_img.png'),
@@ -924,22 +931,23 @@ wholesalersIndustry: {
   similar_industries: [
     {
       title: 'FMCG Industry',
-      link: '/fmcg-industry',
+      link: '/industries/fmcg-industry',
     },
     {
       title: 'Jewellery Industry',
-      link: '/jewellery-industry',
+      link: '/industries/jewellery-industry',
     },
     {
       title: 'Logistics Industry',
-      link: '/logistics-industry',
+      link: '/industries/logistics-industry',
     },
 ]
 },
 
 metalFabricationIndustry: {
-  link: '/metal-fabrication-industry',
+  link: '/industries/metal-fabrication-industry',
   heading: 'Metal Fabrication Industry',
+  subheading:'The Best ERP For Metal Fabrication Industry',
   description: 'Empowering metal fabrication businesses to grow with our specialized ERP solutions.',
   top_img: require('../assets/Industries/metalfabrication_top_img.png'),
   bottom_img: require('../assets/Industries/metalfabrication_bottom_img.png'),
@@ -950,22 +958,23 @@ metalFabricationIndustry: {
   similar_industries: [
     {
       title: 'FMCG Industry',
-      link: '/fmcg-industry',
+      link: '/industries/fmcg-industry',
     },
     {
       title: 'Jewellery Industry',
-      link: '/jewellery-industry',
+      link: '/industries/jewellery-industry',
     },
     {
       title: 'Logistics Industry',
-      link: '/logistics-industry',
+      link: '/industries/logistics-industry',
     },
 ]
 },
 
 microfinanceIndustry: {
-  link: '/microfinance-industry',
+  link: '/industries/microfinance-industry',
   heading: 'Microfinance Industry',
+  subheading:'The Best ERP For Microfinance Industry',
   description: 'Empowering microfinance institutions to thrive with our ERP solutions for business growth.',
   top_img: require('../assets/Industries/Microfinance_top_img.png'),
   bottom_img: require('../assets/Industries/Microfinance_bottom_img.png'),
@@ -976,22 +985,23 @@ microfinanceIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 oilandGasIndustryy: {
-  link: '/oilandgas-industry',
+  link: '/industries/oilandgas-industry',
   heading: 'Oil and Gas Industry',
+  subheading:'The Best ERP For Oil and Gas Industry',
   description: 'Optimize your operations with our ERP solutions for the oil and gas industry.',
   top_img: require('../assets/Industries/oilandgas_top_img.png'),
   bottom_img: require('../assets/Industries/oilandgas_bottom_img.png'),
@@ -1002,22 +1012,23 @@ oilandGasIndustryy: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 packagingIndustry: {
-  link: '/packaging-industry',
+  link: '/industries/packaging-industry',
   heading: 'Packaging Industry',
+  subheading:'The Best ERP For Packaging Industry',
   description: 'Enhance your packaging business with our tailored ERP solutions.',
   top_img: require('../assets/Industries/packaging_top_img.png'),
   bottom_img: require('../assets/Industries/packaging_bottom_img.png'),
@@ -1028,22 +1039,23 @@ packagingIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 paperIndustry: {
-  link: '/paper-industry',
+  link: '/industries/paper-industry',
   heading: 'Paper Industry',
+  subheading:'The Best ERP For Paper Industry',
   description: 'Revolutionize your paper industry operations with our tailored ERP solutions.',
   top_img: require('../assets/Industries/paper_top_img.png'),
   bottom_img: require('../assets/Industries/paper_bottom_img.png'),
@@ -1054,22 +1066,23 @@ paperIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 plasticIndustry: {
-  link: '/plastic-industry',
+  link: '/industries/plastic-industry',
   heading: 'Plastic Industry',
+  subheading:'The Best ERP For Plastic Industry',
   description: 'Elevate your plastic industry business with our customized ERP solutions.',
   top_img: require('../assets/Industries/plastic_top_img.png'),
   bottom_img: require('../assets/Industries/plastic_bottom_img.png'),
@@ -1080,22 +1093,23 @@ plasticIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 pharmaceuticalIndustry: {
-  link: '/pharma-industry',
+  link: '/industries/pharma-industry',
   heading: 'Pharmaceutical Industry',
+  subheading:'The Best ERP For Pharmaceutical Industry',
   description: 'Unlock your pharmaceutical business potential with our advanced ERP solutions.',
   top_img: require('../assets/Industries/pharmaceutical_top_img.png'),
   bottom_img: require('../assets/Industries/pharmaceutical_bottom_img.png'),
@@ -1106,22 +1120,23 @@ pharmaceuticalIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 publishingIndustry: {
-  link: '/publishing-industry',
+  link: '/industries/publishing-industry',
   heading: 'Publishing Industry',
+  subheading:'The Best ERP For Publishing Industry',
   description: 'Navigate the complexities of publishing with our streamlined ERP solutions.',
   top_img: require('../assets/Industries/publishing_top_img.png'),
   bottom_img: require('../assets/Industries/publishing_bottom_img.png'),
@@ -1132,22 +1147,23 @@ publishingIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 printingIndustry: {
-  link: '/printing-industry',
+  link: '/industries/printing-industry',
   heading: 'Printing Industry',
+  subheading:'The Best ERP For Printing Industry',
   description: 'Print success with our tailored ERP solutions for the printing industry.',
   top_img: require('../assets/Industries/printing_top_img.png'),
   bottom_img: require('../assets/Industries/printing_bottom_img.png'),
@@ -1158,22 +1174,23 @@ printingIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 preEngineeringIndustry: {
-  link: '/preengineering-industry',
+  link: '/industries/preengineering-industry',
   heading: 'Pre-Engineering Industry',
+  subheading:'The Best ERP For Pre-Engineering Industry',
   description: 'Engineer your success with our specialized ERP solutions for the pre-engineering industry.',
   top_img: require('../assets/Industries/preEngineering_top_img.png'),
   bottom_img: require('../assets/Industries/preEngineering_bottom_img.jpeg'),
@@ -1184,22 +1201,23 @@ preEngineeringIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 rubberIndustry: {
-  link: '/rubber-industry',
+  link: '/industries/rubber-industry',
   heading: 'Rubber Industry',
+  subheading:'The Best ERP For Rubber Industry',
   description: 'Rubber-stamp your success with our specialized ERP solutions for the rubber industry.',
   top_img: require('../assets/Industries/rubber_top_img.png'),
   bottom_img: require('../assets/Industries/rubber_bottom_img.png'),
@@ -1210,22 +1228,23 @@ rubberIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 restaurantIndustry: {
-  link: '/restaurant-industry',
+  link: '/industries/restaurant-industry',
   heading: 'Restaurant Industry',
+  subheading:'The Best ERP For Restaurant Industry',
   description: 'Sizzle up your restaurants success with our tailored ERP solutions.',
   top_img: require('../assets/Industries/restaurant_top_img.png'),
   bottom_img: require('../assets/Industries/restaurant_bottom_img.png'),
@@ -1236,22 +1255,23 @@ restaurantIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 retailIndustry: {
-  link: '/retail-industry',
+  link: '/industries/retail-industry',
   heading: 'Retail Industry',
+  subheading:'The Best ERP For Retail Industry',
   description: 'Drive growth and efficiency in your retail business with our specialized ERP solutions.',
   top_img: require('../assets/Industries/retail_top_img.png'),
   bottom_img: require('../assets/Industries/retail_bottom_img.png'),
@@ -1262,22 +1282,23 @@ retailIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 steelIndustry: {
-  link: '/steel-industry',
+  link: '/industries/steel-industry',
   heading: 'Steel Industry',
+  subheading:'The Best ERP For Steel Industry',
   description: 'Forge ahead in the steel industry with our specialized ERP solutions.',
   top_img: require('../assets/Industries/steel_top_img.png'),
   bottom_img: require('../assets/Industries/steel_bottom_img.png'),
@@ -1288,22 +1309,23 @@ steelIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 telecomIndustry: {
-  link: '/telecom-industry',
+  link: '/industries/telecom-industry',
   heading: 'Telecom Industry',
+  subheading:'The Best ERP For Telecom Industry',
   description: 'Connect, streamline, and grow with our tailored ERP solutions for the telecom industry.',
   top_img: require('../assets/Industries/telecom_top_img.png'),
   bottom_img: require('../assets/Industries/telecom_bottom_img.png'),
@@ -1314,22 +1336,23 @@ telecomIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 
 textileIndustry: {
-  link: '/textiles-industry',
+  link: '/industries/textiles-industry',
   heading: 'Textile Industry',
+  subheading:'The Best ERP For Textile Industry',
   description: 'Thread your success with our tailored ERP solutions for the textile industry.',
   top_img: require('../assets/Industries/textile_top_img.png'),
   bottom_img: require('../assets/Industries/textile_bottom_img.png'),
@@ -1340,22 +1363,22 @@ textileIndustry: {
   similar_industries: [
     {
     title: 'FMCG Industry',
-    link: '/fmcg-industry',
+    link: '/industries/fmcg-industry',
     },
     {
     title: 'Leather Industry',
-    link: '/leather-industry',
+    link: '/industries/leather-industry',
     },
     {
     title: 'Wholesalers Industry',
-    link: '/wholesalers-industry',
+    link: '/industries/wholesalers-industry',
     },
 ]
 },
 };
 
 
-// constants.js
+// expo details
 export const expoDetails = {
   hyderabad: {
     title: 'Hyderabad Expo',
@@ -1447,7 +1470,7 @@ export const expoDetails = {
   },
 };
 
-// constants.js
+// gallery data
 export const galleryData = {
   expo: [
     {
@@ -1550,6 +1573,12 @@ export const productData = {
     productTitle: 'Tech Cloud Enterprise Resource Planning',
     heading: "ERP Solutions",
     description: "Our ERP solutions are designed to streamline and optimize operations.",
+    imageSrc : require("../assets/Products/products_main_img.png"),
+    title : "Cloud Based ERP Software",
+    productDescription: [
+      "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+      "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+    ],
     cards: [
       {
         title: "Sales & Marketing",
@@ -1635,7 +1664,7 @@ export const productData = {
     ],
     tabData: {
       requirement: {
-        image: "https://placehold.co/400x400?text=Requirement+Image", // Placeholder image URL for requirement tab
+        image: require("../assets/Products/tcerp/requiregath.png"), // Placeholder image URL for requirement tab
         content: [
           { title: 'Identify Client Needs:', description: "Deeply understand the client's business objectives, pain points, and opportunities." },
           { title: 'Stakeholder Collaboration:', description: 'Engage with key decision-makers to ensure all requirements are well-documented.' },
@@ -1643,7 +1672,7 @@ export const productData = {
         ],
       },
       implementation: {
-        image: "https://placehold.co/400x400?text=Implementation+Image", // Placeholder image URL for implementation tab
+        image: require("../assets/Products/tcerp/impletrain.jpg"), 
         content: [
           { title: 'System Setup:', description: 'Install, configure, and customize the ERP system.' },
           { title: 'Training:', description: 'Train the client’s team on how to use the system efficiently.' },
@@ -1651,7 +1680,7 @@ export const productData = {
         ],
       },
       goLive: {
-        image: "https://placehold.co/400x400?text=GoLive+Image", // Placeholder image URL for go live tab
+        image: require("../assets/Products/tcerp/golive.webp"), 
         content: [
           { title: 'Live System Activation:', description: 'Transition from the legacy system to the new ERP system.' },
           { title: 'Monitoring:', description: 'Monitor the system for issues and ensure smooth operation.' },
@@ -1659,7 +1688,7 @@ export const productData = {
         ],
       },
       postGoLive: {
-        image: "https://placehold.co/400x400?text=PostGoLive+Image", // Placeholder image URL for post go live tab
+        image: require("../assets/Products/tcerp/pogostlive.jpg") ,
         content: [
           { title: 'Ongoing Support:', description: 'Provide continued support to resolve any post-go-live issues.' },
           { title: 'System Optimization:', description: 'Fine-tune the system based on real-world usage.' },
@@ -1677,7 +1706,12 @@ export const productData = {
   'customer-relationship-management': {
     productTitle: 'Tech Cloud Customer Relationship Management',
     heading: "CRM Solutions",
-    description: "Our ERP solutions are designed to streamline and optimize operations.",
+    description: "Elevate customer interactions with our CRM for personalized growth solutions.",
+    title : "Cloud Based ERP Software",
+    productDescription: [
+      "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+      "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+    ],
     cards: [
       {
         title: "Contact Management",
@@ -1805,7 +1839,12 @@ export const productData = {
   'point-of-sale':{
       productTitle: 'Tech Cloud Point of Sale',
       heading: "Point of Sale",
-      description: "Our ERP solutions are designed to streamline and optimize operations.",
+      description: "Unlock growth and increase profits with our efficient, advanced POS system.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
       cards: [
           {
             title: "Web Based",
@@ -1933,8 +1972,13 @@ export const productData = {
   },
   'trading-software': {
     productTitle: 'Tech Cloud Trading Software',
-      heading: "ERP Solutions",
-      description: "Our ERP solutions are designed to streamline and optimize operations.",
+      heading: "Trading software",
+      description: "Enhance customer relationships and streamline operations with our trading software.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
         cards: [
           {
             title: "New Customers",
@@ -2039,8 +2083,13 @@ export const productData = {
   },
   'Ecommerce-software': {
     productTitle: 'Tech Cloud E-Commerce Software',
-      heading: "ERP Solutions",
-      description: "Our ERP solutions are designed to streamline and optimize operations.",
+      heading: "Ecommerce Solutions",
+      description: "Our services encompass implementation, training, and support for seamless e-commerce and ERP integration.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
         cards: [
           {
             title: "Automation",
@@ -2144,8 +2193,13 @@ export const productData = {
   },
   'hr-managament-software': {
     productTitle: 'Tech Cloud HR Management Software',
-      heading: "ERP Solutions",
-      description: "Our ERP solutions are designed to streamline and optimize operations.",
+      heading: "HR managament Solutions",
+      description: "Our expert team delivers top support, empowering your HR department with confidence.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
       cards: [
           {
             title: "Recruitment",
@@ -2231,7 +2285,7 @@ export const productData = {
         ],
         tabData: {
           employeeManagement: {
-              image: "https://placehold.co/400x400?text=EmployeeManagement+Image",
+              image: require("../assets/Products/Hr/emplyeemange.jpg"),
               alt: "HR Employee Management Image",
               content: [
                   { title: 'Employee Profiles:', description: "Maintain detailed profiles for all employees, including personal information and performance history." },
@@ -2240,7 +2294,7 @@ export const productData = {
               ]
           },
           complianceManagement: {
-              image: "https://placehold.co/400x400?text=ComplianceManagement+Image",
+              image: require("../assets/Products/Hr/compliance.jpg"),
               alt: "HR Compliance Management Image",
               content: [
                   { title: 'Regulatory Compliance:', description: 'Ensure compliance with labor laws and regulations to avoid legal issues.' },
@@ -2249,7 +2303,7 @@ export const productData = {
               ]
           },
           employeeEngagement: {
-              image: "https://placehold.co/400x400?text=EmployeeEngagement+Image",
+              image: require("../assets/Products/Hr/emplayeenage.jpg"),
               alt: "HR Employee Engagement Image",
               content: [
                   { title: 'Feedback Mechanisms:', description: 'Implement systems for collecting employee feedback and suggestions.' },
@@ -2258,7 +2312,7 @@ export const productData = {
               ]
           },
           analyticsAndReporting: {
-              image: "https://placehold.co/400x400?text=AnalyticsAndReporting+Image",
+              image: require("../assets/Products/Hr/analytics.png"),
               alt: "HR Analytics and Reporting Image",
               content: [
                   { title: 'HR Metrics Analysis:', description: 'Analyze key HR metrics to assess organizational health.' },
@@ -2276,8 +2330,13 @@ export const productData = {
   },
   'financial-management-systems': {
     productTitle: 'Tech Cloud Financial Management Systems',
-    heading: "ERP Solutions",
-    description: "Our ERP solutions are designed to streamline and optimize operations.",
+    heading: "financial management Solutions",
+    description: "Accelerate financial success with our ERP finance module—real-time insights and automation for growth.",
+    title : "Cloud Based ERP Software",
+    productDescription: [
+      "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+      "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+    ],
     cards: [
       {
         title: "Functionalities",
@@ -2318,7 +2377,7 @@ export const productData = {
     ],
     tabData: {
       requirement: {
-          image: "https://placehold.co/400x400?text=Requirement+Image",
+          image: require("../assets/Products/Finance/financerequire.jpg"),
           content: [
               { title: 'Identify Financial Objectives:', description: "Understand the client's financial goals, challenges, and needs." },
               { title: 'Compliance Review:', description: 'Engage with stakeholders to assess regulatory requirements and compliance needs.' },
@@ -2334,7 +2393,7 @@ export const productData = {
           ],
       },
       goLive: {
-          image: "https://placehold.co/400x400?text=GoLive+Image",
+          image: require("../assets/Products/Finance/onboarding.jpg"),
           content: [
               { title: 'System Activation:', description: 'Activate the new financial management system for live operations.' },
               { title: 'Performance Monitoring:', description: 'Monitor system performance to identify any issues during the initial phase.' },
@@ -2359,8 +2418,13 @@ export const productData = {
   },
   'integrated-erp-software': {
       productTitle: 'Tech Cloud Integrated ERP Software',
-      heading: "ERP Solutions",
-      description: "Our ERP solutions are designed to streamline and optimize operations.",
+      heading: "Integrated ERP Solutions",
+      description: "Enhance your business with integrated ERP, CRM, and E- Commerce solutions.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
       cards: [
         {
           title: "CRM",
@@ -2433,8 +2497,13 @@ export const productData = {
   },
   'erp-for-restaraunt': {
       productTitle: 'Tech Cloud ERP For Restaraunt Business',
-      heading: "ERP Solutions",
-      description: "Our ERP solutions are designed to streamline and optimize operations.",
+      heading: "Restaraunt ERP Solutions",
+      description: "Our expert team ensures seamless expansion with restaurant management software.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
         cards: [
           {
             title: "POS",
@@ -2539,7 +2608,12 @@ export const productData = {
   'erp-for-accounting-software':{
       productTitle: 'Tech Cloud ERP for Accounting Software',
       heading: "ERP for Accounting Software",
-      description: "Our ERP solutions are designed to streamline and optimize operations.",
+      description: "Expert support for seamless integration and optimal performance in accounting software.",
+      title : "Cloud Based ERP Software",
+      productDescription: [
+        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      ],
         cards: [
           {
             title: "Modules",
@@ -2580,7 +2654,7 @@ export const productData = {
         ],
         tabData: {
           requirement: {
-              image: "https://placehold.co/400x400?text=Accounting+Needs+Image",
+              image: require("../assets/Products/Accouting/accounting.jpeg"),
               alt: "Accounting Needs Image",
               content: [
                   { title: 'Understanding Client Objectives:', description: "Identify key financial goals and accounting practices." },
@@ -2589,7 +2663,7 @@ export const productData = {
               ],
           },
           implementation: {
-              image: "https://placehold.co/400x400?text=Implementation+Image",
+              image: require("../assets/Products/Accouting/implemenuser.png"),
               alt: "Implementation Image",
               content: [
                   { title: 'Setup Chart of Accounts:', description: 'Define account structures tailored to the business model.' },
@@ -2598,7 +2672,7 @@ export const productData = {
               ],
           },
           goLive: {
-              image: "https://placehold.co/400x400?text=GoLive+Image",
+              image: require("../assets/Products/Accouting/erpgolive.jpg"),
               alt: "Go Live Image",
               content: [
                   { title: 'Launch the ERP System:', description: 'Transition all accounting functions to the new platform.' },
@@ -2682,7 +2756,20 @@ export const aboutus_data = {
   'mdsprofilecontent' :{
     heading: "MR. RAJ - FOUNDER & CEO",
     description: "Certified SAP expertise, and 27 years of extensive experience, shapes our vision and strategic path",
-  }
+  },
+  'pricingcontent':{
+    heading: "Pricing",
+    description: "Our Comprehensive solution for established businesses and enterprises.",
+  },
+  'featurescontent':{
+    heading: "Features",
+    description: "Our comprehensive solution for established businesses and enterprises.",
+  },
+  'productcomparison':{
+    heading: "Product Comparison",
+    description: "Our comprehensive solution for established businesses and enterprises.",
+  },
+  
 };
 export const ContactUs_content = {
   heading : "Contact us ",
@@ -2721,8 +2808,15 @@ export const whyTechCloudERPContent = {
       "How do you organize people’s shared potential into a competitive advantage? Support them with data, solve their oddities in business, and encourage their creativity. Tech Cloud ERP’s business intelligence enables your teams to do work faster and smarter by providing a seamless experience. Users can feel easy collaboration, security, and governance by preparing analytics, building data fields and dashboards, and publishing & sharing the data with a single click.",
       "Tech Cloud ERP’s BI Tool is a fully hosted solution, so users can run it in minutes and add users as your needs grow without configuring servers, managing software upgrades, etc."
     ]
+  },
+  productspageContent:{
+imageSrc : require("../assets/Products/products_main_img.png"),
+    title : "Cloud Based ERP Software",
+    description: [
+      "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
+      "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+    ]
   }
-  
 };
 
 export const ReportingSectionContent = {
@@ -2785,7 +2879,7 @@ export const contactData = {
   },
   headquarters: {
     phoneNumber: "+1 (312) 766-3390",
-    address: "1101, E Bell Street, Suite-E, Bloomington, IL - 61701",
+    address: "1101, E Bell Street, Suite-E, Bloomington, USA, IL - 61701",
     email: "contact@techclouderp.com",
   },
 };
@@ -2808,7 +2902,7 @@ export const termsAndConditionsData = {
     "Your use of this website and any dispute arising out of use of the website is subject to the Cyber Law of India."
   ],
 };
-// constants.js
+// privacy policy
 
 export const privacyPolicyData = {
   title: "Privacy Policy",
@@ -2849,136 +2943,209 @@ export const profileData = {
                 leadership abilities have significantly advanced the careers of numerous professionals 
                 and have been instrumental in the growth of various businesses.`,
 };
-// constant.js
-export const essentialServicesData = [
-  {
-    id: 1,
-    icon: "🔍",
-    title: "Search Engine Optimization",
-    description:
-      "SEO is a process of enhancing the visibility of a website or a web page in a search engine's unpaid results—often referred to as 'organic' or 'natural' results.",
-  },
-  {
-    id: 2,
-    icon: "📈",
-    title: "Search Engine Marketing",
-    description:
-      "SEM is a digital marketing strategy focused on promoting websites by increasing their visibility in search engine results pages (SERPs) through paid advertising.",
-  },
-  {
-    id: 3,
-    icon: "📱",
-    title: "Social Media Optimization",
-    description:
-      "SMO can be an effective way to quickly increase website traffic, generate leads, and drive conversions, especially for businesses looking to achieve immediate results.",
-  },
-  {
-    id: 4,
-    icon: "📣",
-    title: "Facebook Ads",
-    description:
-      "Facebook Ads helps businesses to create targeted campaigns to reach specific audiences on Facebook and Instagram, driving brand awareness.",
-  },
-  {
-    id: 5,
-    icon: "✏️",
-    title: "Content Marketing",
-    description:
-      "Content marketing is a strategic marketing approach focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
-  },
-  {
-    id: 6,
-    icon: "✉️",
-    title: "Email Marketing",
-    description:
-      "Email marketing is a strategy focused on creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience.",
-  },
-];
 
+// services page data
 
-
-// constants.js
 export const servicesData = {
   'web-development': {
     title: 'Web Development',
+    mainTitle :'Essential Services for Modern web dev',
+    sectionSubtitle: 'Essential web development services include designing, developing, and maintaining websites for optimal performance and user experience.', 
     description: [
       "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
       "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
     ],
+    services: [
+      {
+        id: 1,
+        image: require("../assets/Services/webdevelopment/Webdesign.png"),
+        title: "Web Designing",
+        description: "Where art meets functionality, crafting digital experiences that captivate, inspire, and resonate with users worldwide.",
+      },
+      {
+        id: 2,
+        image: require("../assets/Services/webdevelopment/webdev.png"),
+        title: "Web Development",
+        description: "The alchemy of code and creativity, sculpting digital landscapes that empower, engage, and connect.",
+      },
+      {
+        id: 3,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "Mobile App Development",
+        description: "Mobile app development involves creating software for smartphones and tablets, focusing on functionality, usability, and user experience.",
+      },
+      {
+        id: 4,
+        image: require("../assets/Services/webdevelopment/Wordpress.png"),
+        title: "WordPress Development",
+        description: "WordPress development involves using the WordPress CMS to design, build, and maintain websites with flexibility and ease of use.",
+      },
+      {
+        id: 5,
+        image: require("../assets/Services/webdevelopment/ecommerce.png"),
+        title: "eCommerce Development",
+        description: "E-commerce development focuses on creating online platforms for buying and selling goods or services, streamlining transactions.",
+      },
+      {
+        id: 6,
+        image: require("../assets/Services/webdevelopment/webhosting.png"),
+        title: "Web Hosting Services",
+        description: "Hosting services offer server space and infrastructure for storing and accessing website data, enabling online presence.",
+      },
+    ],
     faq: [
       {
-        question: 'What is digital marketing?',
-        answer:
-          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
+        question: 'What is web development?',
+        answer: 'Web development involves creating and maintaining websites or web applications. It includes aspects like web design, content development, client-side and server-side scripting, and security management.',
       },
       {
-        question: 'Why is digital marketing important for my business?',
-        answer:
-          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
+        question: 'What are web hosting and domain names?',
+        answer: 'Web hosting is the server space where your website’s files are stored. A domain name is the web address that users type to access your website, like www.example.com.',
       },
       {
-        question: 'How much should I budget for digital marketing?',
-        answer:
-          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
+        question: 'How often should I update my website?',
+        answer: 'It’s recommended to update content regularly and redesign every few years to ensure your site remains relevant, secure, and optimized for new technology.',
+      },
+      {
+        question: 'What is the importance of website maintenance?',
+        answer: 'Website maintenance involves regularly checking your website for issues, updating software, and ensuring security, which keeps your site functional and secure over time.',
       },
     ],
     image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
     altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
   },
   'mobile-application-development': {
+    mainTitle :'Essential Services for Modern mobile app',
+    sectionSubtitle: 'Essential mobile development services include designing, developing, and maintaining websites for optimal performance and user experience.', // Added section subtitle
     title: 'Mobile Application Development',
     description: [
-      "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
-      "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
+      "Mobile application development is the process of creating software applications that run on mobile devices, delivering a seamless user experience.",
+      "Cross-platform development allows applications to be developed for multiple platforms using a single codebase, saving time and resources.",
+    ],
+    services: [
+      {
+        id: 1,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "Mobile Application Development",
+        description: "Mobile application development involves creating software applications that run on mobile devices, delivering a seamless user experience.",
+      },
+      {
+        id: 2,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "Cross-Platform Development",
+        description: "Cross-platform development allows applications to be developed for multiple platforms using a single codebase, saving time and resources.",
+      },
+      {
+        id: 3,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "App Store Optimization",
+        description: "App Store Optimization (ASO) is the process of improving the visibility of a mobile app in an app store, increasing downloads and user engagement.",
+      },
+      {
+        id: 4,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "User Experience Design",
+        description: "User Experience (UX) design focuses on creating intuitive and user-friendly interfaces, enhancing the overall satisfaction of users.",
+      },
+      {
+        id: 5,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "App Maintenance & Support",
+        description: "Ongoing app maintenance and support ensure that applications remain functional, secure, and up-to-date with the latest technology.",
+      },
+      {
+        id: 6,
+        image: require("../assets/Services/webdevelopment/mobile.png"),
+        title: "Analytics & Reporting",
+        description: "Analytics and reporting help businesses track app performance, user engagement, and other metrics, driving data-driven decisions.",
+      },
     ],
     faq: [
       {
-        question: 'What is digital marketing?',
-        answer:
-          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
+        question: 'What is IOS Mobile App Development?',
+        answer: 'Experts in developing cutting-edge iPhone and iPad apps using Swift, Objective C, and advanced tools like Xcode, Cocoapods, and CoreData.',
       },
       {
-        question: 'Why is digital marketing important for my business?',
-        answer:
-          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
+        question: 'Why is Android App Development important?',
+        answer: 'Experts in custom Android app design and development using Java, Android Studio, and advanced frameworks like MVC/MVP.',
       },
       {
-        question: 'How much should I budget for digital marketing?',
-        answer:
-          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
+        question: 'What is Hybrid App Development?',
+        answer: 'Proficient in HTML5, CSS, and JavaScript for robust web and hybrid apps with native feel and full device integration.',
+      },
+      {
+        question: 'What is Multi-platform mobile app development?',
+        answer: 'Creating powerful cross-platform mobile apps with Titanium, PhoneGap, and other frameworks.',
       },
     ],
     image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
-    altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
+    altText: 'Mobile devices displaying various application interfaces.',
   },
   'digital-marketing': {
+    mainTitle :'Essential Services for Modern digital dev',
+    sectionSubtitle: 'Essential digital  services include designing, developing, and maintaining websites for optimal performance and user experience.', // Added section subtitle
     title: 'Digital Marketing',
     description: [
-      "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
-      "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. We identify your target audience, measure interest, and leverage all parameters for your benefit. We optimize your website for search engines, increase visibility, build brand awareness, and generate leads."
+      "Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.",
+      "Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.",
+    ],
+    services: [
+      {
+        id: 1,
+        image: require("../assets/Services/digital/SEO.png"),
+        title: "Search Engine Optimization",
+        description: "SEO enhances the visibility of a website or a web page in a search engine's unpaid results.",
+      },
+      {
+        id: 2,
+        image: require("../assets/Services/digital/SEM.png"),
+        title: "Search Engine Marketing",
+        description: "SEM promotes websites by increasing visibility in search engine results pages through paid advertising.",
+      },
+      {
+        id: 3,
+        image: require("../assets/Services/digital/SMO.png"),
+        title: "Social Media Optimization",
+        description: "SMO increases website traffic, generates leads, and drives conversions through social media.",
+      },
+      {
+        id: 4,
+        image: require("../assets/Services/digital/FBads.png"),
+        title: "Facebook Ads",
+        description: "Facebook Ads helps businesses create targeted campaigns on Facebook and Instagram.",
+      },
+      {
+        id: 5,
+        image: require("../assets/Services/digital/CM.png"),
+        title: "Content Marketing",
+        description: "Content marketing focuses on creating and distributing valuable content to attract and retain a clearly defined audience.",
+      },
+      {
+        id: 6,
+        image: require("../assets/Services/digital/EM.png"),
+        title: "Email Marketing",
+        description: "Email marketing is a strategy focused on creating valuable content to attract and retain a defined audience.",
+      },
     ],
     faq: [
       {
         question: 'What is digital marketing?',
-        answer:
-          'Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.',
+        answer: 'Digital marketing refers to the promotion of products or services through digital channels.',
       },
       {
         question: 'Why is digital marketing important for my business?',
-        answer:
-          'Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.',
+        answer: 'It helps businesses reach a larger audience and drive engagement through online channels.',
       },
       {
         question: 'How much should I budget for digital marketing?',
-        answer:
-          'The budget for digital marketing depends on your business goals, industry, and competitive landscape. Typically, businesses allocate around 10-20% of their revenue for marketing, including digital marketing efforts.',
+        answer: 'Typically, businesses allocate around 10-20% of their revenue for marketing.',
       },
     ],
     image: require('../assets/Services/web-development-img.png'), // Adjust the path as necessary
-    altText: 'Laptop displaying digital marketing concepts such as advertising, research, product, branding, and strategy',
+    altText: 'Digital marketing strategies for brand promotion.',
   },
-  // Add more services dynamically here
 };
+
 
 export const roles = [
   { company: 'Mitsubishi Chemical Factory', role: 'Manager (Production & Maintenance)' },
@@ -2991,3 +3158,377 @@ export const roles = [
   { company: 'OM IT Solutions', role: 'Regional Head' },
   { company: 'Xseed Tech Integra Solutions Pvt. Ltd.', role: 'Founder & Managing Director' },
 ];
+// constant.js
+export const chairmanMessageContent = {
+  title: "Mr. Raj",
+  image: require("../assets/Profile/Raj.png"),
+  backgroundImage: require("../assets/Profile/bg_profile.png"), // Add background image path
+  message: [
+    "Thank you for choosing to continue your valuable partnership with us. Your ongoing support and trust in our products inspire us to deliver exceptional service and ensure that we provide outstanding value for your investment. Committed to propelling Tech Cloud ERP to new heights, we remain dedicated to addressing your needs with solutions that are not only simpler and more efficient but also reliable and cost-effective.",
+    
+    "We actively engage in continuous dialogue with you, our esteemed customers, to understand and anticipate your evolving requirements, ensuring we are prepared to meet them as they arise. Our commitment to total customer satisfaction drives us to tailor our products precisely to your specifications and to offer steadfast support after your purchase.",
+    
+    "Our mission to fulfill these promises is powered by our greatest asset—our employees. Their relentless dedication plays a crucial role in the realization of our company's goals Thus, we ask for the ongoing support of our valued customers and the cooperation of our dedicated employees. We also extend our heartfelt thanks to our supporters who have played a significant role in our company's journey and growth. Your partnership is vital to our continued success, and we look forward to achieving our shared objectives together",
+    
+  ]
+};
+export const cardservicesData = [
+  {
+    title: 'User Friendly',
+    imgSrc: require("../assets/About_us/user-friendly.png"),
+  },
+  {
+    title: 'Web Technologies',
+    imgSrc: require("../assets/About_us/web.png"),
+  },
+  {
+    title: 'Customization',
+    imgSrc: require("../assets/About_us/customization.png"),
+  },
+  {
+    title: 'Opensource',
+    imgSrc: require("../assets/About_us/opensource.png"),
+  },
+  {
+    title: 'Amazing Support',
+    imgSrc: require("../assets/About_us/Amazingsupport.png"),
+  },
+  {
+    title: 'Versatility',
+    imgSrc: require("../assets/About_us/versatility.png"),
+  },
+  {
+    title: 'Flexible Pricing',
+    imgSrc: require("../assets/About_us/flexiblepricing.png"),
+  },
+  {
+    title: 'Mobile Versions',
+    imgSrc: require("../assets/About_us/Mobileversions.png"),
+  },
+  {
+    title: 'Cloud Servers',
+    imgSrc: require("../assets/About_us/Cloudservers.png"),
+  },
+  {
+    title: 'Plugin Marketplace',
+    imgSrc: require("../assets/About_us/Pluginmarket.png"),
+  },
+  {
+    title: 'Secure & Reliable',
+    imgSrc: require("../assets/About_us/Secure & reliable.png"),
+  },
+  {
+    title: 'Language versatility',
+    imgSrc: require("../assets/About_us/translate.png"),
+  },
+];
+// constant.js
+
+export const pricingDataContent = {
+  modules: [
+    {
+      title: "Available Modules",
+      badge: "Modules",
+      items: [
+        "CRM",
+        "Sales Management",
+        "Design",
+        "Purchase Management",
+        "Project Management",
+        "Inventory Management",
+        "Services",
+        "Installation",
+        "Finance & Accounts",
+      ],
+    },
+    {
+      title: "Available Modules",
+      badge: "Modules",
+      items: [
+        "Production Management",
+        "Asset Management",
+        "Social Media Marketing",
+        "Quality Control",
+        "Quality Assurance",
+        "Human Resources Management",
+        "Exports & Imports",
+        "Job Work",
+      ],
+    },
+    {
+      title: "Domains / Industries",
+      badge: "Domains",
+      items: [
+        "Garment Manufacturing",
+        "Garment Printing",
+        "Medical Device Manufacturing",
+        "Elevator / Lifts Manufacturing",
+        "Fabrication Industries",
+        "Construction",
+        "Chemical Industries",
+        "Pharma Industries",
+        "Pump Manufacturing",
+        "Carton Box Manufacturing",
+        "Plastic Manufacturing",
+        "Smart Brix Manufacturing",
+        "Metal Drums Manufacturing",
+      ],
+    },
+    {
+      title: "Domains / Industries",
+      badge: "Domains",
+      items: [
+        "Paper Manufacturing",
+        "Asbestos Manufacturing",
+        "Trademark - Service Industry",
+        "Roadside Assistance - Service",
+        "Plywood Manufacturing",
+        "Fan Manufacturing",
+        "Hydraulic Cylinders Manufacturing",
+        "Jewellery Manufacturing",
+        "Aerospace System Manufacturing",
+        "Imports and Exports",
+        "ERP and POS",
+        "Restaurant POS",
+      ],
+    },
+  ],
+};
+// pricing 
+export const pricingTableData = [
+  {
+    tier: "1",
+    turnover: "0 - 10 Crores",
+    modules: "",
+    users: "5 - 10",
+    userCost: "Rs. 2000 / User / Month",
+  },
+  {
+    tier: "2",
+    turnover: "11 - 25 Crores",
+    modules: "Customer's Choose as per their Requirements",
+    users: "11 - 20",
+    userCost: "Rs. 2000 / User / Month",
+  },
+  {
+    tier: "3",
+    turnover: "26 - 50 Crores",
+    modules: "",
+    users: "20 - 50",
+    userCost: "Rs. 1500 / User / Month",
+  },
+  {
+    tier: "4",
+    turnover: "51 - 100 Crores",
+    modules: "",
+    users: "50 - 200",
+    userCost: "Rs. 1250 / User / Month",
+  },
+  {
+    tier: "5",
+    turnover: "101 - 500 Crores",
+    modules: "",
+    users: "200 & Above",
+    userCost: "Rs. 1000 / User / Month",
+  },
+];
+export const pricingShapes = [
+  {
+    id: 1,
+    src: require("../assets/Pricing/pricing-wave-1.png"),
+    alt: "Shape",
+    className: "dots"
+  },
+  {
+    id: 2,
+    src: require("../assets/Pricing/pricing-wave-2.png"),
+    alt: "Shape",
+    className: "wave"
+  },
+];
+
+
+export const featuresData = [
+  {
+      imgSrc: require("../assets/Features/webbased.jpg"),
+      title: "Web Based And Cloud Computing",
+      description: "Web-based and cloud computing provide scalable, flexible access to apps and data online.",
+  },
+  {
+      imgSrc: require("../assets/Features/dynamic.jpg"),
+      title: "Dynamic Dashboards",
+      description: "Dynamic dashboards offer real-time, interactive data visualization for better decision-making.",
+  },
+  {
+      imgSrc: require("../assets/Features/Whatsapp_email.png"),
+      title: "Email & Whatsapp Integration",
+      description: "Email and SMS integration enables seamless, efficient communication across both channels.",
+  },
+  {
+      imgSrc: require("../assets/Features/mobilenadtab.jpg"),
+      title: "Mobile & Tab Compatibility",
+      description: "Ensures a seamless user experience across devices, enhancing accessibility and usability.",
+  },
+  {
+      imgSrc: require("../assets/Features/autobackup.jpg"),
+      title: "Data Auto Backup",
+      description: "Automates secure data storage, ensuring continuity and protection against loss.",
+  },
+  {
+      imgSrc: require("../assets/Features/customisable.jpg"),
+      title: "Customizable Software",
+      description: "Allows users to tailor applications to specific needs, enhancing functionality and satisfaction.",
+  },
+  {
+      imgSrc: require("../assets/Features/payasgo.jpg"),
+      title: "Pay As You Go",
+      description: "Enables users to pay for services based on actual usage, promoting flexibility and cost-efficiency.",
+  },
+  {
+      imgSrc: require("../assets/Features/chatusers.jpg"),
+      title: "Chat between Users",
+      description: "Facilitates real-time communication and collaboration, enhancing interaction and connectivity.",
+  },
+  {
+      imgSrc: require("../assets/Features/infiniteusers.jpg"),
+      title: "Unlimited Users",
+      description: "Accommodates an unlimited number of users, ensuring scalability and accessibility.",
+  },
+  {
+      imgSrc: require("../assets/Features/Audit_trail.jpeg"),
+      title: "Audit Trail",
+      description: "Detailed log of system activities, supporting accountability, compliance, and security.",
+  },
+  {
+      imgSrc: require("../assets/Features/Inventory.png"),
+      title: "Multiple Inventory Location",
+      description: "Centralized inventory management across multiple locations, ensuring accuracy and seamless transfers.",
+  }
+];
+// product comparison
+
+export const comparisonData = {
+  features: [
+      {
+          id: 1,
+          name: "Users",
+          techCloudERP: "Unlimited Users",
+          sapBusinessOne: "User-based license costing",
+      },
+      {
+          id: 2,
+          name: "Accessing the ERP",
+          techCloudERP: "Web based",
+          sapBusinessOne: "Web based",
+      },
+      {
+          id: 3,
+          name: "Dashboard",
+          techCloudERP: "Dynamic Dashboard with a Graphical User Interface",
+          sapBusinessOne: "No Dynamic Dashboards",
+      },
+
+      {
+        id: 4,
+        name: "Email & SMS",
+        techCloudERP: "Inbuilt SMS & Email Integration",
+        sapBusinessOne: "Not Available",
+    },
+    {
+      id: 5,
+      name: "Language",
+      techCloudERP: "Multi-language",
+      sapBusinessOne: "No Multi-language",
+  },
+  {
+    id: 6,
+    name: "Data Import/Export",
+    techCloudERP: "Available",
+    sapBusinessOne: "Available",
+},
+{
+  id: 7,
+  name: "Reports",
+  techCloudERP: "User defined & Inbuilt reports",
+  sapBusinessOne: "Inbuilt reports",
+},
+{
+  id: 8,
+  name: "Server",
+  techCloudERP: "Web Server",
+  sapBusinessOne: "Web Server",
+},
+{
+  id: 9,
+  name: "Server Maintenance",
+  techCloudERP: "Auto Backup & Restore Facility",
+  sapBusinessOne: "Manual Triggering",
+},
+{
+  id: 10,
+  name: "Software",
+  techCloudERP: "PHP",
+  sapBusinessOne: "ABAP",
+},
+{
+  id: 11,
+  name: "Database",
+  techCloudERP: "MySQL",
+  sapBusinessOne: "Oracle",
+},
+{
+  id: 12,
+  name: "Source Code",
+  techCloudERP: "Complete Source code will be given to the Client",
+  sapBusinessOne: "Source Code will be with the Development Company",
+},
+
+{
+  id: 13,
+  name: "Renewal/License Cost",
+  techCloudERP: "Lifetime Solution & No Renewal",
+  sapBusinessOne: "Renewal / License Cost is present",
+},
+
+{
+  id: 14,
+  name: "AMC",
+  techCloudERP: "15% or Not Mandate",
+  sapBusinessOne: "30% and Mandate",
+},
+{
+  id: 15,
+  name: "Implementation Period",
+  techCloudERP: "Plug & Play, If customisation - 1 month deployment period",
+  sapBusinessOne: "Product will not match exactly and needs 50 % customisation Heavy customisation charge and takes more time.",
+},
+{
+  id: 16,
+  name: "Implementation Cost",
+  techCloudERP: "Low",
+  sapBusinessOne: "High",
+},
+      // Add more features as needed
+  ],
+  salesAndCRMFeatures: [
+      {
+          id: 1,
+          name: "Delivery Against Sales Orders",
+          techCloudERP: "Yes",
+          sapBusinessOne: "No",
+      },
+      {
+          id: 2,
+          name: "Invoice Against Sales Orders",
+          techCloudERP: "Yes",
+          sapBusinessOne: "No",
+      },
+      {
+          id: 3,
+          name: "Opportunities & Pipeline Management",
+          techCloudERP: "Yes",
+          sapBusinessOne: "Yes",
+      },
+      // Add more features as needed
+  ],
+};

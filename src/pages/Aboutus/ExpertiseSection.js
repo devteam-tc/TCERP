@@ -2,20 +2,13 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { ExpertiseData } from '../../utils/constants'; 
+import { Title } from "../Home/CardSection";
 
 const SectionWrapper = styled.div`
   padding: 40px 0;
 background: #F4FDFF;
 
 `;
-
-const Title = styled.h2`
-text-align:center;
-  color: #f26633;
-  font-weight: bold;
-  margin-bottom: 30px;
-`;
-
 const IconWrapper = styled.div`
   font-size: 40px;
   color: #f26633;
@@ -46,7 +39,7 @@ const ExpertiseSection = () => {
   return (
     <SectionWrapper>
       <Container>
-        <Title>Focused Expertise for Your Business</Title>
+        <Title className="text-center pt-4 pt-md-0">Focused Expertise for Your Business</Title>
         <Row>
           {ExpertiseData.map((item, index) => (
             <Col md={4} key={index}>

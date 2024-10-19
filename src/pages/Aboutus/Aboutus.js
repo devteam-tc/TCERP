@@ -9,6 +9,8 @@ import { releavant , aboutus_data , whyTechCloudERPContent} from '../../utils/co
 // import TransformingIndustriesSection from '../../components/TransformingIndustriesSection';
 import CTA from '../CTA'
 import WhyTechCloudERP from './WhyTechCloudERP';
+import Services from './Services';
+import VisionMissionSection from './VisionMissionSection';
 const Aboutus = () => {
   return (
     <>
@@ -24,14 +26,13 @@ const Aboutus = () => {
           </Row>
         </Container>
       </Section>
-
-      {/* Pass the about_content as a prop to OurMissionSection */}
-      <OurMissionSection data={releavant.about_content_text} isAboutUs={true} />
+<VisionMissionSection />      
       <ExpertiseSection />
       <WhyTechCloudERP content={whyTechCloudERPContent}   title={whyTechCloudERPContent.title}
       />
       <RecordSection />
       {/* <TransformingIndustriesSection /> */}
+      <Services />
       <CTA />
       <OurPartnerSection />
     </>

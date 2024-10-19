@@ -34,7 +34,7 @@ const BannerContent = styled.div`
 const BannerTitle = styled.h1`
   font-size: 4rem;
   font-weight: 900;
-  color: #E9C182;
+  color: #EF5226;
 
   @media (max-width: 992px) {
     font-size: 1.9rem;
@@ -45,7 +45,7 @@ const BannerSubtitle = styled.h2`
   font-weight: 900;
   font-size: 5rem;
   // color: #ef5226;
-  color: #E9C182;
+  color: #EF5226;
 
   @media (max-width: 992px) {
     font-size: 1.9rem;
@@ -69,8 +69,8 @@ const HomeVideoLanding = () => {
       </VideoBackground>
       <Container>
         <BannerContent>
-          <BannerTitle>Innovate, Integrate, Excel</BannerTitle>
-          <BannerSubtitle>The Era of ERP Solutions</BannerSubtitle>
+          <BannerTitle>INNOVATE, INTEGRATE, EXCEL</BannerTitle>
+          <BannerSubtitle>the Era of ERP Solutions</BannerSubtitle>
           <BannerText>Each click step software is the digital backbone of modern businesses, orchestrating efficiency, transparency, and growth in every operation.</BannerText>
         </BannerContent>
       </Container>

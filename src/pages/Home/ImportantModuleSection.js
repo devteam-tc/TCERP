@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { ModulecardsData } from '../../utils/constants';
 import { Title } from './CardSection';
 import { Container } from 'react-bootstrap';
+
 // Styled Components for Slider
 const SliderWrapper = styled.div`
   padding: 10px 0;
@@ -29,18 +30,23 @@ const Card = styled.div`
   background-color: #fff;
   border: 1px solid #e5e5e5;
   border-radius: 8px;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  height: 400px; // Fixed height for consistency
+  min-height: 330px; // Ensure minimum height
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // Space between image and text
 
   &:hover {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
   }
 
   @media (max-width: 1200px) {
-    width: 45vw; // Adjust width based on screen size
-    height: auto; // Auto height for responsive scaling
+    width: 45vw;
+    height: auto; // Use auto height for responsive scaling
   }
 
   @media (max-width: 992px) {
@@ -61,14 +67,27 @@ const Card = styled.div`
 
 const CardImage = styled.img`
   width: 100%;
-  object-fit: cover;
+  height: 250px; // Fixed height for the image
+  object-fit: cover; // Maintain aspect ratio while covering the area
   border-radius: 8px;
+
+  @media (max-width: 992px) {
+    height: 200px; // Adjust height for smaller screens
+  }
+
+  @media (max-width: 768px) {
+    height: 180px; // Adjust height for even smaller screens
+  }
+
+  @media (max-width: 576px) {
+    height: 150px; // Adjust height for mobile devices
+  }
 `;
 
 const CardTitle = styled.h5`
   margin: 15px 0;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 500;
 
   @media (max-width: 992px) {
     font-size: 16px;
@@ -100,6 +119,11 @@ const CardText = styled.p`
   }
 `;
 
+const SubTitle = styled.h6`
+  display: block;
+  margin: auto; // Optional: Add some margin for spacing
+  text-align: center; // Center the text
+`;
 
 const ImportantModuleSection = () => {
   const sliderSettings = {
@@ -109,7 +133,8 @@ const ImportantModuleSection = () => {
     slidesToShow: 4, // Default to 4 slides at a time
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000, // Time in milliseconds between slides
+    autoplaySpeed: 1500, // Time in milliseconds between slides
+    pauseOnHover: false, // Prevent pause on hover
     responsive: [
       {
         breakpoint: 1200, // For screens below 1200px
@@ -141,11 +166,12 @@ const ImportantModuleSection = () => {
   return (
     <div>
       <Title className="text-center pt-4 pt-md-0">Important Modules</Title>
+      <SubTitle className='mb-3 mt-3'>The importance of modules in a system can vary depending on the specific needs and goals of an organization</SubTitle>
       <Container className="mb-3">
         <SliderWrapper>
           <Slider {...sliderSettings}>
             {ModulecardsData.map((card) => (
-              <Card key={card.id}>
+              <Card key={card.id} className='mb-5'>
                 <CardImage src={card.image} alt={card.title} />
                 <CardTitle>{card.title}</CardTitle>
                 <CardText>{card.description}</CardText>

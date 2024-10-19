@@ -3,13 +3,14 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import { TiArrowRight } from "react-icons/ti";
 import { releavant } from '../../utils/constants';
+import { useNavigate } from 'react-router-dom';
 
 // Styled Components
 const ExperienceSection = styled.section`
-  padding-bottom: 90px;
+  padding: 100px 0px 0px 100px;
 
   @media (max-width: 992px) {
-    padding-bottom: 60px;
+    padding: 0px !important;
   }
 `;
 
@@ -109,8 +110,13 @@ const ExperienceContent = styled.div`
 
 // React Component
 const OurMissionSection = () => {
-  const { images, content } = releavant.ourMission;
+  const navigate = useNavigate();
 
+  const { images, content } = releavant.ourMission;
+  const handleReadMoreClick = () => {
+    navigate('/about-us');
+    window.scrollTo(0, 0);
+    };
   return (
     <ExperienceSection>
       <Container>
@@ -132,7 +138,7 @@ const OurMissionSection = () => {
           </Col>
           <Col lg={7} className="mt-4">
             <ExperienceContent>
-              <span>{content.companyName}</span>
+              <h3 style={{color: '#ef5226'}}>{content.companyName}</h3>
               <p>{content.description}</p>
               <div className="experience-text">
                 <div className='mt-4'>
@@ -140,10 +146,15 @@ const OurMissionSection = () => {
                   <p>{content.missionText}</p>
                 </div>
               </div>
-              <Button variant="primary" style={{ backgroundColor: '#e93906', borderRadius: '0px', border: 'none', marginTop: '2vh' }}>
-                Read More 
-                <TiArrowRight size={25}/>
-              </Button>
+              <Button
+      className='mt-4'
+      onClick={handleReadMoreClick}
+      variant="primary"
+      style={{ backgroundColor: '#e93906', borderRadius: '0px', border: 'none' }}
+    >
+      Read More
+      <TiArrowRight size={25} />
+    </Button>
             </ExperienceContent>
           </Col>
         </Row>

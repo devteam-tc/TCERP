@@ -9,6 +9,10 @@ const GalleryContainer = styled.div`
   padding: 20px;
   text-align: center;
   background: #F5FDFF;
+  @media (max-width: 992px) {
+      padding: 40px;
+
+  }
 `;
 
 const Description = styled.p`
@@ -18,27 +22,30 @@ const Description = styled.p`
 `;
 
 const TabButton = styled(Nav.Link)`
-  color: #6c757d;
-  background-color: transparent;
+  color: #000;
+  background-color: #fff;
   font-weight: bold;
-  width: auto;
+  width: 36vh;
+  box-shadow: 0px 2px 10px 0px #00000040;
   border: none;
   text-align: center;
-
+@media (max-width: 992px) {
+  width:auto;
+}
   &:hover {
     color: white;
-    background-color: #EF5226;
+background: #ef5226 !important;
   }
 
   &.active {
     color: white !important;
-    background-color: #EF5226 !important;
+    background: #ef5226!important;
   }
 `;
 
 const CardContainer = styled.div`
   margin: 20px 0;
-  width: min-content;
+  // width: min-content;
   &:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0.1, 0.3);
     cursor: pointer;
@@ -52,7 +59,17 @@ const CardItem = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
 `;
+
 
 const GalleryTabs = () => {
   const [activeTab, setActiveTab] = useState('expo');
@@ -65,13 +82,14 @@ const GalleryTabs = () => {
 
 
   return (
-    <GalleryContainer>
+    <GalleryContainer className='mt-3 '>
       <Title>Exhibition Gallery</Title>
       <Description>Explore our curated gallery of innovative designs and project solutions.</Description>
 
       <Container>
         <Tab.Container activeKey={activeTab}>
-          <Nav style={{ justifyContent: 'center', display: 'flex', alignItems: 'center', gap: '20px' }}>
+          <Nav style={{ justifyContent: 'center', display: 'flex', alignItems: 'center' }}>
+          {/* , gap: '20px' */}
             <Nav.Item>
               <TabButton 
                 className={activeTab === 'expo' ? 'active' : ''} 
@@ -94,7 +112,7 @@ const GalleryTabs = () => {
             <Tab.Pane eventKey={activeTab}>
               <Row>
                 {galleryData[activeTab].map((item) => (
-                  <Col key={item.id} xs={12} md={6} lg={4}>
+                  <Col key={item.id} xs={12} md={6} lg={3}>
                     <CardContainer onClick={() => handleCardClick(item.id)}>
                       <CardItem className="text-start fw-semibold">
                         <div>

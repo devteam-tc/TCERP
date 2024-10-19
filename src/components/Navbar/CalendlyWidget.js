@@ -28,6 +28,7 @@ const CalendlyWidget = () => {
   };
 
   return { openCalendlyWidget };
+
 };
 
 export default CalendlyWidget;
