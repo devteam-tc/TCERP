@@ -1,7 +1,8 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import { assets } from "../../utils/constants"; 
 
 const moveUpDown = keyframes`
   0% {
@@ -48,18 +49,14 @@ const StyledButton = styled(Button)`
 const StickyButton = () => (
   <>
     <StickyButtonWrapper>
-      <Link to="/path/to/brochure" aria-label="Download Brochure">
-        <StyledButton>
-          Download Brochure
-        </StyledButton>
-      </Link>
+    <a href={assets.brochureLink} target="_blank" rel="noopener noreferrer" aria-label="Download Brochure">
+        <StyledButton>Download Brochure</StyledButton>
+      </a>
     </StickyButtonWrapper>
 
     <StickyButtonWrapper left>
       <Link to="/product-comparison" aria-label="Product Comparison">
-        <StyledButton>
-          Product Comparison
-        </StyledButton>
+        <StyledButton>Product Comparison</StyledButton>
       </Link>
     </StickyButtonWrapper>
   </>

@@ -47,7 +47,7 @@ const Badge = styled.div`
 
 const Price = styled.h1`
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 28.8px;
   text-align: left;
   margin-bottom: 10px;

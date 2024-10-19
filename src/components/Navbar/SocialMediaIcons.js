@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube } from 'react-icons/fa';
 import styled from 'styled-components';
-
+import { FaXTwitter } from "react-icons/fa6";
 const SocialIcon = styled.a`
   color: #000;
   margin: 0 8px;
@@ -25,23 +25,23 @@ const SocialIcon = styled.a`
 const SocialMediaIcons = () => {
   return (
     <div className="d-flex align-items-center ms-auto">
-      <SocialIcon href="https://www.instagram.com" target="_blank">
+      <SocialIcon href="https://www.instagram.com/techclouderp/?hl=en" target="_blank">
         <FaInstagram />
       </SocialIcon>
-      <SocialIcon href="https://www.facebook.com" target="_blank">
+      <SocialIcon href="https://www.facebook.com/TechCloudERPSoftwareSolutions" target="_blank">
         <FaFacebookF />
       </SocialIcon>
-      <SocialIcon href="https://www.linkedin.com" target="_blank">
+      <SocialIcon href="https://www.linkedin.com/company/13619340/admin/feed/posts/" target="_blank">
         <FaLinkedinIn />
       </SocialIcon>
-      <SocialIcon href="https://www.pinterest.com" target="_blank">
+      <SocialIcon href="https://in.pinterest.com/techclouderp/" target="_blank">
         <FaPinterest />
       </SocialIcon>
-      <SocialIcon href="https://www.youtube.com" target="_blank">
+      <SocialIcon href="https://www.youtube.com/channel/UChUCWRHTzZkYEPRR-AauNkA" target="_blank">
         <FaYoutube />
       </SocialIcon>
-      <SocialIcon href="https://www.twitter.com" target="_blank">
-        <FaTwitter />
+      <SocialIcon href="https://twitter.com/TechCloudERP" target="_blank">
+        <FaXTwitter />
       </SocialIcon>
     </div>
   );

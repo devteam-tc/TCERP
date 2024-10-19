@@ -54,7 +54,7 @@ const BannerSubtitle = styled.h2`
 
 const BannerText = styled.p`
   font-size: 18px;
-
+text-align:center !important;
   @media (max-width: 992px) {
     font-size: 1rem;
   }
@@ -70,7 +70,7 @@ const HomeVideoLanding = () => {
       <Container>
         <BannerContent>
           <BannerTitle>INNOVATE, INTEGRATE, EXCEL</BannerTitle>
-          <BannerSubtitle>the Era of ERP Solutions</BannerSubtitle>
+          <BannerSubtitle>The Era of ERP Solutions</BannerSubtitle>
           <BannerText>Each click step software is the digital backbone of modern businesses, orchestrating efficiency, transparency, and growth in every operation.</BannerText>
         </BannerContent>
       </Container>

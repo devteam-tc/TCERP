@@ -23,8 +23,8 @@ import ComparisonTable from './pages/product-comparison';
 
 function App() {
   return (
-    <Router basename="/">
-      <div className="App  md:bg-top bg-center">
+    <Router >
+      <div className="App md:bg-top bg-center">
         <MainNavbar/>
         {/* Define your Routes here */}
         <Routes>

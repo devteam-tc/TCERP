@@ -20,7 +20,7 @@ const NotFound = () => {
     </Helmet>
     <div className="text-center">
       <div>
-        <ErrorImg src={require('../assets/errorImg.png')}/>
+        <ErrorImg src={require('../assets/errorImg.webp')}/>
       </div>
       <Link to="/" className="btn mt-3 mb-2" style={{backgroundColor: '#D94B23', color: 'white'}}>
         Go to Home Page

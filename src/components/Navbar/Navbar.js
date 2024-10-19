@@ -221,7 +221,8 @@
 import React, { useEffect, useState } from 'react';
 import { Navbar, Nav, Container, Dropdown, NavDropdown} from 'react-bootstrap';
 import { IoCall } from "react-icons/io5";
-import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube, FaTwitter } from 'react-icons/fa'; // Social media icons
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaPinterest, FaYoutube } from 'react-icons/fa'; // Social media icons
+import { FaXTwitter } from "react-icons/fa6";
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'; // Hamburger and Close icons
 import styled from 'styled-components';
 import { NAV_ITEMS, releavant } from '../../utils/constants';
@@ -477,24 +478,24 @@ const MainNavbar = () => {
           </MobileNav>
           {/* Social Media Icons at right side */}
           <div className="d-flex align-items-center ms-auto">
-              <SocialIcon href="https://www.instagram.com" target="_blank">
-                <FaInstagram />
-              </SocialIcon>
-              <SocialIcon href="https://www.facebook.com" target="_blank">
-                <FaFacebookF />
-              </SocialIcon>
-              <SocialIcon href="https://www.linkedin.com" target="_blank">
-                <FaLinkedinIn />
-              </SocialIcon>
-              <SocialIcon href="https://www.pinterest.com" target="_blank">
-                <FaPinterest />
-              </SocialIcon>
-              <SocialIcon href="https://www.youtube.com" target="_blank">
-                <FaYoutube />
-              </SocialIcon>
-              <SocialIcon href="https://www.twitter.com" target="_blank">
-                <FaTwitter />
-              </SocialIcon>
+          <SocialIcon href="https://www.instagram.com/techclouderp/?hl=en" target="_blank">
+        <FaInstagram />
+      </SocialIcon>
+      <SocialIcon href="https://www.facebook.com/TechCloudERPSoftwareSolutions" target="_blank">
+        <FaFacebookF />
+      </SocialIcon>
+      <SocialIcon href="https://www.linkedin.com/company/13619340/admin/feed/posts/" target="_blank">
+        <FaLinkedinIn />
+      </SocialIcon>
+      <SocialIcon href="https://in.pinterest.com/techclouderp/" target="_blank">
+        <FaPinterest />
+      </SocialIcon>
+      <SocialIcon href="https://www.youtube.com/channel/UChUCWRHTzZkYEPRR-AauNkA" target="_blank">
+        <FaYoutube />
+      </SocialIcon>
+      <SocialIcon href="https://twitter.com/TechCloudERP" target="_blank">
+        <FaXTwitter />
+      </SocialIcon>
           </div>
         </MobileNavbarCollapse>
       </Container>

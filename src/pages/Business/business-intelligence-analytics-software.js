@@ -33,8 +33,8 @@ const BusinessIntelligence = () => {
             <BusinessSlider />
             <ReportingSection />
             <TransformingIndustriesSection />
-            <OurPartnerSection />
-            <CTA />   
+            <CTA /> 
+            <OurPartnerSection />  
         </>
     );
 };
