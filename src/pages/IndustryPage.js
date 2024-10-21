@@ -121,7 +121,7 @@ const IndustryText = styled.p`
   font-weight: 400;
   line-height: 1.5;
   margin-bottom: 30px;
-
+  text-align : justify;
   @media (max-width: 992px) {
     font-size: 14px;
     margin-bottom: 20px;

@@ -14,6 +14,7 @@ const DescriptionContainer = styled.div``;
 const Text = styled.p`
   font-size: 1.125rem;
   color: #4a5568;
+    text-align :justify;
   margin-bottom: 1rem;
 `;
 
@@ -53,7 +54,8 @@ const SectionSubtitle = styled.p`
 `;
 
 const CardWrapper = styled.div`
-  border: 1px solid #0b0a0a;
+  // border: 1px solid #0b0a0a;
+  box-shadow:rgba(173, 216, 230, 0.5) 0px 10px 20px,rgba(173, 216, 230, 0.7) 0px 6px 6px;
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 30px;
@@ -165,8 +167,9 @@ const ServicesSection = () => {
       </Section>
       <DescriptionContainer>
         <Container>
-          <Row className="align-content-center mt-md-5" style={{ backgroundColor: '#FFF3F0' }}>
-            <Col md={6} className="p-5">
+          <Row className="align-items-center mt-md-5">
+          {/* style={{ backgroundColor: '#FFF3F0' }} */}
+            <Col md={6} className="p-4">
               <Title>{service.title}</Title>
               {service.description.map((paragraph, index) => (
                 <Text key={index}>{paragraph}</Text>

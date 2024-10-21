@@ -220,22 +220,22 @@ const Footer = () => {
             <FooterHeading>Services</FooterHeading>
             <FooterLinkList>
               <li>
-                <Link to="#" onClick={scrollToTop}>Web Development</Link>
+                <Link to="/services/web-development" onClick={scrollToTop}>Web Development</Link>
               </li>
               <li>
                 <Link to="#" onClick={scrollToTop}>E-Commerce website</Link>
               </li>
               <li>
-                <Link to="#" onClick={scrollToTop}>Mobile App development</Link>
+                <Link to="/services/mobile-application-development" onClick={scrollToTop}>Mobile App development</Link>
               </li>
               <li>
-                <Link to="#" onClick={scrollToTop}>Digital marketing</Link>
+                <Link to="/services/digital-marketing" onClick={scrollToTop}>Digital marketing</Link>
               </li>
               <li>
                 <Link to="#" onClick={scrollToTop}>Whatsapp business</Link>
               </li>
               <li>
-                <Link to="#" onClick={scrollToTop}>Business intelligence</Link>
+                <Link to="/business-intelligence" onClick={scrollToTop}>Business intelligence</Link>
               </li>
               <li>
                 <Link to="#" onClick={scrollToTop}>Web Hosting</Link>

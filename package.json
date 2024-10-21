@@ -1,15 +1,13 @@
 {
   "name": "tcerpwebsite",
   "version": "0.1.0",
-  "homepage": "https://devteam-tc.github.io/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
-    "firebase": "^10.14.0",
-    "firebase-tools": "^13.20.2",
+    "firebase": "^10.14.1",
     "lg-thumbnail": "^1.2.1",
     "lg-zoom": "^1.3.0",
     "lightgallery": "^2.7.2",

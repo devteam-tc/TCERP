@@ -85,7 +85,7 @@ const IconWrapper = styled.div`
 export const Title = styled.h1`
   font-size: 40px;
   color: #ef5226;
-  line-height: 60px;
+  // line-height: 60px;
   margin-bottom: 20px;
 
   @media screen and (max-width: 1024px) {

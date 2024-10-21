@@ -11,7 +11,7 @@ const SubText = styled.p`
   margin-top: 1rem;
 `;
 
-const HighlightText = styled.p`
+const HighlightText = styled.h4`
   color: #ff4500;
   font-weight: 500;
   font-size: 1.2rem;
@@ -45,7 +45,7 @@ const ReportingSection = () => {
   const { subText, items, imageSrc, imageAlt } = ReportingSectionContent;
 
   return (
-    <Container>
+    <Container className="pt-5 pb-5">
       <Row className="mt-3 mb-3">
         {/* Left side: Text */}
         <StyledCol md={6}>

@@ -1,7 +1,8 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import { assets } from "../../utils/constants"; 
 
 const moveUpDown = keyframes`
   0% {
@@ -24,10 +25,8 @@ const StickyButtonWrapper = styled.div`
   transform-origin: 0 0;
   animation: ${moveUpDown} 2s infinite alternate;
 
-  @media only screen and (max-width: 980px) {
-    top: 300px !important;
-    transition: top 0.3s ease-in-out;
-    animation: none; /* Disable animation on smaller screens */
+  @media only screen and (max-width: 996px) {
+    display: none;
   }
 `;
 
@@ -48,18 +47,14 @@ const StyledButton = styled(Button)`
 const StickyButton = () => (
   <>
     <StickyButtonWrapper>
-      <Link to="/path/to/brochure" aria-label="Download Brochure">
-        <StyledButton>
-          Download Brochure
-        </StyledButton>
-      </Link>
+    <a href={assets.brochureLink} target="_blank" rel="noopener noreferrer" aria-label="Download Brochure">
+        <StyledButton>Download Brochure</StyledButton>
+      </a>
     </StickyButtonWrapper>
 
     <StickyButtonWrapper left>
       <Link to="/product-comparison" aria-label="Product Comparison">
-        <StyledButton>
-          Product Comparison
-        </StyledButton>
+        <StyledButton>Product Comparison</StyledButton>
       </Link>
     </StickyButtonWrapper>
   </>

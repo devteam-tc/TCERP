@@ -11,6 +11,7 @@ import CTA from '../CTA'
 import WhyTechCloudERP from './WhyTechCloudERP';
 import Services from './Services';
 import VisionMissionSection from './VisionMissionSection';
+import CoFoundersSection from './CoFoundersSection ';
 const Aboutus = () => {
   return (
     <>
@@ -33,6 +34,7 @@ const Aboutus = () => {
       <RecordSection />
       {/* <TransformingIndustriesSection /> */}
       <Services />
+      <CoFoundersSection />
       <CTA />
       <OurPartnerSection />
     </>

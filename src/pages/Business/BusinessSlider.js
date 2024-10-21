@@ -69,11 +69,12 @@ const StyledCard = styled(Card)`
   }
 
   .explore-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     color: #ff5733;
-    float: right;
+        text-align: right;
+    // float: right;
     text-decoration: none;
     font-weight: 500;
     font-size: 1.3rem;
@@ -146,9 +147,10 @@ const DotsContainer = styled.div`
 
 // Styled Section Background
 const SectionBackground = styled.div`
-  background: #f8feff; // Set background color
-  width: 100%; // Full width
-  padding: 20px; // Add some padding if needed
+  background: #f8feff; 
+  width: 100%; 
+  // padding: 20px;
+  padding:20px 0px 60px 0px;
   box-sizing: border-box; // Ensure padding is included in the total width
 `;
 
