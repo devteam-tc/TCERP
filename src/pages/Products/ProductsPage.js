@@ -9,7 +9,6 @@ import { Title } from '../Home/CardSection';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import OurPartnerSection from '../Home/OurPartnerSection';
 import CTA from '../CTA';
-import { Helmet } from 'react-helmet';
 import Typewriter from "typewriter-effect";
 const WhyTechCloudERPContainer = styled(Container)`
   padding: 50px 0;
@@ -275,12 +274,6 @@ const ProductPage = () => {
 
   return (
     <>
-    {/* Dynamic meta tags */}
-    <Helmet>
-        <title>Products Page</title>
-        <meta name="description" content='jhgfasdhkfsbkjcbgiugcb' />
-        <meta name="keywords" content='jjjdgkadfjsdhgfuiegdfui' />
-    </Helmet>
       <Section>
         <Container>
           <Row>

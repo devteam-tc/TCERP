@@ -33,8 +33,9 @@ const FlippedImage = styled.img`
 
 const FixedSizeImage = styled.img`
   width: 100%; 
+  
   max-width: 1296px; 
-    height: 444px; 
+  height: 444px; 
   border-radius: 10px;
   object-fit: cover;
 
@@ -81,7 +82,7 @@ const ExpoDetail = () => {
 
       <Container>
         <Row>
-          <ContentColumn md={12} className='mt-4'>
+          <ContentColumn md={12} className='mt-4 flex-wrap'>
             {/* First two images taking fixed size */}
             <LightGallery
               onInit={onInit}
@@ -93,24 +94,23 @@ const ExpoDetail = () => {
                 lgShare,
                 lgRotate
               ]}>
-              {expo.images.slice(0, 2).map((img, index) => (
+              {expo.images.slice(0,2).map((img, index) => (
                 <a href={img} key={index}>
                   <FixedSizeImage
                     src={img}
-                    alt={expo.title}
+                    alt={expo.title + index}
                     className="mb-2"
                     onClick={() => openModal(index)}
                   />
                 </a>
               ))}
             </LightGallery>
-
-            {/* Remaining images in a row with flip effect */}
-            <Row>
-              {expo.images.slice(2).map((img, index) => (
-                <Col md={4} key={index + 2} className='mb-3'>
+            </ContentColumn>
+        </Row>
+        <Row>
+                <Col md={4} className='mb-3'>
                   <LightGallery
-                    onInit={onInit}
+                    onInit={onInit} 
                     speed={500}
                     plugins={[
                       lgThumbnail,
@@ -119,7 +119,8 @@ const ExpoDetail = () => {
                       lgShare,
                       lgRotate
                     ]}>
-                    <a href={img} key={index}>
+                      {expo.images.slice(2).map((img, index) => (
+                      <a href={img} key={index}>
                       <FlippedImage
                         src={img}
                         alt={expo.title}
@@ -127,12 +128,13 @@ const ExpoDetail = () => {
                         onClick={() => openModal(index + 2)}
                       />
                     </a>
+                    ))}
                   </LightGallery>
                 </Col>
-              ))}
-            </Row>
-          </ContentColumn>
+              
         </Row>
+          
+        
       </Container>
     </>
   );
