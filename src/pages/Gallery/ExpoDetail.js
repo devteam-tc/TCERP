@@ -34,12 +34,12 @@ const FlippedImage = styled.img`
 const FixedSizeImage = styled.img`
   width: 100%; 
   max-width: 1296px; 
-    height: 444px; 
+  height: 444px; 
   border-radius: 10px;
   object-fit: cover;
 
   @media (max-width: 992px) {
-  height: auto; 
+    height: auto; 
   }
 `;
 
@@ -92,7 +92,9 @@ const ExpoDetail = () => {
                 lgFullscreen,
                 lgShare,
                 lgRotate
-              ]}>
+              ]}
+              download={false} // Disable download option
+            >
               {expo.images.slice(0, 2).map((img, index) => (
                 <a href={img} key={index}>
                   <FixedSizeImage
@@ -118,7 +120,9 @@ const ExpoDetail = () => {
                       lgFullscreen,
                       lgShare,
                       lgRotate
-                    ]}>
+                    ]}
+                    download={false} // Disable download option
+                  >
                     <a href={img} key={index}>
                       <FlippedImage
                         src={img}

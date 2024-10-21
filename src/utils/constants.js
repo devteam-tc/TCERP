@@ -1382,7 +1382,7 @@ export const expoDetails = {
   hyderabad: {
     title: 'Hyderabad Expo',
     venue: 'HITEX Exhibition Center, Hitex Road, Izzathnagar, Kothaguda, Hyderabad, Telangana 500084',
-    date: '13,14,15 - Sep, 2024',
+    date: '13,14,15 - Sep , 2024',
     images: [
       require('../assets/Gallery/HyderabadExpo/IntroImg1.png'),
       require('../assets/Gallery/HyderabadExpo/IntroImg2.png'),
@@ -1402,23 +1402,28 @@ export const expoDetails = {
   },
   delhi: {
     title: 'Delhi Expo',
-    venue: 'Bharath Bhavan, Pragathi Maidan',
-    date: '19,20,21,22 - Sep, 2024',
+    venue: 'Bharath Bhavan, Pragathi Maidan Delhi, India 110001',
+    date: '19,20,21,22 - Sep , 2024',
     images: [
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
-      'https://placehold.co/600x400',
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg1.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg2.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg3.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg4.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg5.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg6.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg7.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg8.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg9.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg10.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg11.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg12.webp'),
+      require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg13.webp'),
     ],
   },
   chennai: {
     title: 'Chennai Food Pro Expo',
-    venue: 'Chennai Trade Centre, Chennai, India',
-    date: '9, 10, 11 - Aug, 2024',
+    venue: 'Chennai Trade Centre, Chennai, India 600089',
+    date: '9, 10, 11 - Aug , 2024',
     images: [
       require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg1.webp'),
       require('../assets/Gallery/ChennaiExpo/ChennaiExpoImg2.webp'),
@@ -1437,7 +1442,8 @@ export const expoDetails = {
   },
   surat: {
     title: 'Surat Tech Cloud ERP',
-    description: 'Discover the Tech Cloud ERP Software in Surat...',
+    venue: 'Agenda Avadh Utopia , Surat , India 395007 ',
+    date: '14 , 15 , 16 - June , 2024',
     images: [
       require('../assets/Gallery/SuratExpo/SuratExpoImg1.jpg'),
       require('../assets/Gallery/SuratExpo/SuratExpoImg2.jpg'),
@@ -1454,10 +1460,34 @@ export const expoDetails = {
       require('../assets/Gallery/SuratExpo/SuratExpoImg13.jpg'),
     ],
   },
+  coimbatore: {
+    title: 'Coimbatore Tech Cloud ERP',
+    venue: 'Codissia Trade Fair Complex  - Nehru Nagar West , Coimbatore, India 641014',
+    date: '3, 4, 5 - July, 2024',
+    images: [
+      require('../assets/Gallery/SuratExpo/SuratExpoImg1.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg2.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg3.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg4.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg5.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg6.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg7.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg8.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg9.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg10.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg11.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg12.jpg'),
+      require('../assets/Gallery/SuratExpo/SuratExpoImg13.jpg'),
+    ],
+  },
+
+
+
+
   GaneshChaturdhi: {
     title: 'Ganesh Chaturdhi Celebrations - 2024',
     venue: 'Office Unit No. 705, Jain Sadguru Capital Park, Madhapur, Hyderabad, Telangana, India-500081.',
-    date: '19,20,21,22 - Sep, 2024',
+    date: '19 ,20 ,21 ,22 - Sep, 2024',
     description: 'Discover the Tech Cloud ERP Software in Surat...',
     images: [
       require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg1.webp'),
@@ -1475,10 +1505,10 @@ export const galleryData = {
     {
       id: 'surat',
       location: 'Surat',
-      venue: 'Bharath Bhavan, Pragathi Maidan',
-      date: '15 & 16 - June, 2024',
+      venue: 'Agenda Avadh Utopia',
+      date: '14 , 15 , 16 - June, 2024',
       img: require('../assets/Gallery/SuratExpo/SuratExpoThumbnail.png'),
-      alt: 'World Food India 2024 in Delhi',
+      alt: 'World Food India 2024 in surat',
     },
     {
       id: 'chennai',
@@ -1486,7 +1516,7 @@ export const galleryData = {
       venue: 'Chennai Trade Centre, Chennai, India',
       date: '9, 10, 11 - Aug, 2024',
       img: require('../assets/Gallery/ChennaiExpo/ChennaiExpoExhibition.png'),
-      alt: 'World Food India 2024 in Delhi',
+      alt: 'World Food India 2024 in chennai',
     },
     {
       id: 'hyderabad',
@@ -1507,10 +1537,10 @@ export const galleryData = {
     {
       id: 'coimbatore',
       location: 'Coimbatore',
-      venue: 'Bharath Bhavan, Pragathi Maidan',
-      date: '19, 20, 21, 22 - Sep, 2024',
+      venue: 'Codissia Trade Fair Complex  - Nehru Nagar West',
+      date: '3, 4, 5 - July, 2024',
       img: require('../assets/Gallery/Coimbature pics/CoimbatoreExpoThumbnail.png'),
-      alt: 'World Food India 2024 in Delhi',
+      alt: 'World Food India 2024 in coimbatore',
     }
   ],
  
@@ -3599,10 +3629,10 @@ export const coFoundersData = [
       title: "Chairman",
       description: "Mr. Devang is a Mechanical Engineer and a certified SAP Production Planning Consultant. Known for his dynamic personality, he thrives on engaging with individuals at all levels to enhance his knowledge base. He is a meticulous observer of processes, consistently providing precise solutions swiftly. His profound expertise and leadership abilities have significantly advanced the careers of numerous professionals and have been instrumental in the growth of various businesses.",
       socialLinks: {
-          facebook: "https://www.facebook.com/devang.patel",
-          linkedin: "https://www.linkedin.com/in/devang-patel",
-          instagram: "https://www.instagram.com/devang.patel",
-          twitter: "https://twitter.com/devang_patel",
+          facebook: "#",
+          linkedin: "#",
+          instagram: "#",
+          twitter: "#",
       },
   },
   {
@@ -3610,10 +3640,10 @@ export const coFoundersData = [
       title: "Founder & CEO",
       description: "Mr. Raja is a Mechanical Engineer and a certified SAP Production Planning Consultant. Known for his dynamic personality, he thrives on engaging with individuals at all levels to enhance his knowledge base. He is a meticulous observer of processes, consistently providing precise solutions swiftly. His profound expertise and leadership abilities have significantly advanced the careers of numerous professionals and have been instrumental in the growth of various businesses.",
       socialLinks: {
-          facebook: "https://www.facebook.com/raja.shanmugam",
-          linkedin: "https://www.linkedin.com/in/raja-shanmugam",
-          instagram: "https://www.instagram.com/raja.shanmugam",
-          twitter: "https://twitter.com/raja_shanmugam",
+          facebook: "#",
+          linkedin: "https://www.linkedin.com/in/raj-techclouderp/",
+          instagram: "#",
+          twitter: "#",
       },
   },
 ];
