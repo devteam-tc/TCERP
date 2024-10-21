@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Accordion,  Col, Container, Row } from 'react-bootstrap';
 import { BodySection, ContentColumn, Description, Divider, Heading, Section } from '../IndustryPage';
-import { productData , whyTechCloudERPContent} from '../../utils/constants'; // Import product data from constants.js
+import { productData } from '../../utils/constants'; // Import product data from constants.js
 import styled from 'styled-components';
 import { BsCheckCircle } from 'react-icons/bs'; // Import tick mark icon from react-icons
 import { Title } from '../Home/CardSection';
