@@ -34,12 +34,12 @@ const FlippedImage = styled.img`
 const FixedSizeImage = styled.img`
   width: 100%; 
   max-width: 1296px; 
-    height: 444px; 
+  height: 444px; 
   border-radius: 10px;
   object-fit: cover;
 
   @media (max-width: 992px) {
-  height: auto; 
+    height: auto; 
   }
 `;
 
@@ -86,6 +86,7 @@ const ExpoDetail = () => {
             <LightGallery
               onInit={onInit}
               speed={500}
+              download={false}  
               plugins={[
                 lgThumbnail,
                 lgZoom,
@@ -112,6 +113,7 @@ const ExpoDetail = () => {
                   <LightGallery
                     onInit={onInit}
                     speed={500}
+                    download={false}  
                     plugins={[
                       lgThumbnail,
                       lgZoom,
