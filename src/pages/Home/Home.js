@@ -11,7 +11,7 @@ import CallToActionSection from './CallToActionSection';
 import OurPartnerSection from './OurPartnerSection';
 import { testimonialsData, releavant } from '../../utils/constants';
 import StickyButton from '../Home/StickyButton';
-import FeatureCard from '../../pages/FeatureCard';
+import ScrollFeatureCard from '../ScrollFeatureCard';
 
 const Home = () => {
   return (
@@ -22,7 +22,7 @@ const Home = () => {
       <CardSection />
       <ImportantModuleSection />
       <RecordSection />
-      <FeatureCard />
+      <ScrollFeatureCard />
       <Testimonials testimonialsData={testimonialsData} />
       <GalleryTabs />
       <PricingSection />

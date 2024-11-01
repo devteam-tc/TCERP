@@ -21,6 +21,7 @@ import FeatureCard from './pages/FeatureCard';
 import ComparisonTable from './pages/product-comparison';
 import './routes/index.css'
 import Navigation from './components/Navbar/Navigation';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Footer should be displayed across all pages */}
+        <ScrollToTopButton />
         <Footer />
       </div>
     </Router>

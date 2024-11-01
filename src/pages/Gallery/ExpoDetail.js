@@ -33,14 +33,13 @@ const FlippedImage = styled.img`
 
 const FixedSizeImage = styled.img`
   width: 100%; 
-  
   max-width: 1296px; 
   height: 444px; 
   border-radius: 10px;
   object-fit: cover;
 
   @media (max-width: 992px) {
-  height: auto; 
+    height: auto; 
   }
 `;
 
@@ -82,11 +81,12 @@ const ExpoDetail = () => {
 
       <Container>
         <Row>
-          <ContentColumn md={12} className='mt-4 flex-wrap'>
+          <ContentColumn md={12} className='mt-4'>
             {/* First two images taking fixed size */}
             <LightGallery
               onInit={onInit}
               speed={500}
+              download={false}  
               plugins={[
                 lgThumbnail,
                 lgZoom,
@@ -94,24 +94,26 @@ const ExpoDetail = () => {
                 lgShare,
                 lgRotate
               ]}>
-              {expo.images.slice(0,2).map((img, index) => (
+              {expo.images.slice(0, 2).map((img, index) => (
                 <a href={img} key={index}>
                   <FixedSizeImage
                     src={img}
-                    alt={expo.title + index}
+                    alt={expo.title}
                     className="mb-2"
                     onClick={() => openModal(index)}
                   />
                 </a>
               ))}
             </LightGallery>
-            </ContentColumn>
-        </Row>
-        <Row>
-                <Col md={4} className='mb-3'>
+
+            {/* Remaining images in a row with flip effect */}
+            <Row>
+              {expo.images.slice(2).map((img, index) => (
+                <Col md={4} key={index + 2} className='mb-3'>
                   <LightGallery
-                    onInit={onInit} 
+                    onInit={onInit}
                     speed={500}
+                    download={false}  
                     plugins={[
                       lgThumbnail,
                       lgZoom,
@@ -119,8 +121,7 @@ const ExpoDetail = () => {
                       lgShare,
                       lgRotate
                     ]}>
-                      {expo.images.slice(2).map((img, index) => (
-                      <a href={img} key={index}>
+                    <a href={img} key={index}>
                       <FlippedImage
                         src={img}
                         alt={expo.title}
@@ -128,13 +129,12 @@ const ExpoDetail = () => {
                         onClick={() => openModal(index + 2)}
                       />
                     </a>
-                    ))}
                   </LightGallery>
                 </Col>
-              
+              ))}
+            </Row>
+          </ContentColumn>
         </Row>
-          
-        
       </Container>
     </>
   );

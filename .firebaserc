@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "tcerp-website"
-  }
+    "default": "tcerp-website-ff312",
+    "staging": "tcerp-website-ff312"
+  },
+  "targets": {},
+  "etags": {}
 }
