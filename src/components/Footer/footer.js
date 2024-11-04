@@ -12,6 +12,7 @@ import {
   FaPinterest,
   FaYoutube,
 } from "react-icons/fa";
+import SocialMediaIcons from "../Navbar/SocialMediaIcons";
 
 // Styled Components
 const FooterSection = styled.footer`
@@ -140,26 +141,7 @@ const Footer = () => {
               businesses, combining advanced technology, intuitive design, and
               comprehensive features.
             </FooterText>
-            <SocialIcons>
-              <Link to="/facebook" onClick={scrollToTop}>
-                <FaFacebookF />
-              </Link>
-              <Link to="/twitter" onClick={scrollToTop}>
-                <FaTwitter />
-              </Link>
-              <Link to="/linkedin" onClick={scrollToTop}>
-                <FaLinkedinIn />
-              </Link>
-              <Link to="/instagram" onClick={scrollToTop}>
-                <FaInstagram />
-              </Link>
-              <Link to="/pinterest" onClick={scrollToTop}>
-                <FaPinterest />
-              </Link>
-              <Link to="/youtube" onClick={scrollToTop}>
-                <FaYoutube />
-              </Link>
-            </SocialIcons>
+         <SocialMediaIcons />
           </Col>
           {/* Useful Links */}
           <Col md={2} sm={6}>
@@ -175,16 +157,16 @@ const Footer = () => {
                 <Link to="/services" onClick={scrollToTop}>All Industries</Link>
               </li>
               <li>
-                <Link to="/features" onClick={scrollToTop}>Our features</Link>
+                <Link to="/features" onClick={scrollToTop}>Our Features</Link>
               </li>
               <li>
-                <Link to="/terms-and-conditions" onClick={scrollToTop}>Terms of service</Link>
+                <Link to="/terms-and-conditions" onClick={scrollToTop}>Terms of Service</Link>
               </li>
               <li>
-                <Link to="/privacypolicy" onClick={scrollToTop}>Privacy policy</Link>
+                <Link to="/privacypolicy" onClick={scrollToTop}>Privacy Policy</Link>
               </li>
               <li>
-                <Link to="/" onClick={scrollToTop}>Our blogs</Link>
+                <Link to="/" onClick={scrollToTop}>Our Blogs</Link>
               </li>
             </FooterLinkList>
           </Col>
@@ -193,7 +175,7 @@ const Footer = () => {
             <FooterHeading>Industries</FooterHeading>
             <FooterLinkList>
               <li>
-                <Link to="/jewellery-industry" onClick={scrollToTop}>Jewellery</Link>
+                <Link to="/industries/jewellery-industry" onClick={scrollToTop}>Jewellery</Link>
               </li>
               <li>
                 <Link to="/pharma-industry" onClick={scrollToTop}>Pharma</Link>
@@ -211,7 +193,7 @@ const Footer = () => {
                 <Link to="/textiles-industry" onClick={scrollToTop}>Garment & Textile</Link>
               </li>
               <li>
-                <Link to="/products/trading-software" onClick={scrollToTop}>Techcloud trading</Link>
+                <Link to="/products/trading-software" onClick={scrollToTop}>Tech Cloud Trading </Link>
               </li>
             </FooterLinkList>
           </Col>
@@ -223,19 +205,19 @@ const Footer = () => {
                 <Link to="/services/web-development" onClick={scrollToTop}>Web Development</Link>
               </li>
               <li>
-                <Link to="#" onClick={scrollToTop}>E-Commerce website</Link>
+                <Link to="#" onClick={scrollToTop}>E-Commerce Website</Link>
               </li>
               <li>
-                <Link to="/services/mobile-application-development" onClick={scrollToTop}>Mobile App development</Link>
+                <Link to="/services/mobile-application-development" onClick={scrollToTop}>Mobile App Development</Link>
               </li>
               <li>
-                <Link to="/services/digital-marketing" onClick={scrollToTop}>Digital marketing</Link>
+                <Link to="/services/digital-marketing" onClick={scrollToTop}>Digital Marketing</Link>
               </li>
               <li>
-                <Link to="#" onClick={scrollToTop}>Whatsapp business</Link>
+                <Link to="#" onClick={scrollToTop}>Whatsapp Business</Link>
               </li>
               <li>
-                <Link to="/business-intelligence" onClick={scrollToTop}>Business intelligence</Link>
+                <Link to="/business-intelligence" onClick={scrollToTop}>Business Intelligence</Link>
               </li>
               <li>
                 <Link to="#" onClick={scrollToTop}>Web Hosting</Link>

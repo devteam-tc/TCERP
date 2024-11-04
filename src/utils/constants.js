@@ -1401,7 +1401,7 @@ export const expoDetails = {
     ],
   },
   delhi: {
-    title: 'Delhi Expo',
+    title: 'Delhi Food Expo',
     venue: 'Bharath Bhavan, Pragathi Maidan Delhi, India 110001',
     date: '19,20,21,22 - Sep , 2024',
     images: [
@@ -1441,7 +1441,7 @@ export const expoDetails = {
     ],
   },
   surat: {
-    title: 'Surat Tech Cloud ERP',
+    title: 'Surat Expo',
     venue: 'Agenda Avadh Utopia , Surat , India 395007 ',
     date: '14 , 15 , 16 - June , 2024',
     images: [
@@ -1461,7 +1461,7 @@ export const expoDetails = {
     ],
   },
   coimbatore: {
-    title: 'Coimbatore Tech Cloud ERP',
+    title: 'Coimbatore Expo',
     venue: 'Codissia Trade Fair Complex  - Nehru Nagar West , Coimbatore, India 641014',
     date: '3, 4, 5 - July, 2024',
     images: [
@@ -1481,22 +1481,22 @@ export const expoDetails = {
     ],
   },
 
-
-
-
-  GaneshChaturdhi: {
-    title: 'Ganesh Chaturdhi Celebrations - 2024',
-    venue: 'Office Unit No. 705, Jain Sadguru Capital Park, Madhapur, Hyderabad, Telangana, India-500081.',
-    date: '19 ,20 ,21 ,22 - Sep, 2024',
-    description: 'Discover the Tech Cloud ERP Software in Surat...',
+  medicaldelhi: {
+    title: 'Delhi Medical Expo ',
+    venue: 'Bharath Bhavan, Pragathi Maidan',
+    date: '5 , 6 ,7 , Oct , 2024',
     images: [
-      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg1.webp'),
-      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg2.webp'),
-      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg3.webp'),
-      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg6.webp'),
-      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg7.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo1.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo2.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo3.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo4.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo5.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo6.webp'),
+      
     ],
   },
+
+
 };
 
 // gallery data
@@ -1506,9 +1506,9 @@ export const galleryData = {
       id: 'surat',
       location: 'Surat',
       venue: 'Agenda Avadh Utopia',
-      date: '14 , 15 , 16 - June, 2024',
+      date: '14, 15, 16 - June, 2024',
       img: require('../assets/Gallery/SuratExpo/SuratExpoThumbnail.png'),
-      alt: 'World Food India 2024 in surat',
+      alt: 'World Food India 2024 in Surat',
     },
     {
       id: 'chennai',
@@ -1516,7 +1516,7 @@ export const galleryData = {
       venue: 'Chennai Trade Centre, Chennai, India',
       date: '9, 10, 11 - Aug, 2024',
       img: require('../assets/Gallery/ChennaiExpo/ChennaiExpoExhibition.png'),
-      alt: 'World Food India 2024 in chennai',
+      alt: 'World Food India 2024 in Chennai',
     },
     {
       id: 'hyderabad',
@@ -1537,24 +1537,22 @@ export const galleryData = {
     {
       id: 'coimbatore',
       location: 'Coimbatore',
-      venue: 'Codissia Trade Fair Complex  - Nehru Nagar West',
+      venue: 'Codissia Trade Fair Complex - Nehru Nagar West',
       date: '3, 4, 5 - July, 2024',
       img: require('../assets/Gallery/Coimbature pics/CoimbatoreExpoThumbnail.png'),
-      alt: 'World Food India 2024 in coimbatore',
-    }
-  ],
- 
-  others: [
+      alt: 'World Food India 2024 in Coimbatore',
+    },
     {
-      id: 'delhi2',
+      id: 'medicaldelhi', 
       location: 'Delhi',
       venue: 'Bharath Bhavan, Pragathi Maidan',
-      date: '19,20,21,22,Sep,2024',
+      date: '19, 20, 21, 22 - Sep, 2024',
       img: require('../assets/Gallery/DelhiExpo/MedicalExpoThumbnail.webp'),
-      alt: 'World Food India 2024 in Delhi',
+      alt: 'Medical Expo in Delhi',
     },
   ],
 };
+
 
 export const faqContent = {
   subTitle: "FAQs",
@@ -2134,10 +2132,10 @@ export const productData = {
   },
   'Ecommerce-software': {
     productTitle: 'Tech Cloud E-Commerce Software',
-      heading: "Ecommerce Solutions",
-      description: "Our services encompass implementation, training, and support for seamless e-commerce and ERP integration.",
+      heading: "E-Commerce Solutions",
+      description: "With our implementation, training, and support services, we help businesses achieve a flawless integration between their E-Commerce platforms and ERP solutions.",
       imageSrc : require("../assets/Products/ecommerce-pdt.webp"),
-      mainTitle : "Our E-commerce Overview",
+      mainTitle : "Our E-Commerce Overview",
       title : "Tech Cloud E-Commerce",
       productDescription: [
         "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
@@ -3227,12 +3225,12 @@ export const servicesData = {
         answer: 'It helps businesses reach a larger audience and drive engagement through online channels.',
       },
       {
-        question: 'How much should I budget for digital marketing?',
+        question: 'How much does digital marketing cost?',
         answer: 'Typically, businesses allocate around 10-20% of their revenue for marketing.',
       },
     ],
     image: require('../assets/Services/digital.webp'), 
-    altText: 'Digital marketing strategies for brand promotion.',
+    altText: 'The average monthly cost of digital marketing includes SEO, PPC advertising, email marketing, and content marketing, with costs ranging from $1,500 to $5,000 and $2,000 to $10,000, respectively.',
   },
 };
 

@@ -10,7 +10,7 @@ const SectionWrapper = styled(Container)`
   background: #FFF;
 
   /* M3/Elevation Dark/2 */
-  box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30);
+  box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px,rgba(173, 216, 230, 0.7) 0px 6px 6px;
   margin-top: 15vh;
   margin-bottom: 5vh;
 

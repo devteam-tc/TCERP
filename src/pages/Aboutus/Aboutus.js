@@ -12,6 +12,7 @@ import WhyTechCloudERP from './WhyTechCloudERP';
 import Services from './Services';
 import VisionMissionSection from './VisionMissionSection';
 import CoFoundersSection from './CoFoundersSection ';
+import WorldMapWithMarkers from './WorldMapWithMarkers';
 const Aboutus = () => {
   return (
     <>
@@ -37,6 +38,7 @@ const Aboutus = () => {
       <CoFoundersSection />
       <CTA />
       <OurPartnerSection />
+      <WorldMapWithMarkers />
     </>
   );
 }

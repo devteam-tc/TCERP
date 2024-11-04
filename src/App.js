@@ -25,12 +25,12 @@ import ScrollToTopButton from './components/ScrollToTopButton';
 
 function App() {
   return (
-    <Router basename="/">
+    <Router >
       <div className="App  md:bg-top bg-center">
         <Navigation/>
         {/* Define your Routes here */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
           
           {/* Dynamic routes for each industry */}

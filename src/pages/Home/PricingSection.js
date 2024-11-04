@@ -4,6 +4,7 @@ import { pricingPlans } from "../../utils/constants";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { GoCheckCircleFill } from "react-icons/go";
 import { Title } from "./CardSection";
+import { Link } from "react-router-dom";
 
 // Styled components
 const Section = styled.section`
@@ -36,7 +37,7 @@ const Card = styled.div`
 const Badge = styled.div`
   position: absolute;
   top: -10px;
-    right: 20px;
+  right: 20px;
   background-color: #ff5722;
   color: #fff;
   padding: 5px 10px;
@@ -113,7 +114,6 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
-  // margin-top: 10px;
   text-align: center;
 
   @media (max-width: 992px) {
@@ -124,57 +124,65 @@ const Button = styled.button`
 
 const PopularButton = styled(Button)`
   background-color: #fff;
-    color: #000;
-    // padding: 4px 10px;
-    border-radius: 5px;
-    width:35% !important;
-    // font-size:18px;
-    padding: 5px 10px;
-    font-weight: 500;
-    display: inline-block;
-    margin-bottom: 10px;
+  color: #000;
+  border-radius: 5px;
+  width: 35% !important;
+  padding: 5px 10px;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: 10px;
 `;
 
-const PricingSection = () => (
-  <Section>
-    <Title className="text-center pt-4 pt-md-0">Tech Cloud ERP Pricing</Title>
-    <CardContainer>
-      {pricingPlans.map((pkg, index) => (
-        <Card
-          key={index}
-          style={{ background: pkg.background, color: pkg.color }}
-        >
-          {/* Conditionally render badge for the second card only */}
-          {index === 1 && <Badge>Popular</Badge>}
-          
-          {/* Conditionally render the PlanTitle only if index is not 1 */}
-          {index !== 1 && <PlanTitle>{pkg.title || ""}</PlanTitle>}
+const PricingSection = () => {
+  // Function to scroll to the top of the page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling
+    });
+  };
 
-          {/* Conditionally render "Enterprise" button only on the second card */}
-          {index === 1 && (
-            <PopularButton>Enterprise</PopularButton>
-          )}
-          {pkg.note && <Description>{pkg.note}</Description>}
+  return (
+    <Section>
+      <Title className="text-center pt-4 pt-md-0">Tech Cloud ERP Pricing</Title>
+      <CardContainer>
+        {pricingPlans.map((pkg, index) => (
+          <Card
+            key={index}
+            style={{ background: pkg.background, color: pkg.color }}
+          >
+            {/* Conditionally render badge for the second card only */}
+            {index === 1 && <Badge>Popular</Badge>}
 
-          <Price>
-            <FaIndianRupeeSign style={{ marginRight: "0px" }} />
-            {pkg.price} <span></span>
-          </Price>
-          <Description>{pkg.description}</Description>
-          <CoverageList>
-            {pkg.coverages.map((coverage, i) => (
-              <CoverageItem key={i}>
-                <GoCheckCircleFill style={{ marginRight: "8px" }} />
-                {coverage}
-              </CoverageItem>
-            ))}
-          </CoverageList>
-          <Button>Buy Now</Button>
-          <p className="text-center pt-3">{pkg.creditCardRequired}</p>
-        </Card>
-      ))}
-    </CardContainer>
-  </Section>
-);
+            {/* Conditionally render the PlanTitle only if index is not 1 */}
+            {index !== 1 && <PlanTitle>{pkg.title || ""}</PlanTitle>}
+
+            {/* Conditionally render "Enterprise" button only on the second card */}
+            {index === 1 && <PopularButton>Enterprise</PopularButton>}
+            {pkg.note && <Description>{pkg.note}</Description>}
+
+            <Price>
+              <FaIndianRupeeSign style={{ marginRight: "0px" }} />
+              {pkg.price} <span></span>
+            </Price>
+            <Description>{pkg.description}</Description>
+            <CoverageList>
+              {pkg.coverages.map((coverage, i) => (
+                <CoverageItem key={i}>
+                  <GoCheckCircleFill style={{ marginRight: "8px" }} />
+                  {coverage}
+                </CoverageItem>
+              ))}
+            </CoverageList>
+            <Link to="/ContactUs" onClick={scrollToTop} aria-label="Buy Now">
+            <Button>Buy Now</Button>
+          </Link>
+            <p className="text-center pt-3">{pkg.creditCardRequired}</p>
+          </Card>
+        ))}
+      </CardContainer>
+    </Section>
+  );
+};
 
 export default PricingSection;

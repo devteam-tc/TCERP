@@ -5,14 +5,12 @@ import styled from 'styled-components';
 import { ContentColumn, Section } from '../IndustryPage';
 import { FaMapMarkerAlt, FaCalendar } from 'react-icons/fa';
 import { expoDetails } from '../../utils/constants';
-
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css"; 
 import "lightgallery/css/lg-fullscreen.css"; 
 import "lightgallery/css/lg-share.css"; 
 import "lightgallery/css/lg-rotate.css"; 
-
 import LightGallery from "lightgallery/react";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
