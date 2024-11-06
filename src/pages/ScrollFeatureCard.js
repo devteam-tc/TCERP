@@ -6,11 +6,9 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { featuresData , aboutus_data} from '../utils/constants';
+import { featuresData } from '../utils/constants';
 import { Title } from './Home/CardSection';
-import { ContentColumn, Description, Divider, Heading, Section } from './IndustryPage';
-
-import { Container , Row } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 
 // Styled Components for Slider
 export const SliderWrapper = styled.div`
@@ -171,7 +169,7 @@ const ScrollFeatureCard = () => {
   return (
     <>
    
-    <div style={{ background: '#F5FDFF' }}>
+    <div className='mt-5'>
         <Title className="text-center pt-5">Unique Features</Title>
         <SubTitle className='w-50 mx-auto'>TechCloud ERP offers a cutting-edge solution with seamless integration, intuitive design, and robust real-time analytics.
           It empowers businesses to streamline operations, enhance productivity, and drive informed decision-making effortlessly</SubTitle>

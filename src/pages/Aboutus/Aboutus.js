@@ -4,15 +4,13 @@ import RecordSection from '../Home/RecordSection';
 import { Container, Row } from 'react-bootstrap';
 import OurPartnerSection from '../Home/OurPartnerSection';
 import { ContentColumn, Description, Divider, Heading, Section } from '../IndustryPage';
-import OurMissionSection from '../Home/OurMissionSection';
-import { releavant , aboutus_data , whyTechCloudERPContent} from '../../utils/constants';
+import { aboutus_data , whyTechCloudERPContent} from '../../utils/constants';
 // import TransformingIndustriesSection from '../../components/TransformingIndustriesSection';
 import CTA from '../CTA'
 import WhyTechCloudERP from './WhyTechCloudERP';
 import Services from './Services';
 import VisionMissionSection from './VisionMissionSection';
 import CoFoundersSection from './CoFoundersSection ';
-import WorldMapWithMarkers from './WorldMapWithMarkers';
 const Aboutus = () => {
   return (
     <>
@@ -38,7 +36,6 @@ const Aboutus = () => {
       <CoFoundersSection />
       <CTA />
       <OurPartnerSection />
-      <WorldMapWithMarkers />
     </>
   );
 }

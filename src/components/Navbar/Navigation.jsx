@@ -12,23 +12,34 @@ import ReactCountryFlag from 'react-country-flag';
 import { FaPhone } from "react-icons/fa6";
 
 const SocialMediaIcons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
   @media screen and (max-width: 996px) {
     display: none;
   }
 `;
 
 const SocialIcon = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  font-size: 13px;
   color: #000;
-  margin: 0 8px;
-  font-size: 22px;
+  transition: color 0.3s, border-color 0.3s;
+
   &:hover {
     ${({ href }) => {
-      if (href.includes('instagram')) return 'color: #E1306C;';
-      if (href.includes('facebook')) return 'color: #1877F2;';
-      if (href.includes('linkedin')) return 'color: #0077B5;';
-      if (href.includes('youtube')) return 'color: #FF0000;';
-      if (href.includes('twitter')) return 'color: #1DA1F2;';
-      return 'color: #000;';
+      if (href.includes('instagram')) return 'color: #E1306C; border-color: #E1306C;';
+      if (href.includes('facebook')) return 'color: #1877F2; border-color: #1877F2;';
+      if (href.includes('linkedin')) return 'color: #0077B5; border-color: #0077B5;';
+      if (href.includes('youtube')) return 'color: #FF0000; border-color: #FF0000;';
+      if (href.includes('twitter')) return 'color: #1DA1F2; border-color: #1DA1F2;';
+      return 'color: #000; border-color: #000;';
     }}
   }
   @media (max-width: 1200px) {
@@ -139,11 +150,11 @@ const Navigation = () => {
             <SocialIcon href="https://www.youtube.com" target="_blank">
               <FaYoutube />
             </SocialIcon>
-            <SocialIcon href="https://www.twitter.com" target="_blank">
-              <FaXTwitter />
-            </SocialIcon>
             <SocialIcon href="https://in.pinterest.com/techclouderp/" target="_blank">
               <FaPinterest />
+            </SocialIcon>
+            <SocialIcon href="https://www.twitter.com" target="_blank">
+              <FaXTwitter />
             </SocialIcon>
           </SocialMediaIcons>
 

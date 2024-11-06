@@ -22,6 +22,8 @@ import ComparisonTable from './pages/product-comparison';
 import './routes/index.css'
 import Navigation from './components/Navbar/Navigation';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import OurBranches from './pages/Branches/OurBranches';
+import AllServicesSection from './pages/AllServices/AllServicesSection';
 
 function App() {
   return (
@@ -55,8 +57,10 @@ function App() {
           {/* Other routes */}
           <Route path="/services/:serviceId" element={<ServicesSection />} />
           <Route path="/services/*" element={<NotFound />} />
+          <Route path='/services' element={<AllServicesSection />} />
           <Route path='/pricing' element={<PricingPage />} />
           <Route path='/features' element={<FeatureCard />} />
+          <Route path='/ourbranches' element={<OurBranches />} />
           <Route path="/product-comparison" element={<ComparisonTable />} />
           {/* Other routes */}
 

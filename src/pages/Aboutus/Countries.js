@@ -18,4 +18,5 @@ export const missingCountries = [
     VE: 90,
   };
   
-  export const colorScale = ["#E2AEFF", "#5E32CA"];
+  export const colorScale = ["#37B9D6", "#8CD7E8"];
+  

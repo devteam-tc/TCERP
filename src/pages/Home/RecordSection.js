@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { recordcount } from '../../utils/constants';
-import { FaBriefcase, FaThumbsUp, FaUsers, FaUserTie } from 'react-icons/fa';
 
 // Styled Components
 const StatsSection = styled.section`
@@ -10,6 +9,7 @@ const StatsSection = styled.section`
   padding: 40px 0;
   color: #fff;
   text-align: center;
+  box-shadow: 0px 0px 30px 20px rgba(0, 0, 0, 0.25) inset;
 
   @media (max-width: 576px) {
     padding: 20px 0;
@@ -94,23 +94,23 @@ const StyledCol = styled(Col)`
 const RecordSection = () => {
   const startCounting = (elementId, end, duration) => {
     const counterElement = document.getElementById(elementId);
-    
-    const interval = duration / end; // Calculate interval for increments
-    let current = 0; // Start from 0
+    const step = end / (duration / 50); // Increment step based on the total duration and interval (50ms)
+    let current = 0;
 
     const intervalId = setInterval(() => {
-      current++;
-      counterElement.textContent = current + " +";
-
+      current += step;
       if (current >= end) {
+        current = end; // Ensure we reach exactly the target value
         clearInterval(intervalId);
       }
-    }, interval);
+      counterElement.textContent = Math.floor(current) + " +";
+    }, 50); // Fixed interval of 50ms
   };
 
   useEffect(() => {
-    const totalDuration = 10000; // Total duration in milliseconds (10 seconds)
-    // Call the function for the four counters with their respective end values
+    const totalDuration = 20000; // 20 seconds
+
+    // Start counting for each counter with respective end values
     startCounting('counter1', 25, totalDuration);
     startCounting('counter2', 2000, totalDuration);
     startCounting('counter3', 10000, totalDuration);
@@ -124,10 +124,10 @@ const RecordSection = () => {
           {recordcount.map((stat, index) => (
             <StyledCol key={index} xs={12} sm={6} md={3}>
               <StatWrapper>
-                <IconWrapper>{stat.icon}</IconWrapper> {/* Icon */}
+                <IconWrapper>{stat.icon}</IconWrapper>
                 <div>
-                  <StatNumber id={`counter${index + 1}`}>{stat.number}</StatNumber> {/* Number */}
-                  <StatText>{stat.text}</StatText> {/* Text */}
+                  <StatNumber id={`counter${index + 1}`}>{stat.number}</StatNumber>
+                  <StatText>{stat.text}</StatText>
                 </div>
               </StatWrapper>
             </StyledCol>

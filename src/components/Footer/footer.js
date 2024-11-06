@@ -4,14 +4,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { releavant } from "../../utils/constants";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaInstagram,
-  FaPinterest,
-  FaYoutube,
-} from "react-icons/fa";
 import SocialMediaIcons from "../Navbar/SocialMediaIcons";
 
 // Styled Components
@@ -40,25 +32,6 @@ const FooterText = styled.p`
   margin-bottom: 20px;
   text-align: left;
 `;
-
-const SocialIcons = styled.div`
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25px;
-    height: 25px;
-    background-color: #ef5226;
-    border-radius: 50%;
-    color: white;
-    font-size: 12px;
-    transition: background-color 0.3s;
-  }
-`;
-
 const FooterLinkList = styled.ul`
   list-style: none;
   padding: 0;
@@ -154,9 +127,6 @@ const Footer = () => {
                 <Link to="/about-us" onClick={scrollToTop}>About Us</Link>
               </li>
               <li>
-                <Link to="/services" onClick={scrollToTop}>All Industries</Link>
-              </li>
-              <li>
                 <Link to="/features" onClick={scrollToTop}>Our Features</Link>
               </li>
               <li>
@@ -167,6 +137,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/" onClick={scrollToTop}>Our Blogs</Link>
+              </li>
+              <li>
+                <Link to="OurBranches" onClick={scrollToTop}>Our Branches</Link>
               </li>
             </FooterLinkList>
           </Col>
@@ -195,6 +168,9 @@ const Footer = () => {
               <li>
                 <Link to="/products/trading-software" onClick={scrollToTop}>Tech Cloud Trading </Link>
               </li>
+              <li>
+                <Link to="/allindustries" onClick={scrollToTop}>All Industries</Link>
+              </li>
             </FooterLinkList>
           </Col>
           {/* Services */}
@@ -221,6 +197,9 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="#" onClick={scrollToTop}>Web Hosting</Link>
+              </li>
+              <li>
+                <Link to="/services" onClick={scrollToTop}>All Services</Link>
               </li>
             </FooterLinkList>
           </Col>
