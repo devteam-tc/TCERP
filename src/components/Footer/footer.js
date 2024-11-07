@@ -139,6 +139,9 @@ const Footer = () => {
                 <Link to="/" onClick={scrollToTop}>Our Blogs</Link>
               </li>
               <li>
+                <Link to="/allproducts" onClick={scrollToTop}>All Products</Link>
+              </li>
+              <li>
                 <Link to="OurBranches" onClick={scrollToTop}>Our Branches</Link>
               </li>
             </FooterLinkList>

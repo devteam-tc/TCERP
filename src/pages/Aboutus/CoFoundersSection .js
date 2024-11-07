@@ -79,7 +79,7 @@ const CoFoundersSection = () => {
                 </SectionSubtitle>
                 <Row>
                     {coFoundersData.map((coFounder, index) => (
-                        <Col md={6} className="mb-4" key={index}>
+                        <Col md={6} className="mb-4 d-flex" key={index}>
                             <StyledCard>
                                 <Card.Body>
                                     <CardTitle>{coFounder.name}</CardTitle>

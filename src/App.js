@@ -24,6 +24,8 @@ import Navigation from './components/Navbar/Navigation';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import OurBranches from './pages/Branches/OurBranches';
 import AllServicesSection from './pages/AllServices/AllServicesSection';
+import AllIndustriesSection from './pages/AllIndustries/AllIndustriesSection';
+import AllProductsSection from './pages/AllProducts/AllProductsSection';
 
 function App() {
   return (
@@ -66,6 +68,8 @@ function App() {
 
           {/* Route for 404 Not Found */}
           <Route path="/industries/*" element={<NotFound />} />
+          <Route path='/allindustries' element={<AllIndustriesSection />} />
+          <Route path='/allproducts' element={<AllProductsSection/>} />
           <Route path="/products/*" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
