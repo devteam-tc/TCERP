@@ -65,7 +65,7 @@ export const releavant = {
 export const visionMissionData = {
   vision: {
     title: "Our Vision",
-    text: "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+    text: "To better understand ERP software solutions and just how revolutionary they can be for an enterprise, you first have to understand what ERP means: ERP, or Enterprise Resource Planning, encapsulates key company functions such as sales, marketing, inventory, production, accounting, and human resources into a single cohesive system. Cloud-based ERP software improves efficiency by centralizing and streamlining operations throughout an organization like ours here in Hyderabad, India."
   },
   mission: {
     title: "Our Mission",
@@ -135,7 +135,7 @@ calltoaction_bg_img:require("../assets/Home/cta-bg-image-one.webp"),
 
 export const partnerData = [
 { link: '/products/financial-management-systems', imgSrc: require("../assets/partner/finance.png"), alt: 'Finance' },
-{ link: '/products/hr-managament-software', imgSrc: require("../assets/partner/HRM.png"), alt: 'HRM' },
+{ link: '/products/hr-managament-software', imgSrc: require("../assets/partner/HRM.png"), alt: 'HRMS' },
 { link: '/products/Ecommerce-software', imgSrc: require("../assets/partner/ecomm.png"), alt: 'Ecommerce' },
 { link: '/products/trading-software', imgSrc: require("../assets/partner/trading.png"), alt: 'Trading' },
 { link: '/products/point-of-sale', imgSrc: require("../assets/partner/POS.png"), alt: 'POS' },
@@ -369,7 +369,7 @@ export const NAV_ITEMS = [
     { title: 'Tech Cloud POS', link: 'products/point-of-sale' },
     { title: 'Tech Cloud Trading Software', link: 'products/trading-software' },
     { title: 'Tech Cloud Ecommerce', link: 'products/Ecommerce-software' },
-    { title: 'Tech Cloud HRMS', link: 'products/hr-managament-software' },
+    { title: 'Tech Cloud HRM', link: 'products/hr-managament-software' },
     { title: 'Tech Cloud Finance', link: 'products/financial-management-systems' },
     { title: 'Tech Cloud ERP Integrated-With-CRM-Ecommerce-POS', link: 'products/integrated-erp-software' },
     { title: 'Tech Cloud Restaurant ERP', link: 'products/erp-for-restaraunt' },
@@ -416,7 +416,7 @@ agricultureIndustry: {
   link: '/industries/agriculture-industry',
   heading: 'Agriculture Industry',
   subheading:'The Best ERP For Agriculture Industry',
-  description: 'ERP software can help you build transparent, resilient, and sustainable supply chains across the agriculture sector.',
+  description: 'Revolutionizing agriculture with smart solutions to boost productivity, sustainability, and efficiency.',
   top_img: require('../assets/Industries/agriculture_top_img.webp'),
   bottom_img: require('../assets/Industries/agriculture_bottom_img.webp'),
   alt_text1: "agriculture_top_Img",
@@ -445,7 +445,7 @@ apparelIndustry: {
   link: '/industries/apparel-industry',
   heading: 'Apparel Industry',
   subheading:'The Best ERP For Apparel Industry',
-  description: 'Elevate your apparel business with our ERP for growth.',
+  description: 'Transforming the apparel industry with integrated solutions for design, production, and sales management.',
   top_img: require('../assets/Industries/apparel_top_img.webp'),
   bottom_img: require('../assets/Industries/apparel_Bottom_img.webp'),
   alt_text1: "apparel_top_Img",
@@ -474,12 +474,12 @@ automativeIndustry: {
   link: '/industries/automative-industry',
   heading: 'Automative Industry',
   subheading:'The Best ERP For Automative Industry',
-  description: 'Drive your automotive business forward with our ERP solution tailored for growth.',
+  description: '"Driving automotive innovation with advanced solutions for manufacturing, inventory, and customer management.',
   top_img: require('../assets/Industries/automotive_top_img.webp'),
   bottom_img: require('../assets/Industries/automotive_Bottom_img.webp'),
   alt_text1: "automative_top_Img",
   alt_text2: "automative_bottom_Img",
-  top_description: "Managing interlinked processes simultaneously is a crucial skill for every automotive industry leader and manager. With intricate operations such as production, assembly, and supply chain management all happening concurrently across various workstations, a single mistake at any point can disrupt the entire system. However, by integrating Tech Cloud ERP Online Software into your operations, you can streamline these processes and mitigate the risk of errors. This advanced ERP solution offers real-time visibility, enhanced coordination, and improved efficiency, allowing you to manage your workflow seamlessly and focus on strategic decision-making rather than operational burdens.",
+  top_description: "This is one critical skill every leader and manager in the automotive industry needs to acquire. Since complex processes such as production, assembly, and supply chain management happen together at different workstations, an error at one place can be disastrous for the entire system. By integrating the Tech Cloud ERP Online Software into your operations, these processes become streamlined and there are fewer chances of making an error. This ERP solution allows one to enjoy real-time visibility, improved coordination, and greater efficiency in managing workflow smoothly and having more time for strategic rather than operational decisions.",
   bottom_description: "Tech Cloud ERP software for the automotive industry in India is a versatile solution that seamlessly plans and manages all processes. From handling minute auto parts to ensuring timely delivery of large shipments, Tech Cloud ERP excels with its flexibility, scalability, and customization. Its extensive, user-friendly modules have been tested and proven to perform all tasks accurately, making it a top choice globally. This intuitive and customizable ERP integrates effortlessly into any automotive industry setup, enhancing efficiency and reliability.",
   similar_industries: [
     {
@@ -503,7 +503,7 @@ beverageIndustry: {
   link: '/industries/beverage-industry',
   heading: 'Beverage Industry',
   subheading:'The Best ERP For Beverage Industry',
-  description: 'Pour growth into your beverage business with our ERP solution.',
+  description: 'Optimizing beverage production and distribution with seamless solutions for inventory, sales, and logistics.',
   top_img: require('../assets/Industries/beverage_top_img.webp'),
   bottom_img: require('../assets/Industries/beverage_bottom_img.webp'),
   alt_text1: "bevarage_top_Img",
@@ -532,7 +532,7 @@ chemicalIndustry: {
   link: '/industries/chemical-industry',
   heading: 'Chemical Industry',
   subheading:'The Best ERP For Chemical Industry',
-  description: 'Our ERP boosts efficiency, compliance, and growth for the chemical industry.',
+  description: 'Enhancing chemical manufacturing with integrated solutions for production, compliance, and inventory management.',
   top_img: require('../assets/Industries/chemical_top_img.webp'),
   bottom_img: require('../assets/Industries/chemical_bottom_img.webp'),
   alt_text1: "chemical_top_Img",
@@ -562,12 +562,12 @@ educationalInstitutes: {
   link: '/industries/educational-institutes',
   heading: 'Educational Institutes',
   subheading:'The Best ERP For Educational Institutes',
-  description: 'Unlock growth potential with our custom ERP for education.',
+  description: 'Empowering educational institutions with streamlined management solutions for students, staff, and resources.',
   top_img: require('../assets/Industries/educational_top_img.webp'),
   bottom_img: require('../assets/Industries/eductional_bottom_img.webp'),
   alt_text1: "educational_top_Img",
   alt_text2: "educational_bottom_Img",
-  top_description: "In today's rapidly evolving education sector, there's a growing recognition of the potential for Enterprise Resource Planning (ERP) systems. These cloud-based applications streamline internal and external resource management, covering everything from materials and finances to human resources. By facilitating seamless information flow across all functions within educational institutions, ERP systems enhance efficiency and effectiveness in various processes. Their implementation in India can notably improve academic resource management and enhance services for stakeholders and students alike.",
+  top_description: "In the rapidly changing world of education, there is growing interest in the potential offered by Enterprise Resource Planning systems. These cloud-based applications coordinate internal and external resources involved in managing materials, finances, human resources, and everything else. By making the exchange of information across all educational institutions' functions easy and streamlined, ERP systems contribute significantly to the efficiency and effectiveness of processes. ERP's implementation in India would dramatically improve the management of resources in academia and offer superior services to stakeholders and students.",
   bottom_description: "Tech Cloud ERP Software Solutions is one of the best school ERP Software in India. Tech Cloud ERP is a web based and cloud computing software, having a dynamic dash board with a GUI and inbuilt Email & SMS integration. Accessible anywhere, it supports multi-languages and provides unlimited data storage. Tech Cloud ERP is flexible software, which is mobile and tab compatibility, can manage multiple users, it has an auto back-up facility and provides lifetime product validity.",
   similar_industries: [
     {
@@ -591,7 +591,7 @@ electricalSolarIndustry: {
   link: '/industries/electrical-solar-industry',
   heading: 'Electrical Solar Industry',
   subheading:'The Best ERP For Electrical Solar Industry',
-  description: 'Power up your business growth with our specialized ERP for the electric solar industry.',
+  description: 'Powering the electric industry with efficient solutions for production, supply chain, and customer management.',
   top_img: require('../assets/Industries/eletrical_top_img.webp'),
   bottom_img: require('../assets/Industries/eletrical_Bottom_img.webp'),
   alt_text1: "electrical_top_Img",
@@ -619,13 +619,13 @@ electronicsIndustry: {
   link: '/industries/electronics-industry',
   heading: 'Electronics Industry',
   subheading:'The Best ERP For Electronics Industry',
-  description: 'Power up your business growth with our specialized ERP for the electric industry.',
+  description: 'Innovating the electronics industry with solutions for manufacturing, sales, and inventory management.',
   top_img: require('../assets/Industries/eletronic_top_image.webp'),
   bottom_img: require('../assets/Industries/eletronic_bottom_image.webp'),
   alt_text1: "electronic_top_Img",
   alt_text2: "electronic_bottom_Img",
-  top_description: "The Electrical industry comprises of manufacturers who produce generation equipment, transmission equipment and allied equipment’s. Primarily Electrical Manufacturers are involved in production of generators, boilers, turbines, electrical transformers, electrical cables & wires, switch gears, capacitors, process & control equipment’s, instrumentation & control equipment’s, measuring equipment’s & instruments, lighting & luminaries etc.",
-  bottom_description: "Increasing Competition in the Electrical Solar Industry requires companies to reduce production cycle time, lower operation costs, improve efficiencies and increase productivity in order to ensure a faster time to market. Tech Cloud ERP has a comprehensive bill of materials module. Our BOM can be used for make-to-order and make-to-stock production. It provides a complete list of raw materials, components, sub-assemblies, components and exact quantities. It helps to record detailed information about whether a component is to be manufactured or purchased. We provide various BOM functions such as estimation, manufacturing, multi-layer, etc. It provides a BOM revision function so that all relevant personnel can use the updated correct BOM version.",
+  top_description: "Tech Cloud ERP Software Solutions believes that flexibility must be required to succeed in the business of manufacturing of electronics products like semiconductors, capacitors, chips etc. That is why the company has contributed in front of the entire industry a highly comprehensive ERP software for electronics industry in India. Tech Cloud ERP - A cloud-based software providers for the high-tech and electronics industry. Our ERP solutions can help you maintain market leadership and make you able to adapt quickly all the market trends. Tech Cloud ERP Software is perfectly developed ERP solutions ensure seamless integration and also let the existing technology infrastructure to be merged into it.",
+  bottom_description: "In general, Tech Cloud ERP offers variety of ERP editions which are designed & developed to fit with the needs and requirements of all the small to mid-sized Electronics Manufacturers across the world. Our software is fully integrated software and hence proven applicable to all the medical devices, general electronics, aerospace manufacturing companies and many more electronics industries. Tech Cloud ERP offers ERP editions tailored for small to mid-sized Electronics Manufacturers globally, with fully integrated software applicable to industries like medical devices, electronics, and aerospace.",
   similar_industries: [
     {
     title: 'Bevarage Industry',
@@ -645,12 +645,12 @@ FMCGIndustry: {
   link: '/industries/FMCG-industry',
   heading: 'FMCG Industry',
   subheading:'The Best ERP For FMCG Industry',
-  description: 'Fueling FMCG growth with our specialized ERP solution.',
+  description: 'Streamlining FMCG operations with solutions for inventory, sales, and supply chain management.',
   top_img: require('../assets/Industries/Fmcg_top_img.webp'),
   bottom_img: require('../assets/Industries/Fmcg_Bottom_img.webp'),
   alt_text1: "fmcg_top_Img",
   alt_text2: "fmcg_bottom_Img",
-  top_description: "In the fast-paced realm of Fast Moving Consumer Goods (FMCG), meeting everyday needs and ensuring customer loyalty is paramount. The challenge lies in fostering fidelity through robust customer engagement strategies. Timely delivery and accurate stock information are pivotal in achieving this goal. Leveraging sophisticated software solutions is essential to curating highly personalized experiences for consumers, presenting an array of products tailored to their preferences and empowering them to make informed choices.",
+  top_description: "FMCG has immediacy in the satisfaction of daily needs and loyalty. The challenge remains in creating loyalty through proven customer engagement strategies that will ultimately deliver the promise within the ambit of adequate supply in the right quantity at the right time. Stock information proves critical to achieving timely delivery. Complex software solutions form the hub around which highly personal experiences for consumer interaction will be delivered, thus offering an unlimited variety of choice to consumers along their preferences and enabling informed choice.",
   bottom_description: "In the FMCG sector, timely delivery, accurate stock information, and personalized customer experiences are crucial for fostering loyalty and growth. Leveraging sophisticated software solutions is essential for achieving these goals and staying competitive.",
   similar_industries: [
     {
@@ -672,7 +672,7 @@ foodIndustry: {
   link: '/industries/food-industry',
   heading: 'Food Industry',
   subheading:'The Best ERP For Food Industry',
-  description: 'Empowering food businesses to flourish with our customized ERP solutions.',
+  description: 'Optimizing food production and distribution with efficient inventory, sales, and compliance solutions.',
   top_img: require('../assets/Industries/Food_top_img.webp'),
   bottom_img: require('../assets/Industries/food_bottom_img.webp'),
   alt_text1: "food_top_Img",
@@ -699,7 +699,7 @@ furnitureIndustry: {
   link: '/industries/furniture-industry',
   heading: 'Furniture Industry',
   subheading:'The Best ERP For Furniture Industry',
-  description: 'Transforming furniture businesses with our bespoke ERP solutions for accelerated growth.',
+  description: 'Transforming the furniture industry with integrated solutions for design, production, and sales management.',
   top_img: require('../assets/Industries/Furniture_top_img.webp'),
   bottom_img: require('../assets/Industries/Furniture_bottom_img.webp'),
   alt_text1: "furniture_top_Img",
@@ -726,13 +726,13 @@ garmentIndustry: {
   link: '/industries/garment-industry',
   heading: 'Garment Industry',
   subheading:'The Best ERP For Garment Industry',
-  description: 'Elevating garment businesses with our tailored ERP solutions for accelerated growth.',
+  description: 'Streamlining garment manufacturing with integrated solutions for production, inventory management, and order fulfillment.',
   top_img: require('../assets/Industries/Garment_top_img.webp'),
   bottom_img: require('../assets/Industries/Garment_Bottom_img.webp'),
   alt_text1: "garment_top_Img",
   alt_text2: "garment_bottom_Img",
-  top_description: "The Electrical industry comprises of manufacturers who produce generation equipment, transmission equipment and allied equipment’s. Primarily Electrical Manufacturers are involved in production of generators, boilers, turbines, electrical transformers, electrical cables & wires, switch gears, capacitors, process & control equipment’s, instrumentation & control equipment’s, measuring equipment’s & instruments, lighting & luminaries etc.",
-  bottom_description: "Increasing Competition in the Electrical Solar Industry requires companies to reduce production cycle time, lower operation costs, improve efficiencies and increase productivity in order to ensure a faster time to market. Tech Cloud ERP has a comprehensive bill of materials module. Our BOM can be used for make-to-order and make-to-stock production. It provides a complete list of raw materials, components, sub-assemblies, components and exact quantities. It helps to record detailed information about whether a component is to be manufactured or purchased. We provide various BOM functions such as estimation, manufacturing, multi-layer, etc. It provides a BOM revision function so that all relevant personnel can use the updated correct BOM version.",
+  top_description: "Tech Cloud ERP for Garment Industry in India is effective combines the technology with a normal manufacturing system that implements new standardized business flow and manufacturing processes that reduces the operational costs. Tech Cloud ERP is exclusively designed for the Apparel, Textile, Garment industries which track all the shop floor operations like order lead management, costing, material planning and procurement, raw material processing, production planning, inventory, etc.",
+  bottom_description: "Users can now securely access Tech Cloud ERP Software anytime, anywhere, and from any device. Built on extensive experience in the fashion industry, Tech Cloud Garment ERP software in India offers fully customized solutions to help your business stay competitive. By using Tech Cloud ERP, you can transform your entire garment industry process, reducing IT costs by 50% and increasing productivity by nearly 100%.",
   similar_industries: [
     {
       title: 'Jewellery Industry',
@@ -754,12 +754,12 @@ hydraulicIndustry: {
   link: '/industries/hydraulic-industry',
   heading: 'Hydraulic Industry',
   subheading:'The Best ERP For Hydraulic Industry',
-  description: 'Boosting hydraulic cylinder businesses with our ERP for rapid growth.',
+  description: 'Enhancing hydraulic cylinder manufacturing with solutions for production, inventory, and quality control.',
   top_img: require('../assets/Industries/Hydralic_top_img.webp'),
   bottom_img: require('../assets/Industries/Hydralic_bottom_img.webp'),
   alt_text1: "hydraulic_top_Img",
   alt_text2: "hydraulic_bottom_Img",
-  top_description: "Tech Cloud ERP provides tailored solutions for Hydraulic Cylinder Industries in India, addressing industry-specific challenges with a highly scalable platform that optimizes operations and enhances efficiency.",
+  top_description: "In Tech Cloud ERP, advanced analytics and reporting capabilities help Hydraulic Cylinder Industries make data-driven decisions and explore optimization opportunities within workflows. Companies can proactively address any potential problems or reduce downtime by fully implementing the capabilities of predictive analytics with real-time insights. By strategically adopting this approach until this point, these businesses are able to not only achieve sustainable growth but also competitive advantages in the changing landscape of their market. With Tech Cloud ERP as their trusted partner, Hydraulic Cylinder Industries in India will expand with continuous success.",
   bottom_description: "Moreover, Tech Cloud ERP's advanced analytics and reporting capabilities enable Hydraulic Cylinder Industries to make data-driven decisions, identify optimization opportunities, and streamline workflows. By leveraging real-time insights and predictive analytics, companies can proactively address challenges, minimize downtime, and seize new market opportunities. This strategic approach not only fosters sustainable growth but also enhances competitiveness in an ever-evolving market landscape. With Tech Cloud ERP as their trusted partner, Hydraulic Cylinder Industries in India are poised for continuous expansion and success.",
   similar_industries: [
     {
@@ -782,7 +782,7 @@ jewelleryIndustry: {
   link: '/industries/jewellery-industry',
   heading: 'Jewellery Industry',
   subheading:'The Best ERP For Jewellery Industry',
-  description: 'Revolutionizing Jewellery businesses with our ERP solutions for exponential growth.',
+  description: 'Revolutionizing jewellery management with streamlined solutions for inventory, sales, and customer relations.',
   top_img: require('../assets/Industries/jewellery_top_img.webp'),
   bottom_img: require('../assets/Industries/jewellery_Bottom_img.webp'),
   alt_text1: "jewellery_top_Img",
@@ -810,7 +810,7 @@ leatherIndustry: {
   link: '/industries/leather-industry',
   heading: 'Leather Industry',
   subheading:'The Best ERP For Leather Industry',
-  description: 'Empowering leather businesses with our ERP solutions for exponential growth.',
+  description: 'Empowering leather manufacturers with integrated solutions for production, inventory, and distribution management.',
   top_img: require('../assets/Industries/leather_top_img.webp'),
   bottom_img: require('../assets/Industries/leather_bottom_img.webp'),
   alt_text1: "leather_top_Img",
@@ -838,13 +838,13 @@ logisticsIndustry: {
   link: '/industries/logistics-industry',
   heading: 'Logistics Industry',
   subheading:'The Best ERP For Logistics Industry',
-  description: 'Driving growth in the logistics industry with our tailored ERP solutions.',
+  description: 'Optimizing logistics operations with seamless solutions for supply chain management, real-time tracking, and delivery efficiency.',
   top_img: require('../assets/Industries/Logistics_top_img.webp'),
   bottom_img: require('../assets/Industries/Logistics_Bottom_img.webp'),
   alt_text1: "logistics_top_Img",
   alt_text2: "logistics_bottom_Img",
-  top_description: "The Electrical industry comprises of manufacturers who produce generation equipment, transmission equipment and allied equipment’s. Primarily Electrical Manufacturers are involved in production of generators, boilers, turbines, electrical transformers, electrical cables & wires, switch gears, capacitors, process & control equipment’s, instrumentation & control equipment’s, measuring equipment’s & instruments, lighting & luminaries etc.",
-  bottom_description: "Increasing Competition in the Electrical Solar Industry requires companies to reduce production cycle time, lower operation costs, improve efficiencies and increase productivity in order to ensure a faster time to market. Tech Cloud ERP has a comprehensive bill of materials module. Our BOM can be used for make-to-order and make-to-stock production. It provides a complete list of raw materials, components, sub-assemblies, components and exact quantities. It helps to record detailed information about whether a component is to be manufactured or purchased. We provide various BOM functions such as estimation, manufacturing, multi-layer, etc. It provides a BOM revision function so that all relevant personnel can use the updated correct BOM version.",
+  top_description: "Logistics is one of the highly competitive sectors which include complex operations such as supply chain management, freight management, transportation, warehousing and storage and much other variety of functions. Implementation of ERP software for the logistic industry in India can align business operations such as Trip Management, Truck Maintenance and staff management with accounting and management systems for the logistics industry.",
+  bottom_description: "Transportation in logistics is concerned with the transfer of goods from one place to another, generally moving goods between warehouses of the same company or multiple companies.Implementing Tech Cloud ERP software for the Transportation Industry in India is all about providing real-time information of all indirect costs, related to manpower, documentation, truck maintenance and their impact on profitability.",
   similar_industries: [
     {
       title: 'FMCG Industry',
@@ -866,7 +866,7 @@ medicalequipmentmanufacturingIndustry: {
   link: '/industries/medicalequipmentmanufacturing-industry',
   heading: 'Medical equipment manufacturing Industry',
   subheading:'The Best ERP For Medical equipment manufacturing Industry',
-  description: 'Fueling growth in medical equipment manufacturing with our ERP solutions.',
+  description: 'Improving medical equipment management with seamless solutions for production, inventory, and compliance.',
   top_img: require('../assets/Industries/Medical__top_img.webp'),
   bottom_img: require('../assets/Industries/medical_bottom_img.webp'),
   alt_text1: "medical_top_Img",
@@ -893,7 +893,7 @@ woodIndustry: {
   link: '/industries/wood-industry',
   heading: 'Wood Industry',
   subheading:'The Best ERP For Wood Industry',
-  description: 'Empowering the wood industry with growth-focused ERP solutions.',
+  description: 'Enhancing wood industry processes with solutions for production, inventory, and distribution management.',
   top_img: require('../assets/Industries/wood_top_img.webp'),
   bottom_img: require('../assets/Industries/wood_bottom_img.webp'),
   alt_text1: "wood_top_Img",
@@ -920,7 +920,7 @@ wholesalersIndustry: {
   link: '/industries/wholesalers-industry',
   heading: 'Wholesalers Industry',
   subheading:'The Best ERP For Wholesalers Industry',
-  description: 'Empowering wholesalers with tailored ERP solutions for business growth.',
+  description: 'Streamlining wholesale operations with efficient solutions for inventory, sales, and order management.',
   top_img: require('../assets/Industries/wholesalers_top_img.webp'),
   bottom_img: require('../assets/Industries/wholesalers_bottom_img.webp'),
   alt_text1: "wholesalers_top_Img",
@@ -947,7 +947,7 @@ metalFabricationIndustry: {
   link: '/industries/metal-fabrication-industry',
   heading: 'Metal Fabrication Industry',
   subheading:'The Best ERP For Metal Fabrication Industry',
-  description: 'Empowering metal fabrication businesses to grow with our specialized ERP solutions.',
+  description: 'Optimizing metal fabrication with integrated solutions for production, supply chain, and quality control.',
   top_img: require('../assets/Industries/metalfabrication_top_img.webp'),
   bottom_img: require('../assets/Industries/metalfabrication_bottom_img.webp'),
   alt_text1: "metalfabrication_top_Img",
@@ -974,7 +974,7 @@ microfinanceIndustry: {
   link: '/industries/microfinance-industry',
   heading: 'Microfinance Industry',
   subheading:'The Best ERP For Microfinance Industry',
-  description: 'Empowering microfinance institutions to thrive with our ERP solutions for business growth.',
+  description: 'Empowering microfinance institutions with seamless solutions for loan management, customer service, and reporting.',
   top_img: require('../assets/Industries/Microfinance_top_img.webp'),
   bottom_img: require('../assets/Industries/Microfinance_bottom_img.webp'),
   alt_text1: "microfinance_top_Img",
@@ -1001,7 +1001,7 @@ oilandGasIndustryy: {
   link: '/industries/oilandgas-industry',
   heading: 'Oil and Gas Industry',
   subheading:'The Best ERP For Oil and Gas Industry',
-  description: 'Optimize your operations with our ERP solutions for the oil and gas industry.',
+  description: 'Transforming oil and gas operations with integrated solutions for supply chain, compliance, and asset management.',
   top_img: require('../assets/Industries/oilandgas_top_img.webp'),
   bottom_img: require('../assets/Industries/oilandgas_bottom_img.webp'),
   alt_text1: "oilandgas_top_Img",
@@ -1028,7 +1028,7 @@ packagingIndustry: {
   link: '/industries/packaging-industry',
   heading: 'Packaging Industry',
   subheading:'The Best ERP For Packaging Industry',
-  description: 'Enhance your packaging business with our tailored ERP solutions.',
+  description: 'Revolutionizing packaging with solutions for production, inventory tracking, and supply chain management.',
   top_img: require('../assets/Industries/packaging_top_img.webp'),
   bottom_img: require('../assets/Industries/packaging_bottom_img.webp'),
   alt_text1: "packaging_top_Img",
@@ -1055,7 +1055,7 @@ paperIndustry: {
   link: '/industries/paper-industry',
   heading: 'Paper Industry',
   subheading:'The Best ERP For Paper Industry',
-  description: 'Revolutionize your paper industry operations with our tailored ERP solutions.',
+  description: 'Optimizing paper manufacturing with solutions for production, inventory, and distribution management',
   top_img: require('../assets/Industries/paper_top_img.webp'),
   bottom_img: require('../assets/Industries/paper_bottom_img.webp'),
   alt_text1: "paper_top_Img",
@@ -1082,7 +1082,7 @@ plasticIndustry: {
   link: '/industries/plastic-industry',
   heading: 'Plastic Industry',
   subheading:'The Best ERP For Plastic Industry',
-  description: 'Elevate your plastic industry business with our customized ERP solutions.',
+  description: 'Streamlining plastic manufacturing with integrated solutions for production, inventory, and supply chain management.',
   top_img: require('../assets/Industries/plastic_top_img.webp'),
   bottom_img: require('../assets/Industries/plastic_bottom_img.webp'),
   alt_text1: "plastic_top_Img",
@@ -1109,13 +1109,13 @@ pharmaceuticalIndustry: {
   link: '/industries/pharma-industry',
   heading: 'Pharmaceutical Industry',
   subheading:'The Best ERP For Pharmaceutical Industry',
-  description: 'Unlock your pharmaceutical business potential with our advanced ERP solutions.',
+  description: 'Empowering pharmaceutical companies with solutions for production, compliance, and inventory management.',
   top_img: require('../assets/Industries/pharmaceutical_top_img.webp'),
   bottom_img: require('../assets/Industries/pharmaceutical_bottom_img.webp'),
   alt_text1: "pharmaceutical_top_Img",
   alt_text2: "pharmaceutical_bottom_Img",
-  top_description: "The pharmaceutical industry has seen remarkable growth due to high global demand and strong export markets. Managing a pharmaceutical business involves overseeing various departments, including Inventory, Production, Quality Check, Packaging, Sales, Purchase, HR/Payroll, and Finance. Using Pharmaceutical ERP software simplifies this complex process. Our cloud-based ERP software for the pharma industry in India efficiently manages all operations, from Sales to Finance and Planning to Packaging.",
-  bottom_description: "The growing demand for pharmaceutical products has intensified market competition, particularly for small and medium-sized manufacturers. Tech Cloud ERP is a robust, scalable solution that streamlines all processes and data management for the pharma industry. Our flexible and powerful ERP software in India manages all critical business functions efficiently.",
+  top_description: "The Pharmaceutical industry is really doing great with very high global demand and strong export markets. Managing a pharmaceutical business deals with the supervision of the following departments, like inventory, production, quality check, packaging, sales, purchase, HR/payroll, and finance. Pharmaceutical ERP software helps manage this complex process easily. Our cloud-based ERP for pharma in India deals efficiently with all operations, ranging from Sales to Finance and from Planning to Packaging.",
+  bottom_description: "In response to a recent increase in demand for pharmaceutical products, competition among the small and medium-sized manufacturers has heightened in the recent past. Tech Cloud ERP is a highly scalable robust solution that makes all business processes and data management hassle-free in the pharma industry. Our ERP solution in India will manage critical business functions in a highly flexible and powerful manner.",
   similar_industries: [
     {
     title: 'FMCG Industry',
@@ -1136,7 +1136,7 @@ publishingIndustry: {
   link: '/industries/publishing-industry',
   heading: 'Publishing Industry',
   subheading:'The Best ERP For Publishing Industry',
-  description: 'Navigate the complexities of publishing with our streamlined ERP solutions.',
+  description: 'Transforming publishing with integrated solutions for content management, distribution, and sales tracking.',
   top_img: require('../assets/Industries/publishing_top_img.webp'),
   bottom_img: require('../assets/Industries/publishing_bottom_img.webp'),
   alt_text1: "publishing_top_Img",
@@ -1163,7 +1163,7 @@ printingIndustry: {
   link: '/industries/printing-industry',
   heading: 'Printing Industry',
   subheading:'The Best ERP For Printing Industry',
-  description: 'Print success with our tailored ERP solutions for the printing industry.',
+  description: 'Optimizing printing operations with solutions for production, inventory, and order management.',
   top_img: require('../assets/Industries/printing_top_img.webp'),
   bottom_img: require('../assets/Industries/printing_bottom_img.webp'),
   alt_text1: "printing_top_Img",
@@ -1190,7 +1190,7 @@ preEngineeringIndustry: {
   link: '/industries/preengineering-industry',
   heading: 'Pre-Engineering Industry',
   subheading:'The Best ERP For Pre-Engineering Industry',
-  description: 'Engineer your success with our specialized ERP solutions for the pre-engineering industry.',
+  description: 'Revolutionizing pre-engineered structures with solutions for design, production, and supply chain management.',
   top_img: require('../assets/Industries/preEngineering_top_img.webp'),
   bottom_img: require('../assets/Industries/preEngineering_bottom_img.webp'),
   alt_text1: "preEngineering_top_Img",
@@ -1217,12 +1217,12 @@ rubberIndustry: {
   link: '/industries/rubber-industry',
   heading: 'Rubber Industry',
   subheading:'The Best ERP For Rubber Industry',
-  description: 'Rubber-stamp your success with our specialized ERP solutions for the rubber industry.',
+  description: 'Enhancing rubber manufacturing with integrated solutions for production, inventory, and quality control.',
   top_img: require('../assets/Industries/rubber_top_img.webp'),
   bottom_img: require('../assets/Industries/rubber_bottom_img.webp'),
   alt_text1: "rubber_top_Img",
   alt_text2: "rubber_bottom_Img",
-  top_description: "India is a major producer of rubber products, catering to both domestic and international markets. These products are manufactured by large industries as well as the SME sector. The global demand for rubber products is increasing, leading to heightened competition. Fluctuating raw material prices pose a significant challenge for the rubber industries. The major concerns include productivity, product quality, and cost factors. The product life cycle is short, and customers are highly price-sensitive, which directly impacts manufacturing profitability.",
+  top_description: "India is one of the major producers of rubber products, both for the domestic and international markets. Large industries as well as the SME sector manufacture these products. The demand for rubber products is on the increase globally, which increases competition. Fluctuating raw material prices are a major challenge for the rubber industries. Productivity, product quality, and cost factors are the major concerns. The product life cycle is short, and customers are highly price-sensitive, which directly impacts the profitability of manufacturing.",
   bottom_description: "Generally, this kind of manufacturing industry has pressure on how to reduce the operational cost, reduce the wastage of materials at the time of production, quickly respond to rapid changes in product development and other challenges. These companies, small or big can benefit majorly with an ERP Software for Rubber Industry in India which will help maintain costs by streamlining processes and tracking inventory.",
   similar_industries: [
     {
@@ -1244,7 +1244,7 @@ restaurantIndustry: {
   link: '/industries/restaurant-industry',
   heading: 'Restaurant Industry',
   subheading:'The Best ERP For Restaurant Industry',
-  description: 'Sizzle up your restaurants success with our tailored ERP solutions.',
+  description: 'Streamlining restaurant operations with integrated solutions for order management, inventory, and customer service.',
   top_img: require('../assets/Industries/restaurant_top_img.webp'),
   bottom_img: require('../assets/Industries/restaurant_bottom_img.webp'),
   alt_text1: "restaurant_top_Img",
@@ -1271,7 +1271,7 @@ retailIndustry: {
   link: '/industries/retail-industry',
   heading: 'Retail Industry',
   subheading:'The Best ERP For Retail Industry',
-  description: 'Drive growth and efficiency in your retail business with our specialized ERP solutions.',
+  description: 'Optimizing retail operations with solutions for sales, inventory management, and customer experience.',
   top_img: require('../assets/Industries/retail_top_img.webp'),
   bottom_img: require('../assets/Industries/retail_bottom_img.webp'),
   alt_text1: "retail_top_Img",
@@ -1298,7 +1298,7 @@ steelIndustry: {
   link: '/industries/steel-industry',
   heading: 'Steel Industry',
   subheading:'The Best ERP For Steel Industry',
-  description: 'Forge ahead in the steel industry with our specialized ERP solutions.',
+  description: 'Empowering steel manufacturing with integrated solutions for production, inventory, and supply chain management.',
   top_img: require('../assets/Industries/steel_top_img.webp'),
   bottom_img: require('../assets/Industries/steel_bottom_img.webp'),
   alt_text1: "steel_top_Img",
@@ -1325,7 +1325,7 @@ telecomIndustry: {
   link: '/industries/telecom-industry',
   heading: 'Telecom Industry',
   subheading:'The Best ERP For Telecom Industry',
-  description: 'Connect, streamline, and grow with our tailored ERP solutions for the telecom industry.',
+  description: 'Driving telecom industry growth with solutions for customer management, network operations, and billing.',
   top_img: require('../assets/Industries/telecom_top_img.webp'),
   bottom_img: require('../assets/Industries/telecom_bottom_img.webp'),
   alt_text1: "telecom_top_Img",
@@ -1352,12 +1352,12 @@ textileIndustry: {
   link: '/industries/textiles-industry',
   heading: 'Textile Industry',
   subheading:'The Best ERP For Textile Industry',
-  description: 'Thread your success with our tailored ERP solutions for the textile industry.',
+  description: 'Streamlining textile manufacturing with solutions for production, inventory management, and distribution.',
   top_img: require('../assets/Industries/textile_top_img.webp'),
   bottom_img: require('../assets/Industries/textile_bottom_img.webp'),
   alt_text1: "textile_top_Img",
   alt_text2: "textile_bottom_Img",
-  top_description: "Tech Cloud ERP provides comprehensive solutions for managing the textile industry from cotton-to-yarn, yarn-to-fabric, fabric-to-garment, or across all segments. The textile business faces challenges such as seasonality, fluctuating global demand, processing capacity constraints, and high operating costs. Developed on the cloud with built-in best practices and comprehensive functionalities, Tech Cloud ERP software for the Textile Industry in India enables smooth and innovative management of your textile processes.",
+  top_description: "Tech Cloud ERP provides an all-rounded solution for the entire textile industry, right from cotton-to-yarn, yarn-to-fabric, fabric-to-garment, or a comprehensive solution across all segments. The nature of the textile business is highly affected by seasonality, changing demand patterns in the global marketplace, processing capacity constraints, and high operating costs. With the cloud-based best practice implementation and comprehensive functionalities built-in, Tech Cloud ERP software for the Textile Industry in India helps you to easily and innovatively manage your textile processes.",
   bottom_description: "Don't worry about the textile industry's seasonal cycles. Use Cloud ERP Software to plan effectively and deliver benefits to customers. Our features support raw material acquisition, trace work processes, manage products by style, color, size, and quality, and maintain relationships with vendors and customers. Automate workflows and purchase orders to save time.",
   similar_industries: [
     {
@@ -1401,7 +1401,7 @@ export const expoDetails = {
     ],
   },
   delhi: {
-    title: 'Delhi Expo',
+    title: 'Delhi Food Expo',
     venue: 'Bharath Bhavan, Pragathi Maidan Delhi, India 110001',
     date: '19,20,21,22 - Sep , 2024',
     images: [
@@ -1441,7 +1441,7 @@ export const expoDetails = {
     ],
   },
   surat: {
-    title: 'Surat Tech Cloud ERP',
+    title: 'Surat Expo',
     venue: 'Agenda Avadh Utopia , Surat , India 395007 ',
     date: '14 , 15 , 16 - June , 2024',
     images: [
@@ -1461,7 +1461,7 @@ export const expoDetails = {
     ],
   },
   coimbatore: {
-    title: 'Coimbatore Tech Cloud ERP',
+    title: 'Coimbatore Expo',
     venue: 'Codissia Trade Fair Complex  - Nehru Nagar West , Coimbatore, India 641014',
     date: '3, 4, 5 - July, 2024',
     images: [
@@ -1481,22 +1481,22 @@ export const expoDetails = {
     ],
   },
 
-
-
-
-  GaneshChaturdhi: {
-    title: 'Ganesh Chaturdhi Celebrations - 2024',
-    venue: 'Office Unit No. 705, Jain Sadguru Capital Park, Madhapur, Hyderabad, Telangana, India-500081.',
-    date: '19 ,20 ,21 ,22 - Sep, 2024',
-    description: 'Discover the Tech Cloud ERP Software in Surat...',
+  medicaldelhi: {
+    title: 'Delhi Medical Expo ',
+    venue: 'Bharath Bhavan, Pragathi Maidan',
+    date: '5 , 6 ,7 , Oct , 2024',
     images: [
-      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg1.webp'),
-      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg2.webp'),
-      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg3.webp'),
-      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg6.webp'),
-      require('../assets/Gallery/Events/GaneshChaturdhi/GaneshChaturdhiImg7.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo1.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo2.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo3.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo4.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo5.webp'),
+      require('../assets/Gallery/MedicalExpoDelhi/MedicalExpo6.webp'),
+      
     ],
   },
+
+
 };
 
 // gallery data
@@ -1506,9 +1506,9 @@ export const galleryData = {
       id: 'surat',
       location: 'Surat',
       venue: 'Agenda Avadh Utopia',
-      date: '14 , 15 , 16 - June, 2024',
+      date: '14, 15, 16 - June, 2024',
       img: require('../assets/Gallery/SuratExpo/SuratExpoThumbnail.png'),
-      alt: 'World Food India 2024 in surat',
+      alt: 'World Food India 2024 in Surat',
     },
     {
       id: 'chennai',
@@ -1516,7 +1516,7 @@ export const galleryData = {
       venue: 'Chennai Trade Centre, Chennai, India',
       date: '9, 10, 11 - Aug, 2024',
       img: require('../assets/Gallery/ChennaiExpo/ChennaiExpoExhibition.png'),
-      alt: 'World Food India 2024 in chennai',
+      alt: 'World Food India 2024 in Chennai',
     },
     {
       id: 'hyderabad',
@@ -1537,24 +1537,22 @@ export const galleryData = {
     {
       id: 'coimbatore',
       location: 'Coimbatore',
-      venue: 'Codissia Trade Fair Complex  - Nehru Nagar West',
+      venue: 'Codissia Trade Fair Complex - Nehru Nagar West',
       date: '3, 4, 5 - July, 2024',
       img: require('../assets/Gallery/Coimbature pics/CoimbatoreExpoThumbnail.png'),
-      alt: 'World Food India 2024 in coimbatore',
-    }
-  ],
- 
-  others: [
+      alt: 'World Food India 2024 in Coimbatore',
+    },
     {
-      id: 'delhi2',
+      id: 'medicaldelhi', 
       location: 'Delhi',
       venue: 'Bharath Bhavan, Pragathi Maidan',
-      date: '19,20,21,22,Sep,2024',
+      date: '19, 20, 21, 22 - Sep, 2024',
       img: require('../assets/Gallery/DelhiExpo/MedicalExpoThumbnail.webp'),
-      alt: 'World Food India 2024 in Delhi',
+      alt: 'Medical Expo in Delhi',
     },
   ],
 };
+
 
 export const faqContent = {
   subTitle: "FAQs",
@@ -1590,7 +1588,7 @@ export const productData = {
     title : "Cloud Based ERP Software",
     productDescription: [
       "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
-      "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+      "To get a clearer view on ERP software solutions and what it does to change the fortune of an enterprise, understand what ERP is. This is Enterprise Resource Planning, where all main company functions, such as sales, marketing, inventory, production, accounting, and human resources, are joined together in a single program. Cloud-based ERP software that we have here in Hyderabad, India, helps operate more efficiently by centralising and streamlining operations at all levels within the business.Thank you for your understanding and support."
     ],
     cards: [
       {
@@ -1877,8 +1875,8 @@ export const productData = {
       mainTitle : "Popular Tech Cloud POS",
       title : "Advanced Cloud-Based POS for Retail Stores",
       productDescription: [
-        "Tech Cloud POS was established to empower restaurants and retailers with cutting-edge technology, driving sales growth, enhancing decision-making, and elevating customer satisfaction. We provide the best POS software in Hyderabad, India, which helps to synchronize point-of-sale data with third-party applications. Our solutions will work with the leading e-commerce applications, allowing you to service your customers via any channel.The menu for POS includes customer information, items, sales, employees, and messages.",
-        "Our POS system manages billing based on customer orders, distinguishing between new and existing customers. Existing customer detail s are fetched from ERP, products selected for purchase, and payment processed via cash, debit, or credit card. Invoices are generated and provided to customers. Product availability is synced with ERP's Inventory module, with intuitive icons for easy POS navigation, supported by image uploads for item details."
+        "Tech Cloud POS was born to equip restaurants and retailers with frontline technology fueling sales growth, better decision-making, and great customer satisfaction. We provide the best POS software in Hyderabad, India, to help integrate point-of-sale data with third-party applications. Our solutions will work in conjunction with leading e-commerce applications, letting you serve your customers from any channel. The menu for POS includes customer information, items, sales, employees, and messages.",
+        "By differentiating between new and current customers, our POS system handles billing according to customer orders. ERP provides the current customer's information, products are chosen for purchase, and payment is made using a credit card, debit card, or cash. Invoices are created and sent to clients. The ERP Inventory module and product availability are in sync, and the POS is easy to navigate with its user-friendly iconography and image uploads for item data ."
       ],
       cards: [
           {
@@ -2134,14 +2132,14 @@ export const productData = {
   },
   'Ecommerce-software': {
     productTitle: 'Tech Cloud E-Commerce Software',
-      heading: "Ecommerce Solutions",
-      description: "Our services encompass implementation, training, and support for seamless e-commerce and ERP integration.",
+      heading: "E-Commerce Solutions",
+      description: "With our implementation, training, and support services, we help businesses achieve a flawless integration between their E-Commerce platforms and ERP solutions.",
       imageSrc : require("../assets/Products/ecommerce-pdt.webp"),
-      mainTitle : "Our E-commerce Overview",
+      mainTitle : "Our E-Commerce Overview",
       title : "Tech Cloud E-Commerce",
       productDescription: [
         "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
-        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+        "To gain a deeper understanding of ERP software solutions and their revolutionary impact on enterprises, you need to understand first of all what ERP stands for. ERP, or Enterprise Resource Planning, integrates the most basic company functions, including sales, marketing, inventory, production, accounting, and human resources, into one framework. Cloud-based ERP software, such as our very own in Hyderabad, India, improve efficiency by centralizing operations throughout the organization."
       ],
         cards: [
           {
@@ -2251,7 +2249,7 @@ export const productData = {
       }
   },
   'hr-managament-software': {
-    productTitle: 'Tech Cloud HR Management Software',
+    productTitle: 'Tech Cloud HRMS Management Software',
       heading: "HR managament Solutions",
       description: "Our expert team delivers top support, empowering your HR department with confidence.",
       imageSrc : require("../assets/Products/hrms-pdt.webp"),
@@ -2259,7 +2257,7 @@ export const productData = {
       title : "Tech Cloud HRMS",
       productDescription: [
         "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
-        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+        "For understanding what ERP software solutions and their revolutionary impact on an enterprise is, you should know what ERP is. It's a term that involves the cooperation of critical functions of any company, such as sales, marketing, inventory, production, accounting, and human resources, in a well-coordinated system. Our cloud-based ERP software in Hyderabad, India, centralizes and streamlines operations throughout the organisation to improve efficiency."
       ],
       cards: [
           {
@@ -2406,13 +2404,14 @@ export const productData = {
     mainTitle : "Finance provide you best services",
     title : "Tech Cloud Finance",
     productDescription: [
-      "The finance module in ERP gathers all financial data and generates reports such as ledgers, trail balance data, overall balance sheets, and quarterly financial statements. Using Tech Cloud Finance Software in Hyderabad, India, you can streamline your core finance operations and capture new growth opportunities. Tech Cloud Finance Software integrates key financial and accounting processes, making it easier to manage spend, resources, and financial reporting requirements."
+      "The finance module in an ERP system is used for managing financial operations through data consolidation and reports on important documents such as ledgers, trial balance data, balance sheets, and quarterly financial statements. All these reports provide great information on the financial condition of an organization that helps to make better decisions while following regulatory compliance.",
+      "Hyderabad, India-based Tech Cloud Finance Software is an automating and integrating financial and accounting function. It provides core finance processes in terms of the management of the organization, spending, resources, and the proper reporting on finances. Efficiency and real-time visibility over finances have been possible due to this software; errors have decreased, and the overall financial performance of a company has been improved for new avenues to be opened."
     ],
     cards: [
       {
         image: require("../assets/Products/Finance/functionalities.png"),
         title: "Functionalities",
-        text: "Optimize finances with real-time reporting, automated billing, and seamless integration for better decision-making.",
+        text: "Optimize finances with real-time reporting, automated billing, and seamless integration to improve decision-making.",
         items: [
           "Optimize finances with real-time reporting.",
           "Automate billing for increased efficiency.",
@@ -2499,7 +2498,7 @@ export const productData = {
       mainTitle : "Comprehensive Tech Cloud ERP Solutions",
       title : "Tech Cloud Integrated Cloud Based ERP",
       productDescription: [
-        "Tech Cloud ERP, based in Hyderabad, India, is a cloud-based solution for the manufacturing industry. It integrates PoS, CRM, finance, and eCommerce, streamlining operations across accounting, HR, sales, and distribution. The system automates order management, real-time customer notifications, and product updates on eCommerce sites, reducing manual effort, saving time, and enhancing productivity for businesses globally.",
+        "Tech Cloud ERP is a cloud-based solution to the manufacturing industry located in Hyderabad, India that integrates POS, CRM, finance and E-Commerce to streamline operating functions within accounting, HR, sales, and distribution. This goes on to automate order management, real-time notifications directly to customers, and executes updates on products on eCommerce sites, which reduce manual efforts, save time, and boost the productivity of various businesses worldwide.",
       ],
       cards: [
         {
@@ -2582,8 +2581,8 @@ export const productData = {
       mainTitle : "Streamlined Restaurant Management Solutions",
       title : "Tech Cloud Restaurant ERP",
       productDescription: [
-        "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
-        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+        "To understand ERP software solutions as well as the revolutionary impact of these on enterprises, you first need to understand what ERP is. ERP, or Enterprise Resource Planning, integrates all the critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a single system. For example, our cloud-based ERP software in Hyderabad, India boosts efficiency since operations centralize and streamline all throughout the firm.",
+        "First, we understand what ERP is, and that stands for Enterprise Resource Planning. It brings together in harmony the most critical functions of any company, including sales, marketing, inventory, production, accounting, and human resources. Centralizing and streamlining operations across an organization makes cloud-based ERP software like ours here in Hyderabad, India, that much more efficient."
       ],
         cards: [
           {
@@ -2698,10 +2697,10 @@ export const productData = {
       description: "Expert support for seamless integration and optimal performance in accounting software.",
       imageSrc : require("../assets/Products/accounting-pdt.webp"),
       mainTitle : "Reliable, efficient delivery",
-      title : "Cloud Based ERP Software",
+      title : "Tech Cloud Accounting Software",
       productDescription: [
         "Tech Cloud ERP, a web-based software from Hyderabad, India, excels in modern Business Process Management across diverse industries. Developed in the cloud, it integrates robust functionalities for high-end enterprise resource planning, ensuring a superior user experience through advanced technology and user-friendly design.",
-        "To obtain a better understanding of ERP software solutions and their revolutionary impact on enterprises, you must first understand what ERP is. ERP, or Enterprise Resource Planning, combines critical company functions such as sales, marketing, inventory, production, accounting, and human resources into a cohesive system. Cloud-based ERP software, such as ours in Hyderabad, India, improves efficiency by centralising and streamlining operations throughout the organisation."
+        "To understand what ERP software solutions are all about and their revolutionary nature in the face of any enterprise, first, it is very crucial to understand what ERP itself is. ERP, Enterprise Resource Planning, is one system that merges critical business functions like sales, marketing, inventory, production, accounting, and human resources under one framework. Cloud-based ERP software, such as ours located in Hyderabad, India, improves efficiency by centralizing and streamlining operations all over the organization."
       ],
         cards: [
           {
@@ -2859,7 +2858,22 @@ export const aboutus_data = {
     heading: "Product Comparison",
     description: "Our comprehensive solution for established businesses and enterprises.",
   },
-  
+  'OurBranches':{
+    heading: "Where We Work",
+    description: "Join our dynamic team and be part of an innovative company. Shape the future, grow professionally, and inspire success!",
+  },
+  'allservices':{
+    heading: "Our Services",
+    description: "Our ERP services streamline business operations with integrated solutions. Enhance productivity, automate tasks, and make data-driven decisions effortlessly. Transform your workflow today!",
+  },
+  'allindustries':{
+    heading: "Industries in Tech Cloud ERP",
+    description: "Our ERP services streamline business operations with integrated solutions. Enhance productivity, automate tasks, and make data-driven decisions effortlessly. Transform your workflow today!",
+  },
+  'allproducts':{
+    heading: "Tech Cloud ERP Products",
+    description: "Tech Cloud ERP is an all-in-one cloud platform that integrates ERP, CRM, POS, Trading, E-commerce, HRM, and Accounting Software to streamline operations, improve customer relationships, and automate key business processes, all from a unified system.",
+  },
 };
 export const ContactUs_content = {
   heading : "Contact us ",
@@ -2888,8 +2902,8 @@ export const whyTechCloudERPContent = {
   imageSrc: require("../assets/About_us/why_tech_cloud_erp_img.webp"),
   title: "Why Tech Cloud ERP ?",
   description: [
-    'TechCloud ERP provides a comprehensive solution that adapts to your business needs, streamlining processes and increasing efficiency. Our system is built with scalability in mind, allowing you to grow your business without the hassle of migrating to new platforms.',
-    'With real-time data access and robust reporting tools, TechCloud ERP gives you insights that drive informed decision-making. Our user-friendly interface ensures that your team can easily adopt the system and start benefiting from improved operational workflows right away.'
+    'The complete solution by TechCloud ERP will meet all your business requirements and is designed to ease your process and increase the efficiency. Our system has scalability built into it so you can expand your business without pains of migrating into a new platform.',
+    'You get direct access to real-time data and enjoy some of the best reporting tools available for this process with TechCloud ERP as it drives your insights in making informed decisions. With an easy user interface, there is easy adoption and integration to any team right away with improved workflows.'
   ],
   BusinessIntelligenceContent: { 
     imageSrc: require("../assets/About_us/why_tech_cloud_erp_img.webp"),
@@ -3109,8 +3123,8 @@ export const servicesData = {
     sectionSubtitle: 'We offer a comprehensive range of services to create high-quality, user-friendly, and scalable mobile applications. Our focus is on delivering seamless performance and intuitive user experiences across various devices and platforms.', // Added section subtitle
     title: 'Mobile Application Development',
     description: [
-      "Mobile application development is the process of creating software applications that run on mobile devices, delivering a seamless user experience.",
-      "Cross-platform development allows applications to be developed for multiple platforms using a single codebase, saving time and resources.",
+      "Mobile app development means that designing or developing an application software whose primary function or purpose will be run within a smartphone or mobile phone and tabloid. Achieve a frictionless intuitive use experience such that an app runs naturally on whatever version of either iOS or Android.",
+      "Cross-platform development is the development of the application using one codebase but runs on multiple platforms. This cross-platform would, thus, eliminate the need to write redundant codes on various platforms and therefore reduce development time and cost; it would mean that the same application was developed for running on iOS and Android.",
     ],
     services: [
       {
@@ -3176,8 +3190,8 @@ export const servicesData = {
     sectionSubtitle: 'Essential digital marketing services include SEO, social media, PPC, content creation, email campaigns, and analytics for growth optimization.', // Added section subtitle
     title: 'Digital Marketing',
     description: [
-      "Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.",
-      "Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.",
+      "Digital marketing is a form of promotion carried out through numerous digital mediums with the aim of covering online media and thus facilitating interaction with the target audience, increased brand awareness, and also achievement of specific business goals, such as driving sales or generating leads.",
+      "The reason is that, with digital marketing, the company can access the target market and communicate with specifically selected customer groups in much more efficient ways. This way, it makes it easy to track a campaign in real time; hence, adjusting strategies becomes much easier while the overall results are improved to achieve a higher impact.",
     ],
     services: [
       {
@@ -3227,12 +3241,12 @@ export const servicesData = {
         answer: 'It helps businesses reach a larger audience and drive engagement through online channels.',
       },
       {
-        question: 'How much should I budget for digital marketing?',
+        question: 'How much does digital marketing cost?',
         answer: 'Typically, businesses allocate around 10-20% of their revenue for marketing.',
       },
     ],
     image: require('../assets/Services/digital.webp'), 
-    altText: 'Digital marketing strategies for brand promotion.',
+    altText: 'The average monthly cost of digital marketing includes SEO, PPC advertising, email marketing, and content marketing, with costs ranging from $1,500 to $5,000 and $2,000 to $10,000, respectively.',
   },
 };
 
@@ -3627,7 +3641,7 @@ export const coFoundersData = [
   {
       name: "Devang Patel",
       title: "Chairman",
-      description: "Mr. Devang is a Mechanical Engineer and a certified SAP Production Planning Consultant. Known for his dynamic personality, he thrives on engaging with individuals at all levels to enhance his knowledge base. He is a meticulous observer of processes, consistently providing precise solutions swiftly. His profound expertise and leadership abilities have significantly advanced the careers of numerous professionals and have been instrumental in the growth of various businesses.",
+      description: "Mr. Devang Patel, the esteemed Chairman of Tech Cloud ERP, has over 30 years of experience in business development and possesses extensive knowledge across various domains.With a visionary mindset and an unwavering commitment to excellence, Mr. Patel has been at the forefront of technological innovation in enterprise resource planning systems. His professional journey exemplifies a relentless pursuit of innovation and a leadership style that inspires action and progress. Under his guidance, Tech Cloud ERP has flourished, setting benchmarks in the ERP industry and continuously enhancing client satisfaction through innovative solutions.",
       socialLinks: {
           facebook: "#",
           linkedin: "#",
@@ -3638,7 +3652,7 @@ export const coFoundersData = [
   {
       name: "Raja Shanmugam",
       title: "Founder & CEO",
-      description: "Mr. Raja is a Mechanical Engineer and a certified SAP Production Planning Consultant. Known for his dynamic personality, he thrives on engaging with individuals at all levels to enhance his knowledge base. He is a meticulous observer of processes, consistently providing precise solutions swiftly. His profound expertise and leadership abilities have significantly advanced the careers of numerous professionals and have been instrumental in the growth of various businesses.",
+      description: "Mr. Raj, the dynamic Founder and CEO of Tech Cloud ERP. With a solid foundation in mechanical engineering and a distinguished certification as a SAP Production Planning Consultant, Mr. Raj brings a unique blend of technical acumen and strategic foresight to the helm of our company.Under Mr. Raj's guidance, Tech Cloud ERP has developed innovative software solutions that streamline operations, enhance productivity, and foster sustainable growth. Beyond his professional achievements, Mr. Raj is dedicated to mentoring the next generation of industry leaders. His profound expertise and passion for knowledge-sharing have significantly advanced the careers of countless professionals, making him a respected figure in both the tech and business communities.",
       socialLinks: {
           facebook: "#",
           linkedin: "https://www.linkedin.com/in/raj-techclouderp/",
@@ -3651,6 +3665,296 @@ export const coFoundersData = [
 export const assets = {
   brochureLink: require("../assets/TCE-CompanyBrochure.pdf"),
 };
+export const servicesContent = [
+  {
+    title: "Digital Marketing",
+    description1: "Digital marketing refers to the promotion of products or services through digital channels like search engines, social media, email, and websites. It involves strategies and tactics to connect with a target audience online and achieve business objectives.",
+    description2: "Digital marketing is important because it helps businesses reach a larger audience and drive engagement through online channels. It allows businesses to target specific audiences and measure the effectiveness of their marketing strategies.",
+    buttonText: "Read more",
+    imageUrl: require('../assets/Services/digital.webp')
+  },
+  {
+    title: "Web Development",
+    description1: "In today's digitized marketing environment, online promotion is essential. Advertisers must use digital marketing tools and techniques to enhance customer value and achieve organizational goals. At Tech Cloud ERP Software Solutions, we boost your global online visibility and profits through effective internet marketing strategies.",
+    description2: "Our digital marketing experts excel with web analysis tools, live traffic, and ad creation to attract customers. ",
+    buttonText: "Read more",
+    imageUrl: require('../assets/Services/web-app.webp')
+  },
+  {
+    title: "Mobile Application Development",
+    description1: "Mobile app development means that designing or developing an application software whose primary function or purpose will be run within a smartphone or mobile phone and tabloid. Achieve a frictionless intuitive use experience such that an app runs naturally on whatever version of either iOS or Android.",
+    description2: "Cross-platform development is the development of the application using one codebase but runs on multiple platforms. This cross-platform would, thus, eliminate the need to write redundant codes on various platforms and therefore reduce development time and cost; it would mean that the same application was developed for running on iOS and Android.",
+    buttonText: "Read more",
+    imageUrl: require('../assets/Services/mobile-app.webp')
+  }
+];
+// constant.js
+
+export const industriesDataList = {
+  header: "Agriculture to Electronic Industries",  
+  agricultureList: [
+    {
+      id: 1,
+      title: "Agriculture Industry",
+      description: "Tech Cloud ERP software for Agriculture Industry in India provides a unique ERP Online Software Application.",
+      icon: require('../assets/AllIndustries/agriculture.webp'),
+    },
+    {
+      id: 2,
+      title: "Apparel Industry",
+      description: "An apparel ERP system aids in analyzing customer preferences, managing inventory, and achieving client goals.",
+      icon: require('../assets/AllIndustries/apparel.webp'),
+    },
+    {
+      id: 3,
+      title: "Automotive Industry",
+      description: "Managing interlinked processes simultaneously is a crucial skill for every automotive industry leader and manager.",
+      icon: require('../assets/AllIndustries/automation.webp'),
+    },
+    {
+      id: 4,
+      title: "Beverage Industry",
+      description: "Tech Cloud ERP software for Beverage Industry in India is a solution that helps your company streamline operations.",
+      icon: require('../assets/AllIndustries/beverage.webp'),
+    },
+    {
+      id: 5,
+      title: "Chemical Industry",
+      description: "The chemical industry remains a cornerstone of economies worldwide, making significant contributions to GDP and supporting various sectors.",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 6,
+      title: "Educational Institutes",
+      description: "In the rapidly changing world of education, there is growing interest in the potential offered by Enterprise Resource Planning systems.",
+      icon: require('../assets/AllIndustries/educational.webp'),
+    },
+    {
+      id: 7,
+      title: "Electric Industry",
+      description: "The Electrical industry comprises of manufacturers who produce generation equipment, transmission equipment and allied equipment’s. ",
+      icon: require('../assets/AllIndustries/electric.webp'),
+    },
+    {
+      id: 8,
+      title: "Electronics Industry",
+      description: "Tech Cloud ERP Software Solutions believes that flexibility must be required to succeed in the business of manufacturing of electronics products like semiconductors, capacitors, chips etc.",
+      icon: require('../assets/AllIndustries/electronics.webp'),
+    },
+  ],
+  header: "FMCG to Metal Fabrication Industry",  
+  fmcgList:[
+    {
+      id: 1,
+      title: "FMCG Industry",
+      description: "In the FMCG sector, timely delivery, accurate stock information, and personalized customer experiences are crucial for fostering loyalty and growth.",
+      icon: require('../assets/AllIndustries/agriculture.webp'),
+    },
+    {
+      id: 2,
+      title: "Food Industry",
+      description: "Tech Cloud ERP software for the food industry in India offers a comprehensive solution tailored to the unique needs of food manufacturers.",
+      icon: require('../assets/AllIndustries/apparel.webp'),
+    },
+    {
+      id: 3,
+      title: "Furniture Industry",
+      description: "Furniture manufacturers may have a passion for creating stunning designs into beautiful and functional furniture, fixtures or accessories.",
+      icon: require('../assets/AllIndustries/automation.webp'),
+    },
+    {
+      id: 4,
+      title: "Garment Industry",
+      description: "Tech Cloud ERP for Garment Industry in India is effective combines the technology with a normal manufacturing system that implements new standardized business flow and manufacturing processes that reduces the operational costs.",
+      icon: require('../assets/AllIndustries/beverage.webp'),
+    },
+    {
+      id: 5,
+      title: "Hydrolic Cylinders Industry",
+      description: "In Tech Cloud ERP, advanced analytics and reporting capabilities help Hydraulic Cylinder Industries make data-driven decisions and explore optimization opportunities within workflows. ",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 6,
+      title: "Jewellery Industry",
+      description: "Tech Cloud ERP Software Solutions are the rich experienced software development company for the Jewellery Industry.",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 7,
+      title: "Leather Industry",
+      description: "Generally, leather is an animal produce and it is a perishable product, it is essential to source the right quantity at the right time. ",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 8,
+      title: "Wood Industry",
+      description: "Wood Industry is the most important industry around the world, today many industries such as furniture, toymakers, paper, craftsmen, etc. are connected with the wood industry. ",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 9,
+      title: "Wholesalers Industry",
+      description: "For most of the distributors who operate in global networks, it has become important to develop new ways of doing business with each other within the new network department. ",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 10,
+      title: "Metal Fabrication Industry",
+      description: "For different fabrication stores, have different work processes like casting, extrusion, chipping, forging, welding, etc. But what generally a Metal Fabrication industries lack is automated business management system.",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 11,
+      title: "Micro Finance Industry",
+      description: "Microfinance has an important role in connecting the gap between the formal financial institutions and the rural poor and the microfinance software is robust that helps to automate all business activities.",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 12,
+      title: "Medical Equipment Manufacturing Industry",
+      description: "With the growing number of software solutions available in the market and significant functional overlap, the choosing process has grown very confusing, especially when trying to maximize the cost-benefit ratio. ",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+  ],
+  header: "Oil & Gas Textile Industry",  
+  oilandgasList:[
+    {
+      id: 1,
+      title: "Oil & Gas Industry",
+      description: "The oil and gas industry is an early adopter of ERP systems due to its reliance on precise workflow management and market analysis.",
+      icon: require('../assets/AllIndustries/agriculture.webp'),
+    },
+    {
+      id: 2,
+      title: "Packaging Industry",
+      description: "From small down bottles to readymade food packets and from a small medicine to pharmaceutical machinery, the packaging industries have to provide security, protection, and marketing. ",
+      icon: require('../assets/AllIndustries/apparel.webp'),
+    },
+    {
+      id: 3,
+      title: "Paper Industry",
+      description: "Paper manufacturing industries are increasingly implementing ERP software systems to enhance their processes.",
+      icon: require('../assets/AllIndustries/automation.webp'),
+    },
+    {
+      id: 4,
+      title: "Plastic Industry",
+      description: "To provide quality production and waste management in the plastic industry software is required, with that one can operate all the departments in one single place.",
+      icon: require('../assets/AllIndustries/beverage.webp'),
+    },
+    {
+      id: 5,
+      title: "Pharmaceutical Industry",
+      description: "The Pharmaceutical industry is really doing great with very high global demand and strong export markets.",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 6,
+      title: "Publishing Industry",
+      description: "Generally, a publishing industry has to take care of content, designing, printing/publishing and distribution of publications namely magazines, newspapers, books, directories, etc. ",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 7,
+      title: "Printing Industry",
+      description: "Tech Cloud ERP Software for Printing Industry in India supports the total business process from sales, price estimating, quotation, order confirmation to production management and delivery.",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 8,
+      title: "Pre Engineering Industry",
+      description: "Our ERP software for Engineering Industry in India has unique modules that are designed in a way that fulfills all the requirements of the Pre-Engineering Industry. ",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 9,
+      title: "Rubber Industry",
+      description: "India is one of the major producers of rubber products, both for the domestic and international markets. Large industries as well as the SME sector manufacture these products.",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 10,
+      title: "Restaurant Industry",
+      description: "Restaurant Industry - An industry with many demands for its service and it is a start point for many business enthusiasts. ",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 11,
+      title: "Retail Industry",
+      description: "The primary purpose of an ERP system for a retail business is to facilitate quick decision-making in real-time and maintain accurate, end-to-end data across retail stores. ",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 12,
+      title: "Steel Industry",
+      description: "Tech Cloud ERP Software is a powerful tool, particularly beneficial for the manufacturing industry. Manufacturing involves multiple operations from raw material conversion to finished goods",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 13,
+      title: "Telecom Industry",
+      description: "The telecommunications industry, a major economic contributor, manufactures a diverse range of products from large-scale switches to basic mobile phones.",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+    {
+      id: 14,
+      title: "Textile Industry",
+      description: "Tech Cloud ERP provides an all-rounded solution for the entire textile industry, right from cotton-to-yarn, yarn-to-fabric, fabric-to-garment, or a comprehensive solution across all segments. ",
+      icon: require('../assets/AllIndustries/chemical.webp'),
+    },
+  ],
+
+
+};
+
+export const modulesData = [
+  {
+    title: "ERP",
+    description: "Integrates finance, HR, and inventory into one system, automating processes and boosting efficiency for better decision-making.",
+    image: require("../assets/Products/products_main_img.webp"),
+  },
+  {
+    title: "CRM",
+    description: "Manages customer interactions and data, enhancing sales, service, and relationships for stronger customer connections.",
+    image: require("../assets/Products/crm-pdt.webp"),
+  },
+  {
+    title: "POS",
+    description: "Ensures secure sales transactions, integrates with inventory and customer data, and provides real-time updates for efficiency.",
+    image: require("../assets/Products/pos-pdt.webp"),
+  },
+  {
+    title: "Trading Software",
+    description: "It helps optimize procurement, inventory, and order management with real-time tracking, thus enhancing workflows automatically.",
+    image: require("../assets/Products/trading-pdt.webp"),
+  },
+  {
+    title: "E-commerce",
+    description: "Online stores management with product catalogs, payment systems, and real-time updates to improve customer experience.",
+    image: require("../assets/Products/ecommerce-pdt.webp"),
+  },
+  {
+    title: "HRM",
+    description: "It automates payroll, attendance, recruitment, and performance management for an efficient workforce while keeping track of compliance.",
+    image: require("../assets/Products/hrms-pdt.webp"),
+  },
+  {
+    title: "ERP Integrated-With-CRM-Ecommerce-POS",
+    description: "Sales, inventory, and customer data are integrated, enabling automation and improving efficiency.",
+    image: require("../assets/Products/integrated-pdt.webp"),
+  },
+  {
+    title: "Restaurant ERP",
+    description: "The integration of order management, inventory, HR, and accounting automates tasks for efficient restaurant operations and service delivery.",
+    image: require("../assets/Products/resturant-pdt.webp"),
+  },
+  {
+    title: "Accounting Software",
+    description: "Automates bookkeeping, invoicing, tax calculations, and legal compliance, providing real-time financial insights and streamlined management.",
+    image: require("../assets/Products/accounting-pdt.webp"),
+  },
+];
 
 
 // cardData.js

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-
+import { Title } from '../Home/CardSection';
 const StyledMap = styled.div`
   iframe {
     width: 593px;
@@ -26,6 +26,7 @@ const StyledMap = styled.div`
 const MapSection = () => {
   return (
     <Container>
+            <Title className="text-center pt-4 pt-md-0">Our Branches</Title>
       <Row className='mb-5'>
         <Col md={6} className='mt-3'>
           <StyledMap>

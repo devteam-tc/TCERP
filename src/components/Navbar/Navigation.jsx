@@ -1,33 +1,45 @@
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Container from './Container';
-import { AlignJustify, Phone } from 'lucide-react';
+import { AlignJustify } from 'lucide-react';
 import MegaMenu from './MegaMenu';
 import MobileNavigationDrawer from './MobileNavigationDrawer';
 import { releavant } from '../../utils/constants';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
-import { FaXTwitter } from "react-icons/fa6";
+import { FaXTwitter, FaPinterest } from 'react-icons/fa6';
 import styled from 'styled-components';
 import ReactCountryFlag from 'react-country-flag';
+import { FaPhone } from "react-icons/fa6";
 
 const SocialMediaIcons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
   @media screen and (max-width: 996px) {
     display: none;
   }
 `;
 
 const SocialIcon = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  font-size: 13px;
   color: #000;
-  margin: 0 8px;
-  font-size: 22px;
+  transition: color 0.3s, border-color 0.3s;
+
   &:hover {
     ${({ href }) => {
-      if (href.includes('instagram')) return 'color: #E1306C;';
-      if (href.includes('facebook')) return 'color: #1877F2;';
-      if (href.includes('linkedin')) return 'color: #0077B5;';
-      if (href.includes('youtube')) return 'color: #FF0000;';
-      if (href.includes('twitter')) return 'color: #1DA1F2;';
-      return 'color: #000;';
+      if (href.includes('instagram')) return 'color: #E1306C; border-color: #E1306C;';
+      if (href.includes('facebook')) return 'color: #1877F2; border-color: #1877F2;';
+      if (href.includes('linkedin')) return 'color: #0077B5; border-color: #0077B5;';
+      if (href.includes('youtube')) return 'color: #FF0000; border-color: #FF0000;';
+      if (href.includes('twitter')) return 'color: #1DA1F2; border-color: #1DA1F2;';
+      return 'color: #000; border-color: #000;';
     }}
   }
   @media (max-width: 1200px) {
@@ -44,7 +56,7 @@ const PhoneDropdown = styled.div`
     position: absolute;
     background-color: white;
     min-width: 150px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     overflow: hidden;
     margin-top: 1.5vh;
@@ -64,48 +76,57 @@ const PhoneDropdown = styled.div`
       margin-left: 8px;
     }
   }
-    @media screen and (max-width: 996px){
-      display: none;
-      }
+  
+  @media screen and (max-width: 996px) {
+    display: none;
+  }
 `;
 
 const Navigation = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [showPhoneDropdown, setShowPhoneDropdown] = useState(false);
-
   const drawerButtonRef = useRef(null);
+  const dropdownTimeout = useRef(null);
+
+  const handleMouseEnter = () => {
+    clearTimeout(dropdownTimeout.current);
+    setShowPhoneDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeout.current = setTimeout(() => {
+      setShowPhoneDropdown(false);
+    }, 500); 
+  };
 
   return (
     <header className="nav__header">
       <Container>
         <div className="toolbar">
           <Link className="logo__link" to={'/'}>
-            <img src={releavant.logo} style={{ height: '80px'}} alt='logoImg'/>
+            <img src={releavant.logo} style={{ height: '80px' }} alt='logoImg' />
           </Link>
-
           <div className="hidden md:block">
             <MegaMenu />
           </div>
-
           {/* Phone Dropdown */}
           <PhoneDropdown
             showDropdown={showPhoneDropdown}
-            onClick={() => setShowPhoneDropdown(!showPhoneDropdown)}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
-            <Phone size={24} />
+            <FaPhone size={24} />
             <div className="dropdown-content">
-            <div className="dropdown-item" href="tel:+9198929439603">
-                  <ReactCountryFlag countryCode="IN" svg style={{ width: '24px', height: '18px' }} />
-                  <span>+91 8929439603</span>
-                </div>
-                <div className="dropdown-item" href="tel:+13127663390">
-                  <ReactCountryFlag countryCode="US" svg style={{ width: '24px', height: '18px' }} />
-                  <span>+1 (312) 766-3390</span>
-                </div>
-            
+              <a className="dropdown-item" href="tel:+9198929439603">
+                <ReactCountryFlag countryCode="IN" svg style={{ width: '24px', height: '18px' }} />
+                <span>+91 8929439603</span>
+              </a>
+              <a className="dropdown-item" href="tel:+13127663390">
+                <ReactCountryFlag countryCode="US" svg style={{ width: '24px', height: '18px' }} />
+                <span>+1 (312) 766-3390</span>
+              </a>
             </div>
           </PhoneDropdown>
-
           <button
             ref={drawerButtonRef}
             className="menu_icon md:hidden"
@@ -115,7 +136,6 @@ const Navigation = () => {
             {/* Mobile Hamburger menu */}
             <AlignJustify />
           </button>
-
           {/* Social Media Icons */}
           <SocialMediaIcons>
             <SocialIcon href="https://www.instagram.com" target="_blank">
@@ -129,6 +149,9 @@ const Navigation = () => {
             </SocialIcon>
             <SocialIcon href="https://www.youtube.com" target="_blank">
               <FaYoutube />
+            </SocialIcon>
+            <SocialIcon href="https://in.pinterest.com/techclouderp/" target="_blank">
+              <FaPinterest />
             </SocialIcon>
             <SocialIcon href="https://www.twitter.com" target="_blank">
               <FaXTwitter />

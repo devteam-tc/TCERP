@@ -71,7 +71,7 @@ const FeatureCard = () => {
       <Container className="mt-5">
         <Row>
           <Title className="text-center mt-3 mb-3">Unique Features</Title>
-          <SubTitle>
+          <SubTitle >
             TechCloud ERP offers a cutting-edge solution with seamless
             integration, intuitive design, and robust real-time analytics. It
             empowers businesses to streamline operations, enhance productivity,

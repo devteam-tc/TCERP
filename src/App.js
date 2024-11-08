@@ -27,15 +27,19 @@ import BlogForm from './pages/Blogs/BlogForm';
 import CareersList from './pages/Careers/CareersList';
 import JobDetail from './pages/Careers/JobDetails';
 import AdminJobManagement from './pages/Careers/JobEntry';
+import OurBranches from './pages/Branches/OurBranches';
+import AllServicesSection from './pages/AllServices/AllServicesSection';
+import AllIndustriesSection from './pages/AllIndustries/AllIndustriesSection';
+import AllProductsSection from './pages/AllProducts/AllProductsSection';
 
 function App() {
   return (
-    <Router basename="/">
+    <Router >
       <div className="App  md:bg-top bg-center">
         <Navigation/>
         {/* Define your Routes here */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
 
           
@@ -61,8 +65,10 @@ function App() {
           {/* Other routes */}
           <Route path="/services/:serviceId" element={<ServicesSection />} />
           <Route path="/services/*" element={<NotFound />} />
+          <Route path='/services' element={<AllServicesSection />} />
           <Route path='/pricing' element={<PricingPage />} />
           <Route path='/features' element={<FeatureCard />} />
+          <Route path='/ourbranches' element={<OurBranches />} />
           <Route path="/product-comparison" element={<ComparisonTable />} />
           <Route path='/blogs' element={<BlogList />}/>
           <Route path="/blogForm" element={<BlogForm />} />
@@ -73,6 +79,8 @@ function App() {
 
           {/* Route for 404 Not Found */}
           <Route path="/industries/*" element={<NotFound />} />
+          <Route path='/allindustries' element={<AllIndustriesSection />} />
+          <Route path='/allproducts' element={<AllProductsSection/>} />
           <Route path="/products/*" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

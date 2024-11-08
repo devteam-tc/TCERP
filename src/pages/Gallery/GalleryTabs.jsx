@@ -65,8 +65,7 @@ const GalleryTabs = () => {
     <GalleryContainer className='mt-3'>
     <Row className='justify-content-center'>
     <Title>Exhibition Gallery</Title>
-    <Description className='text-center w-75 md-0'>Experience our exclusive exhibition as we tour various cities across India, offering free demos and showcasing our advanced business solutions. Discover the transformative power of our modules, including CRM, ERP, HRMS, Accounting, Trading, POS, Finance, and Restaurant Management, as our experts guide you through live demonstrations at multiple locations. Gain valuable insights into how these innovative tools can streamline your business operations and drive growth, 
-      all while exploring the future of enterprise solutions.</Description>
+    <Description className='text-center w-50 p-3 md-0'>Experience our nationwide exhibition, offering free demos of our advanced business solutions. Discover the power of CRM, ERP, HRMS, Accounting, POS, and more through live demos, tailored to streamline your business growth.</Description>
     </Row>
       <Container>
         <Row>

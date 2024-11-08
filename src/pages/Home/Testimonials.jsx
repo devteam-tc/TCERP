@@ -7,11 +7,16 @@ import { Title } from "./CardSection";
 // Styled Components
 const GradientContainer = styled(Container)`
   background-image: url(${releavant.testimonials_bg});
-  background-position: center;
-  background-size: contain;
+   background-position: center;
+  background-size: contain; /* Ensure it covers the full background */
+  background-repeat: no-repeat;
+  width: 80%;
   height: auto;
   padding: 2%;
-  background-repeat: no-repeat;
+  @media (max-width: 992px) {
+    background-size: contain; /* Adjust background size for responsiveness */
+    width: 100%;
+  }
 `;
 
 const StyledCard = styled(Card)`

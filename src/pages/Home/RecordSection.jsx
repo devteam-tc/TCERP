@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { recordcount } from '../../utils/constants';
@@ -9,7 +9,8 @@ const StatsSection = styled.section`
   padding: 40px 0;
   color: #fff;
   text-align: center;
-  
+  box-shadow: 0px 0px 30px 20px rgba(0, 0, 0, 0.25) inset;
+
   @media (max-width: 576px) {
     padding: 20px 0;
   }
@@ -17,14 +18,10 @@ const StatsSection = styled.section`
 
 const StatWrapper = styled.div`
   display: flex;
-  align-items: center;  /* Align icon, number, and text in a row */
+  align-items: center;
   justify-content: center;
   padding: 0 15px;
-  border-right: 1px solid #e6f6fa; /* Add border to the right */
-  
-  // &:last-child {
-  //   border-right: none; 
-  // }
+  border-right: 1px solid #e6f6fa;
 
   @media (max-width: 576px) {
     border: none !important;
@@ -47,7 +44,7 @@ const StatText = styled.p`
   letter-spacing: 1px;
   text-align: left;
   text-transform: uppercase;
-  margin-left: 10px; /* Space between number and text */
+  margin-left: 10px;
   white-space: nowrap;
 
   @media (max-width: 576px) {
@@ -56,13 +53,14 @@ const StatText = styled.p`
 `;
 
 const IconWrapper = styled.div`
-    display: flex;
-    font-size: 4rem;
-    margin-top: -1rem;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    @media (max-width: 992px) {
+  display: flex;
+  font-size: 4rem;
+  margin-top: -1rem;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+
+  @media (max-width: 992px) {
     font-size: 3rem;
   }
 `;
@@ -89,11 +87,36 @@ const StyledCol = styled(Col)`
   }
 
   &:nth-child(4n) ${StatWrapper} {
-    border-right: none; /* Remove border on the last column */
+    border-right: none;
   }
 `;
 
 const RecordSection = () => {
+  const startCounting = (elementId, end, duration) => {
+    const counterElement = document.getElementById(elementId);
+    const step = end / (duration / 50); // Increment step based on the total duration and interval (50ms)
+    let current = 0;
+
+    const intervalId = setInterval(() => {
+      current += step;
+      if (current >= end) {
+        current = end; // Ensure we reach exactly the target value
+        clearInterval(intervalId);
+      }
+      counterElement.textContent = Math.floor(current) + " +";
+    }, 50); // Fixed interval of 50ms
+  };
+
+  useEffect(() => {
+    const totalDuration = 20000; // 20 seconds
+
+    // Start counting for each counter with respective end values
+    startCounting('counter1', 25, totalDuration);
+    startCounting('counter2', 2000, totalDuration);
+    startCounting('counter3', 10000, totalDuration);
+    startCounting('counter4', 38000, totalDuration);
+  }, []);
+
   return (
     <StatsSection>
       <Container>
@@ -101,10 +124,10 @@ const RecordSection = () => {
           {recordcount.map((stat, index) => (
             <StyledCol key={index} xs={12} sm={6} md={3}>
               <StatWrapper>
-                <IconWrapper>{stat.icon}</IconWrapper> {/* Icon */}
+                <IconWrapper>{stat.icon}</IconWrapper>
                 <div>
-                  <StatNumber>{stat.number}</StatNumber> {/* Number */}
-                  <StatText>{stat.text}</StatText> {/* Text */}
+                  <StatNumber id={`counter${index + 1}`}>{stat.number}</StatNumber>
+                  <StatText>{stat.text}</StatText>
                 </div>
               </StatWrapper>
             </StyledCol>
