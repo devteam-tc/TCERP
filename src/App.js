@@ -22,6 +22,11 @@ import ComparisonTable from './pages/product-comparison';
 import './routes/index.css'
 import Navigation from './components/Navbar/Navigation';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import BlogList from './pages/Blogs/BlogList';
+import BlogForm from './pages/Blogs/BlogForm';
+import CareersList from './pages/Careers/CareersList';
+import JobDetail from './pages/Careers/JobDetails';
+import AdminJobManagement from './pages/Careers/JobEntry';
 
 function App() {
   return (
@@ -32,6 +37,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
+
           
           {/* Dynamic routes for each industry */}
           {Object.keys(sectionsData).map((industry) => (
@@ -58,6 +64,11 @@ function App() {
           <Route path='/pricing' element={<PricingPage />} />
           <Route path='/features' element={<FeatureCard />} />
           <Route path="/product-comparison" element={<ComparisonTable />} />
+          <Route path='/blogs' element={<BlogList />}/>
+          <Route path="/blogForm" element={<BlogForm />} />
+          <Route path='/careers' element={<CareersList />}/>
+          <Route path="/job-details/:jobId" element={<JobDetail />} />
+          <Route path="/job-entry" element={<AdminJobManagement />} />
           {/* Other routes */}
 
           {/* Route for 404 Not Found */}

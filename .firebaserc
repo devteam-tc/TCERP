@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "tcerp-website-ff312",
+    "default": "tcerp-website",
     "staging": "tcerp-website-ff312"
   },
   "targets": {},
