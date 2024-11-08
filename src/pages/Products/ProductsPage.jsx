@@ -296,7 +296,7 @@ const ProductPage = () => {
         <Row className="align-items-center">
           <Col md={6}>
             <ImageContainer>
-              <img src={product.imageSrc} alt="TechCloud ERP Dashboard" />
+              <img src={product.imageSrc} alt={product.imageAlt} />
             </ImageContainer>
           </Col>
           <Col md={6}>

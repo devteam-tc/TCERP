@@ -172,7 +172,7 @@ const ImportantModuleSection = () => {
           <Slider {...sliderSettings}>
             {ModulecardsData.map((card) => (
               <Card key={card.id} className='mb-5'>
-                <CardImage src={card.image} alt={card.title} />
+                <CardImage src={card.image} alt={card.alt} />
                 <CardTitle>{card.title}</CardTitle>
                 <CardText>{card.description}</CardText>
               </Card>

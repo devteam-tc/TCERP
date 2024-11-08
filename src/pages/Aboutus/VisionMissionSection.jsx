@@ -57,7 +57,7 @@ const VisionMissionSection = () => {
           {/* Image Section */}
           <Col md={6}>
             <ImageContainer>
-              <img src={visionMissionData.image} alt="Our Vision" />
+              <img src={visionMissionData.image} alt="Vision for Innovation" />
               <OrangeBorder />
             </ImageContainer>
           </Col>

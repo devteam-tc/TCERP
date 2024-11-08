@@ -123,10 +123,10 @@ const OurMissionSection = () => {
         <Row className="align-items-center">
           <Col lg={5} className="mt-4">
             <ExperienceImageWrapper>
-              <ExperienceImageStyled src={images.mainImage} alt="Experience" />
+              <ExperienceImageStyled src={images.mainImage} alt="Innovate, integrate, excel with Tech Cloud ERP for business transformation" />
               <img
                 src={images.experienceIcon}
-                alt="Overlay Icon"
+                alt="ERP Cloud Solutions"
                 className="overlay-image"
               />
               {/* <div className="text">
