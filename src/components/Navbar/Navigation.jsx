@@ -104,7 +104,7 @@ const Navigation = () => {
       <Container>
         <div className="toolbar">
           <Link className="logo__link" to={'/'}>
-            <img src={releavant.logo} style={{ height: '80px' }} alt='logoImg' />
+            <img src={releavant.logo} style={{ height: '80px' }} alt='Tech Cloud ERP Logo, leading ERP solutions provider in India' />
           </Link>
           <div className="hidden md:block">
             <MegaMenu />
