@@ -13,7 +13,7 @@ const StyledContainer = styled(Container)`
 
 const Header = styled.h2`
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: left;
   margin-bottom: 10px;
 `;
@@ -47,14 +47,14 @@ const IconWrapper = styled.div`
     justify-content: center;
     width: 140px;
     height: 80px;
-    border: 1px solid var(--Color-8-Color-8500, #A7A7A7);
+    // border: 1px solid var(--Color-8-Color-8500, #A7A7A7);
     border-radius: 50%;
     margin-right: 16px;
 `;
 
 const Icon = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   color: #e85600;
 `;
 
@@ -64,7 +64,7 @@ const CardContent = styled.div`
 
 const Title = styled.h3`
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 500;
   margin: 0;
 `;
 
@@ -95,7 +95,13 @@ const AllIndustriesSection = () => {
         <StyledContainer className='mt-5 mb-5' key={index}>
           <Row className="justify-content-between align-items-center">
             <Col>
-              <Header>{index === 0 ? "Agriculture to Electronic Industries" : "FMCG to Metal Fabrication Industry"  }</Header>
+            <Header>
+  {index === 0 
+    ? "Agriculture to Electronic Industries" 
+    : index === 1 
+    ? "FMCG to Metal Fabrication Industry" 
+    : "Oil and Gas Industry"}
+</Header>
             </Col>
             <Col className="d-flex justify-content-end">
               <IndustryCount href="#">{industryList.length} Industries</IndustryCount>
@@ -109,8 +115,8 @@ const AllIndustriesSection = () => {
                     <Icon src={industry.icon} alt={industry.title} />
                   </IconWrapper>
                   <CardContent>
-                    <Title className='mb-3'>{industry.title}</Title>
-                    <Description className='mb-2'>{industry.description}</Description>
+                    <Title className='mb-1'>{industry.title}</Title>
+                    <Description className='mb-1'>{industry.description}</Description>
                   </CardContent>
                   <Arrow>&#x2192;</Arrow>
                 </IndustryCard>
