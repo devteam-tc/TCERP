@@ -14,11 +14,11 @@ import { IoSpeedometerOutline } from "react-icons/io5";
 import { TbLayoutGridAdd } from 'react-icons/tb';
 
 export const releavant = {
-  logo: require("../assets/tcerplogo.png"),
+  logo: require("../assets/tcerplogo.webp"),
   bgvideo:require("../assets/Home/videobanner.mp4"),
   us_flag_img:require("../assets/us-flag.jpg"),
   indian_flag_img:require("../assets/indian-flag.png"),
-  testimonials_bg: require('../assets/Testimonials/testimonials_bg.png'),
+  testimonials_bg: require('../assets/Testimonials/testimonials_bg.webp'),
   Quotation_mark: require('../assets/Home/Quotation_mark.webp'),
   ourMission: {
     images: {
@@ -1539,7 +1539,7 @@ export const galleryData = {
       location: 'Coimbatore',
       venue: 'Codissia Trade Fair Complex - Nehru Nagar West',
       date: '3, 4, 5 - July, 2024',
-      img: require('../assets/Gallery/Coimbature pics/CoimbatoreExpoThumbnail.png'),
+      img: require('../assets/Gallery/Coimbature pics/CoimbatoreExpoThumbnail.webp'),
       alt: 'World Food India 2024 in Coimbatore',
     },
     {
@@ -3954,4 +3954,85 @@ export const modulesData = [
     description: "Automates bookkeeping, invoicing, tax calculations, and legal compliance, providing real-time financial insights and streamlined management.",
     image: require("../assets/Products/accounting-pdt.webp"),
   },
+];
+export const blogCardData = [
+  {
+    imgSrc: "https://storage.googleapis.com/a1aa/image/xwFY1kXWA2L0AB2MxbprfR5AUeaGfp6xhUJro6jNPzdLusbnA.jpg",
+    title: "Exploring the Essentials of ERP Functionality",
+    description: "Enterprise resource planning (ERP) software is one of the foundations of a company's technology stack...",
+    tags: [
+      { label: "E-Commerce", color: "#fd7e14" },
+      { label: "Retail Industry", color: "#17a2b8" },
+      { label: "Tech Solutions", color: "#28a745" },
+    ],
+    link: "#",
+  },
+  {
+    imgSrc: "https://storage.googleapis.com/a1aa/image/x780eZLdDTxddKWwD93COkUfeKb2e62I0fd9HnOCjXXY4yudC.jpg",
+    title: "Finding the Right ERP to Integrate With Your Shopify Store",
+    description: "As your ecommerce business grows, managing operations becomes more complex. This is where ERP systems come in...",
+    tags: [
+      { label: "E-Commerce", color: "#e83e8c" },
+      { label: "Retail Industry", color: "#6f42c1" },
+      { label: "Web Development", color: "#007bff" },
+    ],
+    link: "#",
+  },
+  {
+    imgSrc: "https://storage.googleapis.com/a1aa/image/x780eZLdDTxddKWwD93COkUfeKb2e62I0fd9HnOCjXXY4yudC.jpg",
+    title: "Finding the Right ERP to Integrate With Your Shopify Store",
+    description: "As your ecommerce business grows, managing operations becomes more complex. This is where ERP systems come in...",
+    tags: [
+      { label: "E-Commerce", color: "#e83e8c" },
+      { label: "Retail Industry", color: "#6f42c1" },
+      { label: "Web Development", color: "#007bff" },
+    ],
+    link: "#",
+  },
+  {
+    imgSrc: "https://storage.googleapis.com/a1aa/image/x780eZLdDTxddKWwD93COkUfeKb2e62I0fd9HnOCjXXY4yudC.jpg",
+    title: "Finding the Right ERP to Integrate With Your Shopify Store",
+    description: "As your ecommerce business grows, managing operations becomes more complex. This is where ERP systems come in...",
+    tags: [
+      { label: "E-Commerce", color: "#e83e8c" },
+      { label: "Retail Industry", color: "#6f42c1" },
+      { label: "Web Development", color: "#007bff" },
+    ],
+    link: "#",
+  },
+  {
+    imgSrc: "https://storage.googleapis.com/a1aa/image/x780eZLdDTxddKWwD93COkUfeKb2e62I0fd9HnOCjXXY4yudC.jpg",
+    title: "Finding the Right ERP to Integrate With Your Shopify Store",
+    description: "As your ecommerce business grows, managing operations becomes more complex. This is where ERP systems come in...",
+    tags: [
+      { label: "E-Commerce", color: "#e83e8c" },
+      { label: "Retail Industry", color: "#6f42c1" },
+      { label: "Web Development", color: "#007bff" },
+    ],
+    link: "#",
+  },
+  {
+    imgSrc: "https://storage.googleapis.com/a1aa/image/x780eZLdDTxddKWwD93COkUfeKb2e62I0fd9HnOCjXXY4yudC.jpg",
+    title: "Finding the Right ERP to Integrate With Your Shopify Store",
+    description: "As your ecommerce business grows, managing operations becomes more complex. This is where ERP systems come in...",
+    tags: [
+      { label: "E-Commerce", color: "#e83e8c" },
+      { label: "Retail Industry", color: "#6f42c1" },
+      { label: "Web Development", color: "#007bff" },
+    ],
+    link: "#",
+  },
+  {
+    imgSrc: "https://storage.googleapis.com/a1aa/image/x780eZLdDTxddKWwD93COkUfeKb2e62I0fd9HnOCjXXY4yudC.jpg",
+    title: "Finding the Right ERP to Integrate With Your Shopify Store",
+    description: "As your ecommerce business grows, managing operations becomes more complex. This is where ERP systems come in...",
+    tags: [
+      { label: "E-Commerce", color: "#e83e8c" },
+      { label: "Retail Industry", color: "#6f42c1" },
+      { label: "Web Development", color: "#007bff" },
+    ],
+    link: "#",
+  },
+  
+  // Additional card data here...
 ];
