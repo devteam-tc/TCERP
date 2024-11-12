@@ -29,9 +29,22 @@ const WorldMapWithMarkers = () => {
       paddingBottom: 20,
       paddingTop: 20,
       paddingLeft: 20,
-      paddingRight: 20
+      paddingRight: 20,
+      rotationX: 78.5, // Center rotation on India
+      rotationY: -20,
+      zoomLevel: 1.2 // Adjust zoom for closer view to India
     }));
-
+    
+    // Rotation animation for smooth looping centered on India
+    chart.animate({
+      key: "rotationX",
+      from: 78.5, // Starting from India's position
+      to: 438.5,  // Complete 360-degree rotation from the centered position on India
+      duration: 30000,
+      loops: Infinity,
+      easing: am5.ease.linear // Smooth linear easing
+    });
+    
     // Create main polygon series for countries with a base fill color and blue outline
     let polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
       geoJSON: worldLow
@@ -42,13 +55,13 @@ const WorldMapWithMarkers = () => {
       tooltipText: "{name}",
       toggleKey: "active",
       interactive: true,
-      fill: am5.color(0x05a7cc), // Light orange as the base color
-      strokeWidth: 1 // Outline thickness
+      fill: am5.color(0x05a7cc), // Base color for countries
+      strokeWidth: 1
     });
 
     // Set hover state color
     polygonSeries.mapPolygons.template.states.create("hover", {
-      fill: am5.color(0xffa64d) // Darker orange on hover
+      fill: am5.color(0xffa64d) // Darker color on hover
     });
 
     // Highlight specific countries like India
@@ -57,7 +70,7 @@ const WorldMapWithMarkers = () => {
         id: "IN", // ISO code for India
         fill: am5.color(0xef5226), // Custom color for highlighting India
         stroke: am5.color(0x0000ff), // Blue outline color for India
-        strokeWidth: 2 // Outline thickness for India
+        strokeWidth: 2
       }
     ]);
 
@@ -67,17 +80,6 @@ const WorldMapWithMarkers = () => {
       strokeOpacity: 0.1,
       stroke: root.interfaceColors.get("alternativeBackground")
     });
-
-    // Rotation animation
-    chart.animate({
-      key: "rotationX",
-      from: 0,
-      to: 360,
-      duration: 30000,
-      loops: Infinity
-    });
-
-    chart.appear(1000, 100);
 
     // Add point series for markers
     let pointSeries = chart.series.push(am5map.MapPointSeries.new(root, {}));
@@ -104,6 +106,10 @@ const WorldMapWithMarkers = () => {
       { title: "USA", geometry: { type: "Point", coordinates: [-98.5795, 39.8283] } }
     ]);
 
+    // Initial animation appearance
+    chart.appear(1000, 100);
+
+    // Clean up on unmount
     return () => {
       root.dispose();
     };
