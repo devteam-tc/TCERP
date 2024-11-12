@@ -1,107 +1,17 @@
-// // import React, { useEffect, useState } from 'react';
-// // import { useParams } from 'react-router-dom';
-// // // import { db } from '../firebaseConfig';
-// // import { db } from '../../firebase';
-// // import { Container, Row, Col } from 'react-bootstrap';
-
-// // const JobDetail = () => {
-// //   const { jobId } = useParams();
-// //   const [job, setJob] = useState(null);
-
-// //   useEffect(() => {
-// //     const fetchJobDetails = async () => {
-// //       const jobDoc = await db.collection('jobPosts').doc(jobId).get();
-// //       if (jobDoc.exists) {
-// //         setJob(jobDoc.data());
-// //       }
-// //     };
-// //     fetchJobDetails();
-// //   }, [jobId]);
-
-// //   if (!job) return <p>Loading...</p>;
-
-// //   return (
-// //     <Container>
-// //       <Row>
-// //         <Col>
-// //           <h2>{job.title}</h2>
-// //           <p><strong>Location:</strong> {job.location}</p>
-// //           <p><strong>Experience:</strong> {job.experience}</p>
-// //           <p><strong>Work Mode:</strong> {job.workMode}</p>
-// //           <p>{job.description}</p>
-// //         </Col>
-// //       </Row>
-// //     </Container>
-// //   );
-// // };
-
-// // export default JobDetail;
-
-
-// import { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { doc, getDoc } from 'firebase/firestore';
-// import { db } from '../../firebase';
-// import { Container, Row, Col } from 'react-bootstrap';
-
-// const JobDetails = () => {
-//   const { jobId } = useParams();
-//   const [job, setJob] = useState(null);
-
-//   useEffect(() => {
-//     const fetchJobDetails = async () => {
-//       const jobRef = doc(db, 'jobOpenings', jobId);
-//       const jobSnap = await getDoc(jobRef);
-//       if (jobSnap.exists()) {
-//         setJob(jobSnap.data());
-//       }
-//     };
-
-//     fetchJobDetails();
-//   }, [jobId]);
-
-//   if (!job) return <p>Loading job details...</p>;
-
-//   return (
-//     <Container>
-//       <Row>
-//         <Col className="text-center">
-//           <h1>{job.title}</h1>
-//           <p><strong>Location:</strong> {job.location}</p>
-//           <p><strong>Experience:</strong> {job.experience}</p>
-//           <p><strong>Work Mode:</strong> {job.workMode}</p>
-//           <p><strong>Job Description:</strong> {job.description}</p>
-//           <p><strong>Roles and Responsibilities:</strong> {job.rolesAndResponsibilities}</p>
-//           <p><strong>Qualifications:</strong> {job.qualifications}</p>
-//           <p><strong>Highlights:</strong> {job.highlights}</p>
-//         </Col>
-//       </Row>
-//     </Container>
-//   );
-// };
-
-// export default JobDetails;
-
-
-
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faMapMarkerAlt, faCalendarAlt, faClock, faUsers, faArrowRight, faTrophy, faUserShield, faMoneyBillWave, faChartLine, faHandHoldingUsd, faGift, faTools, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
 import emailjs from 'emailjs-com';  // Import EmailJS
-
-
-const Header = styled.header`
-  background: linear-gradient(90deg, rgba(255,94,0,1) 0%, rgba(255,0,0,1) 100%);
-  color: #ffffff;
-  text-align: center;
-  padding: 2rem 0;
-`;
-
+import {  Description, Section } from '../IndustryPage';
+import { FaBook, FaBriefcase, FaChair, FaClock, FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaYoutube } from 'react-icons/fa6';
+import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import Perks from './Perks';
 const SectionTitle = styled.h2`
-  color: #ff4d4d;
+  color: #FF5200;
   font-size: 1.5rem;
   margin-top: 2rem;
 `;
@@ -110,271 +20,299 @@ const SectionContent = styled.div`
   margin-top: 1rem;
   font-size: 1rem;
   line-height: 1.6;
+  color: #333;
+  padding-left: 2rem;
 `;
 
 const JobHighlights = styled.div`
-  background-color: #ff4d4d;
+  background-color: #D94B23;
   color: #ffffff;
   padding: 2rem;
   border-radius: 10px;
   margin-top: 2rem;
 `;
 
-const HighlightItem = styled.div`
-  margin-bottom: 1rem;
+const DropCV = styled.div`
+  background-image: url(${require('../../assets/formBg.png')});
+  background-size: 100% 100%;
+  background-position: center;
+  border-radius: 5px;
+  padding: 8rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+  @media (max-width: 992px) {
+    padding: 2rem;
+    background-repeat: no-repeat;
+    background-image: none;
+  }
 `;
 
-const DropCV = styled.div`
-  background-color: #ffffff;
+const FormBgContainer = styled.div`
+  border-radius: 5px;
   padding: 2rem;
   border-radius: 10px;
   margin-top: 2rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 `;
-
-const Perks = styled.div`
-  margin-top: 2rem;
+const Icon = styled.i`
+  font-size: 24px;
+  margin-right: 10px;
 `;
 
+const SocialIcons = styled.div`
+            
+  i {
+    font-size: 32px;
+    }
+`;
+
+const CustomButton = styled.button`
+  /* Custom button styles */
+  padding: 10px 20px;
+  background-color: transparent; /* Set background color */
+  border: 2px solid white; /* Set border color */
+  border-radius: 4px;
+  cursor: pointer;
+
+  /* Style the Link inside the button */
+  a {
+    color: white; /* Set default link color to white */
+    text-decoration: none;
+    &:hover,
+    &:focus,
+    &:active {
+      color: black; /* Change color to orange on hover, focus, or active */
+  }
+}
+`;
+
+const Header = styled.div`
+  text-align: center;
+  margin-bottom: 30px;
+`;
+
+const Title = styled.h1`
+  color: #ff5722;
+  font-size: 36px;
+`;
+
+const StyledFormControl = styled(Form.Control)`
+  border-radius: 5px;
+  height: 45px;
+  &:focus {
+    box-shadow: none;
+    border-color: #ff5722;
+  }
+`;
+
+const StyledButton = styled(Button)`
+  background-color: #ff5722;
+  border-color: #ff5722;
+  height: 50px;
+  font-size: 18px;
+  border-radius: 5px;
+  &:hover {
+    background-color: #e64a19;
+    border-color: #e64a19;
+  }
+`;
+
+const FileUpload = styled.div`
+  border: 2px dashed #ff5722;
+  padding: 20px;
+  text-align: center;
+  color: #ff5722;
+  border-radius: 5px;
+  margin-bottom: 20px;
+`;
 
 const JobDetails = () => {
-
-  const [formData, setFormData] = useState({
-    fullname: '',
-    email: '',
-    phone: '',
-    location: '',
-    coverLetter: '',
-    file: null,
-    fileBase64: '' // Store file in base64 format
-
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const { jobId } = useParams();
+  const [job, setJob] = useState(null);
+  const [selectedFile, setSelectedFile] = useState(null); // New state for file
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // const handleFileChange = (e) => {
-  //   setFormData({ ...formData, file: e.target.files[0] });
-  // };
+  useEffect(() => {
+    const fetchJobDetails = async () => {
+      const jobRef = doc(db, 'jobOpenings', jobId);
+      const jobSnap = await getDoc(jobRef);
+      if (jobSnap.exists()) {
+        setJob(jobSnap.data());
+      }
+    };
+
+    fetchJobDetails();
+  }, [jobId]);
+
+  if (!job) return <p>Loading job details...</p>;
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData({ ...formData, file, fileBase64: reader.result.split(',')[1] });
-      };
-      reader.readAsDataURL(file);
+      setSelectedFile(file.name); // Store the file name in state
     }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const { fullname, email, phone, coverLetter, fileBase64 } = formData;
-
-    const templateParams = {
-      fullname,
-      email,
-      phone,
-      coverLetter,
-      file: fileBase64, // Pass file as base64 to EmailJS
-    };
-
-    // Send email using EmailJS
-    emailjs
-      .send('service_fj9wi0o', 'template_z1grzln', templateParams, 'v6VpiooczQgoGx3mg')
-      .then(
-        (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          alert('Your application has been submitted successfully!');
-        },
-        (error) => {
-          console.log('FAILED...', error);
-          alert('There was an issue submitting your application. Please try again.');
-        }
-      );
   };
 
   return (
     <div>
-      <Header>
+      <Section>
         <Container>
-          <h1>Product Manager</h1>
-          <p>Seeking a proactive Product Manager adept in Upwork lead generation, with 7+ years of experience. Responsibilities include mastering Upwork, generating leads, securing projects, and nurturing client relationships. The ideal candidate thrives in both independent and team settings, possessing a keen interest in emerging technologies like Swift, Kotlin, Flutter, React Native, and AI.</p>
+          <Row className='text-center'>
+              <h1 className='fw-semibold'>{job.title}</h1>
+              <Description>{job.description}</Description>
+          </Row>
         </Container>
-      </Header>
+      </Section>
 
       <Container>
         <div>
           <SectionTitle>Roles and Responsibilities</SectionTitle>
           <SectionContent>
-            <ul>
-              <li>Employ online platforms for effective lead generation and project acquisition.</li>
-              <li>Cultivate enduring client relationships to ensure satisfaction and retention.</li>
-              <li>Contribute to shaping product strategy based on market insights.</li>
-              <li>Collaborate cross-functionally to prioritize and plan product roadmaps effectively.</li>
-              <li>Define clear requirements and specifications for new product features and enhancements.</li>
-              <li>Conduct comprehensive market analysis to identify opportunities and competitive landscape.</li>
-              <li>Monitor product performance metrics to iterate and improve product offerings.</li>
-              <li>Communicate with stakeholders to align goals and expectations effectively.</li>
+            <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+              {job.responsibilities.map((responsibility, index) => (
+                <li key={index}>{responsibility}</li>
+              ))}
             </ul>
           </SectionContent>
         </div>
-
-        <div>
+        <div style={{backgroundColor: '#E6F6FA', padding: '2rem', borderRadius: '10px', marginTop: '2rem'}}>
           <SectionTitle>Required Qualifications</SectionTitle>
           <SectionContent>
-            <ul>
-              <li>Minimum of 7+ years of demonstrable experience as a Product Manager in the software/web services industry, with a track record of successful product launches and improvements.</li>
-              <li>Proficiency in leveraging Upwork platform for lead generation, project acquisition, and client relationship management, with a clear understanding of its features and functionalities.</li>
-              <li>Strong understanding of mobile and web development technologies, including Swift, Kotlin, Flutter, React Native, and familiarity with emerging AI technologies.</li>
-              <li>Ability to think strategically and translate market trends and customer insights into actionable product strategies, roadmaps, and feature sets that drive growth and customer satisfaction.</li>
+            <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+              {job.qualifications.map((qualification, index) => (
+                <li key={index}>{qualification}</li>
+              ))}
             </ul>
           </SectionContent>
         </div>
-
         <JobHighlights>
-          <SectionTitle className="text-white">Job Highlights</SectionTitle>
-          <HighlightItem><FontAwesomeIcon icon={faBriefcase} /> Work mode: Hybrid</HighlightItem>
-          <HighlightItem><FontAwesomeIcon icon={faMapMarkerAlt} /> Unit No: 705, Jain Sadguru Capital Park, Image Gardens Road, VIP Hills, Madhapur, Hyderabad-500081.</HighlightItem>
-          <HighlightItem><FontAwesomeIcon icon={faCalendarAlt} /> Date posted: 01-10-2024</HighlightItem>
-          <HighlightItem><FontAwesomeIcon icon={faClock} /> Experience: 7+ year</HighlightItem>
-          <HighlightItem><FontAwesomeIcon icon={faClock} /> Working Hours: 9 AM - 5 PM</HighlightItem>
-          <HighlightItem><FontAwesomeIcon icon={faUsers} /> No. of Vacancy: 3</HighlightItem>
-          <HighlightItem><a href="#"><FontAwesomeIcon icon={faArrowRight} /> View all jobs</a></HighlightItem>
+          <h2>Job Highlights</h2>
+            <Row>
+              <Col md={4} className="mb-3 mt-3 d-flex align-items-center">
+                  <Icon><FaBriefcase /></Icon>
+                  <div>
+                  <strong>Work mode</strong><br />
+                    {job.workMode}
+                  </div>
+              </Col>
+              <Col md={4} className="mb-3 mt-3 d-flex align-items-center">
+                  <Icon><FaMapMarkerAlt /></Icon>
+                    <div>
+                      {job.location}
+                    </div>
+              </Col>
+              <Col md={4} className="mb-3 mt-3 d-flex align-items-center">
+                <Icon><FaCalendarAlt /></Icon>
+                    <div>
+                      <strong>Date posted</strong><br />
+                        {(() => {
+                          const date = job.postedDate.toDate();
+                          return `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getFullYear()}`;
+                        })()}
+                      </div>
+              </Col>
+              <Col md={4} className="mb-3 mt-3 d-flex align-items-center">
+                <Icon><FaBook /></Icon>
+                  <div>
+                    <strong>Experience :</strong><br />
+                      {job.experience}
+                  </div>
+              </Col>
+              <Col md={4} className="mb-3 mt-3 d-flex align-items-center">
+                <Icon><FaClock /></Icon>
+                  <div>
+                    <strong>Working Hours</strong><br />
+                      10 AM - 7 PM
+                  </div>
+              </Col>
+              <Col md={4} className="mb-3 mt-3 d-flex align-items-center">
+                <Icon><FaChair /></Icon>
+                  <div>
+                    <strong>No.of Vacancy :</strong><br />
+                      {job.vacancies}
+                  </div>
+              </Col>
+            </Row>
+            <div className="mt-4">
+              <CustomButton><Link to="/careers" onClick={scrollToTop}>View all jobs</Link></CustomButton>
+            </div>
+            <div className="mt-4">
+              <p>Share this job on:</p>
+
+                <SocialIcons>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                        <FaLinkedin className="fs-3" style={{ marginRight: '10px', color: 'white' }} />
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                        <FaFacebook className="fs-3" style={{ marginRight: '10px', color: 'white' }} />
+                    </a>
+                    <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
+                        <FaWhatsapp className="fs-3" style={{ marginRight: '10px', color: 'white'  }} />
+                    </a>
+                </SocialIcons>
+
+            </div>
         </JobHighlights>
-
-        {/* <DropCV>
-          <h2>Drop Your CV</h2>
-          <Form>
-            <Row>
-              <Col md={6}>
-                <Form.Control type="text" placeholder="Full name *" defaultValue="John David" />
-              </Col>
-              <Col md={6}>
-                <Form.Control type="email" placeholder="Your email *" defaultValue="example@mail.com" />
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
-                <Form.Control type="text" placeholder="Phone Number *" />
-              </Col>
-              <Col md={6}>
-                <Form.Control type="text" placeholder="Location *" />
-              </Col>
-            </Row>
-            <Form.Control as="textarea" rows={5} placeholder="Cover Letter *" defaultValue="My desire to work in Techcloud ERP is..." />
-            <Form.Group>
-              <Form.Label>Attach any files you feel would be useful (doc, xls, pdf, txt, jpg, png) Max size: 2MB</Form.Label>
-              <Form.Control type="file" />
-            </Form.Group>
-            <Button type="submit" className="btn">Apply Now</Button>
-          </Form>
-        </DropCV> */}
-
-<DropCV>
-        <h2>Drop Your CV</h2>
-        <Form onSubmit={handleSubmit}>
-          <Row>
-            <Col md={6}>
-              <Form.Control 
-                type="text" 
-                placeholder="Full name *" 
-                name="fullname" 
-                value={formData.fullname}
-                onChange={handleChange}
-              />
-            </Col>
-            <Col md={6}>
-              <Form.Control 
-                type="email" 
-                placeholder="Your email *" 
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-              />
-            </Col>
-          </Row>
-          <Row>
-            <Col md={6}>
-              <Form.Control 
-                type="text" 
-                placeholder="Phone Number *" 
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-              />
-            </Col>
-            <Col md={6}>
-              <Form.Control 
-                type="text" 
-                placeholder="Location *"
-                name="location"
-                value={formData.location}
-                onChange={handleChange}
-              />
-            </Col>
-          </Row>
-          <Form.Control 
-            as="textarea" 
-            rows={5} 
-            placeholder="Cover Letter *" 
-            name="coverLetter"
-            value={formData.coverLetter}
-            onChange={handleChange}
-          />
-          <Form.Group>
-            <Form.Label>Attach your resume (doc, pdf)</Form.Label>
-            <Form.Control 
-              type="file" 
-              name="file"
-              onChange={handleFileChange}
-            />
-          </Form.Group>
-          <Button type="submit" className="btn">Apply Now</Button>
-        </Form>
-      </DropCV>
-
-        <Perks>
-          <h2>Perks Of Working With Techcloud ERP</h2>
-          <Row>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faTrophy} />
-              <p>Performance Appreciation Rewards</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faUserShield} />
-              <p>Employee First Policy</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faMoneyBillWave} />
-              <p>Leave Encashment</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faChartLine} />
-              <p>Career Growth Opportunity</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faHandHoldingUsd} />
-              <p>Competitive Salary Package</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faGift} />
-              <p>Festival & Work Anniversary Celebration</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faTools} />
-              <p>Access to the Latest Tools</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faHandsHelping} />
-              <p>Employee Assistance Programme</p>
-            </Col>
-          </Row>
-        </Perks>
+        <DropCV>
+                  <Header>
+                      <Title>Drop Your CV</Title>
+                  </Header>
+                  <FormBgContainer>
+                  <Form>
+                      <Row>
+                          <Col md={6}>
+                              <Form.Group className="mb-3">
+                                  <Form.Label>Full name</Form.Label>
+                                  <StyledFormControl type="text" placeholder="John David" />
+                              </Form.Group>
+                          </Col>
+                          <Col md={6}>
+                              <Form.Group className="mb-3">
+                                  <Form.Label>Your email *</Form.Label>
+                                  <StyledFormControl type="email" placeholder="example@yourmail.com" />
+                              </Form.Group>
+                          </Col>
+                      </Row>
+                      <Row>
+                          <Col md={6}>
+                              <Form.Group className="mb-3">
+                                  <Form.Label>Phone Number *</Form.Label>
+                                  <StyledFormControl type="text" placeholder="Please Enter Your Phone Number" />
+                              </Form.Group>
+                          </Col>
+                          <Col md={6}>
+                              <Form.Group className="mb-3">
+                                  <Form.Label>Location *</Form.Label>
+                                  <StyledFormControl type="text" placeholder="Please Enter your Location" />
+                              </Form.Group>
+                          </Col>
+                      </Row>
+                      <Form.Group className="mb-3">
+                          <Form.Label>Cover Letter</Form.Label>
+                          <br/>
+                          <StyledFormControl as="textarea" placeholder="Hello there,I would like to talk about how to..." style={{ width: '100%', height: '200px', padding: '10px' }} />
+                      </Form.Group>
+                      {/* <FileUpload>
+                          <p>Attach any files you feel would be useful</p>
+                          <small>(doc, xls, pdf, txt and ppt files only, Max Size 2MB)</small>
+                      </FileUpload> */}
+                      <FileUpload>
+                    <p>Attach any files you feel would be useful</p>
+                    <label htmlFor="file-upload" style={{ cursor: 'pointer', color: '#ff5722', textDecoration: 'underline' }}>(doc, xls, pdf, txt and ppt files only, Max Size 2MB)</label>
+                    <input type="file" onChange={handleFileChange} style={{ display: 'none' }} id="file-upload" />
+                    {selectedFile && <p>Selected file: {selectedFile}</p>}
+                  </FileUpload>
+                      <div className='text-center'>
+                      <StyledButton type="submit" className="btn-block">Apply Now</StyledButton>
+                      </div>
+                  </Form>
+                  </FormBgContainer>
+        </DropCV>
+        <Perks/>
       </Container>
 
     </div>

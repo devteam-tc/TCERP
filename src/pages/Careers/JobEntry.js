@@ -12,7 +12,7 @@ const AddJobOpening = () => {
     description: "",
     responsibilities: [""],
     qualifications: [""],
-    highlights: [""],
+    vacancies: 0,
     imageURL: "",
     postedDate: Timestamp.now(),
   });
@@ -45,7 +45,7 @@ const AddJobOpening = () => {
         description: "",
         responsibilities: [""],
         qualifications: [""],
-        highlights: [""],
+        vacancies: 0,
         imageURL: "",
         postedDate: Timestamp.now(),
       });
@@ -109,7 +109,7 @@ const AddJobOpening = () => {
           />
         </Form.Group>
 
-        {["responsibilities", "qualifications", "highlights"].map((key) => (
+        {["responsibilities", "qualifications"].map((key) => (
           <Form.Group key={key}>
             <Form.Label>{key.charAt(0).toUpperCase() + key.slice(1)}</Form.Label>
             {jobData[key].map((item, index) => (
@@ -127,6 +127,15 @@ const AddJobOpening = () => {
           </Form.Group>
         ))}
 
+      <Form.Group>
+          <Form.Label>Vacancies</Form.Label>
+          <Form.Control
+            type="integer"
+            name="vacancies"
+            value={jobData.vacancies}
+            onChange={handleChange}
+          />
+        </Form.Group>
         <Form.Group>
           <Form.Label>Image URL</Form.Label>
           <Form.Control

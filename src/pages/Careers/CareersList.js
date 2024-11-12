@@ -184,6 +184,7 @@ import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase'; // Firebase setup
 import { getDocs, collection, addDoc } from 'firebase/firestore'; // Import addDoc for adding data
 import { Section } from '../IndustryPage';
+import Perks from './Perks';
 
 const CurrentOpeningsSection = styled.section`
   padding: 3rem 0;
@@ -201,14 +202,27 @@ const JobCard = styled.div`
 
 // Additional styled components
 const CustomJobAlertSection = styled.section`
-  background-color: #f8f9fa;
-  padding: 3rem 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #FF5200;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
 `;
 
-const PerksSection = styled.section`
-  padding: 3rem 0;
-  text-align: center;
-`;
 
 const CareersList = () => {
   const [jobOpenings, setJobOpenings] = useState([]);
@@ -287,11 +301,15 @@ const CareersList = () => {
             {jobOpenings.map((job) => (
               <Col md={4} key={job.id}>
                 <JobCard>
-                  <img src={job.image} height="50" alt={`${job.title} Icon`} />
-                  <h5>{job.title}</h5>
-                  <p>Experience: {job.experience}</p>
-                  <p>Location: {job.location}</p>
-                  <p>Work Mode: {job.workMode}</p>
+                  <div className='d-flex align-items-center'>
+                    <img src={job.imageURL} height="100" alt={`${job.title} Icon`} />
+                    <h5>{job.title}</h5>
+                  </div>
+                  <div className='text-start'>
+                  <p className='fs-6'><strong>Experience:</strong> {job.experience}</p>
+                  <p className='fs-6'><strong>Location:</strong> {job.location}</p>
+                  <p className='fs-6'><strong>Work Mode:</strong> {job.workMode}</p>
+                  </div>
                   <Button onClick={() => handleApplyNow(job.id)}>Apply Now</Button>
                 </JobCard>
               </Col>
@@ -302,11 +320,11 @@ const CareersList = () => {
 
       <CustomJobAlertSection>
         <Container>
-          <Row>
+          <Row  style={{backgroundColor: '#E6F6FA'}}>
             <Col md={6}>
-              <img src="https://storage.googleapis.com/a1aa/image/StViV5aM4pLiCNRrd1IiukR76pZRTzpUnZefOsfX0Nz8W0bnA.jpg" height="300" alt="People walking in business attire" />
+              <img src="https://storage.googleapis.com/a1aa/image/StViV5aM4pLiCNRrd1IiukR76pZRTzpUnZefOsfX0Nz8W0bnA.jpg" alt="People walking in business attire"/>
             </Col>
-            <Col md={6}>
+            <Col md={6} style={{padding: '20px', margin: 'auto'}}>
               <h3>Seeking A New Role? Create A Custom Job Alert Now!</h3>
               <Form onSubmit={handleAlertSubmit}>
                 <Form.Control
@@ -345,13 +363,13 @@ const CareersList = () => {
                   name="resume"
                   onChange={handleAlertChange}
                 />
-                <Button type="submit">Apply Now</Button>
+                <Button type="submit" style={{backgroundColor: '#EF5226', border: 'none'}}>Apply Now</Button>
               </Form>
             </Col>
           </Row>
         </Container>
       </CustomJobAlertSection>
-
+      <Perks/>
       {/* PerksSection as before */}
     </div>
   );
