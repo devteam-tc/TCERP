@@ -1,384 +1,378 @@
-// // import React, { useEffect, useState } from 'react';
-// // import { useParams } from 'react-router-dom';
-// // // import { db } from '../firebaseConfig';
-// // import { db } from '../../firebase';
-// // import { Container, Row, Col } from 'react-bootstrap';
-
-// // const JobDetail = () => {
-// //   const { jobId } = useParams();
-// //   const [job, setJob] = useState(null);
-
-// //   useEffect(() => {
-// //     const fetchJobDetails = async () => {
-// //       const jobDoc = await db.collection('jobPosts').doc(jobId).get();
-// //       if (jobDoc.exists) {
-// //         setJob(jobDoc.data());
-// //       }
-// //     };
-// //     fetchJobDetails();
-// //   }, [jobId]);
-
-// //   if (!job) return <p>Loading...</p>;
-
-// //   return (
-// //     <Container>
-// //       <Row>
-// //         <Col>
-// //           <h2>{job.title}</h2>
-// //           <p><strong>Location:</strong> {job.location}</p>
-// //           <p><strong>Experience:</strong> {job.experience}</p>
-// //           <p><strong>Work Mode:</strong> {job.workMode}</p>
-// //           <p>{job.description}</p>
-// //         </Col>
-// //       </Row>
-// //     </Container>
-// //   );
-// // };
-
-// // export default JobDetail;
-
-
 // import { useEffect, useState } from 'react';
-// import { useParams } from 'react-router-dom';
-// import { doc, getDoc } from 'firebase/firestore';
-// import { db } from '../../firebase';
-// import { Container, Row, Col } from 'react-bootstrap';
+// import { Container, Row, Col, Button, Form } from 'react-bootstrap';
+// import styled from 'styled-components';
+// import { useNavigate } from 'react-router-dom';
+// import { db } from '../../firebase'; // Assume Firebase is initialized in this file
+// import { getDocs, collection } from 'firebase/firestore';
+// import { Section } from '../IndustryPage';
 
-// const JobDetails = () => {
-//   const { jobId } = useParams();
-//   const [job, setJob] = useState(null);
+// const CurrentOpeningsSection = styled.section`
+//   padding: 3rem 0;
+//   text-align: center;
+// `;
+
+// const JobCard = styled.div`
+//   border: 1px solid #ddd;
+//   border-radius: 8px;
+//   padding: 1.5rem;
+//   margin-bottom: 1.5rem;
+//   text-align: center;
+// `;
+
+// const CustomJobAlertSection = styled.section`
+//   background-color: #f8f9fa;
+//   padding: 3rem 0;
+// `;
+
+// const PerksSection = styled.section`
+//   padding: 3rem 0;
+//   text-align: center;
+// `;
+
+// const PerkCard = styled.div`
+//   border: 1px solid #ddd;
+//   border-radius: 8px;
+//   padding: 1.5rem;
+//   margin-bottom: 1.5rem;
+//   text-align: center;
+// `;
+
+// const CareersList = () => {
+//   const [jobOpenings, setJobOpenings] = useState([]);
+//   const navigate = useNavigate();
 
 //   useEffect(() => {
-//     const fetchJobDetails = async () => {
-//       const jobRef = doc(db, 'jobOpenings', jobId);
-//       const jobSnap = await getDoc(jobRef);
-//       if (jobSnap.exists()) {
-//         setJob(jobSnap.data());
-//       }
+//     const fetchJobs = async () => {
+//       const jobCollection = collection(db, 'jobOpenings');
+//       const jobSnapshot = await getDocs(jobCollection);
+//       const jobs = jobSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+//       setJobOpenings(jobs);
 //     };
 
-//     fetchJobDetails();
-//   }, [jobId]);
+//     fetchJobs();
+//   }, []);
 
-//   if (!job) return <p>Loading job details...</p>;
+//   const handleApplyNow = (jobId) => {
+//     navigate(`/job-details/${jobId}`);
+//   };
 
 //   return (
-//     <Container>
-//       <Row>
-//         <Col className="text-center">
-//           <h1>{job.title}</h1>
-//           <p><strong>Location:</strong> {job.location}</p>
-//           <p><strong>Experience:</strong> {job.experience}</p>
-//           <p><strong>Work Mode:</strong> {job.workMode}</p>
-//           <p><strong>Job Description:</strong> {job.description}</p>
-//           <p><strong>Roles and Responsibilities:</strong> {job.rolesAndResponsibilities}</p>
-//           <p><strong>Qualifications:</strong> {job.qualifications}</p>
-//           <p><strong>Highlights:</strong> {job.highlights}</p>
-//         </Col>
-//       </Row>
-//     </Container>
+//     <div>
+//       <Section>
+//         <Container>
+//           <Row>
+//             <Col className='text-center'>
+//               <h1 className='fw-bold'>Join Our Team</h1>
+//               <p>Join Our Dynamic Team And Be Part Of An Innovative Company. Shape The Future, Grow Professionally, And Inspire Success!</p>
+//             </Col>
+//           </Row>
+//         </Container>
+//       </Section>
+
+//       <CurrentOpeningsSection>
+//         <Container>
+//           <h2>Current Openings</h2>
+//           <p>Discover our current job openings and embark on a rewarding career journey with us. Your next opportunity awaits!</p>
+//           <Row>
+//             {jobOpenings.map((job) => (
+//               <Col md={4} key={job.id}>
+//                 <JobCard>
+//                   <img src={job.image} height="50" alt={`${job.title} Icon`} />
+//                   <h5>{job.title}</h5>
+//                   <p>Experience: {job.experience}</p>
+//                   <p>Location: {job.location}</p>
+//                   <p>Work Mode: {job.workMode}</p>
+//                   <Button onClick={() => handleApplyNow(job.id)}>Apply Now</Button>
+//                 </JobCard>
+//               </Col>
+//             ))}
+//           </Row>
+//         </Container>
+//       </CurrentOpeningsSection>
+
+//       {/* CustomJobAlertSection and PerksSection as before */}
+
+//       <CustomJobAlertSection>
+//           <Container>
+//             <Row>
+//               <Col md={6}>
+//                 <img src="https://storage.googleapis.com/a1aa/image/StViV5aM4pLiCNRrd1IiukR76pZRTzpUnZefOsfX0Nz8W0bnA.jpg" height="300" alt="People walking in business attire" />
+//               </Col>
+//               <Col md={6}>
+//                 <h3>Seeking A New Role? Create A Custom Job Alert Now!</h3>
+//                 <Form>
+//                   <Form.Control type="text" placeholder="Name *" />
+//                   <Form.Control type="email" placeholder="E-mail *" />
+//                   <Form.Control type="text" placeholder="Phone number *" />
+//                   <Form.Control type="text" placeholder="Applying for Position (optional)" />
+//                   <Form.Control type="file" />
+//                   <Button>Apply Now</Button>
+//                 </Form>
+//               </Col>
+//             </Row>
+//           </Container>
+//         </CustomJobAlertSection>
+
+//         <PerksSection>
+//           <Container>
+//             <h2>Perks Of Working With Techcloud ERP</h2>
+//             <p>At techcloud erp, we prioritize our employees' beliefs and respect their individual decisions. Our platform encourages showcasing individual skills, fostering creativity and innovation. We believe in the unique potential of each team member to contribute to our collective success.</p>
+//             <Row>
+//               <Col md={3}>
+//                 <PerkCard>
+//                   <img src="https://storage.googleapis.com/a1aa/image/IehrduArpR33cKsLE50RWXqnJekufu3QXDuqFMeKg560to3OB.jpg" height="50" alt="Performance Appreciation Rewards Icon" />
+//                   <h5>Performance Appreciation Rewards</h5>
+//                 </PerkCard>
+//               </Col>
+//               <Col md={3}>
+//                 <PerkCard>
+//                   <img src="https://storage.googleapis.com/a1aa/image/E14dVEhzXhI5AFeyx1f8DoMNhFIQflrfS74iy9MiceUncRvdC.jpg" height="50" alt="Employee First Policy Icon" />
+//                   <h5>Employee First Policy</h5>
+//                 </PerkCard>
+//               </Col>
+//               <Col md={3}>
+//                 <PerkCard>
+//                   <img src="https://storage.googleapis.com/a1aa/image/eZkmbQ64umW2TyvC9ym8wf5nttHlLeBxfCI7YmyW6vIGuo3OB.jpg" height="50" alt="Leave Encashment Icon" />
+//                   <h5>Leave Encashment</h5>
+//                 </PerkCard>
+//               </Col>
+//               <Col md={3}>
+//                 <PerkCard>
+//                   <img src="https://storage.googleapis.com/a1aa/image/egFGsOuyEaynLSWYaoWOtnLQFxHtCRcjpTz5iECY7haoF92JA.jpg" height="50" alt="Career Growth Opportunity Icon" />
+//                   <h5>Career Growth Opportunity</h5>
+//                 </PerkCard>
+//               </Col>
+//               <Col md={3}>
+//                 <PerkCard>
+//                   <img src="https://storage.googleapis.com/a1aa/image/pKeVJlDqLERDIafMhFyzmtKEfMYvIYSh6MOyyW4lNkD0W0bnA.jpg" height="50" alt="Competitive Salary Package Icon" />
+//                   <h5>Competitive Salary Package</h5>
+//                 </PerkCard>
+//               </Col>
+//               <Col md={3}>
+//                 <PerkCard>
+//                   <img src="https://storage.googleapis.com/a1aa/image/4YbaP3HEIr4CPNjqlzuFCGqcs6xy8j1j7jb0PCQjqDD4ie2JA.jpg" height="50" alt="Festival & Work Anniversary Celebration Icon" />
+//                   <h5>Festival & Work Anniversary Celebration</h5>
+//                 </PerkCard>
+//               </Col>
+//               <Col md={3}>
+//                 <PerkCard>
+//                   <img src="https://storage.googleapis.com/a1aa/image/f0tBEZxec6nsep1eq5vLXdkMkDvHgsDGoeTe4z6l2KFV0ie2JA.jpg" height="50" alt="Access to the Latest Tools Icon" />
+//                   <h5>Access to the Latest Tools</h5>
+//                 </PerkCard>
+//               </Col>
+//               <Col md={3}>
+//                 <PerkCard>
+//                   <img src="https://storage.googleapis.com/a1aa/image/7U3P3xZFxaIyHp5zbpFjMkqS7QfG165SfQ9NUiSIYmHjL6tTA.jpg" height="50" alt="Employee Assistance Programme Icon" />
+//                   <h5>Employee Assistance Programme</h5>
+//                 </PerkCard>
+//               </Col>
+//             </Row>
+//           </Container>
+//         </PerksSection>
+//     </div>
 //   );
 // };
 
-// export default JobDetails;
+// export default CareersList;
 
 
 
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase, faMapMarkerAlt, faCalendarAlt, faClock, faUsers, faArrowRight, faTrophy, faUserShield, faMoneyBillWave, faChartLine, faHandHoldingUsd, faGift, faTools, faHandsHelping } from '@fortawesome/free-solid-svg-icons';
-import emailjs from 'emailjs-com';  // Import EmailJS
+import { useNavigate } from 'react-router-dom';
+import { db } from '../../firebase'; // Firebase setup
+import { getDocs, collection, addDoc } from 'firebase/firestore'; // Import addDoc for adding data
+import { Section } from '../IndustryPage';
+import Perks from './Perks';
 
-
-const Header = styled.header`
-  background: linear-gradient(90deg, rgba(255,94,0,1) 0%, rgba(255,0,0,1) 100%);
-  color: #ffffff;
+const CurrentOpeningsSection = styled.section`
+  padding: 3rem 0;
   text-align: center;
-  padding: 2rem 0;
 `;
 
-const SectionTitle = styled.h2`
-  color: #ff4d4d;
-  font-size: 1.5rem;
-  margin-top: 2rem;
+// Your other styled components
+const JobCard = styled.div`
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
 `;
 
-const SectionContent = styled.div`
-  margin-top: 1rem;
-  font-size: 1rem;
-  line-height: 1.6;
-`;
+// Additional styled components
+const CustomJobAlertSection = styled.section`
 
-const JobHighlights = styled.div`
-  background-color: #ff4d4d;
-  color: #ffffff;
-  padding: 2rem;
-  border-radius: 10px;
-  margin-top: 2rem;
-`;
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
 
-const HighlightItem = styled.div`
-  margin-bottom: 1rem;
-`;
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #FF5200;
+  }
 
-const DropCV = styled.div`
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 10px;
-  margin-top: 2rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-`;
-
-const Perks = styled.div`
-  margin-top: 2rem;
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
 `;
 
 
-const JobDetails = () => {
-
-  const [formData, setFormData] = useState({
-    fullname: '',
+const CareersList = () => {
+  const [jobOpenings, setJobOpenings] = useState([]);
+  const [alertData, setAlertData] = useState({
+    name: '',
     email: '',
     phone: '',
-    location: '',
-    coverLetter: '',
-    file: null,
-    fileBase64: '' // Store file in base64 format
-
+    position: '',
+    resume: null,
   });
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  // const handleFileChange = (e) => {
-  //   setFormData({ ...formData, file: e.target.files[0] });
-  // };
-
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData({ ...formData, file, fileBase64: reader.result.split(',')[1] });
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const { fullname, email, phone, coverLetter, fileBase64 } = formData;
-
-    const templateParams = {
-      fullname,
-      email,
-      phone,
-      coverLetter,
-      file: fileBase64, // Pass file as base64 to EmailJS
+  // Fetching jobs from Firestore
+  useEffect(() => {
+    const fetchJobs = async () => {
+      const jobCollection = collection(db, 'jobOpenings');
+      const jobSnapshot = await getDocs(jobCollection);
+      const jobs = jobSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setJobOpenings(jobs);
     };
 
-    // Send email using EmailJS
-    emailjs
-      .send('service_fj9wi0o', 'template_z1grzln', templateParams, 'v6VpiooczQgoGx3mg')
-      .then(
-        (response) => {
-          console.log('SUCCESS!', response.status, response.text);
-          alert('Your application has been submitted successfully!');
-        },
-        (error) => {
-          console.log('FAILED...', error);
-          alert('There was an issue submitting your application. Please try again.');
-        }
-      );
+    fetchJobs();
+  }, []);
+
+  const handleApplyNow = (jobId) => {
+    navigate(`/job-details/${jobId}`);
+  };
+
+  const handleAlertChange = (e) => {
+    const { name, value, files } = e.target;
+    setAlertData((prevData) => ({
+      ...prevData,
+      [name]: files ? files[0] : value,
+    }));
+  };
+
+  const handleAlertSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Add alert data to Firestore
+      const jobAlertCollection = collection(db, 'jobAlerts');
+      await addDoc(jobAlertCollection, {
+        name: alertData.name,
+        email: alertData.email,
+        phone: alertData.phone,
+        position: alertData.position,
+        resume: alertData.resume ? alertData.resume.name : '', // Optional: handle file storage separately if needed
+      });
+
+      alert('Job alert created successfully!');
+      setAlertData({ name: '', email: '', phone: '', position: '', resume: null });
+    } catch (error) {
+      console.error("Error adding job alert: ", error);
+      alert('Error creating job alert. Please try again.');
+    }
   };
 
   return (
     <div>
-      <Header>
+      <Section>
         <Container>
-          <h1>Product Manager</h1>
-          <p>Seeking a proactive Product Manager adept in Upwork lead generation, with 7+ years of experience. Responsibilities include mastering Upwork, generating leads, securing projects, and nurturing client relationships. The ideal candidate thrives in both independent and team settings, possessing a keen interest in emerging technologies like Swift, Kotlin, Flutter, React Native, and AI.</p>
+          <Row>
+            <Col className="text-center">
+              <h1 className="fw-bold">Join Our Team</h1>
+              <p>Join Our Dynamic Team And Be Part Of An Innovative Company. Shape The Future, Grow Professionally, And Inspire Success!</p>
+            </Col>
+          </Row>
         </Container>
-      </Header>
+      </Section>
 
-      <Container>
-        <div>
-          <SectionTitle>Roles and Responsibilities</SectionTitle>
-          <SectionContent>
-            <ul>
-              <li>Employ online platforms for effective lead generation and project acquisition.</li>
-              <li>Cultivate enduring client relationships to ensure satisfaction and retention.</li>
-              <li>Contribute to shaping product strategy based on market insights.</li>
-              <li>Collaborate cross-functionally to prioritize and plan product roadmaps effectively.</li>
-              <li>Define clear requirements and specifications for new product features and enhancements.</li>
-              <li>Conduct comprehensive market analysis to identify opportunities and competitive landscape.</li>
-              <li>Monitor product performance metrics to iterate and improve product offerings.</li>
-              <li>Communicate with stakeholders to align goals and expectations effectively.</li>
-            </ul>
-          </SectionContent>
-        </div>
-
-        <div>
-          <SectionTitle>Required Qualifications</SectionTitle>
-          <SectionContent>
-            <ul>
-              <li>Minimum of 7+ years of demonstrable experience as a Product Manager in the software/web services industry, with a track record of successful product launches and improvements.</li>
-              <li>Proficiency in leveraging Upwork platform for lead generation, project acquisition, and client relationship management, with a clear understanding of its features and functionalities.</li>
-              <li>Strong understanding of mobile and web development technologies, including Swift, Kotlin, Flutter, React Native, and familiarity with emerging AI technologies.</li>
-              <li>Ability to think strategically and translate market trends and customer insights into actionable product strategies, roadmaps, and feature sets that drive growth and customer satisfaction.</li>
-            </ul>
-          </SectionContent>
-        </div>
-
-        <JobHighlights>
-          <SectionTitle className="text-white">Job Highlights</SectionTitle>
-          <HighlightItem><FontAwesomeIcon icon={faBriefcase} /> Work mode: Hybrid</HighlightItem>
-          <HighlightItem><FontAwesomeIcon icon={faMapMarkerAlt} /> Unit No: 705, Jain Sadguru Capital Park, Image Gardens Road, VIP Hills, Madhapur, Hyderabad-500081.</HighlightItem>
-          <HighlightItem><FontAwesomeIcon icon={faCalendarAlt} /> Date posted: 01-10-2024</HighlightItem>
-          <HighlightItem><FontAwesomeIcon icon={faClock} /> Experience: 7+ year</HighlightItem>
-          <HighlightItem><FontAwesomeIcon icon={faClock} /> Working Hours: 9 AM - 5 PM</HighlightItem>
-          <HighlightItem><FontAwesomeIcon icon={faUsers} /> No. of Vacancy: 3</HighlightItem>
-          <HighlightItem><a href="#"><FontAwesomeIcon icon={faArrowRight} /> View all jobs</a></HighlightItem>
-        </JobHighlights>
-
-        {/* <DropCV>
-          <h2>Drop Your CV</h2>
-          <Form>
-            <Row>
-              <Col md={6}>
-                <Form.Control type="text" placeholder="Full name *" defaultValue="John David" />
-              </Col>
-              <Col md={6}>
-                <Form.Control type="email" placeholder="Your email *" defaultValue="example@mail.com" />
-              </Col>
-            </Row>
-            <Row>
-              <Col md={6}>
-                <Form.Control type="text" placeholder="Phone Number *" />
-              </Col>
-              <Col md={6}>
-                <Form.Control type="text" placeholder="Location *" />
-              </Col>
-            </Row>
-            <Form.Control as="textarea" rows={5} placeholder="Cover Letter *" defaultValue="My desire to work in Techcloud ERP is..." />
-            <Form.Group>
-              <Form.Label>Attach any files you feel would be useful (doc, xls, pdf, txt, jpg, png) Max size: 2MB</Form.Label>
-              <Form.Control type="file" />
-            </Form.Group>
-            <Button type="submit" className="btn">Apply Now</Button>
-          </Form>
-        </DropCV> */}
-
-<DropCV>
-        <h2>Drop Your CV</h2>
-        <Form onSubmit={handleSubmit}>
+      <CurrentOpeningsSection>
+        <Container>
+          <h2>Current Openings</h2>
+          <p>Discover our current job openings and embark on a rewarding career journey with us. Your next opportunity awaits!</p>
           <Row>
+            {jobOpenings.map((job) => (
+              <Col md={4} key={job.id}>
+                <JobCard>
+                  <div className='d-flex align-items-center'>
+                    <img src={job.imageURL} height="100" alt={`${job.title} Icon`} />
+                    <h5>{job.title}</h5>
+                  </div>
+                  <div className='text-start'>
+                  <p className='fs-6'><strong>Experience:</strong> {job.experience}</p>
+                  <p className='fs-6'><strong>Location:</strong> {job.location}</p>
+                  <p className='fs-6'><strong>Work Mode:</strong> {job.workMode}</p>
+                  </div>
+                  <Button onClick={() => handleApplyNow(job.id)}>Apply Now</Button>
+                </JobCard>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </CurrentOpeningsSection>
+
+      <CustomJobAlertSection>
+        <Container>
+          <Row  style={{backgroundColor: '#E6F6FA'}}>
             <Col md={6}>
-              <Form.Control 
-                type="text" 
-                placeholder="Full name *" 
-                name="fullname" 
-                value={formData.fullname}
-                onChange={handleChange}
-              />
+              <img src="https://storage.googleapis.com/a1aa/image/StViV5aM4pLiCNRrd1IiukR76pZRTzpUnZefOsfX0Nz8W0bnA.jpg" alt="People walking in business attire"/>
             </Col>
-            <Col md={6}>
-              <Form.Control 
-                type="email" 
-                placeholder="Your email *" 
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-              />
+            <Col md={6} style={{padding: '20px', margin: 'auto'}}>
+              <h3>Seeking A New Role? Create A Custom Job Alert Now!</h3>
+              <Form onSubmit={handleAlertSubmit}>
+                <Form.Control
+                  type="text"
+                  placeholder="Name *"
+                  name="name"
+                  value={alertData.name}
+                  onChange={handleAlertChange}
+                  required
+                />
+                <Form.Control
+                  type="email"
+                  placeholder="E-mail *"
+                  name="email"
+                  value={alertData.email}
+                  onChange={handleAlertChange}
+                  required
+                />
+                <Form.Control
+                  type="text"
+                  placeholder="Phone number *"
+                  name="phone"
+                  value={alertData.phone}
+                  onChange={handleAlertChange}
+                  required
+                />
+                <Form.Control
+                  type="text"
+                  placeholder="Applying for Position (optional)"
+                  name="position"
+                  value={alertData.position}
+                  onChange={handleAlertChange}
+                />
+                <Form.Control
+                  type="file"
+                  name="resume"
+                  onChange={handleAlertChange}
+                />
+                <Button type="submit" style={{backgroundColor: '#EF5226', border: 'none'}}>Apply Now</Button>
+              </Form>
             </Col>
           </Row>
-          <Row>
-            <Col md={6}>
-              <Form.Control 
-                type="text" 
-                placeholder="Phone Number *" 
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-              />
-            </Col>
-            <Col md={6}>
-              <Form.Control 
-                type="text" 
-                placeholder="Location *"
-                name="location"
-                value={formData.location}
-                onChange={handleChange}
-              />
-            </Col>
-          </Row>
-          <Form.Control 
-            as="textarea" 
-            rows={5} 
-            placeholder="Cover Letter *" 
-            name="coverLetter"
-            value={formData.coverLetter}
-            onChange={handleChange}
-          />
-          <Form.Group>
-            <Form.Label>Attach your resume (doc, pdf)</Form.Label>
-            <Form.Control 
-              type="file" 
-              name="file"
-              onChange={handleFileChange}
-            />
-          </Form.Group>
-          <Button type="submit" className="btn">Apply Now</Button>
-        </Form>
-      </DropCV>
-
-        <Perks>
-          <h2>Perks Of Working With Techcloud ERP</h2>
-          <Row>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faTrophy} />
-              <p>Performance Appreciation Rewards</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faUserShield} />
-              <p>Employee First Policy</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faMoneyBillWave} />
-              <p>Leave Encashment</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faChartLine} />
-              <p>Career Growth Opportunity</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faHandHoldingUsd} />
-              <p>Competitive Salary Package</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faGift} />
-              <p>Festival & Work Anniversary Celebration</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faTools} />
-              <p>Access to the Latest Tools</p>
-            </Col>
-            <Col md={4} className="perk-item">
-              <FontAwesomeIcon icon={faHandsHelping} />
-              <p>Employee Assistance Programme</p>
-            </Col>
-          </Row>
-        </Perks>
-      </Container>
-
+        </Container>
+      </CustomJobAlertSection>
+      <Perks/>
+      {/* PerksSection as before */}
     </div>
   );
 };
 
-export default JobDetails;
+export default CareersList;
