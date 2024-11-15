@@ -3,7 +3,7 @@ import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase'; // Firebase setup
-import { getDocs, collection, addDoc } from 'firebase/firestore'; // Import addDoc for adding data
+import { getDocs, collection, addDoc } from 'firebase/firestore'; 
 import { Section } from '../IndustryPage';
 import Perks from './Perks';
 
