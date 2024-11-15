@@ -31,6 +31,7 @@ import OurBranches from './pages/Branches/OurBranches';
 import AllServicesSection from './pages/AllServices/AllServicesSection';
 import AllIndustriesSection from './pages/AllIndustries/AllIndustriesSection';
 import AllProductsSection from './pages/AllProducts/AllProductsSection';
+import DemoPage from './components/Navbar/DemoPage';
 
 function App() {
   return (
@@ -83,6 +84,7 @@ function App() {
           <Route path='/allproducts' element={<AllProductsSection/>} />
           <Route path="/products/*" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
+          <Route path='/demo' element={<DemoPage />} />
         </Routes>
         {/* Footer should be displayed across all pages */}
         <ScrollToTopButton />

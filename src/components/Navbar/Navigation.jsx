@@ -34,13 +34,13 @@ const SocialIcon = styled.a`
 
   &:hover {
     ${({ href }) => {
-      if (href.includes('instagram')) return 'color: #E1306C; border-color: #E1306C;';
-      if (href.includes('facebook')) return 'color: #1877F2; border-color: #1877F2;';
-      if (href.includes('linkedin')) return 'color: #0077B5; border-color: #0077B5;';
-      if (href.includes('youtube')) return 'color: #FF0000; border-color: #FF0000;';
-      if (href.includes('twitter')) return 'color: #1DA1F2; border-color: #1DA1F2;';
-      return 'color: #000; border-color: #000;';
-    }}
+    if (href.includes('instagram')) return 'color: #E1306C; border-color: #E1306C;';
+    if (href.includes('facebook')) return 'color: #1877F2; border-color: #1877F2;';
+    if (href.includes('linkedin')) return 'color: #0077B5; border-color: #0077B5;';
+    if (href.includes('youtube')) return 'color: #FF0000; border-color: #FF0000;';
+    if (href.includes('twitter')) return 'color: #1DA1F2; border-color: #1DA1F2;';
+    return 'color: #000; border-color: #000;';
+  }}
   }
   @media (max-width: 1200px) {
     display: none;
@@ -96,7 +96,7 @@ const Navigation = () => {
   const handleMouseLeave = () => {
     dropdownTimeout.current = setTimeout(() => {
       setShowPhoneDropdown(false);
-    }, 500); 
+    }, 500);
   };
 
   return (
@@ -138,26 +138,25 @@ const Navigation = () => {
           </button>
           {/* Social Media Icons */}
           <SocialMediaIcons>
-            <SocialIcon href="https://www.instagram.com" target="_blank">
+            <SocialIcon href="https://www.instagram.com/techclouderp/?hl=en" target="_blank">
               <FaInstagram />
             </SocialIcon>
-            <SocialIcon href="https://www.facebook.com" target="_blank">
+            <SocialIcon href="https://www.facebook.com/TechCloudERPSoftwareSolutions" target="_blank">
               <FaFacebookF />
             </SocialIcon>
-            <SocialIcon href="https://www.linkedin.com" target="_blank">
+            <SocialIcon href="https://www.linkedin.com/company/13619340/admin/feed/posts/" target="_blank">
               <FaLinkedinIn />
-            </SocialIcon>
-            <SocialIcon href="https://www.youtube.com" target="_blank">
-              <FaYoutube />
             </SocialIcon>
             <SocialIcon href="https://in.pinterest.com/techclouderp/" target="_blank">
               <FaPinterest />
             </SocialIcon>
-            <SocialIcon href="https://www.twitter.com" target="_blank">
+            <SocialIcon href="https://www.youtube.com/channel/UChUCWRHTzZkYEPRR-AauNkA" target="_blank">
+              <FaYoutube />
+            </SocialIcon>
+            <SocialIcon href="https://twitter.com/TechCloudERP" target="_blank">
               <FaXTwitter />
             </SocialIcon>
           </SocialMediaIcons>
-
           {/* Mobile navigation drawer */}
           <div className="md:hidden absolute">
             <MobileNavigationDrawer

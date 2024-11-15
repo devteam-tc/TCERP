@@ -237,13 +237,13 @@ const Footer = () => {
               <p>
                 <Icon><FaEnvelope /></Icon>
                 Email:{" "}
-                <a href="mailto:info@techclouderp.com">
-                  info@techclouderp.com
+                <a href="mailto: contact@techclouderp.com">
+                contact@techclouderp.com
                 </a>
               </p>
               <p>
                 <Icon><FaPhoneAlt /></Icon>
-                Phone: +91 8919439603
+                Phone: + (312) 766-3390
               </p>
             </ContactInfo>
           </Col>

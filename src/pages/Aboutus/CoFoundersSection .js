@@ -58,6 +58,7 @@ const SocialIcons = styled.div`
 const CardText = styled.p`
     font-size: 1rem;
     color: #666;
+    text-align: justify;
     line-height: 1.5;
     margin-top: 10px;
 `;

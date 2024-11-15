@@ -20,7 +20,8 @@ const ContactUs = () => {
                     </ContentColumn>
                 </Row>
             </Container>
-        </Section><ContactForm />
+        </Section>
+        <ContactForm />
         <MapSection />
         
         </>

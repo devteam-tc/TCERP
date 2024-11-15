@@ -4045,20 +4045,68 @@ export const blogCardData = [
   
   // Additional card data here...
 ];
+// export const regions = [
+//   {
+//     title: 'India',
+//     cities: [
+//       { name: 'Hyderabad', mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2634991537893!2d78.38372387594076!3d17.44709790108069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910d8d1c4f8b%3A0x6ef1b184af90fa3f!2sCapital%20Park!5e0!3m2!1sen!2sus!4v1731043718127!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' },
+//       { name: 'Coimbature', mapSrc: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3916.198273209867!2d77.00275377504545!3d11.0237456891404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDAxJzI1LjUiTiA3N8KwMDAnMTkuMiJF!5e0!3m2!1sen!2sin!4v1731044790506!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' },
+//       { name: 'Chennai', mapSrc: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.1930149392415!2d80.20511247507736!3d13.023377387296796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAxJzI0LjIiTiA4MMKwMTInMjcuNyJF!5e0!3m2!1sen!2sin!4v1731043909152!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' },
+//       { name: 'Indore', mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.367069331865!2d75.89414307603104!3d22.751755026378873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396302aa5e382429%3A0xcc759bbcdf086959!2sNRK%20Business%20Park!5e0!3m2!1sen!2sus!4v1731043840362!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' },
+//     ],
+//   },
+//   {
+//     title: 'US',
+//     cities: [
+//       { name: 'USA', mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.133293017857!2d-88.98461760985107!3d40.472316078600876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880b702b59fe7f7b%3A0x70f9e298d95bd2d0!2s1101%20E%20Bell%20St%20e%2C%20Bloomington%2C%20IL%2061701!5e0!3m2!1sen!2sus!4v1731044006414!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' }
+//     ],
+//   },
+// ];
+
 export const regions = [
   {
     title: 'India',
     cities: [
-      { name: 'Hyderabad', mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2634991537893!2d78.38372387594076!3d17.44709790108069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910d8d1c4f8b%3A0x6ef1b184af90fa3f!2sCapital%20Park!5e0!3m2!1sen!2sus!4v1731043718127!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' },
-      { name: 'Coimbature', mapSrc: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3916.198273209867!2d77.00275377504545!3d11.0237456891404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDAxJzI1LjUiTiA3N8KwMDAnMTkuMiJF!5e0!3m2!1sen!2sin!4v1731044790506!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' },
-      { name: 'Chennai', mapSrc: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.1930149392415!2d80.20511247507736!3d13.023377387296796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAxJzI0LjIiTiA4MMKwMTInMjcuNyJF!5e0!3m2!1sen!2sin!4v1731043909152!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' },
-      { name: 'Indore', mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.367069331865!2d75.89414307603104!3d22.751755026378873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396302aa5e382429%3A0xcc759bbcdf086959!2sNRK%20Business%20Park!5e0!3m2!1sen!2sus!4v1731043840362!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' },
+      {
+        name: 'Hyderabad',
+        mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2634991537893!2d78.38372387594076!3d17.44709790108069!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910d8d1c4f8b%3A0x6ef1b184af90fa3f!2sCapital%20Park!5e0!3m2!1sen!2sus!4v1731043718127!5m2!1sen!2sus',
+        address: 'Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens Road, VIP Hills, Madhapur, Hyderabad, Telangana, India-500081.',
+        email: 'info@techclouderp.com',
+        phone: '+91 8919439603',
+      },
+      {
+        name: 'Coimbatore',
+        mapSrc: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3916.198273209867!2d77.00275377504545!3d11.0237456891404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDAxJzI1LjUiTiA3N8KwMDAnMTkuMiJF!5e0!3m2!1sen!2sin!4v1731044790506!5m2!1sen!2sin',
+        address: 'MayFlower Signature, Office No. 7C, 531-537 , Avinashi Road, Peelamedu, Coimbatore, Tamilnadu - 641004.', 
+        email: 'info@techclouderp.com',
+        phone: '+91 9159044666',
+      },
+      {
+        name: 'Chennai',
+        mapSrc: 'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.1930149392415!2d80.20511247507736!3d13.023377387296796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAxJzI0LjIiTiA4MMKwMTInMjcuNyJF!5e0!3m2!1sen!2sin!4v1731043909152!5m2!1sen!2sin',
+        address: 'North Gate, NP 11, Developed PLot,Thiru Vi-Ka Industrial Estate,Ekkathuthangal, Chennai, TamilNadu - 600035.', 
+        email: 'info@techclouderp.com',
+        phone: '+91 9159044666',
+      },
+      {
+        name: 'Indore',
+        mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.367069331865!2d75.89414307603104!3d22.751755026378873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396302aa5e382429%3A0xcc759bbcdf086959!2sNRK%20Business%20Park!5e0!3m2!1sen!2sus!4v1731043840362!5m2!1sen!2sus',
+        address: 'Unit No 903-B, NRK Business Park, Vijay Nagar, Indore, Madhya Pradesh - 452010.', 
+        email: 'info@techclouderp.com',
+        phone: '+91 8919439603',
+      },
     ],
   },
   {
-    title: 'US',
+    title: 'USA',
     cities: [
-      { name: 'USA', mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.133293017857!2d-88.98461760985107!3d40.472316078600876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880b702b59fe7f7b%3A0x70f9e298d95bd2d0!2s1101%20E%20Bell%20St%20e%2C%20Bloomington%2C%20IL%2061701!5e0!3m2!1sen!2sus!4v1731044006414!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade>' }
+      {
+        name: 'Indiana',
+        mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.133293017857!2d-88.98461760985107!3d40.472316078600876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880b702b59fe7f7b%3A0x70f9e298d95bd2d0!2s1101%20E%20Bell%20St%20e%2C%20Bloomington%2C%20IL%2061701!5e0!3m2!1sen!2sus!4v1731044006414!5m2!1sen!2sus',
+        address: '1101, E Bell Street, Suite-E, Bloomington, Indiana, USA - 61701.', 
+        email: ' contact@techclouderp.com',
+        phone: '+ (312) 766-3390',
+      },
     ],
   },
 ];
