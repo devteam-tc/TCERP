@@ -14,13 +14,13 @@ const FooterSection = styled.footer`
 `;
 
 const Logo = styled.img`
-  height: 60px;
+  height: 80px;
 `;
 
 const FooterHeading = styled.h5`
   margin-bottom: 20px;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 20px;
   letter-spacing: -0.03em;
   text-align: left;
@@ -98,6 +98,10 @@ const Icon = styled.span`
   font-size: 18px; /* Adjust this size as needed */
 margin-top: -3px;
     margin-right: 2px;`;
+
+const FooterHeader = styled.h5`
+   color: #ef5226
+  `;
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -109,7 +113,7 @@ const Footer = () => {
         <Row>
           {/* Logo and Description */}
           <Col md={3} sm={12}>
-            <Logo src={releavant.logo} alt="Legacy Insurance Brokers" />
+            <Logo src={releavant.logo} alt="Tech Cloud ERP Logo" />
             <FooterText className="pt-3">
               Tech Cloud ERP delivers top-notch solutions tailored for any
               businesses, combining advanced technology, intuitive design, and
@@ -212,7 +216,7 @@ const Footer = () => {
           <Col md={3}>
             <FooterHeading>Get in Touch</FooterHeading>
             <ContactInfo>
-              <strong>Corporate Office</strong>
+              <FooterHeader>Corporate Office</FooterHeader>
               <p>
                 <Icon><FaMapMarkerAlt /></Icon>
                 Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens
@@ -231,7 +235,7 @@ const Footer = () => {
               </p>
             </ContactInfo>
             <ContactInfo>
-              <strong>Headquarters</strong>
+              <FooterHeader >Headquarters</FooterHeader>
               <p>
                 <Icon><FaMapMarkerAlt /></Icon>
                 1101, E Bell Street, Suite-E, Bloomington, Indiana, USA - 61701.
@@ -239,13 +243,13 @@ const Footer = () => {
               <p>
                 <Icon><FaEnvelope /></Icon>
                 Email:{" "}
-                <a href="mailto:info@techclouderp.com">
-                  info@techclouderp.com
+                <a href="mailto: contact@techclouderp.com">
+                contact@techclouderp.com
                 </a>
               </p>
               <p>
                 <Icon><FaPhoneAlt /></Icon>
-                Phone: +91 8919439603
+                Phone: + (312) 766-3390
               </p>
             </ContactInfo>
           </Col>
