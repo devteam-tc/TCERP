@@ -83,7 +83,6 @@ function App() {
           <Route path='/allindustries' element={<AllIndustriesSection />} />
           <Route path='/allproducts' element={<AllProductsSection/>} />
           <Route path="/products/*" element={<NotFound />} />
-          <Route path="/test" element={<ApplyForm />} />
           <Route path="*" element={<NotFound />} />
           <Route path='/demo' element={<DemoPage />} />
         </Routes>
