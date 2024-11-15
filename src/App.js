@@ -31,6 +31,7 @@ import OurBranches from './pages/Branches/OurBranches';
 import AllServicesSection from './pages/AllServices/AllServicesSection';
 import AllIndustriesSection from './pages/AllIndustries/AllIndustriesSection';
 import AllProductsSection from './pages/AllProducts/AllProductsSection';
+import ApplyForm from './pages/Careers/Test';
 
 function App() {
   return (
@@ -73,7 +74,7 @@ function App() {
           <Route path='/blogs' element={<BlogList />}/>
           <Route path="/blogForm" element={<BlogForm />} />
           <Route path='/careers' element={<CareersList />}/>
-          <Route path="/job-details/:jobId" element={<JobDetail />} />
+          <Route path="/careers/:jobId" element={<JobDetail />} />
           <Route path="/job-entry" element={<AdminJobManagement />} />
           {/* Other routes */}
 
@@ -82,6 +83,7 @@ function App() {
           <Route path='/allindustries' element={<AllIndustriesSection />} />
           <Route path='/allproducts' element={<AllProductsSection/>} />
           <Route path="/products/*" element={<NotFound />} />
+          <Route path="/test" element={<ApplyForm />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* Footer should be displayed across all pages */}

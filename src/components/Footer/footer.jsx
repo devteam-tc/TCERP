@@ -9,7 +9,7 @@ import SocialMediaIcons from "../Navbar/SocialMediaIcons";
 // Styled Components
 const FooterSection = styled.footer`
   background: #fffbfa;
-  padding: 40px 0;
+  padding: 40px 0 0 0;
   color: #333;
 `;
 
@@ -62,6 +62,7 @@ const CopyrightText = styled.div`
   padding: 20px 0;
   color: #666;
   border-top: 1px solid #eaeaea;
+  margin-top: 40px;
 `;
 
 const ContactInfo = styled.div`
@@ -127,23 +128,22 @@ const Footer = () => {
                 <Link to="/about-us" onClick={scrollToTop}>About Us</Link>
               </li>
               <li>
+                <Link to="/ContactUs" onClick={scrollToTop}>Contact Us</Link>
+              </li>
+              <li>
                 <Link to="/features" onClick={scrollToTop}>Our Features</Link>
-              </li>
-              <li>
-                <Link to="/terms-and-conditions" onClick={scrollToTop}>Terms of Service</Link>
-              </li>
-              <li>
-                <Link to="/privacypolicy" onClick={scrollToTop}>Privacy Policy</Link>
               </li>
               <li>
                 <Link to="/" onClick={scrollToTop}>Our Blogs</Link>
               </li>
               <li>
+                <Link to="OurBranches" onClick={scrollToTop}>Our Branches</Link>
+              </li>
+              <li>
                 <Link to="/allproducts" onClick={scrollToTop}>All Products</Link>
               </li>
               <li>
-                <Link to="/blogs" onClick={scrollToTop}>Our blogs</Link>
-                <Link to="OurBranches" onClick={scrollToTop}>Our Branches</Link>
+                <Link to="/careers" onClick={scrollToTop}>Careers</Link>
               </li>
             </FooterLinkList>
           </Col>
@@ -151,6 +151,9 @@ const Footer = () => {
           <Col md={2} sm={6}>
             <FooterHeading>Industries</FooterHeading>
             <FooterLinkList>
+              <li>
+                <Link to="/allindustries" onClick={scrollToTop}>All Industries</Link>
+              </li>
               <li>
                 <Link to="/industries/jewellery-industry" onClick={scrollToTop}>Jewellery</Link>
               </li>
@@ -172,15 +175,16 @@ const Footer = () => {
               <li>
                 <Link to="/products/trading-software" onClick={scrollToTop}>Tech Cloud Trading </Link>
               </li>
-              <li>
-                <Link to="/allindustries" onClick={scrollToTop}>All Industries</Link>
-              </li>
+              
             </FooterLinkList>
           </Col>
           {/* Services */}
           <Col md={2} sm={6}>
             <FooterHeading>Services</FooterHeading>
             <FooterLinkList>
+            <li>
+                <Link to="/services" onClick={scrollToTop}>All Services</Link>
+              </li>
               <li>
                 <Link to="/services/web-development" onClick={scrollToTop}>Web Development</Link>
               </li>
@@ -201,9 +205,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="#" onClick={scrollToTop}>Web Hosting</Link>
-              </li>
-              <li>
-                <Link to="/services" onClick={scrollToTop}>All Services</Link>
               </li>
             </FooterLinkList>
           </Col>
@@ -249,7 +250,18 @@ const Footer = () => {
             </ContactInfo>
           </Col>
         </Row>
-        <CopyrightText>
+        {/* <CopyrightText>
+          &copy; 2024 Tech Cloud ERP.{" "}
+          <Link to="/terms-and-conditions" style={{ color: "#ef5226", textDecoration: "none" }} onClick={scrollToTop}>
+            Terms & Conditions
+          </Link>{" "}
+          |{" "}
+          <Link to="/privacypolicy" style={{ color: "#ef5226", textDecoration: "none" }} onClick={scrollToTop}>
+            Privacy Policy
+          </Link>
+        </CopyrightText> */}
+      </Container>
+      <CopyrightText>
           &copy; 2024 Tech Cloud ERP.{" "}
           <Link to="/terms-and-conditions" style={{ color: "#ef5226", textDecoration: "none" }} onClick={scrollToTop}>
             Terms & Conditions
@@ -259,7 +271,6 @@ const Footer = () => {
             Privacy Policy
           </Link>
         </CopyrightText>
-      </Container>
     </FooterSection>
   );
 };

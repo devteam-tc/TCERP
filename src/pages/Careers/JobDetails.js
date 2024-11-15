@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
-import emailjs from 'emailjs-com';  // Import EmailJS
 import {  Description, Section } from '../IndustryPage';
-import { FaBook, FaBriefcase, FaChair, FaClock, FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaYoutube } from 'react-icons/fa6';
+import { FaBook, FaBriefcase, FaChair, FaClock, FaFacebook, FaLinkedin, FaWhatsapp, } from 'react-icons/fa6';
 import { FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import Perks from './Perks';
+import JobApplicationForm from './Test';
 const SectionTitle = styled.h2`
   color: #FF5200;
   font-size: 1.5rem;
@@ -49,19 +49,15 @@ const DropCV = styled.div`
   }
 `;
 
-const FormBgContainer = styled.div`
-  border-radius: 5px;
-  padding: 2rem;
-  border-radius: 10px;
-  margin-top: 2rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-`;
 const Icon = styled.i`
   font-size: 24px;
   margin-right: 10px;
 `;
 
 const SocialIcons = styled.div`
+
+
+    padding-left: 1vw;
             
   i {
     font-size: 32px;
@@ -87,51 +83,10 @@ const CustomButton = styled.button`
   }
 }
 `;
-
-const Header = styled.div`
-  text-align: center;
-  margin-bottom: 30px;
-`;
-
-const Title = styled.h1`
-  color: #ff5722;
-  font-size: 36px;
-`;
-
-const StyledFormControl = styled(Form.Control)`
-  border-radius: 5px;
-  height: 45px;
-  &:focus {
-    box-shadow: none;
-    border-color: #ff5722;
-  }
-`;
-
-const StyledButton = styled(Button)`
-  background-color: #ff5722;
-  border-color: #ff5722;
-  height: 50px;
-  font-size: 18px;
-  border-radius: 5px;
-  &:hover {
-    background-color: #e64a19;
-    border-color: #e64a19;
-  }
-`;
-
-const FileUpload = styled.div`
-  border: 2px dashed #ff5722;
-  padding: 20px;
-  text-align: center;
-  color: #ff5722;
-  border-radius: 5px;
-  margin-bottom: 20px;
-`;
-
 const JobDetails = () => {
   const { jobId } = useParams();
   const [job, setJob] = useState(null);
-  const [selectedFile, setSelectedFile] = useState(null); // New state for file
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -144,19 +99,17 @@ const JobDetails = () => {
         setJob(jobSnap.data());
       }
     };
-
     fetchJobDetails();
   }, [jobId]);
 
   if (!job) return <p>Loading job details...</p>;
+  
+  const currentUrl = window.location.href;
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setSelectedFile(file.name); // Store the file name in state
-    }
-  };
-
+  const linkedinShare = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(currentUrl)}`;
+  const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentUrl)}`;
+  const whatsappShare = `https://wa.me/?text=${encodeURIComponent(`Check out this job: ${currentUrl}`)}`;
+  
   return (
     <div>
       <Section>
@@ -168,8 +121,8 @@ const JobDetails = () => {
         </Container>
       </Section>
 
-      <Container>
-        <div>
+      
+        <Container>
           <SectionTitle>Roles and Responsibilities</SectionTitle>
           <SectionContent>
             <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
@@ -178,8 +131,9 @@ const JobDetails = () => {
               ))}
             </ul>
           </SectionContent>
-        </div>
-        <div style={{backgroundColor: '#E6F6FA', padding: '2rem', borderRadius: '10px', marginTop: '2rem'}}>
+        </Container>
+        <div style={{backgroundColor: '#E6F6FA', padding: '2rem', marginTop: '2rem'}}>
+          <Container>
           <SectionTitle>Required Qualifications</SectionTitle>
           <SectionContent>
             <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
@@ -188,7 +142,9 @@ const JobDetails = () => {
               ))}
             </ul>
           </SectionContent>
+          </Container>
         </div>
+        <Container>
         <JobHighlights>
           <h2>Job Highlights</h2>
             <Row>
@@ -205,16 +161,15 @@ const JobDetails = () => {
                       {job.location}
                     </div>
               </Col>
+
               <Col md={4} className="mb-3 mt-3 d-flex align-items-center">
-                <Icon><FaCalendarAlt /></Icon>
-                    <div>
-                      <strong>Date posted</strong><br />
-                        {(() => {
-                          const date = job.postedDate.toDate();
-                          return `${date.getDate().toString().padStart(2, '0')}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getFullYear()}`;
-                        })()}
-                      </div>
+                <Icon><FaBook /></Icon>
+                  <div>
+                    <strong>Preferred Candidates</strong><br />
+                    {job.preferredCandidates}
+                  </div>
               </Col>
+
               <Col md={4} className="mb-3 mt-3 d-flex align-items-center">
                 <Icon><FaBook /></Icon>
                   <div>
@@ -240,83 +195,33 @@ const JobDetails = () => {
             <div className="mt-4">
               <CustomButton><Link to="/careers" onClick={scrollToTop}>View all jobs</Link></CustomButton>
             </div>
-            <div className="mt-4">
-              <p>Share this job on:</p>
+            <div className="mt-4 d-flex align-items-center">
+              <p className='m-0'>Share this job on:</p>
 
-                <SocialIcons>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                        <FaLinkedin className="fs-3" style={{ marginRight: '10px', color: 'white' }} />
-                    </a>
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                        <FaFacebook className="fs-3" style={{ marginRight: '10px', color: 'white' }} />
-                    </a>
-                    <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer">
-                        <FaWhatsapp className="fs-3" style={{ marginRight: '10px', color: 'white'  }} />
-                    </a>
-                </SocialIcons>
+              <SocialIcons>
+              <a href={linkedinShare} target="_blank" rel="noopener noreferrer">
+                <FaLinkedin className="fs-3" style={{ marginRight: '10px', color: 'white' }} />
+              </a>
+              <a href={facebookShare} target="_blank" rel="noopener noreferrer">
+                <FaFacebook className="fs-3" style={{ marginRight: '10px', color: 'white' }} />
+              </a>
+              <a href={whatsappShare} target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp className="fs-3" style={{ marginRight: '10px', color: 'white' }} />
+              </a>
+            </SocialIcons>
 
             </div>
         </JobHighlights>
-        <DropCV>
-                  <Header>
-                      <Title>Drop Your CV</Title>
-                  </Header>
-                  <FormBgContainer>
-                  <Form>
-                      <Row>
-                          <Col md={6}>
-                              <Form.Group className="mb-3">
-                                  <Form.Label>Full name</Form.Label>
-                                  <StyledFormControl type="text" placeholder="John David" />
-                              </Form.Group>
-                          </Col>
-                          <Col md={6}>
-                              <Form.Group className="mb-3">
-                                  <Form.Label>Your email *</Form.Label>
-                                  <StyledFormControl type="email" placeholder="example@yourmail.com" />
-                              </Form.Group>
-                          </Col>
-                      </Row>
-                      <Row>
-                          <Col md={6}>
-                              <Form.Group className="mb-3">
-                                  <Form.Label>Phone Number *</Form.Label>
-                                  <StyledFormControl type="text" placeholder="Please Enter Your Phone Number" />
-                              </Form.Group>
-                          </Col>
-                          <Col md={6}>
-                              <Form.Group className="mb-3">
-                                  <Form.Label>Location *</Form.Label>
-                                  <StyledFormControl type="text" placeholder="Please Enter your Location" />
-                              </Form.Group>
-                          </Col>
-                      </Row>
-                      <Form.Group className="mb-3">
-                          <Form.Label>Cover Letter</Form.Label>
-                          <br/>
-                          <StyledFormControl as="textarea" placeholder="Hello there,I would like to talk about how to..." style={{ width: '100%', height: '200px', padding: '10px' }} />
-                      </Form.Group>
-                      {/* <FileUpload>
-                          <p>Attach any files you feel would be useful</p>
-                          <small>(doc, xls, pdf, txt and ppt files only, Max Size 2MB)</small>
-                      </FileUpload> */}
-                      <FileUpload>
-                    <p>Attach any files you feel would be useful</p>
-                    <label htmlFor="file-upload" style={{ cursor: 'pointer', color: '#ff5722', textDecoration: 'underline' }}>(doc, xls, pdf, txt and ppt files only, Max Size 2MB)</label>
-                    <input type="file" onChange={handleFileChange} style={{ display: 'none' }} id="file-upload" />
-                    {selectedFile && <p>Selected file: {selectedFile}</p>}
-                  </FileUpload>
-                      <div className='text-center'>
-                      <StyledButton type="submit" className="btn-block">Apply Now</StyledButton>
-                      </div>
-                  </Form>
-                  </FormBgContainer>
-        </DropCV>
+        </Container>
+      <DropCV>
+        <Container>
+        <JobApplicationForm jobTitle={job.title} />
+        </Container>
+      </DropCV>
         <Perks/>
-      </Container>
-
     </div>
   );
 };
 
 export default JobDetails;
+
