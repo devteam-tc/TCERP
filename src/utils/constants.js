@@ -1515,7 +1515,7 @@ export const galleryData = {
       location: 'Surat',
       venue: 'Agenda Avadh Utopia',
       date: '14, 15, 16 - June, 2024',
-      img: require('../assets/Gallery/SuratExpo/SuratExpoThumbnail.png'),
+      img: require('../assets/Gallery/SuratExpo/SuratExpoThumbnail.webp'),
       alt: 'World Food India 2024 in Surat',
     },
     {
@@ -1523,7 +1523,7 @@ export const galleryData = {
       location: 'Chennai',
       venue: 'Chennai Trade Centre, Chennai, India',
       date: '9, 10, 11 - Aug, 2024',
-      img: require('../assets/Gallery/ChennaiExpo/ChennaiExpoExhibition.png'),
+      img: require('../assets/Gallery/ChennaiExpo/ChennaiExpoExhibition.webp'),
       alt: 'World Food India 2024 in Chennai',
     },
     {
@@ -1531,7 +1531,7 @@ export const galleryData = {
       location: 'Hyderabad',
       venue: 'HITEX Exhibition Centre, Hitex Road, Kothaguda',
       date: '13, 14, 15 - Sep, 2024',
-      img: require('../assets/Gallery/HyderabadExpo/HyderabadExpoThumbnail.png'),
+      img: require('../assets/Gallery/HyderabadExpo/HyderabadExpoThumbnail.webp'),
       alt: 'Tech Cloud ERP at HITEX Hyderabad',
     },
     {
