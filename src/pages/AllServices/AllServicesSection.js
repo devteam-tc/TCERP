@@ -22,7 +22,6 @@ const AllServicesSection = () => {
         </Container>
       </Section>
 <ServiceContentSection/>
-      
       <CTA />
     </>
   );

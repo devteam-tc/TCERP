@@ -64,7 +64,19 @@ End Global
   border-bottom: 1px solid var(--borderColor);
   border-top: 2px solid #ef5226;
 }
+.sticky-navbar {
+  position: fixed; /* Use fixed positioning when sticky */
+  top: 0;
+  width: 100%; /* Ensure it spans the full width */
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: #fff; /* Background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow for visibility */
+  transition: top 0.3s; /* Smooth transition for top property */
+}
 
+nav {
+  transition: top 0.3s; /* Optional: adds smooth transition for navbar movement */
+}
 .container {
   width: 100%;
   margin-left: auto;

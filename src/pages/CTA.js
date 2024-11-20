@@ -2,30 +2,29 @@ import React from 'react';
 import { Button, Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { BsCalendar, BsPeople, BsPerson, BsBriefcase } from 'react-icons/bs'; // Importing icons
-import CalendlyWidget from '../components/Navbar/CalendlyWidget';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 // Styled Components
 const SectionWrapper = styled(Container)`
   border-radius: 10px;
-  background: #FFF;
-
-  /* M3/Elevation Dark/2 */
-  box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px,rgba(173, 216, 230, 0.7) 0px 6px 6px;
+  background: #fff;
+  box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px, rgba(173, 216, 230, 0.7) 0px 6px 6px;
   margin-top: 15vh;
   margin-bottom: 5vh;
 
-  @media screen and (max-width: 992PX){
+  @media screen and (max-width: 992px) {
     margin-top: 5vh;
     margin-bottom: 5vh;
   }
 `;
 
 const TextSection = styled(Col)`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    padding-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-left: 2vw;
+
   h1 {
     font-size: 2rem;
     font-weight: 500;
@@ -40,34 +39,33 @@ const TextSection = styled(Col)`
 
   button {
     border-radius: none;
-    background: linear-gradient(90deg, #EF5226 0%, #892F16 100%);
+    background: linear-gradient(90deg, #ef5226 0%, #892f16 100%);
     &:hover {
       background-color: #d32f2f;
     }
     border: none;
   }
 
-  @media screen and (max-width: 992PX){
+  @media screen and (max-width: 992px) {
     padding-top: 2vh;
     h1 {
       font-size: 1.5rem;
-
     }
 
     p {
       font-size: 1rem;
       width: 100%;
     }
-      button{
-        font-size: 1rem;
-        margin-bottom: 5vh;
-      
-      }
+
+    button {
+      font-size: 1rem;
+      margin-bottom: 5vh;
+    }
   }
 `;
 
 const StatsSection = styled(Col)`
-  background: linear-gradient(180deg, #E13E11 0%, #AA3A1B 100%);
+  background: linear-gradient(180deg, #e13e11 0%, #aa3a1b 100%);
   color: white;
   padding: 60px;
   border-radius: 0 10px 10px 0px;
@@ -89,9 +87,9 @@ const StatsSection = styled(Col)`
 
     li {
       display: flex;
-        align-items: center;
-        gap: var(--Spacing-ml, 20px);
-        align-self: stretch;
+      align-items: center;
+      gap: var(--Spacing-ml, 20px);
+      align-self: stretch;
 
       i {
         margin-right: 8px;
@@ -102,10 +100,10 @@ const StatsSection = styled(Col)`
 
 // React Component
 const PartnershipSection = () => {
-  const { openCalendlyWidget } = CalendlyWidget(); // Access openCalendlyWidget from CalendlyWidget component
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleDemoClick = () => {
-    openCalendlyWidget(); // Call the function to open Calendly
+    navigate('/scheduledemo'); // Navigate to the demo page
   };
 
   return (

@@ -136,7 +136,7 @@ export const menuData = [
   { label: 'Contact Us', 
     href: '/ContactUs' },
   { label: 'Demo', 
-    href: '/demo',
+    href: '/scheduledemo',
     isDemo: true,
    },
 ];

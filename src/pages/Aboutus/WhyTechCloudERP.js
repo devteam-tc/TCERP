@@ -16,7 +16,7 @@ const ImageContainer = styled.div`
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
 `;
 
@@ -64,7 +64,7 @@ const WhyTechCloudERP = ({ content, title }) => {
         </Col>
         <Col md={6}>
           <TextContainer>
-            <Title className='text-left'>{title}</Title>
+            <Title className='text-left mt-3 mb-3'>{title}</Title>
             {description.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}

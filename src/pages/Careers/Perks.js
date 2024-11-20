@@ -12,6 +12,9 @@ const PerksTitle = styled.h1`
   span {
     color: #ff6a00;
   }
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 const Divider = styled.div`
   width: 100px;
@@ -24,6 +27,7 @@ const Subtitle = styled.p`
   font-size: 1rem;
   text-align: center;
   margin-bottom: 40px;
+  text-align: Justify;
 `;
 
 const PerkCard = styled.div`
@@ -41,6 +45,10 @@ const PerkCard = styled.div`
 const PerkTitle = styled.div`
   font-size: 1.2rem;
   font-weight: semibold;
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    text-align: start;
+  }
 `;
 
 const perks = [
@@ -55,7 +63,8 @@ const perks = [
   ];
 const Perks = () => {
   return (
-    <Container className='mt-5'>
+    <div className='mt-5 mb-5 p-3' style={{ backgroundColor: '#E6F6FA' }}>
+      <Container>
       <PerksTitle>Perks Of Working With <span>Tech Cloud ERP</span></PerksTitle>
       <Divider />
       <Subtitle>At techcloud erp, we prioritize our employees' beliefs and respect their individual decisions. Our platform encourages showcasing individual skills, fostering creativity and innovation. We believe in the unique potential of each team member to contribute to our collective success.</Subtitle>
@@ -63,13 +72,14 @@ const Perks = () => {
         {perks.map((perk, index) => (
           <Col key={index} md={6}>
             <PerkCard>
-              <FontAwesomeIcon icon={perk.icon} style={{ color: perk.color, fontSize: '2rem', margin: '10px' }} />
-              <PerkTitle>{perk.title}</PerkTitle>
+              <FontAwesomeIcon  icon={perk.icon} style={{ color: perk.color, fontSize: '2rem', margin: '10px', width: '50px' }} />
+              <PerkTitle >{perk.title}</PerkTitle>
             </PerkCard>
           </Col>
         ))}
       </Row>
-    </Container>
+      </Container>
+    </div>
   )
 }
 

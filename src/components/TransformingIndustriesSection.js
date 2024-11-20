@@ -41,7 +41,7 @@ const GridContainer = styled.div`
   }
 
   @media (max-width: 576px) {
-    grid-template-columns: 1fr; /* 1 item per row on small mobile */
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on small mobile */
   }
 `;
 

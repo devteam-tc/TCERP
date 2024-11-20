@@ -5,6 +5,13 @@ import { Title } from '../Home/CardSection';
 import { regions } from '../../utils/constants';
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 
+
+const StyledTitle = styled(Title)`
+  border-bottom: 2px solid #ef5226;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+`;
+
 const StyledMap = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,32 +24,30 @@ const StyledMap = styled.div`
   box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px, rgba(173, 216, 230, 0.7) 0px 6px 6px;
   
   iframe {
-    width: 100%;
-    height: 45%; /* Adjust iframe height as needed */
+    width: 100%;  /* Ensures iframe width is 100% of its parent */
+    height: 250px; /* Set a fixed height for the iframe */
+    object-fit: cover; /* Ensure content fits inside the iframe without distortion */
   }
 
   h5 {
-    margin-top: 10px;
+    margin-top: 0; /* Remove margin-top from the h5 */
     color: #ef5226;
+    margin-bottom:0px !important;
     text-align: left;
   }
 
   @media (max-width: 1200px) {
     iframe {
-      height: 50%; /* Adjust iframe height for screens up to 1200px */
+      height: 250px; /* Keep iframe height consistent for screens up to 1200px */
     }
   }
 `;
 
-const StyledTitle = styled(Title)`
-  border-bottom: 2px solid #ef5226;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-`;
 
 const CityInfo = styled.div`
-  margin-top: 10px;
+  margin-top: 0; /* Remove margin-top to reduce space between the city name and the address */
   text-align: left;
+  margin-bottom:0px !important;
   color: #333;
 
   .info-item {
@@ -59,6 +64,7 @@ const CityInfo = styled.div`
     min-width: 20px; /* Ensures consistent spacing */
   }
 `;
+
 
 const MapSection = () => {
   return (
@@ -80,7 +86,7 @@ const MapSection = () => {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
-                  <h5>{city.name}</h5>
+                  <h5 className='mt-2'>{city.name}</h5>
                   <CityInfo>
                     <div className="info-item">
                       <FaMapMarkerAlt className="icon" /> <span>{city.address}</span>

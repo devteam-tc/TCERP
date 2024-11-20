@@ -7,7 +7,8 @@ import { servicesData } from '../../utils/constants';
 import { Title } from '../Home/CardSection';
 import styled from 'styled-components';
 import { FaPlus, FaMinus } from 'react-icons/fa';
-
+import CTA  from '../CTA';
+import OurPartnerSection from '../Home/OurPartnerSection';
 // Styled components
 const DescriptionContainer = styled.div``;
 
@@ -211,6 +212,8 @@ const ServicesSection = () => {
           {renderFAQs()}
         </Container>
       </FAQContainer>
+      <CTA />
+      <OurPartnerSection className="py-2" />
     </>
   );
 };

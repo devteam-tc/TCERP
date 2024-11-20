@@ -3,12 +3,15 @@ import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { ContentColumn, Description, Divider, Heading, Section } from '../IndustryPage';
 import { aboutus_data, industriesDataList } from '../../utils/constants';
+import { FaArrowRight } from 'react-icons/fa'; // Import FaArrowRight
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 
 const StyledContainer = styled(Container)`
   padding: 20px;
   background: #ffffff;
   box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px, rgba(173, 216, 230, 0.7) 0px 6px 6px;
   border-radius: 8px;
+  // max-width: 100%; /* Ensure full width */
 `;
 
 const Header = styled.h2`
@@ -16,6 +19,10 @@ const Header = styled.h2`
   font-weight: 600;
   text-align: left;
   margin-bottom: 10px;
+
+  @media (max-width: 992px) {
+    font-size: 20px; /* Smaller font size for mobile */
+  }
 `;
 
 const IndustryCount = styled.a`
@@ -25,6 +32,10 @@ const IndustryCount = styled.a`
   &:hover {
     text-decoration: underline;
   }
+
+  @media (max-width: 992px) {
+    font-size: 14px; /* Smaller font size for mobile */
+  }
 `;
 
 const IndustryCard = styled.div`
@@ -32,24 +43,37 @@ const IndustryCard = styled.div`
   align-items: center;
   padding: 16px;
   border: 1px solid #ddd;
-  border-radius: 50px;
+  border-radius: 100px;
   margin-bottom: 16px;
   transition: box-shadow 0.2s ease-in-out;
   background: #fff;
+  flex-direction: row; /* Default layout for larger screens */
+  
+  @media (max-width: 992px) {
+    padding:10px;
+    border-radius: 10px;
+  }
+
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 `;
 
 const IconWrapper = styled.div`
- display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 140px;
-    height: 80px;
-    // border: 1px solid var(--Color-8-Color-8500, #A7A7A7);
-    border-radius: 50%;
-    margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 16px;
+
+  @media (max-width: 992px) {
+    width: 100px; /* Smaller icon container on mobile */
+    height: 60px;
+    margin-right: 15px;
+    margin-bottom: 10px; /* Space between icon and text */
+  }
 `;
 
 const Icon = styled.img`
@@ -60,22 +84,46 @@ const Icon = styled.img`
 
 const CardContent = styled.div`
   flex-grow: 1;
+
+  @media (max-width: 992px) {
+    text-align: left; /* Left-align text on mobile */
+  }
 `;
 
 const Title = styled.h3`
   font-size: 18px;
   font-weight: 500;
   margin: 0;
+
+  @media (max-width: 992px) {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
 `;
 
 const Arrow = styled.div`
-  font-size: 24px;
-  color: #e85600;
+  font-size: 20px;
+  color: #ef5226;
   margin-left: 16px;
   font-weight: bold;
+  cursor: pointer;
+
+  @media (max-width: 992px) {
+    margin-left: 0;
+    margin-top: 10px; /* Adjust for mobile view */
+  }
 `;
 
 const AllIndustriesSection = () => {
+  const navigate = useNavigate(); // Declare the hook here
+
+  const handleArrowClick = (link) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scrolling to the top
+    });
+    navigate(link); // Navigate directly using the link from the industry data
+  };
+
   return (
     <>
       <Section>
@@ -91,17 +139,17 @@ const AllIndustriesSection = () => {
       </Section>
 
       {/* Loop through each industry list */}
-      {[industriesDataList.agricultureList, industriesDataList.fmcgList , industriesDataList.oilandgasList].map((industryList, index) => (
-        <StyledContainer className='mt-5 mb-5' key={index}>
+      {[industriesDataList.agricultureList, industriesDataList.fmcgList, industriesDataList.oilandgasList].map((industryList, index) => (
+        <StyledContainer className="mt-5 mb-5" key={index}>
           <Row className="justify-content-between align-items-center">
             <Col>
-            <Header>
-  {index === 0 
-    ? "Agriculture to Electronic Industries" 
-    : index === 1 
-    ? "FMCG to Metal Fabrication Industry" 
-    : "Oil and Gas Industry"}
-</Header>
+              <Header>
+                {index === 0
+                  ? 'Agriculture to Electronic Industries'
+                  : index === 1
+                  ? 'FMCG to Metal Fabrication Industry'
+                  : 'Oil and Gas Industry'}
+              </Header>
             </Col>
             <Col className="d-flex justify-content-end">
               <IndustryCount href="#">{industryList.length} Industries</IndustryCount>
@@ -112,13 +160,15 @@ const AllIndustriesSection = () => {
               <Col md={6} key={industry.id}>
                 <IndustryCard>
                   <IconWrapper>
-                    <Icon src={industry.icon} alt={industry.title} />
+                    <Icon src={industry.icon} alt={`${industry.title} icon`} />
                   </IconWrapper>
                   <CardContent>
-                    <Title className='mb-1'>{industry.title}</Title>
-                    <Description className='mb-1'>{industry.description}</Description>
+                    <Title className="mb-1">{industry.title}</Title>
+                    <Description className="mb-1">{industry.description}</Description>
                   </CardContent>
-                  <Arrow>&#x2192;</Arrow>
+                  <Arrow onClick={() => handleArrowClick(industry.link)}>
+                    <FaArrowRight /> {/* Use the FaArrowRight icon here */}
+                  </Arrow>
                 </IndustryCard>
               </Col>
             ))}
