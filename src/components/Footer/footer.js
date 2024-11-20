@@ -224,7 +224,6 @@ const Footer = () => {
               </p>
               <p>
                 <Icon><FaEnvelope /></Icon>
-                Email:{" "}
                 <a href="mailto:info@techclouderp.com">
                   info@techclouderp.com
                 </a>
@@ -242,7 +241,6 @@ const Footer = () => {
               </p>
               <p>
                 <Icon><FaEnvelope /></Icon>
-                Email:{" "}
                 <a href="mailto: contact@techclouderp.com">
                 contact@techclouderp.com
                 </a>

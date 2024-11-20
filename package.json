@@ -23,6 +23,7 @@
     "emailjs-com": "^3.2.0",
     "express": "^4.21.1",
     "firebase": "^10.14.1",
+    "formik": "^2.4.6",
     "framer-motion": "^11.11.11",
     "lg-thumbnail": "^1.2.1",
     "lg-zoom": "^1.3.0",
@@ -50,6 +51,7 @@
     "react-slick": "^0.30.2",
     "react-snap": "^1.23.0",
     "react-three-fiber": "^6.0.13",
+    "react-toastify": "^10.0.6",
     "redux": "^5.0.1",
     "redux-persist": "^6.0.0",
     "slick-carousel": "^1.8.1",
@@ -58,7 +60,8 @@
     "typewriter-effect": "^2.21.0",
     "vite": "^5.4.10",
     "vite-plugin-ssr": "^0.4.142",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^1.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
