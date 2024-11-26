@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { galleryData } from '../../utils/constants';
-import { Title } from '../Home/CardSection';
 import { useNavigate } from 'react-router-dom';
 
 const GalleryContainer = styled.div`
@@ -52,7 +51,22 @@ const CardItem = styled.div`
     margin: 2px;
   }
 `;
+export const Title = styled.h3`
+  font-size: 40px;
+  color: #ef5226;
+  // line-height: 60px;
+  margin-bottom: 20px;
 
+  @media screen and (max-width: 1024px) {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+`;
 const GalleryTabs = () => {
   const navigate = useNavigate();
 

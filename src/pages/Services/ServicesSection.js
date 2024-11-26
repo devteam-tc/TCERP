@@ -27,7 +27,7 @@ const Image = styled.img`
 
 const FAQContainer = styled.div`
   margin: 0 auto;
-  padding: 2rem;
+  padding: 5rem;
   background: #fff7f4;
 `;
 

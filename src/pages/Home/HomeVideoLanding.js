@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Container , Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../firebase'; // Adjust the path as needed
 
 const VideoBackground = styled.video`
   position: absolute;
@@ -23,13 +25,10 @@ const BannerWrapper = styled.div`
 `;
 
 const BannerContent = styled.div`
-border-radius: 10px;
-border: 3px solid #FCE2DB;
-background: rgba(255, 255, 255, 0.75);
-backdrop-filter: blur(7.5px);
-
-
-  background: rgb(0,0,0);
+  border-radius: 10px;
+  border: 3px solid #FCE2DB;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(7.5px);
   background: linear-gradient(150deg, rgb(237 237 255 / 81%) 0%, rgb(239 248 251 / 51%) 22%, rgb(193 222 228 / 49%) 52%, rgb(211 226 230 / 40%) 66%, rgb(241 241 254 / 83%) 100%);
   padding: 40px;
   border-radius: 10px;
@@ -57,7 +56,7 @@ const BannerSubtitle = styled.h2`
 
 const BannerText = styled.h6`
   font-size: 17px;
-  color:#000;
+  color: #000;
   text-align: center !important;
 
   @media (max-width: 992px) {
@@ -69,18 +68,21 @@ const HomeVideoLanding = () => {
   const [videoUrl, setVideoUrl] = useState('');
 
   useEffect(() => {
-    // Fetch the video URL from an API
     const fetchVideoUrl = async () => {
       try {
-        const response = await fetch('https://techclouderp.in//tcerp_demo_api/api/get_uploaded_files.php'); // Replace with your actual API endpoint
-        const data = await response.json();
-        if (data.status === "200" && data.data.length > 0) {
-          setVideoUrl(data.data[0].file_path); // Accessing the correct property from the response
+        const docRef = doc(db, 'videos', 'backgroundVideo'); // Adjust collection/document names
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setVideoUrl(docSnap.data().url); // Replace 'url' with the actual field name
+        } else {
+          console.error('No such document!');
         }
       } catch (error) {
-        console.error('Error fetching video URL:', error);
+        console.error('Error fetching video URL from Firebase:', error);
       }
     };
+
     fetchVideoUrl();
   }, []);
 
@@ -97,13 +99,13 @@ const HomeVideoLanding = () => {
           <BannerTitle>INNOVATE, INTEGRATE, EXCEL.</BannerTitle>
           <BannerSubtitle>The Era of ERP Solutions</BannerSubtitle>
           <Row className='justify-content-center'>
-          <BannerText className='text-center w-75 md-0'>Tech Cloud ERP software is the digital backbone of modern businesses, orchestrating efficiency, transparency, and growth in every operation.</BannerText>
+            <BannerText className='text-center w-75 md-0'>
+              Tech Cloud ERP software is the digital backbone of modern businesses, orchestrating efficiency, transparency, and growth in every operation.
+            </BannerText>
           </Row>
         </BannerContent>
       </Container>
     </BannerWrapper>
-
-
   );
 };
 

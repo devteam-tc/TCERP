@@ -9,6 +9,7 @@ import { Title } from '../Home/CardSection';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import OurPartnerSection from '../Home/OurPartnerSection';
 import CTA from '../CTA';
+import { Helmet } from 'react-helmet-async';
 import Typewriter from "typewriter-effect";
 const WhyTechCloudERPContainer = styled(Container)`
   padding: 50px 0;
@@ -211,9 +212,11 @@ const CardImage = styled.img`
 `;
 const TabContent = ({ content, image, alt }) => {
   const contentArray = Array.isArray(content) ? content : [];
-
+ 
+   
   return (
     <>
+    
     <StyledTabContent>
       <div className="row align-items-center">
         <div className="col-12 col-lg-6 mb-4">

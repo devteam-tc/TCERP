@@ -2,13 +2,14 @@ import React from 'react';
 import { Form, Button, Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { db } from '../../firebase';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc, getDoc } from "firebase/firestore";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Formik, Field, FieldArray, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import emailjs from '@emailjs/browser';
 
 const FormContainer = styled.div`
   margin: auto;
@@ -68,6 +69,23 @@ const JobApplicationForm = ({ jobTitle }) => {
     expectedCTC: '',
   };
 
+  const fetchEmailKeys = async () => {
+    try {
+        const docRef = doc(db, "emailConfig", "emailKeys");
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            const { service_id, template_id, public_key } = docSnap.data();
+            return { service_id, template_id, public_key };
+        } else {
+            throw new Error("No email configuration found!");
+        }
+    } catch (error) {
+        console.error("Error fetching email keys:", error);
+        throw error;
+    }
+};
+
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     const structuredData = {
       ...values,
@@ -86,11 +104,15 @@ const JobApplicationForm = ({ jobTitle }) => {
         experienceList: values.experienceList
           .map(
             (exp, index) =>
-              `${index + 1}. From: ${exp.from} To: ${exp.to} | Company: ${exp.company} | Responsibilities: ${exp.responsibilities}`
+              `${index + 1}. From: ${exp.from ? new Date(exp.from).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : ''} ` +
+            `To: ${exp.to ? new Date(exp.to).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : ''} | ` +
+            `Company: ${exp.company} | Responsibilities: ${exp.responsibilities}`
           )
           .join('\n'),
       };
-
+      // Send email using EmailJS
+      const { service_id, template_id, public_key } = await fetchEmailKeys();
+      await emailjs.send(service_id, template_id, templateParams, public_key);
       toast.success('Application submitted successfully!', {
         position: 'top-center',
         autoClose: 3000,
@@ -110,7 +132,7 @@ const JobApplicationForm = ({ jobTitle }) => {
   return (
     <FormContainer>
             <ToastContainer /> {/* Add the ToastContainer */}
-      <h3 className="text-center">Job Application Form</h3>
+      <h3  style={{ color: '#ef5226' }}  className="text-center mt-3 mb-3">Job Application Form</h3>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -355,21 +377,22 @@ const JobApplicationForm = ({ jobTitle }) => {
 
     </Col>
   </Row>
-  
   <div className="skills-list">
-                  {values.skills.map((skill, index) => (
-                    <div key={index} className="skill-item">
-                      <Button className='mt-3'
-                        variant="danger"
-                        size="sm"
-                        onClick={() => setFieldValue('skills', values.skills.filter((_, i) => i !== index))}
-                        style={{ marginLeft: '10px' , backgroundColor: 'rgb(242, 117, 81)', color: 'white', border: 'none' }}
-                      >
-                          {skill} ✖
-                      </Button>
-                    </div>
-                  ))}
-                </div>
+  {values.skills.map((skill, index) => (
+    <div key={index} className="skill-item">
+      <Button 
+        className='mt-3'
+        variant="danger"
+        size="sm"
+        onClick={() => setFieldValue('skills', values.skills.filter((_, i) => i !== index))}
+        style={{ marginLeft: '10px', backgroundColor: 'rgb(242, 117, 81)', color: 'white', border: 'none' }}
+      >
+        {skill} ✖
+      </Button>
+    </div>
+  ))}
+</div>
+
 </Form.Group>
             <div className="d-flex justify-content-center">
             <Button

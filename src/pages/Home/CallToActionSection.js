@@ -228,7 +228,7 @@ const CallToAction = () => {
           <Col>
             <Heading>{ctaData.heading}</Heading>
             <Text>{ctaData.description}</Text>
-            <CTAButton href={ctaData.buttonLink} target="_blank">
+            <CTAButton href={ctaData.buttonLink} target="_blank" rel="noopener noreferrer">
               {ctaData.buttonText}
             </CTAButton>
           </Col>

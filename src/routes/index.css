@@ -390,3 +390,13 @@ MEDIA QUERIES
     max-width: 1280px;
   }
 }
+.skills-list {
+  display: flex;
+  flex-wrap: wrap; /* This allows the items to wrap to the next line if needed */
+  gap: 10px; /* Adds spacing between the items */
+}
+
+.skill-item {
+  display: flex;
+  align-items: center; /* Centers the content vertically */
+}

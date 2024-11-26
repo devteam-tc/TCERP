@@ -36,7 +36,8 @@ import DemoPage from './components/Navbar/DemoPage';
 
 function App() {
   return (
-    <Router >
+    
+    <Router  basename="/">
       <div className="App  md:bg-top bg-center">
         <Navigation/>
         {/* Define your Routes here */}
