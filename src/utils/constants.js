@@ -400,7 +400,7 @@ export const NAV_ITEMS = [
 },
 {
   title: 'ContactUs',
-  link: '/ContactUs',
+  link: '/contact-us',
   type: 'link',
 },
 {

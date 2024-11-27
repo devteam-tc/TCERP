@@ -212,7 +212,7 @@ const Footer = () => {
             <FooterHeading>Industries</FooterHeading>
             <FooterLinkList>
               <li>
-                <Link to="/allindustries" onClick={scrollToTop}>
+                <Link to="/all-industries" onClick={scrollToTop}>
                   All Industries
                 </Link>
               </li>
@@ -257,7 +257,7 @@ const Footer = () => {
             <FooterHeading>Services</FooterHeading>
             <FooterLinkList>
               <li>
-                <Link to="/services" onClick={scrollToTop}>
+                <Link to="/all-services" onClick={scrollToTop}>
                   All Services
                 </Link>
               </li>

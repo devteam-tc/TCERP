@@ -14,10 +14,15 @@ import emailjs from '@emailjs/browser';
 const FormContainer = styled.div`
   margin: auto;
   padding: 20px;
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(75px);
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffffd6;
+    background-size: 100% 100%;
   @media (max-width: 992px) {
     width: 100%;
   }

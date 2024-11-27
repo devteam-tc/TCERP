@@ -188,7 +188,7 @@ const PricingSection = () => {
                 </CoverageItem>
               ))}
             </CoverageList>
-            <Link to="/ContactUs" onClick={scrollToTop} aria-label="Buy Now">
+            <Link to="/contact-us" onClick={scrollToTop} aria-label="Buy Now">
             <Button>Buy Now</Button>
           </Link>
             <p className="text-center pt-3">{pkg.creditCardRequired}</p>

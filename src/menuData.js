@@ -9,7 +9,7 @@ export const menuData = [
   },
   {
     label: 'Industries',
-    href: '/allindustries',
+    href: '/all-industries',
     children: [
       {
         heading: 'Agriculture to Electronic Industries',
@@ -98,7 +98,7 @@ export const menuData = [
   
   {
     label: 'Products',
-    href: '/allproducts',
+    href: '/all-products',
     children: [
       {
         submenu: [
@@ -120,7 +120,7 @@ export const menuData = [
     href: '/business-intelligence' },
   {
     label: 'Services',
-    href: '/services',
+    href: '/all-services',
     children: [
       {
         submenu: [
@@ -134,7 +134,7 @@ export const menuData = [
   { label: 'Pricing', 
     href: '/pricing' },
   { label: 'Contact Us', 
-    href: '/ContactUs' },
+    href: '/contact-us' },
   { label: 'Demo', 
     href: '/scheduledemo',
     isDemo: true,
