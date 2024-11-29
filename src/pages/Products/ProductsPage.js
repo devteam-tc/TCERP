@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Accordion,  Col, Container, Row } from 'react-bootstrap';
 import { BodySection, ContentColumn, Description, Divider, Heading, Section } from '../IndustryPage';
-import { productData , whyTechCloudERPContent} from '../../utils/constants'; // Import product data from constants.js
+import { productData } from '../../utils/constants'; // Import product data from constants.js
 import styled from 'styled-components';
 import { BsCheckCircle } from 'react-icons/bs'; // Import tick mark icon from react-icons
 import { Title } from '../Home/CardSection';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import OurPartnerSection from '../Home/OurPartnerSection';
 import CTA from '../CTA';
-import { Helmet } from 'react-helmet-async';
 import Typewriter from "typewriter-effect";
 const WhyTechCloudERPContainer = styled(Container)`
   padding: 50px 0;
@@ -120,11 +119,14 @@ const SectionWrapper = styled.div`
   background-image: url(${require("../../assets/Products/training.png")});
   background-size: 100% 100%;
   background-position: center;
+  @media screen and (max-width: 992px) {
+  padding: 0.5rem;
+  }
 `;
 
 const StyledTabContent = styled.div`
   background-color: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -212,11 +214,9 @@ const CardImage = styled.img`
 `;
 const TabContent = ({ content, image, alt }) => {
   const contentArray = Array.isArray(content) ? content : [];
- 
-   
+
   return (
     <>
-    
     <StyledTabContent>
       <div className="row align-items-center">
         <div className="col-12 col-lg-6 mb-4">

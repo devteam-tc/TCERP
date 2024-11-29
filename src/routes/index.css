@@ -130,7 +130,12 @@ nav {
   display: flex;
   align-items: center;
   margin-top: 2vh;
+
+  @media screen and (max-width: 992px) {
+    margin-top: 0; 
+  }
 }
+
 
 .nav_item_content button {
   padding-inline: 0.75rem;
@@ -232,6 +237,8 @@ Mobile
 .mobile_navigation {
   position: fixed;
   z-index: 99;
+  max-height: 100vh;
+  overflow-y: auto;
   border-top: 2px solid #ef5226;
 }
 
@@ -244,12 +251,14 @@ Mobile
 .drawer_content {
   background-color: white;
   position: fixed;
-  top: 0;
+  top: -15px;
   left: 0;
   width: 100%;
   max-width: 280px;
   height: 100vh;
   z-index: 100;
+  padding: 10px;
+
   overflow-y: auto;
   transition: 0.5s;
   transform: translateX(-100%);
@@ -259,12 +268,20 @@ Mobile
   transform: translateX(0);
 }
 
+
 .close_drawer {
-  /* text-align: end; */
+  position: sticky;
+  top: 0;
+  background-color: white; /* Optional: set a background color for better visibility */
+  z-index: 10; /* Ensure it's on top of the other content */
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid var(--borderColor);
+  align-items: center;
+  padding: 10px;
+  /* Add padding or margin as per your design */
 }
+
+
 .close_drawer button {
   padding: 12px;
   border: none;

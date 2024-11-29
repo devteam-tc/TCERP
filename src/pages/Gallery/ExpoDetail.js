@@ -63,17 +63,25 @@ const ExpoDetail = () => {
     <>
       <Section className='text-center'>
         <Container>
-          <Row>
-            <h1 className='fw-bold'>{expo.title}</h1>
-            <div className='d-flex justify-content-center align-items-center my-2'>
-              <div><FaMapMarkerAlt className='fs-3'/></div>
-              <p className='fs-4 fs-md-6 m-0 text-start'>{expo.venue}</p>
-            </div>
-            <div className='d-flex justify-content-center align-items-center gap-2 my-2'>
-              <div><FaCalendar className='fs-3'/></div>
-              <p className='fs-4 m-0 text-start'>{expo.date}</p>
-            </div>
-          </Row>
+        <Row>
+      <h1 className="fw-bold display-4 display-md-5 display-sm-6">{expo.title}</h1>
+      
+      {/* Venue section with responsive font size */}
+      <div className="d-flex justify-content-center align-items-center gap-2 my-2">
+        <div>
+          <FaMapMarkerAlt className="fs-3 fs-md-2 fs-sm-1"/>
+        </div>
+        <p className="fs-5 fs-md-4 fs-sm-6 m-0 text-center">{expo.venue}</p>
+      </div>
+
+      {/* Date section with responsive font size */}
+      <div className="d-flex justify-content-center align-items-center gap-2 my-2">
+        <div>
+          <FaCalendar className="fs-3 fs-md-2 fs-sm-1" />
+        </div>
+        <p className="fs-5 fs-md-4 fs-sm-6 m-0 text-center">{expo.date}</p>
+      </div>
+    </Row>
         </Container>
       </Section>
 

@@ -182,10 +182,10 @@ const ContactForm = () => {
               </div>
             </IconContainer>
           </ul>
-          <ul className='list-unstyled'>
+          {/* <ul className='list-unstyled'>
             <SectionTitle>Follow Us</SectionTitle>
             <SocialMediaIcons />
-          </ul>
+          </ul> */}
         </Col>
 
         <Col md={6}>

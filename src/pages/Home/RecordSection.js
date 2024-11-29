@@ -35,7 +35,7 @@ const StatNumber = styled.h2`
   white-space: nowrap;
 
   @media (max-width: 576px) {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -48,7 +48,7 @@ const StatText = styled.p`
   white-space: nowrap;
 
   @media (max-width: 576px) {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
 `;
 
@@ -61,7 +61,7 @@ const IconWrapper = styled.div`
   margin-right: 10px;
 
   @media (max-width: 992px) {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 `;
 

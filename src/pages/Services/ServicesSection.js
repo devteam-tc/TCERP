@@ -29,16 +29,31 @@ const FAQContainer = styled.div`
   margin: 0 auto;
   padding: 5rem;
   background: #fff7f4;
+
+  @media screen and (max-width: 992px) {
+    padding: 2rem !important;
+  }
 `;
+
 
 const Subtitle = styled.h2`
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: 1rem;
   color: #333;
+  @media screen and (max-width:992px){
+    font-size: 1.3rem;
+    font-weight:600;
+
+  }
   span {
     color: #05a7cc;
     font-weight: 500;
+    @media screen and (max-width:992px){
+    font-size: 1.3rem;
+    font-weight:600;
+
+  }
   }
 `;
 
@@ -111,6 +126,11 @@ const Question = styled.h3`
   font-size: 1.125rem;
   font-weight: 600;
   color: #333;
+  @media screen and (max-width:992px){
+    font-size: 1rem;
+    font-weight:600;
+
+  }
 `;
 
 const Answer = styled.p`
@@ -161,26 +181,25 @@ const ServicesSection = () => {
             <ContentColumn md={6}>
               <Heading>{service.title}</Heading>
               <Divider />
-              <Description>{service.description[0]}</Description>
+              <Description>{service.description}</Description>
             </ContentColumn>
           </Row>
         </Container>
       </Section>
       <DescriptionContainer>
-        <Container>
-          <Row className="align-items-center mt-md-5">
-          {/* style={{ backgroundColor: '#FFF3F0' }} */}
-            <Col md={6} className="p-4">
-              <Title>{service.title}</Title>
-              {service.description.map((paragraph, index) => (
-                <Text key={index}>{paragraph}</Text>
-              ))}
-            </Col>
-            <Col md={6} className="text-center text-md-end p-0">
-              <Image className="w-75 border-0" src={service.image} alt={service.altText} />
-            </Col>
-          </Row>
-        </Container>
+      <Container>
+      <Row className="align-items-center mt-md-5">
+        <Col md={6} className="p-4">
+          <Title>{service.title}</Title>
+          {service.servicedescription.map((paragraph, index) => (
+            <Text key={index}>{paragraph}</Text>
+          ))}
+        </Col>
+        <Col md={6} className="text-center text-md-end p-0">
+          <Image className="w-75 border-0" src={service.image} alt={service.altText} />
+        </Col>
+      </Row>
+    </Container>
       </DescriptionContainer>
       <SectionWrapper>
         <Container>
@@ -202,20 +221,20 @@ const ServicesSection = () => {
             ))}
           </Row>
         </Container>
-      </SectionWrapper>
-      <FAQContainer>
-        <Container>
-          <Title>FAQ</Title>
-          <Subtitle>
-            Have any questions? <span>Read popular answers below</span>
-          </Subtitle>
-          {renderFAQs()}
-        </Container>
-      </FAQContainer>
-      <CTA />
-      <OurPartnerSection className="py-2" />
-    </>
-  );
-};
+          </SectionWrapper>
+          <FAQContainer>
+            <Container>
+              <Title>FAQ</Title>
+              <Subtitle>
+                Have any questions? <span>Read popular answers below</span>
+              </Subtitle>
+              {renderFAQs()}
+            </Container>
+          </FAQContainer>
+          <CTA />
+          <OurPartnerSection className="py-2" />
+        </>
+      );
+    };
 
 export default ServicesSection;

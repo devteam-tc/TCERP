@@ -328,7 +328,8 @@ const Footer = () => {
                 <Icon>
                   <FaMapMarkerAlt />
                 </Icon>
-                1101, E Bell Street, Suite-E, Bloomington, Indiana, USA - 61701
+                1101, E Bell Street, 
+                Suite-E, Bloomington, IL - 61701.
               </p>
               <p>
                 <Icon>

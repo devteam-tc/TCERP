@@ -50,6 +50,7 @@ export const SubTitle = styled.p`
   margin-bottom: 2rem;
   color: #6c757d;
   font-size: 1.1rem;
+  
 `;
 
 const FeatureCard = () => {

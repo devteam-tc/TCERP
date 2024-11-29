@@ -13,10 +13,14 @@ const GalleryContainer = styled.div`
   }
 `;
 
-const Description = styled.p`
-  color: #393939;
-  font-size: 20px;
-  margin-bottom: 2rem;
+const Description = styled.div`
+  text-align: center !important;
+  width: 50% !important;
+  
+  @media (max-width: 992px) {
+    width: 100% !important;
+    padding: 1rem !important; /* You can adjust padding for smaller screens */
+  }
 `;
 
 const CardContainer = styled.div`

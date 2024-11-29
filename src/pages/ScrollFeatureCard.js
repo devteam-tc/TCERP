@@ -37,7 +37,7 @@ export const Card = styled.div`
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  height: 400px;
+  height: 420px;
   min-height: 330px;
   display: flex;
   flex-direction: column;
@@ -125,11 +125,16 @@ export const CardText = styled.p`
 export const SubTitle = styled.p`
   text-align: center;
     color: #6c757d;
+      @media (max-width: 992px) {
+    font-size: 1rem; 
+    width:100% !important;
+    padding: 1rem; 
+  }
 `;
 
 
 const ScrollFeatureCard = () => {
-   const sliderSettings = {
+  const sliderSettings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -138,6 +143,7 @@ const ScrollFeatureCard = () => {
     autoplay: true,
     autoplaySpeed: 1500,
     pauseOnHover: false,
+    rtl: true, // Ensures scrolling starts from left to right
     responsive: [
       {
         breakpoint: 1200,
@@ -165,6 +171,7 @@ const ScrollFeatureCard = () => {
       },
     ],
   };
+  
 
   return (
     <>

@@ -69,11 +69,18 @@ const StatsSection = styled(Col)`
   color: white;
   padding: 60px;
   border-radius: 0 10px 10px 0px;
+  @media screen and (max-width: 992px) {
+  border-radius: 0px;
+  }
 
   h2 {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 16px;
+    @media screen and (max-width:992px){
+        font-size: 1.4rem;
+
+    }
   }
 
   ul {
@@ -115,7 +122,7 @@ const PartnershipSection = () => {
           <Button onClick={handleDemoClick}>Request a demo</Button>
         </TextSection>
         <StatsSection md={4}>
-          <h2>A Legacy of Innovation with Techcloud ERP</h2>
+          <h2>A Legacy of Innovation with Tech Cloud ERP</h2>
           <ul>
             <li><BsCalendar size={20} /> <span style={ {  textwrap :'nowrap' } }>25+ Years of Experience</span></li>
             <li><BsPeople size={20} /> <span>2,000+ Clients</span></li>
