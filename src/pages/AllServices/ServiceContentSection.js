@@ -58,11 +58,22 @@ const ServiceContentSection = () => {
 
   const handleReadMoreClick = (serviceTitle) => {
     // Replace spaces with hyphens or create dynamic routes for each service
-    const route = `/services/${serviceTitle.replace(/\s+/g, '-').toLowerCase()}`;
+    const link = `/services/${serviceTitle.replace(/\s+/g, '-').toLowerCase()}`;
 
     // Navigate to the route and scroll to top
-    navigate(route);
-    window.scrollTo(0, 0);
+    navigate(link);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scrolling to the top
+    });
+  };
+
+  const handleScrollTopClick = () => {
+    // Scroll to the top without navigating
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scrolling to the top
+    });
   };
 
   return (
@@ -81,7 +92,10 @@ const ServiceContentSection = () => {
                 <Description>{service.description1}</Description>
                 <Description>{service.description2}</Description>
                 <StyledButton 
-                  onClick={() => handleReadMoreClick(service.title)}
+                  onClick={() => {
+                    handleReadMoreClick(service.title);
+                    handleScrollTopClick(); // Scroll to top when clicking the button
+                  }}
                 >
                   {service.buttonText}
                 </StyledButton>

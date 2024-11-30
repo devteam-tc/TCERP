@@ -41,6 +41,84 @@ const FixedSizeImage = styled.img`
   }
 `;
 
+// const ResponsiveText = styled.p`
+//   font-size: 1.25rem; /* Default size */
+//   margin: 0;
+
+//   @media (max-width: 992px) {
+//     font-size: 1rem;
+//   }
+
+//   @media (max-width: 768px) {
+//     font-size: 0.875rem;
+//   }
+// `;
+
+// const ResponsiveIcon = styled.div`
+//   font-size: 1.5rem; /* Default size */
+//   display: flex;
+//   align-items: center;
+
+//   @media (max-width: 992px) {
+//     font-size: 1.25rem;
+//   }
+
+//   @media (max-width: 768px) {
+//     font-size: 1rem;
+//   }
+// `;
+
+// const ResponsiveRow = styled(Row)`
+//   @media (max-width: 768px) {
+//     text-align: left;
+//     justify-content: flex-start;
+//   }
+//   @media (min-width: 769px) {
+//     text-align: center;
+//     justify-content: center;
+//   }
+// `;
+
+const ResponsiveText = styled.p`
+  font-size: 1.25rem; /* Default size */
+  margin: 0;
+
+  @media (max-width: 992px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.875rem;
+  }
+`;
+
+const ResponsiveIcon = styled.div`
+  font-size: 1.5rem; /* Default size */
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 992px) {
+    font-size: 1.25rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+
+const ResponsiveRow = styled(Row)`
+  @media (min-width: 992px) {
+    justify-content: center; /* Center alignment for large screens */
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 991px) {
+    justify-content: flex-start; /* Start alignment for smaller screens */
+    text-align: left;
+  }
+`;
+
 const ExpoDetail = () => {
   const { id } = useParams();
   const expo = expoDetails[id]; 
@@ -61,19 +139,59 @@ const ExpoDetail = () => {
 
   return (
     <>
-      <Section className='text-center'>
+      {/* <Section className='text-center'>
         <Container>
           <Row>
             <h1 className='fw-bold'>{expo.title}</h1>
             <div className='d-flex justify-content-center align-items-center my-2'>
-              <div><FaMapMarkerAlt className='fs-3'/></div>
+              <FaMapMarkerAlt className='fs-6'/>
               <p className='fs-4 fs-md-6 m-0 text-start'>{expo.venue}</p>
             </div>
             <div className='d-flex justify-content-center align-items-center gap-2 my-2'>
-              <div><FaCalendar className='fs-3'/></div>
+              <FaCalendar className='fs-6'/>
               <p className='fs-4 m-0 text-start'>{expo.date}</p>
             </div>
           </Row>
+        </Container>
+      </Section> */}
+
+{/* <Section className='text-center'>
+        <Container>
+          <ResponsiveRow className="flex-column flex-md-row">
+            <h1 className="fw-bold">{expo.title}</h1>
+            <div className="d-flex align-items-center gap-2 my-2">
+              <ResponsiveIcon>
+                <FaMapMarkerAlt />
+              </ResponsiveIcon>
+              <ResponsiveText>{expo.venue}</ResponsiveText>
+            </div>
+            <div className="d-flex align-items-center gap-2 my-2">
+              <ResponsiveIcon>
+                <FaCalendar />
+              </ResponsiveIcon>
+              <ResponsiveText>{expo.date}</ResponsiveText>
+            </div>
+          </ResponsiveRow>
+        </Container>
+      </Section> */}
+
+<Section>
+        <Container>
+          <ResponsiveRow>
+            <h1 className="fw-bold">{expo.title}</h1>
+            <div className="d-flex justify-center align-items-center gap-2 my-2">
+              <ResponsiveIcon>
+                <FaMapMarkerAlt />
+              </ResponsiveIcon>
+              <ResponsiveText>{expo.venue}</ResponsiveText>
+            </div>
+            <div className="d-flex justify-center align-items-center gap-2 my-2">
+              <ResponsiveIcon>
+                <FaCalendar />
+              </ResponsiveIcon>
+              <ResponsiveText>{expo.date}</ResponsiveText>
+            </div>
+          </ResponsiveRow>
         </Container>
       </Section>
 

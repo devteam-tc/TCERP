@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
@@ -42,8 +43,6 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
-
-          
           {/* Dynamic routes for each industry */}
           {Object.keys(sectionsData).map((industry) => (
             <Route
@@ -77,14 +76,13 @@ function App() {
           <Route path="/careers/:jobId" element={<JobDetail />} />
           <Route path="/job-entry" element={<AdminJobManagement />} />
           {/* Other routes */}
-
           {/* Route for 404 Not Found */}
           <Route path="/industries/*" element={<NotFound />} />
           <Route path='/allindustries' element={<AllIndustriesSection />} />
           <Route path='/allproducts' element={<AllProductsSection/>} />
           <Route path="/products/*" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
-          <Route path='/demo' element={<DemoPage />} />
+          <Route path='/scheduledemo' element={<DemoPage />} />
         </Routes>
         {/* Footer should be displayed across all pages */}
         <ScrollToTopButton />

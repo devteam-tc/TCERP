@@ -23,6 +23,8 @@
     "emailjs-com": "^3.2.0",
     "express": "^4.21.1",
     "firebase": "^10.14.1",
+    "firebase-admin": "^13.0.1",
+    "firebase-functions": "^6.1.1",
     "formik": "^2.4.6",
     "framer-motion": "^11.11.11",
     "lg-thumbnail": "^1.2.1",
@@ -38,6 +40,7 @@
     "react-country-flag": "^3.1.0",
     "react-datepicker": "^7.5.0",
     "react-dom": "^18.3.1",
+    "react-dom-server": "^0.0.5",
     "react-dropzone": "^14.3.5",
     "react-globe.gl": "^2.27.4",
     "react-helmet": "^6.1.0",
@@ -69,6 +72,17 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
+  },
+  "reactSnap": {
+    "inlineCss": true,
+    "puppeteerArgs": [
+      "--no-sandbox"
+    ],
+    "routes": [
+      "/",
+      "/products/tech-cloud-erp",
+      "/products/customer-relationship-management"
+    ]
   },
   "eslintConfig": {
     "extends": [

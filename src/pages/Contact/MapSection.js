@@ -4,28 +4,6 @@ import styled from 'styled-components';
 import { Title } from '../Home/CardSection';
 import { regions } from '../../utils/constants';
 import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
-const StyledMap = styled.div`
-  width: 300px; /* Set desired width */
-  height: 500px; /* Set desired height */
-  padding: 20px;
-  border-radius: 8px;
-  margin: auto;
-  border: 1px solid var(--Border-Default-Default, #D9D9D9);
-  box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px, rgba(173, 216, 230, 0.7) 0px 6px 6px;
-
-  iframe {
-    width: 100%;
-    height: 60%; /* Adjust iframe height as a percentage of the card */
-  }
-
-  @media (max-width: 992px) {
-    width: 100%; 
-
-    iframe {
-      height: 55%; /* Adjust iframe height for smaller screens */
-    }
-  }
-`;
 
 
 const StyledTitle = styled(Title)`
@@ -34,15 +12,48 @@ const StyledTitle = styled(Title)`
   margin-bottom: 20px;
 `;
 
+const StyledMap = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--Border-Default-Default, #D9D9D9);
+  box-shadow: rgba(173, 216, 230, 0.5) 0px 10px 20px, rgba(173, 216, 230, 0.7) 0px 6px 6px;
+  
+  iframe {
+    width: 100%;  /* Ensures iframe width is 100% of its parent */
+    height: 250px; /* Set a fixed height for the iframe */
+    object-fit: cover; /* Ensure content fits inside the iframe without distortion */
+  }
+
+  h5 {
+    margin-top: 0; /* Remove margin-top from the h5 */
+    color: #ef5226;
+    margin-bottom:0px !important;
+    text-align: left;
+  }
+
+  @media (max-width: 1200px) {
+    iframe {
+      height: 250px; /* Keep iframe height consistent for screens up to 1200px */
+    }
+  }
+`;
+
+
 const CityInfo = styled.div`
-  margin-top: 10px;
+  margin-top: 0; /* Remove margin-top to reduce space between the city name and the address */
   text-align: left;
+  margin-bottom:0px !important;
   color: #333;
 
   .info-item {
     display: flex;
     align-items: center;
-    font-size:12px;
+    font-size: 12px;
     margin: 5px 0;
   }
 
@@ -53,6 +64,7 @@ const CityInfo = styled.div`
     min-width: 20px; /* Ensures consistent spacing */
   }
 `;
+
 
 const MapSection = () => {
   return (
@@ -65,7 +77,7 @@ const MapSection = () => {
           </StyledTitle>
           <Row className="mb-3">
             {region.cities.map((city, index) => (
-              <Col md={3} lg={3} key={index} className="mt-3">
+              <Col xs={12} sm={6} md={4} lg={3} xl={3} key={index} className="mt-3">
                 <StyledMap>
                   <iframe
                     title={`Map of ${city.name}`}
@@ -74,9 +86,7 @@ const MapSection = () => {
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
-                  <h5 className="mt-3 mb-3" style={{ textAlign: 'left', color: '#ef5226' }}>
-                    {city.name}
-                  </h5>
+                  <h5 className='mt-2'>{city.name}</h5>
                   <CityInfo>
                     <div className="info-item">
                       <FaMapMarkerAlt className="icon" /> <span>{city.address}</span>
@@ -97,4 +107,5 @@ const MapSection = () => {
     </Container>
   );
 };
+
 export default MapSection;

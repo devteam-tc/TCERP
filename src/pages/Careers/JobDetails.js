@@ -33,7 +33,7 @@ const JobHighlights = styled.div`
 `;
 
 const DropCV = styled.div`
-  background-image: url(${require('../../assets/formBg.png')});
+  background-image: url(${require('../../assets/formBg.webp')});
   background-size: 100% 100%;
   background-position: center;
   border-radius: 5px;
@@ -43,9 +43,10 @@ const DropCV = styled.div`
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 
   @media (max-width: 992px) {
-    padding: 2rem;
+    padding: 0rem;
     background-repeat: no-repeat;
     background-image: none;
+    box-shadow:none;
   }
 `;
 
@@ -166,7 +167,7 @@ const JobDetails = () => {
                 <Icon><FaBook /></Icon>
                   <div>
                     <strong>Preferred Candidates</strong><br />
-                    {job.preferredCandidates}
+                    {job.prefferedCandidates}
                   </div>
               </Col>
 
@@ -224,4 +225,3 @@ const JobDetails = () => {
 };
 
 export default JobDetails;
-
