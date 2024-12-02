@@ -73,10 +73,7 @@ const CoFoundersSection = () => {
             <Container>
                 <Title className="text-center pt-4 pt-md-0">Our Management Team</Title>
                 <SectionSubtitle>
-                    Our co-founders are the driving force behind our company’s vision and success. 
-                    With a blend of diverse expertise and shared passion for innovation, their leadership 
-                    and commitment to excellence guide our team in creating user-focused, high-quality 
-                    digital experiences that meet the evolving needs of modern businesses.
+                Our Chairman and Founder are the pillars of our company’s vision and success. Combining extensive expertise with a shared passion for innovation, their leadership drives us to deliver user-centric, high-quality ERP solutions. Their commitment to excellence inspires our team to meet the ever-evolving needs of modern businesses with precision and dedication.
                 </SectionSubtitle>
                 <Row>
                     {coFoundersData.map((coFounder, index) => (
@@ -85,7 +82,7 @@ const CoFoundersSection = () => {
                                 <Card.Body>
                                     <CardTitle>{coFounder.name}</CardTitle>
                                     <CardSubtitle>{coFounder.title}</CardSubtitle>
-                                    <SocialIcons>
+                                    {/* <SocialIcons>
                                         <div onClick={() => handleSocialClick(coFounder.socialLinks.facebook)}>
                                             <FaFacebookF />
                                         </div>
@@ -98,7 +95,7 @@ const CoFoundersSection = () => {
                                         <div onClick={() => handleSocialClick(coFounder.socialLinks.twitter)}>
                                             <FaXTwitter />
                                         </div>
-                                    </SocialIcons>
+                                    </SocialIcons> */}
                                     <CardText>{coFounder.description}</CardText>
                                 </Card.Body>
                             </StyledCard>

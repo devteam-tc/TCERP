@@ -52,7 +52,7 @@ const PhoneDropdown = styled.div`
   display: inline-block;
 
   .dropdown-content {
-    display: ${({ showDropdown }) => (showDropdown ? 'block' : 'none')};
+    display: ${({ showdropdown }) => (showdropdown ? 'block' : 'none')};
     position: absolute;
     background-color: white;
     min-width: 150px;
@@ -127,7 +127,7 @@ const Navigation = () => {
             </div>
             {/* Phone Dropdown */}
             <PhoneDropdown
-              showDropdown={showPhoneDropdown}
+              showdropdown={showPhoneDropdown || undefined} // Explicitly pass undefined when false
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >

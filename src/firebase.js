@@ -11,14 +11,24 @@ import { getAuth } from "firebase/auth"; // Import Firebase Authentication
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCN6YAEk86R7wN1Uk0ZSbZv4DAdyh-6Z7M",
+//   authDomain: "tcerp-website.firebaseapp.com",
+//   projectId: "tcerp-website",
+//   storageBucket: "tcerp-website.appspot.com",
+//   messagingSenderId: "433831823225",
+//   appId: "1:433831823225:web:a59d86c35dd92b5152d1a8",
+//   measurementId: "G-ZN572YDXBC"
+// };
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCN6YAEk86R7wN1Uk0ZSbZv4DAdyh-6Z7M",
-  authDomain: "tcerp-website.firebaseapp.com",
-  projectId: "tcerp-website",
-  storageBucket: "tcerp-website.appspot.com",
-  messagingSenderId: "433831823225",
-  appId: "1:433831823225:web:a59d86c35dd92b5152d1a8",
-  measurementId: "G-ZN572YDXBC"
+  apiKey: "AIzaSyA3Ln4ByzURA8drIrvka2PYQbPRF_NbVAw",
+  authDomain: "tech-cloud-erp-1532582683650.firebaseapp.com",
+  databaseURL: "https://tech-cloud-erp-1532582683650.firebaseio.com",
+  projectId: "tech-cloud-erp-1532582683650",
+  storageBucket: "tech-cloud-erp-1532582683650.firebasestorage.app",
+  messagingSenderId: "595044081279",
+  appId: "1:595044081279:web:3320af7c412fbc33bb694a"
 };
 
 // Initialize Firebase

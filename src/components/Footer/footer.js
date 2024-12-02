@@ -154,7 +154,7 @@ const Footer = () => {
     <FooterSection>
       <Container>
         <Row>
-          <Col md={3} sm={12}>
+          <Col md={8} xl={3} sm={12}>
             <Logo src={releavant.logo} alt="Tech Cloud ERP Logo" />
             <FooterText className="pt-3">
               Tech Cloud ERP delivers top-notch solutions tailored for any
@@ -163,7 +163,7 @@ const Footer = () => {
             </FooterText>
             <SocialMediaIcons />
           </Col>
-          <Col md={2} sm={6}>
+          <Col md={4} xl={2} sm={6}>
             <FooterHeading>Useful Links</FooterHeading>
             <FooterLinkList>
               <li>
@@ -208,7 +208,7 @@ const Footer = () => {
               </li>
             </FooterLinkList>
           </Col>
-          <Col md={2} sm={6}>
+          <Col md={4} xl={2} sm={6}>
             <FooterHeading>Industries</FooterHeading>
             <FooterLinkList>
               <li>
@@ -253,7 +253,7 @@ const Footer = () => {
               </li>
             </FooterLinkList>
           </Col>
-          <Col md={2} sm={6}>
+          <Col md={4} xl={2} sm={6}>
             <FooterHeading>Services</FooterHeading>
             <FooterLinkList>
               <li>
@@ -298,7 +298,7 @@ const Footer = () => {
               </li>
             </FooterLinkList>
           </Col>
-          <Col md={3}>
+          <Col md={4} xl={3}>
             <FooterHeading>Get in Touch</FooterHeading>
             <ContactInfo>
               <FooterHeader>Corporate Office</FooterHeader>

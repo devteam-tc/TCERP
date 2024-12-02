@@ -168,7 +168,7 @@ const JobDetails = () => {
                 <Icon><FaBook /></Icon>
                   <div>
                     <strong>Preferred Candidates</strong><br />
-                    {job.preferredCandidates}
+                    {job.prefferedCandidates}
                   </div>
               </Col>
 

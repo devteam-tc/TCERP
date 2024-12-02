@@ -44,8 +44,6 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
-
-          
           {/* Dynamic routes for each industry */}
           {Object.keys(sectionsData).map((industry) => (
             <Route
@@ -79,7 +77,6 @@ function App() {
           <Route path="/careers/:jobId" element={<JobDetail />} />
           <Route path="/job-entry" element={<AdminJobManagement />} />
           {/* Other routes */}
-
           {/* Route for 404 Not Found */}
           <Route path="/industries/*" element={<NotFound />} />
           <Route path='/all-industries' element={<AllIndustriesSection />} />

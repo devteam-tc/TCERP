@@ -1,5 +1,3 @@
-
-
 // export default FeatureCard;
 import React from 'react';
 import Slider from 'react-slick';
@@ -184,7 +182,7 @@ const ScrollFeatureCard = () => {
           <SliderWrapper>
             <Slider {...sliderSettings}>
               {featuresData.map((feature, index) => (
-                <Card key={feature.id} className='mb-5'>
+                <Card key={feature.id || `feature-${index}`} className='mb-5'>
                   <CardImage src={feature.imgSrc} alt={feature.alt} />
                   <CardTitle>{feature.title}</CardTitle>
                   <CardText>{feature.description}</CardText>

@@ -7,6 +7,7 @@
     "@amcharts/amcharts5": "^5.10.8",
     "@amcharts/amcharts5-geodata": "^5.1.4",
     "@emailjs/browser": "^4.4.1",
+    "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@testing-library/jest-dom": "^5.17.0",
@@ -140,10 +141,17 @@
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
     "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
     "gh-pages": "^6.1.1",
+    "html-webpack-plugin": "^5.6.3",
     "ngrok": "^5.0.0-beta.2",
     "postcss": "^8.4.47",
+    "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.12",
+    "webpack": "^5.96.1",
+    "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0"
   }
 }

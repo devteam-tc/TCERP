@@ -13,6 +13,7 @@ const AddJobOpening = () => {
     responsibilities: [""],
     qualifications: [""],
     vacancies: 0,
+    prefferedCandidates: "",
     imageURL: "",
     postedDate: Timestamp.now(),
   });
@@ -45,6 +46,7 @@ const AddJobOpening = () => {
         description: "",
         responsibilities: [""],
         qualifications: [""],
+        prefferedCandidates: "",
         vacancies: 0,
         imageURL: "",
         postedDate: Timestamp.now(),
@@ -105,6 +107,15 @@ const AddJobOpening = () => {
             rows={3}
             name="description"
             value={jobData.description}
+            onChange={handleChange}
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Preffered Candidates</Form.Label>
+          <Form.Control
+            type="text"
+            name="prefferedCandidates"
+            value={jobData.prefferedCandidates}
             onChange={handleChange}
           />
         </Form.Group>

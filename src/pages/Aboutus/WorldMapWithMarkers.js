@@ -114,7 +114,7 @@ const WorldMapWithMarkers = () => {
       { title: "Hyderabad", address: "Office Unit No. 705, Jain Sadguru Capital Park, Image Gardens Road, VIP Hills, Madhapur, Hyderabad, Telangana, India-500081", geometry: { type: "Point", coordinates: [78.4867, 17.3850] } },
       { title: "Surat", address: "Surat, Gujarat, India", geometry: { type: "Point", coordinates: [72.8311, 21.1702] } },
       { title: "Indore", address: "Unit No 903-B, NRK Business Park, Vijay Nagar, Indore, Madhya Pradesh - 452010", geometry: { type: "Point", coordinates: [75.8577, 22.7196] } },
-      { title: "USA", address: "1101, E Bell Street, Suite-E, Bloomington, IL - 61701.", geometry: { type: "Point", coordinates: [-86.5264, 39.1653] } }
+      { title: "USA", address: "1101, E Bell Street, Suite-E, Bloomington, Indiana, USA - 61701.", geometry: { type: "Point", coordinates: [-86.5264, 39.1653] } }
     ]);
 
 

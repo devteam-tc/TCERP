@@ -63,7 +63,7 @@ const perks = [
   ];
 const Perks = () => {
   return (
-    <div className='mt-5 mb-5 p-3' style={{ backgroundColor: '#E6F6FA' }}>
+    <div className='mt-5 mb-5 p-5' style={{ backgroundColor: '#E6F6FA' }}>
       <Container>
       <PerksTitle>Perks Of Working With <span>Tech Cloud ERP</span></PerksTitle>
       <Divider />

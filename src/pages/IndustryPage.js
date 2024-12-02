@@ -239,7 +239,7 @@ const IndustryPage = ({ data }) => {
             <IndustryText>{top_description}</IndustryText>
             </div>
             <div className='border border-1 rounded-3 bg-dark-50 p-3'>
-            <Image src={data.bottom_img} alt={data.alt_text1}/>
+            <Image src={data.bottom_img} alt={data.alt_text2}/>
             <IndustryTitle className='pt-2 mt-2'>{subheading}</IndustryTitle>
             <IndustryText>{bottom_description}</IndustryText>
             </div>

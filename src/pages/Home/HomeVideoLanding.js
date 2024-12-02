@@ -96,11 +96,11 @@ const HomeVideoLanding = () => {
       )}
       <Container>
         <BannerContent>
-          <BannerTitle>INNOVATE, INTEGRATE, EXCEL.</BannerTitle>
-          <BannerSubtitle>The Era of ERP Solutions</BannerSubtitle>
+          <BannerTitle>INNOVATE, INTEGRATE & EXCEL</BannerTitle>
+          <BannerSubtitle>the era of ERP Solutions.</BannerSubtitle>
           <Row className='justify-content-center'>
             <BannerText className='text-center w-75 md-0'>
-              Tech Cloud ERP software is the digital backbone of modern businesses, orchestrating efficiency, transparency, and growth in every operation.
+            Tech Cloud ERP is a customizable solution that streamlines operations, boosts productivity, and offers real-time insights, driving growth and efficiency across industries.
             </BannerText>
           </Row>
         </BannerContent>

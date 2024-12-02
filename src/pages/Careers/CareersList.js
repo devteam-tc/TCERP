@@ -139,7 +139,7 @@ const CareersList = () => {
           <h2 className='m-5'>Current Openings</h2>
           <Row>
             {jobOpenings.map((job) => (
-              <Col md={4} key={job.id}>
+              <Col md={6} xl={4} key={job.id}>
                 <JobCard>
                   <div className='d-flex align-items-center'>
                     <img src={job.imageURL} height="100" alt={`${job.title} Icon`} />
