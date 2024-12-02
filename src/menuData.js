@@ -9,7 +9,7 @@ export const menuData = [
   },
   {
     label: 'Industries',
-    href: '/allindustries',
+    href: '/all-industries',
     children: [
       {
         heading: 'Agriculture to Electronic Industries',
@@ -98,7 +98,7 @@ export const menuData = [
   
   {
     label: 'Products',
-    href: '/allproducts',
+    href: '/all-products',
     children: [
       {
         submenu: [
@@ -107,7 +107,7 @@ export const menuData = [
           { label: 'Tech Cloud POS', href: '/products/point-of-sale' },
           { label: 'Tech Cloud Trading Software', href: '/products/trading-software' },
           { label: 'Tech Cloud Ecommerce', href: '/products/Ecommerce-software' },
-          { label: 'Tech Cloud HRM', href: '/products/hr-managament-software' },
+          { label: 'Tech Cloud HRM',  href: '/products/hr-managament-software'},
           { label: 'Tech Cloud Finance', href: '/products/financial-management-systems' },
           { label: 'Tech Cloud ERP Integrated-With-CRM-Ecommerce-POS', href: '/products/integrated-erp-software' },
           { label: 'Tech Cloud Restaurant ERP', href: '/products/erp-for-restaraunt' },
@@ -120,7 +120,7 @@ export const menuData = [
     href: '/business-intelligence' },
   {
     label: 'Services',
-    href: '/services',
+    href: '/all-services',
     children: [
       {
         submenu: [
@@ -134,7 +134,7 @@ export const menuData = [
   { label: 'Pricing', 
     href: '/pricing' },
   { label: 'Contact Us', 
-    href: '/ContactUs' },
+    href: '/contact-us' },
   { label: 'Demo', 
     href: '/scheduledemo',
     isDemo: true,

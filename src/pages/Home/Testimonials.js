@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 import { releavant } from "../../utils/constants";
-import { Title } from "./CardSection";
 
 // Styled Components
 const GradientContainer = styled(Container)`
@@ -70,7 +69,22 @@ const CarouselControls = styled.div`
     }
   }
 `;
+export const Title = styled.h3`
+  font-size: 40px;
+  color: #ef5226;
+  // line-height: 60px;
+  margin-bottom: 20px;
 
+  @media screen and (max-width: 1024px) {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+`;
 const Testimonials = ({ testimonialsData }) => {
   const [index, setIndex] = useState(0);
   const lastIndex = testimonialsData.length - 1;

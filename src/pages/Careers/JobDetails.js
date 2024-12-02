@@ -33,8 +33,9 @@ const JobHighlights = styled.div`
 `;
 
 const DropCV = styled.div`
-  background-image: url(${require('../../assets/formBg.webp')});
-  background-size: 100% 100%;
+  background-image: url(${require('../../assets/formBg.png')});
+  // background-size: 100% 100%;
+  background-size: cover;
   background-position: center;
   border-radius: 5px;
   padding: 8rem;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Accordion,  Col, Container, Row } from 'react-bootstrap';
 import { BodySection, ContentColumn, Description, Divider, Heading, Section } from '../IndustryPage';
-import { productData , whyTechCloudERPContent} from '../../utils/constants'; // Import product data from constants.js
+import { productData } from '../../utils/constants'; // Import product data from constants.js
 import styled from 'styled-components';
 import { BsCheckCircle } from 'react-icons/bs'; // Import tick mark icon from react-icons
 import { Title } from '../Home/CardSection';
@@ -119,11 +119,14 @@ const SectionWrapper = styled.div`
   background-image: url(${require("../../assets/Products/training.png")});
   background-size: 100% 100%;
   background-position: center;
+  @media screen and (max-width: 992px) {
+  padding: 0.5rem;
+  }
 `;
 
 const StyledTabContent = styled.div`
   background-color: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;

@@ -34,7 +34,7 @@ const Card = styled.div`
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  height: 400px; // Fixed height for consistency
+  height: 420px; // Fixed height for consistency
   min-height: 330px; // Ensure minimum height
   display: flex;
   flex-direction: column;
@@ -123,6 +123,11 @@ const SubTitle = styled.h6`
   display: block;
   margin: auto; // Optional: Add some margin for spacing
   text-align: center; // Center the text
+   @media (max-width: 992px) {
+    font-size: 1rem; 
+    width:100% !important;
+    padding: 1rem; 
+  }
 `;
 
 const ImportantModuleSection = () => {

@@ -32,22 +32,22 @@ const SocialIcon = styled.a`
 const SocialMediaIcons = () => {
   return (
     <div className="d-flex align-items-center ms-auto mb-4">
-      <SocialIcon href="https://www.instagram.com/techclouderp/?hl=en" target="_blank">
+      <SocialIcon href="https://www.instagram.com/techclouderp/?hl=en" target="_blank" rel="noopener noreferrer">
         <FaInstagram />
       </SocialIcon>
-      <SocialIcon href="https://www.facebook.com/TechCloudERPSoftwareSolutions" target="_blank">
+      <SocialIcon href="https://www.facebook.com/TechCloudERPSoftwareSolutions" target="_blank" rel="noopener noreferrer">
         <FaFacebookF />
       </SocialIcon>
-      <SocialIcon href="https://www.linkedin.com/company/13619340/admin/feed/posts/" target="_blank">
+      <SocialIcon href="https://www.linkedin.com/company/13619340/admin/feed/posts/" target="_blank" rel="noopener noreferrer">
         <FaLinkedinIn />
       </SocialIcon>
-      <SocialIcon href="https://in.pinterest.com/techclouderp/" target="_blank">
+      <SocialIcon href="https://in.pinterest.com/techclouderp/" target="_blank" rel="noopener noreferrer">
         <FaPinterest />
       </SocialIcon>
-      <SocialIcon href="https://www.youtube.com/channel/UChUCWRHTzZkYEPRR-AauNkA" target="_blank">
+      <SocialIcon href="https://www.youtube.com/channel/UChUCWRHTzZkYEPRR-AauNkA" target="_blank" rel="noopener noreferrer">
         <FaYoutube />
       </SocialIcon>
-      <SocialIcon href="https://twitter.com/TechCloudERP" target="_blank">
+      <SocialIcon href="https://twitter.com/TechCloudERP" target="_blank" rel="noopener noreferrer">
         <FaXTwitter />
       </SocialIcon>
     </div>

@@ -36,7 +36,8 @@ import DemoPage from './components/Navbar/DemoPage';
 
 function App() {
   return (
-    <Router >
+    
+    <Router  basename="/">
       <div className="App  md:bg-top bg-center">
         <Navigation/>
         {/* Define your Routes here */}
@@ -56,7 +57,7 @@ function App() {
           {/* Dynamic product pages */}
           <Route path="/products/:productId" element={<ProductPage />} />
           <Route path="/business-intelligence" element ={<BusinessIntelligence />} />
-          <Route path='/ContactUs' element={<ContactUs />} />
+          <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/terms-and-conditions' element ={<TermsAndConditions />} />
           <Route path='/privacypolicy' element ={<PrivacyPolicy />} />
           <Route path ='/mds-profile' element ={<MdsProfile />} />
@@ -65,7 +66,7 @@ function App() {
           {/* Other routes */}
           <Route path="/services/:serviceId" element={<ServicesSection />} />
           <Route path="/services/*" element={<NotFound />} />
-          <Route path='/services' element={<AllServicesSection />} />
+          <Route path='/all-services' element={<AllServicesSection />} />
           <Route path='/pricing' element={<PricingPage />} />
           <Route path='/features' element={<FeatureCard />} />
           <Route path='/ourbranches' element={<OurBranches />} />
@@ -78,8 +79,8 @@ function App() {
           {/* Other routes */}
           {/* Route for 404 Not Found */}
           <Route path="/industries/*" element={<NotFound />} />
-          <Route path='/allindustries' element={<AllIndustriesSection />} />
-          <Route path='/allproducts' element={<AllProductsSection/>} />
+          <Route path='/all-industries' element={<AllIndustriesSection />} />
+          <Route path='/all-products' element={<AllProductsSection/>} />
           <Route path="/products/*" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
           <Route path='/scheduledemo' element={<DemoPage />} />

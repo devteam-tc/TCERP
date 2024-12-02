@@ -14,10 +14,15 @@ import emailjs from '@emailjs/browser';
 const FormContainer = styled.div`
   margin: auto;
   padding: 20px;
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(75px);
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffffd6;
+    background-size: 100% 100%;
   @media (max-width: 992px) {
     width: 100%;
   }
@@ -132,7 +137,7 @@ const JobApplicationForm = ({ jobTitle }) => {
   return (
     <FormContainer>
             <ToastContainer /> {/* Add the ToastContainer */}
-      <h3 className="text-center">Job Application Form</h3>
+      <h3  style={{ color: '#ef5226' }}  className="text-center mt-3 mb-3">Job Application Form</h3>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -377,21 +382,22 @@ const JobApplicationForm = ({ jobTitle }) => {
 
     </Col>
   </Row>
-  
   <div className="skills-list">
-                  {values.skills.map((skill, index) => (
-                    <div key={index} className="skill-item">
-                      <Button className='mt-3'
-                        variant="danger"
-                        size="sm"
-                        onClick={() => setFieldValue('skills', values.skills.filter((_, i) => i !== index))}
-                        style={{ marginLeft: '10px' , backgroundColor: 'rgb(242, 117, 81)', color: 'white', border: 'none' }}
-                      >
-                          {skill} ✖
-                      </Button>
-                    </div>
-                  ))}
-                </div>
+  {values.skills.map((skill, index) => (
+    <div key={index} className="skill-item">
+      <Button 
+        className='mt-3'
+        variant="danger"
+        size="sm"
+        onClick={() => setFieldValue('skills', values.skills.filter((_, i) => i !== index))}
+        style={{ marginLeft: '10px', backgroundColor: 'rgb(242, 117, 81)', color: 'white', border: 'none' }}
+      >
+        {skill} ✖
+      </Button>
+    </div>
+  ))}
+</div>
+
 </Form.Group>
             <div className="d-flex justify-content-center">
             <Button

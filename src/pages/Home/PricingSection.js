@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { pricingPlans } from "../../utils/constants";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { GoCheckCircleFill } from "react-icons/go";
-import { Title } from "./CardSection";
 import { Link } from "react-router-dom";
 
 // Styled components
@@ -46,7 +45,7 @@ const Badge = styled.div`
   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px;
 `;
 
-const Price = styled.h1`
+const Price = styled.h3`
   font-size: 24px;
   font-weight: 600;
   line-height: 28.8px;
@@ -93,7 +92,22 @@ const CoverageList = styled.ul`
   line-height: 22.4px;
   letter-spacing: -0.03em;
 `;
+export const Title = styled.h3`
+  font-size: 40px;
+  color: #ef5226;
+  // line-height: 60px;
+  margin-bottom: 20px;
 
+  @media screen and (max-width: 1024px) {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+`;
 const CoverageItem = styled.li`
   font-size: 16px;
   margin-bottom: 10px;
@@ -174,7 +188,7 @@ const PricingSection = () => {
                 </CoverageItem>
               ))}
             </CoverageList>
-            <Link to="/ContactUs" onClick={scrollToTop} aria-label="Buy Now">
+            <Link to="/contact-us" onClick={scrollToTop} aria-label="Buy Now">
             <Button>Buy Now</Button>
           </Link>
             <p className="text-center pt-3">{pkg.creditCardRequired}</p>

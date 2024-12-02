@@ -69,34 +69,39 @@ const StatsSection = styled(Col)`
   color: white;
   padding: 60px;
   border-radius: 0 10px 10px 0px;
+  @media screen and (max-width: 992px) {
+  border-radius: 0px;
+  }
 
   h2 {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 16px;
+    @media screen and (max-width:992px){
+        font-size: 1.4rem;
+
+    }
   }
 
   ul {
     list-style-type: none;
     padding: 0;
     display: flex;
-    width: 214.198px;
     flex-direction: column;
-    align-items: flex-start;
-    gap: var(--Spacing-ml, 10px);
+    gap: 10px;
 
     li {
       display: flex;
       align-items: center;
-      gap: var(--Spacing-ml, 20px);
-      align-self: stretch;
+      gap: 20px;
 
-      i {
-        margin-right: 8px;
+      span {
+        white-space: nowrap; /* Ensure text doesn't wrap */
       }
     }
   }
 `;
+
 
 // React Component
 const PartnershipSection = () => {
@@ -117,12 +122,12 @@ const PartnershipSection = () => {
           <Button onClick={handleDemoClick}>Request a demo</Button>
         </TextSection>
         <StatsSection md={4}>
-          <h2>A Legacy of Innovation with Techcloud ERP</h2>
+          <h2>A Legacy of Innovation with Tech Cloud ERP</h2>
           <ul>
-            <li><BsCalendar size={20} /> 25+ Years of Experience</li>
-            <li><BsPeople size={20} /> 2,000+ Clients</li>
-            <li><BsPerson size={20} /> 10,000+ Users</li>
-            <li><BsBriefcase size={20} /> 38,000+ Professionals</li>
+            <li><BsCalendar size={20} /> <span style={ {  textwrap :'nowrap' } }>25+ Years of Experience</span></li>
+            <li><BsPeople size={20} /> <span>2,000+ Clients</span></li>
+            <li><BsPerson size={20} /> <span>10,000+ Users</span></li>
+            <li><BsBriefcase size={20} /> <span>38,000+ Professionals</span></li>
           </ul>
         </StatsSection>
       </Row>
