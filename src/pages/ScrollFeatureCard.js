@@ -176,8 +176,8 @@ const ScrollFeatureCard = () => {
    
     <div className='mt-5'>
         <Title className="text-center pt-5">Unique Features</Title>
-        <SubTitle className='w-50 mx-auto'>TechCloud ERP offers a cutting-edge solution with seamless integration, intuitive design, and robust real-time analytics.
-          It empowers businesses to streamline operations, enhance productivity, and drive informed decision-making effortlessly</SubTitle>
+        <SubTitle className='w-50 mx-auto'>Tech Cloud ERP offers a cutting-edge solution with seamless integration, intuitive design and robust real-time analytics.
+          It empowers businesses to streamline operations, enhance productivity and drive informed decision-making effortlessly.</SubTitle>
         <Container className=" pb-5">
           <SliderWrapper>
             <Slider {...sliderSettings}>

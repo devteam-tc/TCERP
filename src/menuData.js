@@ -24,7 +24,7 @@ export const menuData = [
           { label: 'Automative Industry', 
             href: '/industries/automative-industry' 
           },
-          { label: 'Bevarage Industry', 
+          { label: 'Beverage Industry', 
             href: '/industries/beverage-industry' 
           },
           {

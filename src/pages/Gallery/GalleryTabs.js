@@ -83,7 +83,7 @@ const GalleryTabs = () => {
     <GalleryContainer className='mt-3'>
     <Row className='justify-content-center'>
     <Title>Exhibition Gallery</Title>
-    <Description className='text-center w-50 p-3 md-0'>Experience our nationwide exhibition, offering free demos of our advanced business solutions. Discover the power of CRM, ERP, HRMS, Accounting, POS, and more through live demos, tailored to streamline your business growth.</Description>
+    <Description className='text-center w-50 p-3 md-0'>Experience our nationwide exhibition, offering free demos of our advanced business solutions. Discover the power of CRM, ERP, HRMS, Accounting, POS and more through live demos, tailored to streamline your business growth.</Description>
     </Row>
       <Container>
         <Row>
