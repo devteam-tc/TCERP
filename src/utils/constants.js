@@ -3651,9 +3651,9 @@ export const comparisonData = {
 // coFounders Data
 export const coFoundersData = [
   {
-      name: "Devang Patel",
+      name: "Mr. Devang Patel",
       title: "Chairman",
-      description: "Mr. Devang Patel, the esteemed Chairman of Tech Cloud ERP, has over 30 years of experience in business development and possesses extensive knowledge across various domains.With a visionary mindset and an unwavering commitment to excellence, Mr. Patel has been at the forefront of technological innovation in enterprise resource planning systems. His professional journey exemplifies a relentless pursuit of innovation and a leadership style that inspires action and progress. Under his guidance, Tech Cloud ERP has flourished, setting benchmarks in the ERP industry and continuously enhancing client satisfaction through innovative solutions.",
+      description: "Mr. Devang Patel, Chairman of Tech Cloud ERP, brings over 30 years of expertise in business development and a deep understanding of diverse industries. His visionary leadership and commitment to excellence have driven advancements in enterprise resource planning systems. With a relentless focus on innovation, Mr. Patel has inspired growth and progress, positioning Tech Cloud ERP as a leader in the industry. Under his guidance, the company has set new benchmarks, consistently delivering innovative solutions and enhancing client satisfaction.",
       socialLinks: {
           facebook: "#",
           linkedin: "#",
@@ -3662,9 +3662,9 @@ export const coFoundersData = [
       },
   },
   {
-      name: "Raja Shanmugam",
+      name: "Mr. Raja Shanmugam",
       title: "Founder & CEO",
-      description: "Mr. Raj, the dynamic Founder and CEO of Tech Cloud ERP. With a solid foundation in mechanical engineering and a distinguished certification as a SAP production planning consultant, Mr. Raj brings a unique blend of technical acumen and strategic foresight to the helm of our company. Mr. Raj has over 30 years of extensive experience in various sectors, including design, chemical processing, FMCG, and IT and has profound understanding in the manufacturing domain. A staunch advocate for innovation, Mr. Raj ensures that it is a staple in all his endeavors. His creation, Tech Cloud ERP, exemplifies this benefiting customers, employees, and stakeholders alike with its success. Beyond his professional achievements, Mr. Raj is dedicated to mentoring the next generation of industry leaders. His extensive and enthusiasm for knowledge sharing have considerably boosted the careers of multiple individuals, making him a recognised personality in both the technology and business areas.",
+      description: "Mr. Raj, a Mechanical Engineer and certified SAP Production Planning Consultant, brings over 30 years of expertise across sectors like Design, Chemical Processing, Manufacturing, FMCG, and IT. Renowned for his dynamic personality and sharp problem-solving skills, he has guided countless professionals and businesses to success. As the Founder and CEO of Tech Cloud ERP, Mr. Raj drives strategic planning, operations, and growth, leading the company with vision, dedication, and unwavering commitment to excellence.",
       socialLinks: {
           facebook: "#",
           linkedin: "https://www.linkedin.com/in/raj-techclouderp/",
