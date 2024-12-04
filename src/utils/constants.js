@@ -2907,8 +2907,8 @@ export const whyTechCloudERPContent = {
   imageSrc: require("../assets/About_us/why_tech_cloud_erp_img.webp"),
   title: "Why Tech Cloud ERP ?",
   description: [
-    'The complete solution by TechCloud ERP will meet all your business requirements and is designed to ease your process and increase the efficiency. Our system has scalability built into it so you can expand your business without pains of migrating into a new platform.',
-    'You get direct access to real-time data and enjoy some of the best reporting tools available for this process with TechCloud ERP as it drives your insights in making informed decisions. With an easy user interface, there is easy adoption and integration to any team right away with improved workflows.'
+    'The complete solution by Tech Cloud ERP will meet all your business requirements and is designed to ease your process and increase the efficiency. Our system has scalability built into it so you can expand your business without pains of migrating into a new platform.',
+    'You get direct access to real-time data and enjoy some of the best reporting tools available for this process with Tech Cloud ERP as it drives your insights in making informed decisions. With an easy user interface, there is easy adoption and integration to any team right away with improved workflows.'
   ],
   BusinessIntelligenceContent: { 
     imageSrc: require("../assets/About_us/bi-img.webp"),

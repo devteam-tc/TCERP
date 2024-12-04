@@ -61,8 +61,8 @@ export const Card = styled.div`
   }
 
   @media (max-width: 576px) {
-    width: 90vw;
-    height: auto;
+ width: 40vh !important;
+     height: auto;
   }
 `;
 
@@ -91,15 +91,15 @@ export const CardTitle = styled.h5`
   font-weight: 500;
 
   @media (max-width: 992px) {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   @media (max-width: 576px) {
-    font-size: 12px;
+    font-size: 20px;
   }
 `;
 

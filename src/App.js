@@ -75,7 +75,7 @@ function App() {
           <Route path="/blogForm" element={<BlogForm />} />
           <Route path='/careers' element={<CareersList />}/>
           <Route path="/careers/:jobId" element={<JobDetail />} />
-          <Route path="/job-entry" element={<AdminJobManagement />} />
+          {/* <Route path="/job-entry" element={<AdminJobManagement />} /> */}
           {/* Other routes */}
           {/* Route for 404 Not Found */}
           <Route path="/industries/*" element={<NotFound />} />

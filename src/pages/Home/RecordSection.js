@@ -108,7 +108,7 @@ const RecordSection = () => {
   };
 
   useEffect(() => {
-    const totalDuration = 20000; // 20 seconds
+    const totalDuration = 1500;
 
     // Start counting for each counter with respective end values
     startCounting('counter1', 25, totalDuration);

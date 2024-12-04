@@ -134,9 +134,9 @@ const Navigation = () => {
             >
               <FaPhone size={24} />
               <div className="dropdown-content">
-                <a className="dropdown-item" href="tel:+9198929439603">
+                <a className="dropdown-item" href="tel:+91 8919439603">
                   <ReactCountryFlag countryCode="IN" svg style={{ width: '24px', height: '18px' }} />
-                  <span>+91 8929439603</span>
+                  <span>+91  8919439603</span>
                 </a>
                 <a className="dropdown-item" href="tel:+13127663390">
                   <ReactCountryFlag countryCode="US" svg style={{ width: '24px', height: '18px' }} />

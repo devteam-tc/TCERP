@@ -60,8 +60,8 @@ const Card = styled.div`
   }
 
   @media (max-width: 576px) {
-    width: 90vw;
-    height: auto;
+        width: 40vh !important;
+            height: auto;
   }
 `;
 
@@ -90,15 +90,15 @@ const CardTitle = styled.h5`
   font-weight: 500;
 
   @media (max-width: 992px) {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 20px;
   }
 
   @media (max-width: 576px) {
-    font-size: 12px; // Smaller font on mobile devices
+    font-size: 20px; // Smaller font on mobile devices
   }
 `;
 
@@ -171,7 +171,7 @@ const ImportantModuleSection = () => {
   return (
     <div>
       <Title className="text-center pt-4 pt-md-0">Important Modules</Title>
-      <SubTitle className='mb-3 mt-3'>The importance of modules in a system can vary depending on the specific needs and goals of an organization</SubTitle>
+      <SubTitle className='mb-3 mt-3'>Explore key ERP modules like Finance, HR, Inventory, and CRM that streamline operations and drive efficiency.</SubTitle>
       <Container className="mb-3">
         <SliderWrapper>
           <Slider {...sliderSettings}>

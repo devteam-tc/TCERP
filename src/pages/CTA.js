@@ -117,7 +117,7 @@ const PartnershipSection = () => {
         <TextSection md={8}>
           <h1>Progress Through Partnership</h1>
           <p>
-            Our expert team is committed to building tailored solutions that meet your specific needs and budget. With Techcloud ERP, you can trust that your construction business is in safe hands.
+            Our expert team is committed to building tailored solutions that meet your specific needs and budget. With Tech Cloud ERP, you can trust that your construction business is in safe hands.
           </p>
           <Button onClick={handleDemoClick}>Request a demo</Button>
         </TextSection>
