@@ -73,7 +73,7 @@ const FeatureCard = () => {
         <Row>
           <Title className="text-center mt-3 mb-3">Unique Features</Title>
           <SubTitle >
-            TechCloud ERP offers a cutting-edge solution with seamless
+            Tech Cloud ERP offers a cutting-edge solution with seamless
             integration, intuitive design, and robust real-time analytics. It
             empowers businesses to streamline operations, enhance productivity,
             and drive informed decision-making effortlessly.

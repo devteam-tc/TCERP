@@ -158,7 +158,7 @@ const Footer = () => {
             <Logo src={releavant.logo} alt="Tech Cloud ERP Logo" />
             <FooterText className="pt-3">
               Tech Cloud ERP delivers top-notch solutions tailored for any
-              businesses, combining advanced technology, intuitive design, and
+              businesses, combining advanced technology, intuitive design and
               comprehensive features.
             </FooterText>
             <SocialMediaIcons />

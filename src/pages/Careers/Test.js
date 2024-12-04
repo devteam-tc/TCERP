@@ -2,7 +2,7 @@ import React from 'react';
 import { Form, Button, Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { db } from '../../firebase';
-import { collection, addDoc, doc, getDoc } from "firebase/firestore";
+import { collection, addDoc, doc, getDoc, getDocs, query, where, Timestamp } from "firebase/firestore";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DatePicker from 'react-datepicker';
@@ -69,9 +69,9 @@ const JobApplicationForm = ({ jobTitle }) => {
     totalExperience: '',
     experienceList: [{ from: '', to: '', company: '', responsibilities: '' }],
     skills: [],
-    newSkill: '',
     currentCTC: '',
     expectedCTC: '',
+    AppliedDate: Timestamp.now()
   };
 
   const fetchEmailKeys = async () => {
@@ -97,9 +97,32 @@ const JobApplicationForm = ({ jobTitle }) => {
       experienceList: JSON.stringify(values.experienceList),
       skills: values.skills.join(', '),
       AppliedRole: jobTitle,
+      AppliedDate: Timestamp.now()
     };
 
     try {
+
+      // Check if the user has already applied
+    const jobApplicationsRef = collection(db, 'jobApplications');
+    const querySnapshot = await getDocs(
+      query(
+        jobApplicationsRef,
+        where('email', '==', values.email),
+        where('phone', '==', values.phone),
+        where('fullName', '==', values.fullName),
+        where('AppliedRole', '==', jobTitle)
+      )
+    );
+
+    if (!querySnapshot.empty) {
+      toast.error('You have already applied for this position.', {
+        position: 'top-center',
+        autoClose: 3000,
+      });
+      setSubmitting(false);
+      return;
+    }
+
       // Store in Firebase
       await addDoc(collection(db, 'jobApplications'), structuredData);
 
@@ -278,7 +301,6 @@ const JobApplicationForm = ({ jobTitle }) => {
     />
   </Form.Group>
 </Col>
-
                         <Col md={12} className="mt-3">
                                       <Form.Group>
                 <Form.Label>Responsibilities</Form.Label>
@@ -378,8 +400,6 @@ const JobApplicationForm = ({ jobTitle }) => {
 >
   Add Skill
 </Button>
-
-
     </Col>
   </Row>
   <div className="skills-list">

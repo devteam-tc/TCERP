@@ -36,6 +36,7 @@ const SocialIcon = styled.a`
     ${({ href }) => {
       if (href.includes('instagram')) return 'color: #E1306C; border-color: #E1306C;';
       if (href.includes('facebook')) return 'color: #1877F2; border-color: #1877F2;';
+      if (href.includes('pinterest')) return 'color: #E60023; border-color: #E60023;';
       if (href.includes('linkedin')) return 'color: #0077B5; border-color: #0077B5;';
       if (href.includes('youtube')) return 'color: #FF0000; border-color: #FF0000;';
       if (href.includes('twitter')) return 'color: #1DA1F2; border-color: #1DA1F2;';

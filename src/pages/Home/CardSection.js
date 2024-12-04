@@ -112,7 +112,7 @@ const CardSection = () => {
 
   return (
     <div className="my-md-5" style={{ backgroundColor: '#F5FDFF', padding: '60px 0px' }}>
-      <Title className="text-center p-2 pt-md-0">Discover the Advantages of Tech Cloud ERP</Title>
+      <Title className="text-center pt-4 pt-md-0">Discover the Advantages of Tech Cloud ERP</Title>
       <Container>
         <Row>
           {moreCardsToShow.map((card, index) => (

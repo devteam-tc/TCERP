@@ -61,19 +61,26 @@ const MobileNavigationDrawer = ({
         className={`drawer_content ${isDrawerOpen ? 'active' : ''}`}
       >
         <div className="close_drawer">
-          <img src={releavant.logo} alt='MobileLogoImg' style={{width: '200px'}} />
-          <button
-            onClick={() => {
-              setIsDrawerOpen(false);
-              // Focus the drawer button when it closes
-              if (drawerButtonRef.current) {
-                drawerButtonRef.current.focus();
-              }
-            }}
-          >
-            <X size={30} />
-          </button>
-        </div>
+  <img
+    src={releavant.logo}
+    alt="MobileLogoImg"
+    style={{ width: '200px', cursor: 'pointer' }}
+    onClick={() => {
+      window.location.href = '/';
+    }}
+  />
+  <button
+    onClick={() => {
+      setIsDrawerOpen(false);
+      if (drawerButtonRef.current) {
+        drawerButtonRef.current.focus();
+      }
+    }}
+  >
+    <X size={30} />
+  </button>
+</div>
+
         <div>
           <MegaMenu
             handleToggle={handleToggle}
