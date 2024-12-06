@@ -125,7 +125,6 @@ const JobApplicationForm = ({ jobTitle }) => {
 
       // Store in Firebase
       await addDoc(collection(db, 'jobApplications'), structuredData);
-
       // Prepare data for EmailJS
       const templateParams = {
         ...structuredData,
@@ -142,15 +141,22 @@ const JobApplicationForm = ({ jobTitle }) => {
       const { service_id, template_id, public_key } = await fetchEmailKeys();
       await emailjs.send(service_id, template_id, templateParams, public_key);
       toast.success('Application submitted successfully!', {
-        position: 'top-center',
-        autoClose: 3000,
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
       });
       resetForm();
     } catch (error) {
       console.error('Error submitting application:', error);
       toast.error('Failed to submit application. Please try again.', {
-        position: 'top-center',
+        position: 'top-center !important',
         autoClose: 3000,
+        
       });
     } finally {
       setSubmitting(false);

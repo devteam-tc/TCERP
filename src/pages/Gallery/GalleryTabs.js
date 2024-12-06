@@ -73,47 +73,6 @@ export const Title = styled.h3`
     margin-bottom: 20px;
   }
 `;
-// const GalleryTabs = () => {
-//   const navigate = useNavigate();
-
-//   const handleCardClick = (id) => {
-//     navigate(`/gallery/${id}`);
-//     window.scrollTo(0, 0); // Ensure the page scrolls to the top
-//   };
-
-//   return (
-//     <GalleryContainer className='mt-3'>
-//     <Row className='justify-content-center'>
-//     <Title>Exhibition Gallery</Title>
-//     <Description className='text-center w-50 p-3 md-0'>Join our nationwide exhibition to experience live demos of advanced ERP solutions, designed to assist your business flourish . Experience innovative features and discover how we can elevate your business efficiency!</Description>
-//     </Row>
-//       <Container>
-//         <Row>
-//           {/* Loop through all the images in the galleryData, combining expo and festival */}
-//           {Object.keys(galleryData).map((category) =>
-//             galleryData[category].map((item) => (
-//               <Col key={item.id} xs={12} md={6} lg={3}>
-//                 <CardContainer onClick={() => handleCardClick(item.id)}>
-//                       <CardItem className="text-start fw-semibold">
-//                         <div className='mb-3'>
-//                           <img src={item.img} alt={item.alt} className="w-auto" />
-//                         </div>
-//                         <p className="font-weight-bold">
-//                         <span className="fw-bold text-black">{category === 'festival' ? 'Event Name: ' : 'Location: '}</span>{item.location}
-//                         </p>
-//                         <p><span className="fw-bold text-black">Venue:</span> {item.venue}</p>
-//                         <p><span className="fw-bold text-black mb-2">Date:</span> {item.date}</p>
-//                       </CardItem>
-//                     </CardContainer>
-//               </Col>
-//             ))
-//           )}
-//         </Row>
-//       </Container>
-//     </GalleryContainer>
-//   );
-// };
-
 const GalleryTabs = () => {
   const navigate = useNavigate();
   const [galleryData, setGalleryData] = useState({});

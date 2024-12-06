@@ -67,7 +67,7 @@ const Perks = () => {
       <Container>
       <PerksTitle>Perks Of Working With <span>Tech Cloud ERP</span></PerksTitle>
       <Divider />
-      <Subtitle>At techcloud erp, we prioritize our employees' beliefs and respect their individual decisions. Our platform encourages showcasing individual skills, fostering creativity and innovation. We believe in the unique potential of each team member to contribute to our collective success.</Subtitle>
+      <Subtitle>At Tech Cloud ERP, we prioritize our employees' beliefs and respect their individual decisions. Our platform encourages showcasing individual skills, fostering creativity and innovation. We believe in the unique potential of each team member to contribute to our collective success.</Subtitle>
       <Row className="justify-content-center">
         {perks.map((perk, index) => (
           <Col key={index} md={6}>

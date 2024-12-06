@@ -43,7 +43,13 @@
 .toast {
   margin: 0 auto;
 }
-
+.Toastify__toast-container--top-center {
+  right: -39%;
+  top: -123% !important;
+  top: var(--toastify-toast-top);
+  left: auto;
+  transform: translateX(-50%);
+}
 .custom-btn-toolbar {
   display: inline !important;
 }

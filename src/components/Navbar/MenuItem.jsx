@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import Container from './Container';
 import DropdownContent from './DropdownContent';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { FiPlus , FiMinus  } from 'react-icons/fi'; // Import FiPlus icon
 
 const MenuItem = ({
   label,
@@ -10,7 +10,7 @@ const MenuItem = ({
   onToggle,
   active,
   setIsDrawerOpen,
-  onMenuClick, // Add onMenuClick prop
+  onMenuClick,
 }) => {
   const handleClick = () => {
     const activeElement = document.activeElement;
@@ -18,7 +18,6 @@ const MenuItem = ({
   };
 
   const handleItemClick = () => {
-    // Call the onMenuClick function
     onMenuClick && onMenuClick();
     handleClick();
     setIsDrawerOpen && setIsDrawerOpen(false);
@@ -30,7 +29,7 @@ const MenuItem = ({
         <NavLink
           to={href}
           className={({ isActive }) => (isActive ? 'active' : '')}
-          onClick={handleItemClick} // Update to handle item click
+          onClick={handleItemClick}
         >
           <div>{label}</div>
         </NavLink>
@@ -42,7 +41,12 @@ const MenuItem = ({
             aria-haspopup="menu"
             aria-expanded={active ? 'true' : 'false'}
           >
-            {active ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+            {/* Use FiPlus for mobile and ChevronDown for desktop */}
+            {active ? (
+              <FiMinus size={20} className="mobile-only" />
+            ) : (
+              <FiPlus  size={20} className="desktop-only" />
+            )}
           </button>
         )}
       </div>

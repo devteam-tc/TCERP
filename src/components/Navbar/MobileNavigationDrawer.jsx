@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-
 import { X } from 'lucide-react';
 import MegaMenu from './MegaMenu';
 import { releavant } from '../../utils/constants';
