@@ -152,12 +152,23 @@ const ExpoDetail = () => {
 
       <Container>
         <Row>
-          <ContentColumn md={12} className="mt-4">
+        {/* {images.map((img, index) => (
+                <ContentColumn md={4} className="mt-4">
+                  <a href={img} key={index}>
+                  <FixedSizeImage 
+                    src={img} 
+                    alt={`${expo.title} Image ${index + 1}`} // Unique alt tag
+                    className="mb-2" 
+                  />
+                </a>
+                </ContentColumn>
+              ))} */}
+          <Col  className="mt-4">
             <LightGallery
               speed={500}
               download={false}  
               plugins={[lgThumbnail, lgZoom, lgFullscreen, lgShare, lgRotate]}>
-              {images.slice(0, 2).map((img, index) => (
+              {images.map((img, index) => (
                 <a href={img} key={index}>
                   <FixedSizeImage 
                     src={img} 
@@ -168,7 +179,7 @@ const ExpoDetail = () => {
               ))}
             </LightGallery>
 
-            <Row>
+            {/* <Row>
               {images.slice(2).map((img, index) => (
                 <Col md={4} key={index + 2} className="mb-3">
                   <LightGallery
@@ -185,8 +196,8 @@ const ExpoDetail = () => {
                   </LightGallery>
                 </Col>
               ))}
-            </Row>
-          </ContentColumn>
+            </Row> */}
+          </Col>
         </Row>
       </Container>
     </>

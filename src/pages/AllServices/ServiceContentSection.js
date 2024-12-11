@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
 import { servicesContent } from '../../utils/constants';
+import AnimatedColumn from "../../components/AnimatedLeftRight";
 
 // Styled components
 const StyledContainer = styled(Container)`
@@ -21,7 +22,7 @@ const StyledContainer = styled(Container)`
 
 const ImageWrapper = styled.div`
   img {
-    width: 100%;
+    width: 75%;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -82,11 +83,14 @@ const ServiceContentSection = () => {
         <StyledContainer key={index}>
           <Row className="align-items-center">
             <Col md={{ span: 6, order: index % 2 !== 0 ? 2 : 1 }}>
+            <AnimatedColumn direction="left">
               <ImageWrapper>
                 <img src={service.imageUrl} alt={service.title} />
               </ImageWrapper>
+              </AnimatedColumn>
             </Col>
             <Col md={{ span: 6, order: index % 2 !== 0 ? 1 : 2 }}>
+            <AnimatedColumn direction="right">
               <ContentWrapper>
                 <Title>{service.title}</Title>
                 <Description>{service.description1}</Description>
@@ -100,6 +104,7 @@ const ServiceContentSection = () => {
                   {service.buttonText}
                 </StyledButton>
               </ContentWrapper>
+              </AnimatedColumn>
             </Col>
           </Row>
         </StyledContainer>

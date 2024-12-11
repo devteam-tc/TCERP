@@ -4,6 +4,7 @@ import { pricingPlans } from "../../utils/constants";
 import { FaIndianRupeeSign } from "react-icons/fa6";
 import { GoCheckCircleFill } from "react-icons/go";
 import { Link } from "react-router-dom";
+import AnimatedSection from "../../components/AnimatedUp";
 
 // Styled components
 const Section = styled.section`
@@ -161,6 +162,7 @@ const PricingSection = () => {
       <Title className="text-center pt-4 pt-md-0">Tech Cloud ERP Pricing</Title>
       <CardContainer>
         {pricingPlans.map((pkg, index) => (
+          <AnimatedSection key={index} className="animated-section">
           <Card
             key={index}
             style={{ background: pkg.background, color: pkg.color }}
@@ -193,6 +195,7 @@ const PricingSection = () => {
           </Link>
             <p className="text-center pt-3">{pkg.creditCardRequired}</p>
           </Card>
+          </AnimatedSection>
         ))}
       </CardContainer>
     </Section>

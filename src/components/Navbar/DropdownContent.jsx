@@ -25,7 +25,7 @@ const DropdownContent = ({
                     handleClick();
                   }}
                 >
-                  <Link to={href}>{label}</Link>
+                  <Link to={href} onClick={() => { window.scrollTo(0, 0) }}>{label}</Link>
                 </li>
               ))}
             </ul>

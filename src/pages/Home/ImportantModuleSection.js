@@ -6,6 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { ModulecardsData } from '../../utils/constants';
 import { Title } from './CardSection';
 import { Container } from 'react-bootstrap';
+import AnimatedSection from '../../components/AnimatedUp';
 
 // Styled Components for Slider
 const SliderWrapper = styled.div`
@@ -169,7 +170,8 @@ const ImportantModuleSection = () => {
   };
 
   return (
-    <div>
+    <AnimatedSection id="hero" className="animated-section">
+      <div>
       <Title className="text-center pt-4 pt-md-0">Important Modules</Title>
       <SubTitle className='mb-3 mt-3'>Explore key ERP modules like Finance, HR, Inventory, and CRM that streamline operations and drive efficiency.</SubTitle>
       <Container className="mb-3">
@@ -186,6 +188,7 @@ const ImportantModuleSection = () => {
         </SliderWrapper>
       </Container>
     </div>
+    </AnimatedSection>
   );
 };
 

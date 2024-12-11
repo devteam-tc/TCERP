@@ -5,10 +5,11 @@ import { useParams } from 'react-router-dom';
 import NotFound from '../NotFound';
 import { servicesData } from '../../utils/constants';
 import { Title } from '../Home/CardSection';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import CTA  from '../CTA';
 import OurPartnerSection from '../Home/OurPartnerSection';
+
 // Styled components
 const DescriptionContainer = styled.div``;
 
@@ -19,11 +20,11 @@ const Text = styled.p`
   margin-bottom: 1rem;
 `;
 
-const Image = styled.img`
-  max-width: 100%;
-  border-radius: 0.5rem;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-`;
+// const Image = styled.img`
+//   max-width: 100%;
+//   border-radius: 0.5rem;
+//   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+// `;
 
 const FAQContainer = styled.div`
   margin: 0 auto;
@@ -143,6 +144,29 @@ const Icon = styled.span`
   color: #e55300;
 `;
 
+// Define keyframes for the up-down animation
+const upDownAnimation = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+`;
+
+// Styled component for the image
+const AnimatedImage = styled.img`
+  width: 75%; /* Matches the w-75 class */
+  border: none; /* Matches border-0 class */
+  transition: transform 0.5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05); /* Hover effect */
+  }
+
+  animation: ${upDownAnimation} 3s ease-in-out infinite;
+`;
+
 const ServicesSection = () => {
   const { serviceId } = useParams();
   const [activeIndex, setActiveIndex] = useState(null);
@@ -195,8 +219,11 @@ const ServicesSection = () => {
             <Text key={index}>{paragraph}</Text>
           ))}
         </Col>
-        <Col md={6} className="text-center text-md-end p-0">
+        {/* <Col md={6} className="text-center text-md-end p-0">
           <Image className="w-75 border-0" src={service.image} alt={service.altText} />
+        </Col> */}
+        <Col md={6} className="text-center text-md-end p-0">
+          <AnimatedImage src={service.image} alt={service.altText} />
         </Col>
       </Row>
     </Container>

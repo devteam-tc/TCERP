@@ -1,0 +1,23 @@
+/* Add hover effect */
+.hover-moving-effect {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .hover-moving-effect:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  /* Up-Down animation */
+  .up-down-animation {
+    animation: upDown 3s ease-in-out infinite;
+  }
+  
+  @keyframes upDown {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  

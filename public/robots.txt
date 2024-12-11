@@ -1,2 +1,6 @@
+# /robots.txt for www.techclouderp.com
 User-agent: *
-Allow: /
+Sitemap: https://www.techclouderp.com/sitemap.xml
+
+
+User-agent: *

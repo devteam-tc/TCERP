@@ -37,13 +37,13 @@ import DemoPage from './components/Navbar/DemoPage';
 function App() {
   return (
     
-    <Router  basename="/">
+    <Router>
       <div className="App  md:bg-top bg-center">
         <Navigation/>
         {/* Define your Routes here */}
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/about-us" element={<AboutUs />}/>
           {/* Dynamic routes for each industry */}
           {Object.keys(sectionsData).map((industry) => (
             <Route

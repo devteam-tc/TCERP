@@ -6,6 +6,8 @@ import styled from 'styled-components';
 import { modulesData } from '../../utils/constants';
 import { FaArrowRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import AnimatedColumn from '../../components/AnimatedLeftRight';
+import AnimatedSection from '../../components/AnimatedUp';
 
 // Styled Components
 const StyledContainer = styled.div`
@@ -104,9 +106,11 @@ const AllProductsSection = () => {
         <Container>
           <Row>
             <ContentColumn md={6}>
+              <AnimatedColumn direction="left">
               <StyledHeading>{aboutus_data.allproducts.heading}</StyledHeading>
               <Divider />
               <StyledDescription>{aboutus_data.allproducts.description}</StyledDescription>
+              </AnimatedColumn>
             </ContentColumn>
           </Row>
         </Container>
@@ -115,6 +119,7 @@ const AllProductsSection = () => {
         <Row>
           {modulesData.map((module, index) => (
             <Col key={index} sm={12} md={6} lg={4}>
+              <AnimatedSection className="animated-section">
               <StyledCard>
                 <StyledImage variant="top" src={module.image} alt={module.title} />
                 <StyledCardBody>
@@ -129,6 +134,7 @@ const AllProductsSection = () => {
                   </ExploreLink>
                 </StyledCardBody>
               </StyledCard>
+              </AnimatedSection>
             </Col>
           ))}
         </Row>

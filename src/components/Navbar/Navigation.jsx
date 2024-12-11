@@ -120,7 +120,7 @@ const Navigation = () => {
     <header className="nav__header">
         <Container>
           <div className="toolbar">
-            <Link className="logo__link" to={'/'}>
+            <Link className="logo__link" to={'/'} onClick={() => window.scrollTo(0, 0)} >
               <img src={releavant.logo} style={{ height: '80px' }} alt='Tech Cloud ERP Logo, leading ERP solutions provider in India' />
             </Link>
             <div className="hidden md:block">

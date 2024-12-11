@@ -7,6 +7,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { featuresData } from '../utils/constants';
 import { Title } from './Home/CardSection';
 import { Container } from 'react-bootstrap';
+import AnimatedSection from '../components/AnimatedUp';
 
 // Styled Components for Slider
 export const SliderWrapper = styled.div`
@@ -173,8 +174,8 @@ const ScrollFeatureCard = () => {
 
   return (
     <>
-   
     <div className='mt-5'>
+    <AnimatedSection id="hero" className="animated-section">
         <Title className="text-center pt-5">Unique Features</Title>
         <SubTitle className='w-50 mx-auto'>Tech Cloud ERP provides an easy-to-use solution with smooth integration, powerful real-time analytics, and tools to help businesses improve operations, boost productivity, and make smarter decisions.</SubTitle>
         <Container className=" pb-5">
@@ -190,8 +191,10 @@ const ScrollFeatureCard = () => {
             </Slider>
           </SliderWrapper>
         </Container>
-      </div>
-      </>
+        </AnimatedSection>
+    </div>
+    
+    </>
   );
 };
 export default ScrollFeatureCard;

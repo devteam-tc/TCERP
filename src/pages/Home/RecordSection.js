@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { recordcount } from '../../utils/constants';
+import AnimatedSection from '../../components/AnimatedUp';
 
 // Styled Components
 const StatsSection = styled.section`
@@ -118,6 +119,7 @@ const RecordSection = () => {
   }, []);
 
   return (
+    <AnimatedSection id="hero" className="animated-section">
     <StatsSection>
       <Container>
         <StyledRow>
@@ -135,6 +137,7 @@ const RecordSection = () => {
         </StyledRow>
       </Container>
     </StatsSection>
+    </AnimatedSection>
   );
 };
 
