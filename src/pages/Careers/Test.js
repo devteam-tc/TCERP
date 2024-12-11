@@ -261,7 +261,13 @@ const handleFileChange = (event) => {
                 </Form.Group>
               </Col>
             </Row>
-            <Form.Group controlId="totalExperience" className="mt-3">
+           
+
+          
+
+            <Row>
+              <Col md={4}>
+              <Form.Group controlId="totalExperience" className="mt-3">
               <Form.Label>Total Years of Work Experience</Form.Label>
               <Field
                 type="number"
@@ -271,11 +277,8 @@ const handleFileChange = (event) => {
                 />
               <ErrorMessage name="totalExperience" component="div" className="text-danger" />
             </Form.Group>
-
-          
-
-            <Row>
-              <Col md={6}>
+              </Col>
+              <Col md={4}>
                 <Form.Group controlId="currentCTC" className="mt-3">
                   <Form.Label>Current CTC</Form.Label>
                   <Field
@@ -288,7 +291,7 @@ const handleFileChange = (event) => {
 
                 </Form.Group>
               </Col>
-              <Col md={6}>
+              <Col md={4}>
                 <Form.Group controlId="expectedCTC" className="mt-3">
                   <Form.Label>Expected CTC</Form.Label>
                   <Field
