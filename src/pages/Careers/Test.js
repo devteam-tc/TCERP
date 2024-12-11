@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Button, Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
-import { db } from '../../firebase';
-import { collection, addDoc, doc, getDoc } from "firebase/firestore";
+import { db, storage } from '../../firebase'; 
+import { collection, addDoc, doc, getDocs, query, where, Timestamp, getDoc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import DatePicker from 'react-datepicker';
@@ -27,6 +28,32 @@ const FormContainer = styled.div`
     width: 100%;
   }
 `;
+const UploadSection = styled.div`
+  border: 2px dashed #ff6b00; /* Orange border */
+  text-align: center;
+  padding: 20px;
+  // background-color: #000; 
+  color: #ef5226 !important; 
+  // max-width: 600px;
+  margin: 0 auto;
+
+  p {
+    font-size: 14px;
+  color: #ef5226 !important; 
+    margin-top: 10px;
+  }
+`;
+
+const FileInput = styled.input`
+  display: none;
+`;
+
+const Label = styled.label`
+  cursor: pointer;
+  font-size: 16px;
+  color: #ef5226 !important; 
+  text-decoration: underline;
+`;
 
 // Validation Schema using Yup
 const validationSchema = Yup.object({
@@ -40,7 +67,7 @@ const validationSchema = Yup.object({
   .typeError('Total years of work experience must be a number')
   .min(0, 'Experience cannot be negative') 
   .required('Total years of work experience is required') ,
-
+  resume: Yup.mixed().required('Resume is required'),
   experienceList: Yup.array().of(
     Yup.object({
       from: Yup.date().required('Start date is required'),
@@ -57,87 +84,114 @@ const validationSchema = Yup.object({
     .typeError('Expected CTC must be a valid number')
     .positive('Expected CTC must be a positive number')
     .required('Expected CTC is required'),
-  skills: Yup.array().min(1, 'At least one skill is required'),
+  
 });
 
 const JobApplicationForm = ({ jobTitle }) => {
+  const [resumeFile, setResumeFile] = useState(null);
+  const [fileError, setFileError] = useState('');
   const initialValues = {
     fullName: '',
     email: '',
     phone: '',
     education: '',
+    resume: null,
     totalExperience: '',
     experienceList: [{ from: '', to: '', company: '', responsibilities: '' }],
-    skills: [],
     currentCTC: '',
     expectedCTC: '',
+    AppliedDate: Timestamp.now()
   };
 
   const fetchEmailKeys = async () => {
-    try {
-        const docRef = doc(db, "emailConfig", "emailKeys");
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-            const { service_id, template_id, public_key } = docSnap.data();
-            return { service_id, template_id, public_key };
-        } else {
-            throw new Error("No email configuration found!");
-        }
-    } catch (error) {
-        console.error("Error fetching email keys:", error);
-        throw error;
-    }
-};
-
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-    const structuredData = {
-      ...values,
-      experienceList: JSON.stringify(values.experienceList),
-      skills: values.skills.join(', '),
-      AppliedRole: jobTitle,
-    };
-
-    try {
-      // Store in Firebase
-      await addDoc(collection(db, 'jobApplications'), structuredData);
-      // Prepare data for EmailJS
-      const templateParams = {
-        ...structuredData,
-        experienceList: values.experienceList
-          .map(
-            (exp, index) =>
-              `${index + 1}. From: ${exp.from ? new Date(exp.from).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : ''} ` +
-            `To: ${exp.to ? new Date(exp.to).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : ''} | ` +
-            `Company: ${exp.company} | Responsibilities: ${exp.responsibilities}`
-          )
-          .join('\n'),
-      };
-      // Send email using EmailJS
-      const { service_id, template_id, public_key } = await fetchEmailKeys();
-      await emailjs.send(service_id, template_id, templateParams, public_key);
-      toast.success('Application submitted successfully!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "colored",
-      });
-      resetForm();
-    } catch (error) {
-      console.error('Error submitting application:', error);
-      toast.error('Failed to submit application. Please try again.', {
-        position: 'top-center !important',
-        autoClose: 3000,
-        
-      });
-    } finally {
-      setSubmitting(false);
+    const docRef = doc(db, "emailConfig", "emailKeys");
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      const { service_id, template_id, public_key } = docSnap.data();
+      return { service_id, template_id, public_key };
+    } else {
+      throw new Error("No email configuration found!");
     }
   };
+
+const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+
+  const resumeRef = ref(storage, `resumes/${values.email}_${Date.now()}`);
+      await uploadBytes(resumeRef, resumeFile);
+      const resumeURL = await getDownloadURL(resumeRef);
+  
+
+  const structuredData = {
+    ...values,
+    experienceList: JSON.stringify(values.experienceList),
+    AppliedRole: jobTitle,
+    resumeURL, 
+    AppliedDate: Timestamp.now()
+  };
+
+  try {
+
+    // Check if the user has already applied
+  const jobApplicationsRef = collection(db, 'jobApplications');
+  const querySnapshot = await getDocs(
+    query(
+      jobApplicationsRef,
+      where('email', '==', values.email),
+      where('phone', '==', values.phone),
+      where('fullName', '==', values.fullName),
+      where('AppliedRole', '==', jobTitle)
+    )
+  );
+
+  if (!querySnapshot.empty) {
+    toast.error('You have already applied for this position.', {
+      position: 'top-center',
+      autoClose: 3000,
+    });
+    setSubmitting(false);
+    return;
+  }
+
+    // Store in Firebase
+    await addDoc(collection(db, 'jobApplications'), structuredData);
+    // Prepare data for EmailJS
+    const templateParams = {
+      ...structuredData,
+      experienceList: values.experienceList
+        .map(
+          (exp, index) =>
+            `${index + 1}. From: ${exp.from ? new Date(exp.from).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : ''} ` +
+          `To: ${exp.to ? new Date(exp.to).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : ''} | ` +
+          `Company: ${exp.company} | Responsibilities: ${exp.responsibilities}`
+        )
+        .join('\n'),
+    };
+    // Send email using EmailJS
+    const { service_id, template_id, public_key } = await fetchEmailKeys();
+    await emailjs.send(service_id, template_id, templateParams, public_key);
+    toast.success('Application submitted successfully!', { position: 'top-right', autoClose: 5000 });
+    resetForm();
+  } catch (error) {
+    console.error('Error submitting application:', error);
+    toast.error('Failed to submit application. Please try again.', {
+      position: 'top-center !important',
+      autoClose: 3000,
+      
+    });
+  } finally {
+    setSubmitting(false);
+  }
+};
+
+const handleFileChange = (event) => {
+  const file = event.target.files[0];
+  if (file && file.size <= 2 * 1024 * 1024) { // Check for file size (2 MB max)
+    setResumeFile(file);
+  } else {
+    alert("File size exceeds 2 MB or is invalid");
+  }
+};
+
 
   return (
     <FormContainer>
@@ -218,115 +272,7 @@ const JobApplicationForm = ({ jobTitle }) => {
               <ErrorMessage name="totalExperience" component="div" className="text-danger" />
             </Form.Group>
 
-            <h4 className="mt-4">Work Experience</h4>
-            
-            <FieldArray name="experienceList">
-              {({ push, remove }) => (
-                <>
-                  {values.experienceList.map((_, index) =>  (
-                    <div key={index} className="border p-3 mb-3 rounded"  style={{
-                      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
-                    }}>
-                      <Row>
-                        <Col md={12}>
-                          <Form.Group>
-                            <Form.Label>Company Name</Form.Label>
-                            <Field
-                              name={`experienceList.${index}.company`}
-                              placeholder="Company Name"
-                              className={`form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}                            />
-                            <ErrorMessage
-                              name={`experienceList.${index}.company`}
-                              component="div"
-                              className="text-danger"
-                            />
-                          </Form.Group>
-                        </Col>
-                     
-                      </Row>
-
-                      <Row className="mt-3">
-                      <Col md={6}>
-  <Form.Group>
-    <Form.Label className="mb-3">From</Form.Label> {/* Add margin-bottom */}
-    <DatePicker
-      selected={values.experienceList[index].from}
-      onChange={(date) => setFieldValue(`experienceList.${index}.from`, date)}
-      dateFormat="MM/yyyy"
-      showMonthYearPicker
-      placeholderText="Select start date"
-      className={`form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}
-    />
-    <ErrorMessage
-      name={`experienceList.${index}.from`}
-      component="div"
-      className="text-danger"
-    />
-  </Form.Group>
-</Col>
-
-<Col md={6}>
-  <Form.Group>
-    <Form.Label className="mb-3">To</Form.Label> {/* Add margin-bottom */}
-    <DatePicker
-      selected={values.experienceList[index].to}
-      onChange={(date) => setFieldValue(`experienceList.${index}.to`, date)}
-      dateFormat="MM/yyyy"
-      showMonthYearPicker
-      placeholderText="Select end date"
-      className={`form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}
-    />
-    <ErrorMessage
-      name={`experienceList.${index}.to`}
-      component="div"
-      className="text-danger"
-    />
-  </Form.Group>
-</Col>
-
-                        <Col md={12} className="mt-3">
-                                      <Form.Group>
-                <Form.Label>Responsibilities</Form.Label>
-                <Field
-                  name={`experienceList.${index}.responsibilities`}
-                  placeholder="Responsibilities"
-                  as="textarea" // Change the input to a textarea
-                  className={`form-control ${touched.responsibilities && errors.responsibilities ? 'is-invalid' : ''}`}
-                  rows="4" // You can adjust the number of rows based on your preference
-                />
-                <ErrorMessage
-                  name={`experienceList.${index}.responsibilities`}
-                  component="div"
-                  className="text-danger"
-                />
-              </Form.Group>
-
-                        </Col>
-                      </Row>
-                      {index > 0 && (
-                        <Button
-                        type="button"
-                        variant="danger"
-                        onClick={() => remove(index)}
-                        className="mt-2"
-                        style={{ backgroundColor: 'rgb(5, 167, 204)', color: 'white' , border: 'none' }} 
-                      >
-                         -
-                      </Button>
-                      )}
-                    </div>
-                  ))}
-                  <Button
-  type="button"
-  onClick={() => push({ from: '', to: '', company: '', responsibilities: '' })}
-  style={{ backgroundColor: 'rgb(5, 167, 204)', color: 'white' , border: 'none' }} 
->
-  + Add Experience
-</Button>
-
-                </>
-              )}
-            </FieldArray>
+          
 
             <Row>
               <Col md={6}>
@@ -355,65 +301,36 @@ const JobApplicationForm = ({ jobTitle }) => {
                 </Form.Group>
               </Col>
             </Row>
-            <h4 className="mt-4">Skills</h4>
-            <Form.Group>
-  <Row className="mt-3">
-    <Col md={10}>
-      <Field
-        type="text"
-        name="newSkill" // Add a new field for skill input
-        placeholder="Enter a skill"
-        className={`form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}        onBlur={handleBlur}
-        onChange={handleChange}
-      />
-    </Col>
-    <Col md={2} >
-    <Button
-  type="button"
-  variant="outline-primary"
-  onClick={() => {
-    // Check if newSkill is defined and not empty
-    const newSkillValue = values.newSkill || '';
-    if (newSkillValue.trim() !== "") {
-      setFieldValue('skills', [...values.skills, newSkillValue.trim()]);
-      setFieldValue('newSkill', ''); // Clear the input field after adding
-    }
-  }}
-  style={{ backgroundColor: 'rgb(5, 167, 204)', color: 'white', border: 'none' }} 
->
-  Add Skill
-</Button>
-
-
-    </Col>
-  </Row>
-  <div className="skills-list">
-  {values.skills.map((skill, index) => (
-    <div key={index} className="skill-item">
-      <Button 
-        className='mt-3'
-        variant="danger"
-        size="sm"
-        onClick={() => setFieldValue('skills', values.skills.filter((_, i) => i !== index))}
-        style={{ marginLeft: '10px', backgroundColor: 'rgb(242, 117, 81)', color: 'white', border: 'none' }}
-      >
-        {skill} ✖
-      </Button>
+            <UploadSection className="mt-3">
+  <FileInput
+    type="file"
+    id="fileUpload"
+    onChange={handleFileChange}
+    accept=".doc,.xls,.pdf,.txt,.ppt"
+  />
+  <Label htmlFor="fileUpload">Attach any files you feel would be useful</Label>
+  <p>(doc, xls, pdf, txt, and ppt files only, Max Size 2MB)</p>
+  
+  {/* Display uploaded file details */}
+  {resumeFile && (
+    <div className="mt-2">
+      <p><strong>Selected File:</strong> {resumeFile.name}</p>
+      <p><small>Size: {(resumeFile.size / (1024 * 1024)).toFixed(2)} MB</small></p>
     </div>
-  ))}
-</div>
+  )}
+</UploadSection>
 
-</Form.Group>
+
             <div className="d-flex justify-content-center">
             <Button
-              type="submit"
-              disabled={isSubmitting}
-              variant="primary"
-              className="mt-5 mb-5"
-              style={{ backgroundColor: 'rgb(239, 82, 38)', color: 'white', border: 'none' }}
-            >
-              {isSubmitting ? 'Submitting...' : 'Submit Application'}
-            </Button>
+                type="submit"
+                disabled={isSubmitting}
+                variant="primary"
+                className="mt-5 mb-5"
+                style={{ backgroundColor: 'rgb(239, 82, 38)', color: 'white', border: 'none' }}
+              >
+                {isSubmitting ? 'Submitting...' : 'Submit Application'}
+              </Button>
           </div>
 
           </Form>
