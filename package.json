@@ -53,10 +53,7 @@
     "postbuild": "react-snap"
   },
   "reactSnap": {
-    "inlineCss": true,
-    "crawl": true,
-    "sourceMaps": true,
-    "baseUrl": "https://www.techclouderp.com",
+   
     "include": [
       "/",
       "/about-us",

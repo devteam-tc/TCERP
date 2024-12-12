@@ -95,7 +95,7 @@ export const Title = styled.h1`
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 28px;
+    font-size: 25px;
     margin-bottom: 20px;
   }
 `;
