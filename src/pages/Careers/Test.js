@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
-import { db, storage } from '../../firebase'; // Ensure `storage` is correctly initialized
+import { db, storage } from '../../firebase'; // Ensure storage is correctly initialized
 import { collection, addDoc, doc, getDocs, query, where, Timestamp, getDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { toast, ToastContainer } from 'react-toastify';
@@ -26,6 +26,9 @@ const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email format').required('Email is required'),
   phone: Yup.string().matches(/^[0-9]{10}$/, 'Phone number must be 10 digits').required('Phone number is required'),
   education: Yup.string().required('Education level is required'),
+  totalExperience: Yup.number().min(0, 'Years of experience cannot be negative').required('Total Years of Work Experience is required'),
+  currentCTC: Yup.number().min(0, 'CTC must be a positive value').required('Current CTC is required'),
+  expectedCTC: Yup.number().min(0, 'Expected CTC must be a positive value').required('Expected CTC is required'),
   resume: Yup.mixed().required('Resume is required'),
 });
 
@@ -37,8 +40,10 @@ const JobApplicationForm = ({ jobTitle }) => {
     email: '',
     phone: '',
     education: '',
+    totalExperience: '',
+    currentCTC: '',
+    expectedCTC: '',
     resume: null,
-    
     AppliedDate: Timestamp.now(),
   };
 
@@ -53,64 +58,6 @@ const JobApplicationForm = ({ jobTitle }) => {
     }
   };
 
-  // const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-  //   try {
-  //     if (!resumeFile) {
-  //       toast.error('Please upload a resume!', { position: 'top-center' });
-  //       setSubmitting(false);
-  //       return;
-  //     }
-
-  //     // Check for duplicate applications
-  //     const jobApplicationsRef = collection(db, 'jobApplications');
-  //     const querySnapshot = await getDocs(
-  //       query(
-  //         jobApplicationsRef,
-  //         where('email', '==', values.email),
-  //         where('phone', '==', values.phone),
-  //         where('fullName', '==', values.fullName),
-  //         where('AppliedRole', '==', jobTitle)
-  //       )
-  //     );
-
-  //     if (!querySnapshot.empty) {
-  //       toast.error('You have already applied for this position.', { position: 'top-center', autoClose: 3000 });
-  //       setSubmitting(false);
-  //       return;
-  //     }
-
-  //     // Upload resume to Firebase Storage
-  //     const resumeRef = ref(storage, `resumes/${values.email}_${Date.now()}`);
-  //     await uploadBytes(resumeRef, resumeFile);
-  //     const resumeURL = await getDownloadURL(resumeRef);
-
-  //     // Store application in Firestore
-  //     const structuredData = {
-  //       ...values,
-  //       resumeURL,
-  //       AppliedRole: jobTitle,
-  //       AppliedDate: Timestamp.now(),
-  //     };
-  //     await addDoc(collection(db, 'jobApplications'), structuredData);
-
-  //     // Send email via EmailJS
-  //     const { service_id, template_id, public_key } = await fetchEmailKeys();
-  //     const templateParams = {
-  //       ...structuredData,
-  //       resumeURL,
-  //     };
-  //     await emailjs.send(service_id, template_id, templateParams, public_key);
-
-  //     toast.success('Application submitted successfully!', { position: 'top-right', autoClose: 5000 });
-  //     resetForm();
-  //   } catch (error) {
-  //     console.error('Error submitting application:', error);
-  //     toast.error('Failed to submit application. Please try again.', { position: 'top-center', autoClose: 3000 });
-  //   } finally {
-  //     setSubmitting(false);
-  //   }
-  // };
-
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
       if (!resumeFile) {
@@ -118,7 +65,7 @@ const JobApplicationForm = ({ jobTitle }) => {
         setSubmitting(false);
         return;
       }
-  
+
       // Check for duplicate applications
       const jobApplicationsRef = collection(db, 'jobApplications');
       const querySnapshot = await getDocs(
@@ -130,38 +77,39 @@ const JobApplicationForm = ({ jobTitle }) => {
           where('AppliedRole', '==', jobTitle)
         )
       );
-  
+
       if (!querySnapshot.empty) {
         toast.error('You have already applied for this position.', { position: 'top-center', autoClose: 3000 });
         setSubmitting(false);
         return;
       }
-  
+
       // Upload resume to Firebase Storage
       const resumeRef = ref(storage, `resumes/${values.email}_${Date.now()}`);
       await uploadBytes(resumeRef, resumeFile);
       const resumeURL = await getDownloadURL(resumeRef);
-  
-      // Store application in Firestore (exclude 'resume' field)
+
+      // Store application in Firestore
       const structuredData = {
         fullName: values.fullName,
         email: values.email,
         phone: values.phone,
         education: values.education,
+        totalExperience: values.totalExperience,
+        currentCTC: values.currentCTC,
+        expectedCTC: values.expectedCTC,
         AppliedRole: jobTitle,
         AppliedDate: Timestamp.now(),
-        resumeURL, // Store the URL of the uploaded resume
+        resumeURL,
       };
-  
+
       await addDoc(collection(db, 'jobApplications'), structuredData);
-  
+
       // Send email via EmailJS
       const { service_id, template_id, public_key } = await fetchEmailKeys();
-      const templateParams = {
-        ...structuredData,
-      };
+      const templateParams = { ...structuredData };
       await emailjs.send(service_id, template_id, templateParams, public_key);
-  
+
       toast.success('Application submitted successfully!', { position: 'top-right', autoClose: 5000 });
       resetForm();
     } catch (error) {
@@ -171,7 +119,7 @@ const JobApplicationForm = ({ jobTitle }) => {
       setSubmitting(false);
     }
   };
-  
+
   return (
     <FormContainer>
       <ToastContainer />
@@ -214,6 +162,29 @@ const JobApplicationForm = ({ jobTitle }) => {
                     <option value="PhD">PhD</option>
                   </Field>
                   <ErrorMessage name="education" component="div" className="text-danger" />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Label>Total Years of Work Experience</Form.Label>
+                  <Field type="number" name="totalExperience" className="form-control" />
+                  <ErrorMessage name="totalExperience" component="div" className="text-danger" />
+                </Form.Group>
+              </Col>
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Label>Current CTC</Form.Label>
+                  <Field type="number" name="currentCTC" className="form-control" />
+                  <ErrorMessage name="currentCTC" component="div" className="text-danger" />
+                </Form.Group>
+              </Col>
+              <Col md={4}>
+                <Form.Group>
+                  <Form.Label>Expected CTC</Form.Label>
+                  <Field type="number" name="expectedCTC" className="form-control" />
+                  <ErrorMessage name="expectedCTC" component="div" className="text-danger" />
                 </Form.Group>
               </Col>
             </Row>
