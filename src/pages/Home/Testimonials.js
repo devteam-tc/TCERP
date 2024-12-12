@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { releavant } from "../../utils/constants";
 import { db } from "../../firebase"; // Adjust path as needed
 import { collection, getDocs } from "firebase/firestore";
+import AnimatedSection from "../../components/AnimatedUp";
 
 // Styled Components
 const GradientContainer = styled(Container)`
@@ -125,6 +126,7 @@ const Testimonials = () => {
 
   return (
     <Container className="text-center w-100 w-md-50 p-md-5">
+      <AnimatedSection id="hero" className="animated-section">
       <Title className="text-center pt-4 pt-md-0">Testimonials</Title>
       <GradientContainer>
         <StyledCard>
@@ -188,6 +190,7 @@ const Testimonials = () => {
           </StyledCardBody>
         </StyledCard>
       </GradientContainer>
+      </AnimatedSection>
     </Container>
   );
 };

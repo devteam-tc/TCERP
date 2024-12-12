@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ExpertiseSection from './ExpertiseSection';
 import RecordSection from '../Home/RecordSection';
 import { Container, Row } from 'react-bootstrap';
@@ -11,6 +11,9 @@ import WhyTechCloudERP from './WhyTechCloudERP';
 import Services from './Services';
 import VisionMissionSection from './VisionMissionSection';
 import CoFoundersSection from './CoFoundersSection ';
+import AnimatedSection from '../../components/AnimatedUp';
+import AnimatedColumn from '../../components/AnimatedLeftRight';
+
 
 const Aboutus = () => {
   return (
@@ -18,24 +21,41 @@ const Aboutus = () => {
       <Section>
         <Container>
           <Row>
+          <AnimatedColumn direction="left" >
             <ContentColumn md={6}>
+              
               {/* Correct the reference to access about_content */}
               <Heading>{aboutus_data.about_content.heading}</Heading>
               <Divider />
               <Description>{aboutus_data.about_content.description}</Description>
+              
             </ContentColumn>
+            </AnimatedColumn>
           </Row>
         </Container>
       </Section>
-<VisionMissionSection />      
+      <AnimatedSection id="hero" className="animated-section">
+      <VisionMissionSection />
+      </AnimatedSection>
+      <AnimatedSection id="hero" className="animated-section">     
       <ExpertiseSection />
-      <WhyTechCloudERP content={whyTechCloudERPContent}   title={whyTechCloudERPContent.title}
-      />
+      </AnimatedSection> 
+      <AnimatedSection id="hero" className="animated-section">
+      <WhyTechCloudERP content={whyTechCloudERPContent}   title={whyTechCloudERPContent.title}/>
+      </AnimatedSection>
+      <AnimatedSection id="hero" className="animated-section">
       <RecordSection />
+      </AnimatedSection>
       {/* <TransformingIndustriesSection /> */}
+      <AnimatedSection id="hero" className="animated-section">
       <Services />
+      </AnimatedSection>
+      <AnimatedSection id="hero" className="animated-section">
       <CoFoundersSection />
+      </AnimatedSection>
+      <AnimatedSection id="hero" className="animated-section">
       <CTA />
+      </AnimatedSection>
       <OurPartnerSection />
     </>
   );

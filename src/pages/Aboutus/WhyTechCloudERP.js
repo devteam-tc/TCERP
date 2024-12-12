@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Title } from "../Home/CardSection";
+import AnimatedColumn from '../../components/AnimatedLeftRight';
 
 const WhyTechCloudERPContainer = styled(Container)`
   padding: 50px 0;
@@ -57,19 +58,27 @@ const WhyTechCloudERP = ({ content, title }) => {
   return (
     <WhyTechCloudERPContainer>
       <Row className='align-items-center'>
+        
         <Col md={6}>
+        <AnimatedColumn direction="left">
           <ImageContainer>
             <img src={imageSrc} alt="Business Intelligence Dashboard" />
           </ImageContainer>
+          </AnimatedColumn>
         </Col>
+        
+        
         <Col md={6}>
+        <AnimatedColumn direction="right">
           <TextContainer>
             <Title className='text-left mt-3 mb-3'>{title}</Title>
             {description.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
           </TextContainer>
+          </AnimatedColumn>
         </Col>
+        
       </Row>
     </WhyTechCloudERPContainer>
   );

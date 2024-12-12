@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import CTA from './CTA';
 import OurPartnerSection from './Home/OurPartnerSection';
+import AnimatedColumn from '../components/AnimatedLeftRight';
 
 
 export const Section = styled.section`
@@ -221,11 +222,13 @@ const IndustryPage = ({ data }) => {
     <Section>
       <Container>
         <Row>
+        <AnimatedColumn direction="left" >
           <ContentColumn md={6}>
             <Heading>{heading}</Heading>
             <Divider />
             <Description>{description}</Description>
           </ContentColumn>
+        </AnimatedColumn>
         </Row>
       </Container>
     </Section>

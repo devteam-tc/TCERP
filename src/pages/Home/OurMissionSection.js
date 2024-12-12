@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { TiArrowRight } from "react-icons/ti";
 import { releavant } from '../../utils/constants';
 import { useNavigate } from 'react-router-dom';
+import AnimatedColumn from '../../components/AnimatedLeftRight';
 
 // Styled Components
 const ExperienceSection = styled.section`
@@ -121,7 +122,9 @@ const OurMissionSection = () => {
     <ExperienceSection>
       <Container>
         <Row className="align-items-center">
+          
           <Col lg={5} className="mt-4">
+          <AnimatedColumn direction="left">
             <ExperienceImageWrapper>
               <ExperienceImageStyled src={images.mainImage} alt="Innovate, integrate, excel with Tech Cloud ERP for business transformation" />
               <img
@@ -135,8 +138,12 @@ const OurMissionSection = () => {
                 </p>
               </div> */}
             </ExperienceImageWrapper>
+            </AnimatedColumn>
           </Col>
+          
+          
           <Col lg={7} className="mt-4">
+          <AnimatedColumn direction="right">
             <ExperienceContent>
               <h3 style={{color: '#ef5226'}}>{content.companyName}</h3>
               <p>{content.description}</p>
@@ -156,6 +163,7 @@ const OurMissionSection = () => {
       <TiArrowRight size={25} />
     </Button>
             </ExperienceContent>
+            </AnimatedColumn>
           </Col>
         </Row>
       </Container>

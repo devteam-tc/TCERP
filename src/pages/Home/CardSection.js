@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Row, Col, Container, Button } from 'react-bootstrap';
 import { cardData } from '../../utils/constants';
+import AnimatedSection from '../../components/AnimatedUp';
 
 export const CardContainer = styled.div`
   border: 1px solid #e1e1e1;
@@ -115,8 +116,11 @@ const CardSection = () => {
       <Title className="text-center pt-4 pt-md-0">Discover the Advantages of Tech Cloud ERP</Title>
       <Container>
         <Row>
+        
           {moreCardsToShow.map((card, index) => (
+            
             <Col md={4} key={index} className="mb-3">
+              <AnimatedSection className="animated-section" style={{ height: '100%' }}>
               <CardContainer>
                 <IconWrapper className="icon">
                   <card.icon />
@@ -129,7 +133,9 @@ const CardSection = () => {
                   ))}
                 </HighlightedText>
               </CardContainer>
+              </AnimatedSection>
             </Col>
+            
           ))}
         </Row>
         <StyledButton onClick={toggleCards} className="fw-bold">

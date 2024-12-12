@@ -5,6 +5,8 @@ import { ContentColumn, Description, Divider, Heading, Section } from '../Indust
 import { aboutus_data, industriesDataList } from '../../utils/constants';
 import { FaArrowRight } from 'react-icons/fa'; // Import FaArrowRight
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import AnimatedColumn from '../../components/AnimatedLeftRight';
+import AnimatedSection from '../../components/AnimatedUp';
 
 const StyledContainer = styled(Container)`
   padding: 20px;
@@ -130,9 +132,11 @@ const AllIndustriesSection = () => {
         <Container>
           <Row>
             <ContentColumn md={6}>
+              <AnimatedColumn direction="left">
               <Heading>{aboutus_data.allindustries.heading}</Heading>
               <Divider />
               <Description>{aboutus_data.allindustries.description}</Description>
+              </AnimatedColumn>
             </ContentColumn>
           </Row>
         </Container>
@@ -141,6 +145,7 @@ const AllIndustriesSection = () => {
       {/* Loop through each industry list */}
       {[industriesDataList.agricultureList, industriesDataList.fmcgList, industriesDataList.oilandgasList].map((industryList, index) => (
         <StyledContainer className="mt-5 mb-5" key={index}>
+          <AnimatedSection id="hero" className="animated-section">
           <Row className="justify-content-between align-items-center">
             <Col>
               <Header>
@@ -173,6 +178,7 @@ const AllIndustriesSection = () => {
               </Col>
             ))}
           </Row>
+          </AnimatedSection>
         </StyledContainer>
       ))}
     </>

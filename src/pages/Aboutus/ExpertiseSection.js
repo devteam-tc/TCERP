@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import { ExpertiseData } from '../../utils/constants'; 
 import { Title } from "../Home/CardSection";
+import AnimatedSection from '../../components/AnimatedUp';
 
 const SectionWrapper = styled.div`
   padding: 40px 0;
@@ -42,7 +43,9 @@ const ExpertiseSection = () => {
         <Title className="text-center pt-4 pt-md-0">Focused Expertise for Your Business</Title>
         <Row>
           {ExpertiseData.map((item, index) => (
-            <Col md={4} key={index}>
+            
+              <Col md={4} key={index}>
+                <AnimatedSection className="animated-section">
               <CardWrapper>
                 <IconWrapper>
                   <item.icon />
@@ -51,7 +54,9 @@ const ExpertiseSection = () => {
                 <Line />
                 <Description>{item.description}</Description>
               </CardWrapper>
+              </AnimatedSection>
             </Col>
+            
           ))}
         </Row>
       </Container>

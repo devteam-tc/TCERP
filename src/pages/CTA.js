@@ -109,6 +109,7 @@ const PartnershipSection = () => {
 
   const handleDemoClick = () => {
     navigate('/scheduledemo'); // Navigate to the demo page
+    window.scrollTo(0, 0);
   };
 
   return (

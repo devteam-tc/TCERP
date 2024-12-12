@@ -29,7 +29,10 @@ const MenuItem = ({
         <NavLink
           to={href}
           className={({ isActive }) => (isActive ? 'active' : '')}
-          onClick={handleItemClick}
+          onClick={(e) => {
+            handleItemClick(e); // Call the first function
+            window.scrollTo(0, 0); // Call the scroll functionality
+          }}
         >
           <div>{label}</div>
         </NavLink>

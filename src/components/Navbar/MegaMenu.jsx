@@ -28,6 +28,7 @@ const MegaMenu = ({ handleToggle, clicked, setIsDrawerOpen }) => {
               onToggle={() => handleToggle && handleToggle(index)}
               active={clicked === index}
               onMenuClick={() => handleMenuClick(isDemo)} // Ensure this is passed down correctly
+              onClick={() => window.scrollTo(0, 0)} // Scroll to the top when a menu item is clicked
             />
           ))}
         </ul>

@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 import OurPartnerSection from '../Home/OurPartnerSection';
 import CTA from '../CTA';
 import Typewriter from "typewriter-effect";
+import AnimatedColumn from '../../components/AnimatedLeftRight';
+import AnimatedSection from '../../components/AnimatedUp';
 const WhyTechCloudERPContainer = styled(Container)`
   padding: 50px 0;
   @media (max-width: 768px) {
@@ -296,19 +298,24 @@ const ProductPage = () => {
         </Container>
       </Section>
       <WhyTechCloudERPContainer>
+
         <Row className="align-items-center">
           <Col md={6}>
+          <AnimatedColumn direction="left">
             <ImageContainer>
               <img src={product.imageSrc} alt={product.imageAlt} />
             </ImageContainer>
+            </AnimatedColumn>
           </Col>
           <Col md={6}>
+          <AnimatedColumn direction="right">
             <TextContainer>
               <Title className="text-left">{product.title}</Title>
               {product.productDescription.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </TextContainer>
+          </AnimatedColumn>
           </Col>
         </Row>
       </WhyTechCloudERPContainer>
@@ -320,6 +327,7 @@ const ProductPage = () => {
           <Row>
             {product.cards.map((card, index) => (
               <Col md={6} lg={4} key={index} className="mb-4 d-flex">
+                <AnimatedSection className="animated-section">
                 <CardContainer>
                   <CardTitleContainer>
                     {card.image && (
@@ -337,6 +345,7 @@ const ProductPage = () => {
                     ))}
                   </CardList>
                 </CardContainer>
+                </AnimatedSection>
               </Col>
             ))}
           </Row>
@@ -345,6 +354,7 @@ const ProductPage = () => {
       <SectionWrapper>
         <Container>
           {/* Tabs for Desktop View */}
+          <AnimatedSection className="animated-section">
           <div className="my-3">
             <div className="d-none d-md-block">
               <TitleContainer>
@@ -408,6 +418,7 @@ const ProductPage = () => {
               </Accordion>
             </div>
           </div>
+          </AnimatedSection>
         </Container>
       </SectionWrapper>
       <CTA />
