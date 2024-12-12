@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
-import React, { useState } from 'react';
 import { Form, Button, Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { db, storage } from '../../firebase'; // Ensure storage is correctly initialized
 import { collection, addDoc, doc, getDocs, query, where, Timestamp, getDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { db, storage } from '../../firebase'; // Ensure storage is correctly initialized
-import { collection, addDoc, doc, getDocs, query, where, Timestamp, getDoc } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Formik, Field, ErrorMessage } from 'formik';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import emailjs from '@emailjs/browser';
@@ -36,12 +31,7 @@ const validationSchema = Yup.object({
   fullName: Yup.string().required('Full Name is required'),
   email: Yup.string().email('Invalid email format').required('Email is required'),
   phone: Yup.string().matches(/^[0-9]{10}$/, 'Phone number must be 10 digits').required('Phone number is required'),
-  phone: Yup.string().matches(/^[0-9]{10}$/, 'Phone number must be 10 digits').required('Phone number is required'),
   education: Yup.string().required('Education level is required'),
-  totalExperience: Yup.number().min(0, 'Years of experience cannot be negative').required('Total Years of Work Experience is required'),
-  currentCTC: Yup.number().min(0, 'CTC must be a positive value').required('Current CTC is required'),
-  expectedCTC: Yup.number().min(0, 'Expected CTC must be a positive value').required('Expected CTC is required'),
-  resume: Yup.mixed().required('Resume is required'),
   totalExperience: Yup.number().min(0, 'Years of experience cannot be negative').required('Total Years of Work Experience is required'),
   currentCTC: Yup.number().min(0, 'CTC must be a positive value').required('Current CTC is required'),
   expectedCTC: Yup.number().min(0, 'Expected CTC must be a positive value').required('Expected CTC is required'),
@@ -49,8 +39,6 @@ const validationSchema = Yup.object({
 });
 
 const JobApplicationForm = ({ jobTitle }) => {
-  const [resumeFile, setResumeFile] = useState(null);
-
   const [resumeFile, setResumeFile] = useState(null);
 
   const initialValues = {
@@ -63,8 +51,6 @@ const JobApplicationForm = ({ jobTitle }) => {
     expectedCTC: '',
     resume: null,
     AppliedDate: Timestamp.now(),
-    resume: null,
-    AppliedDate: Timestamp.now(),
   };
 
   const fetchEmailKeys = async () => {
@@ -75,15 +61,7 @@ const JobApplicationForm = ({ jobTitle }) => {
       return { service_id, template_id, public_key };
     } else {
       throw new Error("No email configuration found!");
-    const docRef = doc(db, "emailConfig", "emailKeys");
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      const { service_id, template_id, public_key } = docSnap.data();
-      return { service_id, template_id, public_key };
-    } else {
-      throw new Error("No email configuration found!");
     }
-  };
   };
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -136,7 +114,6 @@ const JobApplicationForm = ({ jobTitle }) => {
       // Send email via EmailJS
       const { service_id, template_id, public_key } = await fetchEmailKeys();
       const templateParams = { ...structuredData };
-      const templateParams = { ...structuredData };
       await emailjs.send(service_id, template_id, templateParams, public_key);
   
       toast.success('Application submitted successfully!', { position: 'top-right', autoClose: 5000 });
@@ -150,7 +127,6 @@ const JobApplicationForm = ({ jobTitle }) => {
   
     } catch (error) {
       console.error('Error submitting application:', error);
-      toast.error('Failed to submit application. Please try again.', { position: 'top-center', autoClose: 3000 });
       toast.error('Failed to submit application. Please try again.', { position: 'top-center', autoClose: 3000 });
     } finally {
       setSubmitting(false);
@@ -169,14 +145,24 @@ const JobApplicationForm = ({ jobTitle }) => {
               <Col md={6}>
               <Form.Group controlId="fullName" className="mt-3">
                   <Form.Label>Full Name</Form.Label>
-                  <Field type="text" name="fullName" className="form-control" />
+                  <Field
+                    type="text"
+                    name="fullName"
+                    placeholder="Enter full name"
+                    className={`form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}
+                  />
                   <ErrorMessage name="fullName" component="div" className="text-danger" />
                 </Form.Group>
               </Col>
               <Col md={6}>
-                <Form.Group>
+                <Form.Group controlId="email" className="mt-3">
                   <Form.Label>Email</Form.Label>
-                  <Field type="email" name="email" className="form-control" />
+                  <Field
+                    type="email"
+                    name="email"
+                    placeholder="Enter email"
+                    className={`form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}
+                  />
                   <ErrorMessage name="email" component="div" className="text-danger" />
                 </Form.Group>
               </Col>
@@ -185,14 +171,23 @@ const JobApplicationForm = ({ jobTitle }) => {
             <Col md={6}>
                 <Form.Group controlId="phone" className="mt-3">
                   <Form.Label>Phone Number</Form.Label>
-                  <Field type="tel" name="phone" className="form-control" />
+                  <Field
+                    type="tel"
+                    name="phone"
+                    placeholder="Enter phone number"
+                    className={`form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}
+                  />
                   <ErrorMessage name="phone" component="div" className="text-danger" />
                 </Form.Group>
               </Col>
               <Col md={6}>
-                <Form.Group>
+                <Form.Group controlId="education" className="mt-3">
                   <Form.Label>Education Level</Form.Label>
-                  <Field as="select" name="education" className="form-control">
+                  <Field
+                    as="select"
+                    name="education"
+                    className={`form-control ${touched.fullName && errors.fullName ? 'is-invalid' : ''}`}
+                  >
                     <option value="">Select</option>
                     <option value="High School">High School</option>
                     <option value="Bachelor's Degree">Bachelor's Degree</option>
@@ -219,30 +214,29 @@ const JobApplicationForm = ({ jobTitle }) => {
               <Col md={4}>
                 <Form.Group controlId="currentCTC" className="mt-3">
                   <Form.Label>Current CTC</Form.Label>
-                  <Field type="number" name="currentCTC" className="form-control" />
-                  <ErrorMessage name="currentCTC" component="div" className="text-danger" />
+                  <Field
+  type="number"
+  name="currentCTC"
+  placeholder="Enter current CTC"
+  className={`form-control ${touched.currentCTC && errors.currentCTC ? 'is-invalid' : ''}`}
+/>
+<ErrorMessage name="currentCTC" component="div" className="text-danger" />
+
                 </Form.Group>
               </Col>
               <Col md={4}>
                 <Form.Group controlId="expectedCTC" className="mt-3">
                   <Form.Label>Expected CTC</Form.Label>
-                  <Field type="number" name="expectedCTC" className="form-control" />
-                  <ErrorMessage name="expectedCTC" component="div" className="text-danger" />
+                  <Field
+  type="number"
+  name="expectedCTC"
+  placeholder="Enter expected CTC"
+  className={`form-control ${touched.expectedCTC && errors.expectedCTC ? 'is-invalid' : ''}`}
+/>
+<ErrorMessage name="expectedCTC" component="div" className="text-danger" />
                 </Form.Group>
               </Col>
             </Row>
-            <Form.Group className="mt-3">
-              <Form.Label>Resume</Form.Label>
-              <input
-                type="file"
-                className="form-control"
-                onChange={(e) => {
-                  setResumeFile(e.target.files[0]);
-                  setFieldValue('resume', e.target.files[0]);
-                }}
-              />
-              <ErrorMessage name="resume" component="div" className="text-danger" />
-            </Form.Group>
             <Form.Group className="mt-3">
               <Form.Label>Resume</Form.Label>
               <input
@@ -266,22 +260,11 @@ const JobApplicationForm = ({ jobTitle }) => {
                 {isSubmitting ? 'Submitting...' : 'Submit Application'}
               </Button>
             </div>
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                variant="primary"
-                className="mt-5 mb-5"
-                style={{ backgroundColor: 'rgb(239, 82, 38)', color: 'white', border: 'none' }}
-              >
-                {isSubmitting ? 'Submitting...' : 'Submit Application'}
-              </Button>
-            </div>
           </Form>
         )}
       </Formik>
     </FormContainer>
   );
 };
-
 
 export default JobApplicationForm;
