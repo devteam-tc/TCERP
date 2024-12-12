@@ -1,106 +1,56 @@
 import React, { useState } from 'react';
 import { Form, Button, Col, Row } from 'react-bootstrap';
 import styled from 'styled-components';
-import { db, storage } from '../../firebase'; 
+import { db, storage } from '../../firebase'; // Ensure storage is correctly initialized
 import { collection, addDoc, doc, getDocs, query, where, Timestamp, getDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { Formik, Field, FieldArray, ErrorMessage } from 'formik';
+import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import emailjs from '@emailjs/browser';
 
 const FormContainer = styled.div`
   margin: auto;
-  padding: 20px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(75px);
-    margin: auto;
     padding: 20px;
-    border-radius: 8px;
-    background-color: #ffffffd6;
-    background-size: 100% 100%;
+    background: rgba(255, 255, 255, 0.91);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(100.4px);
+    -webkit-backdrop-filter: blur(6.4px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    border-radius: 10px;
+    /* background: rgba(255, 255, 255, 0.85); */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   @media (max-width: 992px) {
     width: 100%;
   }
 `;
-const UploadSection = styled.div`
-  border: 2px dashed #ff6b00; /* Orange border */
-  text-align: center;
-  padding: 20px;
-  // background-color: #000; 
-  color: #ef5226 !important; 
-  // max-width: 600px;
-  margin: 0 auto;
 
-  p {
-    font-size: 14px;
-  color: #ef5226 !important; 
-    margin-top: 10px;
-  }
-`;
-
-const FileInput = styled.input`
-  display: none;
-`;
-
-const Label = styled.label`
-  cursor: pointer;
-  font-size: 16px;
-  color: #ef5226 !important; 
-  text-decoration: underline;
-`;
-
-// Validation Schema using Yup
 const validationSchema = Yup.object({
   fullName: Yup.string().required('Full Name is required'),
   email: Yup.string().email('Invalid email format').required('Email is required'),
-  phone: Yup.string()
-    .matches(/^[0-9]{10}$/, 'Phone number must be 10 digits')
-    .required('Phone number is required'),
+  phone: Yup.string().matches(/^[0-9]{10}$/, 'Phone number must be 10 digits').required('Phone number is required'),
   education: Yup.string().required('Education level is required'),
-  totalExperience: Yup.number()
-  .typeError('Total years of work experience must be a number')
-  .min(0, 'Experience cannot be negative') 
-  .required('Total years of work experience is required') ,
+  totalExperience: Yup.number().min(0, 'Years of experience cannot be negative').required('Total Years of Work Experience is required'),
+  currentCTC: Yup.number().min(0, 'CTC must be a positive value').required('Current CTC is required'),
+  expectedCTC: Yup.number().min(0, 'Expected CTC must be a positive value').required('Expected CTC is required'),
   resume: Yup.mixed().required('Resume is required'),
-  experienceList: Yup.array().of(
-    Yup.object({
-      from: Yup.date().required('Start date is required'),
-      to: Yup.date().required('End date is required'),
-      company: Yup.string().required('Company name is required'),
-      responsibilities: Yup.string().required('Responsibilities are required'),
-    })
-  ),
-  currentCTC: Yup.number()
-    .typeError('Current CTC must be a valid number')
-    .positive('Current CTC must be a positive number')
-    .required('Current CTC is required'),
-  expectedCTC: Yup.number()
-    .typeError('Expected CTC must be a valid number')
-    .positive('Expected CTC must be a positive number')
-    .required('Expected CTC is required'),
-  
 });
 
 const JobApplicationForm = ({ jobTitle }) => {
   const [resumeFile, setResumeFile] = useState(null);
-  const [fileError, setFileError] = useState('');
+
   const initialValues = {
     fullName: '',
     email: '',
     phone: '',
     education: '',
-    resume: null,
     totalExperience: '',
-    experienceList: [{ from: '', to: '', company: '', responsibilities: '' }],
     currentCTC: '',
     expectedCTC: '',
-    AppliedDate: Timestamp.now()
+    resume: null,
+    AppliedDate: Timestamp.now(),
   };
 
   const fetchEmailKeys = async () => {
@@ -114,99 +64,86 @@ const JobApplicationForm = ({ jobTitle }) => {
     }
   };
 
-const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-
-  const resumeRef = ref(storage, `resumes/${values.email}_${Date.now()}`);
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    try {
+      if (!resumeFile) {
+        toast.error('Please upload a resume!', { position: 'top-center' });
+        setSubmitting(false);
+        return;
+      }
+  
+      // Check for duplicate applications
+      const jobApplicationsRef = collection(db, 'jobApplications');
+      const querySnapshot = await getDocs(
+        query(
+          jobApplicationsRef,
+          where('email', '==', values.email),
+          where('phone', '==', values.phone),
+          where('fullName', '==', values.fullName),
+          where('AppliedRole', '==', jobTitle)
+        )
+      );
+  
+      if (!querySnapshot.empty) {
+        toast.error('You have already applied for this position.', { position: 'top-center', autoClose: 3000 });
+        setSubmitting(false);
+        return;
+      }
+  
+      // Upload resume to Firebase Storage
+      const resumeRef = ref(storage, `resumes/${values.email}_${Date.now()}`);
       await uploadBytes(resumeRef, resumeFile);
       const resumeURL = await getDownloadURL(resumeRef);
   
-
-  const structuredData = {
-    ...values,
-    experienceList: JSON.stringify(values.experienceList),
-    AppliedRole: jobTitle,
-    resumeURL, 
-    AppliedDate: Timestamp.now()
+      // Store application in Firestore
+      const structuredData = {
+        fullName: values.fullName,
+        email: values.email,
+        phone: values.phone,
+        education: values.education,
+        totalExperience: values.totalExperience,
+        currentCTC: values.currentCTC,
+        expectedCTC: values.expectedCTC,
+        AppliedRole: jobTitle,
+        AppliedDate: Timestamp.now(),
+        resumeURL,
+      };
+  
+      await addDoc(collection(db, 'jobApplications'), structuredData);
+  
+      // Send email via EmailJS
+      const { service_id, template_id, public_key } = await fetchEmailKeys();
+      const templateParams = { ...structuredData };
+      await emailjs.send(service_id, template_id, templateParams, public_key);
+  
+      toast.success('Application submitted successfully!', { position: 'top-right', autoClose: 5000 });
+  
+      // Reset form and file input
+      resetForm(); // Resets Formik fields
+      setResumeFile(null); // Clears the file state
+  
+      // Explicitly reset the file input field
+      document.querySelector('input[type="file"]').value = '';
+  
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      toast.error('Failed to submit application. Please try again.', { position: 'top-center', autoClose: 3000 });
+    } finally {
+      setSubmitting(false);
+    }
   };
-
-  try {
-
-    // Check if the user has already applied
-  const jobApplicationsRef = collection(db, 'jobApplications');
-  const querySnapshot = await getDocs(
-    query(
-      jobApplicationsRef,
-      where('email', '==', values.email),
-      where('phone', '==', values.phone),
-      where('fullName', '==', values.fullName),
-      where('AppliedRole', '==', jobTitle)
-    )
-  );
-
-  if (!querySnapshot.empty) {
-    toast.error('You have already applied for this position.', {
-      position: 'top-center',
-      autoClose: 3000,
-    });
-    setSubmitting(false);
-    return;
-  }
-
-    // Store in Firebase
-    await addDoc(collection(db, 'jobApplications'), structuredData);
-    // Prepare data for EmailJS
-    const templateParams = {
-      ...structuredData,
-      experienceList: values.experienceList
-        .map(
-          (exp, index) =>
-            `${index + 1}. From: ${exp.from ? new Date(exp.from).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : ''} ` +
-          `To: ${exp.to ? new Date(exp.to).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : ''} | ` +
-          `Company: ${exp.company} | Responsibilities: ${exp.responsibilities}`
-        )
-        .join('\n'),
-    };
-    // Send email using EmailJS
-    const { service_id, template_id, public_key } = await fetchEmailKeys();
-    await emailjs.send(service_id, template_id, templateParams, public_key);
-    toast.success('Application submitted successfully!', { position: 'top-right', autoClose: 5000 });
-    resetForm();
-  } catch (error) {
-    console.error('Error submitting application:', error);
-    toast.error('Failed to submit application. Please try again.', {
-      position: 'top-center !important',
-      autoClose: 3000,
-      
-    });
-  } finally {
-    setSubmitting(false);
-  }
-};
-
-const handleFileChange = (event) => {
-  const file = event.target.files[0];
-  if (file && file.size <= 2 * 1024 * 1024) { // Check for file size (2 MB max)
-    setResumeFile(file);
-  } else {
-    alert("File size exceeds 2 MB or is invalid");
-  }
-};
-
+  
 
   return (
     <FormContainer>
-            <ToastContainer /> {/* Add the ToastContainer */}
-      <h3  style={{ color: '#ef5226' }}  className="text-center mt-3 mb-3">Job Application Form</h3>
-      <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
-      >
-        {({ values, handleChange, handleBlur, errors, touched, handleSubmit, setFieldValue, isSubmitting }) => (
+      <ToastContainer />
+      <h3 style={{ color: '#ef5226' }} className="text-center mt-3 mb-3">Job Application Form</h3>
+      <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+      {({ values, handleChange, handleBlur, errors, touched, handleSubmit, setFieldValue, isSubmitting }) => (
           <Form onSubmit={handleSubmit}>
             <Row>
               <Col md={6}>
-                <Form.Group controlId="fullName" className="mt-3">
+              <Form.Group controlId="fullName" className="mt-3">
                   <Form.Label>Full Name</Form.Label>
                   <Field
                     type="text"
@@ -231,7 +168,7 @@ const handleFileChange = (event) => {
               </Col>
             </Row>
             <Row>
-              <Col md={6}>
+            <Col md={6}>
                 <Form.Group controlId="phone" className="mt-3">
                   <Form.Label>Phone Number</Form.Label>
                   <Field
@@ -261,10 +198,6 @@ const handleFileChange = (event) => {
                 </Form.Group>
               </Col>
             </Row>
-           
-
-          
-
             <Row>
               <Col md={4}>
               <Form.Group controlId="totalExperience" className="mt-3">
@@ -304,28 +237,20 @@ const handleFileChange = (event) => {
                 </Form.Group>
               </Col>
             </Row>
-            <UploadSection className="mt-3">
-  <FileInput
-    type="file"
-    id="fileUpload"
-    onChange={handleFileChange}
-    accept=".doc,.xls,.pdf,.txt,.ppt"
-  />
-  <Label htmlFor="fileUpload">Attach any files you feel would be useful</Label>
-  <p>(doc, xls, pdf, txt, and ppt files only, Max Size 2MB)</p>
-  
-  {/* Display uploaded file details */}
-  {resumeFile && (
-    <div className="mt-2">
-      <p><strong>Selected File:</strong> {resumeFile.name}</p>
-      <p><small>Size: {(resumeFile.size / (1024 * 1024)).toFixed(2)} MB</small></p>
-    </div>
-  )}
-</UploadSection>
-
-
+            <Form.Group className="mt-3">
+              <Form.Label>Resume</Form.Label>
+              <input
+                type="file"
+                className="form-control"
+                onChange={(e) => {
+                  setResumeFile(e.target.files[0]);
+                  setFieldValue('resume', e.target.files[0]);
+                }}
+              />
+              <ErrorMessage name="resume" component="div" className="text-danger" />
+            </Form.Group>
             <div className="d-flex justify-content-center">
-            <Button
+              <Button
                 type="submit"
                 disabled={isSubmitting}
                 variant="primary"
@@ -334,12 +259,12 @@ const handleFileChange = (event) => {
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Application'}
               </Button>
-          </div>
-
+            </div>
           </Form>
         )}
       </Formik>
     </FormContainer>
   );
 };
+
 export default JobApplicationForm;
