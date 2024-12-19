@@ -38,7 +38,7 @@ function App() {
   return (
     
     <Router>
-      <div className="App  md:bg-top bg-center">
+      <div className="App  md:bg-top bg-center"  style={{overflowX : 'hidden' }}>
         <Navigation/>
         {/* Define your Routes here */}
         <Routes>

@@ -4370,7 +4370,7 @@ heading: "Call To Action",
 description:
   "Join us today and make a difference! Take action now to create significant changes in your business. Together, we can build a technology revolution. Become part of our movement today.",
 buttonText: "Call To Action",
-buttonLink: "https://api.whatsapp.com/send?phone=8919439603&text=Hi..",
+buttonLink: "https://api.whatsapp.com/send?phone=+918886606458&text=Hi",
 calltoaction_bg_img:require("../assets/Home/cta-bg-image-one.webp"),
 };
 
