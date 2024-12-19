@@ -21,8 +21,8 @@ export const menuData = [
             label: 'Apparel Industry',
             href: '/industries/apparel-industry',
           },
-          { label: 'Automative Industry', 
-            href: '/industries/automative-industry' 
+          { label: 'Automotive Industry', 
+            href: '/industries/automotive-industry' 
           },
           { label: 'Beverage Industry', 
             href: '/industries/beverage-industry' 

@@ -19,6 +19,7 @@ const StyledSection = styled.section`
 
   &.visible {
     opacity: 1;
+
     transform: translateY(0);
     animation: ${floatUp} 0.6s ease-out;
   }

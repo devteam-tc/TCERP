@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
@@ -40,6 +40,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between; // Space between image and text
+  cursor: pointer; // Change cursor to pointer on hover
 
   &:hover {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
@@ -61,8 +62,8 @@ const Card = styled.div`
   }
 
   @media (max-width: 576px) {
-        width: 40vh !important;
-            height: auto;
+    width: 40vh !important;
+    height: auto;
   }
 `;
 
@@ -132,6 +133,8 @@ const SubTitle = styled.h6`
 `;
 
 const ImportantModuleSection = () => {
+  const [pauseSlider, setPauseSlider] = useState(false);
+
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -140,7 +143,7 @@ const ImportantModuleSection = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1500, // Time in milliseconds between slides
-    pauseOnHover: false, // Prevent pause on hover
+    pauseOnHover: pauseSlider, // Pause on hover based on state
     responsive: [
       {
         breakpoint: 1200, // For screens below 1200px
@@ -172,22 +175,27 @@ const ImportantModuleSection = () => {
   return (
     <AnimatedSection id="hero" className="animated-section">
       <div>
-      <Title className="text-center pt-4 pt-md-0">Important Modules</Title>
-      <SubTitle className='mb-3 mt-3'>Explore key ERP modules like Finance, HR, Inventory, and CRM that streamline operations and drive efficiency.</SubTitle>
-      <Container className="mb-3">
-        <SliderWrapper>
-          <Slider {...sliderSettings}>
-            {ModulecardsData.map((card) => (
-              <Card key={card.id} className='mb-5'>
-                <CardImage src={card.image} alt={card.alt} />
-                <CardTitle>{card.title}</CardTitle>
-                <CardText>{card.description}</CardText>
-              </Card>
-            ))}
-          </Slider>
-        </SliderWrapper>
-      </Container>
-    </div>
+        <Title className="text-center pt-4 pt-md-0">Important Modules</Title>
+        <SubTitle className="mb-3 mt-3">
+          Explore key ERP modules like Finance, HR, Inventory, and CRM that streamline operations and drive efficiency.
+        </SubTitle>
+        <Container className="mb-3">
+          <SliderWrapper
+            onMouseEnter={() => setPauseSlider(true)} // Pause slider on hover
+            onMouseLeave={() => setPauseSlider(false)} // Resume slider on mouse leave
+          >
+            <Slider {...sliderSettings}>
+              {ModulecardsData.map((card) => (
+                <Card key={card.id} className="mb-5">
+                  <CardImage src={card.image} alt={card.alt} />
+                  <CardTitle>{card.title}</CardTitle>
+                  <CardText>{card.description}</CardText>
+                </Card>
+              ))}
+            </Slider>
+          </SliderWrapper>
+        </Container>
+      </div>
     </AnimatedSection>
   );
 };

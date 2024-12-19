@@ -41,6 +41,7 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  cursor: pointer;  /* Changes the cursor on hover */
 
   &:hover {
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
@@ -62,8 +63,8 @@ export const Card = styled.div`
   }
 
   @media (max-width: 576px) {
- width: 40vh !important;
-     height: auto;
+    width: 40vh !important;
+    height: auto;
   }
 `;
 
@@ -141,7 +142,7 @@ const ScrollFeatureCard = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1500,
-    pauseOnHover: false,
+    pauseOnHover: true,  // Pauses the slider when hovering
     rtl: true, // Ensures scrolling starts from left to right
     responsive: [
       {
@@ -171,29 +172,31 @@ const ScrollFeatureCard = () => {
     ],
   };
   
+  
 
   return (
     <>
-    <div className='mt-5'>
-    <AnimatedSection id="hero" className="animated-section">
-        <Title className="text-center pt-5">Unique Features</Title>
-        <SubTitle className='w-50 mx-auto'>Tech Cloud ERP provides an easy-to-use solution with smooth integration, powerful real-time analytics, and tools to help businesses improve operations, boost productivity, and make smarter decisions.</SubTitle>
-        <Container className=" pb-5">
-          <SliderWrapper>
-            <Slider {...sliderSettings}>
-              {featuresData.map((feature, index) => (
-                <Card key={feature.id || `feature-${index}`} className='mb-5'>
-                  <CardImage src={feature.imgSrc} alt={feature.alt} />
-                  <CardTitle>{feature.title}</CardTitle>
-                  <CardText>{feature.description}</CardText>
-                </Card>
-              ))}
-            </Slider>
-          </SliderWrapper>
-        </Container>
+      <div className="mt-5">
+        <AnimatedSection id="hero" className="animated-section">
+          <Title className="text-center pt-5">Unique Features</Title>
+          <SubTitle className="w-50 mx-auto">
+            Tech Cloud ERP provides an easy-to-use solution with smooth integration, powerful real-time analytics, and tools to help businesses improve operations, boost productivity, and make smarter decisions.
+          </SubTitle>
+          <Container className="pb-5">
+            <SliderWrapper>
+              <Slider {...sliderSettings}>
+                {featuresData.map((feature, index) => (
+                  <Card key={feature.id || `feature-${index}`} className="mb-5">
+                    <CardImage src={feature.imgSrc} alt={feature.alt} />
+                    <CardTitle>{feature.title}</CardTitle>
+                    <CardText>{feature.description}</CardText>
+                  </Card>
+                ))}
+              </Slider>
+            </SliderWrapper>
+          </Container>
         </AnimatedSection>
-    </div>
-    
+      </div>
     </>
   );
 };

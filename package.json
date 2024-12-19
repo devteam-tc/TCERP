@@ -10,6 +10,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@restart/ui": "^1.9.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -53,7 +54,6 @@
     "postbuild": "react-snap"
   },
   "reactSnap": {
-   
     "include": [
       "/",
       "/about-us",
@@ -96,7 +96,7 @@
       "/industries/textiles-industry",
       "/industries/agriculture-industry",
       "/industries/apparel-industry",
-      "/industries/automative-industry",
+      "/industries/automotive-industry",
       "/industries/beverage-industry",
       "/products/tech-cloud-erp",
       "/products/customer-relationship-management",

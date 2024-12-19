@@ -203,9 +203,13 @@ const BusinessSlider = () => {
                 <Card.Body>
                   <Card.Title style={{ alignItems: 'left' }}>{item.title}</Card.Title>
                   <Card.Text>{item.description}</Card.Text>
-                  <Link to={item.link} className="explore-link">
-                    {item.linkText} <FaArrowRight className="explore-arrow" />
-                  </Link>
+                  <Link
+      to={item.link}
+      className="explore-link"
+      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    >
+      {item.linkText} <FaArrowRight className="explore-arrow" />
+    </Link>
                 </Card.Body>
               </StyledCard>
             </div>

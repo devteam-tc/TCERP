@@ -301,7 +301,7 @@ const GalleryTabs = () => {
       <Row className="justify-content-center">
         <Title>Exhibition Gallery</Title>
         <Description className="text-center w-50 p-3 md-0">
-          Join our nationwide exhibition to experience live demos of advanced ERP solutions, designed to assist your business flourish. Experience innovative features and discover how we can elevate your business efficiency!
+        Join our nationwide exhibition to experience live demos of advanced ERP solutions, designed to assist your business to flourish. Experience innovative features and discover how we can elevate your business efficiency!
         </Description>
       </Row>
       <Container>

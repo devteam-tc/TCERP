@@ -31,6 +31,11 @@ const StyledColumn = styled.div`
   ${(props) =>
     props.isVisible &&
     css`
+    display: flex
+;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Spacing-ml, 15px);
       opacity: 1;
       transform: translateX(0);
       animation: ${(props) => (props.direction === 'left' ? slideInLeft : slideInRight)} 0.6s ease-out;
