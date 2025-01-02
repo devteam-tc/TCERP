@@ -9,6 +9,7 @@ import ReportingSection from './ReportingSection';
 import OurPartnerSection from '../Home/OurPartnerSection';
 // import BusinessSlider from './pages/Business/BusinessSlider';
 import BusinessSlider from './BusinessSlider'
+import WhatsappButton from '../Home/whatsappbutton';
 const BusinessIntelligence = () => {
     const { heading, description } = businessData[0] || { heading: '', description: '' }; 
     const businessIntelligenceContent = whyTechCloudERPContent.BusinessIntelligenceContent; 
@@ -35,6 +36,7 @@ const BusinessIntelligence = () => {
             <TransformingIndustriesSection />
             <CTA /> 
             <OurPartnerSection />  
+            <WhatsappButton />
         </>
     );
 };

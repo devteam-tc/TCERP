@@ -13,6 +13,7 @@ import VisionMissionSection from './VisionMissionSection';
 import CoFoundersSection from './CoFoundersSection ';
 import AnimatedSection from '../../components/AnimatedUp';
 import AnimatedColumn from '../../components/AnimatedLeftRight';
+import WhatsappButton from '../Home/whatsappbutton';
 
 
 const Aboutus = () => {
@@ -57,6 +58,8 @@ const Aboutus = () => {
       <CTA />
       </AnimatedSection>
       <OurPartnerSection />
+      <WhatsappButton />
+
     </>
   );
 }

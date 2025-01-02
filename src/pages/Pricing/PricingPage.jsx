@@ -4,6 +4,7 @@ import { ContentColumn, Description, Divider, Heading, Section } from '../Indust
 import { aboutus_data } from '../../utils/constants';
 import PricingCard from './PricingCard';
 import PricingTable from './PricingTable';
+import WhatsappButton from '../Home/whatsappbutton';
 
 const PricingPage = () => {
     // Destructure heading and description from ContactUs_content
@@ -24,6 +25,7 @@ const PricingPage = () => {
         </Section>
         <PricingCard/>
         <PricingTable />
+        <WhatsappButton />
         </>
     );
 };

@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import CTA from './CTA';
 import OurPartnerSection from './Home/OurPartnerSection';
 import AnimatedColumn from '../components/AnimatedLeftRight';
+import WhatsappButton from './Home/whatsappbutton';
 
 
 export const Section = styled.section`
@@ -276,6 +277,7 @@ const IndustryPage = ({ data }) => {
         <OurPartnerSection/>
       </div>
     </BodySection>
+    <WhatsappButton />
     </>
   );
 };

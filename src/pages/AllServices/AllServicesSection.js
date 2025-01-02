@@ -5,6 +5,7 @@ import { aboutus_data } from '../../utils/constants';
 import CTA from '../CTA'
 import ServiceContentSection from './ServiceContentSection';
 import AnimatedColumn from '../../components/AnimatedLeftRight';
+import WhatsappButton from '../Home/whatsappbutton';
 
 const AllServicesSection = () => {
   return (
@@ -26,6 +27,7 @@ const AllServicesSection = () => {
       </Section>
 <ServiceContentSection/>
       <CTA />
+      <WhatsappButton />
     </>
   );
 };

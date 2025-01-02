@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { ContentColumn, Description, Heading, Section } from '../../pages/IndustryPage';
 import { Container, Row, Col } from 'react-bootstrap';
+import WhatsappButton from '../../pages/Home/whatsappbutton';
 
 // Styled components
 const CalendlyWidgetWrapper = styled.div`
@@ -47,6 +48,7 @@ const DemoPage = () => {
           </Col>
         </Row>
       </Container>
+      <WhatsappButton />
     </>
   );
 };

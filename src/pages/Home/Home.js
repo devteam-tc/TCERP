@@ -456,6 +456,7 @@ import StickyButton from './StickyButton';
 import ScrollFeatureCard from '../ScrollFeatureCard';
 import { collection, doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
+import WhatsappButton from './whatsappbutton';
 
 const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -542,19 +543,7 @@ const Home = () => {
           </div>
         </div>
       )}
-      <a
-        href="https://api.whatsapp.com/send?phone=+918886606458&text=Hi"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={whatsappButtonStyle}
-        aria-label="Chat with us on WhatsApp"
-      >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-          alt="WhatsApp"
-          style={whatsappIconStyle}
-        />
-      </a>
+     
       <HomeVideoLanding />
       <OurMissionSection data={releavant.ourMission} />
       <CardSection />
@@ -567,29 +556,14 @@ const Home = () => {
       <CallToActionSection />
       <OurPartnerSection />
       <StickyButton />
+      <WhatsappButton />
     </>
   );
 };
 
 export default Home;
 
-// Styles
-const whatsappButtonStyle = {
-  position: 'fixed',
-  bottom: '70px',
-  right: '20px',
-  width: '50px',
-  height: '50px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  zIndex: 1000
-};
 
-const whatsappIconStyle = {
-  width: '40px',
-  height: '40px',
-};
 
 const popupStyle = {
   position: 'fixed',

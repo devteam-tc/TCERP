@@ -12,6 +12,7 @@ import CTA from '../CTA';
 import Typewriter from "typewriter-effect";
 import AnimatedColumn from '../../components/AnimatedLeftRight';
 import AnimatedSection from '../../components/AnimatedUp';
+import WhatsappButton from '../Home/whatsappbutton';
 const WhyTechCloudERPContainer = styled(Container)`
   padding: 50px 0;
   @media (max-width: 768px) {
@@ -423,6 +424,7 @@ const ProductPage = () => {
       </SectionWrapper>
       <CTA />
       <OurPartnerSection className="py-2" />
+      <WhatsappButton />
     </>
   );
 };

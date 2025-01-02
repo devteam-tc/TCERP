@@ -281,11 +281,11 @@ const Footer = () => {
                   Digital Marketing
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/whatsapp-business" onClick={scrollToTop}>
                   Whatsapp Business
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/business-intelligence" onClick={scrollToTop}>
                   Business Intelligence

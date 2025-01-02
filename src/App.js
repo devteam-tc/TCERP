@@ -84,12 +84,14 @@ function App() {
           <Route path="/products/*" element={<NotFound />} />
           <Route path="*" element={<NotFound />} />
           <Route path='/scheduledemo' element={<DemoPage />} />
+        
         </Routes>
         {/* Footer should be displayed across all pages */}
         <ScrollToTopButton />
         <Footer />
       </div>
     </Router>
+    
   );
 }
 

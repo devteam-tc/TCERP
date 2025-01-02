@@ -106,7 +106,7 @@ export const menuData = [
           { label: 'Tech Cloud CRM', href: '/products/customer-relationship-management' },
           { label: 'Tech Cloud POS', href: '/products/point-of-sale' },
           { label: 'Tech Cloud Trading Software', href: '/products/trading-software' },
-          { label: 'Tech Cloud Ecommerce', href: '/products/Ecommerce-software' },
+          { label: 'Tech Cloud E-Commerce', href: '/products/Ecommerce-software' },
           { label: 'Tech Cloud HRM',  href: '/products/hr-managament-software'},
           { label: 'Tech Cloud Finance', href: '/products/financial-management-systems' },
           { label: 'Tech Cloud ERP Integrated-With-CRM-Ecommerce-POS', href: '/products/integrated-erp-software' },

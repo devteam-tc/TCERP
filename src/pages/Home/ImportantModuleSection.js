@@ -136,7 +136,7 @@ const ImportantModuleSection = () => {
   const [pauseSlider, setPauseSlider] = useState(false);
 
   const sliderSettings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4, // Default to 4 slides at a time

@@ -24,7 +24,7 @@ const ImageWrapper = styled.div`
   img {
     width: 75%;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
 `;
 

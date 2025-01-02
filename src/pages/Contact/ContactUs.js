@@ -4,6 +4,7 @@ import { ContentColumn, Description, Divider, Heading, Section } from '../Indust
 import { ContactUs_content } from '../../utils/constants';
 import ContactForm from './Form';
 import MapSection from './MapSection';
+import WhatsappButton from '../Home/whatsappbutton';
 
 const ContactUs = () => {
     // Destructure heading and description from ContactUs_content
@@ -23,6 +24,7 @@ const ContactUs = () => {
         </Section>
         <ContactForm />
         <MapSection />
+        <WhatsappButton />
         
         </>
     );

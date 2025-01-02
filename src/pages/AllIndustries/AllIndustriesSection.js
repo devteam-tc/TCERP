@@ -7,6 +7,7 @@ import { FaArrowRight } from 'react-icons/fa'; // Import FaArrowRight
 import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import AnimatedColumn from '../../components/AnimatedLeftRight';
 import AnimatedSection from '../../components/AnimatedUp';
+import WhatsappButton from '../Home/whatsappbutton';
 
 const StyledContainer = styled(Container)`
   padding: 20px;
@@ -144,42 +145,44 @@ const AllIndustriesSection = () => {
 
       {/* Loop through each industry list */}
       {[industriesDataList.agricultureList, industriesDataList.fmcgList, industriesDataList.oilandgasList].map((industryList, index) => (
-        <StyledContainer className="mt-5 mb-5" key={index}>
+        <><StyledContainer className="mt-5 mb-5" key={index}>
           <AnimatedSection id="hero" className="animated-section">
-          <Row className="justify-content-between align-items-center">
-            <Col>
-              <Header>
-                {index === 0
-                  ? 'Agriculture to Electronic Industries'
-                  : index === 1
-                  ? 'FMCG to Metal Fabrication Industry'
-                  : 'Oil and Gas Industry'}
-              </Header>
-            </Col>
-            <Col className="d-flex justify-content-end">
-              <IndustryCount href="#">{industryList.length} Industries</IndustryCount>
-            </Col>
-          </Row>
-          <Row>
-            {industryList.map((industry) => (
-              <Col md={6} key={industry.id}>
-                <IndustryCard>
-                  <IconWrapper>
-                    <Icon src={industry.icon} alt={`${industry.title} icon`} />
-                  </IconWrapper>
-                  <CardContent>
-                    <Title className="mb-1">{industry.title}</Title>
-                    <Description className="mb-1">{industry.description}</Description>
-                  </CardContent>
-                  <Arrow onClick={() => handleArrowClick(industry.link)}>
-                    <FaArrowRight /> {/* Use the FaArrowRight icon here */}
-                  </Arrow>
-                </IndustryCard>
+            <Row className="justify-content-between align-items-center">
+              <Col>
+                <Header>
+                  {index === 0
+                    ? 'Agriculture to Electronic Industries'
+                    : index === 1
+                      ? 'FMCG to Metal Fabrication Industry'
+                      : 'Oil and Gas Industry'}
+                </Header>
               </Col>
-            ))}
-          </Row>
+              <Col className="d-flex justify-content-end">
+                <IndustryCount href="#">{industryList.length} Industries</IndustryCount>
+              </Col>
+            </Row>
+            <Row>
+              {industryList.map((industry) => (
+                <Col md={6} key={industry.id}>
+                  <IndustryCard>
+                    <IconWrapper>
+                      <Icon src={industry.icon} alt={`${industry.title} icon`} />
+                    </IconWrapper>
+                    <CardContent>
+                      <Title className="mb-1">{industry.title}</Title>
+                      <Description className="mb-1">{industry.description}</Description>
+                    </CardContent>
+                    <Arrow onClick={() => handleArrowClick(industry.link)}>
+                      <FaArrowRight /> {/* Use the FaArrowRight icon here */}
+                    </Arrow>
+                  </IndustryCard>
+                </Col>
+              ))}
+            </Row>
           </AnimatedSection>
         </StyledContainer>
+        <WhatsappButton />
+        </>
       ))}
     </>
   );

@@ -9,6 +9,7 @@ import styled, { keyframes } from 'styled-components';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import CTA  from '../CTA';
 import OurPartnerSection from '../Home/OurPartnerSection';
+import WhatsappButton from '../Home/whatsappbutton';
 
 // Styled components
 const DescriptionContainer = styled.div``;
@@ -260,6 +261,7 @@ const ServicesSection = () => {
           </FAQContainer>
           <CTA />
           <OurPartnerSection className="py-2" />
+          <WhatsappButton />
         </>
       );
     };
