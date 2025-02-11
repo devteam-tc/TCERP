@@ -140,8 +140,6 @@ const OurMissionSection = () => {
             </ExperienceImageWrapper>
             </AnimatedColumn>
           </Col>
-          
-          
           <Col lg={7} className="mt-4">
           <AnimatedColumn direction="right">
             <ExperienceContent>

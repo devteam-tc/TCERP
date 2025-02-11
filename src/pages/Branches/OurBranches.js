@@ -25,7 +25,7 @@ const OurBranches = () => {
       </Section>
       <Container>
       <Title className="text-center pt-5">Our Branches</Title>
-        <SubTitle className='w-100 p-3 mx-auto'>At Tech Cloud ERP Software Solutions, we are proud to provide our services across the globe, catering to businesses of all sizes. Our solutions have reached major cities around the world, including extensive coverage across India. We serve key urban centers like Mumbai, Delhi, Bengaluru, Hyderabad, Chennai, and more, ensuring that companies have access to reliable, cutting-edge ERP software regardless of location. </SubTitle>
+        <SubTitle className='w-100 p-3 mx-auto'>At Tech Cloud ERP Software Solutions, we are proud to provide our services across the globe, catering to businesses of all sizes. Our solutions have reached major cities around the world, including extensive coverage across India. We serve key urban centers like Mumbai, Delhi, Bengaluru, Hyderabad, Chennai and more, ensuring that companies have access to reliable, cutting-edge ERP software regardless of location. </SubTitle>
       </Container>
       <WorldMapWithMarkers />
       <CTA />

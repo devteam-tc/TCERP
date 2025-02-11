@@ -23,9 +23,23 @@ const SliderWrapper = styled.div`
   }
 
   .slick-dots {
-    bottom: -30px; // Adjust dots position if needed
+    bottom: -5px; // Adjust dots position if needed
+    color: #ef5226; // Change the color of the dots
+  }
+
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: #ef5226; // Change the color of the dot icons
+  }
+
+  // Hide dots on mobile devices
+  @media (max-width: 992px) {
+    .slick-dots {
+      display: none !important;
+    }
   }
 `;
+
 
 const Card = styled.div`
   background-color: #fff;
@@ -125,7 +139,7 @@ const SubTitle = styled.h6`
   display: block;
   margin: auto; // Optional: Add some margin for spacing
   text-align: center; // Center the text
-   @media (max-width: 992px) {
+  @media (max-width: 992px) {
     font-size: 1rem; 
     width:100% !important;
     padding: 1rem; 
@@ -135,38 +149,43 @@ const SubTitle = styled.h6`
 const ImportantModuleSection = () => {
   const [pauseSlider, setPauseSlider] = useState(false);
 
+  // Adjust the slider settings to show 4 slides per set and paginate them
   const sliderSettings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 4, // Default to 4 slides at a time
-    slidesToScroll: 1,
+    speed: 1000,
+    slidesToShow: 4, // Show 4 slides at once
+    slidesToScroll: 4, // Scroll 4 slides at once
     autoplay: true,
-    autoplaySpeed: 1500, // Time in milliseconds between slides
+    autoplaySpeed: 2000, // Time in milliseconds between slides
     pauseOnHover: pauseSlider, // Pause on hover based on state
     responsive: [
       {
         breakpoint: 1200, // For screens below 1200px
         settings: {
           slidesToShow: 3, // Show 3 slides below 1200px
+          slidesToScroll: 3, // Scroll 3 slides at once
         },
       },
       {
         breakpoint: 1024, // Tablet view
         settings: {
           slidesToShow: 3, // Show 3 slides below 1024px
+          slidesToScroll: 3,
         },
       },
       {
         breakpoint: 992, // Smaller tablets
         settings: {
           slidesToShow: 2, // Show 2 slides below 992px
+          slidesToScroll: 2,
         },
       },
       {
         breakpoint: 768, // Mobile view
         settings: {
           slidesToShow: 1, // Show 1 slide below 768px
+          slidesToScroll: 1,
         },
       },
     ],
@@ -176,16 +195,16 @@ const ImportantModuleSection = () => {
     <AnimatedSection id="hero" className="animated-section">
       <div>
         <Title className="text-center pt-4 pt-md-0">Important Modules</Title>
-        <SubTitle className="mb-3 mt-3">
-          Explore key ERP modules like Finance, HR, Inventory, and CRM that streamline operations and drive efficiency.
-        </SubTitle>
+        {/* <SubTitle className="mb-3 mt-3 w-50 mx-auto">
+        Transform your business with Tech Cloud ERP, CRM, Sales, Purchase, Inventory, Production, Job Work, QualityTransform your business with Tech Cloud ERP CRM, Sales, Purchase, Inventory, Production, Job Work, Quality Control, Quality Assurance, HRM, Finance, Imports & Exports, Project, Design, POS, and many more., Assets, HRM, Finance, Imports & Exports, Project, Design and POS. 
+              </SubTitle> */}
         <Container className="mb-3">
           <SliderWrapper
-            onMouseEnter={() => setPauseSlider(true)} // Pause slider on hover
-            onMouseLeave={() => setPauseSlider(false)} // Resume slider on mouse leave
+            onMouseEnter={() => setPauseSlider(true)} 
+            onMouseLeave={() => setPauseSlider(false)} 
           >
             <Slider {...sliderSettings}>
-              {ModulecardsData.map((card) => (
+              {ModulecardsData.map((card, index) => (
                 <Card key={card.id} className="mb-5">
                   <CardImage src={card.image} alt={card.alt} />
                   <CardTitle>{card.title}</CardTitle>

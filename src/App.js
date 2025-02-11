@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
+import { Navigate } from 'react-router-dom'; // Import Navigate component
 import AboutUs from './pages/Aboutus/Aboutus';
 import Footer from './components/Footer/footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -82,7 +83,8 @@ function App() {
           <Route path='/all-industries' element={<AllIndustriesSection />} />
           <Route path='/all-products' element={<AllProductsSection/>} />
           <Route path="/products/*" element={<NotFound />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*"  element={<NotFound />}/>
+          {/* <Route path="*" element={<Navigate to="/404page" />} /> */}
           <Route path='/scheduledemo' element={<DemoPage />} />
         
         </Routes>

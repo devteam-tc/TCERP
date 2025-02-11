@@ -48,7 +48,7 @@ const StickyButton = () => (
   <>
     <StickyButtonWrapper>
     <a href={assets.brochureLink} target="_blank" rel="noopener noreferrer" aria-label="Download Brochure">
-        <StyledButton>Download Brochure</StyledButton>
+        <StyledButton>Download </StyledButton>
       </a>
     </StickyButtonWrapper>
 

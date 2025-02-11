@@ -161,7 +161,7 @@ const BusinessSlider = () => {
     speed: 500,
     slidesToShow: 4, // Show 4 cards at once
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 1500,
     appendDots: (dots) => (
       <DotsContainer>
